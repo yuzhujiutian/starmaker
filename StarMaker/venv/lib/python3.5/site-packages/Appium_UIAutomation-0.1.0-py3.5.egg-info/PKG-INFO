@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: Appium-UIAutomation
+Version: 0.1.0
+Summary: A handy tool based on Appium-Python to write common UIAutomation test cases (for both iOS and Android) easily.
+Home-page: https://github.com/ayshrimali/Appium-UIAutomation
+Author: Anjum Shrimali
+Author-email: ayshrimali@gmail.com
+License: Apache 2.0
+Description: UNKNOWN
+Keywords: appium,appium 1.6,selenium,selenium 3,python client,mobile automation
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Environment :: Console
+Classifier: Environment :: MacOS X
+Classifier: Environment :: Win32 (MS Windows)
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Other Audience
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: Topic :: Software Development :: Testing

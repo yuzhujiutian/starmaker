@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8313010a-db35-4032-9d15-eb2204b77d40" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1823277784">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="35" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.10" value="5" />
+          <entry key="project.open.time.11" value="4" />
+          <entry key="project.open.time.12" value="2" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.14" value="3" />
+          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.6" value="3" />
+          <entry key="project.open.time.7" value="4" />
+          <entry key="project.open.time.8" value="9" />
+          <entry key="project.open.time.9" value="7" />
+          <entry key="project.opened" value="43" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="32" />
+          <entry key="png" value="2" />
+          <entry key="py" value="599" />
+          <entry key="pyi" value="2" />
+          <entry key="txt" value="11" />
+          <entry key="url" value="2" />
+          <entry key="xml" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="32" />
+          <entry key="Image" value="2" />
+          <entry key="PLAIN_TEXT" value="13" />
+          <entry key="Python" value="599" />
+          <entry key="PythonStub" value="2" />
+          <entry key="XML" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="60" />
+          <entry key="py" value="37424" />
+          <entry key="txt" value="2" />
+          <entry key="xml" value="205" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="62" />
+          <entry key="Python" value="37424" />
+          <entry key="XML" value="205" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TestCase/EmailLogInCase.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="9" column="41" lean-forward="true" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+              <folding>
+                <element signature="e#15#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Help/CaseExample.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+              <folding>
+                <element signature="e#14#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Help/ElementLocation.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Help/SuiteExample.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+              <folding>
+                <element signature="e#14#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TestCase/ProfileCase.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="825">
+              <caret line="41" column="23" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TestCase/StartUpCase.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1575">
+              <caret line="67" column="23" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
+              <folding>
+                <element signature="e#15#26#0" expanded="true" />
+                <marker date="1537179853016" expanded="true" signature="164:166" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CommonView/VData/Profile_VD.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Help/BasicGrammar.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="550">
+              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+              <folding>
+                <element signature="e#71#82#0" expanded="true" />
+                <marker date="1537251374297" expanded="true" signature="172:177" ph="..." />
+                <marker date="1537251374297" expanded="true" signature="807:808" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CommonView/LogIn.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="69" column="39" selection-start-line="69" selection-start-column="39" selection-end-line="69" selection-end-column="39" />
+              <folding>
+                <element signature="e#48#59#0" expanded="true" />
+                <element signature="e#291#2086#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Utils/Tools.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="26" column="58" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
+              <folding>
+                <element signature="e#50#59#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="XHTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>text_arr</find>
+      <find>drawCircle</find>
+      <find>wdwd</find>
+      <find>data</find>
+      <find>#5cb85c</find>
+      <find>8</find>
+      <find>d9534f</find>
+      <find>function</find>
+      <find>error</find>
+      <find>errorCase</find>
+      <find>show_detail_line</find>
+      <find>btn btn-primary</find>
+      <find>primary</find>
+      <find>showCase</find>
+      <find>color</find>
+      <find>class</find>
+      <find>fail</find>
+      <find>btn-danger</find>
+      <find>button</find>
+      <find>btn_pt</find>
+      <find>通过</find>
+      <find>失败</find>
+      <find>#d9534f</find>
+      <find>.btn-danger</find>
+      <find>self.driver.find_element_</find>
+      <find>self.driver.find_elements_by_class_name</find>
+      <find>from CommonView import ConfigInfo</find>
+      <find>package = ConfigInfo.package()</find>
+      <find>time.sleep(8)</find>
+      <find>time.sleep(2)</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>FindSource</replace>
+      <replace>from Utils import Tools</replace>
+      <replace>FindSource = Tools.Tools().FindSource</replace>
+      <replace>from Utils.Tools import Screen</replace>
+      <replace>Screen().A</replace>
+      <replace>if state is True:</replace>
+      <replace>if state():</replace>
+      <replace>列表</replace>
+      <replace>list</replace>
+      <replace>if state[0]:</replace>
+      <replace>if state()</replace>
+      <replace>if state:</replace>
+      <replace>GetDeviceInfo</replace>
+      <replace>GetDevicesInfo</replace>
+      <replace>package = ConfigInfo.package()</replace>
+      <replace />
+      <replace>def tearDownClass\(cls\)\:\n        cls.quit = GetAppiumDeriver().driver.quit()</replace>
+      <replace>cls.driver</replace>
+      <replace>self.driver</replace>
+      <replace>self\.findID\(</replace>
+      <replace>self.findID</replace>
+      <replace>self.findXpath</replace>
+      <replace>self.findAU</replace>
+      <replace>self.findAID</replace>
+      <replace>LogIn_VD</replace>
+      <replace>self.findClaS</replace>
+      <replace>from Utils.Tools import Tools</replace>
+      <replace>package = Tools.Tools().package()</replace>
+      <replace>time.sleep(5)</replace>
+      <replace>time.sleep(1)</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/TestReport/[old]HTML-TestRunner/Test_2.py" />
+        <option value="$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/HTMLTestReportCN.py" />
+        <option value="$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/HTMLTestReportEN.py" />
+        <option value="C:/Program Files/Python36/Lib/site-packages/selenium/webdriver/remote/webdriver.py" />
+        <option value="$PROJECT_DIR$/HTMLTest.py" />
+        <option value="$USER_HOME$/Desktop/HTMLTestRunner_cn.py" />
+        <option value="$USER_HOME$/Desktop/HTMLTestRunnerCN.py" />
+        <option value="$USER_HOME$/Desktop/123.py" />
+        <option value="$PROJECT_DIR$/TestReport/images.py" />
+        <option value="$PROJECT_DIR$/TestReport/[old]HTML-TestRunner/Test.py" />
+        <option value="$PROJECT_DIR$/Utils/T.py" />
+        <option value="$PROJECT_DIR$/TestCase/FacebookLogInCase.py" />
+        <option value="$PROJECT_DIR$/TestCase/GoogleLogInCase.py" />
+        <option value="$PROJECT_DIR$/TestCase/PhoneLogInCase.py" />
+        <option value="$PROJECT_DIR$/TestCase/CaseExample.py" />
+        <option value="$PROJECT_DIR$/TestReport/[new]html-TestRunner/Test.py" />
+        <option value="$PROJECT_DIR$/TestCase/ProfileCase.py" />
+        <option value="$PROJECT_DIR$/Utils/GetAppiumHelp.py" />
+        <option value="$PROJECT_DIR$/CommonView/Popup.py" />
+        <option value="$USER_HOME$/Desktop/tiqu.py" />
+        <option value="$USER_HOME$/Desktop/1111.py" />
+        <option value="$USER_HOME$/Desktop/mubiao.py" />
+        <option value="$PROJECT_DIR$/TestReport/New.py" />
+        <option value="$PROJECT_DIR$/TestReport/Old.py" />
+        <option value="$PROJECT_DIR$/TestReport/images/mubiao.py" />
+        <option value="$PROJECT_DIR$/TestReport/images/tiqu.py" />
+        <option value="$PROJECT_DIR$/TestCase/StartUpCase.py" />
+        <option value="$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/HTMLTestRunner_cn.py" />
+        <option value="$PROJECT_DIR$/Utils/CreateTestReport.py" />
+        <option value="$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/HTMLTestRunner.py" />
+        <option value="$PROJECT_DIR$/TestSuitePackge/LogInSuite.py" />
+        <option value="$PROJECT_DIR$/CommonView/LogIn.py" />
+        <option value="$PROJECT_DIR$/CommonView/Profile.py" />
+        <option value="$PROJECT_DIR$/CommonView/SignUp.py" />
+        <option value="$PROJECT_DIR$/CommonView/StartUp.py" />
+        <option value="$PROJECT_DIR$/CommonView/Home.py" />
+        <option value="$PROJECT_DIR$/CommonView/ConfigInfo.py" />
+        <option value="$PROJECT_DIR$/Utils/GetAppiumDeriver.py" />
+        <option value="$PROJECT_DIR$/CommonView/VData/Home_VD.py" />
+        <option value="$PROJECT_DIR$/CommonView/VData/LogIn_VD.py" />
+        <option value="$PROJECT_DIR$/CommonView/VData/Popup_VD.py" />
+        <option value="$PROJECT_DIR$/CommonView/VData/Profile_VD.py" />
+        <option value="$PROJECT_DIR$/CommonView/VData/SignUp_VD.py" />
+        <option value="$PROJECT_DIR$/CommonView/VData/StartUp_VD.py" />
+        <option value="$PROJECT_DIR$/Utils/Tools.py" />
+        <option value="$PROJECT_DIR$/Utils/FindElement.py" />
+        <option value="$PROJECT_DIR$/TestCase/EmailLogInCase.py" />
+        <option value="$PROJECT_DIR$/Help/CaseExample.py" />
+        <option value="$PROJECT_DIR$/TestReport/images/123123123.py" />
+        <option value="$PROJECT_DIR$/TestReport/images/123123.py" />
+        <option value="$PROJECT_DIR$/Help/BasicGrammar.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="485" />
+    <option name="y" value="92" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Python</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>PyPep8Inspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="StarMaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StarMaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StarMaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="apk_box" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StarMaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
+              <item name="CommonView" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StarMaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
+              <item name="CommonView" type="462c0819:PsiDirectoryNode" />
+              <item name="VData" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StarMaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
+              <item name="Data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StarMaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
+              <item name="Help" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StarMaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
+              <item name="TestCase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StarMaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
+              <item name="TestReport" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StarMaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
+              <item name="TestReport" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StarMaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
+              <item name="TestSuitePackge" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StarMaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
+              <item name="Utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="XHTML File" />
+    <property name="SearchEverywhereHistoryKey" value="self.driver.back()&#9;null&#9;null&#10;1&#9;FILE&#9;file://C:/Package/StarMaker/apk/productDebug-minApi17-armeabi-v7a.apk&#10;open&#9;FILE&#9;file://C:/Program Files/Python36/Lib/test/test_openpty.py&#10;package&#9;null&#9;null&#10;@property&#9;null&#9;null&#10;Get&#9;FILE&#9;file:///Users/mac/PycharmProjects/StarMaker/Utils/GetDevicesInfo.py" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last.edited.regexp" value="Sample Text" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="StarMaker" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="StarMaker" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Package\StarMaker\TestReport\images" />
+      <recent name="C:\Package\StarMaker\TestReport" />
+      <recent name="C:\Package\StarMaker\TestReport\[old]HTML-TestRunner" />
+      <recent name="C:\Package\StarMaker\TestReport\HtmlTestRunner" />
+      <recent name="C:\Package\StarMaker\AS_Mapping" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Package\StarMaker\TestReport\images" />
+      <recent name="C:\Package\StarMaker\Alter_Config\APK_Storage" />
+      <recent name="C:\Package\StarMaker\CommonView" />
+      <recent name="C:\Package\StarMaker\Help" />
+      <recent name="C:\Package\StarMaker\Data" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.BasicGrammar">
+    <configuration name="BasicGrammar" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="StarMaker" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Help" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Help/BasicGrammar.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="FindElement" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="StarMaker" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Utils/FindElement.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="HTMLTestRunner" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="StarMaker" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/AppData/Roaming/Python/Python36/site-packages" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/HTMLTestRunner.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="T" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="StarMaker" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Utils/T.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for LogInSuite.LogInSuite.test_Suite_001_StarUpSuite" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="StarMaker" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TestSuitePackge" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;LogInSuite.LogInSuite.test_Suite_001_StarUpSuite&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python tests.Unittests for LogInSuite.LogInSuite.test_Suite_001_StarUpSuite" />
+      <item itemvalue="Python.HTMLTestRunner" />
+      <item itemvalue="Python.T" />
+      <item itemvalue="Python.FindElement" />
+      <item itemvalue="Python.BasicGrammar" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.BasicGrammar" />
+        <item itemvalue="Python tests.Unittests for LogInSuite.LogInSuite.test_Suite_001_StarUpSuite" />
+        <item itemvalue="Python.FindElement" />
+        <item itemvalue="Python.T" />
+        <item itemvalue="Python.HTMLTestRunner" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8313010a-db35-4032-9d15-eb2204b77d40" name="Default" comment="" />
+      <created>1528704702529</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1528704702529</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Unittests_for_LogInSuite_LogInSuite_test_Suite_001_StarUpSuite - 2018.09.17 at 18h 21m 56s.xml">
+      <configuration name="Unittests for LogInSuite.LogInSuite.test_Suite_001_StarUpSuite" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_LogInSuite_LogInSuite_test_Suite_001_StarUpSuite - 2018.09.17 at 18h 25m 29s.xml">
+      <configuration name="Unittests for LogInSuite.LogInSuite.test_Suite_001_StarUpSuite" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_LogInSuite_LogInSuite_test_Suite_001_StarUpSuite - 2018.09.17 at 18h 46m 15s.xml">
+      <configuration name="Unittests for LogInSuite.LogInSuite.test_Suite_001_StarUpSuite" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_LogInSuite_LogInSuite_test_Suite_001_StarUpSuite - 2018.09.17 at 18h 53m 50s.xml">
+      <configuration name="Unittests for LogInSuite.LogInSuite.test_Suite_001_StarUpSuite" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_LogInSuite_LogInSuite_test_Suite_001_StarUpSuite - 2018.09.17 at 18h 54m 52s.xml">
+      <configuration name="Unittests for LogInSuite.LogInSuite.test_Suite_001_StarUpSuite" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_LogInSuite_LogInSuite_test_Suite_001_StarUpSuite - 2018.09.17 at 18h 56m 52s.xml">
+      <configuration name="Unittests for LogInSuite.LogInSuite.test_Suite_001_StarUpSuite" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_LogInSuite_LogInSuite_test_Suite_001_StarUpSuite - 2018.09.17 at 19h 01m 16s.xml">
+      <configuration name="Unittests for LogInSuite.LogInSuite.test_Suite_001_StarUpSuite" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_LogInSuite_LogInSuite_test_Suite_001_StarUpSuite - 2018.09.17 at 19h 10m 51s.xml">
+      <configuration name="Unittests for LogInSuite.LogInSuite.test_Suite_001_StarUpSuite" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_LogInSuite_LogInSuite_test_Suite_001_StarUpSuite - 2018.09.17 at 19h 14m 22s.xml">
+      <configuration name="Unittests for LogInSuite.LogInSuite.test_Suite_001_StarUpSuite" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_LogInSuite_LogInSuite_test_Suite_001_StarUpSuite - 2018.09.17 at 19h 18m 00s.xml">
+      <configuration name="Unittests for LogInSuite.LogInSuite.test_Suite_001_StarUpSuite" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12260128" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
+      <window_info anchor="bottom" x="11" y="328" width="1898" height="383" id="Run" order="2" sideWeight="0.49947312" weight="0.4208243" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.329718" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.329718" />
+      <window_info anchor="bottom" id="Python Console" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50052685" side_tool="true" weight="0.3286334" />
+      <window_info anchor="bottom" id="找到" order="11" />
+      <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.329718" />
+      <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3/datetime.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="228" column="8" selection-start-line="228" selection-start-column="8" selection-end-line="228" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestReport/[old]HTML-TestRunner/Test.py" />
+    <entry file="file://$PROJECT_DIR$/Utils/CreateButton.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestReport/启动app5.html" />
+    <entry file="file://$PROJECT_DIR$/TestReport/启动app4.html" />
+    <entry file="file://$USER_HOME$/Desktop/1111.py" />
+    <entry file="file://$PROJECT_DIR$/TestReport/images/1111.py" />
+    <entry file="file://$USER_HOME$/Desktop/mubiao.py" />
+    <entry file="file://$PROJECT_DIR$/TestReport/Old.py" />
+    <entry file="file://$PROJECT_DIR$/TestReport/启动app7.html" />
+    <entry file="file://$PROJECT_DIR$/TestReport/images/mubiao.py" />
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/HTMLTestRunner - 副本.py" />
+    <entry file="file://$PROJECT_DIR$/TestReport/New.py" />
+    <entry file="file://$PROJECT_DIR$/TestReport/启动app8.html" />
+    <entry file="file://$PROJECT_DIR$/TestReport/启动app9.html" />
+    <entry file="file://$PROJECT_DIR$/TestReport/images/tiqu.py" />
+    <entry file="file://$PROJECT_DIR$/TestReport/启动app3.html" />
+    <entry file="file://$PROJECT_DIR$/TestReport/启动app10.html" />
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/HTMLTestRunner_cn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-74">
+          <caret line="258" column="19" selection-start-line="258" selection-start-column="9" selection-end-line="258" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils/CreateTestReport.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestReport/启动app11.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="85" lean-forward="true" selection-start-line="9" selection-start-column="85" selection-end-line="9" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestReport/启动app2.html" />
+    <entry file="file://$PROJECT_DIR$/TestReport/启动app.html" />
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/HTMLTestRunner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="346" column="5" lean-forward="true" selection-start-line="346" selection-start-column="5" selection-end-line="346" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestSuitePackge/LogInSuite.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/SignUp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/StartUp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/Popup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/Profile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/Home.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1725">
+          <caret line="69" column="69" selection-start-line="69" selection-start-column="69" selection-end-line="69" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils/GetAppiumDeriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="22" column="12" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/VData/Home_VD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="4" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/VData/LogIn_VD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/VData/Popup_VD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/VData/SignUp_VD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/VData/StartUp_VD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/ConfigInfo.py" />
+    <entry file="file://$PROJECT_DIR$/TestCase/CaseExample.py" />
+    <entry file="file://$PROJECT_DIR$/Utils/FindElement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1675">
+          <caret line="73" column="15" lean-forward="true" selection-start-line="73" selection-start-column="15" selection-end-line="73" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestReport/images/123123123.py" />
+    <entry file="file://$PROJECT_DIR$/TestReport/images/123123.py" />
+    <entry file="file://$PROJECT_DIR$/TestCase/EmailLogInCase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="41" lean-forward="true" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+          <folding>
+            <element signature="e#15#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Help/CaseExample.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+          <folding>
+            <element signature="e#14#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Help/ElementLocation.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Help/SuiteExample.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+          <folding>
+            <element signature="e#14#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/ProfileCase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="41" column="23" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/StartUpCase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1575">
+          <caret line="67" column="23" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
+          <folding>
+            <element signature="e#15#26#0" expanded="true" />
+            <marker date="1537179853016" expanded="true" signature="164:166" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/VData/Profile_VD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Help/BasicGrammar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding>
+            <element signature="e#71#82#0" expanded="true" />
+            <marker date="1537251374297" expanded="true" signature="172:177" ph="..." />
+            <marker date="1537251374297" expanded="true" signature="807:808" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/LogIn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="69" column="39" selection-start-line="69" selection-start-column="39" selection-end-line="69" selection-end-column="39" />
+          <folding>
+            <element signature="e#48#59#0" expanded="true" />
+            <element signature="e#291#2086#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils/Tools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="26" column="58" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
+          <folding>
+            <element signature="e#50#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
