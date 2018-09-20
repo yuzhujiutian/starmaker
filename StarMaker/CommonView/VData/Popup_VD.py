@@ -1,6 +1,7 @@
 # coding=utf-8
 from Utils import Tools
-package = Tools.Tools().package()
+from Utils.GetDevicesInfo import DevicesInfo
+package = DevicesInfo().package()
 FindSource = Tools.Tools().FindSource
 # ----------
 # 弹窗汇总
@@ -44,4 +45,3 @@ Popup_VerifyEmail_Verify_ID = package + FindSource(Source_Popup_VerifyEmail_Veri
 # 发布图片引导(text=Click to post a photo)/发布图片+文字引导(text=Post texts with background photo.)
 Source_Popup_PostGuide_ID = "text"
 Popup_PostGuide_ID = package + FindSource(Source_Popup_PostGuide_ID)
-

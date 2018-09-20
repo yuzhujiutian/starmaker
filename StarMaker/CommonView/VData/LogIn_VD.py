@@ -1,6 +1,7 @@
 # coding=utf-8
 from Utils import Tools
-package = Tools.Tools().package()
+from Utils.GetDevicesInfo import DevicesInfo
+package = DevicesInfo().package()
 FindSource = Tools.Tools().FindSource
 gms = "com.google.android"
 

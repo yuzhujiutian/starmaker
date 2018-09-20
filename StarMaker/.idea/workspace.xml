@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8313010a-db35-4032-9d15-eb2204b77d40" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/yaoliang_cui.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="8313010a-db35-4032-9d15-eb2204b77d40" name="Default" comment="T31778 PopupProcessing 性能优化，平均每个弹窗处理约节省1.5s">
+      <change afterPath="$PROJECT_DIR$/Help/CallRelation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestCase/TestCase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/yaoliang_cui.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/yaoliang_cui.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommonView/Home.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommonView/Home.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommonView/Popup.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommonView/Popup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommonView/VData/Home_VD.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommonView/VData/Home_VD.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommonView/VData/LogIn_VD.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommonView/VData/LogIn_VD.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CommonView/VData/Popup_VD.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommonView/VData/Popup_VD.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CommonView/VData/Profile_VD.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommonView/VData/Profile_VD.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommonView/VData/SignUp_VD.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommonView/VData/SignUp_VD.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommonView/VData/StartUp_VD.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommonView/VData/StartUp_VD.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/GetAppiumDeriver.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/GetAppiumDeriver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/GetDevicesInfo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/GetDevicesInfo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Utils/Tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/111111.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +24,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/StarMaker$TestCase.coverage" NAME="TestCase Coverage Results" MODIFIED="1537447298927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
+    <SUITE FILE_PATH="coverage/StarMaker$CallRelation.coverage" NAME="CallRelation Coverage Results" MODIFIED="1537435260897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Help" />
     <SUITE FILE_PATH="coverage/StarMaker$Popup_VD.coverage" NAME="Popup_VD Coverage Results" MODIFIED="1537360582252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CommonView/VData" />
   </component>
   <component name="FUSProjectUsageTrigger">
@@ -93,22 +100,28 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="11" />
+          <entry key="png" value="1" />
+          <entry key="py" value="21" />
+          <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="11" />
+          <entry key="Image" value="1" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Python" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1004" />
+          <entry key="py" value="3237" />
+          <entry key="txt" value="72" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="1004" />
+          <entry key="PLAIN_TEXT" value="72" />
+          <entry key="Python" value="3237" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -120,8 +133,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CommonView/Home.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+            <state relative-caret-position="303">
+              <caret line="70" selection-start-line="70" selection-end-line="70" />
               <folding>
                 <element signature="e#46#88#0" expanded="true" />
               </folding>
@@ -129,59 +142,74 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CommonView/LogIn.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TestCase/TestCase.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="282" column="91" lean-forward="true" selection-start-line="282" selection-start-column="91" selection-end-line="282" selection-end-column="91" />
+            <state relative-caret-position="675">
+              <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
               <folding>
-                <element signature="e#48#59#0" expanded="true" />
-                <element signature="e#291#2086#0" />
+                <marker date="1537449393597" expanded="true" signature="185:731" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TestCase/PhoneLogInCase.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CommonView/VData/StartUp_VD.py">
+        <entry file="file://$PROJECT_DIR$/Utils/Tools.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CommonView/Popup.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="13" column="56" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
+            <state relative-caret-position="2678">
+              <caret line="581" column="28" selection-start-line="581" selection-start-column="28" selection-end-line="581" selection-end-column="28" />
               <folding>
-                <element signature="e#46#69#0" expanded="true" />
+                <element signature="e#50#59#0" expanded="true" />
+                <element signature="e#2353#3552#0" />
+                <element signature="e#3606#4655#0" />
+                <element signature="e#4719#6226#0" />
+                <element signature="e#6283#7329#0" />
+                <element signature="e#7396#8942#0" />
+                <element signature="e#8999#10091#0" />
+                <element signature="e#10158#11716#0" />
+                <element signature="e#11770#12853#0" />
+                <element signature="e#12917#14458#0" />
+                <element signature="e#14515#15585#0" />
+                <element signature="e#15653#17189#0" />
+                <marker date="1537448326301" expanded="true" signature="16819:18634" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CommonView/VData/Profile_VD.py">
+        <entry file="file://$PROJECT_DIR$/Utils/GetAppiumDeriver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="875">
-              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="625">
+              <caret line="25" column="63" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
+              <folding>
+                <element signature="e#15#43#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CommonView/Profile.py">
+        <entry file="file://$PROJECT_DIR$/CommonView/VData/Home_VD.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="200">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+              <folding>
+                <element signature="e#15#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CommonView/VData/LogIn_VD.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+              <folding>
+                <element signature="e#15#38#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -189,28 +217,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CommonView/VData/Popup_VD.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="37" selection-start-line="37" selection-end-line="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Utils/Tools.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1575">
+            <state relative-caret-position="575">
+              <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
               <folding>
-                <element signature="e#50#59#0" expanded="true" />
+                <element signature="e#15#38#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Utils/FindElement.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1329">
-              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -227,15 +238,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>8</find>
-      <find>d9534f</find>
-      <find>function</find>
-      <find>error</find>
-      <find>errorCase</find>
-      <find>show_detail_line</find>
-      <find>btn btn-primary</find>
-      <find>primary</find>
-      <find>showCase</find>
       <find>color</find>
       <find>class</find>
       <find>fail</find>
@@ -257,9 +259,17 @@
       <find>except</find>
       <find>self.driver.find_element</find>
       <find>self.driver.find_elements</find>
+      <find>android.support.v7.app.ActionBar$Tab</find>
+      <find>package \= Tools\.Tools\(\)\.package\(\)</find>
+      <find>cyl@22</find>
+      <find>content_tv</find>
+      <find>该元素未混淆</find>
+      <find>该元素</find>
+      <find>&lt;module&gt;</find>
+      <find>module</find>
+      <find>HomePage_Guide_ID</find>
     </findStrings>
     <replaceStrings>
-      <replace>FindSource</replace>
       <replace>from Utils import Tools</replace>
       <replace>FindSource = Tools.Tools().FindSource</replace>
       <replace>from Utils.Tools import Screen</replace>
@@ -289,6 +299,7 @@
       <replace>package = Tools.Tools().package()</replace>
       <replace>time.sleep(5)</replace>
       <replace>time.sleep(1)</replace>
+      <replace>from Utils\.GetDevicesInfo import DevicesInfo\npackage \= DevicesInfo\(\)\.package\(\)</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -297,10 +308,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/TestReport/[old]HTML-TestRunner/Test_2.py" />
-        <option value="$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/HTMLTestReportCN.py" />
-        <option value="$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/HTMLTestReportEN.py" />
-        <option value="C:/Program Files/Python36/Lib/site-packages/selenium/webdriver/remote/webdriver.py" />
         <option value="$PROJECT_DIR$/HTMLTest.py" />
         <option value="$USER_HOME$/Desktop/HTMLTestRunner_cn.py" />
         <option value="$USER_HOME$/Desktop/HTMLTestRunnerCN.py" />
@@ -331,9 +338,6 @@
         <option value="$PROJECT_DIR$/CommonView/SignUp.py" />
         <option value="$PROJECT_DIR$/CommonView/StartUp.py" />
         <option value="$PROJECT_DIR$/CommonView/ConfigInfo.py" />
-        <option value="$PROJECT_DIR$/Utils/GetAppiumDeriver.py" />
-        <option value="$PROJECT_DIR$/CommonView/VData/Home_VD.py" />
-        <option value="$PROJECT_DIR$/CommonView/VData/LogIn_VD.py" />
         <option value="$PROJECT_DIR$/CommonView/VData/SignUp_VD.py" />
         <option value="$PROJECT_DIR$/CommonView/VData/StartUp_VD.py" />
         <option value="$PROJECT_DIR$/Utils/FindElement.py" />
@@ -344,10 +348,17 @@
         <option value="$PROJECT_DIR$/Help/BasicGrammar.py" />
         <option value="$PROJECT_DIR$/CommonView/LogIn.py" />
         <option value="$PROJECT_DIR$/CommonView/Home.py" />
-        <option value="$PROJECT_DIR$/CommonView/VData/Popup_VD.py" />
         <option value="$PROJECT_DIR$/CommonView/Popup.py" />
+        <option value="$PROJECT_DIR$/CommonView/VData/Popup_VD.py" />
         <option value="$PROJECT_DIR$/CommonView/VData/Profile_VD.py" />
+        <option value="$PROJECT_DIR$/CommonView/VData/Home_VD.py" />
+        <option value="$PROJECT_DIR$/CommonView/VData/LogIn_VD.py" />
+        <option value="$PROJECT_DIR$/Utils/GetAppiumDeriver.py" />
+        <option value="$PROJECT_DIR$/bin/resource_mapping.txt" />
+        <option value="$PROJECT_DIR$/Utils/GetDevicesInfo.py" />
+        <option value="$PROJECT_DIR$/Help/CallRelation.py" />
         <option value="$PROJECT_DIR$/Utils/Tools.py" />
+        <option value="$PROJECT_DIR$/TestCase/TestCase.py" />
       </list>
     </option>
   </component>
@@ -504,7 +515,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Popup_VD">
+  <component name="RunManager" selected="Python.TestCase">
     <configuration name="BasicGrammar" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="StarMaker" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -527,7 +538,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="FindElement" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="CallRelation" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="StarMaker" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -535,12 +546,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Utils" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Help" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Utils/FindElement.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Help/CallRelation.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -571,7 +582,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="T" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="TestCase" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="StarMaker" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -579,12 +590,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Utils" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TestCase" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Utils/T.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TestCase/TestCase.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -610,18 +621,18 @@
     </configuration>
     <list>
       <item itemvalue="Python tests.Unittests for LogInSuite.LogInSuite.test_Suite_001_StarUpSuite" />
-      <item itemvalue="Python.T" />
-      <item itemvalue="Python.FindElement" />
       <item itemvalue="Python.BasicGrammar" />
       <item itemvalue="Python.Popup_VD" />
+      <item itemvalue="Python.TestCase" />
+      <item itemvalue="Python.CallRelation" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.TestCase" />
+        <item itemvalue="Python.CallRelation" />
         <item itemvalue="Python.Popup_VD" />
         <item itemvalue="Python.BasicGrammar" />
         <item itemvalue="Python tests.Unittests for LogInSuite.LogInSuite.test_Suite_001_StarUpSuite" />
-        <item itemvalue="Python.FindElement" />
-        <item itemvalue="Python.T" />
       </list>
     </recent_temporary>
   </component>
@@ -636,6 +647,14 @@
       <option name="presentableId" value="Default" />
       <updated>1528704702529</updated>
     </task>
+    <task id="LOCAL-00001" summary="T31778 PopupProcessing 性能优化，平均每个弹窗处理约节省1.5s">
+      <created>1537426302240</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1537426302240</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -683,20 +702,20 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12579957" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12579957" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info anchor="bottom" x="11" y="328" width="1898" height="383" id="Run" order="2" sideWeight="0.49947312" visible="true" weight="0.42019543" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
+      <window_info anchor="bottom" x="11" y="328" width="1898" height="383" id="Run" order="2" sideWeight="0.4989339" weight="0.42019543" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3984799" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.329718" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.329718" />
-      <window_info anchor="bottom" id="Python Console" order="8" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32899022" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32899022" />
+      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32899022" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50052685" side_tool="true" weight="0.3286334" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010661" side_tool="true" weight="0.42019543" />
       <window_info anchor="bottom" id="找到" order="11" />
       <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.329718" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
@@ -714,18 +733,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="T31778 PopupProcessing 性能优化，平均每个弹窗处理约节省1.5s" />
+    <option name="LAST_COMMIT_MESSAGE" value="T31778 PopupProcessing 性能优化，平均每个弹窗处理约节省1.5s" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TestReport/[old]HTML-TestRunner/Test.py" />
-    <entry file="file://$PROJECT_DIR$/Utils/CreateButton.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestReport/启动app5.html" />
-    <entry file="file://$PROJECT_DIR$/TestReport/启动app4.html" />
-    <entry file="file://$USER_HOME$/Desktop/1111.py" />
     <entry file="file://$PROJECT_DIR$/TestReport/images/1111.py" />
     <entry file="file://$USER_HOME$/Desktop/mubiao.py" />
     <entry file="file://$PROJECT_DIR$/TestReport/Old.py" />
@@ -782,20 +794,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CommonView/StartUp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Utils/GetAppiumDeriver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="22" column="12" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CommonView/VData/SignUp_VD.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -811,6 +809,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+          <folding>
+            <element signature="e#14#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -821,6 +822,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+          <folding>
+            <element signature="e#14#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -828,6 +832,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1675">
           <caret line="67" column="23" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
+          <folding>
+            <element signature="e#15#26#0" expanded="true" />
+            <marker date="1537179853016" expanded="true" signature="164:166" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -842,6 +850,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-929">
           <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#15#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -849,29 +860,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-754">
           <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CommonView/VData/LogIn_VD.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-450">
-          <caret line="21" column="51" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CommonView/VData/Home_VD.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="4" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CommonView/Home.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
           <folding>
-            <element signature="e#46#88#0" expanded="true" />
+            <element signature="e#71#82#0" expanded="true" />
+            <marker date="1537251374297" expanded="true" signature="172:177" ph="..." />
+            <marker date="1537251374297" expanded="true" signature="807:808" ph="..." />
           </folding>
         </state>
       </provider>
@@ -904,20 +896,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CommonView/VData/Profile_VD.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="875">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CommonView/VData/Popup_VD.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CommonView/Popup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
@@ -935,11 +913,124 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/VData/Profile_VD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/StartUp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1379">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/Home.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
+          <folding>
+            <element signature="e#46#88#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestReport/images/20180921_16.50.30.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Help/CallRelation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+          <folding>
+            <marker date="1537435305283" expanded="true" signature="33:88" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/resource_mapping.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/VData/Home_VD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#15#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils/GetDevicesInfo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="83" column="16" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="67" />
+          <folding>
+            <element signature="e#15#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/VData/Popup_VD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+          <folding>
+            <element signature="e#15#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/VData/LogIn_VD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+          <folding>
+            <element signature="e#15#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils/GetAppiumDeriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="25" column="63" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
+          <folding>
+            <element signature="e#15#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Utils/Tools.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1575">
+        <state relative-caret-position="2678">
+          <caret line="581" column="28" selection-start-line="581" selection-start-column="28" selection-end-line="581" selection-end-column="28" />
           <folding>
             <element signature="e#50#59#0" expanded="true" />
+            <element signature="e#2353#3552#0" />
+            <element signature="e#3606#4655#0" />
+            <element signature="e#4719#6226#0" />
+            <element signature="e#6283#7329#0" />
+            <element signature="e#7396#8942#0" />
+            <element signature="e#8999#10091#0" />
+            <element signature="e#10158#11716#0" />
+            <element signature="e#11770#12853#0" />
+            <element signature="e#12917#14458#0" />
+            <element signature="e#14515#15585#0" />
+            <element signature="e#15653#17189#0" />
+            <marker date="1537448326301" expanded="true" signature="16819:18634" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/TestCase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+          <folding>
+            <marker date="1537449393597" expanded="true" signature="185:731" ph="..." />
           </folding>
         </state>
       </provider>

@@ -1,6 +1,7 @@
 # coding=utf-8
 from Utils import Tools
-package = Tools.Tools().package()
+from Utils.GetDevicesInfo import DevicesInfo
+package = DevicesInfo().package()
 FindSource = Tools.Tools().FindSource
 # ----------
 # 个人页
@@ -21,6 +22,10 @@ Profile_UserLevel_ID = package + FindSource(Source_Profile_UserLevel_ID)
 # 用户VIP状态(text=Vip/Get Vip)
 Source_Profile_VIPLevel_ID = "user_name_view_tv_vip_level"
 Profile_VIPLevel_ID = package + FindSource(Source_Profile_VIPLevel_ID)
+
+# Followers按钮(text=Followers)
+Source_Profile_FollowersBtn_ID = "txt_followers"
+Profile_FollowersBtn_ID = package + FindSource(Source_Profile_FollowersBtn_ID)
 
 # 用户Followers数
 Source_Profile_FollowersNumber_ID = "txt_followers"

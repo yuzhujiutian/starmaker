@@ -1,7 +1,8 @@
 # coding=utf-8
 #from Utils.GetDevicesInfo import GetPackages
 from Utils import Tools
-package = Tools.Tools().package()
+from Utils.GetDevicesInfo import DevicesInfo
+package = DevicesInfo().package()
 FindSource = Tools.Tools().FindSource
 # ----------
 # 启动模块

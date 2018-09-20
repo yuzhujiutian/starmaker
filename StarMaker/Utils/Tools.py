@@ -6,27 +6,12 @@ import re
 import time
 import datetime
 from Utils.GetAppiumDeriver import GetAppiumDeriver
-from Utils.GetDevicesInfo import GetDevicesInfo
-from Utils.Common import singleton
 
 
 # ----------
 # 常用工具
 # ----------
 class Tools:
-    # AppPackage 用于初始化
-    @singleton
-    def AppPackage(self):
-        GetPackages = GetDevicesInfo().GetPackages()[0]
-        return GetPackages
-
-    # package拼接 用于元素定位使用
-    @singleton
-    def package(self):
-        setUp_package = Tools().AppPackage()
-        element_package = "%s:%s" % (setUp_package, "id/")
-        return element_package
-
     # 截取图片,并保存在images文件夹
     @staticmethod
     def get_images():
@@ -65,7 +50,6 @@ class Tools:
                 "R.id." + Source_ID + " -> " + "(.*)", ReadMappingTable.read()).__str__())[0]
             return Result_ID
         except:
-            print("该元素未混淆:", Source_ID)
             return Source_ID
         finally:
             if ReadMappingTable:
@@ -563,6 +547,68 @@ class PopupProcessing(object):
         else:
             print(type(Xpas))
             return False
+
+
+# ----------
+# 页面元素校验
+# ----------
+# 提取该页面同一类型下的所有元素text
+class Page_Element_Verification(object):
+    def __init__(self):
+        self.driver = GetAppiumDeriver().driver
+        time.sleep(5)
+
+    # 适用进入页面时校验页面元素加载正确，且这些元素具备同ID/Class或其他
+    def PEV_IDS(self, IDS, TextList):
+        Pe = self.driver.find_elements_by_id(IDS)
+        ExpectText = TextList
+        TextList = []
+        for index in range(len(Pe)):
+            TextList.append(Pe[index].text)
+            time.sleep(1)
+        if ExpectText == TextList:
+            return True
+        else:
+            LessThanExpected = [i for i in ExpectText if i not in TextList]
+            MoreThanExpected = [i for i in TextList if i not in ExpectText]
+            # 比预期少了
+            if LessThanExpected:
+                return False, LessThanExpected
+            # 比预期多了
+            elif MoreThanExpected:
+                return False, MoreThanExpected
+            # 排序不正确或未取到
+            else:
+                print("预期结果:", ExpectText)
+                print("实际结果:", TextList)
+                return False
+
+    def PEV_ClaS(self, ClaS, TextList):
+        Pe = self.driver.find_elements_by_class_name(ClaS)
+        ExpectText = TextList
+        TextList = []
+        for index in range(len(Pe)):
+            TextList.append(Pe[index].text)
+            time.sleep(1)
+        if ExpectText == TextList:
+            return True
+        else:
+            LessThanExpected = [i for i in ExpectText if i not in TextList]
+            MoreThanExpected = [i for i in TextList if i not in ExpectText]
+            # 比预期少了
+            if LessThanExpected:
+                return False, LessThanExpected
+            # 比预期多了
+            elif MoreThanExpected:
+                return False, MoreThanExpected
+            # 排序不正确或未取到
+            else:
+                print("预期结果:", ExpectText)
+                print("实际结果:", TextList)
+                return False
+
+
+
 
 
 # ----------

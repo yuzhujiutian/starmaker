@@ -25,7 +25,6 @@ class GetDevicesInfo(object):
             print("Device Connect Fail:", e)
 
     # 获取系统、设备信息
-
     def GetAndroidVersion(self):
         try:
             if self.GetDevicesInfo:
@@ -92,6 +91,20 @@ class GetDevicesInfo(object):
         except Exception as e:
             print("GetPackages:", e)
 
+
+class DevicesInfo(object):
+    # AppPackage 用于初始化
+    @staticmethod
+    def AppPackage():
+        GetPackages = GetDevicesInfo().GetPackages()[0]
+        return GetPackages
+
+    # package拼接 用于元素定位使用
+    @staticmethod
+    def package():
+        setUp_package = DevicesInfo().AppPackage()
+        element_package = "%s:%s" % (setUp_package, "id/")
+        return element_package
 
 # if __name__ == '__main__':
 #     print(GetDevicesInfo().GetAndroidVersion())

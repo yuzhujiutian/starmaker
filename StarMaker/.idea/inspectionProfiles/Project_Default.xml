@@ -7,6 +7,7 @@
         <list>
           <option value="E265" />
           <option value="E722" />
+          <option value="E402" />
         </list>
       </option>
     </inspection_tool>
@@ -29,6 +30,7 @@
           <option value="CommonView.SignUp.Library" />
           <option value="CommonView.LogIn.LogIn.Email_LogIn_Btn1" />
           <option value="str.decode" />
+          <option value="list.symmetric_difference" />
         </list>
       </option>
     </inspection_tool>
