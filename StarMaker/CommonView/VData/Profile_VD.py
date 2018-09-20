@@ -33,4 +33,3 @@ Profile_FollowingNumber_ID = package + FindSource(Source_Profile_FollowingNumber
 # 用户上榜作品数
 Source_Profile_RankRecords_ID = "txt_ranks"
 Profile_RankRecords_ID = package + FindSource(Source_Profile_RankRecords_ID)
-

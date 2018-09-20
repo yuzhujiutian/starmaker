@@ -15,7 +15,6 @@ class Home(object):
         self.findClaS = find_element().ClaS
         self.findXpa = find_element().Xpa
         self.findAID = find_element().AID
-        self.findAU = find_element().AU
 
     # ----------
     # 登陆后首页引导弹窗

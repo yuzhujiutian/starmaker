@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3863ef9b-9f6c-4e84-b01a-7cba44c369c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/StarMaker/dev/111111.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StarMaker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/StarMaker/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StarMaker/CommonView/Home.py" beforeDir="false" afterPath="$PROJECT_DIR$/StarMaker/CommonView/Home.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StarMaker/dev/111111.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,30 +17,31 @@
     <session id="-1564797266">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="3" />
+          <entry key="py" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="3" />
+          <entry key="Python" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="34" />
-          <entry key="txt" value="21" />
+          <entry key="py" value="49" />
+          <entry key="txt" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="21" />
-          <entry key="Python" value="34" />
+          <entry key="PLAIN_TEXT" value="23" />
+          <entry key="Python" value="49" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -48,8 +51,15 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/StarMaker/dev/111111.py">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/StarMaker/CommonView/Home.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+              <folding>
+                <element signature="e#46#88#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -70,6 +80,7 @@
         <option value="$PROJECT_DIR$/StarMaker/123/12311111.py" />
         <option value="$PROJECT_DIR$/StarMaker/123/2222.py" />
         <option value="$PROJECT_DIR$/StarMaker/dev/111111.py" />
+        <option value="$PROJECT_DIR$/StarMaker/CommonView/Home.py" />
       </list>
     </option>
   </component>
@@ -138,7 +149,49 @@
               <item name="starmaker-qa" type="b2602c69:ProjectViewProjectNode" />
               <item name="starmaker-qa" type="462c0819:PsiDirectoryNode" />
               <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
-              <item name="dev" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="starmaker-qa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="starmaker-qa" type="462c0819:PsiDirectoryNode" />
+              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
+              <item name="CommonView" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="starmaker-qa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="starmaker-qa" type="462c0819:PsiDirectoryNode" />
+              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
+              <item name="Data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="starmaker-qa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="starmaker-qa" type="462c0819:PsiDirectoryNode" />
+              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
+              <item name="Help" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="starmaker-qa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="starmaker-qa" type="462c0819:PsiDirectoryNode" />
+              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
+              <item name="TestCase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="starmaker-qa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="starmaker-qa" type="462c0819:PsiDirectoryNode" />
+              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
+              <item name="TestReport" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="starmaker-qa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="starmaker-qa" type="462c0819:PsiDirectoryNode" />
+              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
+              <item name="TestSuitePackge" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="starmaker-qa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="starmaker-qa" type="462c0819:PsiDirectoryNode" />
+              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
+              <item name="Utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -149,7 +202,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/StarMaker" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="coverage" />
@@ -191,11 +244,19 @@
       <option name="project" value="LOCAL" />
       <updated>1537325853919</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="T31778 dev">
+      <created>1537327444403</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1537327444403</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
@@ -255,7 +316,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="T31778 requests" />
     <MESSAGE value="T31778 del" />
-    <option name="LAST_COMMIT_MESSAGE" value="T31778 del" />
+    <MESSAGE value="T31778 dev" />
+    <option name="LAST_COMMIT_MESSAGE" value="T31778 dev" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/StarMaker/123/12311111.py">
@@ -269,7 +331,21 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/StarMaker/dev/111111.py">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StarMaker/CommonView/Home.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+          <folding>
+            <element signature="e#46#88#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

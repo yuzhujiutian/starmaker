@@ -16,11 +16,11 @@ class Popup(object):
     # ----------
     # 1>首页弹窗
     # ----------
-    # NewFeature引导，如果存在则点击OK
+    # NewFeature引导，如果存在则点击NEXT
     def HomePopup_NewFeature_OK_LiveClick(self):
-        state = self.FindElement(Cla=[Popup_VD.Popup_NewFeature_Class, 2, "OK"])
+        state = self.FindElement(AU=[Popup_VD.Popup_NewFeature_AU, "Only for your taste. Hope you love them."])
         if state:
-            self.driver.find_elements_by_class_name(Popup_VD.Popup_NewFeature_Class)[2].click()
+            self.driver.find_element_by_android_uiautomator(Popup_VD.Popup_NEXT).click()
 
     # Ranking 引导，如果存在则点击Next
     def HomePopup_RankingGuide_Next_LiveClick(self):
