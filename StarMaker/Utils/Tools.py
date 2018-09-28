@@ -32,8 +32,8 @@ class Tools:
         driver = GetAppiumDeriver().driver
         # 定义路径
         png_file = "../TestReport/images/"
-        # 获取当前时间，且days+1，以展示在报告截图最上方
-        nowtime = (datetime.datetime.now() + datetime.timedelta(days=1)).strftime('%Y%m%d_%H.%M.%S')
+        # 获取当前时间，且days-1，以展示在报告截图最下方
+        nowtime = (datetime.datetime.now() + datetime.timedelta(days=-1)).strftime('%Y%m%d_%H.%M.%S')
         # 定义图片名称
         img_name = nowtime + '.png'
         # 截图
@@ -608,9 +608,6 @@ class Page_Element_Verification(object):
                 return False
 
 
-
-
-
 # ----------
 # 屏幕处理工具
 # ----------
@@ -691,3 +688,45 @@ class Screen(object):
         y5 = self.height * y5P
         time.sleep(1)
         self.driver.tap([(x1, y1), (x2, y2), (x3, y3), (x4, y4), (x5, y5)], t)
+
+
+# 区域滑动
+class RegionalSliding(object):
+    def __init__(self, elements):
+        self.driver = GetAppiumDeriver().driver
+        # 获取当前元素大小
+        size = elements.size
+        self.height = size.get("height")
+        self.width = size.get("width")
+        print(size)
+        # 获取当前元素起始位置
+        location = elements.location
+        self.x = location.get("x")
+        self.y = location.get("y")
+        print(location)
+
+    # 区域滑动——横向
+    def Transverse(self):
+        # 运算获得滑动前后位置
+        height = self.height / 2
+        width = self.width / 4
+        x1 = int(self.x + width)
+        y = int(self.y + height)
+        x2 = int(self.x + width * 3)
+        time.sleep(1)
+        print(x1, y)
+        print(x2, y)
+        self.driver.swipe(x2, y, x1, y, 500)
+
+    # 区域滑动——纵向
+    def Longitudinal(self):
+        # 运算获得滑动前后位置
+        height = self.height / 4
+        width = self.width / 2
+        x = int(self.x + width)
+        y1 = int(self.y + height)
+        y2 = int(self.y + height * 3)
+        time.sleep(1)
+        print(x, y1)
+        print(x, y2)
+        self.driver.swipe(x, y2, x, y1, 500)

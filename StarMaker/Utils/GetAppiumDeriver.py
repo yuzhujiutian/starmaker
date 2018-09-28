@@ -11,9 +11,13 @@ class GetAppiumDeriver(object):
     # init为只初始化，不返回值
     def __init__(self):
         desired_caps = {}
+        # 调试使用
+        # desired_caps["platformVersion"] = 7.0
+        # desired_caps["device"] = "SM_G9200"
+        # desired_caps["deviceName"] = "zerofltezc"
         # 系统信息
-        desired_caps["platformName"] = Setting.PlatformName  # PlatformVersion = "7.0"
-        desired_caps["platformVersion"] = GetDevicesInfo().GetAndroidVersion()
+        desired_caps["platformName"] = Setting.PlatformName
+        desired_caps["platformVersion"] = GetDevicesInfo().GetAndroidVersion()  # PlatformVersion = "7.0"
         # 设备信息
         desired_caps["device"] = GetDevicesInfo().GetDeviceName()  # DeviceName = "SM_G9200"
         desired_caps["deviceName"] = GetDevicesInfo().GetDevice()  # Device = "zerofltezc"
