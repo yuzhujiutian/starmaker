@@ -19,29 +19,27 @@ class ProfileCase(unittest.TestCase):
         cls.driver = GetAppiumDeriver().driver
         time.sleep(5)
         # 如果未登录
-        # if LogIn.StartUpTransition():
-        #     # 处理首登引导弹窗
-        #     Popup().HomePopup_NewFeature_OK_LiveClick()
-        #     Popup().HomePopup_RankingGuide_Next_LiveClick()
-        #     print("Parties NEXT")
-        #     Popup().HomePopup_PartiesGuide_Next_LiveClick()
-        #     print("Live DONE")
-        #     Popup().HomePopup_LiveGuide_Done_LiveClick()
-        #     # 点击Profile-Tab进入Profile页
-        #     Home().HomeTab_Profile().click()
-        #     # 处理邮箱认证弹窗
-        #     Popup().HomePopup_VerifyEmail_Close_LiveClick()
-        # else:
-        #     # 处理签到弹窗
-        #     Popup().HomePopup_CheckIn_Close_LiveClick()
-        #     # 点击Profile-Tab进入Profile页
-        #     time.sleep(2)
-        #     Home().HomeTab_Profile().click()
-        #     time.sleep(2)
-        #     # 处理邮箱认证弹窗
-        #     Popup().HomePopup_VerifyEmail_Close_LiveClick()
-        Home().HomeTab_Profile().click()
-        time.sleep(2)
+        if LogIn.StartUpTransition():
+            # 处理首登引导弹窗
+            Popup().HomePopup_NewFeature_OK_LiveClick()
+            Popup().HomePopup_RankingGuide_Next_LiveClick()
+            print("Parties NEXT")
+            Popup().HomePopup_PartiesGuide_Next_LiveClick()
+            print("Live DONE")
+            Popup().HomePopup_LiveGuide_Done_LiveClick()
+            # 点击Profile-Tab进入Profile页
+            Home().HomeTab_Profile().click()
+            # 处理邮箱认证弹窗
+            Popup().HomePopup_VerifyEmail_Close_LiveClick()
+        else:
+            # 处理签到弹窗
+            Popup().HomePopup_CheckIn_Close_LiveClick()
+            # 点击Profile-Tab进入Profile页
+            time.sleep(2)
+            Home().HomeTab_Profile().click()
+            time.sleep(2)
+            # 处理邮箱认证弹窗
+            Popup().HomePopup_VerifyEmail_Close_LiveClick()
 
     def setUp(self):
         time.sleep(1)

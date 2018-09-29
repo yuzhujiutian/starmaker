@@ -105,7 +105,6 @@ class PopupProcessing(object):
             # 查找元素，存在返回True
             try:
                 self.driver.find_element_by_id(element_id)
-                print("mark_1")
                 return True
             # 否则返回False
             except:

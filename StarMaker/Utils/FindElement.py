@@ -97,7 +97,6 @@ class find_element(object):
             elements_AU = self.driver.find_element_by_android_uiautomator(AU)
             return elements_AU
         except:
-            print("mark2 ")
             # 截图并上报
             print("As shown, the element is not found.")
             Tools().get_element_error_images()
