@@ -45,6 +45,8 @@ class Popup(object):
         state = self.FindElement(ID=[Popup_VD.Popup_CheckIn_ID, "CHECK IN"])
         if state:
             self.driver.find_element_by_id(Popup_VD.Popup_ImgClose_ID).click()
+        else:
+            pass
 
     # ----------
     # 2>Profile页弹窗

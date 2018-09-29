@@ -96,7 +96,9 @@ class DevicesInfo(object):
     # AppPackage 用于初始化
     @staticmethod
     def AppPackage():
-        GetPackages = GetDevicesInfo().GetPackages()[0]
+        # GetPackages = GetDevicesInfo().GetPackages()[0]
+        # 调试使用
+        GetPackages = "com.starmakerinteractive.starmaker"
         return GetPackages
 
     # package拼接 用于元素定位使用

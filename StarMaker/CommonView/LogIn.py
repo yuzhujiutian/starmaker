@@ -255,7 +255,7 @@ class LogIn(object):
 
     # G+ 特定预选帐号
     def Google_GivenAN(self):
-        Google_GivenAN_Text = self.findAU("new UiSelector().text('刘誉')")
+        Google_GivenAN_Text = self.findAU("new UiSelector().text(\"刘誉\")")
         return Google_GivenAN_Text
 
     # G+ 谷歌第三方登录页（text=登录(输入账号)/欢迎(输入密码)）

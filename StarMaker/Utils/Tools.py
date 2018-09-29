@@ -72,34 +72,24 @@ class PopupProcessing(object):
             element = elements.get(key)
             if key == "ID":
                 PopupProcessing().ID()
-                return True
             elif key == "IDS":
                 PopupProcessing().IDS()
-                return True
             elif key == "Cla":
                 PopupProcessing().Cla()
-                return True
             elif key == "ClaS":
                 PopupProcessing().ClaS()
-                return True
             elif key == "AID":
                 PopupProcessing().AID()
-                return True
             elif key == "AIDS":
                 PopupProcessing().AIDS()
-                return True
             elif key == "AU":
                 PopupProcessing().AU()
-                return True
             elif key == "AUS":
                 PopupProcessing().AUS()
-                return True
             elif key == "Xpa":
                 PopupProcessing().Xpa()
-                return True
             elif key == "XpaS":
                 PopupProcessing().XpaS()
-                return True
             else:
                 print(key)
                 return False
@@ -115,6 +105,7 @@ class PopupProcessing(object):
             # 查找元素，存在返回True
             try:
                 self.driver.find_element_by_id(element_id)
+                print("mark_1")
                 return True
             # 否则返回False
             except:
@@ -137,7 +128,7 @@ class PopupProcessing(object):
                     return False
             # 否则返回False
             except:
-                print("弹窗未找到:", ID)
+                print("弹窗未找到:", element_id)
                 return False
         # 否则返回值的属性
         else:
@@ -648,6 +639,24 @@ class Screen(object):
         time.sleep(1)
         self.driver.swipe(x1, y1, x1, y2)
 
+    # 向上滑动1/2屏
+    def SWipeUp_Half(self):
+        # 执行滑屏操作,向上滑动1/2屏
+        x = self.width * 0.5
+        y1 = self.height * 0.6
+        y2 = self.height * 0.1
+        time.sleep(1)
+        self.driver.swipe(x, y1, x, y2)
+
+    # 向上滑动1/4屏
+    def SWipeUp_Quarter(self):
+        # 执行滑屏操作,向上滑动1/4屏
+        x = self.width * 0.5
+        y1 = self.height * 0.75
+        y2 = self.height * 0.5
+        time.sleep(1)
+        self.driver.swipe(x, y1, x, y2)
+
     # 根据传值百分比，自定义滑动操作(传参：百分比)
     def DIYSwipe_Percentage(self, x1P, y1P, x2P, y2P, t):
         # 执行滑屏操作,接收参数(四个百分比+时间),运算后滑动
@@ -694,13 +703,14 @@ class Screen(object):
 class RegionalSliding(object):
     def __init__(self, elements):
         self.driver = GetAppiumDeriver().driver
+        ele = self.driver.find_element_by_id(elements)
         # 获取当前元素大小
-        size = elements.size
+        size = ele.size
         self.height = size.get("height")
         self.width = size.get("width")
         print(size)
         # 获取当前元素起始位置
-        location = elements.location
+        location = ele.location
         self.x = location.get("x")
         self.y = location.get("y")
         print(location)

@@ -184,7 +184,7 @@ FBPopup_Continue_R = [0.486, 0.781, 500]
 FBPage_Preselection_Title_Class = "android.widget.TextView"
 
 # Facebook 页面——预选账号-登录另一账户
-FBPage_Pre_LoginAnotherAccount_Text = "new UiSelector().text('登录另一帐户')"
+FBPage_Pre_LoginAnotherAccount_Text = "new UiSelector().text(\"登录另一帐户\")"
 
 # Facebook 页面——输入账号
 FBPage_inputAN_AID = "帐号"

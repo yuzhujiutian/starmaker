@@ -38,3 +38,64 @@ Profile_FollowingNumber_ID = package + FindSource(Source_Profile_FollowingNumber
 # 用户上榜作品数
 Source_Profile_RankRecords_ID = "txt_ranks"
 Profile_RankRecords_ID = package + FindSource(Source_Profile_RankRecords_ID)
+
+# 功能栏
+Source_Profile_FunctionBar_IDS = "new_entrance_layout"
+Profile_FunctionBar_IDS = package + FindSource(Source_Profile_FunctionBar_IDS)
+
+# Tab栏
+Source_Profile_TabBar_IDS = "vtb_pager"
+Profile_TabBar_IDS = package + FindSource(Source_Profile_TabBar_IDS)
+
+# ----------
+# Tab——PROFILE
+# ----------
+
+# 【Personal info】个人信息
+# 个人信息Title(text=Personal info)
+Source_PersonalInfo_Title_ID = "personal_info"
+PersonalInfo_Title_ID = package + FindSource(Source_PersonalInfo_Title_ID)
+
+# 个人信息内容(text=Bio: Welcome to my stage🎤)
+Source_PersonalInfo_desc_ID = "personal_info_desc"
+PersonalInfo_desc_ID = package + FindSource(Source_PersonalInfo_desc_ID)
+
+# 【Album】专辑
+# 专辑Title(text=Album)
+Source_Album_Title_ID = "tv_album_title"
+Album_Title_ID = package + FindSource(Source_Album_Title_ID)
+
+# 专辑图片（count -1 = 实际图片数量）
+Album_Photo_ClaS = "android.widget.ScrollView"
+
+# 【Top Fans】收到的星光排行
+# 星光榜Title(text=Top Fans)
+Source_TopFans_Title_ID = "tv_top_fan"
+TopFans_Title_ID = package + FindSource(Source_TopFans_Title_ID)
+
+# 星光值（text=16）
+Source_Starlight_ID = "tv_receive_stars"
+Starlight_ID = package + FindSource(Source_Starlight_ID)
+
+# TopFans头像
+Source_TopFans_First_ID = "iv_top_fans_first"
+TopFans_First_ID = package + FindSource(Source_TopFans_First_ID)
+
+Source_TopFans_Second_ID = "iv_top_fans_second"
+TopFans_Second_ID = package + FindSource(Source_TopFans_Second_ID)
+
+Source_TopFans_Third_ID = "iv_top_fans_third"
+TopFans_Third_ID = package + FindSource(Source_TopFans_Third_ID)
+
+# 【Contribute】送出的金币统计
+# 送礼榜Title(text=Contribute)
+Contribute_Title_AU = "new UiSelector().text(\"Contribute\")"
+
+# 送礼榜金币数
+Source_Contribute_Gold_ID = "tv_contribute"
+Contribute_Gold_ID = package + FindSource(Source_Contribute_Gold_ID)
+
+# 【Store】商城
+# 商城Title(text=Store)
+Source_Store_Title_ID = "tv_stores"
+Store_Title_ID = package + FindSource(Source_Store_Title_ID)
