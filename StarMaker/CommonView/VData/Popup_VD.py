@@ -45,3 +45,22 @@ Popup_VerifyEmail_Verify_ID = package + FindSource(Source_Popup_VerifyEmail_Veri
 # 发布图片引导(text=Click to post a photo)/发布图片+文字引导(text=Post texts with background photo.)
 Source_Popup_PostGuide_ID = "text"
 Popup_PostGuide_ID = package + FindSource(Source_Popup_PostGuide_ID)
+
+# ----------
+# 4>录制准备页
+# ----------
+
+# 权限申请(text=Ok, Let's do it.)
+Source_Popup_Jurisdiction_ID = "permissionOkTv"
+Popup_Jurisdiction_ID = package + FindSource(Source_Popup_Jurisdiction_ID)
+
+# 总是允许
+Popup_PermissionAllow_ID = "permission_allow_button"
+
+# 插入耳机引导(text=I KNOW)
+Source_Popup_HeadphonesRecommended_ID = "recording_headset_dialog_i_know_btn"
+Popup_HeadphonesRecommended_ID = package + FindSource(Source_Popup_HeadphonesRecommended_ID)
+
+# 音效引导(text=Change the song's pitch to match \n your voice!)
+Source_Popup_PitchGuide_ID = "tv_pitch_guide_tip"
+Popup_PitchGuide_ID = package + FindSource(Source_Popup_PitchGuide_ID)

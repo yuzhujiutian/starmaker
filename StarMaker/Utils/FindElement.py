@@ -24,6 +24,7 @@ class find_element(object):
 
     def ID(self, ID):
         try:
+            print(ID)
             element_id = self.driver.find_element_by_id(ID)
             return element_id
         except:

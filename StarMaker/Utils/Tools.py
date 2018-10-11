@@ -71,25 +71,35 @@ class PopupProcessing(object):
             global element
             element = elements.get(key)
             if key == "ID":
-                PopupProcessing().ID()
+                if PopupProcessing().ID():
+                    return True
             elif key == "IDS":
-                PopupProcessing().IDS()
+                if PopupProcessing().IDS():
+                    return True
             elif key == "Cla":
-                PopupProcessing().Cla()
+                if PopupProcessing().Cla():
+                    return True
             elif key == "ClaS":
-                PopupProcessing().ClaS()
+                if PopupProcessing().ClaS():
+                    return True
             elif key == "AID":
-                PopupProcessing().AID()
+                if PopupProcessing().AID():
+                    return True
             elif key == "AIDS":
-                PopupProcessing().AIDS()
+                if PopupProcessing().AIDS():
+                    return True
             elif key == "AU":
-                PopupProcessing().AU()
+                if PopupProcessing().AU():
+                    return True
             elif key == "AUS":
-                PopupProcessing().AUS()
+                if PopupProcessing().AUS():
+                    return True
             elif key == "Xpa":
-                PopupProcessing().Xpa()
+                if PopupProcessing().Xpa():
+                    return True
             elif key == "XpaS":
-                PopupProcessing().XpaS()
+                if PopupProcessing().XpaS():
+                    return True
             else:
                 print(key)
                 return False
@@ -739,3 +749,28 @@ class RegionalSliding(object):
         print(x, y1)
         print(x, y2)
         self.driver.swipe(x, y2, x, y1, 500)
+
+
+# 区域点击(针对NAF=true的元素进行点击)
+class RegionalClick(object):
+    def __init__(self, elements):
+        self.driver = GetAppiumDeriver().driver
+        # 获取当前元素bounds
+        bounds = self.driver.find_element_by_id(elements).get_attribute("bounds")
+        time.sleep(2)
+        # 提取bounds中坐标值
+        Bounds = re.findall(r"\[(.+?)\]", bounds)
+        self.x1 = re.findall(r".+"",", Bounds[0])[0].strip().strip(",")
+        self.y1 = re.findall(r","".+", Bounds[0])[0].strip().strip(",")
+        self.x2 = re.findall(r".+"",", Bounds[1])[0].strip().strip(",")
+        self.y2 = re.findall(r","".+", Bounds[1])[0].strip().strip(",")
+
+    # 元素中心点击
+    def CoreClick(self):
+        x = int(self.x1) + (int(self.x2) - int(self.x1)) / 2
+        y = int(self.y1) + (int(self.y2) - int(self.y1)) / 2
+        self.driver.tap([(x, y)], 500)
+
+
+# if __name__ == '__main__':
+#     Screen().CalculatedPercentage(725, 2260)

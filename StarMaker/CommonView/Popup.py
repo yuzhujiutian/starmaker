@@ -2,6 +2,7 @@
 # ----------
 # 弹窗
 # ----------
+import time
 from Utils import Tools
 from CommonView.VData import Popup_VD
 from Utils.GetAppiumDeriver import GetAppiumDeriver
@@ -71,3 +72,32 @@ class Popup(object):
         state = self.FindElement(ID=[Popup_VD.Popup_PostGuide_ID, "Post texts with background photo."])
         if state:
             self.driver.find_element_by_id(Popup_VD.Popup_PostGuide_ID).click()
+
+    # ----------
+    # 4>录制准备页
+    # ----------
+
+    # 权限申请(text=Ok, Let's do it.)
+    def SingPopup_Jurisdiction_LiveClick(self):
+        state = self.FindElement(ID=[Popup_VD.Popup_Jurisdiction_ID, "Ok, Let's do it."])
+        if state:
+            self.driver.find_element_by_id(Popup_VD.Popup_Jurisdiction_ID).click()
+            time.sleep(1)
+            self.driver.find_element_by_id(Popup_VD.Popup_PermissionAllow_ID).click()
+            time.sleep(1)
+            self.driver.find_element_by_id(Popup_VD.Popup_PermissionAllow_ID).click()
+            time.sleep(1)
+            self.driver.find_element_by_id(Popup_VD.Popup_PermissionAllow_ID).click()
+            time.sleep(1)
+
+    # 插入耳机引导(text=I KNOW)
+    def SingPopup_HeadphonesRecommended_LiveClick(self):
+        state = self.FindElement(ID=[Popup_VD.Popup_HeadphonesRecommended_ID, "I KNOW"])
+        if state:
+            self.driver.find_element_by_id(Popup_VD.Popup_HeadphonesRecommended_ID).click()
+
+    # 音效引导(text=Change the song's pitch to match \n your voice!)
+    def SingPopup_PitchGuide_LiveClick(self):
+        state = self.FindElement(ID=[Popup_VD.Popup_PitchGuide_ID, "Change the song's pitch to match \n your voice!"])
+        if state:
+            self.driver.find_element_by_id(Popup_VD.Popup_PitchGuide_ID).click()

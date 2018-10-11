@@ -99,3 +99,33 @@ Contribute_Gold_ID = package + FindSource(Source_Contribute_Gold_ID)
 # 商城Title(text=Store)
 Source_Store_Title_ID = "tv_stores"
 Store_Title_ID = package + FindSource(Source_Store_Title_ID)
+
+# ----------
+# Tab——POST
+# ----------
+
+# Posts Count(text=12 Posts)
+Source_PostsCount_ID = "count"
+PostsCount_ID = package + FindSource(Source_PostsCount_ID)
+
+# Posts 作品名称([1]第一个作品名/[2]第二个作品名)
+Source_PostsName_IDS = "com.starmakerinteractive.starmaker:id/txt_title"
+PostsName_IDS = package + FindSource(Source_PostsName_IDS)
+
+# Posts Repost
+Source_RepostBtn_ID = "txt_repost"
+RepostBtn_ID = package + FindSource(Source_RepostBtn_ID)
+
+# Posts Comment
+Source_CommentBtn_ID = "txt_comment"
+CommentBtn_ID = package + FindSource(Source_CommentBtn_ID)
+
+# Posts Share
+Source_ShareBtn_ID = "tv_share"
+ShareBtn_ID = package + FindSource(Source_ShareBtn_ID)
+
+# Share——Copy Link(倒数第二个)
+Source_CopyLink_Cla = "tv_share"
+CopyLink_ClaS = package + FindSource(Source_CopyLink_Cla)
+
+

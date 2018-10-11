@@ -68,3 +68,28 @@ class Home(object):
     def HomeTab_Profile(self):
         HomeTab_Profile_Class = self.findClaS(Home_VD.Home_Tab_Cla, 4)
         return HomeTab_Profile_Class
+
+    # ----------
+    # 选择发布类型
+    # ----------
+
+    # 选择发布类型([0]Album/[1]Camera/[2]Text/[3]Sing/[4]关闭)
+    def PostType_Album(self):
+        PostType_ClaS = self.findClaS(Home_VD.PostType_ClaS, 0)
+        return PostType_ClaS
+
+    def PostType_Camera(self):
+        PostType_ClaS = self.findClaS(Home_VD.PostType_ClaS, 1)
+        return PostType_ClaS
+
+    def PostType_Text(self):
+        PostType_ClaS = self.findClaS(Home_VD.PostType_ClaS, 2)
+        return PostType_ClaS
+
+    def PostType_Sing(self):
+        PostType_ClaS = self.findClaS(Home_VD.PostType_ClaS, 3)
+        return PostType_ClaS
+
+    def PostType_Close(self):
+        PostType_ClaS = self.findClaS(Home_VD.PostType_ClaS, 4)
+        return PostType_ClaS

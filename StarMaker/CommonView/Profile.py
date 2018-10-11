@@ -50,12 +50,17 @@ class Profile(object):
         Profile_RankRecords_ID = self.findID(Profile_VD.Profile_RankRecords_ID)
         return Profile_RankRecords_ID
 
-    # 功能栏
+    # Tab栏——Posts
+    def Profile_Tab_POSTS(self):
+        Profile_TabBar_IDS = self.findIDS(Profile_VD.Profile_TabBar_IDS, 2)
+        return Profile_TabBar_IDS
+
+    # 功能栏(用于校验)
     def Profile_FunctionBar(self):
         Profile_FunctionBar_IDS = Profile_VD.Profile_FunctionBar_IDS
         return Profile_FunctionBar_IDS
 
-    # Tab栏
+    # Tab栏(用于校验)
     def Profile_TabBar(self):
         Profile_TabBar_IDS = Profile_VD.Profile_TabBar_IDS
         return Profile_TabBar_IDS
@@ -138,3 +143,32 @@ class Profile(object):
     def Store_Title(self):
         Store_Title_ID = self.findID(Profile_VD.Store_Title_ID)
         return Store_Title_ID
+
+    # ----------
+    # Tab——POST
+    # ----------
+
+    # Posts Count(text=12 Posts)
+    def PostsCount(self):
+        PostsCount_ID = self.findID(Profile_VD.PostsCount_ID)
+        return PostsCount_ID
+
+    # Posts 作品名称([1]第一个作品名/[2]第二个作品名)
+    def PostsName_First(self):
+        PostsName_IDS = self.findIDS(Profile_VD.PostsName_IDS, 1)
+        return PostsName_IDS
+
+    # Posts Repost
+    def RepostBtn(self):
+        RepostBtn_ID = self.findID(Profile_VD.RepostBtn_ID)
+        return RepostBtn_ID
+
+    # Posts Share
+    def ShareBtn(self):
+        ShareBtn_ID = self.findID(Profile_VD.ShareBtn_ID)
+        return ShareBtn_ID
+
+    # Share——Copy Link(倒数第二个)
+    def CopyLink(self):
+        CopyLink_ClaS = self.findClaS(Profile_VD.CopyLink_ClaS, -2)
+        return CopyLink_ClaS
