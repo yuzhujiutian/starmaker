@@ -50,10 +50,15 @@ class Profile(object):
         Profile_RankRecords_ID = self.findID(Profile_VD.Profile_RankRecords_ID)
         return Profile_RankRecords_ID
 
+    # Tab栏——PROFILE
+    def Profile_Tab_PROFILE(self):
+        Profile_TabBar_AU = self.findAU(Profile_VD.Profile_Tab_PROFILE_AU)
+        return Profile_TabBar_AU
+
     # Tab栏——Posts
     def Profile_Tab_POSTS(self):
-        Profile_TabBar_IDS = self.findIDS(Profile_VD.Profile_TabBar_IDS, 2)
-        return Profile_TabBar_IDS
+        Profile_TabBar_AU = self.findAU(Profile_VD.Profile_Tab_POSTS_AU)
+        return Profile_TabBar_AU
 
     # 功能栏(用于校验)
     def Profile_FunctionBar(self):

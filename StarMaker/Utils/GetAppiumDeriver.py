@@ -28,6 +28,7 @@ class GetAppiumDeriver(object):
         desired_caps["unicodeKeyboard"] = Setting.UnicodeKeyboard
         desired_caps["resetKeyboard"] = Setting.ResetKeyboard
         desired_caps["automationName"] = Setting.AutomationName
+        desired_caps["autoGrantPermissions"] = Setting.AutoGrantPermissions
         # noReset决定是否清除app数据
         desired_caps["noReset"] = Setting.NoReset
         self.driver = webdriver.Remote(Setting.desired_IP, desired_caps)

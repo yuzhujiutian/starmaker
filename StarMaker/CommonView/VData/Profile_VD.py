@@ -47,6 +47,13 @@ Profile_FunctionBar_IDS = package + FindSource(Source_Profile_FunctionBar_IDS)
 Source_Profile_TabBar_IDS = "vtb_pager"
 Profile_TabBar_IDS = package + FindSource(Source_Profile_TabBar_IDS)
 
+# Tab栏4 Tab(text=PROFILE/MOMENTS/POSTS/COLLABS)
+Profile_Tab_PROFILE_AU = "new UiSelector().text(\"PROFILE\")"
+Profile_Tab_MOMENTS_AU = "new UiSelector().text(\"MOMENTS\")"
+Profile_Tab_POSTS_AU = "new UiSelector().text(\"POSTS\")"
+Profile_Tab_COLLABS_AU = "new UiSelector().text(\"COLLABS\")"
+
+
 # ----------
 # Tab——PROFILE
 # ----------

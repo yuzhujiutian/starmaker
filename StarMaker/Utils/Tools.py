@@ -773,4 +773,6 @@ class RegionalClick(object):
 
 
 # if __name__ == '__main__':
-#     Screen().CalculatedPercentage(725, 2260)
+    # Screen().CalculatedPercentage(1300, 2450)
+    # A = Tools.FindSource("btn_post")
+    # print(A)

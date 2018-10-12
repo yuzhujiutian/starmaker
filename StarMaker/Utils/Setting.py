@@ -7,6 +7,7 @@ desired_IP = "http://127.0.0.1:4723/wd/hub"
 PlatformName = "Android"
 # AutomationName = "UiAutomator2"
 AutomationName = "Appium"
+AutoGrantPermissions = True
 UnicodeKeyboard = True
 ResetKeyboard = True
 NoReset = True

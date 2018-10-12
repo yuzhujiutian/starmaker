@@ -5,6 +5,7 @@ from CommonView.StartUp import StartUp
 from CommonView.LogIn import LogIn
 from CommonView.Home import Home
 from CommonView.SignUp import SignUp
+from CommonView.Popup import Popup
 from Utils.Tools import Tools
 from Utils.GetAppiumDeriver import GetAppiumDeriver
 from Utils.ReadXMLData import ReadXMLData
@@ -48,6 +49,8 @@ class EmailLogInCase(unittest.TestCase):
         # 判断账号输入框为空
         time.sleep(1)
         self.assertEqual(expValue, actValue)
+        LogIn().Email_Username_Box().clear()
+        LogIn().Email_Password_Box().clear()
 
     # Email登录输入框功能验证——清空Pwd
     def test_Case002_InputFunction_ClearingPasswordCase(self):
@@ -64,6 +67,7 @@ class EmailLogInCase(unittest.TestCase):
         # 判断密码输入框为空
         time.sleep(1)
         self.assertEqual(expValue, actValue)
+        LogIn().Email_Username_Box().clear()
         LogIn().Email_Password_Box().clear()
 
     # Email登录输入框功能验证——展示明文密码
@@ -81,6 +85,7 @@ class EmailLogInCase(unittest.TestCase):
         # 判断是否成功展示明文密码
         time.sleep(1)
         self.assertEqual(expValue, actValue)
+        LogIn().Email_Username_Box().clear()
         LogIn().Email_Password_Box().clear()
 
     # Email登录——未输入账号时忘记密码光标焦到账户输入框
@@ -94,6 +99,8 @@ class EmailLogInCase(unittest.TestCase):
         # 判断光标是否成功聚焦
         time.sleep(1)
         self.assertEqual(expValue, actValue)
+        LogIn().Email_Username_Box().clear()
+        LogIn().Email_Password_Box().clear()
 
     # Email登录——未输入账号时忘记密码输入框下方提示不能为空：Your email cannot be empty.
     def test_Case005_ForgotPassword_EmailError_EmptyCase(self):
@@ -102,6 +109,8 @@ class EmailLogInCase(unittest.TestCase):
         actValue = LogIn().Email_Username_Error().text
         time.sleep(1)
         self.assertEqual(expValue, actValue)
+        LogIn().Email_Username_Box().clear()
+        LogIn().Email_Password_Box().clear()
 
     # Email登录——账号错误提示：未注册
     def test_Case006_EmailError_NotRegisteredCase(self):
@@ -119,38 +128,40 @@ class EmailLogInCase(unittest.TestCase):
         actValue = LogIn().Email_Username_Error().text
         time.sleep(1)
         self.assertEqual(expValue, actValue)
+        LogIn().Email_Username_Box().clear()
+        LogIn().Email_Password_Box().clear()
 
-    # Email登录——Sign Up跳转注册页
-    def test_Case007_EmailError_SignUp_linkCase(self):
-        # 输入未注册账号/密码
-        LogIn().Email_Username_Box().send_keys(
-            ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "NotRegisteredEmail"))
-        LogIn().Email_Password_Box().send_keys(
-            ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Password"))
-        time.sleep(1)
-        # 点击登录按钮
-        LogIn().LogIn_Confirm_Btn().click()
-        time.sleep(5)
-        # 点击SignUp
-        LogIn().Email_Username_SignUpNow_ACP()
-        # self.driver.tap([(1030, 650)], 500)
-        time.sleep(1)
-        expValue = "输入邮箱"
-        # 获取注册页Tips值
-        actValue = SignUp().SignUp_Tips().text
-        # 验证是否跳转成功
-        time.sleep(1)
-        self.assertEqual(expValue, actValue)
-        # 为Email登录Case 执行tearDown:
-        # 1.返回
-        self.driver.back()
-        time.sleep(10)
-        # 2.点击邮箱登录按钮
-        StartUp().Email_LogIn_Btn_R()
-        time.sleep(1)
-        # 3.点击登录弹窗中LogIn按钮
-        LogIn().EmailWindow_LogIn_Btn().click()
-        time.sleep(1)
+    # # Email登录——Sign Up跳转注册页
+    # def test_Case007_EmailError_SignUp_linkCase(self):
+    #     # 输入未注册账号/密码
+    #     LogIn().Email_Username_Box().send_keys(
+    #         ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "NotRegisteredEmail"))
+    #     LogIn().Email_Password_Box().send_keys(
+    #         ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Password"))
+    #     time.sleep(1)
+    #     # 点击登录按钮
+    #     LogIn().LogIn_Confirm_Btn().click()
+    #     time.sleep(5)
+    #     # 点击SignUp
+    #     LogIn().Email_Username_SignUpNow_ACP()
+    #     # self.driver.tap([(1030, 650)], 500)
+    #     time.sleep(1)
+    #     expValue = "输入邮箱"
+    #     # 获取注册页Tips值
+    #     actValue = SignUp().SignUp_Tips().text
+    #     # 验证是否跳转成功
+    #     time.sleep(1)
+    #     self.assertEqual(expValue, actValue)
+    #     # 为Email登录Case 执行tearDown:
+    #     # 1.返回
+    #     self.driver.back()
+    #     time.sleep(10)
+    #     # 2.点击邮箱登录按钮
+    #     StartUp().Email_LogIn_Btn_R()
+    #     time.sleep(1)
+    #     # 3.点击登录弹窗中LogIn按钮
+    #     LogIn().EmailWindow_LogIn_Btn().click()
+    #     time.sleep(1)
 
     # Email登录——密码错误提示
     def test_Case008_EmailError_PwdIncorrect(self):
@@ -169,9 +180,11 @@ class EmailLogInCase(unittest.TestCase):
         # 判断是否提示密码输入错误
         time.sleep(1)
         self.assertEqual(expValue, actValue)
+        LogIn().Email_Username_Box().clear()
+        LogIn().Email_Password_Box().clear()
 
     # Email登录——新装包首次登录成功
-    def test_Case008_EmailLogIn(self):
+    def test_Case009_EmailLogIn(self):
         # 输入邮箱
         LogIn().Email_Username_Box().send_keys(
             ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Email"))
@@ -181,12 +194,21 @@ class EmailLogInCase(unittest.TestCase):
         # 点击LogIn
         LogIn().LogIn_Confirm_Btn().click()
         time.sleep(5)
-        expValue = "Share your pictures and view what's shared by others."
-        # 记录首页New Feature引导文案
-        actValue = Home().HomePage_NewFeature_Tips().text
-        # 判断是否新装包首次登录成功——展示New Feature引导
+        actValue = Home().HomePage_NewFeature_Tips()
         time.sleep(1)
-        self.assertEqual(expValue, actValue)
+        # 判断是否新装包登录成功——NewFeature引导
+        self.assertTrue(actValue)
+        time.sleep(3)
+        Popup().HomePopup_NewFeature_NEXT_LiveClick()
+        time.sleep(1)
+        Popup().HomePopup_NewFeatureAdded_NEXT_LiveClick()
+        time.sleep(1)
+        Popup().HomePopup_NewFeatureSing_NEXT_LiveClick()
+        time.sleep(1)
+        Popup().HomePopup_NewFeaturePostOther_DONE_LiveClick()
+        time.sleep(1)
+        Popup().HomePopup_PermissionMessage_Allow_LiveClick()
+        time.sleep(1)
 
 
 # if __name__ == "__main__":

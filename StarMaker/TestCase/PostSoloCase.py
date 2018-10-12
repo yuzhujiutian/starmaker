@@ -18,8 +18,8 @@ class PostSoloCase(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = GetAppiumDeriver().driver
-        Popup().HomePopup_CheckIn_Close_LiveClick()
         time.sleep(5)
+        Popup().HomePopup_CheckIn_Close_LiveClick()
 
     def setUp(self):
         time.sleep(1)
@@ -63,6 +63,7 @@ class PostSoloCase(unittest.TestCase):
         time.sleep(1)
         Library().SongInfoPage_SingType_Solo().click()
         time.sleep(5)
+        Popup().SingPopup_Jurisdiction_LiveClick()
         expValue = "I KNOW"
         # actValue = Sing().RecordStart().get_attribute("bounds")  T32733
         actValue = Sing().HeadphonesRecommended().text
@@ -72,6 +73,7 @@ class PostSoloCase(unittest.TestCase):
 
     # 录制歌曲——录制完成跳转至预发布页面
     def test_Case004_RecordingCase(self):
+        time.sleep(10)
         # Popup().SingPopup_HeadphonesRecommended_LiveClick()  T32733
         Sing().HeadphonesRecommended().click()
         time.sleep(1)
@@ -88,9 +90,15 @@ class PostSoloCase(unittest.TestCase):
         # # 等待歌曲录制完成
         # time.sleep(Time)
         Screen().DIYSwipe_Percentage(0.5, 0.65, 0.5, 0.2, 200)
-        time.sleep(5)
+        time.sleep(2)
         Screen().DIYSwipe_Percentage(0.5, 0.65, 0.5, 0.2, 200)
-        time.sleep(10)
+        time.sleep(2)
+        Screen().DIYSwipe_Percentage(0.5, 0.65, 0.5, 0.2, 200)
+        time.sleep(2)
+        Screen().DIYSwipe_Percentage(0.5, 0.65, 0.5, 0.2, 200)
+        time.sleep(2)
+        Screen().DIYSwipe_Percentage(0.5, 0.65, 0.5, 0.2, 200)
+        time.sleep(20)
         expValue = "POST"
         actValue = Sing().PostBtn().text
         time.sleep(1)
@@ -100,7 +108,7 @@ class PostSoloCase(unittest.TestCase):
     # 发布歌曲——发布完成跳转至首页
     def test_Case005_PostRecordCase(self):
         Sing().PostBtn().click()
-        time.sleep(3)
+        time.sleep(5)
         Sing().EditSend().click()
         time.sleep(3)
         Sing().ScoreDone().click()
@@ -111,6 +119,7 @@ class PostSoloCase(unittest.TestCase):
         time.sleep(1)
         # 判断跳转正确
         self.assertEqual(expValue, actValue)
+        time.sleep(3)
 
     # 现状不会实时更新
     # # 查看个人页Posts是否+1

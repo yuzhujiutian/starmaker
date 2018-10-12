@@ -17,29 +17,53 @@ class Popup(object):
     # ----------
     # 1>首页弹窗
     # ----------
-    # NewFeature引导，如果存在则点击NEXT
-    def HomePopup_NewFeature_OK_LiveClick(self):
+    # ①NewFeature引导，如果存在则点击NEXT
+    def HomePopup_NewFeature_NEXT_LiveClick(self):
         state = self.FindElement(AU=[Popup_VD.Popup_NewFeature_AU, "Only for your taste. Hope you love them."])
         if state:
             self.driver.find_element_by_android_uiautomator(Popup_VD.Popup_NEXT).click()
 
-    # Ranking 引导，如果存在则点击Next
-    def HomePopup_RankingGuide_Next_LiveClick(self):
-        state = self.FindElement(ID=[Popup_VD.Popup_Guide_Next_ID, "NEXT"])
+    # ②NewFeature Added引导，如果存在则点击NEXT
+    def HomePopup_NewFeatureAdded_NEXT_LiveClick(self):
+        state = self.FindElement(AU=[Popup_VD.Popup_NewFeatureAdded_AU, "New feature added. Tap to post your stories."])
         if state:
-            self.driver.find_element_by_id(Popup_VD.Popup_Guide_Next_ID).click()
+            self.driver.find_element_by_android_uiautomator(Popup_VD.Popup_NEXT).click()
 
-    # Parties 引导，如果存在泽点击Next
-    def HomePopup_PartiesGuide_Next_LiveClick(self):
-        state = self.FindElement(ID=[Popup_VD.Popup_Guide_Next_ID, "NEXT"])
+    # ③登陆后首页 Sing 引导（text=Sing is moved here. Tap to show your voice./NEXT）
+    def HomePopup_NewFeatureSing_NEXT_LiveClick(self):
+        state = self.FindElement(AU=[Popup_VD.Popup_NewFeatureSing_AU, "Sing is moved here. Tap to show your voice."])
         if state:
-            self.driver.find_element_by_id(Popup_VD.Popup_Guide_Next_ID).click()
+            self.driver.find_element_by_android_uiautomator(Popup_VD.Popup_NEXT).click()
 
-    # Live 引导，如果存在泽点击Done
-    def HomePopup_LiveGuide_Done_LiveClick(self):
-        state = self.FindElement(ID=[Popup_VD.Popup_Guide_Next_ID, "DONE"])
+    # ④登陆后首页 PostOther 引导（text=Post Photo,Gif and Video here/DONE）
+    def HomePopup_NewFeaturePostOther_DONE_LiveClick(self):
+        state = self.FindElement(AU=[Popup_VD.Popup_NewFeaturePostOther_AU, "Post Photo,Gif and Video here"])
         if state:
-            self.driver.find_element_by_id(Popup_VD.Popup_Guide_Next_ID).click()
+            self.driver.find_element_by_android_uiautomator(Popup_VD.Popup_DONE).click()
+
+    # 位置信息权限弹窗
+    def HomePopup_PermissionMessage_Allow_LiveClick(self):
+        state = self.FindElement(ID=[Popup_VD.Popup_PermissionMessage_ID, "要允许StarMaker获取此设备的位置信息吗？"])
+        if state:
+            self.driver.find_element_by_id(Popup_VD.Popup_PermissionMessage_Allow_ID).click()
+
+    # # Ranking 引导，如果存在则点击Next
+    # def HomePopup_RankingGuide_Next_LiveClick(self):
+    #     state = self.FindElement(ID=[Popup_VD.Popup_Guide_Next_ID, "NEXT"])
+    #     if state:
+    #         self.driver.find_element_by_id(Popup_VD.Popup_Guide_Next_ID).click()
+    #
+    # # Parties 引导，如果存在泽点击Next
+    # def HomePopup_PartiesGuide_Next_LiveClick(self):
+    #     state = self.FindElement(ID=[Popup_VD.Popup_Guide_Next_ID, "NEXT"])
+    #     if state:
+    #         self.driver.find_element_by_id(Popup_VD.Popup_Guide_Next_ID).click()
+    #
+    # # Live 引导，如果存在泽点击Done
+    # def HomePopup_LiveGuide_Done_LiveClick(self):
+    #     state = self.FindElement(ID=[Popup_VD.Popup_Guide_Next_ID, "DONE"])
+    #     if state:
+    #         self.driver.find_element_by_id(Popup_VD.Popup_Guide_Next_ID).click()
 
     # 签到按钮，如果存在，需点击通用close按钮
     def HomePopup_CheckIn_Close_LiveClick(self):
@@ -58,7 +82,7 @@ class Popup(object):
             self.driver.find_element_by_id(Popup_VD.Popup_ImgClose_ID).click()
 
     # ----------
-    # 3>点唱页页弹窗
+    # 3>点唱页弹窗
     # ----------
 
     # 发布图片引导(text=Click to post a photo)
@@ -80,9 +104,10 @@ class Popup(object):
     # 权限申请(text=Ok, Let's do it.)
     def SingPopup_Jurisdiction_LiveClick(self):
         state = self.FindElement(ID=[Popup_VD.Popup_Jurisdiction_ID, "Ok, Let's do it."])
+        print(state)
         if state:
             self.driver.find_element_by_id(Popup_VD.Popup_Jurisdiction_ID).click()
-            time.sleep(1)
+            time.sleep(2)
             self.driver.find_element_by_id(Popup_VD.Popup_PermissionAllow_ID).click()
             time.sleep(1)
             self.driver.find_element_by_id(Popup_VD.Popup_PermissionAllow_ID).click()

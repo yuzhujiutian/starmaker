@@ -18,15 +18,18 @@ class ProfileCase(unittest.TestCase):
     def setUpClass(cls):
         cls.driver = GetAppiumDeriver().driver
         time.sleep(5)
+        Popup().HomePopup_CheckIn_Close_LiveClick()
         # 如果未登录
         if LogIn.StartUpTransition():
             # 处理首登引导弹窗
-            Popup().HomePopup_NewFeature_OK_LiveClick()
-            Popup().HomePopup_RankingGuide_Next_LiveClick()
-            print("Parties NEXT")
-            Popup().HomePopup_PartiesGuide_Next_LiveClick()
-            print("Live DONE")
-            Popup().HomePopup_LiveGuide_Done_LiveClick()
+            Popup().HomePopup_NewFeature_NEXT_LiveClick()
+            time.sleep(1)
+            Popup().HomePopup_NewFeatureAdded_NEXT_LiveClick()
+            time.sleep(1)
+            Popup().HomePopup_NewFeatureSing_NEXT_LiveClick()
+            time.sleep(1)
+            Popup().HomePopup_NewFeaturePostOther_DONE_LiveClick()
+            time.sleep(1)
             # 点击Profile-Tab进入Profile页
             Home().HomeTab_Profile().click()
             # 处理邮箱认证弹窗
@@ -34,12 +37,14 @@ class ProfileCase(unittest.TestCase):
         else:
             # 处理签到弹窗
             Popup().HomePopup_CheckIn_Close_LiveClick()
-            # 点击Profile-Tab进入Profile页
-            time.sleep(2)
-            Home().HomeTab_Profile().click()
-            time.sleep(2)
+            time.sleep(3)
+            # # 点击Profile-Tab进入Profile页
+            # Home().HomeTab_Profile().click()
+            Screen().AccurateClicks_Percentage(0.902, 0.957, 500)
+            time.sleep(3)
             # 处理邮箱认证弹窗
             Popup().HomePopup_VerifyEmail_Close_LiveClick()
+            time.sleep(5)
 
     def setUp(self):
         time.sleep(1)
@@ -139,6 +144,9 @@ class ProfileCase(unittest.TestCase):
         expValue = "Personal info"
         # 向上滑动1/2屏
         Screen().SWipeUp_Half()
+        time.sleep(2)
+        Profile().Profile_Tab_PROFILE().click()
+        time.sleep(1)
         # 获取 Personal_Info Title
         actValue = Profile().PersonalInfo_Title().text
         # 判断 Personal_Info 正常展示
@@ -237,3 +245,4 @@ class ProfileCase(unittest.TestCase):
         # 判断 Contribute 正常展示
         time.sleep(1)
         self.assertEqual(expValue, actValue)
+        time.sleep(3)

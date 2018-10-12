@@ -18,6 +18,18 @@ Popup_ImgClose_ID = package + FindSource(Source_Popup_ImgClose_ID)
 # ①登陆后首页 New Feature 引导（text=Only for your taste. Hope you love them./NEXT）
 Popup_NewFeature_AU = "new UiSelector().text(\"Only for your taste. Hope you love them.\")"
 Popup_NEXT = "new UiSelector().text(\"NEXT\")"
+# ②登陆后首页 New Feature Added 引导（text=New feature added. Tap to post your stories./NEXT）
+Popup_NewFeatureAdded_AU = "new UiSelector().text(\"New feature added. Tap to post your stories.\")"
+# ③登陆后首页 Sing 引导（text=Sing is moved here. Tap to show your voice./NEXT）
+Popup_NewFeatureSing_AU = "new UiSelector().text(\"Sing is moved here. Tap to show your voice.\")"
+# ④登陆后首页 PostOther 引导（text=Post Photo,Gif and Video here/DONE）
+Popup_NewFeaturePostOther_AU = "new UiSelector().text(\"Post Photo,Gif and Video here\")"
+Popup_DONE = "new UiSelector().text(\"DONE\")"
+
+# 首页位置信息权限弹窗(text=要允许StarMaker获取此设备的位置信息吗？)
+Popup_PermissionMessage_ID = "com.android.packageinstaller:id/permission_message"
+Popup_PermissionMessage_Allow_ID = "com.android.packageinstaller:id/permission_allow_button"
+
 # ②③登陆后首页 Ranking/Parties 引导 文案（text="Ranking and Hashtag are moved here"/Parties are moved here）
 Source_Popup_GuideText_ID = "content_tv"
 Popup_Guide_Text_ID = package + FindSource(Source_Popup_GuideText_ID)
@@ -55,7 +67,7 @@ Source_Popup_Jurisdiction_ID = "permissionOkTv"
 Popup_Jurisdiction_ID = package + FindSource(Source_Popup_Jurisdiction_ID)
 
 # 总是允许
-Popup_PermissionAllow_ID = "permission_allow_button"
+Popup_PermissionAllow_ID = "com.android.packageinstaller:id/permission_allow_button"
 
 # 插入耳机引导(text=I KNOW)
 Source_Popup_HeadphonesRecommended_ID = "recording_headset_dialog_i_know_btn"

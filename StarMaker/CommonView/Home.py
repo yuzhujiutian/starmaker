@@ -15,30 +15,32 @@ class Home(object):
         self.findClaS = find_element().ClaS
         self.findXpa = find_element().Xpa
         self.findAID = find_element().AID
+        self.findAU = find_element().AU
 
     # ----------
     # 登陆后首页引导弹窗
     # ----------
 
-    # 首页 New Feature 引导——Title
-    def HomePage_NewFeature_Title(self):
-        HomePage_NewFeature_Title_Class = self.findClaS(Home_VD.HomePage_NewFeature_Class, 0)
-        return HomePage_NewFeature_Title_Class
-
     # 首页 New Feature 引导——Tips
     def HomePage_NewFeature_Tips(self):
-        HomePage_NewFeature_Tips_Class = self.findClaS(Home_VD.HomePage_NewFeature_Class, 1)
-        return HomePage_NewFeature_Tips_Class
+        HomePage_NewFeature_Tips_AU = self.findAU(Home_VD.HomePage_NewFeature_AU)
+        return HomePage_NewFeature_Tips_AU
+    #
+    # # 首页 New Feature 引导——Tips
+    # def HomePage_NewFeature_Tips(self):
+    #     HomePage_NewFeature_Tips_Class = self.findClaS(Home_VD.HomePage_NewFeature_Class, 1)
+    #     return HomePage_NewFeature_Tips_Class
+    #
+    # # 首页 New Feature 引导——OK按钮
+    # def HomePage_NewFeature_OK(self):
+    #     HomePage_NewFeature_OK_Class = self.findClaS(Home_VD.HomePage_NewFeature_Class, 2)
+    #     return HomePage_NewFeature_OK_Class
+    #
+    # # 首页 Ranking 引导（text="Ranking and Hashtag are moved here"）
+    # def HomePage_Guide(self):
+    #     HomePage_Guide_ID = self.findID(Home_VD.HomePage_Guide_ID)
+    #     return HomePage_Guide_ID
 
-    # 首页 New Feature 引导——OK按钮
-    def HomePage_NewFeature_OK(self):
-        HomePage_NewFeature_OK_Class = self.findClaS(Home_VD.HomePage_NewFeature_Class, 2)
-        return HomePage_NewFeature_OK_Class
-
-    # 首页 Ranking 引导（text="Ranking and Hashtag are moved here"）
-    def HomePage_Guide(self):
-        HomePage_Guide_ID = self.findID(Home_VD.HomePage_Guide_ID)
-        return HomePage_Guide_ID
 
     # ----------
     # 首页五Tab

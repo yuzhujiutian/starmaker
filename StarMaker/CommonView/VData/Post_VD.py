@@ -33,7 +33,7 @@ Source_PostBtn_ID = "btn_post"
 PostBtn_ID = package + FindSource(Source_PostBtn_ID)
 
 # 发布编辑页——SEND
-Source_EditSend_ID = "tv_done_activity_update_record_info"
+Source_EditSend_ID = "btn_next"
 EditSend_ID = package + FindSource(Source_EditSend_ID)
 
 # 评分页——DONE
