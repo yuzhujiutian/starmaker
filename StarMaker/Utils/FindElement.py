@@ -101,3 +101,13 @@ class find_element(object):
             print("As shown, the element is not found.")
             Tools().get_element_error_images()
             return False
+
+    def AUS(self, AU, num):
+        try:
+            elements_AUS = self.driver.find_elements_by_android_uiautomator(AU)[num]
+            return elements_AUS
+        except:
+            # 截图并上报
+            print("As shown, the element is not found.")
+            Tools().get_element_error_images()
+            return False

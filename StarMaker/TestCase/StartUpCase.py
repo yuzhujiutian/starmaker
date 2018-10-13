@@ -28,7 +28,7 @@ class StarUpCase(unittest.TestCase):
         expValue = '"sing with 50,000,000+ music lovers"'
         # 获取启动首页Tips文案
         actValue = StartUp().StartUpHome_Tips().text
-        time.sleep(1)
+        time.sleep(2)
         self.assertEqual(expValue, actValue)
 
     # 启动成功——解释说明验证
@@ -36,7 +36,7 @@ class StarUpCase(unittest.TestCase):
         expValue = "You agree to our Terms of Service & Privacy Policy"
         # 获取启动首页解释说明文案
         actValue = StartUp().StartUpHome_Explain().text
-        time.sleep(1)
+        time.sleep(2)
         self.assertEqual(expValue, actValue)
 
     # 登录方式验证——Email 登录
@@ -44,7 +44,7 @@ class StarUpCase(unittest.TestCase):
         expValue = True
         # 查找Email登录按钮，如果存在则返回True
         actValue = StartUp().LogInModeCase_Email()
-        time.sleep(1)
+        time.sleep(2)
         self.assertEqual(expValue, actValue)
 
     # 登录方式验证——Phone 登录
@@ -52,7 +52,7 @@ class StarUpCase(unittest.TestCase):
         expValue = True
         # 查找Phone登录按钮，如果存在则返回True
         actValue = StartUp().LogInModeCase_Phone()
-        time.sleep(1)
+        time.sleep(2)
         self.assertEqual(expValue, actValue)
 
     # 登录方式验证——Google 登录
@@ -60,7 +60,7 @@ class StarUpCase(unittest.TestCase):
         expValue = True
         # 查找Google登录按钮，如果存在则返回True
         actValue = StartUp().LogInModeCase_Google()
-        time.sleep(1)
+        time.sleep(2)
         self.assertEqual(expValue, actValue)
 
     # 登录方式验证——Facebook 登录
@@ -68,5 +68,5 @@ class StarUpCase(unittest.TestCase):
         expValue = True
         # 查找Email登录按钮，如果存在则返回True
         actValue = StartUp().LogInModeCase_Facebook()
-        time.sleep(1)
+        time.sleep(2)
         self.assertEqual(expValue, actValue)

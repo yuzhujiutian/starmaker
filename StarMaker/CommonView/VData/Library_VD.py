@@ -15,6 +15,12 @@ Library_SearchBox_ID = "com.starmakerinteractive.starmaker:id/tv_search_fragment
 # 2.第二组开始：[4]歌曲名/[5]上传用户/[6]歌手/[7]SING
 LibraryPage_SongInfo_ClaS = "android.widget.TextView"
 
+# 第二首歌曲——Sing按钮
+LibraryPage_SecondSong_SingBtn_AUS = "new UiSelector().text(\"SING\")"
+
+# Library页录制模式
+LibraryPage_SongMode_ClaS = "android.widget.TextView"
+
 # ----------
 # 搜索页
 # ----------

@@ -16,10 +16,10 @@ def StartUpTransition():
     if StartUp().LogInModeCase_Email():
         # 点击邮箱登录按钮
         StartUp().Email_LogIn_Btn().click()
-        time.sleep(1)
+        time.sleep(2)
         # 点击登录弹窗中LogIn按钮
         LogIn().EmailWindow_LogIn_Btn().click()
-        time.sleep(3)
+        time.sleep(2)
         # 输入邮箱
         LogIn().Email_Username_Box().send_keys(
             ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Email"))
@@ -46,10 +46,10 @@ def StartUpTransition():
             LogIn().CommonLogin_Btn().click()
             # 点击邮箱登录按钮
             StartUp().Email_LogIn_Btn()
-            time.sleep(1)
+            time.sleep(2)
             # 点击登录弹窗中LogIn按钮
             LogIn().EmailWindow_LogIn_Btn().click()
-            time.sleep(1)
+            time.sleep(2)
             # 输入邮箱
             LogIn().Email_Username_Box().send_keys(
                 ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Email"))

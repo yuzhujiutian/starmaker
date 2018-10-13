@@ -19,7 +19,7 @@ class EmailLogInCase(unittest.TestCase):
         time.sleep(5)
 
     def setUp(self):
-        time.sleep(1)
+        time.sleep(2)
 
     def tearDown(self):
         # 截图
@@ -35,19 +35,19 @@ class EmailLogInCase(unittest.TestCase):
         StartUp().Email_LogIn_Btn_R()
         # 点击登录弹窗中LogIn按钮
         LogIn().EmailWindow_LogIn_Btn().click()
-        time.sleep(1)
+        time.sleep(2)
         # 输入邮箱
         LogIn().Email_Username_Box().send_keys(
             ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Email"))
-        time.sleep(1)
+        time.sleep(2)
         # 点击清空Email
         LogIn().Email_Clear_EmailBox_Btn().click()
-        time.sleep(1)
+        time.sleep(2)
         expValue = ""
         # 获取账号输入框内容
         actValue = LogIn().Email_Username_Box().text
         # 判断账号输入框为空
-        time.sleep(1)
+        time.sleep(2)
         self.assertEqual(expValue, actValue)
         LogIn().Email_Username_Box().clear()
         LogIn().Email_Password_Box().clear()
@@ -57,15 +57,15 @@ class EmailLogInCase(unittest.TestCase):
         # 输入密码
         LogIn().Email_Password_Box().send_keys(
             ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Password"))
-        time.sleep(1)
+        time.sleep(2)
         # 点击清空Pwd
         LogIn().Email_Clear_PWDBox_Btn().click()
-        time.sleep(1)
+        time.sleep(2)
         expValue = ""
         # 获取密码输入框内容
         actValue = LogIn().Email_Password_Box().text
         # 判断密码输入框为空
-        time.sleep(1)
+        time.sleep(2)
         self.assertEqual(expValue, actValue)
         LogIn().Email_Username_Box().clear()
         LogIn().Email_Password_Box().clear()
@@ -75,15 +75,15 @@ class EmailLogInCase(unittest.TestCase):
         # 输入密码
         LogIn().Email_Password_Box().send_keys(
             ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Password"))
-        time.sleep(1)
+        time.sleep(2)
         # 点击展示明文密码
         LogIn().Email_ShowPassword_Btn().click()
-        time.sleep(1)
+        time.sleep(2)
         expValue = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Password")
         # 获取密码输入框内容（非明文text：••••••/明文text：000000）
         actValue = LogIn().Email_Password_Box().text
         # 判断是否成功展示明文密码
-        time.sleep(1)
+        time.sleep(2)
         self.assertEqual(expValue, actValue)
         LogIn().Email_Username_Box().clear()
         LogIn().Email_Password_Box().clear()
@@ -92,12 +92,12 @@ class EmailLogInCase(unittest.TestCase):
     def test_Case004_ForgotPassword_FocusedCase(self):
         # 点击忘记密码
         LogIn().Email_ForgotPassword_Link().click()
-        time.sleep(1)
+        time.sleep(2)
         expValue = "true"
         # 因未输入密码，光标聚焦到账号输入框
         actValue = LogIn().Email_Username_Box().get_attribute("focused")
         # 判断光标是否成功聚焦
-        time.sleep(1)
+        time.sleep(2)
         self.assertEqual(expValue, actValue)
         LogIn().Email_Username_Box().clear()
         LogIn().Email_Password_Box().clear()
@@ -107,7 +107,7 @@ class EmailLogInCase(unittest.TestCase):
         expValue = "Your email cannot be empty."
         # 获取账号输入框下方Error提示
         actValue = LogIn().Email_Username_Error().text
-        time.sleep(1)
+        time.sleep(2)
         self.assertEqual(expValue, actValue)
         LogIn().Email_Username_Box().clear()
         LogIn().Email_Password_Box().clear()
@@ -119,14 +119,14 @@ class EmailLogInCase(unittest.TestCase):
             ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "NotRegisteredEmail"))
         LogIn().Email_Password_Box().send_keys(
             ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Password"))
-        time.sleep(1)
+        time.sleep(2)
         # 点击登录按钮
         LogIn().LogIn_Confirm_Btn().click()
-        time.sleep(1)
+        time.sleep(2)
         expValue = "This Email is not registered yet, please Sign Up now."
         # 获取账号输入框下方Error提示
         actValue = LogIn().Email_Username_Error().text
-        time.sleep(1)
+        time.sleep(2)
         self.assertEqual(expValue, actValue)
         LogIn().Email_Username_Box().clear()
         LogIn().Email_Password_Box().clear()
@@ -138,19 +138,19 @@ class EmailLogInCase(unittest.TestCase):
     #         ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "NotRegisteredEmail"))
     #     LogIn().Email_Password_Box().send_keys(
     #         ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Password"))
-    #     time.sleep(1)
+    #     time.sleep(2)
     #     # 点击登录按钮
     #     LogIn().LogIn_Confirm_Btn().click()
     #     time.sleep(5)
     #     # 点击SignUp
     #     LogIn().Email_Username_SignUpNow_ACP()
     #     # self.driver.tap([(1030, 650)], 500)
-    #     time.sleep(1)
+    #     time.sleep(2)
     #     expValue = "输入邮箱"
     #     # 获取注册页Tips值
     #     actValue = SignUp().SignUp_Tips().text
     #     # 验证是否跳转成功
-    #     time.sleep(1)
+    #     time.sleep(2)
     #     self.assertEqual(expValue, actValue)
     #     # 为Email登录Case 执行tearDown:
     #     # 1.返回
@@ -158,10 +158,10 @@ class EmailLogInCase(unittest.TestCase):
     #     time.sleep(10)
     #     # 2.点击邮箱登录按钮
     #     StartUp().Email_LogIn_Btn_R()
-    #     time.sleep(1)
+    #     time.sleep(2)
     #     # 3.点击登录弹窗中LogIn按钮
     #     LogIn().EmailWindow_LogIn_Btn().click()
-    #     time.sleep(1)
+    #     time.sleep(2)
 
     # Email登录——密码错误提示
     def test_Case008_EmailError_PwdIncorrect(self):
@@ -178,7 +178,7 @@ class EmailLogInCase(unittest.TestCase):
         # 获取密码输入框下方Error提示
         actValue = LogIn().Email_Password_Error().text
         # 判断是否提示密码输入错误
-        time.sleep(1)
+        time.sleep(2)
         self.assertEqual(expValue, actValue)
         LogIn().Email_Username_Box().clear()
         LogIn().Email_Password_Box().clear()
@@ -195,20 +195,20 @@ class EmailLogInCase(unittest.TestCase):
         LogIn().LogIn_Confirm_Btn().click()
         time.sleep(5)
         actValue = Home().HomePage_NewFeature_Tips()
-        time.sleep(1)
+        time.sleep(2)
         # 判断是否新装包登录成功——NewFeature引导
         self.assertTrue(actValue)
-        time.sleep(3)
+        time.sleep(2)
         Popup().HomePopup_NewFeature_NEXT_LiveClick()
-        time.sleep(1)
+        time.sleep(2)
         Popup().HomePopup_NewFeatureAdded_NEXT_LiveClick()
-        time.sleep(1)
+        time.sleep(2)
         Popup().HomePopup_NewFeatureSing_NEXT_LiveClick()
-        time.sleep(1)
+        time.sleep(2)
         Popup().HomePopup_NewFeaturePostOther_DONE_LiveClick()
-        time.sleep(1)
+        time.sleep(2)
         Popup().HomePopup_PermissionMessage_Allow_LiveClick()
-        time.sleep(1)
+        time.sleep(2)
 
 
 # if __name__ == "__main__":

@@ -15,6 +15,7 @@ class Library(object):
         self.findClaS = find_element().ClaS
         self.findXpa = find_element().Xpa
         self.findAID = find_element().AID
+        self.findAUS = find_element().AUS
 
     # Library页搜索框
     def Library_SearchBox(self):
@@ -35,6 +36,17 @@ class Library(object):
     def LibraryPage_SecondSong(self):
         LibraryPage_SongInfo_Cla = self.findClaS(Library_VD.LibraryPage_SongInfo_ClaS, 9)
         return LibraryPage_SongInfo_Cla
+
+    # 第二首歌曲——Sing按钮
+    def LibraryPage_SecondSong_SingBtn(self):
+        LibraryPage_SecondSong_SingBtn_AU = self.findAUS(Library_VD.LibraryPage_SecondSong_SingBtn_AUS, 1)
+        return LibraryPage_SecondSong_SingBtn_AU
+
+    # Library页录制模式
+    @staticmethod
+    def LibraryPage_SongMode():
+        LibraryPage_SongMode_ClaS = Library_VD.LibraryPage_SongMode_ClaS
+        return LibraryPage_SongMode_ClaS
 
     # ----------
     # 歌曲详情页

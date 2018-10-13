@@ -10,7 +10,8 @@ class XXX(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = GetAppiumDeriver().driver
-        time.sleep(5)
+        from Utils.GetDevicesInfo import DevicesInfo
+package = DevicesInfo().package()leep(5)
 
     def setUp(self):
         pass

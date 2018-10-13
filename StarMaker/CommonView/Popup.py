@@ -104,16 +104,15 @@ class Popup(object):
     # 权限申请(text=Ok, Let's do it.)
     def SingPopup_Jurisdiction_LiveClick(self):
         state = self.FindElement(ID=[Popup_VD.Popup_Jurisdiction_ID, "Ok, Let's do it."])
-        print(state)
         if state:
             self.driver.find_element_by_id(Popup_VD.Popup_Jurisdiction_ID).click()
             time.sleep(2)
             self.driver.find_element_by_id(Popup_VD.Popup_PermissionAllow_ID).click()
-            time.sleep(1)
+            time.sleep(2)
             self.driver.find_element_by_id(Popup_VD.Popup_PermissionAllow_ID).click()
-            time.sleep(1)
+            time.sleep(2)
             self.driver.find_element_by_id(Popup_VD.Popup_PermissionAllow_ID).click()
-            time.sleep(1)
+            time.sleep(2)
 
     # 插入耳机引导(text=I KNOW)
     def SingPopup_HeadphonesRecommended_LiveClick(self):

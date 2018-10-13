@@ -23,13 +23,13 @@ class ProfileCase(unittest.TestCase):
         if LogIn.StartUpTransition():
             # 处理首登引导弹窗
             Popup().HomePopup_NewFeature_NEXT_LiveClick()
-            time.sleep(1)
+            time.sleep(2)
             Popup().HomePopup_NewFeatureAdded_NEXT_LiveClick()
-            time.sleep(1)
+            time.sleep(2)
             Popup().HomePopup_NewFeatureSing_NEXT_LiveClick()
-            time.sleep(1)
+            time.sleep(2)
             Popup().HomePopup_NewFeaturePostOther_DONE_LiveClick()
-            time.sleep(1)
+            time.sleep(2)
             # 点击Profile-Tab进入Profile页
             Home().HomeTab_Profile().click()
             # 处理邮箱认证弹窗
@@ -37,17 +37,17 @@ class ProfileCase(unittest.TestCase):
         else:
             # 处理签到弹窗
             Popup().HomePopup_CheckIn_Close_LiveClick()
-            time.sleep(3)
+            time.sleep(2)
             # # 点击Profile-Tab进入Profile页
             # Home().HomeTab_Profile().click()
             Screen().AccurateClicks_Percentage(0.902, 0.957, 500)
-            time.sleep(3)
+            time.sleep(2)
             # 处理邮箱认证弹窗
             Popup().HomePopup_VerifyEmail_Close_LiveClick()
             time.sleep(5)
 
     def setUp(self):
-        time.sleep(1)
+        time.sleep(2)
 
     def tearDown(self):
         # 截图
@@ -62,7 +62,7 @@ class ProfileCase(unittest.TestCase):
         expValue = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "StageName")
         # 获取用户昵称
         actValue = Profile().Profile_StageName().text
-        time.sleep(1)
+        time.sleep(2)
         # 判断昵称正确
         self.assertEqual(expValue, actValue)
 
@@ -71,7 +71,7 @@ class ProfileCase(unittest.TestCase):
         expValue = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "UserLevel")
         # 获取用户等级
         actValue = Profile().Profile_UserLevel().text
-        time.sleep(1)
+        time.sleep(2)
         # 判断等级正确
         self.assertEqual(expValue, actValue)
 
@@ -80,7 +80,7 @@ class ProfileCase(unittest.TestCase):
         expValue = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "VIPLevel")
         # 获取用户VIP状态
         actValue = Profile().Profile_VIPLevel().text
-        time.sleep(1)
+        time.sleep(2)
         # 判断VIP状态正确
         self.assertEqual(expValue, actValue)
 
@@ -89,7 +89,7 @@ class ProfileCase(unittest.TestCase):
         expValue = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Followers")
         # 获取用户Followers数
         actValue = Profile().Profile_FollowersNumber().text
-        time.sleep(1)
+        time.sleep(2)
         # 判断Followers数正确
         self.assertEqual(expValue, actValue)
 
@@ -98,7 +98,7 @@ class ProfileCase(unittest.TestCase):
         expValue = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Following")
         # 获取用户Following数
         actValue = Profile().Profile_FollowingNumber().text
-        time.sleep(1)
+        time.sleep(2)
         # 判断Following数正确
         self.assertEqual(expValue, actValue)
 
@@ -107,7 +107,7 @@ class ProfileCase(unittest.TestCase):
         expValue = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "RankRecords")
         # 获取用户上榜作品数
         actValue = Profile().Profile_RankRecords().text
-        time.sleep(1)
+        time.sleep(2)
         # 判断上榜作品数正确
         self.assertEqual(expValue, actValue)
 
@@ -146,11 +146,11 @@ class ProfileCase(unittest.TestCase):
         Screen().SWipeUp_Half()
         time.sleep(2)
         Profile().Profile_Tab_PROFILE().click()
-        time.sleep(1)
+        time.sleep(2)
         # 获取 Personal_Info Title
         actValue = Profile().PersonalInfo_Title().text
         # 判断 Personal_Info 正常展示
-        time.sleep(1)
+        time.sleep(2)
         self.assertEqual(expValue, actValue)
 
     # PROFILE_Tab 个人信息描述正确
@@ -160,7 +160,7 @@ class ProfileCase(unittest.TestCase):
         # 获取当前用户个人信息
         actValue = Profile().PersonalInfo_desc().text
         # 判断个人信息描述正确
-        time.sleep(1)
+        time.sleep(2)
         self.assertEqual(expValue, actValue)
 
     # PROFILE_Tab 校验
@@ -170,7 +170,7 @@ class ProfileCase(unittest.TestCase):
         # 获取 Album Title
         actValue = Profile().Album_Title().text
         # 判断 Album 正常展示
-        time.sleep(1)
+        time.sleep(2)
         self.assertEqual(expValue, actValue)
 
     # Album 图片数量统计
@@ -180,7 +180,7 @@ class ProfileCase(unittest.TestCase):
         # 获取Album 图片数量 并截图
         actValue = str(len(self.driver.find_elements_by_class_name("android.widget.ScrollView")) - 1)
         # 判断 图片数量展示正确
-        time.sleep(1)
+        time.sleep(2)
         self.assertEqual(expValue, actValue)
 
     # TopFans 正常展示
@@ -189,7 +189,7 @@ class ProfileCase(unittest.TestCase):
         # 获取 TopFans Title
         actValue = Profile().TopFans_Title().text
         # 判断 TopFans 正常展示
-        time.sleep(1)
+        time.sleep(2)
         self.assertEqual(expValue, actValue)
 
     # TopFans 星光值展示正确
@@ -199,7 +199,7 @@ class ProfileCase(unittest.TestCase):
         # 获取当前用户星光值
         actValue = Profile().Starlight().text
         # 判断星光值展示正确
-        time.sleep(1)
+        time.sleep(2)
         self.assertEqual(expValue, actValue)
 
     # TopFans 头像显示正常
@@ -209,7 +209,7 @@ class ProfileCase(unittest.TestCase):
         Second_actValue = Profile().TopFans_FindSecondHeadView()
         Third_actValue = Profile().TopFans_FindThirdHeadView()
         # 判断头像显示正常
-        time.sleep(1)
+        time.sleep(2)
         if all([First_actValue, Second_actValue, Third_actValue]):
             self.assertTrue(First_actValue)
         else:
@@ -225,7 +225,7 @@ class ProfileCase(unittest.TestCase):
         actValue = Profile().Contribute_Title().text
         print(actValue)
         # 判断 Contribute 正常展示
-        time.sleep(1)
+        time.sleep(2)
         self.assertEqual(expValue, actValue)
 
     # Contribute 金币数正确
@@ -234,7 +234,7 @@ class ProfileCase(unittest.TestCase):
         # 获取 Contribute 金币数
         actValue = Profile().Contribute_Gold().text
         # 判断金币数正确
-        time.sleep(1)
+        time.sleep(2)
         self.assertEqual(expValue, actValue)
 
     # Store 正常展示
@@ -243,6 +243,6 @@ class ProfileCase(unittest.TestCase):
         # 获取 Store Title
         actValue = Profile().Store_Title().text
         # 判断 Contribute 正常展示
-        time.sleep(1)
+        time.sleep(2)
         self.assertEqual(expValue, actValue)
-        time.sleep(3)
+        time.sleep(2)

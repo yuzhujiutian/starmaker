@@ -565,7 +565,7 @@ class Page_Element_Verification(object):
         TextList = []
         for index in range(len(Pe)):
             TextList.append(Pe[index].text)
-            time.sleep(1)
+            time.sleep(2)
         if ExpectText == TextList:
             return True
         else:
@@ -589,7 +589,7 @@ class Page_Element_Verification(object):
         TextList = []
         for index in range(len(Pe)):
             TextList.append(Pe[index].text)
-            time.sleep(1)
+            time.sleep(2)
         if ExpectText == TextList:
             return True
         else:
@@ -636,7 +636,7 @@ class Screen(object):
         x1 = self.width * 0.5
         y1 = self.height * 0.01
         y2 = self.height * 0.5
-        time.sleep(1)
+        time.sleep(2)
         self.driver.swipe(x1, y1, x1, y2)
 
     # 滑动收起通知栏
@@ -645,7 +645,7 @@ class Screen(object):
         x1 = self.width * 0.5
         y1 = self.height * 0.5
         y2 = self.height * 0.01
-        time.sleep(1)
+        time.sleep(2)
         self.driver.swipe(x1, y1, x1, y2)
 
     # 向上滑动1/2屏
@@ -654,7 +654,7 @@ class Screen(object):
         x = self.width * 0.5
         y1 = self.height * 0.6
         y2 = self.height * 0.1
-        time.sleep(1)
+        time.sleep(2)
         self.driver.swipe(x, y1, x, y2)
 
     # 向上滑动1/4屏
@@ -663,7 +663,7 @@ class Screen(object):
         x = self.width * 0.5
         y1 = self.height * 0.75
         y2 = self.height * 0.5
-        time.sleep(1)
+        time.sleep(2)
         self.driver.swipe(x, y1, x, y2)
 
     # 根据传值百分比，自定义滑动操作(传参：百分比)
@@ -673,7 +673,7 @@ class Screen(object):
         y1 = self.height * y1P
         x2 = self.width * x2P
         y2 = self.height * y2P
-        time.sleep(1)
+        time.sleep(2)
         self.driver.swipe(x1, y1, x2, y2, t)
 
     # 根据屏幕百分比，自定义点击操作(传参：百分比)
@@ -682,7 +682,7 @@ class Screen(object):
         # 时间:点击(500)/长按3s(3000)
         x1 = self.width * x1P
         y1 = self.height * y1P
-        time.sleep(1)
+        time.sleep(2)
         self.driver.tap([(x1, y1)], t)
 
     # 多点触控(最多支持五点触控)
@@ -704,7 +704,7 @@ class Screen(object):
         # 第五个点
         x5 = self.width * x5P
         y5 = self.height * y5P
-        time.sleep(1)
+        time.sleep(2)
         self.driver.tap([(x1, y1), (x2, y2), (x3, y3), (x4, y4), (x5, y5)], t)
 
 
@@ -732,7 +732,7 @@ class RegionalSliding(object):
         x1 = int(self.x + width)
         y = int(self.y + height)
         x2 = int(self.x + width * 3)
-        time.sleep(1)
+        time.sleep(2)
         print(x1, y)
         print(x2, y)
         self.driver.swipe(x2, y, x1, y, 500)
@@ -745,7 +745,7 @@ class RegionalSliding(object):
         x = int(self.x + width)
         y1 = int(self.y + height)
         y2 = int(self.y + height * 3)
-        time.sleep(1)
+        time.sleep(2)
         print(x, y1)
         print(x, y2)
         self.driver.swipe(x, y2, x, y1, 500)

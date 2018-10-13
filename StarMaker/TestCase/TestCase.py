@@ -7,22 +7,16 @@ from CommonView.Home import Home
 
 def test():
     a = GetAppiumDeriver().driver
-    time.sleep(5)
-    Home().HomeTab_Profile().click()
-    time.sleep(2)
-    b = a.find_element_by_id("com.starmakerinteractive.starmaker:id/new_entrance_layout")
-    print("滑动前")
-    time.sleep(3)
-    RegionalSliding(b).Transverse()
-    print("滑动后")
-    time.sleep(3)
-    Screen().DIYSwipe_Percentage(0.5, 0.75, 0.5, 0.5, 500)
-    d = a.find_element_by_id("com.starmakerinteractive.starmaker:id/vtb_pager")
-    print("滑动前")
-    time.sleep(3)
-    RegionalSliding(d).Transverse()
-    print("滑动后")
-    time.sleep(3)
+    time.sleep(20)
+    mode = a.find_elements_by_class_name("android.widget.TextView")
+    TextList = []
+    for index in range(len(mode)):
+        TextList.append(mode[index].text)
+    if len(mode) == 3 and TextList == ['Solo', 'Join Collab', 'Start Collab']:
+        print("不支持Chorus")
+    elif len(mode) == 4 and TextList == ['Solo', 'Join Collab', 'Start Collab', 'Chorus']:
+        print("支持Chorus")
+
 
 
 if __name__ == '__main__':
