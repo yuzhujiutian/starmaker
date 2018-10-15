@@ -1,6 +1,6 @@
 #coding=utf-8
 
-111
+
 #单例模式函数，用来修饰类
 def singleton(cls, *args, **kw):
     instances = {}
