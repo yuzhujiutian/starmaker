@@ -3,6 +3,8 @@ import time
 import unittest
 from Utils.Tools import Tools
 from Utils.GetAppiumDeriver import GetAppiumDeriver
+from Utils.GetDevicesInfo import DevicesInfo
+package = DevicesInfo().package()
 
 
 #定义一个XXX测试类
@@ -10,8 +12,7 @@ class XXX(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = GetAppiumDeriver().driver
-        from Utils.GetDevicesInfo import DevicesInfo
-package = DevicesInfo().package()leep(5)
+        time.sleep(5)
 
     def setUp(self):
         pass

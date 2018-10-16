@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8313010a-db35-4032-9d15-eb2204b77d40" name="Default" comment="T31778&#10;1&gt;调整time_1 to time_2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestCase/yangyang.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/starmaker-qa.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/starmaker-qa.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Help/CaseExample.py" beforeDir="false" afterPath="$PROJECT_DIR$/Help/CaseExample.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -147,28 +151,25 @@
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.js.language.service.starts" />
     </session>
+    <session id="857465923">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TestCase/PostSoloCase.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2200">
+            <state relative-caret-position="2640">
               <caret line="96" column="29" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
               <folding>
                 <element signature="e#15#26#0" expanded="true" />
-                <marker date="1539421815270" expanded="true" signature="788:807" ph="..." />
-                <marker date="1539421815270" expanded="true" signature="877:886" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://C:/Program Files/Python36/Lib/site-packages/selenium/webdriver/remote/remote_connection.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10550">
-              <caret line="428" column="14" selection-start-line="428" selection-start-column="14" selection-end-line="428" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -176,12 +177,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CommonView/Popup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3000">
+            <state relative-caret-position="3600">
               <caret line="123" column="29" selection-start-line="123" selection-start-column="29" selection-end-line="123" selection-end-column="29" />
               <folding>
                 <element signature="e#46#57#0" expanded="true" />
-                <marker date="1539421815234" expanded="true" signature="1795:2016" ph="..." />
-                <marker date="1539421815234" expanded="true" signature="4182:4741" ph="..." />
               </folding>
             </state>
           </provider>
@@ -190,11 +189,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TestCase/EmailLogInCase.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4775">
+            <state relative-caret-position="5730">
               <caret line="200" column="4" selection-start-line="200" selection-start-column="4" selection-end-line="200" selection-end-column="4" />
               <folding>
                 <element signature="e#15#26#0" expanded="true" />
-                <marker date="1539421815074" expanded="true" signature="663:682" ph="..." />
               </folding>
             </state>
           </provider>
@@ -203,7 +201,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TestCase/StartUpCase.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1700">
+            <state relative-caret-position="2040">
               <caret line="72" selection-start-line="72" selection-end-line="72" />
             </state>
           </provider>
@@ -212,14 +210,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CommonView/Post.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1000">
+            <state relative-caret-position="1200">
               <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
               <folding>
                 <element signature="e#48#71#0" expanded="true" />
-                <marker date="1539343412101" expanded="true" signature="259:271" ph="..." />
-                <marker date="1539343412101" expanded="true" signature="843:848" ph="..." />
-                <marker date="1539343412101" expanded="true" signature="843:1130" ph="..." />
-                <marker date="1539343412101" expanded="true" signature="1124:1125" ph="..." />
               </folding>
             </state>
           </provider>
@@ -228,13 +222,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Utils/Tools.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
+            <state relative-caret-position="30">
               <caret line="496" column="18" lean-forward="true" selection-start-line="496" selection-start-column="18" selection-end-line="496" selection-end-column="18" />
               <folding>
                 <element signature="e#50#59#0" expanded="true" />
-                <marker date="1539421814985" expanded="true" signature="16908:18720" ph="..." />
-                <marker date="1539421814985" expanded="true" signature="20259:20265" ph="..." />
-                <marker date="1539421814985" expanded="true" signature="22723:22728" ph="..." />
               </folding>
             </state>
           </provider>
@@ -243,7 +234,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Utils/FindElement.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2775">
+            <state relative-caret-position="3330">
               <caret line="113" selection-start-line="113" selection-end-line="113" />
               <folding>
                 <element signature="e#15#66#0" expanded="true" />
@@ -255,7 +246,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Utils/TestBoard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
+            <state relative-caret-position="510">
               <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
             </state>
           </provider>
@@ -515,7 +506,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last.edited.regexp" value="Sample Text" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -779,10 +770,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13859275" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13839285" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -794,7 +784,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32899022" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32899022" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32899022" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010661" side_tool="true" weight="0.42019543" />
       <window_info anchor="bottom" id="找到" order="11" />
       <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.329718" />
@@ -827,13 +817,7 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/TestCase/PostCase.py" />
-    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/-299647045/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="2569" column="8" selection-start-line="2569" selection-start-column="8" selection-end-line="2569" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/-299647045/builtins.py" />
     <entry file="file://$PROJECT_DIR$/CommonView/VData/LogIn_VD.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2275">
@@ -880,19 +864,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="775">
           <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-          <folding>
-            <element signature="e#15#43#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files/Python36/Lib/site-packages/selenium/webdriver/remote/webdriver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="358" selection-start-line="358" selection-end-line="358" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Program Files/Python36/Lib/site-packages/selenium/webdriver/remote/webdriver.py" />
     <entry file="file://$PROJECT_DIR$/CommonView/LogIn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
@@ -914,13 +889,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files/Python36/Lib/unittest/suite.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="162" selection-start-line="162" selection-end-line="162" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Program Files/Python36/Lib/unittest/suite.py" />
     <entry file="file://$PROJECT_DIR$/Data/AccountNumber.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="421">
@@ -1055,9 +1024,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestReport/images/20181013_15.29.49.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/TestReport/images/20181013_15.29.49.png" />
     <entry file="file://$PROJECT_DIR$/CommonView/Home.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
@@ -1072,75 +1039,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TestReport/images/20181012_16.46.56.png" />
+    <entry file="file://C:/Program Files/Python36/Lib/site-packages/selenium/webdriver/remote/remote_connection.py" />
     <entry file="file://$PROJECT_DIR$/TestCase/PostSoloCase.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2200">
+        <state relative-caret-position="2640">
           <caret line="96" column="29" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
           <folding>
             <element signature="e#15#26#0" expanded="true" />
-            <marker date="1539421815270" expanded="true" signature="788:807" ph="..." />
-            <marker date="1539421815270" expanded="true" signature="877:886" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestReport/images/20181012_16.46.56.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://C:/Program Files/Python36/Lib/site-packages/selenium/webdriver/remote/remote_connection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10550">
-          <caret line="428" column="14" selection-start-line="428" selection-start-column="14" selection-end-line="428" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CommonView/Popup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3000">
+        <state relative-caret-position="3600">
           <caret line="123" column="29" selection-start-line="123" selection-start-column="29" selection-end-line="123" selection-end-column="29" />
           <folding>
             <element signature="e#46#57#0" expanded="true" />
-            <marker date="1539421815234" expanded="true" signature="1795:2016" ph="..." />
-            <marker date="1539421815234" expanded="true" signature="4182:4741" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TestCase/EmailLogInCase.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4775">
+        <state relative-caret-position="5730">
           <caret line="200" column="4" selection-start-line="200" selection-start-column="4" selection-end-line="200" selection-end-column="4" />
           <folding>
             <element signature="e#15#26#0" expanded="true" />
-            <marker date="1539421815074" expanded="true" signature="663:682" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TestCase/StartUpCase.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
+        <state relative-caret-position="2040">
           <caret line="72" selection-start-line="72" selection-end-line="72" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CommonView/Post.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1000">
+        <state relative-caret-position="1200">
           <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
           <folding>
             <element signature="e#48#71#0" expanded="true" />
-            <marker date="1539343412101" expanded="true" signature="259:271" ph="..." />
-            <marker date="1539343412101" expanded="true" signature="843:848" ph="..." />
-            <marker date="1539343412101" expanded="true" signature="843:1130" ph="..." />
-            <marker date="1539343412101" expanded="true" signature="1124:1125" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Utils/FindElement.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2775">
+        <state relative-caret-position="3330">
           <caret line="113" selection-start-line="113" selection-end-line="113" />
           <folding>
             <element signature="e#15#66#0" expanded="true" />
@@ -1150,20 +1100,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Utils/TestBoard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
+        <state relative-caret-position="510">
           <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Utils/Tools.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
+        <state relative-caret-position="30">
           <caret line="496" column="18" lean-forward="true" selection-start-line="496" selection-start-column="18" selection-end-line="496" selection-end-column="18" />
           <folding>
             <element signature="e#50#59#0" expanded="true" />
-            <marker date="1539421814985" expanded="true" signature="16908:18720" ph="..." />
-            <marker date="1539421814985" expanded="true" signature="20259:20265" ph="..." />
-            <marker date="1539421814985" expanded="true" signature="22723:22728" ph="..." />
           </folding>
         </state>
       </provider>
