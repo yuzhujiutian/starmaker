@@ -18,7 +18,6 @@ def test():
         print("支持Chorus")
 
 
-
 if __name__ == '__main__':
     test()
 

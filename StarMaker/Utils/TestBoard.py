@@ -29,7 +29,6 @@ class PopupProcessing:
         # 否则返回值的属性
 
 
-
 # PopupProcessing().Popup_GeneralMethod(ID=["com.android.packageinstaller:id/permission_message", "ABC"])
 PopupProcessing().Popup_GeneralMethod(ID="com.android.packageinstaller:id/permission_message")
 

@@ -78,23 +78,27 @@ class A(object):
             else:
                 print("No,No")
 
-    def a_var(self):
+    @staticmethod
+    def a_var():
         a = 1
         print(a)
 
-    def b_var(self):
+    @staticmethod
+    def b_var():
         global c
         a = b = c = 2
         print(a, b, c)
 
-    def c_var(self):
+    @staticmethod
+    def c_var():
         d = c + 1
         print(d)
 
-    def d_var(self):
+    @staticmethod
+    def d_var():
         a = 1  # 整形
         b = "一个"  # 字符串
-        c = [1, "二"]  # 列表
+        set.c = [1, "二"]  # 列表
         d = {"t": "time", "p": "path"}  # 字典
         e = (1, "二", "san")  # 元素
         print(a, b, c, d, e)  # 打印变量

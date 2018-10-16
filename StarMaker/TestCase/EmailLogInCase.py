@@ -4,7 +4,6 @@ import unittest
 from CommonView.StartUp import StartUp
 from CommonView.LogIn import LogIn
 from CommonView.Home import Home
-from CommonView.SignUp import SignUp
 from CommonView.Popup import Popup
 from Utils.Tools import Tools
 from Utils.GetAppiumDeriver import GetAppiumDeriver

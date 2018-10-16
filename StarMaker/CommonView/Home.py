@@ -41,7 +41,6 @@ class Home(object):
     #     HomePage_Guide_ID = self.findID(Home_VD.HomePage_Guide_ID)
     #     return HomePage_Guide_ID
 
-
     # ----------
     # 首页五Tab
     # ----------

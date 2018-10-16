@@ -8,7 +8,7 @@ class ModelSuite(unittest.TestCase):
         #从某个 Package 导入 XXX 测试类
         from Help import CaseExample
         #定义一个测试套
-        XXXSuiteTest=unittest.TestSuite()
+        XXXSuiteTest = unittest.TestSuite()
         #添加测试套模版
         XXXSuiteTest.addTest(unittest.makeSuite(CaseExample.XXX))
         XXXSuiteTest.addTest(unittest.makeSuite(CaseExample.XXX))
@@ -17,7 +17,7 @@ class ModelSuite(unittest.TestCase):
         NameFile = "LibraryTabCase"
         T = "<首页 Tab 切换>测试用例报告"
         Des = "第一条case，登录后查看My Songs 第一首歌曲"
-        CreatTestReporter().HTMLReporter(NameFile,T,Des, XXXSuiteTest)
+        CreatTestReporter().HTMLReporter(NameFile, T, Des, XXXSuiteTest)
 
 
 if __name__ == "__main__":
