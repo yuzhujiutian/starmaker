@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8313010a-db35-4032-9d15-eb2204b77d40" name="Default" comment="T31778&#10;1&gt;调整time_1 to time_2">
-      <change afterPath="$PROJECT_DIR$/TestCase/yangyang.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/starmaker-qa.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/starmaker-qa.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Help/CaseExample.py" beforeDir="false" afterPath="$PROJECT_DIR$/Help/CaseExample.py" afterDir="false" />
+    <list default="true" id="8313010a-db35-4032-9d15-eb2204b77d40" name="Default" comment="T31778&#10;1&gt;调整所有time.sleep(1)到time.sleep(2)">
+      <change afterPath="$PROJECT_DIR$/bin/up.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/StarMaker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/StarMaker.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Help/BasicGrammar.py" beforeDir="false" afterPath="$PROJECT_DIR$/Help/BasicGrammar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestCase/TestCase.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestCase/TestCase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/resource_mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bin/resource_mapping.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,218 +18,40 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_PostSoloCase_PostSoloCase_test_Case001_SelectPostTypeCase.coverage" NAME="Unittests for PostSoloCase.PostSoloCase.test_Case001_SelectPostTypeCase Coverage Results" MODIFIED="1539245569442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
-    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_PostSoloCase_PostSoloCase_test_Case008_asdasdas.coverage" NAME="Unittests for PostSoloCase.PostSoloCase.test_Case008_asdasdas Coverage Results" MODIFIED="1539258516711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
-    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_RegressionSuite_LogInSuite.coverage" NAME="Unittests for RegressionSuite.LogInSuite Coverage Results" MODIFIED="1539336488426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestSuitePackge" />
-    <SUITE FILE_PATH="coverage/StarMaker$TestCase.coverage" NAME="TestCase Coverage Results" MODIFIED="1539414096963" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
-    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_ProfileCase_ProfileCase_test_Case013_Album_PhotoCountCase.coverage" NAME="Unittests for ProfileCase.ProfileCase.test_Case013_Album_PhotoCountCase Coverage Results" MODIFIED="1538210275730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
-    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_StartUpCase_StarUpCase_test_Case007_testaaaaa.coverage" NAME="Unittests for StartUpCase.StarUpCase.test_Case007_testaaaaa Coverage Results" MODIFIED="1539335489917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
-    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_ProfileCase_ProfileCase_test_Case017_ShowContributeCase.coverage" NAME="Unittests for ProfileCase.ProfileCase.test_Case017_ShowContributeCase Coverage Results" MODIFIED="1538220867829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
-    <SUITE FILE_PATH="coverage/StarMaker$PostCase.coverage" NAME="PostCase Coverage Results" MODIFIED="1539165694719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
-    <SUITE FILE_PATH="coverage/StarMaker$Popup_VD.coverage" NAME="Popup_VD Coverage Results" MODIFIED="1537360582252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CommonView/VData" />
-    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_PostSoloCase_PostSoloCase_test_Case008_testtest.coverage" NAME="Unittests for PostSoloCase.PostSoloCase.test_Case008_testtest Coverage Results" MODIFIED="1539256256036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
+    <SUITE FILE_PATH="coverage/StarMaker$up.coverage" NAME="up Coverage Results" MODIFIED="1542612853172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" />
     <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_RegressionSuite_RegressionSuite.coverage" NAME="Unittests for RegressionSuite.RegressionSuite Coverage Results" MODIFIED="1539340816714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestSuitePackge" />
+    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_ProfileCase_ProfileCase.coverage" NAME="Unittests for ProfileCase.ProfileCase Coverage Results" MODIFIED="1539335921327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
+    <SUITE FILE_PATH="coverage/StarMaker$TestCase.coverage" NAME="TestCase Coverage Results" MODIFIED="1539414096963" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
+    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_PostSoloCase_PostSoloCase.coverage" NAME="Unittests for PostSoloCase.PostSoloCase Coverage Results" MODIFIED="1539420236539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
+    <SUITE FILE_PATH="coverage/StarMaker$Popup_VD.coverage" NAME="Popup_VD Coverage Results" MODIFIED="1537360582252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CommonView/VData" />
     <SUITE FILE_PATH="coverage/StarMaker$Tools.coverage" NAME="Tools Coverage Results" MODIFIED="1539342936096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Utils" />
-    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_PostSoloCase_PostSoloCase_test_Case005_RecordingCase.coverage" NAME="Unittests for PostSoloCase.PostSoloCase.test_Case005_RecordingCase Coverage Results" MODIFIED="1539420601044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
-    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_LogInSuite_LogInSuite_test_Suite_001_ProfileSuite.coverage" NAME="Unittests for LogInSuite.LogInSuite.test_Suite_001_ProfileSuite Coverage Results" MODIFIED="1538221373490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestSuitePackge" />
-    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_PostSoloCase_PostSoloCase_test_Case004_RecordingCase.coverage" NAME="Unittests for PostSoloCase.PostSoloCase.test_Case004_RecordingCase Coverage Results" MODIFIED="1539342505664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
-    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_PostCasesss_PostCase.coverage" NAME="Unittests for PostCasesss.PostCase Coverage Results" MODIFIED="1539165661562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
+    <SUITE FILE_PATH="coverage/StarMaker$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1544509624244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Help" />
+    <SUITE FILE_PATH="coverage/StarMaker$CallRelation.coverage" NAME="CallRelation Coverage Results" MODIFIED="1537435260897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Help" />
+    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_PostSoloCase_PostSoloCase_test_Case001_SelectPostTypeCase.coverage" NAME="Unittests for PostSoloCase.PostSoloCase.test_Case001_SelectPostTypeCase Coverage Results" MODIFIED="1539245569442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
     <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_StartUpCase_StarUpCase_test_Case007_testasd.coverage" NAME="Unittests for StartUpCase.StarUpCase.test_Case007_testasd Coverage Results" MODIFIED="1539338802604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
     <SUITE FILE_PATH="coverage/StarMaker$Test.coverage" NAME="Test Coverage Results" MODIFIED="1539402886129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Utils" />
-    <SUITE FILE_PATH="coverage/StarMaker$CallRelation.coverage" NAME="CallRelation Coverage Results" MODIFIED="1537435260897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Help" />
+    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_ProfileCase_ProfileCase_test_Case013_Album_PhotoCountCase.coverage" NAME="Unittests for ProfileCase.ProfileCase.test_Case013_Album_PhotoCountCase Coverage Results" MODIFIED="1538210275730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
+    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_ProfileCase_ProfileCase_test_Case017_ShowContributeCase.coverage" NAME="Unittests for ProfileCase.ProfileCase.test_Case017_ShowContributeCase Coverage Results" MODIFIED="1538220867829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
+    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_PostSoloCase_PostSoloCase_test_Case004_RecordingCase.coverage" NAME="Unittests for PostSoloCase.PostSoloCase.test_Case004_RecordingCase Coverage Results" MODIFIED="1539342505664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
+    <SUITE FILE_PATH="coverage/StarMaker$PostCase.coverage" NAME="PostCase Coverage Results" MODIFIED="1539165694719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
+    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_PostSoloCase_PostSoloCase_test_Case008_testtest.coverage" NAME="Unittests for PostSoloCase.PostSoloCase.test_Case008_testtest Coverage Results" MODIFIED="1539256256036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
+    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_PostCasesss_PostCase.coverage" NAME="Unittests for PostCasesss.PostCase Coverage Results" MODIFIED="1539165661562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
+    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_LogInSuite_LogInSuite_test_Suite_001_ProfileSuite.coverage" NAME="Unittests for LogInSuite.LogInSuite.test_Suite_001_ProfileSuite Coverage Results" MODIFIED="1538221373490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestSuitePackge" />
     <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_PostSoloCase_PostSoloCase_test_Case006_ProfilePostsCountCase.coverage" NAME="Unittests for PostSoloCase.PostSoloCase.test_Case006_ProfilePostsCountCase Coverage Results" MODIFIED="1539259948859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
     <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_RegressionSuite_RegressionSuite_test_Suite_004_PostSoloSuite.coverage" NAME="Unittests for RegressionSuite.RegressionSuite.test_Suite_004_PostSoloSuite Coverage Results" MODIFIED="1539343917816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestSuitePackge" />
+    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_StartUpCase_StarUpCase_test_Case007_testaaaaa.coverage" NAME="Unittests for StartUpCase.StarUpCase.test_Case007_testaaaaa Coverage Results" MODIFIED="1539335489917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
+    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_RegressionSuite_LogInSuite.coverage" NAME="Unittests for RegressionSuite.LogInSuite Coverage Results" MODIFIED="1539336488426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestSuitePackge" />
+    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_PostSoloCase_PostSoloCase_test_Case008_asdasdas.coverage" NAME="Unittests for PostSoloCase.PostSoloCase.test_Case008_asdasdas Coverage Results" MODIFIED="1539258516711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
     <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_ProfileCase_ProfileCase_test_Case014_ShowTopFansCase.coverage" NAME="Unittests for ProfileCase.ProfileCase.test_Case014_ShowTopFansCase Coverage Results" MODIFIED="1538210327848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
-    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_ProfileCase_ProfileCase.coverage" NAME="Unittests for ProfileCase.ProfileCase Coverage Results" MODIFIED="1539335921327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
-    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_PostSoloCase_PostSoloCase.coverage" NAME="Unittests for PostSoloCase.PostSoloCase Coverage Results" MODIFIED="1539420236539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
-  </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-1823277784">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="35" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.10" value="5" />
-          <entry key="project.open.time.11" value="4" />
-          <entry key="project.open.time.12" value="2" />
-          <entry key="project.open.time.13" value="1" />
-          <entry key="project.open.time.14" value="3" />
-          <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.18" value="1" />
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.6" value="3" />
-          <entry key="project.open.time.7" value="4" />
-          <entry key="project.open.time.8" value="9" />
-          <entry key="project.open.time.9" value="7" />
-          <entry key="project.opened" value="43" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="html" value="32" />
-          <entry key="png" value="2" />
-          <entry key="py" value="599" />
-          <entry key="pyi" value="2" />
-          <entry key="txt" value="11" />
-          <entry key="url" value="2" />
-          <entry key="xml" value="8" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="HTML" value="32" />
-          <entry key="Image" value="2" />
-          <entry key="PLAIN_TEXT" value="13" />
-          <entry key="Python" value="599" />
-          <entry key="PythonStub" value="2" />
-          <entry key="XML" value="8" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="dummy" value="60" />
-          <entry key="py" value="37424" />
-          <entry key="txt" value="2" />
-          <entry key="xml" value="205" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="PLAIN_TEXT" value="62" />
-          <entry key="Python" value="37424" />
-          <entry key="XML" value="205" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.vcs.git.usages" />
-    </session>
-    <session id="1671044785">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="10" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.14" value="7" />
-          <entry key="project.open.time.15" value="2" />
-          <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.17" value="1" />
-          <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.20" value="1" />
-          <entry key="project.opened" value="15" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="html" value="9" />
-          <entry key="png" value="36" />
-          <entry key="py" value="224" />
-          <entry key="txt" value="6" />
-          <entry key="xml" value="10" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="HTML" value="9" />
-          <entry key="Image" value="36" />
-          <entry key="PLAIN_TEXT" value="6" />
-          <entry key="Python" value="224" />
-          <entry key="XML" value="10" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="dummy" value="2" />
-          <entry key="py" value="15981" />
-          <entry key="txt" value="322" />
-          <entry key="xml" value="94" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="PLAIN_TEXT" value="324" />
-          <entry key="Python" value="15981" />
-          <entry key="XML" value="94" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.vcs.git.usages" />
-      <usages-collector id="statistics.js.language.service.starts" />
-    </session>
-    <session id="857465923">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
+    <SUITE FILE_PATH="coverage/StarMaker$Unittests_for_PostSoloCase_PostSoloCase_test_Case005_RecordingCase.coverage" NAME="Unittests for PostSoloCase.PostSoloCase.test_Case005_RecordingCase Coverage Results" MODIFIED="1539420601044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TestCase/PostSoloCase.py">
+        <entry file="file://$PROJECT_DIR$/Help/BasicGrammar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2640">
-              <caret line="96" column="29" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
-              <folding>
-                <element signature="e#15#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CommonView/Popup.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3600">
-              <caret line="123" column="29" selection-start-line="123" selection-start-column="29" selection-end-line="123" selection-end-column="29" />
-              <folding>
-                <element signature="e#46#57#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TestCase/EmailLogInCase.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5730">
-              <caret line="200" column="4" selection-start-line="200" selection-start-column="4" selection-end-line="200" selection-end-column="4" />
-              <folding>
-                <element signature="e#15#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TestCase/StartUpCase.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2040">
-              <caret line="72" selection-start-line="72" selection-end-line="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CommonView/Post.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1200">
-              <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
-              <folding>
-                <element signature="e#48#71#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Utils/Tools.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="496" column="18" lean-forward="true" selection-start-line="496" selection-start-column="18" selection-end-line="496" selection-end-column="18" />
-              <folding>
-                <element signature="e#50#59#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="850">
+              <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -234,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Utils/FindElement.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3330">
-              <caret line="113" selection-start-line="113" selection-end-line="113" />
+            <state relative-caret-position="300">
+              <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
               <folding>
                 <element signature="e#15#66#0" expanded="true" />
               </folding>
@@ -244,10 +69,61 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Utils/TestBoard.py">
+        <entry file="file://$PROJECT_DIR$/TestCase/EmailLogInCase.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+            <state relative-caret-position="1825">
+              <caret line="81" column="49" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TestCase/TestCase.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Help/Assert.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Help/__init__.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Help/SuiteExample.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Help/ElementLocation.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Help/CaseExample.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Help/CallRelation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="725">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
             </state>
           </provider>
         </entry>
@@ -264,9 +140,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tv_pitch_guide_tip</find>
-      <find>get_</find>
-      <find>assertTrue</find>
       <find>FindSource</find>
       <find>selected</find>
       <find>Only for your taste. Hope you love them</find>
@@ -294,6 +167,9 @@
       <find>time.sleep(1)</find>
       <find>time.sleep(3)</find>
       <find>time.sleep(2)</find>
+      <find>不可点击</find>
+      <find>findall</find>
+      <find>tm_year</find>
     </findStrings>
     <replaceStrings>
       <replace>from Utils.Tools import Screen</replace>
@@ -329,6 +205,9 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PATH_TO_GIT" value="C:\Git\cmd\git.exe" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="PUSH_TAGS">
       <GitPushTagMode />
@@ -337,14 +216,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$USER_HOME$/Desktop/tiqu.py" />
-        <option value="$USER_HOME$/Desktop/1111.py" />
-        <option value="$USER_HOME$/Desktop/mubiao.py" />
-        <option value="$PROJECT_DIR$/TestReport/New.py" />
-        <option value="$PROJECT_DIR$/TestReport/Old.py" />
-        <option value="$PROJECT_DIR$/TestReport/images/mubiao.py" />
-        <option value="$PROJECT_DIR$/TestReport/images/tiqu.py" />
-        <option value="$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/HTMLTestRunner_cn.py" />
         <option value="$PROJECT_DIR$/Utils/CreateTestReport.py" />
         <option value="$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/HTMLTestRunner.py" />
         <option value="$PROJECT_DIR$/CommonView/SignUp.py" />
@@ -355,9 +226,7 @@
         <option value="$PROJECT_DIR$/Help/CaseExample.py" />
         <option value="$PROJECT_DIR$/TestReport/images/123123123.py" />
         <option value="$PROJECT_DIR$/TestReport/images/123123.py" />
-        <option value="$PROJECT_DIR$/Help/BasicGrammar.py" />
         <option value="$PROJECT_DIR$/CommonView/LogIn.py" />
-        <option value="$PROJECT_DIR$/CommonView/VData/LogIn_VD.py" />
         <option value="$PROJECT_DIR$/Help/CallRelation.py" />
         <option value="$PROJECT_DIR$/TestSuitePackge/LogInSuite.py" />
         <option value="$PROJECT_DIR$/CommonView/VData/Library.py" />
@@ -366,11 +235,8 @@
         <option value="$PROJECT_DIR$/TestCase/PostCase.py" />
         <option value="$PROJECT_DIR$/Data/ProfileText.xml" />
         <option value="$PROJECT_DIR$/Utils/Setting.py" />
-        <option value="$PROJECT_DIR$/Utils/GetAppiumDeriver.py" />
-        <option value="$PROJECT_DIR$/CommonView/Home.py" />
         <option value="$PROJECT_DIR$/Data/AccountNumber.xml" />
         <option value="$PROJECT_DIR$/TestCase/StartUpCase.py" />
-        <option value="$PROJECT_DIR$/TestCase/EmailLogInCase.py" />
         <option value="$PROJECT_DIR$/TestCase/ProfileCase.py" />
         <option value="$PROJECT_DIR$/CommonView/VData/Profile_VD.py" />
         <option value="$PROJECT_DIR$/CommonView/Profile.py" />
@@ -378,29 +244,36 @@
         <option value="$PROJECT_DIR$/CommonView/VData/Popup_VD.py" />
         <option value="$PROJECT_DIR$/CommonView/Post.py" />
         <option value="$PROJECT_DIR$/CommonView/VData/Post_VD.py" />
-        <option value="$PROJECT_DIR$/bin/resource_mapping.txt" />
-        <option value="$PROJECT_DIR$/Utils/Tools.py" />
         <option value="$PROJECT_DIR$/Utils/Test.py" />
-        <option value="$PROJECT_DIR$/TestCase/TestCase.py" />
-        <option value="$PROJECT_DIR$/Utils/FindElement.py" />
         <option value="$PROJECT_DIR$/CommonView/VData/Library_VD.py" />
         <option value="$PROJECT_DIR$/CommonView/Library.py" />
         <option value="$PROJECT_DIR$/CommonView/VData/Home_VD.py" />
         <option value="$PROJECT_DIR$/TestCase/PostSoloCase.py" />
         <option value="$PROJECT_DIR$/CommonView/Popup.py" />
+        <option value="$PROJECT_DIR$/Utils/Tools.py" />
+        <option value="$PROJECT_DIR$/Utils/11111.py" />
+        <option value="$PROJECT_DIR$/TestReport/Profile页.html" />
+        <option value="$PROJECT_DIR$/CommonView/Home.py" />
+        <option value="$PROJECT_DIR$/Utils/CreateButton.py" />
+        <option value="$PROJECT_DIR$/CommonView/VData/LogIn_VD.py" />
+        <option value="$PROJECT_DIR$/Help/SuiteExample.py" />
+        <option value="$PROJECT_DIR$/Utils/TestBoard.py" />
+        <option value="$PROJECT_DIR$/TestCase/yangyang.py" />
+        <option value="$PROJECT_DIR$/TestCase/EmailLogInCase.py" />
+        <option value="$PROJECT_DIR$/Utils/GetAppiumDeriver.py" />
+        <option value="$PROJECT_DIR$/bin/resource_mapping.txt" />
+        <option value="$PROJECT_DIR$/bin/up.py" />
+        <option value="$PROJECT_DIR$/Help/BasicGrammar.py" />
+        <option value="$PROJECT_DIR$/Help/__init__.py" />
+        <option value="$PROJECT_DIR$/Utils/FindElement.py" />
+        <option value="$PROJECT_DIR$/TestCase/TestCase.py" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="485" />
-    <option name="y" value="92" />
-    <option name="width" value="1382" />
+    <option name="x" value="56" />
+    <option name="y" value="37" />
+    <option name="width" value="1115" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -444,24 +317,7 @@
             <path>
               <item name="StarMaker" type="b2602c69:ProjectViewProjectNode" />
               <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-              <item name="apk_box" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StarMaker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
               <item name="CommonView" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StarMaker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
-              <item name="CommonView" type="462c0819:PsiDirectoryNode" />
-              <item name="VData" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StarMaker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="StarMaker" type="b2602c69:ProjectViewProjectNode" />
@@ -472,22 +328,6 @@
               <item name="StarMaker" type="b2602c69:ProjectViewProjectNode" />
               <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
               <item name="TestCase" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StarMaker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
-              <item name="TestReport" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StarMaker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
-              <item name="TestReport" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StarMaker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StarMaker" type="462c0819:PsiDirectoryNode" />
-              <item name="TestSuitePackge" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="StarMaker" type="b2602c69:ProjectViewProjectNode" />
@@ -506,6 +346,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last.edited.regexp" value="Sample Text" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -544,29 +385,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for PostSoloCase.PostSoloCase.test_Case005_RecordingCase">
-    <configuration name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="StarMaker" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Utils" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Package\starmaker-qa\StarMaker\Utils\TestBoard.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.__init__">
     <configuration name="TestCase" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="StarMaker" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -581,6 +400,50 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TestCase/TestCase.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="StarMaker" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Help" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Help/__init__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="up" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="StarMaker" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bin" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bin/up.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -619,35 +482,20 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for RegressionSuite.RegressionSuite.test_Suite_004_PostSoloSuite" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="StarMaker" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TestSuitePackge" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;RegressionSuite.RegressionSuite.test_Suite_004_PostSoloSuite&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Python tests.Unittests for RegressionSuite.RegressionSuite.test_Suite_004_PostSoloSuite" />
-      <item itemvalue="Python tests.Unittests for PostSoloCase.PostSoloCase" />
-      <item itemvalue="Python.Test" />
       <item itemvalue="Python.TestCase" />
+      <item itemvalue="Python.up" />
+      <item itemvalue="Python.__init__" />
+      <item itemvalue="Python tests.Unittests for PostSoloCase.PostSoloCase" />
       <item itemvalue="Python tests.Unittests for PostSoloCase.PostSoloCase.test_Case005_RecordingCase" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.__init__" />
+        <item itemvalue="Python.up" />
         <item itemvalue="Python tests.Unittests for PostSoloCase.PostSoloCase.test_Case005_RecordingCase" />
         <item itemvalue="Python tests.Unittests for PostSoloCase.PostSoloCase" />
         <item itemvalue="Python.TestCase" />
-        <item itemvalue="Python.Test" />
-        <item itemvalue="Python tests.Unittests for RegressionSuite.RegressionSuite.test_Suite_004_PostSoloSuite" />
       </list>
     </recent_temporary>
   </component>
@@ -661,6 +509,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1528704702529</updated>
+      <workItem from="1543979256428" duration="2171000" />
+      <workItem from="1543997089689" duration="598000" />
+      <workItem from="1544078155432" duration="351000" />
+      <workItem from="1544078580321" duration="117000" />
+      <workItem from="1544172940390" duration="540000" />
+      <workItem from="1544238981380" duration="762000" />
+      <workItem from="1544254660619" duration="1209000" />
+      <workItem from="1544498155026" duration="7273000" />
+      <workItem from="1544615206017" duration="11000" />
     </task>
     <task id="LOCAL-00001" summary="T31778 PopupProcessing 性能优化，平均每个弹窗处理约节省1.5s">
       <created>1537426302240</created>
@@ -725,7 +582,21 @@
       <option name="project" value="LOCAL" />
       <updated>1539427402824</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="T31778&#10;1&gt;调整所有time.sleep(1)到time.sleep(2)">
+      <created>1539572767282</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1539572767282</updated>
+    </task>
+    <task id="LOCAL-00011" summary="T31778&#10;1&gt;语法调整">
+      <created>1539659082928</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1539659082928</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -760,6 +631,9 @@
       <configuration name="Unittests for PostSoloCase.PostSoloCase.test_Case005_RecordingCase" configurationId="tests" />
     </history-entry>
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="13032000" />
+  </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
@@ -770,24 +644,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13839285" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09541578" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info anchor="bottom" x="11" y="328" width="1898" height="383" id="Run" order="2" sideWeight="0.4989339" weight="0.37893593" />
+      <window_info anchor="bottom" x="11" y="328" width="1898" height="383" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.37852496" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3984799" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32899022" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32899022" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32899022" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010661" side_tool="true" weight="0.42019543" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32899022" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010661" side_tool="true" weight="0.4197397" />
       <window_info anchor="bottom" id="找到" order="11" />
-      <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.329718" />
+      <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.32899022" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -800,9 +674,6 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="T31778 PopupProcessing 性能优化，平均每个弹窗处理约节省1.5s" />
     <MESSAGE value="T31778&#10;1&gt;封装页面是否加载正常判断 Page_Element_Verification&#10;2&gt;修改GetAppiumDeriver循环调用的bug" />
@@ -813,117 +684,11 @@
     <MESSAGE value="T31778&#10;1&gt;回归测试套完成，并投入使用" />
     <MESSAGE value="T31778&#10;1&gt;回归测试套完成，并投入使用——html报告" />
     <MESSAGE value="T31778&#10;1&gt;调整time_1 to time_2" />
-    <option name="LAST_COMMIT_MESSAGE" value="T31778&#10;1&gt;调整time_1 to time_2" />
+    <MESSAGE value="T31778&#10;1&gt;调整所有time.sleep(1)到time.sleep(2)" />
+    <MESSAGE value="T31778&#10;1&gt;语法调整" />
+    <option name="LAST_COMMIT_MESSAGE" value="T31778&#10;1&gt;语法调整" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TestCase/PostCase.py" />
-    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/-299647045/builtins.py" />
-    <entry file="file://$PROJECT_DIR$/CommonView/VData/LogIn_VD.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2275">
-          <caret line="176" column="12" selection-start-line="176" selection-start-column="12" selection-end-line="176" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestCase/PhoneLogInCase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2925">
-          <caret line="123" column="33" selection-start-line="123" selection-start-column="33" selection-end-line="123" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestSuitePackge/ModelSuite.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestSuitePackge/LogInSuite.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Utils/ReadXMLData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Utils/Common.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Utils/CreateButton.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Utils/CreateTestReport.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Utils/GetAppiumDeriver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="775">
-          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files/Python36/Lib/site-packages/selenium/webdriver/remote/webdriver.py" />
-    <entry file="file://$PROJECT_DIR$/CommonView/LogIn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CommonView/StartUp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="57" column="47" selection-start-line="57" selection-start-column="47" selection-end-line="57" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CommonView/VData/StartUp_VD.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files/Python36/Lib/unittest/suite.py" />
-    <entry file="file://$PROJECT_DIR$/Data/AccountNumber.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Help/CaseExample.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Help/BasicGrammar.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/ProfileText.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Utils/GetDevicesInfo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="102" selection-start-line="102" selection-end-line="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Utils/Setting.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TestCase/FacebookLogInCase.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-450" />
@@ -943,13 +708,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CommonView/Profile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="53" column="27" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TestReport/启动app.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -962,13 +720,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestReport/Profile页.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="76" selection-start-line="8" selection-start-column="76" selection-end-line="8" selection-end-column="76" />
         </state>
       </provider>
     </entry>
@@ -986,27 +737,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/resource_mapping.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/TestSuitePackge/RegressionSuite.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
           <caret line="63" column="24" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CommonView/VData/Popup_VD.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="29" column="81" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestCase/TestCase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1017,21 +751,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CommonView/Library.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="46" column="28" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TestReport/images/20181013_15.29.49.png" />
-    <entry file="file://$PROJECT_DIR$/CommonView/Home.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="60" column="56" selection-start-line="60" selection-start-column="56" selection-end-line="60" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CommonView/VData/Home_VD.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -1039,79 +759,233 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestReport/images/20181012_16.46.56.png" />
-    <entry file="file://C:/Program Files/Python36/Lib/site-packages/selenium/webdriver/remote/remote_connection.py" />
     <entry file="file://$PROJECT_DIR$/TestCase/PostSoloCase.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2640">
+        <state relative-caret-position="2200">
           <caret line="96" column="29" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
-          <folding>
-            <element signature="e#15#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TestReport/images/20181012_16.46.56.png" />
+    <entry file="file://$PROJECT_DIR$/Utils/11111.py" />
+    <entry file="file://C:/Program Files/Python36/Lib/site-packages/selenium/webdriver/remote/remote_connection.py" />
     <entry file="file://$PROJECT_DIR$/CommonView/Popup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3600">
-          <caret line="123" column="29" selection-start-line="123" selection-start-column="29" selection-end-line="123" selection-end-column="29" />
-          <folding>
-            <element signature="e#46#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestCase/EmailLogInCase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5730">
-          <caret line="200" column="4" selection-start-line="200" selection-start-column="4" selection-end-line="200" selection-end-column="4" />
-          <folding>
-            <element signature="e#15#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="350">
+          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TestCase/StartUpCase.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
+        <state relative-caret-position="1700">
           <caret line="72" selection-start-line="72" selection-end-line="72" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CommonView/Post.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
+        <state relative-caret-position="1000">
           <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestReport/Profile页.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/Profile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/VData/LogIn_VD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils/TestBoard.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="925">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestSuitePackge/ModelSuite.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/AccountNumber.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils/Tools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19275">
+          <caret line="774" column="2" selection-start-line="774" selection-start-column="2" selection-end-line="774" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/VData/Popup_VD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/yangyang.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/Home.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
           <folding>
-            <element signature="e#48#71#0" expanded="true" />
+            <element signature="e#46#88#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/PhoneLogInCase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/12-8/李洁-face page.air/face page.air/face page.py" />
+    <entry file="file://$PROJECT_DIR$/Utils/Common.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils/CreateButton.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils/CreateTestReport.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils/GetAppiumDeriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+          <folding>
+            <element signature="e#15#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/up.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/resource_mapping.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="746">
+          <caret line="13874" column="129" selection-start-line="13874" selection-start-column="129" selection-end-line="13874" selection-end-column="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils/GetDevicesInfo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="91" column="36" lean-forward="true" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/Library.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="846">
+          <caret line="46" column="28" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/LogIn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Help/BasicGrammar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Utils/FindElement.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3330">
-          <caret line="113" selection-start-line="113" selection-end-line="113" />
+        <state relative-caret-position="300">
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
           <folding>
             <element signature="e#15#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Utils/TestBoard.py">
+    <entry file="file://$PROJECT_DIR$/TestCase/EmailLogInCase.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+        <state relative-caret-position="1825">
+          <caret line="81" column="49" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Utils/Tools.py">
+    <entry file="file://$PROJECT_DIR$/Help/Assert.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Help/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Help/SuiteExample.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="496" column="18" lean-forward="true" selection-start-line="496" selection-start-column="18" selection-end-line="496" selection-end-column="18" />
-          <folding>
-            <element signature="e#50#59#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="450">
+          <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Help/ElementLocation.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Help/CaseExample.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Help/CallRelation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/TestCase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
