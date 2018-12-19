@@ -47,27 +47,27 @@ class Home(object):
 
     # 首页 Home-Tab
     def HomeTab_Home(self):
-        HomeTab_Home_Class = self.findClaS(Home_VD.Home_Tab_Cla, 0)
+        HomeTab_Home_Class = self.findClaS(Home_VD.Home_Tab_ClaS, 0)
         return HomeTab_Home_Class
 
     # 首页 互娱大厅-Tab
     def HomeTab_KTV_Live(self):
-        HomeTab_KTV_Live_Class = self.findClaS(Home_VD.Home_Tab_Cla, 1)
+        HomeTab_KTV_Live_Class = self.findClaS(Home_VD.Home_Tab_ClaS, 1)
         return HomeTab_KTV_Live_Class
 
     # 首页 点唱-Tab
     def HomeTab_Sing(self):
-        HomeTab_Sing_Class = self.findClaS(Home_VD.Home_Tab_Cla, 2)
+        HomeTab_Sing_Class = self.findClaS(Home_VD.Home_Tab_ClaS, 2)
         return HomeTab_Sing_Class
 
     # 首页 消息-Tab
     def HomeTab_Notification(self):
-        HomeTab_Notification_Class = self.findClaS(Home_VD.Home_Tab_Cla, 3)
+        HomeTab_Notification_Class = self.findClaS(Home_VD.Home_Tab_ClaS, 3)
         return HomeTab_Notification_Class
 
     # 首页 个人页-Tab
     def HomeTab_Profile(self):
-        HomeTab_Profile_Class = self.findClaS(Home_VD.Home_Tab_Cla, 4)
+        HomeTab_Profile_Class = self.findClaS(Home_VD.Home_Tab_ClaS, 4)
         return HomeTab_Profile_Class
 
     # ----------

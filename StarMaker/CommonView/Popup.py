@@ -86,13 +86,13 @@ class Popup(object):
     # ----------
 
     # 发布图片引导(text=Click to post a photo)
-    def HomePopup_PostPhotoGuide_Click_LiveClick(self):
+    def SingPopup_PostPhotoGuide_Click_LiveClick(self):
         state = self.FindElement(ID=[Popup_VD.Popup_PostGuide_ID, "Click to post a photo"])
         if state:
             self.driver.find_element_by_id(Popup_VD.Popup_PostGuide_ID).click()
 
     # 发布图片+文字引导(text=Post texts with background photo.)
-    def HomePopup_PostTextsPhotoGuide_Click_LiveClick(self):
+    def SingPopup_PostTextsPhotoGuide_Click_LiveClick(self):
         state = self.FindElement(ID=[Popup_VD.Popup_PostGuide_ID, "Post texts with background photo."])
         if state:
             self.driver.find_element_by_id(Popup_VD.Popup_PostGuide_ID).click()
