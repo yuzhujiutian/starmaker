@@ -5,12 +5,15 @@
 from Utils import Tools
 from Utils.FindElement import find_element
 from CommonView.VData import StartUp_VD
+from CommonView.VData import LogIn_VD
 
 
 # 启动模块
 class StartUp(object):
     def __init__(self):
         self.findID = find_element().ID
+        self.findAU = find_element().AU
+        self.DIYSwipe_Percentage = Tools.Screen().DIYSwipe_Percentage
 
     # 开屏广告
     def OpenAdd_Link(self):
@@ -79,7 +82,7 @@ class StartUp(object):
 
     # 登录方式验证——Google 登录
     def LogInModeCase_Google(self):
-        if self.findID(StartUp_VD.Google_LogIn_Btn_ID):
+        if self.findID(LogIn_VD.LogInWindow_Google_Btn_ID):
             return True
         else:
             return False
@@ -95,3 +98,10 @@ class StartUp(object):
             return True
         else:
             return False
+
+    # 内容语言页面选择English
+    def ChooseContentLan_En(self):
+
+        # 找到English 这个语言选项
+        ChooseContentLan_En_Text = self.findAU("new UiSelector().text(\"English\")")
+        return ChooseContentLan_En_Text

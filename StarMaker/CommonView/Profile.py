@@ -177,3 +177,8 @@ class Profile(object):
     def CopyLink(self):
         CopyLink_ClaS = self.findClaS(Profile_VD.CopyLink_ClaS, -2)
         return CopyLink_ClaS
+
+    def Profile_FollowersEnter(self):
+        # 找到登录成功之后me页面的followers入口元素
+        Profile_FollowersEnter_Text = self.findAU("new UiSelector().text(\"Followers\")")
+        return Profile_FollowersEnter_Text
