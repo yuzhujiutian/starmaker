@@ -31,9 +31,6 @@ class EmailLogInCase(unittest.TestCase):
 
     # Email登录输入框功能验证——清空Email
     def test_Case001_InputFunction_ClearingEmailCase(self):
-        # 滑动Choose Language页面到底部
-        Screen().DIYSwipe_Percentage(0.5, 0.7, 0.5, 0.4, 500)
-        time.sleep(2)
         # 内容语言选择页面点击English
         StartUp().ChooseContentLan_En().click()
         time.sleep(5)
