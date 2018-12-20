@@ -1,10 +1,8 @@
 # coding=utf-8
 from Utils import Tools
 from Utils.GetDevicesInfo import DevicesInfo
-package = DevicesInfo().package()
-FindSource = Tools.Tools().FindSource
+FS = DevicesInfo().package() + Tools.Tools().FindSource
 gms = "com.google.android"
-FS = package + FindSource
 # ----------
 # 登录模块
 # ----------

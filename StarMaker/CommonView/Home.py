@@ -18,28 +18,13 @@ class Home(object):
         self.findAU = find_element().AU
 
     # ----------
-    # 登陆后首页引导弹窗
+    # 默认首页
     # ----------
 
-    # 首页 New Feature 引导——Tips
-    def HomePage_NewFeature_Tips(self):
-        HomePage_NewFeature_Tips_AU = self.findAU(Home_VD.HomePage_NewFeature_AU)
-        return HomePage_NewFeature_Tips_AU
-    #
-    # # 首页 New Feature 引导——Tips
-    # def HomePage_NewFeature_Tips(self):
-    #     HomePage_NewFeature_Tips_Class = self.findClaS(Home_VD.HomePage_NewFeature_Class, 1)
-    #     return HomePage_NewFeature_Tips_Class
-    #
-    # # 首页 New Feature 引导——OK按钮
-    # def HomePage_NewFeature_OK(self):
-    #     HomePage_NewFeature_OK_Class = self.findClaS(Home_VD.HomePage_NewFeature_Class, 2)
-    #     return HomePage_NewFeature_OK_Class
-    #
-    # # 首页 Ranking 引导（text="Ranking and Hashtag are moved here"）
-    # def HomePage_Guide(self):
-    #     HomePage_Guide_ID = self.findID(Home_VD.HomePage_Guide_ID)
-    #     return HomePage_Guide_ID
+    # 首页-Popular-Text([2]/English_text=POPULAR/Hindi_text=लोकप्रिय)
+    def HomePage_Popular_Text(self):
+        HomePage_Popular_Text_ID = self.findClaS(Home_VD.HomePage_Popular_Text_ClaS,2)
+        return HomePage_Popular_Text_ID
 
     # ----------
     # 首页五Tab

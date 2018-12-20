@@ -1,16 +1,14 @@
 # coding=utf-8
 from Utils import Tools
 from Utils.GetDevicesInfo import DevicesInfo
-package = DevicesInfo().package()
-FindSource = Tools.Tools().FindSource
-FS = package + FindSource
+FS = DevicesInfo().package() + Tools.Tools().FindSource
 # ----------
 # 首页
 # ----------
 
-# 首页顶部StarMaker标识
-Source_HomePage_StarMaker_ID = "bc0"
-HomePage_StarMaker_ID = FS(Source_HomePage_StarMaker_ID)
+# 首页-Popular-Text([2]/English_text=POPULAR/)
+HomePage_Popular_Text_ClaS = "android.widget.TextView"
+
 
 # ----------
 # 1>首页引导

@@ -13,8 +13,8 @@ class GetAppiumDeriver(object):
         desired_caps = {}
         # 调试使用
         desired_caps["platformVersion"] = 7.0
-        desired_caps["device"] = "SM_G9200"
-        desired_caps["deviceName"] = "zerofltezc"
+        desired_caps["device"] = "Redmi_Note_4X"
+        desired_caps["deviceName"] = "mido"
         # 系统信息
         desired_caps["platformName"] = Setting.PlatformName
         # desired_caps["platformVersion"] = GetDevicesInfo().GetAndroidVersion()  # PlatformVersion = "7.0"
