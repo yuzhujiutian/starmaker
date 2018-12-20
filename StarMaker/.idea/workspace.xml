@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8313010a-db35-4032-9d15-eb2204b77d40" name="Default" comment="T31778">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommonView/Home.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommonView/Home.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommonView/Popup.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommonView/Popup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommonView/VData/Home_VD.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommonView/VData/Home_VD.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommonView/VData/Library_VD.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommonView/VData/Library_VD.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommonView/VData/LogIn_VD.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommonView/VData/LogIn_VD.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommonView/VData/Popup_VD.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommonView/VData/Popup_VD.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommonView/VData/Post_VD.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommonView/VData/Post_VD.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommonView/VData/Profile_VD.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommonView/VData/Profile_VD.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommonView/VData/SignUp_VD.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommonView/VData/SignUp_VD.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommonView/VData/StartUp_VD.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommonView/VData/StartUp_VD.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCase/EmailLogInCase.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestCase/EmailLogInCase.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,20 +41,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/CommonView/Library.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CommonView/Profile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="54" column="4" lean-forward="true" selection-start-line="54" selection-start-column="4" selection-end-line="57" selection-end-column="41" />
+            <state relative-caret-position="1550">
+              <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CommonView/Profile.py">
+        <entry file="file://$PROJECT_DIR$/CommonView/Home.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1374">
-              <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
+            <state relative-caret-position="775">
+              <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+              <folding>
+                <element signature="e#46#88#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bin/up.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="419">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
@@ -76,15 +78,13 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CommonView/Post.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1050" />
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TestCase/PostSoloCase.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
+            <state relative-caret-position="1525">
               <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
             </state>
           </provider>
@@ -100,19 +100,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TestCase/EmailLogInCase.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1175">
-              <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CommonView/VData/Profile_VD.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+            <state relative-caret-position="200">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -120,8 +111,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CommonView/VData/SignUp_VD.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+            <state relative-caret-position="225">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+              <folding>
+                <element signature="e#15#38#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -130,7 +124,7 @@
         <entry file="file://$PROJECT_DIR$/CommonView/VData/StartUp_VD.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
@@ -216,6 +210,11 @@
     <option name="UPDATE_TYPE" value="MERGE" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master" />
+      </map>
+    </option>
     <option name="PUSH_TAGS">
       <GitPushTagMode />
     </option>
@@ -250,7 +249,6 @@
         <option value="$PROJECT_DIR$/Utils/TestBoard.py" />
         <option value="$PROJECT_DIR$/TestCase/yangyang.py" />
         <option value="$PROJECT_DIR$/Utils/GetAppiumDeriver.py" />
-        <option value="$PROJECT_DIR$/bin/up.py" />
         <option value="$PROJECT_DIR$/Help/BasicGrammar.py" />
         <option value="$PROJECT_DIR$/Help/__init__.py" />
         <option value="$PROJECT_DIR$/bin/resource_mapping.txt" />
@@ -274,6 +272,7 @@
         <option value="$PROJECT_DIR$/CommonView/VData/StartUp_VD.py" />
         <option value="$PROJECT_DIR$/CommonView/Popup.py" />
         <option value="$PROJECT_DIR$/CommonView/Library.py" />
+        <option value="$PROJECT_DIR$/bin/up.py" />
       </list>
     </option>
   </component>
@@ -301,6 +300,7 @@
     </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
@@ -386,19 +386,19 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Package\starmaker-qa\StarMaker\CommonView" />
-      <recent name="C:\Package\StarMaker\TestReport\images" />
-      <recent name="C:\Package\StarMaker\TestReport" />
-      <recent name="C:\Package\StarMaker\TestReport\[old]HTML-TestRunner" />
-      <recent name="C:\Package\StarMaker\TestReport\HtmlTestRunner" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Package\starmaker-qa\StarMaker\Data" />
       <recent name="C:\Package\StarMaker\TestReport\images" />
       <recent name="C:\Package\StarMaker\Alter_Config\APK_Storage" />
       <recent name="C:\Package\StarMaker\CommonView" />
       <recent name="C:\Package\StarMaker\Help" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Package\starmaker-qa\StarMaker\CommonView" />
+      <recent name="C:\Package\StarMaker\TestReport\images" />
+      <recent name="C:\Package\StarMaker\TestReport" />
+      <recent name="C:\Package\StarMaker\TestReport\[old]HTML-TestRunner" />
+      <recent name="C:\Package\StarMaker\TestReport\HtmlTestRunner" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -519,10 +519,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.__init__" />
-        <item itemvalue="Python.up" />
         <item itemvalue="Python tests.Unittests for PostSoloCase.PostSoloCase.test_Case005_RecordingCase" />
         <item itemvalue="Python tests.Unittests for PostSoloCase.PostSoloCase" />
+        <item itemvalue="Python.__init__" />
+        <item itemvalue="Python.up" />
         <item itemvalue="Python.TestCase" />
       </list>
     </recent_temporary>
@@ -548,7 +548,8 @@
       <workItem from="1544615206017" duration="11000" />
       <workItem from="1545028833724" duration="6894000" />
       <workItem from="1545041158040" duration="7335000" />
-      <workItem from="1545186181452" duration="1866000" />
+      <workItem from="1545186181452" duration="2940000" />
+      <workItem from="1545272020725" duration="2361000" />
     </task>
     <task id="LOCAL-00001" summary="T31778 PopupProcessing 性能优化，平均每个弹窗处理约节省1.5s">
       <created>1537426302240</created>
@@ -634,7 +635,21 @@
       <option name="project" value="LOCAL" />
       <updated>1545028987098</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="T31778">
+      <created>1545220489676</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1545220489676</updated>
+    </task>
+    <task id="LOCAL-00014" summary="T31778&#10;test dev">
+      <created>1545273447696</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1545273447696</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -670,7 +685,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29127000" />
+    <option name="totallyTimeSpent" value="32562000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -683,9 +698,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15138593" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15298508" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -697,7 +711,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32899022" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32899022" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32899022" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32899022" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.3286334" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010661" side_tool="true" weight="0.4197397" />
       <window_info anchor="bottom" id="找到" order="11" />
       <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.32899022" />
@@ -726,17 +740,11 @@
     <MESSAGE value="T31778&#10;1&gt;调整所有time.sleep(1)到time.sleep(2)" />
     <MESSAGE value="T31778&#10;1&gt;语法调整" />
     <MESSAGE value="T31778" />
-    <option name="LAST_COMMIT_MESSAGE" value="T31778" />
+    <MESSAGE value="T31778&#10;test dev" />
+    <option name="LAST_COMMIT_MESSAGE" value="T31778&#10;test dev" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/Desktop/12-8/李洁-face page.air/face page.air/face page.py" />
-    <entry file="file://$PROJECT_DIR$/bin/up.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Help/Assert.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -852,9 +860,6 @@
           <caret line="592" column="34" selection-start-line="592" selection-start-column="34" selection-end-line="592" selection-end-column="34" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Help/ouyang.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Utils/Setting.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -977,16 +982,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CommonView/Home.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="10" />
-          <folding>
-            <element signature="e#46#88#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CommonView/LogIn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7500">
@@ -1005,24 +1000,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CommonView/VData/Profile_VD.py">
+    <entry file="file://$PROJECT_DIR$/CommonView/Library.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        <state relative-caret-position="1175">
+          <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CommonView/VData/SignUp_VD.py">
+    <entry file="file://$PROJECT_DIR$/Help/ouyang.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/Profile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+        <state relative-caret-position="1550">
+          <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CommonView/VData/StartUp_VD.py">
+    <entry file="file://$PROJECT_DIR$/CommonView/Home.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="775">
+          <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+          <folding>
+            <element signature="e#46#88#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/SignUp.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommonView/Post.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/PostSoloCase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1525">
+          <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1033,32 +1047,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestCase/PostSoloCase.py">
+    <entry file="file://$PROJECT_DIR$/CommonView/VData/Profile_VD.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
+        <state relative-caret-position="200">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CommonView/Profile.py">
+    <entry file="file://$PROJECT_DIR$/CommonView/VData/SignUp_VD.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1374">
-          <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
+        <state relative-caret-position="225">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#15#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CommonView/SignUp.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CommonView/Post.py">
+    <entry file="file://$PROJECT_DIR$/CommonView/VData/StartUp_VD.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1050" />
+        <state relative-caret-position="425">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CommonView/Library.py">
+    <entry file="file://$PROJECT_DIR$/bin/up.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="54" column="4" lean-forward="true" selection-start-line="54" selection-start-column="4" selection-end-line="57" selection-end-column="41" />
+        <state relative-caret-position="419">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
