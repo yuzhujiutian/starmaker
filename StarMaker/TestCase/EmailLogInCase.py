@@ -4,10 +4,11 @@ import unittest
 from CommonView.StartUp import StartUp
 from CommonView.LogIn import LogIn
 from CommonView.Home import Home
-from CommonView.Popup import Popup
+from CommonView.Profile import Profile
 from Utils.Tools import Tools
 from Utils.GetAppiumDeriver import GetAppiumDeriver
 from Utils.ReadXMLData import ReadXMLData
+from Utils.Tools import Screen
 
 
 # 邮箱登录
@@ -30,9 +31,17 @@ class EmailLogInCase(unittest.TestCase):
 
     # Email登录输入框功能验证——清空Email
     def test_Case001_InputFunction_ClearingEmailCase(self):
-        # 点击邮箱登录按钮
-        StartUp().Email_LogIn_Btn_R()
-        # 点击登录弹窗中LogIn按钮
+        # 滑动Choose Language页面到底部
+        Screen().DIYSwipe_Percentage(0.5, 0.7, 0.5, 0.4, 500)
+        time.sleep(2)
+        # 内容语言选择页面点击English
+        StartUp().ChooseContentLan_En().click()
+        time.sleep(5)
+        # 点击APP底部的me页面入口唤起【登录注册】弹窗
+        Home().HomeTab_Profile().click()
+        # 在【登录注册】弹窗上点击邮箱方式
+        LogIn().LogInWindow_Email_Btn().click()
+        # 邮箱登录弹窗上点击login按钮
         LogIn().EmailWindow_LogIn_Btn().click()
         time.sleep(2)
         # 输入邮箱
@@ -42,7 +51,7 @@ class EmailLogInCase(unittest.TestCase):
         # 点击清空Email
         LogIn().Email_Clear_EmailBox_Btn().click()
         time.sleep(2)
-        expValue = ""
+        expValue = "Email"
         # 获取账号输入框内容
         actValue = LogIn().Email_Username_Box().text
         # 判断账号输入框为空
@@ -60,7 +69,7 @@ class EmailLogInCase(unittest.TestCase):
         # 点击清空Pwd
         LogIn().Email_Clear_PWDBox_Btn().click()
         time.sleep(2)
-        expValue = ""
+        expValue = "Password"
         # 获取密码输入框内容
         actValue = LogIn().Email_Password_Box().text
         # 判断密码输入框为空
@@ -190,24 +199,28 @@ class EmailLogInCase(unittest.TestCase):
         # 输入密码
         LogIn().Email_Password_Box().send_keys(
             ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Password"))
+        # 设置预期值为登录成功后me页面的一个元素
+        expValue = "Followers"
         # 点击LogIn
         LogIn().LogIn_Confirm_Btn().click()
         time.sleep(5)
-        actValue = Home().HomePage_NewFeature_Tips()
+        actValue = Profile().Profile_FollowersEnter().text
         time.sleep(2)
-        # 判断是否新装包登录成功——NewFeature引导
-        self.assertTrue(actValue)
-        time.sleep(2)
-        Popup().HomePopup_NewFeature_NEXT_LiveClick()
-        time.sleep(2)
-        Popup().HomePopup_NewFeatureAdded_NEXT_LiveClick()
-        time.sleep(2)
-        Popup().HomePopup_NewFeatureSing_NEXT_LiveClick()
-        time.sleep(2)
-        Popup().HomePopup_NewFeaturePostOther_DONE_LiveClick()
-        time.sleep(2)
-        Popup().HomePopup_PermissionMessage_Allow_LiveClick()
-        time.sleep(2)
+        # 判断是否新装包登录成功——比对me页面的followers入口文案
+        self.assertEqual(expValue, actValue)
+
+        # self.assertTrue(actValue)
+        # time.sleep(2)
+        # Popup().HomePopup_NewFeature_NEXT_LiveClick()
+        # time.sleep(2)
+        # Popup().HomePopup_NewFeatureAdded_NEXT_LiveClick()
+        # time.sleep(2)
+        # Popup().HomePopup_NewFeatureSing_NEXT_LiveClick()
+        # time.sleep(2)
+        # Popup().HomePopup_NewFeaturePostOther_DONE_LiveClick()
+        # time.sleep(2)
+        # Popup().HomePopup_PermissionMessage_Allow_LiveClick()
+        # time.sleep(2)
 
 
 # if __name__ == "__main__":

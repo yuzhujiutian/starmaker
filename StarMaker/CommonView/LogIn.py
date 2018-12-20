@@ -75,19 +75,34 @@ class LogIn(object):
         self.findAID = find_element().AID
         self.findAU = find_element().AU
 
+
     # ----------
     # 1>Email 登录
     # ----------
+    # 【登录注册】弹窗上点击Email方式
+    def LogInWindow_Email_Btn(self):
+        LogInWindow_Email_Btn_ID = self.findID(LogIn_VD.LogInWindow_Email_Btn_ID)
+        return LogInWindow_Email_Btn_ID
+
+    # 【登录注册】弹窗上点击Phone方式
+    def LogInWindow_Phone_Btn(self):
+        LogInWindow_Phone_Btn_ID = self.findID(LogIn_VD.LogInWindow_Phone_Btn_ID)
+        return LogInWindow_Phone_Btn_ID
+
+    # 【登录注册】弹窗上点击G+方式
+    def LogInWindow_Google_Btn(self):
+        LogInWindow_Google_Btn_ID = self.findID(LogIn_VD.LogInWindow_Google_Btn_ID)
+        return LogInWindow_Google_Btn_ID
 
     # Email 弹窗 —— 登录
     def EmailWindow_LogIn_Btn(self):
-        EmailWindow_LogIn_Btn_Class = self.findClaS(LogIn_VD.EmailWindow_LogIn_Btn_Class, 1)
-        return EmailWindow_LogIn_Btn_Class
+        EmailWindow_LogIn_Btn_ID = self.findID(LogIn_VD.EmailWindow_LogIn_Btn_ID)
+        return EmailWindow_LogIn_Btn_ID
 
     # Email 弹窗 —— 注册
     def EmailWindow_SignUp_Btn(self):
-        EmailWindow_SignUp_Btn_Class = self.findClaS(LogIn_VD.EmailWindow_SignUp_Btn_Class, 2)
-        return EmailWindow_SignUp_Btn_Class
+        EmailWindow_SignUp_Btn_ID = self.findID(LogIn_VD.EmailWindow_SignUp_Btn_ID)
+        return EmailWindow_SignUp_Btn_ID
 
     # Email 账号输入框
     def Email_Username_Box(self):
@@ -112,8 +127,8 @@ class LogIn(object):
 
     # Email 账号错误
     def Email_Username_Error(self):
-        Email_Username_Error_Xpath = self.findID(LogIn_VD.Email_Username_Error_ID)
-        return Email_Username_Error_Xpath
+        Email_Username_Error_ID = self.findID(LogIn_VD.Email_Username_Error_ID)
+        return Email_Username_Error_ID
 
     # Email 账号未注册——Sign Up（ACP）
     @staticmethod
@@ -226,6 +241,13 @@ class LogIn(object):
     # 3>G+ 登录
     # ----------
 
+    # 登录方式验证——Google 登录
+    def LogInModeCase_Google(self):
+        if self.findID(LogIn_VD.LogInWindow_Google_Btn_ID):
+            return True
+        else:
+            return False
+
     # G+ 查找预选账号弹窗，如果存在返回True
     def FindGoogle_PreselectionPopup(self):
         if self.findID(LogIn_VD.Google_PreselectionPopup_ID):
@@ -297,6 +319,16 @@ class LogIn(object):
     def Google_ConsentNext(self):
         Google_ConsentNext_ID = self.findID(LogIn_VD.Google_ConsentNext_ID)
         return Google_ConsentNext_ID
+
+    # G+ google服务页“下箭头”
+    def Google_ServiceDownArrow(self):
+        Google_ServiceDownArrow_ID = self.findID(LogIn_VD.Google_ServiceDownArrow_ID)
+        return Google_ServiceDownArrow_ID
+
+    # G+ google服务页“接受”
+    def Google_ServiceAccept(self):
+        Google_ServiceAccept_ID = self.findID(LogIn_VD.Google_ServiceAccept_ID)
+        return Google_ServiceAccept_ID
 
     # ----------
     # 4>Facebook 登录——弹出弹窗（未安装FB）

@@ -9,15 +9,42 @@ gms = "com.google.android"
 # 登录模块
 # ----------
 
+# 登录弹窗
+# 登录弹窗——关闭
+Source_LogInWindow_Close_Btn_ID = "close_view"
+LogInWindow_Close_Btn_ID = package + FindSource(Source_LogInWindow_Close_Btn_ID)
+
+# 登录弹窗——FB
+Source_LogInWindow_FB_Btn_ID = "rl_login_top"
+LogInWindow_FB_Btn_ID = package + FindSource(Source_LogInWindow_FB_Btn_ID)
+
+# 登录弹窗——邮箱
+Source_LogInWindow_Email_Btn_ID = "img_login_left"
+LogInWindow_Email_Btn_ID = package + FindSource(Source_LogInWindow_Email_Btn_ID)
+
+# 登录弹窗——手机
+Source_LogInWindow_Phone_Btn_ID = "img_login_middle"
+LogInWindow_Phone_Btn_ID = package + FindSource(Source_LogInWindow_Phone_Btn_ID)
+
+# 登录弹窗——G+
+Source_LogInWindow_Google_Btn_ID = "img_login_right"
+LogInWindow_Google_Btn_ID = package + FindSource(Source_LogInWindow_Google_Btn_ID)
+
 # ----------
 # 1>Email 登录
 # ----------
 
+# Email 登录弹窗——关闭
+Source_EmailWindow_Close_Btn_ID = "txt_login_close"
+EmailWindow_Close_Btn_ID = package + FindSource(Source_EmailWindow_Close_Btn_ID)
+
 # Email 登录弹窗——登录
-EmailWindow_LogIn_Btn_Class = "android.widget.TextView"
+Source_EmailWindow_LogIn_Btn_ID = "txt_login"
+EmailWindow_LogIn_Btn_ID = package + FindSource(Source_EmailWindow_LogIn_Btn_ID)
 
 # Email 登录弹窗——注册
-EmailWindow_SignUp_Btn_Class = "android.widget.TextView"
+Source_EmailWindow_SignUp_Btn_ID = "txt_sign_up"
+EmailWindow_SignUp_Btn_ID = package + FindSource(Source_EmailWindow_SignUp_Btn_ID)
 
 # Email 登录——账号输入框
 Email_Username_Box_Class = "android.widget.EditText"
@@ -120,8 +147,8 @@ Recapture_Code_ID = package + FindSource(Source_Recapture_Code_ID)
 # 3>G+ 登录
 # ----------
 
-# G+ google预选账号弹窗（text=为“StarMaker”选择帐号）
-Google_PreselectionPopup_ID = gms + ".gms:id/title"
+# G+ google预选账号弹窗（text=“选择帐号”）
+Google_PreselectionPopup_ID = gms + ".gms:id/main_title"
 
 # G+ 添加账号
 Google_AddAccountNumber_ID = gms + ".gms:id/add_account_chip_title"
@@ -129,17 +156,17 @@ Google_AddAccountNumber_ID = gms + ".gms:id/add_account_chip_title"
 # G+ 预选账号
 Google_PreselectionAN_IDS = gms + ".gms:id/account_display_name"
 
-# G+ 谷歌第三方登录页（text=登录(输入账号)/欢迎(输入密码)）
+# G+ 谷歌第三方登录页（text=“登录”）
 Google_AddLogInPage_Title_ID = "headingText"
 
-# G+ 谷歌第三方登录——输入电子邮箱地址或电话号码
+# G+ 谷歌第三方登录——输入电子邮件地址或电话号码
 Google_AddLogInPage_InputAN_ID = "identifierId"
 
-# G+ 添加账号下一步
+# G+ 添加账号“下一步”按钮
 Google_ANNext_ID = "identifierNext"
 
 # G+ 添加账号报错信息
-Google_AddAN_ErrorText_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View[1]/android.view.View[3]/android.view.View/android.view.View[2]/android.view.View"
+Google_AddAN_ErrorText_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View[1]/android.view.View[3]/android.view.View/android.view.View[2]"
 
 # G+ 谷歌第三方登录——显示账号（text=xinqiji871002@gmail.com）
 Google_AddLogInPage_ShowAN_ID = "profileIdentifier"
@@ -152,6 +179,12 @@ Google_PWDNext_ID = "passwordNext"
 
 # G+ 我同意
 Google_ConsentNext_ID = "signinconsentNext"
+
+# G+ google服务页的“下箭头”
+Google_ServiceDownArrow_ID = gms + ".gms:id/suw_navbar_more"
+
+# G+ google服务页的“接受”
+Google_ServiceAccept_ID = gms + ".gms:id/suw_navbar_next"
 
 # ----------
 # 4>Facebook 登录——弹出弹窗（未安装FB）
