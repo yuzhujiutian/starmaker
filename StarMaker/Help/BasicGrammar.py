@@ -100,7 +100,7 @@ class A(object):
         b = "一个"  # 字符串
         set.c = [1, "二"]  # 列表
         d = {"t": "time", "p": "path"}  # 字典
-        e = (1, "二", "san")  # 元素
+        e = (1, "二", "san")  # 元组
         print(a, b, c, d, e)  # 打印变量
         print(type(a), type(b), type(c), type(d), type(e))  # 打印变量类型
 

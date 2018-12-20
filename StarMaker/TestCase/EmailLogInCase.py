@@ -56,6 +56,9 @@ class EmailLogInCase(unittest.TestCase):
         self.assertEqual(expValue, actValue)
         LogIn().Email_Username_Box().clear()
         LogIn().Email_Password_Box().clear()
+        1. 进度管理、任务同步   wiki
+        2. 写用例的时候，可以快速找到信息 wiki
+        3. 整理所有一二级页面
 
     # Email登录输入框功能验证——清空Pwd
     def test_Case002_InputFunction_ClearingPasswordCase(self):
@@ -218,6 +221,7 @@ class EmailLogInCase(unittest.TestCase):
         # time.sleep(2)
         # Popup().HomePopup_PermissionMessage_Allow_LiveClick()
         # time.sleep(2)
+
 
 
 # if __name__ == "__main__":

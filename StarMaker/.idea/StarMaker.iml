@@ -5,7 +5,7 @@
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
     <content url="file://$MODULE_DIR$/../venv/lib/python3.5/site-packages" />
-    <orderEntry type="jdk" jdkName="Python 3.6" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.7 (StarMaker)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">

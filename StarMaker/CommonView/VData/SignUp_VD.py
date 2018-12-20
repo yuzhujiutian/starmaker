@@ -4,6 +4,7 @@ from Utils.GetDevicesInfo import DevicesInfo
 package = DevicesInfo().package()
 FindSource = Tools.Tools().FindSource
 gms = "com.google.android"
+FS = package + FindSource
 # ----------
 # 注册模块
 # ----------
@@ -14,7 +15,7 @@ gms = "com.google.android"
 
 # SignUp Tips（text=输入邮箱/"Verifying your email address …"/"Sent!"/"Open the email and confirm your email address"）
 Source_SignUp_Tips_ID = "com_accountkit_title"
-SignUp_Tips_ID = package + FindSource(Source_SignUp_Tips_ID)
+SignUp_Tips_ID = FS(Source_SignUp_Tips_ID)
 
 # SignUp 选择账号以继续（accessibility id=Name）
 Select_AN_IDS = gms + ".gmscredential_picker_options"
@@ -24,23 +25,23 @@ NoneOfThem_Btn_ID = gms + ".gmscancel"
 
 # SignUp 输入框
 Source_SignUp_Input_Box_ID = "com_accountkit_email"
-SignUp_Input_Box_ID = package + FindSource(Source_SignUp_Input_Box_ID)
+SignUp_Input_Box_ID = FS(Source_SignUp_Input_Box_ID)
 
 # SignUp 下一步
 Source_SignUp_Next_Btn_ID = "com_accountkit_next_button"
-SignUp_Next_Btn_ID = package + FindSource(Source_SignUp_Next_Btn_ID)
+SignUp_Next_Btn_ID = FS(Source_SignUp_Next_Btn_ID)
 
 # SignUp 报错信息
 Source_SignUp_InputEmail_Error_ID = "textinput_error"
-SignUp_InputEmail_Error_ID = package + FindSource(Source_SignUp_InputEmail_Error_ID)
+SignUp_InputEmail_Error_ID = FS(Source_SignUp_InputEmail_Error_ID)
 
 # SignUp 打开邮箱
 Source_SignUp_OpenEmail_ID = "com_accountkit_check_email_button"
-SignUp_OpenEmail_ID = package + FindSource(Source_SignUp_OpenEmail_ID)
+SignUp_OpenEmail_ID = FS(Source_SignUp_OpenEmail_ID)
 
 # SignUp 重发邮件
 Source_SignUp_ResendEmail_ID = "com_accountkit_retry_email_button"
-SignUp_ResendEmail_ID = package + FindSource(Source_SignUp_ResendEmail_ID)
+SignUp_ResendEmail_ID = FS(Source_SignUp_ResendEmail_ID)
 
 # Gmail 开启自动同步
 Gmail_AutoSynchronization_ID = gms + ".gmconversation_tip_text"
