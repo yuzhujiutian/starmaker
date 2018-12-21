@@ -1,6 +1,5 @@
 # coding=utf-8
 import unittest
-from Utils.ReadXMLData import ReadXMLData
 from Utils.CreateTestReport import CreatTestReporter
 Tester = "崔尧椋"
 
@@ -15,14 +14,9 @@ class EmailLogInCase(unittest.TestCase):
         from Action.LogInModular import LogInModular
         # 定义一个测试套
         EmailLogInCaseSuite = unittest.TestSuite()
-        # 添加测试数据
-        global Email
-        global Password
-        Email = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Email")
-        Password = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Password")
         # 添加测试套模版
         EmailLogInCaseSuite.addTest(StarUpModular("test_Case001_ChooseLanguagePage_CheckStartSuccess_Tips"))
-        EmailLogInCaseSuite.addTest(StarUpModular("test_Case002_ChooseLanguagePage_SelectLanguage_SelectEnglish"))
+        EmailLogInCaseSuite.addTest(StarUpModular("test_Case016_ChooseLanguagePage_SelectLanguage_SelectEnglish"))
         EmailLogInCaseSuite.addTest(HomeModular("test_Case006_HomePage_Tourist_SelectProfileTab"))
         EmailLogInCaseSuite.addTest(LogInModular("test_Case002_LogInPopup_SelectLoginMode_SelectEmail"))
         EmailLogInCaseSuite.addTest(LogInModular("test_Case005_LogInPopup_EmailLoginMode_SelectLogIn"))

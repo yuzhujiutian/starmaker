@@ -4,6 +4,7 @@ import unittest
 from CommonView.LogIn import LogIn
 from Utils.Tools import Tools
 from Utils.GetAppiumDeriver import GetAppiumDeriver
+from Utils.ReadXMLData import ReadXMLData
 from Utils.Tools import Screen
 
 
@@ -79,7 +80,8 @@ class LogInModular(unittest.TestCase):
         # 断言待补充
 
     # 邮箱登录页-输入框-输入邮箱
-    def test_Case008_EmailLogInPage_InputBox_EmailInput(self,Email):
+    def test_Case008_EmailLogInPage_InputBox_EmailInput(self):
+        Email = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Email")
         LogIn().EmailLogInPage_InputBox_EmailInput().send_keys(Email)
         time.sleep(2)
         # 获取Email输入框text
@@ -101,7 +103,8 @@ class LogInModular(unittest.TestCase):
         self.assertEqual(expValue, actValue)
 
     # 邮箱登录页-输入框-输入密码
-    def test_Case010_EmailLogInPage_InputBox_PasswordInput(self,Password):
+    def test_Case010_EmailLogInPage_InputBox_PasswordInput(self):
+        Password = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Password")
         LogIn().EmailLogInPage_InputBox_PasswordInput().send_keys(Password)
         time.sleep(2)
         # 获取密码
@@ -124,7 +127,7 @@ class LogInModular(unittest.TestCase):
         actValue = LogIn().EmailLogInPage_Title_Text()
         time.sleep(2)
         # 断言：登录成功
-        self.assertIsNone(actValue)
+        self.assertFalse(actValue)
 
 
 

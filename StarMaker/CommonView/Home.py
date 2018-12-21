@@ -20,9 +20,9 @@ class Home(object):
     # ----------
     # 默认首页
     # ----------
-    # 首页-Popular-Text([2]/English_text=POPULAR/Hindi_text=लोकप्रिय)
+    # 首页-Popular-Text([1]/English_text=POPULAR/Hindi_text=लोकप्रिय)
     def HomePage_Popular_Text(self):
-        HomePage_Popular_Text_ID = self.findClaS(Home_VD.HomePage_Popular_Text_ClaS,2)
+        HomePage_Popular_Text_ID = self.findClaS(Home_VD.HomePage_Popular_Text_ClaS,1)
         return HomePage_Popular_Text_ID
 
     # ----------

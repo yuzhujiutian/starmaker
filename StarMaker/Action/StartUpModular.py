@@ -45,9 +45,10 @@ class StarUpModular(unittest.TestCase):
         self.assertEqual(expValue, actValue)
 
     # 选择印地语进入Popular页
-    def test_Case002_ChooseLanguagePage_SelectLanguage_SelectEnglish(self):
+    def test_Case002_ChooseLanguagePage_SelectLanguage_SelectHindi(self):
         # 选择Hindi语
         SelectLanguage(StartUp().ChooseLanguagePage_SelectLanguage_SelectHindi(),"हिन्दी")
+        time.sleep(5)
         # 获取首页Popular文案(Hindi_text=लोकप्रिय)
         expValue = "लोकप्रिय"
         actValue = Home().HomePage_Popular_Text().text
@@ -59,6 +60,7 @@ class StarUpModular(unittest.TestCase):
     def test_Case003_ChooseLanguagePage_SelectLanguage_SelectBengali(self):
         # 选择Bengali语
         SelectLanguage(StartUp().ChooseLanguagePage_SelectLanguage_SelectBengali(),"বাংলা")
+        time.sleep(5)
         # 获取首页Popular文案(Bengali_text=জনপ্রিয়)
         expValue = "জনপ্রিয়"
         actValue = Home().HomePage_Popular_Text().text
@@ -70,6 +72,7 @@ class StarUpModular(unittest.TestCase):
     def test_Case004_ChooseLanguagePage_SelectLanguage_SelectKannada(self):
         # 选择Kannada语
         SelectLanguage(StartUp().ChooseLanguagePage_SelectLanguage_SelectKannada(),"ಕನ್ನಡ")
+        time.sleep(5)
         # 获取首页Popular文案(Kannada_text=ಜನಪ್ರಿಯ)
         expValue = "ಜನಪ್ರಿಯ"
         actValue = Home().HomePage_Popular_Text().text
@@ -81,6 +84,7 @@ class StarUpModular(unittest.TestCase):
     def test_Case005_ChooseLanguagePage_SelectLanguage_SelectTamil(self):
         # 选择Tamil语
         SelectLanguage(StartUp().ChooseLanguagePage_SelectLanguage_SelectTamil(),"தமிழ்")
+        time.sleep(5)
         # 获取首页Popular文案(Tamil_text=பிரபலமான)
         expValue = "பிரபலமான"
         actValue = Home().HomePage_Popular_Text().text
@@ -92,6 +96,7 @@ class StarUpModular(unittest.TestCase):
     def test_Case006_ChooseLanguagePage_SelectLanguage_SelectGujarati(self):
         # 选择Gujarati语
         SelectLanguage(StartUp().ChooseLanguagePage_SelectLanguage_SelectGujarati(),"ગુજરાતી")
+        time.sleep(5)
         # 获取首页Popular文案(Gujarati_text=POPULAR)
         expValue = "POPULAR"
         actValue = Home().HomePage_Popular_Text().text
@@ -103,6 +108,7 @@ class StarUpModular(unittest.TestCase):
     def test_Case007_ChooseLanguagePage_SelectLanguage_SelectOdia(self):
         # 选择Odia语
         SelectLanguage(StartUp().ChooseLanguagePage_SelectLanguage_SelectOdia(),"ଓଡ଼ିଆ")
+        time.sleep(5)
         # 获取首页Popular文案(Odia_text=POPULAR)
         expValue = "POPULAR"
         actValue = Home().HomePage_Popular_Text().text
@@ -114,6 +120,7 @@ class StarUpModular(unittest.TestCase):
     def test_Case008_ChooseLanguagePage_SelectLanguage_SelectMalayalam(self):
         # 选择Malayalam语
         SelectLanguage(StartUp().ChooseLanguagePage_SelectLanguage_SelectMalayalam(), "മലയാളം")
+        time.sleep(5)
         # 获取首页Popular文案(Malayalam_text=ജനപ്രിയം)
         expValue = "ജനപ്രിയം"
         actValue = Home().HomePage_Popular_Text().text
@@ -125,6 +132,7 @@ class StarUpModular(unittest.TestCase):
     def test_Case009_ChooseLanguagePage_SelectLanguage_SelectMarathi(self):
         # 选择Marathi语
         SelectLanguage(StartUp().ChooseLanguagePage_SelectLanguage_SelectMarathi(), "मराठी")
+        time.sleep(5)
         # 获取首页Popular文案(Marathi_text=लोकप्रिय)
         expValue = "लोकप्रिय"
         actValue = Home().HomePage_Popular_Text().text
@@ -136,6 +144,7 @@ class StarUpModular(unittest.TestCase):
     def test_Case010_ChooseLanguagePage_SelectLanguage_SelectTelugu(self):
         # 选择Telugu语
         SelectLanguage(StartUp().ChooseLanguagePage_SelectLanguage_SelectTelugu(), "తెలుగు")
+        time.sleep(5)
         # 获取首页Popular文案(Telugu_text=ప్రముఖ)
         expValue = "ప్రముఖ"
         actValue = Home().HomePage_Popular_Text().text
@@ -147,6 +156,7 @@ class StarUpModular(unittest.TestCase):
     def test_Case011_ChooseLanguagePage_SelectLanguage_SelectPunjabi(self):
         # 选择Punjabi语
         SelectLanguage(StartUp().ChooseLanguagePage_SelectLanguage_SelectPunjabi(), "ਪੰਜਾਬੀ")
+        time.sleep(5)
         # 获取首页Popular文案(Punjabi_text=POPULAR)
         expValue = "POPULAR"
         actValue = Home().HomePage_Popular_Text().text
@@ -158,6 +168,7 @@ class StarUpModular(unittest.TestCase):
     def test_Case012_ChooseLanguagePage_SelectLanguage_SelectAssamese(self):
         # 选择Assamese语
         SelectLanguage(StartUp().ChooseLanguagePage_SelectLanguage_SelectAssamese(), "অসমীয়া")
+        time.sleep(5)
         # 获取首页Popular文案(Assamese_text=POPULAR)
         expValue = "POPULAR"
         actValue = Home().HomePage_Popular_Text().text
@@ -169,6 +180,7 @@ class StarUpModular(unittest.TestCase):
     def test_Case013_ChooseLanguagePage_SelectLanguage_SelectHaryanvi(self):
         # 选择Haryanvi语
         SelectLanguage(StartUp().ChooseLanguagePage_SelectLanguage_SelectHaryanvi(), "हरियाणवी")
+        time.sleep(5)
         # 获取首页Popular文案(Haryanvi_text=POPULAR)
         expValue = "POPULAR"
         actValue = Home().HomePage_Popular_Text().text
@@ -180,6 +192,7 @@ class StarUpModular(unittest.TestCase):
     def test_Case014_ChooseLanguagePage_SelectLanguage_SelectRajasthani(self):
         # 选择Rajasthani语
         SelectLanguage(StartUp().ChooseLanguagePage_SelectLanguage_SelectRajasthani(), "राजस्थानी")
+        time.sleep(5)
         # 获取首页Popular文案(Rajasthani_text=POPULAR)
         expValue = "POPULAR"
         actValue = Home().HomePage_Popular_Text().text
@@ -191,6 +204,7 @@ class StarUpModular(unittest.TestCase):
     def test_Case015_ChooseLanguagePage_SelectLanguage_SelectBhojpuri(self):
         # 选择Bhojpuri语
         SelectLanguage(StartUp().ChooseLanguagePage_SelectLanguage_SelectBhojpuri(), "भोजपूरी")
+        time.sleep(5)
         # 获取首页Popular文案(Bhojpuri_text=POPULAR)
         expValue = "POPULAR"
         actValue = Home().HomePage_Popular_Text().text
@@ -205,6 +219,7 @@ class StarUpModular(unittest.TestCase):
         time.sleep(2)
         # 选择English语
         SelectLanguage(StartUp().ChooseLanguagePage_SelectLanguage_SelectEnglish(),"English")
+        time.sleep(5)
         # 获取首页Popular文案(English_text=POPULAR)
         expValue = "POPULAR"
         actValue = Home().HomePage_Popular_Text().text

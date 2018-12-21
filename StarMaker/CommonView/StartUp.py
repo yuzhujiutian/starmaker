@@ -91,7 +91,7 @@ class StartUp(object):
         ChooseLanguagePage_SelectLanguage_SelectBhojpuri_ClaS = self.findClaS(StartUp_VD.ChooseLanguagePage_SelectLanguage_Common_ClaS,14)
         return ChooseLanguagePage_SelectLanguage_SelectBhojpuri_ClaS
 
-    # 语言选择页-选择语言-选择英语([15]text=English)
+    # 语言选择页-选择语言-选择英语([-1]text=English)
     def ChooseLanguagePage_SelectLanguage_SelectEnglish(self):
-        ChooseLanguagePage_SelectLanguage_SelectEnglish_ClaS = self.findClaS(StartUp_VD.ChooseLanguagePage_SelectLanguage_Common_ClaS,15)
+        ChooseLanguagePage_SelectLanguage_SelectEnglish_ClaS = self.findClaS(StartUp_VD.ChooseLanguagePage_SelectLanguage_Common_ClaS,-1)
         return ChooseLanguagePage_SelectLanguage_SelectEnglish_ClaS
