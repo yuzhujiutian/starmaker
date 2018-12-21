@@ -28,7 +28,7 @@ class GoogleLogInCase(unittest.TestCase):
     def tearDownClass(cls):
         pass
 
-    # Google第三方登陆
+    # Google第三方登录
     def test_Case001_GoogleLogIn(self):
         # 滑动Choose Language页面到底部
         Screen().DIYSwipe_Percentage(0.5, 0.7, 0.5, 0.4, 500)
@@ -40,7 +40,7 @@ class GoogleLogInCase(unittest.TestCase):
         Home().HomeTab_Profile().click()
         # 判断【登录注册】弹窗上是否有G+登录方式的按钮
         if LogIn().LogInModeCase_Google():
-            # 点击G+登陆按钮
+            # 点击G+登录按钮
             LogIn().LogInWindow_Google_Btn().click()
             time.sleep(10)
             # 查找预选帐号弹窗是否存在
@@ -92,7 +92,7 @@ class GoogleLogInCase(unittest.TestCase):
             time.sleep(2)
             self.assertEqual(expValue, actValue)
         else:
-            self.skipTest("该设备不支持Google登陆方式")
+            self.skipTest("该设备不支持Google登录方式")
 
 
 if __name__ == '__main__':

@@ -1,7 +1,8 @@
 # coding=utf-8
 from Utils import Tools
 from Utils.GetDevicesInfo import DevicesInfo
-FS = DevicesInfo().package() + Tools.Tools().FindSource
+package = DevicesInfo().package()
+FS = Tools.Tools().FindSource
 # ----------
 # Library页
 # ----------

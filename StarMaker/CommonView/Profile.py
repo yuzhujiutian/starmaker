@@ -15,6 +15,21 @@ class Profile(object):
         self.findClaS = find_element().ClaS
         self.findAU = find_element().AU
 
+    # ----------
+    # 个人页-个人信息
+    # ----------
+    # 个人页-个人信息-用户昵称
+    def ProfilePage_UserInfo_StageName(self):
+        ProfilePage_UserInfo_StageName_ID = self.findID(Profile_VD.ProfilePage_UserInfo_StageName_ID)
+        return ProfilePage_UserInfo_StageName_ID
+
+
+
+
+
+
+
+# ----------------------------------------------------------------------------------------------------------------------
     # 用户头像
     def Profile_HeadView(self):
         Profile_HeadView_ID = self.findID(Profile_VD.Profile_HeadView_ID)

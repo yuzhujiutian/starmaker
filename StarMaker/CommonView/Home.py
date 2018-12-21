@@ -20,41 +20,41 @@ class Home(object):
     # ----------
     # 默认首页
     # ----------
-
     # 首页-Popular-Text([2]/English_text=POPULAR/Hindi_text=लोकप्रिय)
     def HomePage_Popular_Text(self):
         HomePage_Popular_Text_ID = self.findClaS(Home_VD.HomePage_Popular_Text_ClaS,2)
         return HomePage_Popular_Text_ID
 
     # ----------
-    # 首页五Tab
+    # 首页-MainTab
     # ----------
+    # 首页-MainTab-HomeTab
+    def HomePage_MainTab_HomeTab(self):
+        HomePage_MainTab_HomeTab_ClaS = self.findClaS(Home_VD.HomePage_MainTab_ClaS, 0)
+        return HomePage_MainTab_HomeTab_ClaS
 
-    # 首页 Home-Tab
-    def HomeTab_Home(self):
-        HomeTab_Home_Class = self.findClaS(Home_VD.Home_Tab_ClaS, 0)
-        return HomeTab_Home_Class
+    # 首页-MainTab-DiscoverTab
+    def HomePage_MainTab_DiscoverTab(self):
+        HomePage_MainTab_DiscoverTab_ClaS = self.findClaS(Home_VD.HomePage_MainTab_ClaS, 1)
+        return HomePage_MainTab_DiscoverTab_ClaS
 
-    # 首页 互娱大厅-Tab
-    def HomeTab_KTV_Live(self):
-        HomeTab_KTV_Live_Class = self.findClaS(Home_VD.Home_Tab_ClaS, 1)
-        return HomeTab_KTV_Live_Class
+    # 首页-MainTab-PostTab
+    def HomePage_MainTab_PostTab(self):
+        HomePage_MainTab_PostTab_ClaS = self.findClaS(Home_VD.HomePage_MainTab_ClaS, 2)
+        return HomePage_MainTab_PostTab_ClaS
 
-    # 首页 点唱-Tab
-    def HomeTab_Sing(self):
-        HomeTab_Sing_Class = self.findClaS(Home_VD.Home_Tab_ClaS, 2)
-        return HomeTab_Sing_Class
+    # 首页-MainTab-NotificationTab
+    def HomePage_MainTab_NotificationTab(self):
+        HomePage_MainTab_NotificationTab_ClaS = self.findClaS(Home_VD.HomePage_MainTab_ClaS, 3)
+        return HomePage_MainTab_NotificationTab_ClaS
 
-    # 首页 消息-Tab
-    def HomeTab_Notification(self):
-        HomeTab_Notification_Class = self.findClaS(Home_VD.Home_Tab_ClaS, 3)
-        return HomeTab_Notification_Class
+    # 首页-MainTab-ProfileTab
+    def HomePage_MainTab_ProfileTab(self):
+        HomePage_MainTab_ProfileTab_ClaS = self.findClaS(Home_VD.HomePage_MainTab_ClaS, 4)
+        return HomePage_MainTab_ProfileTab_ClaS
 
-    # 首页 个人页-Tab
-    def HomeTab_Profile(self):
-        HomeTab_Profile_Class = self.findClaS(Home_VD.Home_Tab_ClaS, 4)
-        return HomeTab_Profile_Class
 
+# ----------------------------------------------------------------------------------------------------------------------
     # ----------
     # 选择发布类型
     # ----------

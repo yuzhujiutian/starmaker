@@ -1,32 +1,91 @@
 # coding=utf-8
 from Utils import Tools
 from Utils.GetDevicesInfo import DevicesInfo
-FS = DevicesInfo().package() + Tools.Tools().FindSource
+package = DevicesInfo().package()
+FS = Tools.Tools().FindSource
 gms = "com.google.android"
-# ----------
-# 登录模块
-# ----------
 
-# 登录弹窗
+
+# ----------
+# 登录弹窗-选择登录方式
+# ----------
+# 登录弹窗-选择登录方式-Tips(text=Please log in before checking your profile.)
+Source_LogInPopup_SelectLoginMode_Tips_ID = "tv_welcome"
+LogInPopup_SelectLoginMode_Tips_ID = package + FS(Source_LogInPopup_SelectLoginMode_Tips_ID)
+
+# 登录弹窗-选择登录方式-选择FB方式
+Source_LogInPopup_SelectLoginMode_SelectFacebook_ID = "tv_login_top"
+LogInPopup_SelectLoginMode_SelectFacebook_ID = package + FS(Source_LogInPopup_SelectLoginMode_SelectFacebook_ID)
+
+# 登录弹窗-选择登录方式-选择Email方式
+Source_LogInPopup_SelectLoginMode_SelectEmail_ID = "img_login_left"
+LogInPopup_SelectLoginMode_SelectEmail_ID = package + FS(Source_LogInPopup_SelectLoginMode_SelectEmail_ID)
+
+# 登录弹窗-选择登录方式-选择Phone方式
+Source_LogInPopup_SelectLoginMode_SelectPhone_ID = "img_login_middle"
+LogInPopup_SelectLoginMode_SelectPhone_ID = package + FS(Source_LogInPopup_SelectLoginMode_SelectPhone_ID)
+
+# 登录弹窗-选择登录方式-选择G+方式
+Source_LogInPopup_SelectLoginMode_SelectGoogle_ID = "img_login_right"
+LogInPopup_SelectLoginMode_SelectGoogle_ID = package + FS(Source_LogInPopup_SelectLoginMode_SelectGoogle_ID)
+
+# ----------
+# 登录弹窗-Email登录方式
+# ----------
+# 登录弹窗-Email登录方式-Tips文案(text=Use Email Address)
+Source_LogInPopup_EmailLoginMode_Title_ID = "login_title"
+LogInPopup_EmailLoginMode_Title_ID = package + FS(Source_LogInPopup_EmailLoginMode_Title_ID)
+
+# 登录弹窗-Email登录方式-选择登录
+Source_LogInPopup_EmailLoginMode_SelectLogIn_ID = "txt_login"
+LogInPopup_EmailLoginMode_SelectLogIn_ID = package + FS(Source_LogInPopup_EmailLoginMode_SelectLogIn_ID)
+
+# 登录弹窗-Email登录方式-选择注册
+Source_LogInPopup_EmailLoginMode_SelectSignUp_ID = "txt_sign_up"
+LogInPopup_EmailLoginMode_SelectSignUp_ID = package + FS(Source_LogInPopup_EmailLoginMode_SelectSignUp_ID)
+
+# 登录弹窗-Email登录方式-选择取消
+Source_LogInPopup_EmailLoginMode_SelectCancel_ID = "txt_login_cancel"
+LogInPopup_EmailLoginMode_SelectCancel_ID = package + FS(Source_LogInPopup_EmailLoginMode_SelectCancel_ID)
+
+# ----------
+# Email登录页
+# ----------
+# 邮箱登录页-输入框-通用ClaS([0]Email_Input/[1]Password_Input)
+EmailLogInPage_InputBox_CommonClaS = "android.widget.EditText"
+
+# 邮箱登录页-输入框-明文密码
+Source_EmailLogInPage_InputBox_InputVisibility_ID = "img_input_visibility"
+EmailLogInPage_InputBox_InputVisibility_ID = package + FS(Source_EmailLogInPage_InputBox_InputVisibility_ID)
+
+# 邮箱登录页-登录-确认登录
+Source_EmailLogInPage_LogIn_Confirm_ID = "btw_email_confirm"
+EmailLogInPage_LogIn_Confirm_ID = package + FS(Source_EmailLogInPage_LogIn_Confirm_ID)
+
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+
+
 # 登录弹窗——关闭
 Source_LogInWindow_Close_Btn_ID = "close_view"
-LogInWindow_Close_Btn_ID = package + FindSource(Source_LogInWindow_Close_Btn_ID)
+LogInWindow_Close_Btn_ID = package + FS(Source_LogInWindow_Close_Btn_ID)
 
 # 登录弹窗——FB
 Source_LogInWindow_FB_Btn_ID = "rl_login_top"
-LogInWindow_FB_Btn_ID = package + FindSource(Source_LogInWindow_FB_Btn_ID)
+LogInWindow_FB_Btn_ID = package + FS(Source_LogInWindow_FB_Btn_ID)
 
 # 登录弹窗——邮箱
 Source_LogInWindow_Email_Btn_ID = "img_login_left"
-LogInWindow_Email_Btn_ID = package + FindSource(Source_LogInWindow_Email_Btn_ID)
+LogInWindow_Email_Btn_ID = package + FS(Source_LogInWindow_Email_Btn_ID)
 
 # 登录弹窗——手机
 Source_LogInWindow_Phone_Btn_ID = "img_login_middle"
-LogInWindow_Phone_Btn_ID = package + FindSource(Source_LogInWindow_Phone_Btn_ID)
+LogInWindow_Phone_Btn_ID = package + FS(Source_LogInWindow_Phone_Btn_ID)
 
 # 登录弹窗——G+
 Source_LogInWindow_Google_Btn_ID = "img_login_right"
-LogInWindow_Google_Btn_ID = package + FindSource(Source_LogInWindow_Google_Btn_ID)
+LogInWindow_Google_Btn_ID = package + FS(Source_LogInWindow_Google_Btn_ID)
 
 # ----------
 # 1>Email 登录
@@ -34,26 +93,26 @@ LogInWindow_Google_Btn_ID = package + FindSource(Source_LogInWindow_Google_Btn_I
 
 # Email 登录弹窗——关闭
 Source_EmailWindow_Close_Btn_ID = "txt_login_close"
-EmailWindow_Close_Btn_ID = package + FindSource(Source_EmailWindow_Close_Btn_ID)
+EmailWindow_Close_Btn_ID = package + FS(Source_EmailWindow_Close_Btn_ID)
 
 # Email 登录弹窗——登录
 Source_EmailWindow_LogIn_Btn_ID = "txt_login"
-EmailWindow_LogIn_Btn_ID = package + FindSource(Source_EmailWindow_LogIn_Btn_ID)
+EmailWindow_LogIn_Btn_ID = package + FS(Source_EmailWindow_LogIn_Btn_ID)
 
 # Email 登录弹窗——注册
 Source_EmailWindow_SignUp_Btn_ID = "txt_sign_up"
-EmailWindow_SignUp_Btn_ID = package + FindSource(Source_EmailWindow_SignUp_Btn_ID)
+EmailWindow_SignUp_Btn_ID = package + FS(Source_EmailWindow_SignUp_Btn_ID)
 
 # Email 登录——账号输入框
 Email_Username_Box_Class = "android.widget.EditText"
 
 # Email 登录——清空账号
 Source_Email_Clear_EmailBox_Btn_ID = "img_input_delete"
-Email_Clear_EmailBox_Btn_ID = FS(Source_Email_Clear_EmailBox_Btn_ID)
+Email_Clear_EmailBox_Btn_ID = package + FS(Source_Email_Clear_EmailBox_Btn_ID)
 
 # Email 登录-清空密码
 Source_Email_Clear_PWDBox_Btn_ID = "img_input_delete"
-Email_Clear_PWDBox_Btn_ID = FS(Source_Email_Clear_PWDBox_Btn_ID)
+Email_Clear_PWDBox_Btn_ID = package + FS(Source_Email_Clear_PWDBox_Btn_ID)
 
 # Email 登录——清空
 # 1.当输入账号、密码其中一项时，使用Email_Clear_UsernameBox_Btn_ID/Email_Clear_PWDBox_Btn_ID
@@ -62,11 +121,11 @@ Email_Clear_Class = "android.widget.EditText"
 
 # Email 账号错误（不能为空：Your email cannot be empty./邮箱未注册：This Email is not registered yet, please Sign Up now.）
 Source_Email_Username_Error_ID = "tv_warning"
-Email_Username_Error_ID = FS(Source_Email_Username_Error_ID)
+Email_Username_Error_ID = package + FS(Source_Email_Username_Error_ID)
 
 # Email 密码错误（不能为空：Your password cannot be empty./密码错误：Username or password is incorrect）
 Source_Email_Password_Error_ID = "tv_warning"
-Email_Password_Error_ID = FS(Source_Email_Password_Error_ID)
+Email_Password_Error_ID = package + FS(Source_Email_Password_Error_ID)
 
 # Email 账号/密码错误
 # 1.当账号、密码其中一项报错时，使用Email_Username_Error_ID/Email_Password_Error_ID
@@ -81,15 +140,15 @@ Email_Password_Box_Class = "android.widget.EditText"
 
 # Email 登录——显示密码
 Source_Email_ShowPassword_Btn_ID = "img_input_visibility"
-Email_ShowPassword_Btn_ID = FS(Source_Email_ShowPassword_Btn_ID)
+Email_ShowPassword_Btn_ID = package + FS(Source_Email_ShowPassword_Btn_ID)
 
 # Email 确认登录——提交账号密码验证
 Source_LogIn_Confirm_Btn_ID = "btw_email_confirm"
-LogIn_Confirm_Btn_ID = FS(Source_LogIn_Confirm_Btn_ID)
+LogIn_Confirm_Btn_ID = package + FS(Source_LogIn_Confirm_Btn_ID)
 
 # Email 忘记密码
 Source_Email_ForgotPassword_Link_ID = "tv_email_forget_password"
-Email_ForgotPassword_Link_ID = FS(Source_Email_ForgotPassword_Link_ID)
+Email_ForgotPassword_Link_ID = package + FS(Source_Email_ForgotPassword_Link_ID)
 
 # ----------
 # 2>Phone 登录
@@ -106,40 +165,40 @@ PhonePhone_PreselectionCancel_ID = gms + ".gms:id/cancel"
 
 # PhoneHome Tips (text=输入手机号/请输入发送到{number}的验证码/)
 Source_PhoneHome_Tips_ID = "com_accountkit_title"
-PhoneHome_Tips_ID = FS(Source_PhoneHome_Tips_ID)
+PhoneHome_Tips_ID = package + FS(Source_PhoneHome_Tips_ID)
 
 # PhoneHome Describe（text=轻触下一步通过 Account Kit powered by Facebook 验证你的帐户。即使没有 Facebook 帐户，你也可以使用 Account Kit。你可通过手机短信接收手机号验证码。此过程可能产生短信和流量资费。详细了解 Facebook 如何使用你的信息。）
 Source_PhoneHome_Describe_ID = "com_accountkit_text"
-PhoneHome_Describe_ID = FS(Source_PhoneHome_Describe_ID)
+PhoneHome_Describe_ID = package + FS(Source_PhoneHome_Describe_ID)
 
 # Phone 当前选择国家国旗（点击可拉起切换弹窗，text="🇨🇳"）
 Source_Phone_NowCountryCode_ID = "country_code"
-Phone_NowCountryCode_ID = FS(Source_Phone_NowCountryCode_ID)
+Phone_NowCountryCode_ID = package + FS(Source_Phone_NowCountryCode_ID)
 
 # Phone 输入手机号
 Source_Phone_input_ID = "com_accountkit_phone_number"
-Phone_input_ID = FS(Source_Phone_input_ID)
+Phone_input_ID = package + FS(Source_Phone_input_ID)
 # Phone_input_Class = "android.widget.EditText"
 
 # Phone 下一步/继续
 Source_Phone_Next_ID = "com_accountkit_next_button"
-Phone_Next_ID = FS(Source_Phone_Next_ID)
+Phone_Next_ID = package + FS(Source_Phone_Next_ID)
 
 # 验证码输入框——首个（1-6对应6个输入框）
 Source_Code_FirstInputBox_ID = "com_accountkit_confirmation_code_1"
-Code_FirstInputBox_ID = FS(Source_Code_FirstInputBox_ID)
+Code_FirstInputBox_ID = package + FS(Source_Code_FirstInputBox_ID)
 
 # 未收到验证码
 Source_Not_Received_Code_ID = "com_accountkit_retry_button"
-Not_Received_Code_ID = FS(Source_Not_Received_Code_ID)
+Not_Received_Code_ID = package + FS(Source_Not_Received_Code_ID)
 
 # 验证你的手机号{AreaCode}{PhoneNumber}
 Source_Verify_Your_Number_ID = "com_accountkit_accountkit_verify_number"
-Verify_Your_Number_ID = FS(Source_Verify_Your_Number_ID)
+Verify_Your_Number_ID = package + FS(Source_Verify_Your_Number_ID)
 
 # 重发短信
 Source_Recapture_Code_ID = "com_accountkit_resend_button"
-Recapture_Code_ID = FS(Source_Recapture_Code_ID)
+Recapture_Code_ID = package + FS(Source_Recapture_Code_ID)
 
 # ----------
 # 3>G+ 登录
@@ -235,20 +294,20 @@ FBPage_inputPWD_AID = "密码"
 
 # 切换至快捷登录
 Source_QuickLogin_Btn_ID = "img_back"
-QuickLogin_Btn_ID = FS(Source_QuickLogin_Btn_ID)
+QuickLogin_Btn_ID = package + FS(Source_QuickLogin_Btn_ID)
 
 # 切换至普通登录
 Source_CommonLogin_Btn_ID = "tv_switch_login"
-CommonLogin_Btn_ID = FS(Source_CommonLogin_Btn_ID)
+CommonLogin_Btn_ID = package + FS(Source_CommonLogin_Btn_ID)
 
 # Development 开发者模式
 Source_Development_Btn_ID = "img_star_maker"
-Development_Btn_ID = FS(Source_Development_Btn_ID)
+Development_Btn_ID = package + FS(Source_Development_Btn_ID)
 
 # 快速登录头像
 Source_QuickLogin_Image_ID = "img_latest_avatar"
-QuickLogin_Image_ID = FS(Source_QuickLogin_Image_ID)
+QuickLogin_Image_ID = package + FS(Source_QuickLogin_Image_ID)
 
 # 快速登录用户名
 Source_QuickLogin_StageName_ID = "tv_latest_name"
-QuickLogin_StageName_ID = FS(Source_QuickLogin_StageName_ID)
+QuickLogin_StageName_ID = package + FS(Source_QuickLogin_StageName_ID)

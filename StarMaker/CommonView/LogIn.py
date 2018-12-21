@@ -75,6 +75,97 @@ class LogIn(object):
         self.findAID = find_element().AID
         self.findAU = find_element().AU
 
+    # ----------
+    # 登录弹窗
+    # ----------
+    # 登录弹窗-选择登录方式-Tips(text=Please log in before checking your profile.)
+    def LogInPopup_SelectLoginMode_Tips(self):
+        LogInPopup_SelectLoginMode_Tips_ID = self.findID(LogIn_VD.LogInPopup_SelectLoginMode_Tips_ID)
+        return LogInPopup_SelectLoginMode_Tips_ID
+
+    # 登录弹窗-选择登录方式-选择FB方式
+    def LogInPopup_SelectLoginMode_SelectFacebook(self):
+        LogInPopup_SelectLoginMode_SelectFacebook_ID = self.findID(LogIn_VD.LogInPopup_SelectLoginMode_SelectFacebook_ID)
+        return LogInPopup_SelectLoginMode_SelectFacebook_ID
+
+    # 登录弹窗-选择登录方式-选择Email方式
+    def LogInPopup_SelectLoginMode_SelectEmail(self):
+        LogInPopup_SelectLoginMode_SelectEmail_ID = self.findID(LogIn_VD.LogInPopup_SelectLoginMode_SelectEmail_ID)
+        return LogInPopup_SelectLoginMode_SelectEmail_ID
+
+    # 登录弹窗-选择登录方式-选择Phone方式
+    def LogInPopup_SelectLoginMode_SelectPhone(self):
+        LogInPopup_SelectLoginMode_SelectPhone_ID = self.findID(LogIn_VD.LogInPopup_SelectLoginMode_SelectPhone_ID)
+        return LogInPopup_SelectLoginMode_SelectPhone_ID
+
+    # 登录弹窗-选择登录方式-选择G+方式
+    def LogInPopup_SelectLoginMode_SelectGoogle(self):
+        LogInPopup_SelectLoginMode_SelectGoogle_ID = self.findID(LogIn_VD.LogInPopup_SelectLoginMode_SelectGoogle_ID)
+        return LogInPopup_SelectLoginMode_SelectGoogle_ID
+
+    # ----------
+    # 登录弹窗-Email登录方式
+    # ----------
+    # 登录弹窗-Email登录方式-Tips文案(text=Use Email Address)
+    def LogInPopup_EmailLoginMode_Title(self):
+        LogInPopup_EmailLoginMode_Title_ID = self.findID(LogIn_VD.LogInPopup_EmailLoginMode_Title_ID)
+        return LogInPopup_EmailLoginMode_Title_ID
+
+    # 登录弹窗-Email登录方式-选择登录
+    def LogInPopup_EmailLoginMode_SelectLogIn(self):
+        LogInPopup_EmailLoginMode_SelectLogIn_ID = self.findID(LogIn_VD.LogInPopup_EmailLoginMode_SelectLogIn_ID)
+        return LogInPopup_EmailLoginMode_SelectLogIn_ID
+
+    # 登录弹窗-Email登录方式-选择注册
+    def LogInPopup_EmailLoginMode_SelectSignUp(self):
+        LogInPopup_EmailLoginMode_SelectSignUp_ID = self.findID(LogIn_VD.LogInPopup_EmailLoginMode_SelectSignUp_ID)
+        return LogInPopup_EmailLoginMode_SelectSignUp_ID
+
+    # 登录弹窗-Email登录方式-选择取消
+    def LogInPopup_EmailLoginMode_SelectCancel(self):
+        LogInPopup_EmailLoginMode_SelectCancel_ID = self.findID(LogIn_VD.LogInPopup_EmailLoginMode_SelectCancel_ID)
+        return LogInPopup_EmailLoginMode_SelectCancel_ID
+
+    # ----------
+    # Email登录页
+    # ----------
+    # 邮箱登录页-Title-Text文案
+    def EmailLogInPage_Title_Text(self):
+        EmailLogInPage_Title_Text_AU = self.findAU("new UiSelector().text(\"Log In\")")
+        return EmailLogInPage_Title_Text_AU
+
+    # 邮箱登录页-输入框-邮箱输入框([0]Email_Input)
+    def EmailLogInPage_InputBox_EmailInput(self):
+        EmailLogInPage_InputBox_EmailInput_ClaS = self.findClaS(LogIn_VD.EmailLogInPage_InputBox_CommonClaS,0)
+        return EmailLogInPage_InputBox_EmailInput_ClaS
+
+    # 邮箱登录页-输入框-明文密码
+    def EmailLogInPage_InputBox_InputVisibility(self):
+        EmailLogInPage_InputBox_InputVisibility_ID = self.findID(LogIn_VD.EmailLogInPage_InputBox_InputVisibility_ID)
+        return EmailLogInPage_InputBox_InputVisibility_ID
+
+    # 邮箱登录页-输入框-密码输入框([1]Password_Input)
+    def EmailLogInPage_InputBox_PasswordInput(self):
+        EmailLogInPage_InputBox_PasswordInput_ClaS = self.findClaS(LogIn_VD.EmailLogInPage_InputBox_CommonClaS, 1)
+        return EmailLogInPage_InputBox_PasswordInput_ClaS
+
+    # 邮箱登录页-登录-确认登录
+    def EmailLogInPage_LogIn_Confirm(self):
+        EmailLogInPage_LogIn_Confirm_ID = self.findID(LogIn_VD.EmailLogInPage_LogIn_Confirm_ID)
+        return EmailLogInPage_LogIn_Confirm_ID
+
+
+
+
+
+    # ----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
 
     # ----------
     # 1>Email 登录

@@ -9,12 +9,12 @@ class RegressionSuite(unittest.TestCase):
     # 启动app测试套
     @staticmethod
     def test_Suite_001_StarUpSuite():
-        from TestCase import StartUpCase
+        from Action import StartUpModular
         # 定义一个测试套
         StarUpSuiteTest = unittest.TestSuite()
         # 添加测试套模版
         StarUpSuiteTest.addTest(unittest.makeSuite(
-            StartUpCase.StarUpCase)
+            StartUpModular.StarUpCase)
         )
         NameFile = "启动app"
         Title = "<启动app—P0>自动化测试用例执行结果"
@@ -24,10 +24,10 @@ class RegressionSuite(unittest.TestCase):
     # 邮箱登录测试套
     @staticmethod
     def test_Suite_002_EmailLoginSuite():
-        from TestCase import EmailLogInCase
+        from Action import LogInModular
         EmailLogInSuiteTest = unittest.TestSuite()
         EmailLogInSuiteTest.addTest(unittest.makeSuite(
-            EmailLogInCase.EmailLogInCase)
+            LogInModular.EmailLogInCase)
         )
         NameFile = "邮箱登录"
         T = "<邮箱登录—P0>自动化测试用例执行结果"

@@ -2,7 +2,8 @@
 #from Utils.GetDevicesInfo import GetPackages
 from Utils import Tools
 from Utils.GetDevicesInfo import DevicesInfo
-FS = DevicesInfo().package() + Tools.Tools().FindSource
+package = DevicesInfo().package()
+FS = Tools.Tools().FindSource
 # ----------
 # 启动模块
 # ----------
