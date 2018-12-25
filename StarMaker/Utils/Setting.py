@@ -5,8 +5,8 @@ desired_IP = "http://127.0.0.1:4723/wd/hub"
 
 # 配置信息
 PlatformName = "Android"
-# AutomationName = "UiAutomator2"
-AutomationName = "Appium"
+# AutomationName = "appium"
+AutomationName = "uiautomator2"
 AutoGrantPermissions = True
 UnicodeKeyboard = True
 ResetKeyboard = True

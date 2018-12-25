@@ -108,8 +108,8 @@ class Profile(object):
 
     # 专辑图片（count -1 = 实际图片数量）
     def Album_Photo(self):
-        Album_Photo_Cla = self.findCla(Profile_VD.Album_Photo_ClaS)
-        return Album_Photo_Cla
+        Album_Photo_ClaS = self.findCla(Profile_VD.Album_Photo_ClaS)
+        return Album_Photo_ClaS
 
     # 【Top Fans】收到的星光排行
     # 星光榜Title(text=Top Fans)

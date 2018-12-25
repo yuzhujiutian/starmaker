@@ -2,66 +2,9 @@
 # ----------
 # 登录模块
 # ----------
-import time
 from Utils import Tools
 from Utils.FindElement import find_element
-from Utils.ReadXMLData import ReadXMLData
-from CommonView.StartUp import StartUp
 from CommonView.VData import LogIn_VD
-
-
-# 其他模块调用,启动过渡
-def StartUpTransition():
-    # 如果在普通登录页
-    if StartUp().LogInModeCase_Email():
-        # 点击邮箱登录按钮
-        StartUp().Email_LogIn_Btn().click()
-        time.sleep(2)
-        # 点击登录弹窗中LogIn按钮
-        LogIn().EmailWindow_LogIn_Btn().click()
-        time.sleep(2)
-        # 输入邮箱
-        LogIn().Email_Username_Box().send_keys(
-            ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Email"))
-        # 输入密码
-        LogIn().Email_Password_Box().send_keys(
-            ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Password"))
-        # 点击LogIn
-        LogIn().LogIn_Confirm_Btn().click()
-        time.sleep(5)
-        return True
-    # 如果在快速登录页
-    elif LogIn().FindCommonLogin_Btn():
-        # 获取测试帐号昵称
-        StageName = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "StageName")
-        # 如果符合预期测试账号
-        if LogIn().QuickLogin_StageName().text == StageName:
-            # 点击昵称快速登录
-            LogIn().QuickLogin_StageName().click()
-            time.sleep(5)
-            return True
-        # 否则切换帐号
-        else:
-            # 点击切换至普通登录
-            LogIn().CommonLogin_Btn().click()
-            # 点击邮箱登录按钮
-            StartUp().Email_LogIn_Btn()
-            time.sleep(2)
-            # 点击登录弹窗中LogIn按钮
-            LogIn().EmailWindow_LogIn_Btn().click()
-            time.sleep(2)
-            # 输入邮箱
-            LogIn().Email_Username_Box().send_keys(
-                ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Email"))
-            # 输入密码
-            LogIn().Email_Password_Box().send_keys(
-                ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Password"))
-            # 点击LogIn
-            LogIn().LogIn_Confirm_Btn().click()
-            time.sleep(5)
-            return True
-    else:
-        return False
 
 
 # 登录模块
@@ -78,7 +21,8 @@ class LogIn(object):
     # ----------
     # 登录弹窗
     # ----------
-    # 登录弹窗-选择登录方式-Tips(text=Please log in before checking your profile.)
+    # 登录弹窗-选择登录方式-Tips(Profile_text=Please log in before checking your profile./Post_text=Please log in to make a post./
+    # Notification_text=Please log in before checking the latest news./ktv&live_text=Enjoy all features after log in)
     def LogInPopup_SelectLoginMode_Tips(self):
         LogInPopup_SelectLoginMode_Tips_ID = self.findID(LogIn_VD.LogInPopup_SelectLoginMode_Tips_ID)
         return LogInPopup_SelectLoginMode_Tips_ID
@@ -136,7 +80,7 @@ class LogIn(object):
 
     # 邮箱登录页-输入框-邮箱输入框([0]Email_Input)
     def EmailLogInPage_InputBox_EmailInput(self):
-        EmailLogInPage_InputBox_EmailInput_ClaS = self.findClaS(LogIn_VD.EmailLogInPage_InputBox_CommonClaS,0)
+        EmailLogInPage_InputBox_EmailInput_ClaS = self.findClaS(LogIn_VD.EmailLogInPage_InputBox_CommonClaS, 0)
         return EmailLogInPage_InputBox_EmailInput_ClaS
 
     # 邮箱登录页-输入框-明文密码

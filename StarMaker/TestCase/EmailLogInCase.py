@@ -17,7 +17,7 @@ class EmailLogInCase(unittest.TestCase):
         # 添加测试套模版
         EmailLogInCaseSuite.addTest(StarUpModular("test_Case001_ChooseLanguagePage_CheckStartSuccess_Tips"))
         EmailLogInCaseSuite.addTest(StarUpModular("test_Case016_ChooseLanguagePage_SelectLanguage_SelectEnglish"))
-        EmailLogInCaseSuite.addTest(HomeModular("test_Case006_HomePage_Tourist_SelectProfileTab"))
+        EmailLogInCaseSuite.addTest(HomeModular("test_Case006_HomePage_Tourist_ProfileTabInlet"))
         EmailLogInCaseSuite.addTest(LogInModular("test_Case002_LogInPopup_SelectLoginMode_SelectEmail"))
         EmailLogInCaseSuite.addTest(LogInModular("test_Case005_LogInPopup_EmailLoginMode_SelectLogIn"))
         EmailLogInCaseSuite.addTest(LogInModular("test_Case008_EmailLogInPage_InputBox_EmailInput"))

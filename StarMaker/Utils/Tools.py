@@ -6,7 +6,8 @@ import re
 import time
 import datetime
 from Utils.GetAppiumDeriver import GetAppiumDeriver
-
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 # ----------
 # 常用工具
@@ -550,6 +551,59 @@ class PopupProcessing(object):
 
 
 # ----------
+# toast提示处理工具
+# ----------
+class ToastTips_Processing(object):
+    def __init__(self):
+        self.driver = GetAppiumDeriver().driver
+        time.sleep(5)
+
+    # toast提示-已知text-判断是否存在
+    def ToastTips_TextXpath_IsDisplayed(self,xpath):
+        toast_loc = ("xpath", ".//*[contains(@text,{xpath_})]".format(xpath_=xpath))
+        try:
+            # 循环等待，如果找到则返回可操作元素
+            t = WebDriverWait(self.driver, 10, 0.1).until(EC.presence_of_element_located(toast_loc),
+                                                          "Sorry,Toast Not Found")
+            if t:
+                toast_xpath_ele = self.driver.find_element("xpath",
+                                                           ".//*[contains(@text,'You will see fewer similar posts.')]")
+                return toast_xpath_ele
+            else:
+                # 截图并上报
+                print("As shown, the element is not found.")
+                Tools().get_element_error_images()
+                return False
+        except:
+            # 截图并上报
+            print("As shown, the element is not found.")
+            Tools().get_element_error_images()
+            return False
+
+    # toast提示-捕捉任意-返回元素text
+    def ToastTips_AnyXpath_Text(self):
+        toast_loc = ("xpath", ".//*[contains(@text,*)]")
+        try:
+            # 循环等待，如果找到则返回可操作元素
+            t = WebDriverWait(self.driver, 10, 0.1).until(EC.presence_of_element_located(toast_loc),
+                                                          "Sorry,Toast Not Found")
+            if t:
+                toast_xpath_ele = self.driver.find_element("xpath",
+                                                           ".//*[contains(@text,*)]")
+                return toast_xpath_ele.text
+            else:
+                # 截图并上报
+                print("As shown, the element is not found.")
+                Tools().get_element_error_images()
+                return False
+        except:
+            # 截图并上报
+            print("As shown, the element is not found.")
+            Tools().get_element_error_images()
+            return False
+
+
+# ----------
 # 页面元素校验
 # ----------
 # 提取该页面同一类型下的所有元素text
@@ -558,7 +612,7 @@ class Page_Element_Verification(object):
         self.driver = GetAppiumDeriver().driver
         time.sleep(5)
 
-    # 适用进入页面时校验页面元素加载正确，且这些元素具备同ID/Class或其他
+    # 适用进入页面时校验页面元素加载正确，且这些元素具备同IDS/ClaS或其他
     def PEV_IDS(self, IDS, TextList):
         Pe = self.driver.find_elements_by_id(IDS)
         ExpectText = TextList
@@ -606,6 +660,75 @@ class Page_Element_Verification(object):
                 print("预期结果:", ExpectText)
                 print("实际结果:", TextList)
                 return False
+
+    # 遍历该IDS下所有text
+    def PEV_IDS_GetText(self, IDS):
+        Pe = self.driver.find_elements_by_id(IDS)
+        TextList = []
+        for index in range(len(Pe)):
+            TextList.append(Pe[index].text)
+            time.sleep(2)
+        print(TextList)
+        return TextList
+
+
+# ----------
+# 动态元素处理工具
+# ----------
+# 动态元素处理（当面对元素定位方法有时单数，有时复数时，动态处理）
+class Popular_Elements_Disposes(object):
+    def __init__(self):
+        self.driver = GetAppiumDeriver().driver
+        time.sleep(5)
+
+    # ID/IDS 判断
+    def ID_IDS(self,elements):
+        ele = elements
+        try:
+            if self.driver.find_element_by_id(ele):
+                element_id = self.driver.find_element_by_id(ele)
+                return element_id
+            elif self.driver.find_elements_by_id(ele)[0]:
+                elements_id = self.driver.find_elements_by_id(ele)[0]
+                return elements_id
+        except:
+            # 截图并上报
+            print("As shown, the element is not found.")
+            Tools().get_element_error_images()
+            return False
+
+    # ID/IDS 计数
+    def ID_IDS_Count(self, elements):
+        ele = elements
+        num = 1
+        try:
+            if self.driver.find_element_by_id(ele):
+                return num
+            elif self.driver.find_elements_by_id(ele)[0]:
+                count = len(self.driver.find_elements_by_id(ele))
+                return count
+        except:
+            # 截图并上报
+            print("As shown, the element is not found.")
+            Tools().get_element_error_images()
+            return False
+
+    # Cla/ClaS 判断
+    def Cla_ClaS(self,elements):
+        ele = elements
+        try:
+            if self.driver.find_element_by_class_name(ele):
+                element_cla = self.driver.find_element_by_class_name(ele)
+                return element_cla
+            elif self.driver.find_elements_by_class_name(ele)[0]:
+                elements_cla = self.driver.find_elements_by_class_name(ele)[0]
+                return elements_cla
+        except:
+            # 截图并上报
+            print("As shown, the element is not found.")
+            Tools().get_element_error_images()
+            return False
+
 
 
 # ----------
@@ -773,6 +896,7 @@ class RegionalClick(object):
 
 
 # if __name__ == '__main__':
-    # Screen().CalculatedPercentage(1300, 2450)
-    # A = Tools.FindSource("btn_post")
-    # print(A)
+#     Screen().CalculatedPercentage(1300, 2450)
+#     A = Tools.FindSource("btn_post")
+#     print(A)
+#     Popular_Elements_Disposes().ID_IDS()

@@ -34,8 +34,8 @@ class Library(object):
 
     # 第二首歌曲
     def LibraryPage_SecondSong(self):
-        LibraryPage_SongInfo_Cla = self.findClaS(Library_VD.LibraryPage_SongInfo_ClaS, 9)
-        return LibraryPage_SongInfo_Cla
+        LibraryPage_SongInfo_ClaS = self.findClaS(Library_VD.LibraryPage_SongInfo_ClaS, 9)
+        return LibraryPage_SongInfo_ClaS
 
     # 第二首歌曲——Sing按钮
     def LibraryPage_SecondSong_SingBtn(self):

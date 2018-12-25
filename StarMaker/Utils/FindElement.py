@@ -9,19 +9,6 @@ class find_element(object):
     def __init__(self):
         self.driver = GetAppiumDeriver().driver
 
-    # 特殊：查找元素，如果存在返回True，否则False
-    def Find(self, **elements):
-        try:
-            if elements:
-                return True
-            else:
-                WebDriverWait(elements, 10)
-        except:
-            # 截图并上报
-            print("As shown, the element is not found.")
-            Tools().get_element_error_images()
-            return False
-
     def ID(self, ID):
         try:
             element_id = self.driver.find_element_by_id(ID)

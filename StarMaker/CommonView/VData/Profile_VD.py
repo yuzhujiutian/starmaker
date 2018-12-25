@@ -145,7 +145,7 @@ Source_ShareBtn_ID = "tv_share"
 ShareBtn_ID = package + FS(Source_ShareBtn_ID)
 
 # Share——Copy Link(倒数第二个)
-Source_CopyLink_Cla = "tv_share"
-CopyLink_ClaS = package + FS(Source_CopyLink_Cla)
+Source_CopyLink_ClaS = "tv_share"
+CopyLink_ClaS = package + FS(Source_CopyLink_ClaS)
 
 

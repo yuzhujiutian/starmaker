@@ -4,6 +4,7 @@
 # ----------
 from Utils.FindElement import find_element
 from CommonView.VData import Home_VD
+from Utils.Tools import Popular_Elements_Disposes
 
 
 # 首页
@@ -16,13 +17,15 @@ class Home(object):
         self.findXpa = find_element().Xpa
         self.findAID = find_element().AID
         self.findAU = find_element().AU
+        self.ID_IDS = Popular_Elements_Disposes().ID_IDS
+        self.ID_IDS_Count = Popular_Elements_Disposes().ID_IDS_Count
 
     # ----------
     # 默认首页
     # ----------
     # 首页-Popular-Text([1]/English_text=POPULAR/Hindi_text=लोकप्रिय)
     def HomePage_Popular_Text(self):
-        HomePage_Popular_Text_ID = self.findClaS(Home_VD.HomePage_Popular_Text_ClaS,1)
+        HomePage_Popular_Text_ID = self.findClaS(Home_VD.HomePage_Popular_Text_ClaS, 1)
         return HomePage_Popular_Text_ID
 
     # ----------
@@ -53,29 +56,53 @@ class Home(object):
         HomePage_MainTab_ProfileTab_ClaS = self.findClaS(Home_VD.HomePage_MainTab_ClaS, 4)
         return HomePage_MainTab_ProfileTab_ClaS
 
-
-# ----------------------------------------------------------------------------------------------------------------------
     # ----------
-    # 选择发布类型
+    # 首页-HotTopics
     # ----------
+    # 首页-HotTopics-Text(English_text=Hot topics)
+    def HomePage_HotTopics_Text(self):
+        HomePage_HotTopics_Text_ID = self.findID(Home_VD.HomePage_HotTopics_Text_ID)
+        return HomePage_HotTopics_Text_ID
 
-    # 选择发布类型([0]Album/[1]Camera/[2]Text/[3]Sing/[4]关闭)
-    def PostType_Album(self):
-        PostType_ClaS = self.findClaS(Home_VD.PostType_ClaS, 0)
-        return PostType_ClaS
+    # 首页-HotTopics-SeeAll(English_text=SEE ALL)
+    def HomePage_HotTopics_SeeAll(self):
+        HomePage_HotTopics_SeeAll_ID = self.findID(Home_VD.HomePage_HotTopics_SeeAll_ID)
+        return HomePage_HotTopics_SeeAll_ID
 
-    def PostType_Camera(self):
-        PostType_ClaS = self.findClaS(Home_VD.PostType_ClaS, 1)
-        return PostType_ClaS
+    # 首页-feed卡片_Follow-返回当前页个数
+    def HomePage_FeedCard_FollowCount(self):
+        HomePage_FeedCard_FollowCount = self.ID_IDS_Count(Home_VD.HomePage_FeedCard_Follow_ID_IDS)
+        return HomePage_FeedCard_FollowCount
 
-    def PostType_Text(self):
-        PostType_ClaS = self.findClaS(Home_VD.PostType_ClaS, 2)
-        return PostType_ClaS
+    # 首页-feed卡片_Follow(English_text=FOLLOW)(ID/IDS)
+    def HomePage_FeedCard_Follow(self):
+        HomePage_FeedCard_Follow_ID = self.ID_IDS(Home_VD.HomePage_FeedCard_Follow_ID_IDS)
+        return HomePage_FeedCard_Follow_ID
 
-    def PostType_Sing(self):
-        PostType_ClaS = self.findClaS(Home_VD.PostType_ClaS, 3)
-        return PostType_ClaS
+    # 首页-feed卡片_叉号-返回当前页个数
+    def HomePage_FeedCard_DislikeCount(self):
+        HomePage_FeedCard_DislikeCount = self.ID_IDS_Count(Home_VD.HomePage_FeedCard_Dislike_ID_IDS)
+        return HomePage_FeedCard_DislikeCount
 
-    def PostType_Close(self):
-        PostType_ClaS = self.findClaS(Home_VD.PostType_ClaS, 4)
-        return PostType_ClaS
+    # 首页-feed卡片_叉号(ID/IDS)
+    def HomePage_FeedCard_Dislike(self):
+        HomePage_FeedCard_Dislike_ID = self.ID_IDS(Home_VD.HomePage_FeedCard_Dislike_ID_IDS)
+        return HomePage_FeedCard_Dislike_ID
+
+    # ----------
+    # 首页-Dislike弹窗
+    # ----------
+    # 首页-Dislike弹窗-Unwanted
+    def HomePage_DislikePop_Unwanted(self):
+        HomePage_DislikePop_Unwanted_ID = self.findID(Home_VD.HomePage_DislikePop_Unwanted_ID)
+        return HomePage_DislikePop_Unwanted_ID
+
+    # 首页-Dislike弹窗-Report
+    def HomePage_DislikePop_Report(self):
+        HomePage_DislikePop_Report_ID = self.findID(Home_VD.HomePage_DislikePop_Report_ID)
+        return HomePage_DislikePop_Report_ID
+
+    # 首页-Dislike弹窗-Cancel
+    def HomePage_DislikePop_Cancel(self):
+        HomePage_DislikePop_Cancel_ID = self.findID(Home_VD.HomePage_DislikePop_Cancel_ID)
+        return HomePage_DislikePop_Cancel_ID
