@@ -2,10 +2,10 @@
 import time
 import unittest
 from CommonView.LogIn import LogIn
+from CommonView.Home import Home
 from Utils.Tools import Tools
 from Utils.GetAppiumDeriver import GetAppiumDeriver
 from Utils.ReadXMLData import ReadXMLData
-from Utils.Tools import Screen
 
 
 # 邮箱登录
@@ -27,15 +27,84 @@ class LogInModular(unittest.TestCase):
         pass
 
     # ----------
+    # 调起登录弹窗
+    # ----------
+    # 首页-游客点击Post-调起登录弹窗
+    def test_Case001_HomePage_Tourist_PostTabInlet(self):
+        Home().HomePage_MainTab_PostTab().click()
+        time.sleep(2)
+        # 获取登录弹窗的Tips文案
+        expValue = "Please log in to make a post."
+        actValue = LogIn().LogInPopup_SelectLoginMode_Tips().text
+        time.sleep(2)
+        # 断言：调起登录弹窗
+        self.assertEqual(expValue, actValue)
+
+    # 首页-游客点击Notification-调起登录弹窗
+    def test_Case002_HomePage_Tourist_NotificationTabInlet(self):
+        Home().HomePage_MainTab_NotificationTab().click()
+        time.sleep(2)
+        # 获取登录弹窗的Tips文案
+        expValue = "Please log in before checking the latest news."
+        actValue = LogIn().LogInPopup_SelectLoginMode_Tips().text
+        time.sleep(2)
+        # 断言：调起登录弹窗
+        self.assertEqual(expValue, actValue)
+
+    # 首页-游客点击ProfileTab-调起登录弹窗
+    def test_Case003_HomePage_Tourist_ProfileTabInlet(self):
+        Home().HomePage_MainTab_ProfileTab().click()
+        time.sleep(2)
+        # 获取登录弹窗的Tips文案
+        expValue = "Please log in before checking your profile."
+        actValue = LogIn().LogInPopup_SelectLoginMode_Tips().text
+        time.sleep(2)
+        # 断言：调起登录弹窗
+        self.assertEqual(expValue, actValue)
+
+    # 首页-游客点击feed卡片Share-调起登录弹窗
+    def test_Case004_HomePage_Tourist_FeedCardShareInlet(self):
+        Home().HomePage_FeedCard_Share().click()
+        time.sleep(2)
+        # 获取登录弹窗的Tips文案
+        expValue = "Please log in to repost it."
+        actValue = LogIn().LogInPopup_SelectLoginMode_Tips().text
+        time.sleep(2)
+        # 断言：调起登录弹窗
+        self.assertEqual(expValue, actValue)
+
+    # 首页-游客点击feed卡片Like-调起登录弹窗
+    def test_Case005_HomePage_Tourist_FeedCardLikeInlet(self):
+        Home().HomePage_FeedCard_Like().click()
+        time.sleep(2)
+        # 获取登录弹窗的Tips文案
+        expValue = "Please log in to like it."
+        actValue = LogIn().LogInPopup_SelectLoginMode_Tips().text
+        time.sleep(2)
+        # 断言：调起登录弹窗
+        self.assertEqual(expValue, actValue)
+
+    # KTV大厅-点击任意房间-调起登录弹窗
+    def test_Case006_KTVHall_Tourist_PartiesRoomInlet(self):
+        # XXX.click()
+        time.sleep(2)
+        # 获取登录弹窗的Tips文案
+        expValue = "Enjoy all features after log in."
+        actValue = LogIn().LogInPopup_SelectLoginMode_Tips().text
+        time.sleep(2)
+        # 断言：调起登录弹窗
+        self.assertEqual(expValue, actValue)
+
+    # ----------
     # 登录弹窗
     # ----------
     # 登录弹窗-选择登录方式-选择FB方式
-    def test_Case001_LogInPopup_SelectLoginMode_SelectFacebook(self):
+    def test_Case007_LogInPopup_SelectLoginMode_SelectFacebook(self):
         LogIn().LogInPopup_SelectLoginMode_SelectFacebook().click()
         # 断言待补充
 
     # 登录弹窗-选择登录方式-选择Email方式
-    def test_Case002_LogInPopup_SelectLoginMode_SelectEmail(self):
+    def test_Case008_LogInPopup_SelectLoginMode_SelectEmail(self):
         LogIn().LogInPopup_SelectLoginMode_SelectEmail().click()
         time.sleep(2)
         # 获取Email注册登录选择弹窗Title
@@ -46,12 +115,12 @@ class LogInModular(unittest.TestCase):
         self.assertEqual(expValue, actValue)
 
     # 登录弹窗-选择登录方式-选择Phone方式
-    def test_Case003_LogInPopup_SelectLoginMode_SelectPhone(self):
+    def test_Case009_LogInPopup_SelectLoginMode_SelectPhone(self):
         LogIn().LogInPopup_SelectLoginMode_SelectPhone().click()
         # 断言待补充
 
     # 登录弹窗-选择登录方式-选择G+方式
-    def test_Case004_LogInPopup_SelectLoginMode_SelectGoogle(self):
+    def test_Case010_LogInPopup_SelectLoginMode_SelectGoogle(self):
         LogIn().LogInPopup_SelectLoginMode_SelectGoogle().click()
         # 断言待补充
 
@@ -59,7 +128,7 @@ class LogInModular(unittest.TestCase):
     # 登录弹窗-Email登录方式
     # ----------
     # 登录弹窗-Email登录方式-选择登录
-    def test_Case005_LogInPopup_EmailLoginMode_SelectLogIn(self):
+    def test_Case011_LogInPopup_EmailLoginMode_SelectLogIn(self):
         LogIn().LogInPopup_EmailLoginMode_SelectLogIn().click()
         time.sleep(2)
         # 获取Email输入框text
@@ -70,17 +139,17 @@ class LogInModular(unittest.TestCase):
         self.assertEqual(expValue, actValue)
 
     # 登录弹窗-Email登录方式-选择注册
-    def test_Case006_LogInPopup_EmailLoginMode_SelectSignUp(self):
+    def test_Case012_LogInPopup_EmailLoginMode_SelectSignUp(self):
         LogIn().LogInPopup_EmailLoginMode_SelectSignUp().click()
         # 断言待补充
 
     # 登录弹窗-Email登录方式-选择取消
-    def test_Case007_LogInPopup_EmailLoginMode_SelectCancel(self):
+    def test_Case013_LogInPopup_EmailLoginMode_SelectCancel(self):
         LogIn().LogInPopup_EmailLoginMode_SelectCancel().click()
         # 断言待补充
 
     # 邮箱登录页-输入框-输入邮箱
-    def test_Case008_EmailLogInPage_InputBox_EmailInput(self):
+    def test_Case014_EmailLogInPage_InputBox_EmailInput(self):
         Email = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Email")
         LogIn().EmailLogInPage_InputBox_EmailInput().send_keys(Email)
         time.sleep(2)
@@ -92,7 +161,7 @@ class LogInModular(unittest.TestCase):
         self.assertEqual(expValue, actValue)
 
     # 邮箱登录页-输入框-明文密码
-    def test_Case009_EmailLogInPage_InputBox_InputVisibility(self):
+    def test_Case015_EmailLogInPage_InputBox_InputVisibility(self):
         LogIn().EmailLogInPage_InputBox_InputVisibility().click()
         time.sleep(2)
         # 获取Password输入框password属性
@@ -103,7 +172,7 @@ class LogInModular(unittest.TestCase):
         self.assertEqual(expValue, actValue)
 
     # 邮箱登录页-输入框-输入密码
-    def test_Case010_EmailLogInPage_InputBox_PasswordInput(self):
+    def test_Case016_EmailLogInPage_InputBox_PasswordInput(self):
         Password = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Password")
         LogIn().EmailLogInPage_InputBox_PasswordInput().send_keys(Password)
         time.sleep(2)
@@ -120,7 +189,7 @@ class LogInModular(unittest.TestCase):
         self.assertEqual(expValue, actValue)
 
     # 邮箱登录页-登录-确认登录
-    def test_Case011_EmailLogInPage_LogIn_Confirm(self):
+    def test_Case017_EmailLogInPage_LogIn_Confirm(self):
         LogIn().EmailLogInPage_LogIn_Confirm().click()
         time.sleep(5)
         # 尝试查找邮箱登录页顶部Title

@@ -22,7 +22,8 @@ class LogIn(object):
     # 登录弹窗
     # ----------
     # 登录弹窗-选择登录方式-Tips(Profile_text=Please log in before checking your profile./Post_text=Please log in to make a post./
-    # Notification_text=Please log in before checking the latest news./ktv&live_text=Enjoy all features after log in)
+    # Notification_text=Please log in before checking the latest news./ktv&live_text=Enjoy all features after log in./
+    # Share_text=Please log in to repost it./Like_text=Please log in to like it.)
     def LogInPopup_SelectLoginMode_Tips(self):
         LogInPopup_SelectLoginMode_Tips_ID = self.findID(LogIn_VD.LogInPopup_SelectLoginMode_Tips_ID)
         return LogInPopup_SelectLoginMode_Tips_ID

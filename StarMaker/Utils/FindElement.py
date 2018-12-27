@@ -1,7 +1,6 @@
 # coding:UTF-8
 from Utils.GetAppiumDeriver import GetAppiumDeriver
 from Utils.Tools import Tools
-from appium.webdriver.webdriver import WebDriverWait
 
 
 # 查找元素，如果存在返回元素，否则截图

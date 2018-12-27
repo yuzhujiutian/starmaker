@@ -51,7 +51,7 @@ class StarUpModular(unittest.TestCase):
         time.sleep(5)
         # 获取首页Popular文案(Hindi_text=लोकप्रिय)
         expValue = "लोकप्रिय"
-        actValue = Home().HomePage_Popular_Text().text
+        actValue = Home().HomePage_SwitchTab_PopularTab().text
         time.sleep(2)
         # 断言：校验首页Popular文案为印地语
         self.assertEqual(expValue, actValue)
@@ -63,7 +63,7 @@ class StarUpModular(unittest.TestCase):
         time.sleep(5)
         # 获取首页Popular文案(Bengali_text=জনপ্রিয়)
         expValue = "জনপ্রিয়"
-        actValue = Home().HomePage_Popular_Text().text
+        actValue = Home().HomePage_SwitchTab_PopularTab().text
         time.sleep(2)
         # 断言：校验首页Popular文案为孟加拉语
         self.assertEqual(expValue, actValue)
@@ -75,7 +75,7 @@ class StarUpModular(unittest.TestCase):
         time.sleep(5)
         # 获取首页Popular文案(Kannada_text=ಜನಪ್ರಿಯ)
         expValue = "ಜನಪ್ರಿಯ"
-        actValue = Home().HomePage_Popular_Text().text
+        actValue = Home().HomePage_SwitchTab_PopularTab().text
         time.sleep(2)
         # 断言：校验首页Popular文案为卡纳达语
         self.assertEqual(expValue, actValue)
@@ -87,7 +87,7 @@ class StarUpModular(unittest.TestCase):
         time.sleep(5)
         # 获取首页Popular文案(Tamil_text=பிரபலமான)
         expValue = "பிரபலமான"
-        actValue = Home().HomePage_Popular_Text().text
+        actValue = Home().HomePage_SwitchTab_PopularTab().text
         time.sleep(2)
         # 断言：校验首页Popular文案为泰米尔语
         self.assertEqual(expValue, actValue)
@@ -99,7 +99,7 @@ class StarUpModular(unittest.TestCase):
         time.sleep(5)
         # 获取首页Popular文案(Gujarati_text=POPULAR)
         expValue = "POPULAR"
-        actValue = Home().HomePage_Popular_Text().text
+        actValue = Home().HomePage_SwitchTab_PopularTab().text
         time.sleep(2)
         # 断言：校验首页Popular文案为古吉拉特语
         self.assertEqual(expValue, actValue)
@@ -111,7 +111,7 @@ class StarUpModular(unittest.TestCase):
         time.sleep(5)
         # 获取首页Popular文案(Odia_text=POPULAR)
         expValue = "POPULAR"
-        actValue = Home().HomePage_Popular_Text().text
+        actValue = Home().HomePage_SwitchTab_PopularTab().text
         time.sleep(2)
         # 断言：校验首页Popular文案为奥里亚语
         self.assertEqual(expValue, actValue)
@@ -123,7 +123,7 @@ class StarUpModular(unittest.TestCase):
         time.sleep(5)
         # 获取首页Popular文案(Malayalam_text=ജനപ്രിയം)
         expValue = "ജനപ്രിയം"
-        actValue = Home().HomePage_Popular_Text().text
+        actValue = Home().HomePage_SwitchTab_PopularTab().text
         time.sleep(2)
         # 断言：校验首页Popular文案为马拉雅拉姆语
         self.assertEqual(expValue, actValue)
@@ -135,7 +135,7 @@ class StarUpModular(unittest.TestCase):
         time.sleep(5)
         # 获取首页Popular文案(Marathi_text=लोकप्रिय)
         expValue = "लोकप्रिय"
-        actValue = Home().HomePage_Popular_Text().text
+        actValue = Home().HomePage_SwitchTab_PopularTab().text
         time.sleep(2)
         # 断言：校验首页Popular文案为马拉地语
         self.assertEqual(expValue, actValue)
@@ -147,7 +147,7 @@ class StarUpModular(unittest.TestCase):
         time.sleep(5)
         # 获取首页Popular文案(Telugu_text=ప్రముఖ)
         expValue = "ప్రముఖ"
-        actValue = Home().HomePage_Popular_Text().text
+        actValue = Home().HomePage_SwitchTab_PopularTab().text
         time.sleep(2)
         # 断言：校验首页Popular文案为泰卢固语
         self.assertEqual(expValue, actValue)
@@ -159,7 +159,7 @@ class StarUpModular(unittest.TestCase):
         time.sleep(5)
         # 获取首页Popular文案(Punjabi_text=POPULAR)
         expValue = "POPULAR"
-        actValue = Home().HomePage_Popular_Text().text
+        actValue = Home().HomePage_SwitchTab_PopularTab().text
         time.sleep(2)
         # 断言：校验首页Popular文案为旁遮普语
         self.assertEqual(expValue, actValue)
@@ -171,7 +171,7 @@ class StarUpModular(unittest.TestCase):
         time.sleep(5)
         # 获取首页Popular文案(Assamese_text=POPULAR)
         expValue = "POPULAR"
-        actValue = Home().HomePage_Popular_Text().text
+        actValue = Home().HomePage_SwitchTab_PopularTab().text
         time.sleep(2)
         # 断言：校验首页Popular文案为阿萨姆语
         self.assertEqual(expValue, actValue)
@@ -183,7 +183,7 @@ class StarUpModular(unittest.TestCase):
         time.sleep(5)
         # 获取首页Popular文案(Haryanvi_text=POPULAR)
         expValue = "POPULAR"
-        actValue = Home().HomePage_Popular_Text().text
+        actValue = Home().HomePage_SwitchTab_PopularTab().text
         time.sleep(2)
         # 断言：校验首页Popular文案为哈里亚纳维语
         self.assertEqual(expValue, actValue)
@@ -195,7 +195,7 @@ class StarUpModular(unittest.TestCase):
         time.sleep(5)
         # 获取首页Popular文案(Rajasthani_text=POPULAR)
         expValue = "POPULAR"
-        actValue = Home().HomePage_Popular_Text().text
+        actValue = Home().HomePage_SwitchTab_PopularTab().text
         time.sleep(2)
         # 断言：校验首页Popular文案为拉贾斯坦语
         self.assertEqual(expValue, actValue)
@@ -207,7 +207,7 @@ class StarUpModular(unittest.TestCase):
         time.sleep(5)
         # 获取首页Popular文案(Bhojpuri_text=POPULAR)
         expValue = "POPULAR"
-        actValue = Home().HomePage_Popular_Text().text
+        actValue = Home().HomePage_SwitchTab_PopularTab().text
         time.sleep(2)
         # 断言：校验首页Popular文案为博杰普尔语
         self.assertEqual(expValue, actValue)
@@ -222,7 +222,7 @@ class StarUpModular(unittest.TestCase):
         time.sleep(5)
         # 获取首页Popular文案(English_text=POPULAR)
         expValue = "POPULAR"
-        actValue = Home().HomePage_Popular_Text().text
+        actValue = Home().HomePage_SwitchTab_PopularTab().text
         time.sleep(2)
         # 断言：校验首页Popular文案为英语
         self.assertEqual(expValue, actValue)

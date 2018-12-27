@@ -730,7 +730,6 @@ class Popular_Elements_Disposes(object):
             return False
 
 
-
 # ----------
 # 屏幕处理工具
 # ----------

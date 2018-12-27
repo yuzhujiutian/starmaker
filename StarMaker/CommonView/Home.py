@@ -23,10 +23,55 @@ class Home(object):
     # ----------
     # 默认首页
     # ----------
-    # 首页-Popular-Text([1]/English_text=POPULAR/Hindi_text=लोकप्रिय)
-    def HomePage_Popular_Text(self):
-        HomePage_Popular_Text_ID = self.findClaS(Home_VD.HomePage_Popular_Text_ClaS, 1)
-        return HomePage_Popular_Text_ID
+    # 首页-切换内容Tab-Following
+    def HomePage_SwitchTab_FollowingTab(self):
+        HomePage_Common_SwitchTab_ClaS = self.findClaS(Home_VD.HomePage_Common_SwitchTab_ClaS, 0)
+        return HomePage_Common_SwitchTab_ClaS
+
+    # 首页-切换内容Tab-Popular
+    # English_text=POPULAR/Hindi_text=लोकप्रिय
+    def HomePage_SwitchTab_PopularTab(self):
+        HomePage_Common_SwitchTab_ClaS = self.findClaS(Home_VD.HomePage_Common_SwitchTab_ClaS, 1)
+        return HomePage_Common_SwitchTab_ClaS
+
+    # 首页-切换内容Tab-Sing
+    def HomePage_SwitchTab_SingTab(self):
+        HomePage_Common_SwitchTab_ClaS = self.findClaS(Home_VD.HomePage_Common_SwitchTab_ClaS, 2)
+        return  HomePage_Common_SwitchTab_ClaS
+
+    # 首页-通用-搜索框
+    def HomePage_Common_Search(self):
+        HomePage_Common_Search_ID = self.findID(Home_VD.HomePage_Common_Search_ID)
+        return HomePage_Common_Search_ID
+
+    # 首页-通用-Library
+    def HomePage_Common_Library(self):
+        HomePage_Common_Library_ID = self.findID(Home_VD.HomePage_Common_Library_ID)
+        return HomePage_Common_Library_ID
+
+    # 首页-通用-切换内容语言
+    def HomePage_Common_ContentLanguage(self):
+        HomePage_Common_ContentLanguage_ID = self.findID(Home_VD.HomePage_Common_ContentLanguage_ID)
+        return HomePage_Common_ContentLanguage_ID
+
+    # ----------
+    # 首页-语言选择弹窗
+    # ----------
+    # 首页-语言选择弹窗-Tips(English_text=The content displayed will be based on the language you choose.)
+    def HomePage_ChooseLanguage_IndiaTips(self):
+        HomePage_ChooseLanguage_IndiaTips_ID = self.findID(Home_VD.HomePage_ChooseLanguage_IndiaTips_ID)
+        return HomePage_ChooseLanguage_IndiaTips_ID
+
+    # 首页-语言选择弹窗-切换语言([0]हिन्दी(Hindi)/[1]বাংলা(Bengali)/[2]ಕನ್ನಡ(Kannada)/[3]தமிழ்(Tamil)/[4]ગુજરાતી(Gujarati)/
+    # [5]ଓଡ଼ିଆ(Odia)/[6]മലയാളം(Malayalam)/[7]मराठी(Marathi)/[8]తెలుగు(Telugu)/[9]ਪੰਜਾਬੀ(Punjabi)/[10]অসমীয়া(Assamese)/
+    # [滑动翻页][-4]हरियाणवी(Haryanvi)/[-3]राजस्थानी(Rajasthani)/[-2]भोजपूरी(Bhojpuri)/[-1]English(English))
+    def HomePage_ChooseLanguage_IndiaSwitchLanguage(self, num):
+        HomePage_ChooseLanguage_IndiaSwitchLanguage_IDS = self.findIDS(Home_VD.HomePage_ChooseLanguage_IndiaSwitchLanguage_IDS, num)
+        return HomePage_ChooseLanguage_IndiaSwitchLanguage_IDS
+
+    def HomePage_ChooseLanguage_ByTextSwitchLanguage(self, text):
+        HomePage_ChooseLanguage_ByTextSwitchLanguage_AU = self.findAU(text)
+        return HomePage_ChooseLanguage_ByTextSwitchLanguage_AU
 
     # ----------
     # 首页-MainTab
@@ -69,6 +114,19 @@ class Home(object):
         HomePage_HotTopics_SeeAll_ID = self.findID(Home_VD.HomePage_HotTopics_SeeAll_ID)
         return HomePage_HotTopics_SeeAll_ID
 
+    # ----------
+    # 首页-feed卡片
+    # ----------
+    # 首页-feed卡片_头像(ID/IDS)
+    def Source_HomePage_FeedCard_HeadView(self):
+        Source_HomePage_FeedCard_HeadView_ID_IDS = self.ID_IDS(Home_VD.Source_HomePage_FeedCard_HeadView_ID_IDS)
+        return Source_HomePage_FeedCard_HeadView_ID_IDS
+
+    # 首页-feed卡片_用户名(ID/IDS)
+    def HomePage_FeedCard_UserName(self):
+        HomePage_FeedCard_UserName_ID_IDS = self.ID_IDS(Home_VD.HomePage_FeedCard_UserName_ID_IDS)
+        return HomePage_FeedCard_UserName_ID_IDS
+
     # 首页-feed卡片_Follow-返回当前页个数
     def HomePage_FeedCard_FollowCount(self):
         HomePage_FeedCard_FollowCount = self.ID_IDS_Count(Home_VD.HomePage_FeedCard_Follow_ID_IDS)
@@ -88,6 +146,61 @@ class Home(object):
     def HomePage_FeedCard_Dislike(self):
         HomePage_FeedCard_Dislike_ID = self.ID_IDS(Home_VD.HomePage_FeedCard_Dislike_ID_IDS)
         return HomePage_FeedCard_Dislike_ID
+
+    # 首页-feed卡片_描述(ID/IDS)
+    def HomePage_FeedCard_Describe(self):
+        HomePage_FeedCard_Describe_ID_IDS = self.ID_IDS(Home_VD.HomePage_FeedCard_Describe_ID_IDS)
+        return HomePage_FeedCard_Describe_ID_IDS
+
+    # 首页-feed卡片_图片(ID/IDS)
+    def HomePage_FeedCard_Img(self):
+        HomePage_FeedCard_Img_ID_IDS = self.ID_IDS(Home_VD.HomePage_FeedCard_Img_ID_IDS)
+        return HomePage_FeedCard_Img_ID_IDS
+
+    # 首页-feed卡片_视屏(ID/IDS)
+    def HomePage_FeedCard_Video(self):
+        HomePage_FeedCard_Video_ID_IDS = self.ID_IDS(Home_VD.HomePage_FeedCard_Video_ID_IDS)
+        return HomePage_FeedCard_Video_ID_IDS
+
+    # 首页-feed卡片_分享按钮(ID/IDS)
+    def HomePage_FeedCard_Share(self):
+        HomePage_FeedCard_Share_ID_IDS = self.ID_IDS(Home_VD.HomePage_FeedCard_Share_ID_IDS)
+        return HomePage_FeedCard_Share_ID_IDS
+
+    # 首页-feed卡片_分享数(ID/IDS)
+    def HomePage_FeedCard_ShareCount(self):
+        HomePage_FeedCard_ShareCount_ID_IDS = self.ID_IDS(Home_VD.HomePage_FeedCard_ShareCount_ID_IDS)
+        return HomePage_FeedCard_ShareCount_ID_IDS
+
+    # 首页-feed卡片_评论按钮(ID/IDS)
+    def HomePage_FeedCard_Comment(self):
+        HomePage_FeedCard_Comment_ID_IDS = self.ID_IDS(Home_VD.HomePage_FeedCard_Comment_ID_IDS)
+        return HomePage_FeedCard_Comment_ID_IDS
+
+    # 首页-feed卡片_评论数(ID/IDS)
+    def HomePage_FeedCard_CommentCount(self):
+        HomePage_FeedCard_CommentCount_ID_IDS = self.ID_IDS(Home_VD.HomePage_FeedCard_CommentCount_ID_IDS)
+        return HomePage_FeedCard_CommentCount_ID_IDS
+
+    # 首页-feed卡片_like按钮(ID/IDS)
+    def HomePage_FeedCard_Like(self):
+        HomePage_FeedCard_Like_ID_IDS = self.ID_IDS(Home_VD.HomePage_FeedCard_Like_ID_IDS)
+        return HomePage_FeedCard_Like_ID_IDS
+
+    # 首页-feed卡片_like数(ID/IDS)
+    def HomePage_FeedCard_LikeCount(self):
+        HomePage_FeedCard_LikeCount_ID_IDS = self.ID_IDS(Home_VD.HomePage_FeedCard_LikeCount_ID_IDS)
+        return HomePage_FeedCard_LikeCount_ID_IDS
+
+    # 首页-feed卡片_下载按钮(ID/IDS)
+    def HomePage_FeedCard_Download(self):
+        HomePage_FeedCard_Download_ID_IDS = self.ID_IDS(Home_VD.HomePage_FeedCard_Download_ID_IDS)
+        return HomePage_FeedCard_Download_ID_IDS
+
+    # 首页-feed卡片_WhatsApp按钮(ID/IDS)
+    def HomePage_FeedCard_WhatsApp(self):
+        HomePage_FeedCard_WhatsApp_ID_IDS = self.ID_IDS(Home_VD.HomePage_FeedCard_WhatsApp_ID_IDS)
+        return HomePage_FeedCard_WhatsApp_ID_IDS
 
     # ----------
     # 首页-Dislike弹窗

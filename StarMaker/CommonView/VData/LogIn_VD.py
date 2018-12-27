@@ -9,7 +9,9 @@ gms = "com.google.android"
 # ----------
 # 登录弹窗-选择登录方式
 # ----------
-# 登录弹窗-选择登录方式-Tips(profile_text=Please log in before checking your profile./)
+# 登录弹窗-选择登录方式-Tips(Profile_text=Please log in before checking your profile./Post_text=Please log in to make a post./
+#     # Notification_text=Please log in before checking the latest news./ktv&live_text=Enjoy all features after log in/
+#     # Share_text=Please log in to repost it./Like_text=Please log in to like it.)
 Source_LogInPopup_SelectLoginMode_Tips_ID = "tv_welcome"
 LogInPopup_SelectLoginMode_Tips_ID = package + FS(Source_LogInPopup_SelectLoginMode_Tips_ID)
 
