@@ -118,9 +118,9 @@ class Home(object):
     # 首页-feed卡片
     # ----------
     # 首页-feed卡片_头像(ID/IDS)
-    def Source_HomePage_FeedCard_HeadView(self):
-        Source_HomePage_FeedCard_HeadView_ID_IDS = self.ID_IDS(Home_VD.Source_HomePage_FeedCard_HeadView_ID_IDS)
-        return Source_HomePage_FeedCard_HeadView_ID_IDS
+    def HomePage_FeedCard_HeadView(self):
+        HomePage_FeedCard_HeadView_ID_IDS = self.ID_IDS(Home_VD.HomePage_FeedCard_HeadView_ID_IDS)
+        return HomePage_FeedCard_HeadView_ID_IDS
 
     # 首页-feed卡片_用户名(ID/IDS)
     def HomePage_FeedCard_UserName(self):
