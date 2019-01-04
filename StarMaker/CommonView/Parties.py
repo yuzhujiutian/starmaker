@@ -7,7 +7,7 @@ from CommonView.VData import Parties_VD
 from Utils.Tools import Popular_Elements_Disposes
 
 
-# 登录模块
+# KTV模块
 class Parties(object):
     def __init__(self):
         self.findID = find_element().ID

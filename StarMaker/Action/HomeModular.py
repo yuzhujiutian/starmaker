@@ -30,57 +30,57 @@ class HomeModular(unittest.TestCase):
     # ----------
     # 首页-MainTab
     # ----------
-    # 首页-切换到HomeTab
-    def test_Case0101_HomePage_SwitchTab_SelectHomeTab(self):
-        Home().HomePage_MainTab_HomeTab().click()
+    # 首页-切换到Moment
+    def test_Case0101_HomePage_SwitchTab_SelectMomentTab(self):
+        Home().HomePage_MainTab_MomentTab().click()
         time.sleep(2)
-        # 获取HomeTab的selected属性
+        # 获取MomentTab的selected属性
         expValue = "true"
-        actValue = Home().HomePage_MainTab_HomeTab().get_attribute("selected")
+        actValue = Home().HomePage_MainTab_MomentTab().get_attribute("selected")
         time.sleep(2)
         # 断言：已切换到HomeTab
         self.assertEqual(expValue, actValue)
 
-    # 首页-切换到DiscoverTab
-    def test_Case0102_HomePage_SwitchTab_SelectDiscoverTab(self):
-        Home().HomePage_MainTab_DiscoverTab().click()
+    # 首页-切换到Party
+    def test_Case0102_HomePage_SwitchTab_SelectPartyTab(self):
+        Home().HomePage_MainTab_PartyTab().click()
         time.sleep(2)
-        # 获取DiscoverTab的selected属性
+        # 获取PartyTab的selected属性
         expValue = "true"
-        actValue = Home().HomePage_MainTab_DiscoverTab().get_attribute("selected")
+        actValue = Home().HomePage_MainTab_PartyTab().get_attribute("selected")
         time.sleep(2)
         # 断言：已切换到DiscoverTab
         self.assertEqual(expValue, actValue)
 
-    # 首页-切换到PostTab
-    def test_Case0103_HomePage_SwitchTab_SelectPostTab(self):
-        Home().HomePage_MainTab_PostTab().click()
+    # 首页-切换到Sing
+    def test_Case0103_HomePage_SwitchTab_SelectSingTab(self):
+        Home().HomePage_MainTab_SingTab().click()
         time.sleep(2)
-        # 获取PostTab的selected属性
+        # 获取Sing的selected属性
         expValue = "true"
-        actValue = Home().HomePage_MainTab_PostTab().get_attribute("selected")
+        actValue = Home().HomePage_MainTab_SingTab().get_attribute("selected")
         time.sleep(2)
         # 断言：已切换到PostTab
         self.assertEqual(expValue, actValue)
 
-    # 首页-切换到NotificationTab
-    def test_Case0104_HomePage_SwitchTab_SelectNotificationTab(self):
-        Home().HomePage_MainTab_NotificationTab().click()
+    # 首页-切换到Message
+    def test_Case0104_HomePage_SwitchTab_SelectMessageTab(self):
+        Home().HomePage_MainTab_MessageTab().click()
         time.sleep(2)
-        # 获取NotificationTab的selected属性
+        # 获取MessageTab的selected属性
         expValue = "true"
-        actValue = Home().HomePage_MainTab_NotificationTab().get_attribute("selected")
+        actValue = Home().HomePage_MainTab_MessageTab().get_attribute("selected")
         time.sleep(2)
         # 断言：已切换到NotificationTab
         self.assertEqual(expValue, actValue)
 
-    # 首页-切换到ProfileTab
-    def test_Case0105_HomePage_SwitchTab_SelectProfileTab(self):
-        Home().HomePage_MainTab_ProfileTab().click()
+    # 首页-切换到Me
+    def test_Case0105_HomePage_SwitchTab_SelectMeTab(self):
+        Home().HomePage_MainTab_MeTab().click()
         time.sleep(2)
-        # 获取ProfileTab的selected属性
+        # 获取MeTab的selected属性
         expValue = "true"
-        actValue = Home().HomePage_MainTab_ProfileTab().get_attribute("selected")
+        actValue = Home().HomePage_MainTab_MeTab().get_attribute("selected")
         time.sleep(2)
         # 断言：已切换到ProfileTab
         self.assertEqual(expValue, actValue)

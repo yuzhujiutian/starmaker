@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<InspectTabList>InspectTabList
+    <KtvTabList>["PARTIES", "LIVE", "DISCOVER", "HOT", "MULTI-GUEST", "COLLAB", "QUEUE", "FOLLOWING"]</KtvTabList>
+    <LiveTabList>["PARTIES", "LIVE", "DISCOVER", "HOT", "SINGER", "CHAT", "TALENT", "NEARBY"]</LiveTabList>
+</InspectTabList>

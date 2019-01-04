@@ -128,3 +128,6 @@ HomePage_DislikePop_Cancel_ID = package + FS(Source_HomePage_DislikePop_Cancel_I
 # ----------
 # 首页-底部五个Tab([0]feed流/[1]互娱页/[2]点唱页/[3]消息页/[4]个人页)
 HomePage_MainTab_ClaS = "android.support.v7.app.ActionBar$Tab"
+
+# 首页-底部五个Tab名称([0]Moment/[1]Party/[2]Sing/[3]Message/[4]Me)
+HomePage_MainTab_TabName_IDS = "com.starmakerinteractive.starmaker:id/tab_name"

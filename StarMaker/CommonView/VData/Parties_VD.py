@@ -20,7 +20,7 @@ KtvPage_Search_SearchRoom_ID = package + FS(Source_KtvPage_Search_SearchRoom_ID)
 
 # KTV大厅-功能入口-通用
 # ([0]My Room/[1]History/[2]Ranking)
-Source_KtvPage_FunctionEntry_Common_IDS = "com.starmakerinteractive.starmaker:id/txt_title"
+Source_KtvPage_FunctionEntry_Common_IDS = "txt_title"
 KtvPage_FunctionEntry_Common_IDS = package + FS(Source_KtvPage_FunctionEntry_Common_IDS)
 
 # ----------

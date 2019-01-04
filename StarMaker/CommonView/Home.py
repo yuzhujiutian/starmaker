@@ -76,29 +76,54 @@ class Home(object):
     # ----------
     # 首页-MainTab
     # ----------
-    # 首页-MainTab-HomeTab
-    def HomePage_MainTab_HomeTab(self):
-        HomePage_MainTab_HomeTab_ClaS = self.findClaS(Home_VD.HomePage_MainTab_ClaS, 0)
+    # 首页-MainTab-Moment
+    def HomePage_MainTab_MomentTab(self):
+        HomePage_MainTab_MomentTab_ClaS = self.findClaS(Home_VD.HomePage_MainTab_ClaS, 0)
+        return HomePage_MainTab_MomentTab_ClaS
+
+    # 首页-MainTab-Party
+    def HomePage_MainTab_PartyTab(self):
+        HomePage_MainTab_PartyTab_ClaS = self.findClaS(Home_VD.HomePage_MainTab_ClaS, 1)
+        return HomePage_MainTab_PartyTab_ClaS
+
+    # 首页-MainTab-Sing
+    def HomePage_MainTab_SingTab(self):
+        HomePage_MainTab_SingTab_ClaS = self.findClaS(Home_VD.HomePage_MainTab_ClaS, 2)
+        return HomePage_MainTab_SingTab_ClaS
+
+    # 首页-MainTab-Message
+    def HomePage_MainTab_MessageTab(self):
+        HomePage_MainTab_MessageTab_ClaS = self.findClaS(Home_VD.HomePage_MainTab_ClaS, 3)
+        return HomePage_MainTab_MessageTab_ClaS
+
+    # 首页-MainTab-Me
+    def HomePage_MainTab_MeTab(self):
+        HomePage_MainTab_MeTab_ClaS = self.findClaS(Home_VD.HomePage_MainTab_ClaS, 4)
+        return HomePage_MainTab_MeTab_ClaS
+
+    # 首页-MainTabName-Moment
+    def HomePage_MainTabName_Moment(self):
+        HomePage_MainTab_HomeTab_ClaS = self.findIDS(Home_VD.HomePage_MainTab_TabName_IDS, 0)
         return HomePage_MainTab_HomeTab_ClaS
 
-    # 首页-MainTab-DiscoverTab
-    def HomePage_MainTab_DiscoverTab(self):
-        HomePage_MainTab_DiscoverTab_ClaS = self.findClaS(Home_VD.HomePage_MainTab_ClaS, 1)
+    # 首页-MainTabName-Party
+    def HomePage_MainTabName_Party(self):
+        HomePage_MainTab_DiscoverTab_ClaS = self.findClaS(Home_VD.HomePage_MainTab_TabName_IDS, 1)
         return HomePage_MainTab_DiscoverTab_ClaS
 
-    # 首页-MainTab-PostTab
-    def HomePage_MainTab_PostTab(self):
-        HomePage_MainTab_PostTab_ClaS = self.findClaS(Home_VD.HomePage_MainTab_ClaS, 2)
+    # 首页-MainTabName-Sing
+    def HomePage_MainTabName_Sing(self):
+        HomePage_MainTab_PostTab_ClaS = self.findClaS(Home_VD.HomePage_MainTab_TabName_IDS, 2)
         return HomePage_MainTab_PostTab_ClaS
 
-    # 首页-MainTab-NotificationTab
-    def HomePage_MainTab_NotificationTab(self):
-        HomePage_MainTab_NotificationTab_ClaS = self.findClaS(Home_VD.HomePage_MainTab_ClaS, 3)
+    # 首页-MainTabName-Message
+    def HomePage_MainTabName_Message(self):
+        HomePage_MainTab_NotificationTab_ClaS = self.findClaS(Home_VD.HomePage_MainTab_TabName_IDS, 3)
         return HomePage_MainTab_NotificationTab_ClaS
 
-    # 首页-MainTab-ProfileTab
-    def HomePage_MainTab_ProfileTab(self):
-        HomePage_MainTab_ProfileTab_ClaS = self.findClaS(Home_VD.HomePage_MainTab_ClaS, 4)
+    # 首页-MainTabName-Me
+    def HomePage_MainTabName_Me(self):
+        HomePage_MainTab_ProfileTab_ClaS = self.findClaS(Home_VD.HomePage_MainTab_TabName_IDS, 4)
         return HomePage_MainTab_ProfileTab_ClaS
 
     # ----------

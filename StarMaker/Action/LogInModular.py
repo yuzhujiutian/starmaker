@@ -29,9 +29,9 @@ class LogInModular(unittest.TestCase):
     # ----------
     # 调起登录弹窗
     # ----------
-    # 首页-游客点击Post-调起登录弹窗
+    # 首页-游客点击Sing-调起登录弹窗
     def test_Case2101_HomePage_Tourist_PostTabInlet(self):
-        Home().HomePage_MainTab_PostTab().click()
+        Home().HomePage_MainTab_SingTab().click()
         time.sleep(2)
         # 获取登录弹窗的Tips文案
         expValue = "Please log in to make a post."
@@ -40,9 +40,9 @@ class LogInModular(unittest.TestCase):
         # 断言：调起登录弹窗
         self.assertEqual(expValue, actValue)
 
-    # 首页-游客点击Notification-调起登录弹窗
+    # 首页-游客点击Message-调起登录弹窗
     def test_Case2102_HomePage_Tourist_NotificationTabInlet(self):
-        Home().HomePage_MainTab_NotificationTab().click()
+        Home().HomePage_MainTab_MessageTab().click()
         time.sleep(2)
         # 获取登录弹窗的Tips文案
         expValue = "Please log in before checking the latest news."
@@ -51,9 +51,9 @@ class LogInModular(unittest.TestCase):
         # 断言：调起登录弹窗
         self.assertEqual(expValue, actValue)
 
-    # 首页-游客点击ProfileTab-调起登录弹窗
+    # 首页-游客点击Me-调起登录弹窗
     def test_Case2103_HomePage_Tourist_ProfileTabInlet(self):
-        Home().HomePage_MainTab_ProfileTab().click()
+        Home().HomePage_MainTab_MeTab().click()
         time.sleep(2)
         # 获取登录弹窗的Tips文案
         expValue = "Please log in before checking your profile."
