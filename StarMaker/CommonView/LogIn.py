@@ -72,6 +72,14 @@ class LogIn(object):
         return LogInPopup_EmailLoginMode_SelectCancel_ID
 
     # ----------
+    # 登录弹窗-FB登录方式
+    # ----------
+    # 登录弹窗-FB登录方式-登录点击按钮
+    def LogInPopup_FBLoginMode_LogInClickBtn(self):
+        LogInPopup_FBLoginMode_LogInClickBtn_AID = self.findAID(LogIn_VD.LogInPopup_FBLoginMode_LogInClickBtn_AID)
+        return LogInPopup_FBLoginMode_LogInClickBtn_AID
+
+    # ----------
     # Email登录页
     # ----------
     # 邮箱登录页-Title-Text文案

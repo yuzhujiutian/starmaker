@@ -2,7 +2,9 @@
 import time
 import unittest
 from CommonView.Home import Home
+from CommonView.Search import Search
 from CommonView.HotTopics import HotTopics
+from CommonView.Profile import Profile
 from Utils.Tools import Tools
 from Utils.Tools import Screen
 from Utils.Tools import ToastTips_Processing
@@ -126,13 +128,22 @@ class HomeModular(unittest.TestCase):
     def test_Case0109_HomePage_Common_ClickSearch(self):
         Home().HomePage_Common_Search().click()
         time.sleep(2)
-        # 断言待补充
+        # 查找搜索页搜索框
+        actValue = Search().SearchPage_Search_SearchBox()
+        time.sleep(2)
+        # 断言：已跳转到搜索页
+        self.assertTrue(actValue)
 
     # 首页-点击Library
     def test_Case0110_HomePage_Common_ClickLibrary(self):
         Home().HomePage_Common_Library().click()
         time.sleep(2)
-        # 断言待补充
+        # 获取Sing的selected属性
+        expValue = "true"
+        actValue = Home().HomePage_MainTab_SingTab().get_attribute("selected")
+        time.sleep(2)
+        # 断言：已切换到PostTab
+        self.assertEqual(expValue, actValue)
 
     # 首页-点击切换内容语言
     def test_Case0111_HomePage_Common_ClickContentLanguage(self):
@@ -175,20 +186,31 @@ class HomeModular(unittest.TestCase):
     def test_Case0114_HomePage_FeedCard_HeadView(self):
         Home().HomePage_FeedCard_HeadView().click()
         time.sleep(2)
-        # 断言待补充
+        # 获取该用户的Name
+        expValue = Home().HomePage_FeedCard_UserName().text
+        actValue = Profile().ProfilePage_UserInfo_StageName().text
+        time.sleep(2)
+        # 断言：已跳转到该用户Profile页
+        self.assertEqual(expValue, actValue)
 
     # 首页卡片-点击用户名
     def test_Case0115_HomePage_FeedCard_UserName(self):
         Home().HomePage_FeedCard_UserName().click()
         time.sleep(2)
-        # 断言待补充
+        # 获取该用户的Name
+        expValue = Home().HomePage_FeedCard_UserName().text
+        actValue = Profile().ProfilePage_UserInfo_StageName().text
+        time.sleep(2)
+        # 断言：已跳转到该用户Profile页
+        self.assertEqual(expValue, actValue)
 
     # 首页卡片-获取用户名
     def test_Case0116_HomePage_FeedCard_UserName(self):
         UserName = Home().HomePage_FeedCard_UserName().text
         print(UserName)
         time.sleep(2)
-        # 断言待补充
+        # 将用户名加self以便外部调用
+        self.UserName = UserName
 
     # 首页卡片-Follow成功
     def test_Case0117_HomePage_FeedCard_Follow(self):
@@ -245,7 +267,6 @@ class HomeModular(unittest.TestCase):
         Home().HomePage_FeedCard_Img().click()
         time.sleep(2)
         # 断言待补充
-
 
     # 首页卡片，播放视屏
     def test_Case0122_HomePage_FeedCard_Video(self):

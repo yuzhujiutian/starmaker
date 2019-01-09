@@ -51,6 +51,12 @@ Source_LogInPopup_EmailLoginMode_SelectCancel_ID = "txt_login_cancel"
 LogInPopup_EmailLoginMode_SelectCancel_ID = package + FS(Source_LogInPopup_EmailLoginMode_SelectCancel_ID)
 
 # ----------
+# 登录弹窗-FB登录方式
+# ----------
+# 登录弹窗-FB登录方式-登录点击按钮
+LogInPopup_FBLoginMode_LogInClickBtn_AID = "登录点击"
+
+# ----------
 # Email登录页
 # ----------
 # 邮箱登录页-输入框-通用ClaS([0]Email_Input/[1]Password_Input)

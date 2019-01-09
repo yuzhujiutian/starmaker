@@ -3,6 +3,7 @@ import time
 import unittest
 from CommonView.LogIn import LogIn
 from CommonView.Home import Home
+from CommonView.Parties import Parties
 from Utils.Tools import Tools
 from Utils.GetAppiumDeriver import GetAppiumDeriver
 from Utils.ReadXMLData import ReadXMLData
@@ -86,7 +87,7 @@ class LogInModular(unittest.TestCase):
 
     # KTV大厅-点击任意房间-调起登录弹窗
     def test_Case2106_KTVHall_Tourist_PartiesRoomInlet(self):
-        # XXX.click()
+        Parties().KtvPage_RoomCard_Cover().click()
         time.sleep(2)
         # 获取登录弹窗的Tips文案
         expValue = "Enjoy all features after log in."
@@ -98,10 +99,15 @@ class LogInModular(unittest.TestCase):
     # ----------
     # 登录弹窗
     # ----------
-    # 登录弹窗-选择登录方式-选择FB方式
+    # 登录弹窗-选择登录方式-选择FB方式(已安装FB客户端)
     def test_Case2107_LogInPopup_SelectLoginMode_SelectFacebook(self):
         LogIn().LogInPopup_SelectLoginMode_SelectFacebook().click()
-        # 断言待补充
+        time.sleep(2)
+        # 校验FB登录页登陆点击按钮是否存在
+        actValue = LogIn().LogInPopup_FBLoginMode_LogInClickBtn()
+        time.sleep(2)
+        # 断言：成功跳转至FB登录页
+        self.assertTrue(actValue)
 
     # 登录弹窗-选择登录方式-选择Email方式
     def test_Case2108_LogInPopup_SelectLoginMode_SelectEmail(self):
@@ -117,12 +123,26 @@ class LogInModular(unittest.TestCase):
     # 登录弹窗-选择登录方式-选择Phone方式
     def test_Case2109_LogInPopup_SelectLoginMode_SelectPhone(self):
         LogIn().LogInPopup_SelectLoginMode_SelectPhone().click()
-        # 断言待补充
+        time.sleep(2)
+        # 获取Phone登录页顶部Title
+        expValue = "Enter your mobile number"
+        actValue = LogIn().PhoneHome_Tips().text
+        time.sleep(2)
+        # 断言：成功跳转至Phone登录页
+        self.assertEqual(expValue, actValue)
 
     # 登录弹窗-选择登录方式-选择G+方式
     def test_Case2110_LogInPopup_SelectLoginMode_SelectGoogle(self):
         LogIn().LogInPopup_SelectLoginMode_SelectGoogle().click()
-        # 断言待补充
+        time.sleep(2)
+        # 处理预选帐号弹窗
+        if LogIn().FindGoogle_PreselectionPopup():
+            actValue = True
+        else:
+            actValue = LogIn().Google_AddLogInPage_Title()
+        time.sleep(2)
+        # 断言：成功跳转至google登录页
+        self.assertTrue(actValue)
 
     # ----------
     # 登录弹窗-Email登录方式
