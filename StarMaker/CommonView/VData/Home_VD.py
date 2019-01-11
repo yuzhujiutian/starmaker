@@ -124,6 +124,17 @@ Source_HomePage_DislikePop_Cancel_ID = "tv_cancel"
 HomePage_DislikePop_Cancel_ID = package + FS(Source_HomePage_DislikePop_Cancel_ID)
 
 # ----------
+# 首页-弹窗
+# ----------
+# 首页-Share弹窗-外框
+Source_HomePage_SharePop_Frame_ID = "layout_background"
+HomePage_SharePop_Frame_ID = package + FS(Source_HomePage_SharePop_Frame_ID)
+
+# 首页-WhatsApp弹窗-外框
+Source_HomePage_WhatsAppPop_Frame_ID = "ly_fragment_share_video_switch_dialog"
+HomePage_WhatsAppPop_Frame_ID = package + FS(Source_HomePage_WhatsAppPop_Frame_ID)
+
+# ----------
 # 首页-底部五个Tab
 # ----------
 # 首页-底部五个Tab([0]feed流/[1]互娱页/[2]点唱页/[3]消息页/[4]个人页)

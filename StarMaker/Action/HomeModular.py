@@ -5,6 +5,7 @@ from CommonView.Home import Home
 from CommonView.Search import Search
 from CommonView.HotTopics import HotTopics
 from CommonView.Profile import Profile
+from CommonView.PlaybackDetails import PlaybackDetails
 from Utils.Tools import Tools
 from Utils.Tools import Screen
 from Utils.Tools import ToastTips_Processing
@@ -266,64 +267,108 @@ class HomeModular(unittest.TestCase):
     def test_Case0121_HomePage_FeedCard_Img(self):
         Home().HomePage_FeedCard_Img().click()
         time.sleep(2)
-        # 断言待补充
+        # 查找图片详情页图片预览
+        actValue = PlaybackDetails().PlaybackDetailsPage_Img_Preview()
+        time.sleep(2)
+        # 断言：成功跳转至图片详情页
+        self.assertTrue(actValue)
 
     # 首页卡片，播放视屏
     def test_Case0122_HomePage_FeedCard_Video(self):
         Home().HomePage_FeedCard_Video().click()
         time.sleep(2)
-        # 断言待补充
+        # 查找视屏详情页视屏预览
+        actValue = PlaybackDetails().PlaybackDetailsPage_Video_Preview()
+        time.sleep(2)
+        # 断言：成功跳转至视屏详情页
+        self.assertTrue(actValue)
 
     # 首页卡片，点击分享按钮
     def test_Case0123_HomePage_FeedCard_Share(self):
         Home().HomePage_FeedCard_Share().click()
         time.sleep(2)
-        # 断言待补充
+        # 查找分享弹窗分享外框
+        actValue = Home().HomePage_SharePop_Frame()
+        time.sleep(2)
+        # 断言：成功拉起分享弹窗
+        self.assertTrue(actValue)
 
     # 首页卡片，记录分享数
     def test_Case0124_HomePage_FeedCard_ShareCount(self):
         ShareCount = Home().HomePage_FeedCard_ShareCount().text
         print(ShareCount)
         time.sleep(2)
-        # 断言待补充
+        # 判断统计存在
+        actValue = Home().HomePage_FeedCard_ShareCount()
+        time.sleep(2)
+        # 断言：数据正常
+        self.assertTrue(actValue)
 
     # 首页卡片，点击评论按钮
     def test_Case0125_HomePage_FeedCard_Comment(self):
         Home().HomePage_FeedCard_Comment().click()
         time.sleep(2)
-        # 断言待补充
+        # 查找评论框
+        actValue = PlaybackDetails().PlaybackDetailsPage_Video_Comment()
+        time.sleep(2)
+        # 断言：成功跳转至详情页评论区域
+        self.assertTrue(actValue)
 
     # 首页卡片，记录评论数
     def test_Case0126_HomePage_FeedCard_CommentCount(self):
         CommentCount = Home().HomePage_FeedCard_CommentCount().text
         print(CommentCount)
         time.sleep(2)
-        # 断言待补充
+        # 判断统计存在
+        actValue = Home().HomePage_FeedCard_CommentCount()
+        time.sleep(2)
+        # 断言：数据正常
+        self.assertTrue(actValue)
 
     # 首页卡片，点击like按钮
     def test_Case0127_HomePage_FeedCard_Like(self):
+        LikeCount1 = Home().HomePage_FeedCard_LikeCount().text
         Home().HomePage_FeedCard_Like().click()
         time.sleep(2)
-        # 断言待补充
+        LikeCount2 = Home().HomePage_FeedCard_LikeCount().text
+        # 判断like成功
+        expValue = 1
+        actValue = LikeCount2 - LikeCount1
+        time.sleep(2)
+        # 断言：like成功
+        self.assertEqual(expValue, actValue)
 
     # 首页卡片，记录like数
     def test_Case0128_HomePage_FeedCard_LikeCount(self):
         LikeCount = Home().HomePage_FeedCard_LikeCount().text
         print(LikeCount)
         time.sleep(2)
-        # 断言待补充
+        # 判断统计存在
+        actValue = Home().HomePage_FeedCard_LikeCount()
+        time.sleep(2)
+        # 断言：数据正常
+        self.assertTrue(actValue)
 
     # 首页卡片，点击下载按钮
     def test_Case0129_HomePage_FeedCard_Download(self):
         Home().HomePage_FeedCard_Video().click()
         time.sleep(2)
-        # 断言待补充
+        # 循环查找toast提示
+        expValue = "Saved to this device."
+        actValue = ToastTips_Processing().ToastTips_TextXpath_IsDisplayed(expValue)
+        time.sleep(2)
+        # 断言：download成功
+        self.assertTrue(actValue)
 
     # 首页卡片，点击WhatsApp按钮
     def test_Case0130_HomePage_FeedCard_WhatsApp(self):
         Home().HomePage_FeedCard_Video().click()
         time.sleep(2)
-        # 断言待补充
+        # 查找WhatsApp分享框
+        actValue = Home().HomePage_WhatsAppPop_Frame()
+        time.sleep(2)
+        # 断言：成功拉起WhatsApp分享弹窗
+        self.assertTrue(actValue)
 
     # ----------
     # 切换内容语言弹窗-选择内容语言

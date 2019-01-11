@@ -244,3 +244,16 @@ class Home(object):
     def HomePage_DislikePop_Cancel(self):
         HomePage_DislikePop_Cancel_ID = self.findID(Home_VD.HomePage_DislikePop_Cancel_ID)
         return HomePage_DislikePop_Cancel_ID
+
+    # ----------
+    # 首页-弹窗
+    # ----------
+    # 首页-Share弹窗-外框
+    def HomePage_SharePop_Frame(self):
+        HomePage_SharePop_Frame_ID = self.findID(Home_VD.HomePage_SharePop_Frame_ID)
+        return HomePage_SharePop_Frame_ID
+
+    # 首页-WhatsApp弹窗-外框
+    def HomePage_WhatsAppPop_Frame(self):
+        HomePage_WhatsAppPop_Frame_ID = self.findID(Home_VD.HomePage_WhatsAppPop_Frame_ID)
+        return HomePage_WhatsAppPop_Frame_ID

@@ -56,3 +56,26 @@ class PlaybackDetails(object):
     def PlaybackDetailsPage_RecordingInfo_Statistics(self):
         PlaybackDetailsPage_RecordingInfo_Statistics_ID = self.findID(PlaybackDetails_VD.PlaybackDetailsPage_RecordingInfo_Statistics_ID)
         return PlaybackDetailsPage_RecordingInfo_Statistics_ID
+
+    # ----------
+    # 图片/视屏播放详情页
+    # ----------
+    # PlaybackDetails页-图片详情页-图片预览
+    def PlaybackDetailsPage_Img_Preview(self):
+        PlaybackDetailsPage_Img_Preview_ID = self.findID(PlaybackDetails_VD.PlaybackDetailsPage_Img_Preview_ID)
+        return PlaybackDetailsPage_Img_Preview_ID
+
+    # PlaybackDetails页-视屏详情页-视屏预览
+    def PlaybackDetailsPage_Video_Preview(self):
+        PlaybackDetailsPage_Video_Preview_ID = self.findID(PlaybackDetails_VD.PlaybackDetailsPage_Video_Preview_ID)
+        return PlaybackDetailsPage_Video_Preview_ID
+
+    # PlaybackDetails页-视屏详情页-Repost[0]
+    def PlaybackDetailsPage_Video_Repost(self):
+        PlaybackDetailsPage_Video_Repost_IDS = self.findIDS(PlaybackDetails_VD.PlaybackDetailsPage_Video_Repost_IDS, 0)
+        return PlaybackDetailsPage_Video_Repost_IDS
+
+    # PlaybackDetails页-视屏详情页-Comment[1]
+    def PlaybackDetailsPage_Video_Comment(self):
+        PlaybackDetailsPage_Video_Comment_IDS = self.findIDS(PlaybackDetails_VD.PlaybackDetailsPage_Video_Comment_IDS)
+        return PlaybackDetailsPage_Video_Comment_IDS

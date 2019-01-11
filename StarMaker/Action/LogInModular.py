@@ -4,6 +4,7 @@ import unittest
 from CommonView.LogIn import LogIn
 from CommonView.Home import Home
 from CommonView.Parties import Parties
+from CommonView.SignUp import SignUp
 from Utils.Tools import Tools
 from Utils.GetAppiumDeriver import GetAppiumDeriver
 from Utils.ReadXMLData import ReadXMLData
@@ -161,12 +162,24 @@ class LogInModular(unittest.TestCase):
     # 登录弹窗-Email登录方式-选择注册
     def test_Case2112_LogInPopup_EmailLoginMode_SelectSignUp(self):
         LogIn().LogInPopup_EmailLoginMode_SelectSignUp().click()
-        # 断言待补充
+        time.sleep(2)
+        if SignUp().SignUpPage_Preselection_Tips():
+            actValue = True
+        else:
+            actValue = SignUp().SignUpPage_Tips_Text()
+        time.sleep(2)
+        # 断言：跳转Email注册页成功
+        self.assertTrue(actValue)
 
     # 登录弹窗-Email登录方式-选择取消
     def test_Case2113_LogInPopup_EmailLoginMode_SelectCancel(self):
         LogIn().LogInPopup_EmailLoginMode_SelectCancel().click()
-        # 断言待补充
+        time.sleep(2)
+        # 查找登陆弹窗
+        actValue = LogIn().LogInPopup_EmailLoginMode_Title()
+        time.sleep(2)
+        # 断言：登陆弹窗已收起
+        self.assertFalse(actValue)
 
     # ----------
     # 邮箱登录页

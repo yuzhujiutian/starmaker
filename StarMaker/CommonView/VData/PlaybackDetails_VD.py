@@ -37,3 +37,22 @@ PlaybackDetailsPage_RecordingInfo_Describe_ID = package + FS(Source_PlaybackDeta
 Source_PlaybackDetailsPage_RecordingInfo_Statistics_ID = "tv_like_count"
 PlaybackDetailsPage_RecordingInfo_Statistics_ID = package + FS(Source_PlaybackDetailsPage_RecordingInfo_Statistics_ID)
 
+# ----------
+# 图片/视屏播放详情页
+# ----------
+# PlaybackDetails页-图片详情页-图片预览
+Source_PlaybackDetailsPage_Img_Preview_ID = "imt_preview"
+PlaybackDetailsPage_Img_Preview_ID = package + FS(Source_PlaybackDetailsPage_Img_Preview_ID)
+
+# PlaybackDetails页-视屏详情页-视屏预览
+Source_PlaybackDetailsPage_Video_Preview_ID = "ttr_video"
+PlaybackDetailsPage_Video_Preview_ID = package + FS(Source_PlaybackDetailsPage_Video_Preview_ID)
+
+# PlaybackDetails页-视屏详情页-Repost[0]
+Source_PlaybackDetailsPage_Video_Repost_IDS = "tv_tab_title"
+PlaybackDetailsPage_Video_Repost_IDS = package + FS(Source_PlaybackDetailsPage_Video_Repost_IDS)
+
+# PlaybackDetails页-视屏详情页-Comment[1]
+Source_PlaybackDetailsPage_Video_Comment_IDS = "tv_tab_title"
+PlaybackDetailsPage_Video_Comment_IDS = package + FS(Source_PlaybackDetailsPage_Video_Comment_IDS)
+
