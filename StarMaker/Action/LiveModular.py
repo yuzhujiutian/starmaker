@@ -30,7 +30,7 @@ class LiveModular(unittest.TestCase):
     # ----------
     # Live大厅
     # ----------
-    # 检查当前页八个Tab加载正确
+    # Live大厅-检查当前页八个Tab加载正确
     def test_Case4001_LivePage_InspectTab(self):
         # 获取Tab列表
         TextList = ReadXMLData().returnXMLFile("InspectTabList.xml", "InspectTabList", "LiveTabList")
@@ -38,7 +38,7 @@ class LiveModular(unittest.TestCase):
         actValue = Page_Element_Verification().PEV_IDS(Live().LivePage_Tab_TabList(), TextList)
         self.assertTrue(actValue)
 
-    # 切换至HOT
+    # Live大厅-切换至HOT
     def test_Case4002_LivePage_SwitchTab_HOT(self):
         Live().LivePage_Tab_HOT().click()
         time.sleep(2)

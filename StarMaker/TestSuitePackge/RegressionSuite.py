@@ -14,7 +14,7 @@ class RegressionSuite(unittest.TestCase):
         StarUpSuiteTest = unittest.TestSuite()
         # 添加测试套模版
         StarUpSuiteTest.addTest(unittest.makeSuite(
-            StartUpModular.StarUpCase)
+            StartUpModular.StarUpModular)
         )
         NameFile = "启动app"
         Title = "<启动app—P0>自动化测试用例执行结果"
@@ -27,7 +27,7 @@ class RegressionSuite(unittest.TestCase):
         from Action import LogInModular
         EmailLogInSuiteTest = unittest.TestSuite()
         EmailLogInSuiteTest.addTest(unittest.makeSuite(
-            LogInModular.EmailLogInCase)
+            LogInModular.LogInModular)
         )
         NameFile = "邮箱登录"
         T = "<邮箱登录—P0>自动化测试用例执行结果"

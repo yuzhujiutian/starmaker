@@ -16,6 +16,11 @@ class StartUp(object):
         self.findClaS = find_element().ClaS
         self.DIYSwipe_Percentage = Tools.Screen().DIYSwipe_Percentage
 
+    # 语言选择页-ClaS(用于校验)
+    def ChooseLanguagePage_Check(self):
+        ChooseLanguagePage_Check_ClaS = StartUp_VD.ChooseLanguagePage_SelectLanguage_Common_ClaS
+        return ChooseLanguagePage_Check_ClaS
+
     # 语言选择页-校验启动成功-顶部Tips文案([0]text=Choose Language)
     def ChooseLanguagePage_CheckStartSuccess_Tips(self):
         ChooseLanguagePage_CheckStartSuccess_Tips_ClaS = self.findClaS(StartUp_VD.ChooseLanguagePage_CheckStartSuccess_Tips_ClaS, 0)

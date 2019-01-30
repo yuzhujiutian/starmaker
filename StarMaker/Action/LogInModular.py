@@ -10,7 +10,7 @@ from Utils.GetAppiumDeriver import GetAppiumDeriver
 from Utils.ReadXMLData import ReadXMLData
 
 
-# 邮箱登录
+# 登陆
 class LogInModular(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Jalebee>
+    <ChooseLanguagePage>["Choose Language", "हिन्दी", "తెలుగు", "	தமிழ்", "ಕನ್ನಡ", "বাংলা", "മലയാളം", "मराठी", "ਪੰਜਾਬੀ", "ગુજરાતી", "অসমীয়া", "ଓଡ଼ିଆ", "भोजपूरी", "हरियाणवी", "राजस्थानी"]</ChooseLanguagePage>
+    <HomePageMainTab>["होम", "पार्टी", "संदेश", "मैं"]</HomePageMainTab>
+    <HomePageFeedTab>["फोल्लोविंग", "लोकप्रिय"]</HomePageFeedTab>
+</Jalebee>

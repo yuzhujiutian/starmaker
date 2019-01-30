@@ -1,7 +1,7 @@
 #coding=utf-8
 
 
-#单例模式函数，用来修饰类
+#单例模式函数
 def singleton(cls, *args, **kw):
     instances = {}
 

@@ -73,7 +73,7 @@ class FacebookLogInCase(unittest.TestCase):
             # 判断是否新装包首次登录成功——展示New Feature引导
             time.sleep(2)
             self.assertEqual(expValue, actValue)
-        # 否则跳过该Case
+        # 否则Home().HomePage_MainTabName_Sing().text该Case
         else:
             self.Skips.append("Skip_test_Case002")
             self.skipTest("该设备已安装Facebook客户端，跳过test_Case002")
