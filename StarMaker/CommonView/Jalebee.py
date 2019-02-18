@@ -48,6 +48,11 @@ class Jalebee(object):
         JalebeeHomePage_MainTab_Me_IDS = self.findIDS(Jalebee_VD.Jalebee_MainTab_Common_IDS, 3)
         return JalebeeHomePage_MainTab_Me_IDS
 
+    # 首页-MainTab-Post
+    def Jalebee_MainTab_Post(self):
+        Jalebee_MainTab_Post_ID = self.findID(Jalebee_VD.Jalebee_MainTab_Post_ID)
+        return Jalebee_MainTab_Post_ID
+
     # Jalebee首页内容Tab(用于校验)
     def JalebeeHomePage_FeedTab_Check(self):
         Jalebee_FeedTab_Common_IDS = Jalebee_VD.Jalebee_FeedTab_Common_IDS
@@ -63,3 +68,48 @@ class Jalebee(object):
         Jalebee_FeedTab_Common_IDS = self.findIDS(Jalebee_VD.Jalebee_FeedTab_Common_IDS, 1)
         return Jalebee_FeedTab_Common_IDS
 
+    # ----------
+    # Jalebee-Party页
+    # ----------
+    # Jalebee-Party页-Title
+    def JalebeePartyPage_Title_Text(self):
+        JalebeePartyPage_Title_Text_ID = self.findID(Jalebee_VD.JalebeePartyPage_Title_Text_ID)
+        return JalebeePartyPage_Title_Text_ID
+
+    # Jalebee-Party页-MyRoom("मेरा रूम")
+    def JalebeePartyPage_MyRoom_Text(self):
+        JalebeePartyPage_MyRoom_History_Text_IDS = self.findIDS(Jalebee_VD.JalebeePartyPage_MyRoom_History_Text_IDS, 0)
+        return JalebeePartyPage_MyRoom_History_Text_IDS
+
+    # Jalebee-Party页-History("इतिहास")
+    def JalebeePartyPage_History_Text(self):
+        JalebeePartyPage_MyRoom_History_Text_IDS = self.findIDS(Jalebee_VD.JalebeePartyPage_MyRoom_History_Text_IDS, 1)
+        return JalebeePartyPage_MyRoom_History_Text_IDS
+
+    # Jalebee-Party页-首个房间
+    def JalebeePartyPage_KTVRoom_FirstRoom(self):
+        JalebeePartyPage_MyRoom_History_Text_IDS = self.findIDS(Jalebee_VD.JalebeePartyPage_MyRoom_History_Text_IDS, 2)
+        return JalebeePartyPage_MyRoom_History_Text_IDS
+
+    # Jalebee-Party页-第二个房间
+    def JalebeePartyPage_KTVRoom_SecondRoom(self):
+        JalebeePartyPage_MyRoom_History_Text_IDS = self.findIDS(Jalebee_VD.JalebeePartyPage_MyRoom_History_Text_IDS, 3)
+        return JalebeePartyPage_MyRoom_History_Text_IDS
+
+    # Jalebee-Party页-Search
+    def Source_JalebeePartyPage_Search_Btn(self):
+        Source_JalebeePartyPage_Search_Btn_ID = self.findID(Jalebee_VD.Source_JalebeePartyPage_Search_Btn_ID)
+        return Source_JalebeePartyPage_Search_Btn_ID
+
+    # ----------
+    # Jalebee-拍摄页
+    # ----------
+    # Jalebee-拍摄页-选择音乐引导(首次进入时显示，该元素为单独一个页面，遮挡其他元素)
+    def JalebeeShotPage_Guide_AddMusic(self):
+        JalebeeShotPage_Guide_AddMusic_ID = self.findID(Jalebee_VD.JalebeeShotPage_Guide_AddMusic_ID)
+        return JalebeeShotPage_Guide_AddMusic_ID
+
+    # Jalebee-拍摄页-Start按钮
+    def JalebeeShotPage_Start_Btn(self):
+        JalebeeShotPage_Start_Btn_ID = self.findID(Jalebee_VD.JalebeeShotPage_Start_Btn_ID)
+        return JalebeeShotPage_Start_Btn_ID

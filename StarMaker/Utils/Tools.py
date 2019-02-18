@@ -738,7 +738,7 @@ class Screen(object):
         self.driver = GetAppiumDeriver().driver
         # 获取屏幕的size
         self.size = self.driver.get_window_size()
-        print(self.size)
+        # print(self.size)
         # 获取屏幕宽度 width
         self.width = self.size['width']
         # 获取屏幕高度 height

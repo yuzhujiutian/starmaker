@@ -102,8 +102,8 @@ class Popup(object):
     # ----------
 
     # 权限申请(text=Ok, Let's do it.)
-    def SingPopup_Jurisdiction_LiveClick(self):
-        state = self.FindElement(ID=[Popup_VD.Popup_Jurisdiction_ID, "Ok, Let's do it."])
+    def SingPopup_Jurisdiction_LiveClick(self, text="Ok, Let's do it."):
+        state = self.FindElement(ID=[Popup_VD.Popup_Jurisdiction_ID, text])
         if state:
             self.driver.find_element_by_id(Popup_VD.Popup_Jurisdiction_ID).click()
             time.sleep(2)

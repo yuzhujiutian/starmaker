@@ -71,6 +71,11 @@ class LogIn(object):
         LogInPopup_EmailLoginMode_SelectCancel_ID = self.findID(LogIn_VD.LogInPopup_EmailLoginMode_SelectCancel_ID)
         return LogInPopup_EmailLoginMode_SelectCancel_ID
 
+    # 登录弹窗-Email登录方式-选择关闭
+    def LogInPopup_EmailLoginMode_SelectClose(self):
+        LogInPopup_EmailLoginMode_SelectClose_ID = self.findID(LogIn_VD.EmailWindow_Close_Btn_ID)
+        return LogInPopup_EmailLoginMode_SelectClose_ID
+
     # ----------
     # 登录弹窗-FB登录方式
     # ----------

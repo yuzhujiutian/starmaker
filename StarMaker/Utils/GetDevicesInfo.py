@@ -32,7 +32,7 @@ class GetDevicesInfo(object):
                 # sysInfo = subprocess.check_output(str(os.system("adb shell cat /system/build.prop"))).decode()
                 sysInfo = subprocess.check_output("adb shell cat /system/build.prop").decode("utf-8", "ignore")
                 # 获取Android版本号
-                androidVersion = re.findall("version.release=(\d\.\d)", sysInfo, re.S)[0]
+                androidVersion = re.findall("version.release=(\\d\\.\\d)", sysInfo, re.S)[0]
                 return androidVersion
             else:
                 return "Connect Fail,Please reconnect Device..."
@@ -98,7 +98,7 @@ class DevicesInfo(object):
     def AppPackage():
         # GetPackages = GetDevicesInfo().GetPackages()[0]
         # 调试使用
-        GetPackages = "com.starmakerinteractive.starmaker"
+        GetPackages = "com.ushow.android.jalebee"
         return GetPackages
 
     # package拼接 用于元素定位使用
