@@ -7,9 +7,13 @@ from CommonView.LogIn import LogIn
 from CommonView.Popup import Popup
 from CommonView.Jalebee import Jalebee
 from Utils.Tools import Tools
+from Utils.Tools import Screen
+from Utils.Tools import AssertReportManage
 from Utils.Tools import Page_Element_Verification
 from Utils.ReadXMLData import ReadXMLData
 from Utils.GetAppiumDeriver import GetAppiumDeriver
+P = AssertReportManage().Pass
+E = AssertReportManage().Error
 
 
 # Jalebee
@@ -40,8 +44,9 @@ class JalebeeAutoTestCase(unittest.TestCase):
         actValue = Page_Element_Verification().PEV_ClaS(StartUp().ChooseLanguagePage_Check(), TextList)
         time.sleep(2)
         # 断言
-        self.assertTrue(actValue)
-        print("语言选择页显示正常")
+        msg = "语言选择页 语言选项"
+        self.assertTrue(actValue, E(msg))
+        print(P(msg))
 
     # 语言选择页——选择语言进入首页——校验底部Tab
     def test_Case002_SelectLanguage_CheckHomeMainTab(self):
@@ -57,8 +62,9 @@ class JalebeeAutoTestCase(unittest.TestCase):
         PostTab = Jalebee().Jalebee_MainTab_Post()
         time.sleep(2)
         # 断言
-        self.assertTrue(actValue and PostTab)
-        print("首页底部主Tab显示正常")
+        msg = "首页底部主Tab"
+        self.assertTrue(actValue and PostTab, E(msg))
+        print(P(msg))
 
     # 首页——校验内容Tab
     def test_Case003_HomePage_CheckFeedTab(self):
@@ -69,8 +75,9 @@ class JalebeeAutoTestCase(unittest.TestCase):
         actValue = Page_Element_Verification().PEV_ClaS(Jalebee().JalebeeHomePage_FeedTab_Check(), TextList)
         time.sleep(2)
         # 断言
-        self.assertTrue(actValue)
-        print("首页内容Tab显示正常")
+        msg = "首页内容Tab"
+        self.assertTrue(actValue, E(msg))
+        print(P(msg))
 
     # 首页——默认展示首页
     def test_Case004_HomePage_CheckDefaultPage(self):
@@ -80,9 +87,9 @@ class JalebeeAutoTestCase(unittest.TestCase):
         actValue = Jalebee().JalebeeHomePage_MainTab_Home().get_attribute("selected")
         time.sleep(2)
         # 断言：默认展示首页
-        self.assertEqual(expValue, actValue)
-        time.sleep(2)
-        print("进入APP默认展示首页正常")
+        msg = "进入APP默认展示首页"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
 
     # 首页——切换到Party页面
     def test_Case005_HomePage_SwitchPartyPage(self):
@@ -93,10 +100,10 @@ class JalebeeAutoTestCase(unittest.TestCase):
         # 获取Party-Tab按钮属性为选中状态
         actValue = Jalebee().JalebeeHomePage_MainTab_Party().get_attribute("selected")
         time.sleep(2)
-        # 断言：成功切换至Party页
-        self.assertEqual(expValue, actValue)
-        time.sleep(2)
-        print("切换Party页面正常")
+        # 断言：
+        msg = "点击Party按钮切换Party页面"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
 
     # Party页面——Title显示正确
     def test_Case006_PartyPage_CheckTitle(self):
@@ -105,58 +112,53 @@ class JalebeeAutoTestCase(unittest.TestCase):
         # 获取Party页Title
         actValue = Jalebee().JalebeePartyPage_Title_Text().text
         time.sleep(2)
-        # 断言：默认展示首页
-        self.assertEqual(expValue, actValue)
-        time.sleep(2)
-        print("Party页面Title显示正常")
+        # 断言：
+        msg = "Party页面Title"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
 
-    # Party页面——MyRoom显示正确("मेरा रूम")
-    def test_Case007_PartyPage_CheckMrRoom(self):
+    # Party页面——MyRoom显示正确(MrRoom="मेरा रूम"/History="इतिहास")
+    def test_Case007_PartyPage_CheckMrRoom_CheckHistory(self):
         # 预期结果
-        expValue = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "PartyPage_MyRoom")
+        MrRoom_expValue = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "PartyPage_MyRoom")
+        History_expValue = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "PartyPage_History")
         # 获取Party页MyRoom
-        actValue = Jalebee().JalebeePartyPage_MyRoom_Text().text
+        MrRoom_actValue = Jalebee().JalebeePartyPage_MyRoom_Text().text
         time.sleep(2)
-        # 断言：MyRoom显示正确
-        self.assertEqual(expValue, actValue)
-        time.sleep(2)
-        print("Party页面MyRoom显示正常")
-
-    # Party页面——History显示正确("इतिहास")
-    def test_Case008_PartyPage_CheckHistory(self):
-        # 预期结果
-        expValue = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "PartyPage_History")
         # 获取Party页History
-        actValue = Jalebee().JalebeePartyPage_History_Text().text
+        History_actValue = Jalebee().JalebeePartyPage_History_Text().text
         time.sleep(2)
-        # 断言：History显示正确
-        self.assertEqual(expValue, actValue)
-        time.sleep(2)
-        print("Party页面History显示正常")
+        # 断言：
+        msg1 = "Party页面MyRoom显示"
+        msg2 = "Party页面History显示"
+        self.assertEqual(MrRoom_expValue, MrRoom_actValue, E(msg1))
+        print(P(msg1))
+        self.assertEqual(History_expValue, History_actValue, E(msg2))
+        print(P(msg2))
 
     # Party页面——房间显示正常
-    def test_Case009_PartyPage_CheckKTVRoom(self):
+    def test_Case008_PartyPage_CheckKTVRoom(self):
         # 获取Party页前两个KTVRoom
         FirstRoom = Jalebee().JalebeePartyPage_KTVRoom_FirstRoom().text
         SecondRoom = Jalebee().JalebeePartyPage_KTVRoom_SecondRoom().text
         time.sleep(2)
-        # 断言：KTV大厅有数据
-        self.assertTrue(FirstRoom and SecondRoom)
-        time.sleep(2)
-        print("KTV大厅房间数据正常")
+        # 断言：
+        msg = "KTV大厅房间数据"
+        self.assertTrue(FirstRoom and SecondRoom, E(msg))
+        print(P(msg))
 
     # Party页面——搜索按钮显示正常
-    def test_Case010_PartyPage_CheckSearchBtn(self):
+    def test_Case009_PartyPage_CheckSearchBtn(self):
         # 获取搜索按钮
-        Search_Btn = Jalebee().Source_JalebeePartyPage_Search_Btn()
+        Search_Btn = Jalebee().JalebeePartyPage_Search_Btn()
         time.sleep(2)
-        # 断言：搜索按钮正常显示
-        self.assertTrue(Search_Btn)
-        time.sleep(2)
-        print("KTV大厅搜索按钮正常")
+        # 断言：
+        msg = "KTV大厅搜索按钮"
+        self.assertTrue(Search_Btn, E(msg))
+        print(P(msg))
 
     # 游客——点击Post_Tab显示登录窗口
-    def test_Case011_Tourist_ClickPostTab_ShowLoginWindow(self):
+    def test_Case010_Tourist_ClickPostTab_ShowLoginWindow(self):
         # 点击Post_Tab
         Jalebee().Jalebee_MainTab_Post().click()
         time.sleep(2)
@@ -165,26 +167,26 @@ class JalebeeAutoTestCase(unittest.TestCase):
         # 获取登录窗口欢迎语
         LogInWindow_Welcome = LogIn().LogInPopup_SelectLoginMode_Tips().text
         time.sleep(2)
-        # 断言：成功弹出登录窗口
-        self.assertEqual(PostTab_Welcome, LogInWindow_Welcome)
-        time.sleep(2)
-        print("游客点击Post成功弹出登录窗口，欢迎语显示正确")
+        # 断言：
+        msg = "游客点击Post成功弹出登录窗口，欢迎语显示"
+        self.assertEqual(PostTab_Welcome, LogInWindow_Welcome, E(msg))
+        print(P(msg))
 
     # 登录弹窗——登录方式显示正常
-    def test_Case012_LogInWindow_CheckLogInMode(self):
+    def test_Case011_LogInWindow_CheckLogInMode(self):
         # 获取各个登录方式
         FacebookLogIn = LogIn().LogInPopup_SelectLoginMode_SelectFacebook()
         EmailLogIn = LogIn().LogInPopup_SelectLoginMode_SelectEmail()
         PhoneLogIn = LogIn().LogInPopup_SelectLoginMode_SelectPhone()
         GoogleLogIn = LogIn().LogInPopup_SelectLoginMode_SelectGoogle()
         time.sleep(2)
-        # 断言：四种登录方式显示正常
-        self.assertTrue(FacebookLogIn and EmailLogIn and PhoneLogIn and GoogleLogIn)
-        time.sleep(2)
-        print("四种登录方式入口显示正常")
+        # 断言：
+        msg = "四种登录方式入口"
+        self.assertTrue(FacebookLogIn and EmailLogIn and PhoneLogIn and GoogleLogIn, E(msg))
+        print(P(msg))
 
     # 选择Email登录方式——Tips显示正常
-    def test_Case013_LogInWindow_SelectEmailLogIn(self):
+    def test_Case012_LogInWindow_SelectEmailLogIn(self):
         # 点击Email LogIn按钮
         LogIn().LogInPopup_SelectLoginMode_SelectEmail().click()
         time.sleep(2)
@@ -192,46 +194,42 @@ class JalebeeAutoTestCase(unittest.TestCase):
         expValue = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "EmailLoginMode_Title")
         actValue = LogIn().LogInPopup_EmailLoginMode_Title().text
         time.sleep(2)
-        # 断言：成功弹出Email注册登录选择弹窗
-        self.assertEqual(expValue, actValue)
-        time.sleep(2)
-        print("Email登录注册选择弹窗 Tips显示正常")
+        # 断言：
+        msg = "Email登录注册选择弹窗 Tips"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
 
     # Email登录注册选择页——登录入口显示正常
-    def test_Case014_EmailLogInSignUpSelectionPage_CheckLogInEntry(self):
-        # 获取Email注册登录选择弹窗登录入口文案
-        expValue = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "LogInEntry")
-        actValue = LogIn().LogInPopup_EmailLoginMode_SelectLogIn().text
+    def test_Case013_EmailLogInSignUpSelectionPage_CheckLogInEntry(self):
+        # 获取数据
+        LogInEntry_expValue = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "LogInEntry")
+        SignUpEntry_expValue = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "SignUpEntry")
         time.sleep(2)
-        # 断言：登录入口显示正常
-        self.assertEqual(expValue, actValue)
+        # 获取Email注册登录选择弹窗入口文案
+        LogInEntry_actValue = LogIn().LogInPopup_EmailLoginMode_SelectLogIn().text
+        SignUpEntry_actValue = LogIn().LogInPopup_EmailLoginMode_SelectSignUp().text
         time.sleep(2)
-        print("Email登录注册选择弹窗 登录入口显示正常")
-
-    # Email登录注册选择页——注册入口显示正常
-    def test_Case015_EmailLogInSignUpSelectionPage_CheckSignUpEntry(self):
-        # 获取Email注册登录选择弹窗注册入口文案
-        expValue = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "SignUpEntry")
-        actValue = LogIn().LogInPopup_EmailLoginMode_SelectSignUp().text
-        time.sleep(2)
-        # 断言：注册入口显示正常
-        self.assertEqual(expValue, actValue)
-        time.sleep(2)
-        print("Email登录注册选择弹窗 注册入口显示正常")
+        # 断言：
+        msg1 = "Email登录注册选择弹窗 登录入口"
+        msg2 = "Email登录注册选择弹窗 注册入口"
+        self.assertEqual(LogInEntry_expValue, LogInEntry_actValue, E(msg1))
+        print(P(msg1))
+        self.assertEqual(SignUpEntry_expValue, SignUpEntry_actValue, E(msg2))
+        print(P(msg2))
 
     # Email登录注册选择页——其他元素显示正常
-    def test_Case016_EmailLogInSignUpSelectionPage_CheckOther(self):
+    def test_Case014_EmailLogInSignUpSelectionPage_CheckOther(self):
         # 获取Email注册登录选择弹窗其他元素
         Close_Btn = LogIn().LogInPopup_EmailLoginMode_SelectClose()
         Cancel_Btn = LogIn().LogInPopup_EmailLoginMode_SelectCancel()
         time.sleep(2)
-        # 断言：关闭和取消按钮显示正常
-        self.assertTrue(Close_Btn and Cancel_Btn)
-        time.sleep(2)
-        print("Email登录注册选择弹窗 关闭和取消按钮显示正常")
+        # 断言：
+        msg = "Email登录注册选择弹窗 关闭和取消按钮"
+        self.assertTrue(Close_Btn and Cancel_Btn, E(msg))
+        print(P(msg))
 
     # Email登录注册选择页——邮箱登录
-    def test_Case017_EmailLogInPage_InputBox_EmailInput(self):
+    def test_Case015_EmailLogInPage_InputBox_EmailInput(self):
         # 点击登录按钮
         LogIn().LogInPopup_EmailLoginMode_SelectLogIn().click()
         time.sleep(2)
@@ -244,13 +242,13 @@ class JalebeeAutoTestCase(unittest.TestCase):
         expValue = Email
         actValue = LogIn().EmailLogInPage_InputBox_EmailInput().text
         time.sleep(2)
-        # 断言：输入邮箱正确
-        self.assertEqual(expValue, actValue)
-        time.sleep(2)
-        print("输入登录邮箱正常")
+        # 断言：
+        msg = "输入邮箱登录帐号"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
 
     # 邮箱登录页-输入框-明文密码
-    def test_Case18_EmailLogInPage_InputBox_InputVisibility(self):
+    def test_Case016_EmailLogInPage_InputBox_InputVisibility(self):
         # 点击明文密码按钮
         LogIn().EmailLogInPage_InputBox_InputVisibility().click()
         time.sleep(2)
@@ -258,13 +256,13 @@ class JalebeeAutoTestCase(unittest.TestCase):
         expValue = "false"
         actValue = LogIn().EmailLogInPage_InputBox_PasswordInput().get_attribute("password")
         time.sleep(2)
-        # 断言：密码以明文展示
-        self.assertEqual(expValue, actValue)
-        time.sleep(2)
-        print("明文密码功能正常")
+        # 断言：
+        msg = "明文密码功能"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
 
     # 邮箱登录页-输入框-输入密码
-    def test_Case19_EmailLogInPage_InputBox_PasswordInput(self):
+    def test_Case017_EmailLogInPage_InputBox_PasswordInput(self):
         # 获取测试账号密码
         Password = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Password")
         # 输入密码
@@ -279,26 +277,26 @@ class JalebeeAutoTestCase(unittest.TestCase):
         expValue = Password
         actValue = LogIn().EmailLogInPage_InputBox_PasswordInput().text
         time.sleep(2)
-        # 断言：输入密码正确
-        self.assertEqual(expValue, actValue)
-        time.sleep(2)
-        print("输入登录密码正常")
+        # 断言：
+        msg = "输入登录密码"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
 
     # 邮箱登录页-登录-确认登录
-    def test_Case20_EmailLogInPage_LogIn_Confirm(self):
+    def test_Case018_EmailLogInPage_LogIn_Confirm(self):
         # 点击确认登录按钮
         LogIn().EmailLogInPage_LogIn_Confirm().click()
         time.sleep(5)
         # 尝试查找邮箱登录页顶部Title
         actValue = LogIn().EmailLogInPage_Title_Text()
         time.sleep(2)
-        # 断言：登录成功
-        self.assertFalse(actValue)
-        time.sleep(2)
-        print("登录成功")
+        # 断言：
+        msg = "邮箱登录"
+        self.assertFalse(actValue, E(msg))
+        print(P(msg))
 
     # 处理权限弹窗-进入拍摄页面
-    def test_Case21_Jurisdiction_LiveClick(self):
+    def test_Case019_Jurisdiction_LiveClick(self):
         # 获取权限申请文案
         Hindi_Recording_Jurisdiction = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "Hindi_Recording_Jurisdiction")
         # 处理权限申请弹窗
@@ -306,9 +304,249 @@ class JalebeeAutoTestCase(unittest.TestCase):
         time.sleep(10)
         # 获取添加音乐引导文案
         expValue = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "Guide_AddMusic")
-        actValue = Jalebee().JalebeeShotPage_Guide_AddMusic().text
-        # 断言：成功进入拍摄页
-        self.assertEqual(expValue, actValue)
+        actValue = Jalebee().JalebeeShootingPage_Function_AddMusicGuide().text
         time.sleep(2)
-        print("登录成功后直接进入拍摄页面")
+        # 断言：
+        msg = "登录成功后直接进入拍摄页面"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
+
+    # 校验拍摄页 页面元素
+    def test_Case020_JalebeeShootingPage_CheckElements(self):
+        # 处理引导弹窗
+        Screen().AccurateClicks_Percentage(0.5, 0.5)
+        time.sleep(8)
+        # -----检查页面各元素-----
+        # 进度条
+        Progress_Bar = Jalebee().JalebeeShootingPage_Function_ProgressBar()
+        # 关闭按钮
+        Close_Btn = Jalebee().JalebeeShootingPage_Function_CloseBtn()
+        # 音乐icon
+        Music_Icon = Jalebee().JalebeeShootingPage_Function_MusicIcon()
+        # 当前选择音乐
+        Music_Name = Jalebee().JalebeeShootingPage_Function_MusicName()
+        # 手电筒
+        Flashlight = Jalebee().JalebeeShootingPage_Function_Flashlight()
+        # 切换摄像头
+        Switching_Camera = Jalebee().JalebeeShootingPage_Function_SwitchingCamera()
+        # 美颜
+        Beauty = Jalebee().JalebeeShootingPage_Function_Beauty()
+        # 滤镜
+        Filter = Jalebee().JalebeeShootingPage_Function_Filter()
+        # 相册
+        Album = Jalebee().JalebeeShootingPage_Function_Album()
+        # 拍摄按钮
+        Shot_Btn = Jalebee().JalebeeShootingPage_Function_StartBtn()
+        # 拍摄模式-Photo
+        ShootingMode_Photo = Jalebee().JalebeeShootingPage_Function_ShootingMode_Photo()
+        # 拍摄模式-15S
+        ShootingMode_15S = Jalebee().JalebeeShootingPage_Function_ShootingMode_15S()
+        # 拍摄模式-60S
+        ShootingMode_60S = Jalebee().JalebeeShootingPage_Function_ShootingMode_60S()
+        time.sleep(2)
+        # 断言：
+        msg = "拍摄页13个元素正常展示"
+        self.assertTrue(
+            Progress_Bar and Close_Btn and Music_Icon and Music_Name and Flashlight and Switching_Camera and Beauty and
+            Filter and Album and Shot_Btn and ShootingMode_Photo and ShootingMode_15S and ShootingMode_60S, E(msg))
+        print(P(msg))
+
+    # 拍摄页-默认选择15S拍摄模式(该元素selected属性异常，待修复)
+    def test_Case021_JalebeeShootingPage_ShootingMode_CheckDefaultChoice(self):
+        expValue = "true"
+        # 获取拍摄页15S模式属性为选中状态
+        actValue = Jalebee().JalebeeShootingPage_Function_ShootingMode_15S().get_attribute("selected")
+        time.sleep(2)
+        # 断言：
+        msg = "拍摄页默认选择15S拍摄模式(该元素selected属性异常，待修复)"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
+
+    # 进入音乐选择页-校验Title
+    def test_Case022_JalebeeShootingPage_AddMusic_CheckSelectMusicPageTitle(self):
+        # 点击当前选择音乐进入切换音乐页面
+        Jalebee().JalebeeShootingPage_Function_MusicName().click()
+        # 获取Title文案
+        expValue = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee","SelectMusicPage_Title")
+        # 获取音乐选择页Title
+        actValue = Jalebee().JalebeeSelectMusicPage_Title().text
+        time.sleep(2)
+        # 断言：
+        msg = "成功进入音乐选择页，页面Title显示"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
+
+    # 校验音乐选择页 内容Tab
+    def test_Case023_JalebeeSelectMusicPage_CheckFeedTab(self):
+        # 获取Explore/FAVORITE文案
+        Explore_expValue = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "SelectMusicPage_Explore")
+        Favorite_expValue = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "SelectMusicPage_Favorite")
+        time.sleep(2)
+        # 获取音乐选择页Title
+        Explore_actValue = Jalebee().JalebeeSelectMusicPage_FeedTab_Explore().text
+        Favorite_actValue = Jalebee().JalebeeSelectMusicPage_FeedTab_Favorite().text
+        time.sleep(2)
+        # 断言：
+        msg1 = "音乐选择页 Explore_Tab文案显示"
+        msg2 = "音乐选择页 Favorite_Tab文案显示"
+        self.assertEqual(Explore_expValue, Explore_actValue, E(msg1))
+        print(P(msg1))
+        self.assertEqual(Favorite_expValue, Favorite_actValue, E(msg2))
+        print(P(msg2))
+
+    # 音乐选择页 默认展示推荐页Explore(该元素selected属性异常，待修复)
+    def test_Case024_JalebeeSelectMusicPage_FeedTab_CheckDefaultChoice(self):
+        expValue = "true"
+        # 获取Explore_Tab的属性为选中状态
+        actValue = Jalebee().JalebeeSelectMusicPage_FeedTab_Explore().get_attribute("selected")
+        time.sleep(2)
+        # 断言：
+        msg = "默认展示推荐页Explore(该元素selected属性异常，待修复)"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
+
+    # 校验音乐选择页 页面元素
+    def test_Case025_JalebeeSelectMusicPage_CheckElements(self):
+        # -----检查页面各元素-----
+        # 关闭按钮
+        CLose_Btn = Jalebee().JalebeeSelectMusicPage_Function_Close()
+        # 搜索框
+        Search_Box = Jalebee().JalebeeSelectMusicPage_Function_Search()
+        # 音乐分类
+        Music_Category = Jalebee().JalebeeSelectMusicPage_Function_Category()
+        # 音乐名
+        MusicName = Jalebee().JalebeeSelectMusicPage_Function_SongsName()
+        # 收藏
+        Favor = Jalebee().JalebeeSelectMusicPage_Function_Favor()
+        time.sleep(2)
+        # 断言：
+        msg = "音乐选择页5类元素正常展示"
+        self.assertTrue(CLose_Btn and Search_Box and Music_Category and MusicName and Favor, E(msg))
+        print(P(msg))
+
+    # 选择音乐返回拍摄页
+    def test_Case026_JalebeeSelectMusicPage_SelectMusic_BackShootingPage(self):
+        # 点击第一个音乐以播放
+        Jalebee().JalebeeSelectMusicPage_Function_SongsName().click()
+        time.sleep(2)
+        # 记录该音乐名称
+        MusicName_expValue = Jalebee().JalebeeSelectMusicPage_Function_SongsName().text
+        time.sleep(2)
+        # 选择该音乐返回拍摄页
+        Jalebee().JalebeeSelectMusicPage_Function_USE().click()
+        time.sleep(8)
+        # 获取拍摄页当前音乐名称
+        MusicName_actValue = Jalebee().JalebeeShootingPage_Function_MusicName().text
+        time.sleep(2)
+        # 断言：
+        msg = "选择音乐返回拍摄页，音乐切换成功"
+        self.assertEqual(MusicName_expValue, MusicName_actValue, E(msg))
+        print(P(msg))
+
+    # 选择音乐后拍摄页显示取消音乐选择按钮
+    def test_Case027_JalebeeShootingPage_SelectMusic_ShowDeselectedMusicBtn(self):
+        # 查找取消音乐选择按钮
+        DeselectedMusicBtn = Jalebee().JalebeeShootingPage_Function_DeselectedMusic()
+        time.sleep(2)
+        # 断言:
+        msg = "选择音乐后拍摄页显示取消音乐选择按钮"
+        self.assertTrue(DeselectedMusicBtn, E(msg))
+        print(P(msg))
+
+    # 拍摄15S视屏发布
+    def test_Case028_JalebeeShootingPage_Shooting15SPost(self):
+        # 点击Start按钮进行拍摄
+        Jalebee().JalebeeShootingPage_Function_StartBtn().click()
+        time.sleep(20)
+        # 查找发布预览页进度条
+        actValue = Jalebee().JalebeePostPreviewPage_Function_ProgressBar()
+        time.sleep(2)
+        # 断言：
+        msg = "录制15S后自动跳转至发布预览页"
+        self.assertTrue(actValue, E(msg))
+        print(P(msg))
+
+    # 发布预览页元素校验
+    def test_Case029_JalebeePostPreviewPage_CheckElement(self):
+        # -----获取页面元素-----
+        # 返回按钮
+        Back = Jalebee().JalebeePostPreviewPage_Function_Back()
+        # 音效调整
+        Volume = Jalebee().JalebeePostPreviewPage_Function_Volume()
+        # 音乐剪切
+        Cut_Music = Jalebee().JalebeePostPreviewPage_Function_CutMusic()
+        # 选择音乐
+        Select_Music = Jalebee().JalebeePostPreviewPage_Function_SelectMusic()
+        # 选择封面
+        Cover = Jalebee().JalebeePostPreviewPage_Function_Cover()
+        # 断言：
+        msg = "发布预览页元素正常展示"
+        self.assertTrue(Back and Volume and Cut_Music and Select_Music and Cover, E(msg))
+        print(P(msg))
+
+    # 点击Next进入发布编辑页
+    def test_Case030_ClickNext_JumpPostEditPage(self):
+        # 点击Next按钮
+        Jalebee().JalebeePostPreviewPage_Function_Next().click()
+        time.sleep(2)
+        # 获取发布编辑页Title文案
+        expValue = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "PostPreviewPage_Title")
+        actValue = Jalebee().JalebeePostEditPage_Title().text
+        time.sleep(2)
+        # 断言：
+        msg = "点击Next进入发布编辑页，页面Title显示文案正确"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
+
+    # 发布编辑页 输入文字框默认文案，光标聚焦校验
+    def test_Case031_JalebeePostEditPage_CheckMindWriting(self):
+        # 获取发布编辑页MindWriting文案
+        expValue1 = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "PostPreviewPage_MindWriting")
+        actValue1 = Jalebee().JalebeePostEditPage_Function_MindWriting().text
+        time.sleep(2)
+        # 获取发布编辑页MindWriting光标聚焦状态
+        expValue2 = "true"
+        actValue2 = Jalebee().JalebeePostEditPage_Function_MindWriting().get_attribute("focused")
+        time.sleep(2)
+        # 断言：
+        msg1 = "发布编辑页 MindWriting默认文案显示，"
+        msg2 = "发布编辑页 MindWriting光标聚焦状态"
+        self.assertEqual(expValue1, actValue1, E(msg1))
+        print(P(msg1))
+        self.assertEqual(expValue2, actValue2, E(msg2))
+        print(P(msg2))
+
+    # 发布编辑页 页面元素校验
+    def test_Case032_JalebeePostEditPage_CheckElements(self):
+        # -----获取页面元素-----
+        # 返回
+        Back = Jalebee().JalebeePostEditPage_Function_Back()
+        # 更换封面
+        SetCover = Jalebee().JalebeePostEditPage_Function_SetCover()
+        # @好友
+        RemindFriends = Jalebee().JalebeePostEditPage_Function_RemindFriends()
+        # Topic
+        Topic = Jalebee().JalebeePostEditPage_Function_Topic()
+        # 定位
+        Location = Jalebee().JalebeePostEditPage_Function_Location()
+        # 保存草稿
+        Draft = Jalebee().JalebeePostEditPage_Function_Draft()
+        # 断言：
+        msg = "发布编辑页元素正常展示"
+        self.assertTrue(Back and SetCover and RemindFriends and Topic and Location and Draft, E(msg))
+        print(P(msg))
+
+    # 发布拍摄作品(本地作品展示时时间显示错误，待修复)
+    def test_Case033_JalebeePostEditPage_PostShoot(self):
+        # 点击发布按钮
+        Jalebee().JalebeePostEditPage_Function_Post().click()
+        time.sleep(10)
+        # 获取Following页首个作品发布时间
+        expValue = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "one_minute_ago")
+        actValue = Jalebee().JalebeeFollowingPage_ShootPostTime().text
+        time.sleep(2)
+        # 断言：
+        msg = "发布拍摄作品(本地作品展示时时间显示错误，待修复)"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
 

@@ -9,6 +9,7 @@ from Utils.GetAppiumDeriver import GetAppiumDeriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+
 # ----------
 # 常用工具
 # ----------
@@ -789,17 +790,17 @@ class Screen(object):
         self.driver.swipe(x, y1, x, y2)
 
     # 根据传值百分比，自定义滑动操作(传参：百分比)
-    def DIYSwipe_Percentage(self, x1P, y1P, x2P, y2P, t):
+    def DIYSwipe_Percentage(self, x1P, y1P, x2P, y2P, t=500):
         # 执行滑屏操作,接收参数(四个百分比+时间),运算后滑动
         x1 = self.width * x1P
         y1 = self.height * y1P
         x2 = self.width * x2P
         y2 = self.height * y2P
         time.sleep(2)
-        self.driver.swipe(x1, y1, x2, y2, t)
+        self.driver.swipe(x1, y1, x2, y2, t=500)
 
     # 根据屏幕百分比，自定义点击操作(传参：百分比)
-    def AccurateClicks_Percentage(self, x1P, y1P, t):
+    def AccurateClicks_Percentage(self, x1P, y1P, t=500):
         # 执行滑屏操作,接收参数(两个百分比+时间),运算后滑动
         # 时间:点击(500)/长按3s(3000)
         x1 = self.width * x1P
@@ -808,7 +809,7 @@ class Screen(object):
         self.driver.tap([(x1, y1)], t)
 
     # 多点触控(最多支持五点触控)
-    def Multi_Touch_Percentage(self, x1P, y1P, x2P, y2P, x3P, y3P, x4P, y4P, x5P, y5P, t):
+    def Multi_Touch_Percentage(self, x1P, y1P, x2P, y2P, x3P, y3P, x4P, y4P, x5P, y5P, t=500):
         # 执行滑屏操作,接收参数(最多十个百分比+时间),运算后滑动
         # 时间:点击(500)/长按3s(3000)
         # 第一个点
@@ -892,6 +893,22 @@ class RegionalClick(object):
         x = int(self.x1) + (int(self.x2) - int(self.x1)) / 2
         y = int(self.y1) + (int(self.y2) - int(self.y1)) / 2
         self.driver.tap([(x, y)], 500)
+
+
+# 断言报告处理
+class AssertReportManage(object):
+    def __init__(self):
+        self.P = "（验证通过）"
+        self.E = "（验证失败!!!）"
+
+    def Pass(self, msg):
+        P = str(msg) + self.P
+        return P
+
+    def Error(self, msg):
+        E = str(msg) + self.E
+        return E
+
 
 
 # if __name__ == '__main__':

@@ -69,6 +69,14 @@ class Jalebee(object):
         return Jalebee_FeedTab_Common_IDS
 
     # ----------
+    # JalebeeFollowing页
+    # ----------
+    # JalebeeFollowing页-作品发布时间
+    def JalebeeFollowingPage_ShootPostTime(self):
+        JalebeeFollowingPage_ShootPostTime_ID_IDS = self.ID_IDS(Jalebee_VD.JalebeeFollowingPage_ShootPostTime_ID_IDS)
+        return JalebeeFollowingPage_ShootPostTime_ID_IDS
+
+    # ----------
     # Jalebee-Party页
     # ----------
     # Jalebee-Party页-Title
@@ -97,19 +105,222 @@ class Jalebee(object):
         return JalebeePartyPage_MyRoom_History_Text_IDS
 
     # Jalebee-Party页-Search
-    def Source_JalebeePartyPage_Search_Btn(self):
-        Source_JalebeePartyPage_Search_Btn_ID = self.findID(Jalebee_VD.Source_JalebeePartyPage_Search_Btn_ID)
-        return Source_JalebeePartyPage_Search_Btn_ID
+    def JalebeePartyPage_Search_Btn(self):
+        JalebeePartyPage_Search_Btn_ID = self.findID(Jalebee_VD.JalebeePartyPage_Search_Btn_ID)
+        return JalebeePartyPage_Search_Btn_ID
 
     # ----------
     # Jalebee-拍摄页
     # ----------
     # Jalebee-拍摄页-选择音乐引导(首次进入时显示，该元素为单独一个页面，遮挡其他元素)
-    def JalebeeShotPage_Guide_AddMusic(self):
-        JalebeeShotPage_Guide_AddMusic_ID = self.findID(Jalebee_VD.JalebeeShotPage_Guide_AddMusic_ID)
-        return JalebeeShotPage_Guide_AddMusic_ID
+    def JalebeeShootingPage_Function_AddMusicGuide(self):
+        JalebeeShootingPage_Function_AddMusicGuide_ID = self.findID(Jalebee_VD.JalebeeShootingPage_Function_AddMusicGuide_ID)
+        return JalebeeShootingPage_Function_AddMusicGuide_ID
 
     # Jalebee-拍摄页-Start按钮
-    def JalebeeShotPage_Start_Btn(self):
-        JalebeeShotPage_Start_Btn_ID = self.findID(Jalebee_VD.JalebeeShotPage_Start_Btn_ID)
-        return JalebeeShotPage_Start_Btn_ID
+    def JalebeeShootingPage_Function_StartBtn(self):
+        JalebeeShootingPage_Function_StartBtn_ID = self.findID(Jalebee_VD.JalebeeShootingPage_Function_StartBtn_ID)
+        return JalebeeShootingPage_Function_StartBtn_ID
+
+    # Jalebee-拍摄页-进度条
+    def JalebeeShootingPage_Function_ProgressBar(self):
+        JalebeeShootingPage_Function_ProgressBar_ID = self.findID(Jalebee_VD.JalebeeShootingPage_Function_ProgressBar_ID)
+        return JalebeeShootingPage_Function_ProgressBar_ID
+
+    # Jalebee-拍摄页-关闭按钮
+    def JalebeeShootingPage_Function_CloseBtn(self):
+        JalebeeShootingPage_Function_CloseBtn_ID = self.findID(Jalebee_VD.JalebeeShootingPage_Function_CloseBtn_ID)
+        return JalebeeShootingPage_Function_CloseBtn_ID
+
+    # Jalebee-拍摄页-音乐icon
+    def JalebeeShootingPage_Function_MusicIcon(self):
+        JalebeeShootingPage_Function_MusicIcon_ID = self.findID(Jalebee_VD.JalebeeShootingPage_Function_MusicIcon_ID)
+        return JalebeeShootingPage_Function_MusicIcon_ID
+
+    # Jalebee-拍摄页-当前选择音乐
+    def JalebeeShootingPage_Function_MusicName(self):
+        JalebeeShootingPage_Function_MusicName_ID = self.findID(Jalebee_VD.JalebeeShootingPage_Function_MusicName_ID)
+        return JalebeeShootingPage_Function_MusicName_ID
+
+    # Jalebee-拍摄页-取消已选择音乐
+    def JalebeeShootingPage_Function_DeselectedMusic(self):
+        JalebeeShootingPage_Function_DeselectedMusic_ID = self.findID(Jalebee_VD.JalebeeShootingPage_Function_DeselectedMusic_ID)
+        return JalebeeShootingPage_Function_DeselectedMusic_ID
+
+    # Jalebee-拍摄页-手电筒
+    def JalebeeShootingPage_Function_Flashlight(self):
+        JalebeeShootingPage_Function_Flashlight_ID = self.findID(Jalebee_VD.JalebeeShootingPage_Function_Flashlight_ID)
+        return JalebeeShootingPage_Function_Flashlight_ID
+
+    # Jalebee-拍摄页-切换摄像头
+    def JalebeeShootingPage_Function_SwitchingCamera(self):
+        JalebeeShootingPage_Function_SwitchingCamera_ID = self.findID(Jalebee_VD.JalebeeShootingPage_Function_SwitchingCamera_ID)
+        return JalebeeShootingPage_Function_SwitchingCamera_ID
+
+    # Jalebee-拍摄页-美颜
+    def JalebeeShootingPage_Function_Beauty(self):
+        JalebeeShootingPage_Function_Beauty_ID = self.findID(Jalebee_VD.JalebeeShootingPage_Function_Beauty_ID)
+        return JalebeeShootingPage_Function_Beauty_ID
+
+    # Jalebee-拍摄页-滤镜
+    def JalebeeShootingPage_Function_Filter(self):
+        JalebeeShootingPage_Function_Filter_ID = self.findID(Jalebee_VD.JalebeeShootingPage_Function_Filter_ID)
+        return JalebeeShootingPage_Function_Filter_ID
+
+    # Jalebee-拍摄页-相册
+    def JalebeeShootingPage_Function_Album(self):
+        JalebeeShootingPage_Function_Album_ID = self.findID(Jalebee_VD.JalebeeShootingPage_Function_Album_ID)
+        return JalebeeShootingPage_Function_Album_ID
+
+    # Jalebee-拍摄页-拍摄模式-Photo
+    def JalebeeShootingPage_Function_ShootingMode_Photo(self):
+        JalebeeShootingPage_Function_ShootingMode_IDS = self.findIDS(Jalebee_VD.JalebeeShootingPage_Function_ShootingMode_IDS, 0)
+        return JalebeeShootingPage_Function_ShootingMode_IDS
+
+    # Jalebee-拍摄页-拍摄模式-15S
+    def JalebeeShootingPage_Function_ShootingMode_15S(self):
+        JalebeeShootingPage_Function_ShootingMode_IDS = self.findIDS(Jalebee_VD.JalebeeShootingPage_Function_ShootingMode_IDS, 1)
+        return JalebeeShootingPage_Function_ShootingMode_IDS
+
+    # Jalebee-拍摄页-拍摄模式-60S
+    def JalebeeShootingPage_Function_ShootingMode_60S(self):
+        JalebeeShootingPage_Function_ShootingMode_IDS = self.findIDS(Jalebee_VD.JalebeeShootingPage_Function_ShootingMode_IDS, 2)
+        return JalebeeShootingPage_Function_ShootingMode_IDS
+
+    # ----------
+    # Jalebee-音乐选择页
+    # ----------
+    # Jalebee-音乐选择页-Title
+    def JalebeeSelectMusicPage_Title(self):
+        JalebeeSelectMusicPage_Title_ID = self.findID(Jalebee_VD.JalebeeSelectMusicPage_Title_ID)
+        return JalebeeSelectMusicPage_Title_ID
+
+    # Jalebee-音乐选择页-Close
+    def JalebeeSelectMusicPage_Function_Close(self):
+        JalebeeSelectMusicPage_Function_Close_ID = self.findID(Jalebee_VD.JalebeeSelectMusicPage_Function_Close_ID)
+        return JalebeeSelectMusicPage_Function_Close_ID
+
+    # Jalebee-音乐选择页-Search
+    def JalebeeSelectMusicPage_Function_Search(self):
+        JalebeeSelectMusicPage_Function_Search_ID = self.findID(Jalebee_VD.JalebeeSelectMusicPage_Function_Search_ID)
+        return JalebeeSelectMusicPage_Function_Search_ID
+
+    # Jalebee-音乐选择页-内容Tab-推荐页EXPLORE
+    def JalebeeSelectMusicPage_FeedTab_Explore(self):
+        JalebeeSelectMusicPage_FeedTab_Common_IDS = self.findIDS(Jalebee_VD.JalebeeSelectMusicPage_FeedTab_Common_IDS, 0)
+        return JalebeeSelectMusicPage_FeedTab_Common_IDS
+
+    # Jalebee-音乐选择页-内容Tab-收藏页FAVORITE
+    def JalebeeSelectMusicPage_FeedTab_Favorite(self):
+        JalebeeSelectMusicPage_FeedTab_Common_IDS = self.findIDS(Jalebee_VD.JalebeeSelectMusicPage_FeedTab_Common_IDS, 1)
+        return JalebeeSelectMusicPage_FeedTab_Common_IDS
+
+    # Jalebee-音乐选择页-Category
+    def JalebeeSelectMusicPage_Function_Category(self, num=0):
+        JalebeeSelectMusicPage_Function_Category_IDS = self.findIDS(Jalebee_VD.JalebeeSelectMusicPage_Function_Category_IDS, num)
+        return JalebeeSelectMusicPage_Function_Category_IDS
+
+    # Jalebee-音乐选择页-音乐名
+    def JalebeeSelectMusicPage_Function_SongsName(self, num=0):
+        JalebeeSelectMusicPage_Function_SongsName_IDS = self.findIDS(Jalebee_VD.JalebeeSelectMusicPage_Function_SongsName_IDS, num)
+        return JalebeeSelectMusicPage_Function_SongsName_IDS
+
+    # Jalebee-音乐选择页-收藏
+    def JalebeeSelectMusicPage_Function_Favor(self, num=0):
+        JalebeeSelectMusicPage_Function_Favor_IDS = self.findIDS(Jalebee_VD.JalebeeSelectMusicPage_Function_Favor_IDS, num)
+        return JalebeeSelectMusicPage_Function_Favor_IDS
+
+    # Jalebee-音乐选择页-确认选择
+    def JalebeeSelectMusicPage_Function_USE(self):
+        JalebeeSelectMusicPage_Function_USE_ID = self.findID(Jalebee_VD.JalebeeSelectMusicPage_Function_USE_ID)
+        return JalebeeSelectMusicPage_Function_USE_ID
+
+    # ----------
+    # Jalebee-发布预览页
+    # ----------
+    # Jalebee-发布预览页-进度条
+    def JalebeePostPreviewPage_Function_ProgressBar(self):
+        JalebeePostPreviewPage_Function_ProgressBar_ID = self.findID(Jalebee_VD.JalebeePostPreviewPage_Function_ProgressBar_ID)
+        return JalebeePostPreviewPage_Function_ProgressBar_ID
+
+    # Jalebee-发布预览页-返回
+    def JalebeePostPreviewPage_Function_Back(self):
+        JalebeePostPreviewPage_Function_Back_ID = self.findID(Jalebee_VD.JalebeePostPreviewPage_Function_Back_ID)
+        return JalebeePostPreviewPage_Function_Back_ID
+
+    # Jalebee-发布预览页-Volume
+    def JalebeePostPreviewPage_Function_Volume(self):
+        JalebeePostPreviewPage_Function_Other_ClaS = self.findClaS(
+            Jalebee_VD.JalebeePostPreviewPage_Function_Other_ClaS, 1)
+        return JalebeePostPreviewPage_Function_Other_ClaS
+
+    # Jalebee-发布预览页-Cut Music
+    def JalebeePostPreviewPage_Function_CutMusic(self):
+        JalebeePostPreviewPage_Function_Other_ClaS = self.findClaS(
+            Jalebee_VD.JalebeePostPreviewPage_Function_Other_ClaS, 2)
+        return JalebeePostPreviewPage_Function_Other_ClaS
+
+    # Jalebee-发布预览页-Select Music
+    def JalebeePostPreviewPage_Function_SelectMusic(self):
+        JalebeePostPreviewPage_Function_Other_ClaS = self.findClaS(
+            Jalebee_VD.JalebeePostPreviewPage_Function_Other_ClaS, 3)
+        return JalebeePostPreviewPage_Function_Other_ClaS
+
+    # Jalebee-发布预览页-Cover
+    def JalebeePostPreviewPage_Function_Cover(self):
+        JalebeePostPreviewPage_Function_Other_ClaS = self.findClaS(
+            Jalebee_VD.JalebeePostPreviewPage_Function_Other_ClaS, 4)
+        return JalebeePostPreviewPage_Function_Other_ClaS
+
+    # Jalebee-发布预览页-Next
+    def JalebeePostPreviewPage_Function_Next(self):
+        JalebeePostPreviewPage_Function_Next_ID = self.findID(Jalebee_VD.JalebeePostPreviewPage_Function_Next_ID)
+        return JalebeePostPreviewPage_Function_Next_ID
+
+    # ----------
+    # Jalebee-发布编辑页
+    # ----------
+    # Jalebee-发布编辑页-Title(text=पोस्ट करें)
+    def JalebeePostEditPage_Title(self):
+        JalebeePostEditPage_Title_ID = self.findID(Jalebee_VD.JalebeePostEditPage_Title_ID)
+        return JalebeePostEditPage_Title_ID
+
+    # Jalebee-发布编辑页-返回
+    def JalebeePostEditPage_Function_Back(self):
+        JalebeePostEditPage_Function_Back_Cla = self.findCla(Jalebee_VD.JalebeePostEditPage_Function_Back_Cla)
+        return JalebeePostEditPage_Function_Back_Cla
+
+    # Jalebee-发布编辑页-输入文字(text=आपके दिमाग मे क्या है?)
+    def JalebeePostEditPage_Function_MindWriting(self):
+        JalebeePostEditPage_Function_MindWriting_ID = self.findID(Jalebee_VD.JalebeePostEditPage_Function_MindWriting_ID)
+        return JalebeePostEditPage_Function_MindWriting_ID
+
+    # Jalebee-发布编辑页-更换封面
+    def JalebeePostEditPage_Function_SetCover(self):
+        JalebeePostEditPage_Function_SetCover_ID = self.findID(Jalebee_VD.JalebeePostEditPage_Function_SetCover_ID)
+        return JalebeePostEditPage_Function_SetCover_ID
+
+    # Jalebee-发布编辑页-@好友
+    def JalebeePostEditPage_Function_RemindFriends(self):
+        JalebeePostEditPage_Function_RemindFriends_ID = self.findID(Jalebee_VD.JalebeePostEditPage_Function_RemindFriends_ID)
+        return JalebeePostEditPage_Function_RemindFriends_ID
+
+    # Jalebee-发布编辑页-Topic
+    def JalebeePostEditPage_Function_Topic(self):
+        JalebeePostEditPage_Function_Topic_ID = self.findID(Jalebee_VD.JalebeePostEditPage_Function_Topic_ID)
+        return JalebeePostEditPage_Function_Topic_ID
+
+    # Jalebee-发布编辑页-定位
+    def JalebeePostEditPage_Function_Location(self):
+        JalebeePostEditPage_Function_Location_ID = self.findID(Jalebee_VD.JalebeePostEditPage_Function_Location_ID)
+        return JalebeePostEditPage_Function_Location_ID
+
+    # Jalebee-发布编辑页-保存草稿
+    def JalebeePostEditPage_Function_Draft(self):
+        JalebeePostEditPage_Function_Draft_ID = self.findID(Jalebee_VD.JalebeePostEditPage_Function_Draft_ID)
+        return JalebeePostEditPage_Function_Draft_ID
+
+    # Jalebee-发布编辑页-发布
+    def JalebeePostEditPage_Function_Post(self):
+        JalebeePostEditPage_Function_Post_ID = self.findID(Jalebee_VD.JalebeePostEditPage_Function_Post_ID)
+        return JalebeePostEditPage_Function_Post_ID
