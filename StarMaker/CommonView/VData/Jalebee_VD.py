@@ -25,6 +25,10 @@ Jalebee_MainTab_Post_ID = package + FS(Source_Jalebee_MainTab_Post_ID)
 Source_JalebeeFollowingPage_ShootPostTime_ID_IDS = "tv_time"
 JalebeeFollowingPage_ShootPostTime_ID_IDS = package + FS(Source_JalebeeFollowingPage_ShootPostTime_ID_IDS)
 
+# JalebeeFollowing页-作品Like数
+Source_JalebeeFollowingPage_ShootLikeNum_ID_IDS = "tv_like_num"
+JalebeeFollowingPage_ShootLikeNum_ID_IDS = package + FS(Source_JalebeeFollowingPage_ShootLikeNum_ID_IDS)
+
 # ----------
 # Jalebee-Party页
 # ----------
@@ -185,3 +189,19 @@ JalebeePostEditPage_Function_Draft_ID = package + FS(Source_JalebeePostEditPage_
 # Jalebee-发布编辑页-发布
 Source_JalebeePostEditPage_Function_Post_ID = "tv_post"
 JalebeePostEditPage_Function_Post_ID = package + FS(Source_JalebeePostEditPage_Function_Post_ID)
+
+# ----------
+# Jalebee-消息页
+# ----------
+# Jalebee-消息页-功能区通用IDS([0]System/[1]Gifts/[2]Messages)
+Source_JalebeeMessagePage_FunctionCommon_IDS = "badge_text"
+JalebeeMessagePage_FunctionCommon_IDS = package + FS(Source_JalebeeMessagePage_FunctionCommon_IDS)
+
+# Jalebee-消息页-内容Tab通用IDS([0]FOLLOWING/[1]YOU)
+Source_JalebeeMessagePage_FeedTabCommon_IDS = "tv_tab_title"
+JalebeeMessagePage_FeedTabCommon_IDS = package + FS(Source_JalebeeMessagePage_FeedTabCommon_IDS)
+
+# Jalebee-消息页-消息内容
+Source_JalebeeMessagePage_MessageContent_ID_IDS = "item_message_content"
+JalebeeMessagePage_MessageContent_ID_IDS = package + FS(Source_JalebeeMessagePage_MessageContent_ID_IDS)
+

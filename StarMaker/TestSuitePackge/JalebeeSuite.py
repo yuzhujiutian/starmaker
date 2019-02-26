@@ -17,5 +17,5 @@ class JalebeeSuite(unittest.TestCase):
         CreatTestReporter().HTMLReporter(NameFile, T, Des, Suite, Tester)
 
 
-if __name__ == '__main__':
-    unittest.main()
+# if __name__ == '__main__':
+#     unittest.main()

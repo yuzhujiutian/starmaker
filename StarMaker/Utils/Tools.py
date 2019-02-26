@@ -739,7 +739,7 @@ class Screen(object):
         self.driver = GetAppiumDeriver().driver
         # 获取屏幕的size
         self.size = self.driver.get_window_size()
-        # print(self.size)
+        print(self.size)
         # 获取屏幕宽度 width
         self.width = self.size['width']
         # 获取屏幕高度 height
@@ -806,7 +806,10 @@ class Screen(object):
         x1 = self.width * x1P
         y1 = self.height * y1P
         time.sleep(2)
+        print(x1,y1,t)
+        print("准备点击")
         self.driver.tap([(x1, y1)], t)
+        print("点击完成")
 
     # 多点触控(最多支持五点触控)
     def Multi_Touch_Percentage(self, x1P, y1P, x2P, y2P, x3P, y3P, x4P, y4P, x5P, y5P, t=500):
@@ -910,9 +913,31 @@ class AssertReportManage(object):
         return E
 
 
+# 国际化
+class Internationalization:
+    @staticmethod
+    def Internationalization(Source_Key, language="en"):
+        global Key
+        Key = Source_Key
+        if language == "IN":
+            Internationalization().IN()
+        else:
+            Internationalization().en()
+
+    def en(self):
+        from CommonView.Internationalization_Data.en import en
+        print(en[Key])
+        return en[Key]
+
+    def IN(self):
+        from CommonView.Internationalization_Data.IN import IN
+        print(IN[Key])
+        return IN[Key]
+
 
 # if __name__ == '__main__':
-#     Screen().CalculatedPercentage(1300, 2450)
-#     A = Tools.FindSource("btn_post")
-#     print(A)
-#     Popular_Elements_Disposes().ID_IDS()
+    # Screen().CalculatedPercentage(1300, 2450)
+    # A = Tools.FindSource("btn_post")
+    # print(A)
+    # Popular_Elements_Disposes().ID_IDS()
+    # Internationalization().Internationalization("Personal_info", "IN")

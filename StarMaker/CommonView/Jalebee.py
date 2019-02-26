@@ -71,10 +71,10 @@ class Jalebee(object):
     # ----------
     # JalebeeFollowing页
     # ----------
-    # JalebeeFollowing页-作品发布时间
-    def JalebeeFollowingPage_ShootPostTime(self):
-        JalebeeFollowingPage_ShootPostTime_ID_IDS = self.ID_IDS(Jalebee_VD.JalebeeFollowingPage_ShootPostTime_ID_IDS)
-        return JalebeeFollowingPage_ShootPostTime_ID_IDS
+    # JalebeeFollowing页-作品like数(NoLike_text=लाइक करें)
+    def JalebeeFollowingPage_ShootLikeNum(self):
+        JalebeeFollowingPage_ShootLikeNum_ID_IDS = self.ID_IDS(Jalebee_VD.JalebeeFollowingPage_ShootLikeNum_ID_IDS)
+        return JalebeeFollowingPage_ShootLikeNum_ID_IDS
 
     # ----------
     # Jalebee-Party页
@@ -324,3 +324,36 @@ class Jalebee(object):
     def JalebeePostEditPage_Function_Post(self):
         JalebeePostEditPage_Function_Post_ID = self.findID(Jalebee_VD.JalebeePostEditPage_Function_Post_ID)
         return JalebeePostEditPage_Function_Post_ID
+
+    # ----------
+    # Jalebee-消息页
+    # ----------
+    # Jalebee-消息页-功能区-System(text=सिस्टम)
+    def JalebeeMessagePage_Function_System(self):
+        JalebeeMessagePage_FunctionCommon_IDS = self.findIDS(Jalebee_VD.JalebeeMessagePage_FunctionCommon_IDS, 0)
+        return JalebeeMessagePage_FunctionCommon_IDS
+
+    # Jalebee-消息页-功能区-Gifts(text=उपहार प्राप्त)
+    def JalebeeMessagePage_Function_Gifts(self):
+        JalebeeMessagePage_FunctionCommon_IDS = self.findIDS(Jalebee_VD.JalebeeMessagePage_FunctionCommon_IDS, 1)
+        return JalebeeMessagePage_FunctionCommon_IDS
+
+    # Jalebee-消息页-功能区-Messages(text=संदेश)
+    def JalebeeMessagePage_Function_Messages(self):
+        JalebeeMessagePage_FunctionCommon_IDS = self.findIDS(Jalebee_VD.JalebeeMessagePage_FunctionCommon_IDS, 2)
+        return JalebeeMessagePage_FunctionCommon_IDS
+
+    # Jalebee-消息页-内容Tab-FOLLOWING
+    def JalebeeMessagePage_FeedTab_FOLLOWING(self):
+        JalebeeMessagePage_FeedTabCommon_IDS = self.findIDS(Jalebee_VD.JalebeeMessagePage_FeedTabCommon_IDS, 0)
+        return JalebeeMessagePage_FeedTabCommon_IDS
+
+    # Jalebee-消息页-内容Tab-YOU
+    def JalebeeMessagePage_FeedTab_YOU(self):
+        JalebeeMessagePage_FeedTabCommon_IDS = self.findIDS(Jalebee_VD.JalebeeMessagePage_FeedTabCommon_IDS, 1)
+        return JalebeeMessagePage_FeedTabCommon_IDS
+
+    # Jalebee-消息页-消息内容
+    def JalebeeMessagePage_MessageContent(self):
+        JalebeeMessagePage_MessageContent_ID_IDS = self.ID_IDS(Jalebee_VD.JalebeeMessagePage_MessageContent_ID_IDS)
+        return JalebeeMessagePage_MessageContent_ID_IDS

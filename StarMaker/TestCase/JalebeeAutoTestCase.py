@@ -5,10 +5,12 @@ import warnings
 from CommonView.StartUp import StartUp
 from CommonView.LogIn import LogIn
 from CommonView.Popup import Popup
+from CommonView.Profile import Profile
 from CommonView.Jalebee import Jalebee
 from Utils.Tools import Tools
 from Utils.Tools import Screen
 from Utils.Tools import AssertReportManage
+from Utils.Tools import Internationalization
 from Utils.Tools import Page_Element_Verification
 from Utils.ReadXMLData import ReadXMLData
 from Utils.GetAppiumDeriver import GetAppiumDeriver
@@ -43,7 +45,7 @@ class JalebeeAutoTestCase(unittest.TestCase):
         # 获取该页面所有元素
         actValue = Page_Element_Verification().PEV_ClaS(StartUp().ChooseLanguagePage_Check(), TextList)
         time.sleep(2)
-        # 断言
+        # 断言：
         msg = "语言选择页 语言选项"
         self.assertTrue(actValue, E(msg))
         print(P(msg))
@@ -61,7 +63,7 @@ class JalebeeAutoTestCase(unittest.TestCase):
         # 获取底部PostTab
         PostTab = Jalebee().Jalebee_MainTab_Post()
         time.sleep(2)
-        # 断言
+        # 断言：
         msg = "首页底部主Tab"
         self.assertTrue(actValue and PostTab, E(msg))
         print(P(msg))
@@ -74,7 +76,7 @@ class JalebeeAutoTestCase(unittest.TestCase):
         # 获取该首页顶部所有内容Tab名
         actValue = Page_Element_Verification().PEV_ClaS(Jalebee().JalebeeHomePage_FeedTab_Check(), TextList)
         time.sleep(2)
-        # 断言
+        # 断言：
         msg = "首页内容Tab"
         self.assertTrue(actValue, E(msg))
         print(P(msg))
@@ -86,7 +88,7 @@ class JalebeeAutoTestCase(unittest.TestCase):
         # 获取首页Home-Tab按钮属性为选中状态
         actValue = Jalebee().JalebeeHomePage_MainTab_Home().get_attribute("selected")
         time.sleep(2)
-        # 断言：默认展示首页
+        # 断言：
         msg = "进入APP默认展示首页"
         self.assertEqual(expValue, actValue, E(msg))
         print(P(msg))
@@ -314,8 +316,8 @@ class JalebeeAutoTestCase(unittest.TestCase):
     # 校验拍摄页 页面元素
     def test_Case020_JalebeeShootingPage_CheckElements(self):
         # 处理引导弹窗
-        Screen().AccurateClicks_Percentage(0.5, 0.5)
-        time.sleep(8)
+        Jalebee().JalebeeShootingPage_Function_AddMusicGuide().click()
+        time.sleep(5)
         # -----检查页面各元素-----
         # 进度条
         Progress_Bar = Jalebee().JalebeeShootingPage_Function_ProgressBar()
@@ -358,7 +360,7 @@ class JalebeeAutoTestCase(unittest.TestCase):
         actValue = Jalebee().JalebeeShootingPage_Function_ShootingMode_15S().get_attribute("selected")
         time.sleep(2)
         # 断言：
-        msg = "拍摄页默认选择15S拍摄模式(该元素selected属性异常，待修复)"
+        msg = "拍摄页默认选择15S拍摄模式(T38816:该元素selected属性异常，待修复)"
         self.assertEqual(expValue, actValue, E(msg))
         print(P(msg))
 
@@ -401,7 +403,7 @@ class JalebeeAutoTestCase(unittest.TestCase):
         actValue = Jalebee().JalebeeSelectMusicPage_FeedTab_Explore().get_attribute("selected")
         time.sleep(2)
         # 断言：
-        msg = "默认展示推荐页Explore(该元素selected属性异常，待修复)"
+        msg = "默认展示推荐页Explore(T38816:该元素selected属性异常，待修复)"
         self.assertEqual(expValue, actValue, E(msg))
         print(P(msg))
 
@@ -536,17 +538,322 @@ class JalebeeAutoTestCase(unittest.TestCase):
         self.assertTrue(Back and SetCover and RemindFriends and Topic and Location and Draft, E(msg))
         print(P(msg))
 
-    # 发布拍摄作品(本地作品展示时时间显示错误，待修复)
+    # 发布拍摄作品
     def test_Case033_JalebeePostEditPage_PostShoot(self):
         # 点击发布按钮
         Jalebee().JalebeePostEditPage_Function_Post().click()
         time.sleep(10)
-        # 获取Following页首个作品发布时间
-        expValue = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "one_minute_ago")
-        actValue = Jalebee().JalebeeFollowingPage_ShootPostTime().text
+        # 获取Following页首个作品like数
+        expValue = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "NoLikeNum")
+        actValue = Jalebee().JalebeeFollowingPage_ShootLikeNum().text
         time.sleep(2)
         # 断言：
-        msg = "发布拍摄作品(本地作品展示时时间显示错误，待修复)"
+        msg = "发布拍摄作品，自动跳转到Following页，作品出现在feed首个卡片"
         self.assertEqual(expValue, actValue, E(msg))
         print(P(msg))
 
+    # 点击Message按钮，进入消息页面
+    def test_Case034_ClickMessageTab_EnterMessagePage(self):
+        # 点击底部Message_Tab
+        Jalebee().JalebeeHomePage_MainTab_Message().click()
+        time.sleep(2)
+        # 获取底部Message-Tab按钮属性为选中状态
+        expValue = "true"
+        actValue = Jalebee().JalebeeHomePage_MainTab_Message().get_attribute("selected")
+        time.sleep(2)
+        # 断言：
+        msg = "成功跳转消息页面"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
+
+    # 校验功能入口
+    def test_Case035_JalebeeMessagePage_CheckFunctionEntry(self):
+        # 读取功能入口预期文案
+        System_expValue = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "JalebeeMessagePage_System")
+        Gifts_expValue = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "JalebeeMessagePage_Gifts")
+        Messages_expValue = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "JalebeeMessagePage_Messages")
+        time.sleep(2)
+        # 获取对应元素text
+        System_actValue = Jalebee().JalebeeMessagePage_Function_System().text
+        Gifts_actValue = Jalebee().JalebeeMessagePage_Function_Gifts().text
+        Messages_actValue = Jalebee().JalebeeMessagePage_Function_Messages().text
+        time.sleep(2)
+        # 断言：
+        msg1 = "消息页 系统消息入口正常，"
+        msg2 = "消息页 礼物消息入口正常"
+        msg3 = "消息页 私信消息入口正常"
+        self.assertEqual(System_expValue, System_actValue, E(msg1))
+        print(P(msg1))
+        self.assertEqual(Gifts_expValue, Gifts_actValue, E(msg2))
+        print(P(msg2))
+        self.assertEqual(Messages_expValue, Messages_actValue, E(msg3))
+        print(P(msg3))
+
+    # 校验消息页Tab
+    def test_Case036_JalebeeMessagePage_CheckFeedTab(self):
+        # 读取FeedTab预期文案
+        FollowingTab_expValue = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "JalebeeMessagePage_FollowingTab")
+        YouTab_expValue = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "JalebeeMessagePage_YouTab")
+        time.sleep(2)
+        # 获取对应元素text
+        FollowingTab_actValue = Jalebee().JalebeeMessagePage_FeedTab_FOLLOWING().text
+        YouTab_actValue = Jalebee().JalebeeMessagePage_FeedTab_YOU().text
+        time.sleep(2)
+        # 断言：
+        msg1 = "消息页 Following-Tab 正常，"
+        msg2 = "消息页 You-Tab 正常"
+        self.assertEqual(FollowingTab_expValue, FollowingTab_actValue, E(msg1))
+        print(P(msg1))
+        self.assertEqual(YouTab_expValue, YouTab_actValue, E(msg2))
+        print(P(msg2))
+
+    # 校验消息页消息内容
+    def test_Case037_JalebeeMessagePage_CheckNotification(self):
+        # 获取Following-Tab下内容
+        Jalebee().JalebeeMessagePage_FeedTab_FOLLOWING().click()
+        FollowingTab_MessageCotent = Jalebee().JalebeeMessagePage_MessageContent()
+        time.sleep(2)
+        # 获取You-Tab下内容
+        Jalebee().JalebeeMessagePage_FeedTab_YOU().click()
+        YouTab_MessageCotent = Jalebee().JalebeeMessagePage_MessageContent()
+        time.sleep(2)
+        # 断言：
+        msg = "消息页 消息内容展示"
+        self.assertTrue(FollowingTab_MessageCotent and YouTab_MessageCotent, E(msg))
+        print(P(msg))
+
+    # 点击Me按钮，进入个人页
+    def test_Case038_ClickMeTab_EnterProfilePage(self):
+        # 点击Me按钮
+        Jalebee().JalebeeHomePage_MainTab_Me().click()
+        time.sleep(2)
+        # 获取Me-Tab按钮属性为选中状态
+        expValue = "true"
+        # 获取首页Me-Tab按钮属性为选中状态
+        actValue = Jalebee().JalebeeHomePage_MainTab_Me().get_attribute("selected")
+        time.sleep(2)
+        # 断言：
+        msg = "成功跳转至Profile页"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
+
+    # 个人页背景图头像校验(bug待修复)
+    def test_Case039_JalebeeProfilePage_CheckUserInfo_BackgroundAndHeadView(self):
+        # 获取页面背景图和头像
+        Background = Profile().ProfilePage_UserInfo_Background()
+        HeadView = Profile().ProfilePage_UserInfo_HeadView()
+        time.sleep(2)
+        # 断言：
+        msg = "个人页 背景图和头像展示"
+        self.assertTrue(Background and HeadView, E(msg))
+        print(P(msg))
+
+    # 个人页个人信息校验——用户名
+    def test_Case040_JalebeeProfilePage_CheckUserInfo_StageName(self):
+        expValue = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "StageName")
+        # 获取用户昵称
+        actValue = Profile().ProfilePage_UserInfo_StageName().text
+        time.sleep(2)
+        # 断言
+        msg = "个人页 用户昵称显示"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
+
+    # 个人页个人信息校验——等级
+    def test_Case041_JalebeeProfilePage_CheckUserInfo_UserLevel(self):
+        expValue = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "UserLevel")
+        # 获取用户等级
+        actValue = Profile().ProfilePage_UserInfo_UserLevel().text
+        time.sleep(2)
+        # 断言：
+        msg = "个人页 用户等级显示"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
+
+    # 个人页个人信息校验——VIP状态
+    def test_Case042_JalebeeProfilePage_CheckUserInfo_VIPLevel(self):
+        expValue = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "VIPLevel")
+        # 获取用户VIP状态
+        actValue = Profile().ProfilePag_UserInfo_VIPLevel().text
+        time.sleep(2)
+        # 断言：
+        msg = "个人页 VIP状态"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
+
+    # 个人页个人信息校验——Followers数正确
+    def test_Case043_JalebeeProfilePage_CheckUserInfo_FollowersCount(self):
+        expValue = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Followers")
+        # 获取用户Followers数
+        actValue = Profile().ProfilePage_UserInfo_FollowersNumber().text
+        time.sleep(2)
+        # 断言：
+        msg = "个人页 Followers数正确"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
+
+    # 个人页个人信息校验——Following数正确
+    def test_Case044_JalebeeProfilePage_CheckUserInfo_Following(self):
+        expValue = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Following")
+        # 获取用户Following数
+        actValue = Profile().ProfilePage_UserInfo_FollowingNumber().text
+        time.sleep(2)
+        # 断言
+        msg = "个人页 Following数正确"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
+
+    # 个人页功能栏校验——功能列表显示正确
+    def test_Case045_JalebeeProfilePage_CheckFunction(self):
+        # 获取功能列表
+        TextList = ReadXMLData().returnXMLFile("ProfileText.xml", "ProfileText", "FunctionBar_TextList")
+        # 断言：
+        msg = "个人页 功能栏列表入口显示"
+        actValue = Page_Element_Verification().PEV_IDS(Profile().ProfilePage_CheckList_FunctionBar(), TextList)
+        time.sleep(2)
+        self.assertTrue(actValue, E(msg))
+        print(P(msg))
+
+    # 个人页Tab栏校验——Tab列表显示正确
+    def test_Case046_JalebeeProfilePage_CheckTabBar(self):
+        # 获取Tab列表
+        TextList = ReadXMLData().returnXMLFile("ProfileText.xml", "ProfileText", "TabBar_TextList")
+        # 向上滑动1/2屏
+        Screen().SWipeUp_Half()
+        # 断言：
+        msg = "个人页 Tab列表入口显示"
+        actValue = Page_Element_Verification().PEV_IDS(Profile().ProfilePage_CheckList_TabBar(), TextList)
+        time.sleep(2)
+        self.assertTrue(actValue, E(msg))
+        print(P(msg))
+
+    # 个人页ProfileTab校验-Personal_Info Tips
+    def test_Case047_JalebeeProfilePage_ProfileTab_CheckPersonalInfoTips(self):
+        # 获取多语言文案
+        expValue = Internationalization().Internationalization("Personal_Info", "IN")
+        # 向上滑动1/2屏
+        Screen().SWipeUp_Half()
+        time.sleep(2)
+        # 点击Profile-Tab
+        Profile().ProfilePage_Tab_ProfileTab().click()
+        time.sleep(2)
+        # 获取 Personal_Info Title
+        actValue = Profile().ProfilePage_ProfileTab_PersonalInfo_Text().text
+        time.sleep(2)
+        # 断言：
+        msg = "个人页ProfileTab校验-Personal_Info Tips文案"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
+
+    # 个人页ProfileTab校验-Personal_Info 内容
+    def test_Case048_JalebeeProfilePage_ProfileTab_CheckPersonalInfoDesc(self):
+        # 读取预期文案
+        expValue = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "PersonalInfo")
+        # 获取当前用户个人信息
+        actValue = Profile().ProfilePage_ProfileTab_PersonalInfo_Desc().text
+        time.sleep(2)
+        # 断言：
+        msg = "个人页ProfileTab校验-Personal_Info Desc文案"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
+
+    # 个人页ProfileTab校验-Album Tips
+    def test_Case049_JalebeeProfilePage_ProfileTab_CheckAlbumTips(self):
+        # 获取多语言文案
+        expValue = Internationalization().Internationalization("Album", "IN")
+        # 获取 Album Tips
+        actValue = Profile().ProfilePage_ProfileTab_Album_Text().text
+        # 判断 Album 正常展示
+        time.sleep(2)
+        # 断言：
+        msg = "个人页ProfileTab校验-Album Tips文案"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
+
+    # 个人页ProfileTab校验-Album 数量
+    def test_Case050_JalebeeProfilePage_ProfileTab_CheckAlbumCount(self):
+        # 获取用户Album 图片数量
+        expValue = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Album_PhotoCount")
+        # 获取Album 图片数量 并截图
+        actValue = str(len(self.driver.find_elements_by_id(Profile().ProfilePage_ProfileTab_Album_PhotosCount())))
+        # 断言：
+        msg = "个人页ProfileTab校验-图片数量展示正确"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
+
+    # 个人页ProfileTab校验-TopFans Tips
+    def test_Case051_JalebeeProfilePage_ProfileTab_CheckTopFansTips(self):
+        # 获取多语言文案
+        expValue = Internationalization().Internationalization("Top_Fans", "IN")
+        # 获取 TopFans Tips
+        actValue = Profile().ProfilePage_ProfileTab_TopFans_Text().text
+        time.sleep(2)
+        # 断言：
+        msg = "个人页ProfileTab校验-TopFans Tips"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
+
+    # 个人页ProfileTab校验-TopFans 星光值展示正确
+    def test_Case052_JalebeeProfilePage_ProfileTab_CheckStarlight(self):
+        # 读取用户星光值信息
+        expValue = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Starlight")
+        # 获取当前用户星光值
+        actValue = Profile().ProfilePage_ProfileTab_TopFans_Starlight().text
+        time.sleep(2)
+        # 断言：
+        msg = "个人页ProfileTab校验-TopFans 星光值"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
+
+    # 个人页ProfileTab校验-TopFans 头像显示正常
+    def test_Case053_JalebeeProfilePage_ProfileTab_CheckTopFansHeadView(self):
+        # 查找三个头像
+        First_actValue = Profile().ProfilePage_ProfileTab_TopFans_FindFirstHeadView()
+        Second_actValue = Profile().ProfilePage_ProfileTab_TopFans_FindSecondHeadView()
+        Third_actValue = Profile().ProfilePage_ProfileTab_TopFans_FindThirdHeadView()
+        time.sleep(2)
+        # 断言：
+        msg = "个人页ProfileTab校验-TopFans 头像显示正常"
+        if all([First_actValue, Second_actValue, Third_actValue]):
+            self.assertTrue(First_actValue, E(msg))
+            print(P(msg))
+        else:
+            print("FirstHeadView:" + First_actValue)
+            print("SecondHeadView:" + Second_actValue)
+            print("ThirdHeadView:" + Third_actValue)
+
+    # 个人页ProfileTab校验-Contribute Tips
+    def test_Case054_JalebeeProfilePage_ProfileTab_CheckContribute(self):
+        # 获取多语言文案
+        expValue = Internationalization().Internationalization("Contribute", "IN")
+        # 获取Contribute Tips
+        actValue = Profile().ProfilePage_ProfileTab_Contribute_Text().text
+        time.sleep(2)
+        # 断言：
+        msg = "个人页ProfileTab校验-Contribute Tips"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
+
+    # Contribute 金币数正确
+    def test_Case055_JalebeeProfilePage_ProfileTab_CheckGoldCount(self):
+        # 获取用户消费金币数
+        expValue = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "Golds")
+        # 获取 Contribute 金币数
+        actValue = Profile().ProfilePage_ProfileTab_Contribute_Gold().text
+        time.sleep(2)
+        # 断言：
+        msg = "个人页ProfileTab校验-Contribute 金币数"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
+
+    # Store 正常展示
+    def test_Case056_JalebeeProfilePage_ProfileTab_CheckStore(self):
+        # 获取多语言文案
+        expValue = Internationalization().Internationalization("Store", "IN")
+        # 获取 Store Tips
+        actValue = Profile().ProfilePage_ProfileTab_Store_Text().text
+        time.sleep(2)
+        # 断言：
+        msg = "个人页ProfileTab校验-Store Tips"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))

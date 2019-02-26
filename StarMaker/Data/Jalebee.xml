@@ -17,5 +17,10 @@
     <SelectMusicPage_Favorite>पसंदीदा</SelectMusicPage_Favorite>
     <PostPreviewPage_Title>पोस्ट करें</PostPreviewPage_Title>
     <PostPreviewPage_MindWriting>आपके दिमाग मे क्या है?</PostPreviewPage_MindWriting>
-    <one_minute_ago>1 मिनट पहले</one_minute_ago>
+    <NoLikeNum>लाइक करें</NoLikeNum>
+    <JalebeeMessagePage_System>सिस्टम </JalebeeMessagePage_System>
+    <JalebeeMessagePage_Gifts>उपहार प्राप्त</JalebeeMessagePage_Gifts>
+    <JalebeeMessagePage_Messages>संदेश</JalebeeMessagePage_Messages>
+    <JalebeeMessagePage_FollowingTab>फॉलोइंग</JalebeeMessagePage_FollowingTab>
+    <JalebeeMessagePage_YouTab>आप</JalebeeMessagePage_YouTab>
 </Jalebee>
