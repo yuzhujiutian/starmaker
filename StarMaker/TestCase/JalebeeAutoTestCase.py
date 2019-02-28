@@ -554,15 +554,17 @@ class JalebeeAutoTestCase(unittest.TestCase):
         Jalebee().JalebeePostEditPage_Function_Post().click()
         time.sleep(5)
         # 循环等待发布完成
-        while Jalebee().JalebeeFollowingPage_PublishBar():
-            time.sleep(5)
-        # 获取Following页作品like数
-        expValue = "3"
-        actValue = Jalebee().JalebeeFollowingPage_ShootLikeNumS_Count()
-        time.sleep(2)
+        count = 0
+        actValue = False
+        while count < 5:
+            if Jalebee().JalebeeFollowingPage_PublishBar():
+                actValue = True
+                break
+            else:
+                count += 1
         # 断言：
-        msg = "发布拍摄作品，自动跳转到Following页，作品出现在feed首个卡片"
-        self.assertEqual(expValue, actValue, E(msg))
+        msg = "发布拍摄作品，自动跳转到Following页，作品发布成功"
+        self.assertTrue(actValue, E(msg))
         print(P(msg))
 
     # 点击Message按钮，进入消息页面
@@ -871,39 +873,30 @@ class JalebeeAutoTestCase(unittest.TestCase):
         self.assertEqual(expValue, actValue, E(msg))
         print(P(msg))
 
-    # 个人页MomentsTab校验—删除作品校验作品数统计
-    def test_Case057_JalebeeProfilePage_MomentsTab_DelShootCheckCountNum(self):
+    # 个人页MomentsTab校验—私密标签
+    def test_Case057_JalebeeProfilePage_MomentsTab_CheckPrivateTag(self):
         # 点击MomentsTab
         Profile().ProfilePage_Tab_MomentsTab().click()
         time.sleep(5)
-        # 获取帐号作品数
-        expValue = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "ProfilePage_ShootCounts")
-        CountNum = Profile().ProfilePage_MomentsTab_CountNum().text
-        # 提取数字
-        actValue = re.sub("\\D", "", CountNum)
-        time.sleep(2)
-        # 点击首个作品More按钮
-        Profile().ProfilePage_MomentsTab_ShootInfo_More().click()
-        time.sleep(2)
-        # 删除刚刚发布的作品
-        Profile().ProfilePage_MomentsTab_ShootInfo_More_Delete().click()
-        time.sleep(2)
-        # 确认删除
-        Profile().ProfilePage_MomentsTab_ShootInfo_More_Delete_Confirm().click()
-        time.sleep(2)
-        # 断言：
-        msg = "个人页MomentsTab校验-删除作品功能，作品数统计"
-        self.assertEqual(expValue, actValue, E(msg))
-        print(P(msg))
-
-    # 个人页MomentsTab校验—私密标签
-    def test_Case058_JalebeeProfilePage_MomentsTab_CheckPrivateTag(self):
         # 获取多语言文案
         expValue = Internationalization().Internationalization("Private", "IN")
         actValue = Profile().ProfilePage_MomentsTab_ShootInfo_Private().text
         time.sleep(2)
         # 断言：
         msg = "个人页MomentsTab校验-私密标签"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
+
+    # 个人页MomentsTab校验—作品数统计
+    def test_Case058_JalebeeProfilePage_MomentsTab_DelShootCheckCountNum(self):
+        # 获取帐号作品数
+        expValue = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "ProfilePage_ShootCounts")
+        CountNum = Profile().ProfilePage_MomentsTab_CountNum().text
+        # 提取数字
+        actValue = re.sub("\\D", "", CountNum)
+        time.sleep(2)
+        # 断言：
+        msg = "个人页MomentsTab校验-作品数统计"
         self.assertEqual(expValue, actValue, E(msg))
         print(P(msg))
 
@@ -933,6 +926,16 @@ class JalebeeAutoTestCase(unittest.TestCase):
         Comment = Profile().ProfilePage_MomentsTab_ShootInfo_Comment()
         # Share
         Share = Profile().ProfilePage_MomentsTab_ShootInfo_Share()
+        time.sleep(2)
+        # -----删除作品-----
+        # 点击首个作品More按钮
+        Profile().ProfilePage_MomentsTab_ShootInfo_More().click()
+        time.sleep(2)
+        # 删除刚刚发布的作品
+        Profile().ProfilePage_MomentsTab_ShootInfo_More_Delete().click()
+        time.sleep(2)
+        # 确认删除
+        Profile().ProfilePage_MomentsTab_ShootInfo_More_Delete_Confirm().click()
         time.sleep(2)
         # 断言：
         msg = "个人页MomentsTab校验—其他元素校验"
