@@ -29,6 +29,10 @@ JalebeeFollowingPage_ShootPostTime_ID_IDS = package + FS(Source_JalebeeFollowing
 Source_JalebeeFollowingPage_PublishBar_ID = "tweet_publish_bar"
 JalebeeFollowingPage_PublishBar_ID = package + FS(Source_JalebeeFollowingPage_PublishBar_ID)
 
+# JalebeeFollowing页-作品Like按钮
+Source_JalebeeFollowingPage_ShootLikeBtn_ID_IDS = "heart_view"
+JalebeeFollowingPage_ShootLikeBtn_ID_IDS = package + FS(Source_JalebeeFollowingPage_ShootLikeBtn_ID_IDS)
+
 # JalebeeFollowing页-作品Like数
 Source_JalebeeFollowingPage_ShootLikeNum_ID_IDS = "tv_like_num"
 JalebeeFollowingPage_ShootLikeNum_ID_IDS = package + FS(Source_JalebeeFollowingPage_ShootLikeNum_ID_IDS)

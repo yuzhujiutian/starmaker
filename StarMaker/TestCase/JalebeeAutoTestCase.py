@@ -556,9 +556,12 @@ class JalebeeAutoTestCase(unittest.TestCase):
         # 循环等待发布完成
         while Jalebee().JalebeeFollowingPage_PublishBar():
             time.sleep(5)
+        # Like自己的作品
+        Jalebee().JalebeeFollowingPage_ShootLikeBtn().click()
+        time.sleep(2)
         # 获取Following页首个作品like数
-        expValue = ReadXMLData().returnXMLFile("Jalebee.xml", "Jalebee", "NoLikeNum")
-        actValue = Jalebee().JalebeeFollowingPage_ShootLikeNum().text
+        expValue = "3"
+        actValue = Jalebee().JalebeeFollowingPage_ShootLikeNumS_Count()
         time.sleep(2)
         # 断言：
         msg = "发布拍摄作品，自动跳转到Following页，作品出现在feed首个卡片"
@@ -883,7 +886,7 @@ class JalebeeAutoTestCase(unittest.TestCase):
         actValue = re.sub("\\D", "", CountNum)
         time.sleep(2)
         # 点击首个作品More按钮
-        Profile().ProfilePage_MomentsTab_ShootInfo_More()
+        Profile().ProfilePage_MomentsTab_ShootInfo_More().click()
         time.sleep(2)
         # 删除刚刚发布的作品
         Profile().ProfilePage_MomentsTab_ShootInfo_More_Delete().click()
