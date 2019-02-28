@@ -704,11 +704,11 @@ class Popular_Elements_Disposes(object):
         ele = elements
         num = 1
         try:
-            if self.driver.find_element_by_id(ele):
-                return num
-            elif self.driver.find_elements_by_id(ele)[0]:
+            if self.driver.find_elements_by_id(ele)[0]:
                 count = len(self.driver.find_elements_by_id(ele))
                 return count
+            elif self.driver.find_element_by_id(ele):
+                return num
         except:
             # 截图并上报
             print("As shown, the element is not found.")
