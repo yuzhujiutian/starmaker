@@ -556,10 +556,7 @@ class JalebeeAutoTestCase(unittest.TestCase):
         # 循环等待发布完成
         while Jalebee().JalebeeFollowingPage_PublishBar():
             time.sleep(5)
-        # Like自己的作品
-        Jalebee().JalebeeFollowingPage_ShootLikeBtn().click()
-        time.sleep(2)
-        # 获取Following页首个作品like数
+        # 获取Following页作品like数
         expValue = "3"
         actValue = Jalebee().JalebeeFollowingPage_ShootLikeNumS_Count()
         time.sleep(2)
