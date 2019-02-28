@@ -10,11 +10,23 @@ FS = Tools.Tools().FindSource
 Source_ProfilePage_Title_ID = "txt_title"
 ProfilePage_Title_ID = package + FS(Source_ProfilePage_Title_ID)
 
+# 个人页-FindFriends
+Source_ProfilePage_FindFriends_ID = "imb_friends"
+ProfilePage_FindFriends_ID = package + FS(Source_ProfilePage_FindFriends_ID)
+
+# 个人页-Setting
+Source_ProfilePage_Setting_ID = "imb_settings"
+ProfilePage_Setting_ID = package + FS(Source_ProfilePage_Setting_ID)
+
 # ----------
 # 个人页-个人信息
 # ----------
 # 个人页-个人信息-背景图
-Source_ProfilePage_UserInfo_Background_ID = "album_back_img"
+# Source_ProfilePage_UserInfo_Background1_ID = "album_front_img"
+# ProfilePage_UserInfo_Background1_ID = package + FS(Source_ProfilePage_UserInfo_Background1_ID)
+# Source_ProfilePage_UserInfo_Background2_ID = "album_back_img"
+# ProfilePage_UserInfo_Background2_ID = package + FS(Source_ProfilePage_UserInfo_Background2_ID)
+Source_ProfilePage_UserInfo_Background_ID = "album_mask_iv"
 ProfilePage_UserInfo_Background_ID = package + FS(Source_ProfilePage_UserInfo_Background_ID)
 
 
@@ -137,6 +149,17 @@ ProfilePage_MomentsTab_ShootInfo_Comment_ID_IDS = package + FS(Source_ProfilePag
 # Share
 Source_ProfilePage_MomentsTab_ShootInfo_Share_ID_IDS = "tv_share_num"
 ProfilePage_MomentsTab_ShootInfo_Share_ID_IDS = package + FS(Source_ProfilePage_MomentsTab_ShootInfo_Share_ID_IDS)
+
+# ----------
+# Tab——Moments——More
+# ----------
+# FunctionCommon([-1]copyLink/[-2]Save/[-3]Delete)
+Source_ProfilePage_MomentsTab_More_FunctionCommon_IDS = "item_rl"
+ProfilePage_MomentsTab_More_FunctionCommon_IDS = package + FS(Source_ProfilePage_MomentsTab_More_FunctionCommon_IDS)
+
+# 确认删除按钮
+Source_ProfilePage_MomentsTab_ShootInfo_More_Delete_Confirm_ID = "md_buttonDefaultPositive"
+ProfilePage_MomentsTab_ShootInfo_More_Delete_Confirm_ID = package + FS(Source_ProfilePage_MomentsTab_ShootInfo_More_Delete_Confirm_ID)
 
 # # ----------
 # # Tab——POST

@@ -71,6 +71,11 @@ class Jalebee(object):
     # ----------
     # JalebeeFollowing页
     # ----------
+    # JalebeeFollowing页-发布-发布进度条
+    def JalebeeFollowingPage_PublishBar(self):
+        JalebeeFollowingPage_PublishBar_ID = self.findID(Jalebee_VD.JalebeeFollowingPage_PublishBar_ID)
+        return JalebeeFollowingPage_PublishBar_ID
+
     # JalebeeFollowing页-作品like数(NoLike_text=लाइक करें)
     def JalebeeFollowingPage_ShootLikeNum(self):
         JalebeeFollowingPage_ShootLikeNum_ID_IDS = self.ID_IDS(Jalebee_VD.JalebeeFollowingPage_ShootLikeNum_ID_IDS)

@@ -5,7 +5,7 @@ IN["Album"] = "एलबम"
 IN["Top_Fans"] = "शीर्ष प्रशंसक"
 IN["Contribute"] = "योगदान दें"
 IN["Store"] = "स्टोर"
-
+IN["Private"] = "निजी"
 
 
 

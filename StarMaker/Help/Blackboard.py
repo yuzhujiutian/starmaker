@@ -1,9 +1,15 @@
 # coding=utf-8
-import time
-from Utils.Tools import Screen
+import os
+images_path = "../TestReport/images/"
+images_list = os.listdir(images_path)
+for i in images_list:
+    images = os.path.join(images_path, i)
+    print(images)
+    Suffix = os.path.splitext(i)[1]
+    print(Suffix)
+    if Suffix == ".png":
+        os.remove(images)
 
-
-Screen().AccurateClicks_Percentage(0.5, 0.5)
 
 
 if __name__ == '__main__':

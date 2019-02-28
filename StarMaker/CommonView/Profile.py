@@ -25,6 +25,16 @@ class Profile(object):
         ProfilePage_Title_ID = self.findID(Profile_VD.ProfilePage_Title_ID)
         return ProfilePage_Title_ID
 
+    # 个人页-FindFriends
+    def ProfilePage_FindFriends(self):
+        ProfilePage_FindFriends_ID = self.findID(Profile_VD.ProfilePage_FindFriends_ID)
+        return ProfilePage_FindFriends_ID
+
+    # 个人页-Setting
+    def ProfilePage_Setting(self):
+        ProfilePage_Setting_ID = self.findID(Profile_VD.ProfilePage_Setting_ID)
+        return ProfilePage_Setting_ID
+
     # ----------
     # 个人页-个人信息
     # ----------
@@ -40,7 +50,7 @@ class Profile(object):
 
     # 个人页-个人信息-用户昵称(同Moments昵称同ID)
     def ProfilePage_UserInfo_StageName(self):
-        ProfilePage_UserInfo_StageName_ID_IDS = self.findID(Profile_VD.ProfilePage_UserInfo_StageName_ID_IDS)
+        ProfilePage_UserInfo_StageName_ID_IDS = self.ID_IDS(Profile_VD.ProfilePage_UserInfo_StageName_ID_IDS)
         return ProfilePage_UserInfo_StageName_ID_IDS
 
     # 用户等级
@@ -204,6 +214,18 @@ class Profile(object):
         ProfilePage_MomentsTab_ShootInfo_Share_ID_IDS = self.ID_IDS(Profile_VD.ProfilePage_MomentsTab_ShootInfo_Share_ID_IDS)
         return ProfilePage_MomentsTab_ShootInfo_Share_ID_IDS
 
+    # ----------
+    # Tab——Moments——More
+    # ----------
+    # Function_Delete
+    def ProfilePage_MomentsTab_ShootInfo_More_Delete(self):
+        ProfilePage_MomentsTab_More_FunctionCommon_IDS = self.findIDS(Profile_VD.ProfilePage_MomentsTab_More_FunctionCommon_IDS, -3)
+        return ProfilePage_MomentsTab_More_FunctionCommon_IDS
+
+    # 确认删除按钮
+    def ProfilePage_MomentsTab_ShootInfo_More_Delete_Confirm(self):
+        ProfilePage_MomentsTab_ShootInfo_More_Delete_Confirm_ID = self.findID(Profile_VD.ProfilePage_MomentsTab_ShootInfo_More_Delete_Confirm_ID)
+        return ProfilePage_MomentsTab_ShootInfo_More_Delete_Confirm_ID
 
     # # ----------
     # # Tab——POST

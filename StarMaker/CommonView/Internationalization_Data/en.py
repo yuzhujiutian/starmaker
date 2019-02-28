@@ -5,5 +5,5 @@ en["Album"] = "Album"
 en["Top_Fans"] = "Top Fans"
 en["Contribute"] = "Contribute"
 en["Store"] = "Store"
-
+en["Private"] = "Private"
 

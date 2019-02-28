@@ -25,6 +25,10 @@ Jalebee_MainTab_Post_ID = package + FS(Source_Jalebee_MainTab_Post_ID)
 Source_JalebeeFollowingPage_ShootPostTime_ID_IDS = "tv_time"
 JalebeeFollowingPage_ShootPostTime_ID_IDS = package + FS(Source_JalebeeFollowingPage_ShootPostTime_ID_IDS)
 
+# JalebeeFollowing页-发布-发布进度条
+Source_JalebeeFollowingPage_PublishBar_ID = "tweet_publish_bar"
+JalebeeFollowingPage_PublishBar_ID = package + FS(Source_JalebeeFollowingPage_PublishBar_ID)
+
 # JalebeeFollowing页-作品Like数
 Source_JalebeeFollowingPage_ShootLikeNum_ID_IDS = "tv_like_num"
 JalebeeFollowingPage_ShootLikeNum_ID_IDS = package + FS(Source_JalebeeFollowingPage_ShootLikeNum_ID_IDS)

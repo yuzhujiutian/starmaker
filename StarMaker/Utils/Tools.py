@@ -3,6 +3,7 @@
 # 通用工具封装
 # ----------
 import re
+import os
 import time
 import datetime
 from Utils.GetAppiumDeriver import GetAppiumDeriver
@@ -920,24 +921,35 @@ class Internationalization:
         global Key
         Key = Source_Key
         if language == "IN":
-            Internationalization().IN()
+            return Internationalization().IN()
         else:
-            Internationalization().en()
+            return Internationalization().en()
 
     def en(self):
         from CommonView.Internationalization_Data.en import en
-        print(en[Key])
         return en[Key]
 
     def IN(self):
         from CommonView.Internationalization_Data.IN import IN
-        print(IN[Key])
         return IN[Key]
 
+
+# 测试数据处理
+class TestData_Processing(object):
+    # 处理测试图片
+    def TestPicture_Processing(self):
+        images_path = "../TestReport/images/"
+        images_list = os.listdir(images_path)
+        for i in images_list:
+            images = os.path.join(images_path, i)
+            Suffix = os.path.splitext(i)[1]
+            if Suffix == ".png":
+                os.remove(images)
+        print("测试图片已清理完毕")
 
 # if __name__ == '__main__':
     # Screen().CalculatedPercentage(1300, 2450)
     # A = Tools.FindSource("btn_post")
     # print(A)
     # Popular_Elements_Disposes().ID_IDS()
-    # Internationalization().Internationalization("Personal_info", "IN")
+    # Internationalization().Internationalization("Personal_Info", "IN")
