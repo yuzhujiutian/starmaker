@@ -9,6 +9,10 @@ gms = "com.google.android"
 # ----------
 # 登录弹窗-选择登录方式
 # ----------
+# 登录弹窗-更多登录方式
+Source_LogInPopup_SelectLoginMode_MoreWays_ID = "txt_more_ways"
+LogInPopup_SelectLoginMode_MoreWays_ID = package + FS(Source_LogInPopup_SelectLoginMode_MoreWays_ID)
+
 # 登录弹窗-选择登录方式-Tips(Profile_text=Please log in before checking your profile./Post_text=Please log in to make a post./
 #     # Notification_text=Please log in before checking the latest news./ktv&live_text=Enjoy all features after log in/
 #     # Share_text=Please log in to repost it./Like_text=Please log in to like it.)

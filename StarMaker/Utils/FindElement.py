@@ -15,6 +15,7 @@ class find_element(object):
         except:
             # 截图并上报
             print("As shown, the element is not found.")
+            print(ID)
             Tools().get_element_error_images()
             return False
 
@@ -25,6 +26,7 @@ class find_element(object):
         except:
             # 截图并上报
             print("As shown, the element is not found.")
+            print(ID, num)
             Tools().get_element_error_images()
             return False
 
@@ -35,6 +37,7 @@ class find_element(object):
         except:
             # 截图并上报
             print("As shown, the element is not found.")
+            print(Cla)
             Tools().get_element_error_images()
             return False
 
@@ -45,6 +48,7 @@ class find_element(object):
         except:
             # 截图并上报
             print("As shown, the element is not found.")
+            print(Cla, num)
             Tools().get_element_error_images()
             return False
 
@@ -55,6 +59,7 @@ class find_element(object):
         except:
             # 截图并上报
             print("As shown, the element is not found.")
+            print(Xpath)
             Tools().get_element_error_images()
             return False
 
@@ -65,6 +70,7 @@ class find_element(object):
         except:
             # 截图并上报
             print("As shown, the element is not found.")
+            print(Xpath, num)
             Tools().get_element_error_images()
             return False
 
@@ -75,6 +81,7 @@ class find_element(object):
         except:
             # 截图并上报
             print("As shown, the element is not found.")
+            print(AID)
             Tools().get_element_error_images()
             return False
 
@@ -85,6 +92,7 @@ class find_element(object):
         except:
             # 截图并上报
             print("As shown, the element is not found.")
+            print(AU)
             Tools().get_element_error_images()
             return False
 
@@ -95,5 +103,6 @@ class find_element(object):
         except:
             # 截图并上报
             print("As shown, the element is not found.")
+            print(AU, num)
             Tools().get_element_error_images()
             return False

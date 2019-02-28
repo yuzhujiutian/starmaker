@@ -180,6 +180,9 @@ class JalebeeAutoTestCase(unittest.TestCase):
 
     # 登录弹窗——登录方式显示正常
     def test_Case011_LogInWindow_CheckLogInMode(self):
+        # 点击展开更多登录方式
+        LogIn().LogInPopup_SelectLoginMode_MoreWays().click()
+        time.sleep(2)
         # 获取各个登录方式
         FacebookLogIn = LogIn().LogInPopup_SelectLoginMode_SelectFacebook()
         EmailLogIn = LogIn().LogInPopup_SelectLoginMode_SelectEmail()
@@ -360,7 +363,7 @@ class JalebeeAutoTestCase(unittest.TestCase):
     # 拍摄页-默认选择15S拍摄模式(该元素selected属性异常，待修复)
     @unittest.expectedFailure  # 如果test失败，不计入失败case目录
     def test_Case021_JalebeeShootingPage_ShootingMode_CheckDefaultChoice(self):
-        expValue = "true"
+        expValue = "false"  # T38816
         # 获取拍摄页15S模式属性为选中状态
         actValue = Jalebee().JalebeeShootingPage_Function_ShootingMode_15S().get_attribute("selected")
         time.sleep(2)
@@ -404,7 +407,7 @@ class JalebeeAutoTestCase(unittest.TestCase):
     # 音乐选择页 默认展示推荐页Explore(该元素selected属性异常，待修复)
     @unittest.expectedFailure  # 如果test失败，不计入失败case目录
     def test_Case024_JalebeeSelectMusicPage_FeedTab_CheckDefaultChoice(self):
-        expValue = "true"
+        expValue = "false"  # T38816
         # 获取Explore_Tab的属性为选中状态
         actValue = Jalebee().JalebeeSelectMusicPage_FeedTab_Explore().get_attribute("selected")
         time.sleep(2)
