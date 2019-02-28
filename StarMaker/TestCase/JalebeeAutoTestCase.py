@@ -363,7 +363,7 @@ class JalebeeAutoTestCase(unittest.TestCase):
     # 拍摄页-默认选择15S拍摄模式(该元素selected属性异常，待修复)
     @unittest.expectedFailure  # 如果test失败，不计入失败case目录
     def test_Case021_JalebeeShootingPage_ShootingMode_CheckDefaultChoice(self):
-        expValue = "false"  # T38816
+        expValue = "true"  # T38816
         # 获取拍摄页15S模式属性为选中状态
         actValue = Jalebee().JalebeeShootingPage_Function_ShootingMode_15S().get_attribute("selected")
         time.sleep(2)
@@ -407,7 +407,7 @@ class JalebeeAutoTestCase(unittest.TestCase):
     # 音乐选择页 默认展示推荐页Explore(该元素selected属性异常，待修复)
     @unittest.expectedFailure  # 如果test失败，不计入失败case目录
     def test_Case024_JalebeeSelectMusicPage_FeedTab_CheckDefaultChoice(self):
-        expValue = "false"  # T38816
+        expValue = "true"  # T38816
         # 获取Explore_Tab的属性为选中状态
         actValue = Jalebee().JalebeeSelectMusicPage_FeedTab_Explore().get_attribute("selected")
         time.sleep(2)
@@ -552,7 +552,6 @@ class JalebeeAutoTestCase(unittest.TestCase):
     def test_Case033_JalebeePostEditPage_PostShoot(self):
         # 点击发布按钮
         Jalebee().JalebeePostEditPage_Function_Post().click()
-        time.sleep(5)
         # 循环等待发布完成
         count = 0
         actValue = False
