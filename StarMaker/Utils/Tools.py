@@ -615,9 +615,9 @@ class Page_Element_Verification(object):
         time.sleep(5)
 
     # 适用进入页面时校验页面元素加载正确，且这些元素具备同IDS/ClaS或其他
-    def PEV_IDS(self, IDS, TextList):
+    def PEV_IDS(self, IDS, TextListS):
         Pe = self.driver.find_elements_by_id(IDS)
-        ExpectText = TextList
+        ExpectText = TextListS
         TextList = []
         for index in range(len(Pe)):
             TextList.append(Pe[index].text)

@@ -37,6 +37,10 @@ JalebeeFollowingPage_ShootLikeBtn_ID_IDS = package + FS(Source_JalebeeFollowingP
 Source_JalebeeFollowingPage_ShootLikeNum_ID_IDS = "tv_like_num"
 JalebeeFollowingPage_ShootLikeNum_ID_IDS = package + FS(Source_JalebeeFollowingPage_ShootLikeNum_ID_IDS)
 
+# JalebeeFollowing页-首个作品
+Source_JalebeeFollowingPage_FirstShoot_ID_IDS = "iv_image"
+JalebeeFollowingPage_FirstShoot_ID_IDS = package + FS(Source_JalebeeFollowingPage_FirstShoot_ID_IDS)
+
 # ----------
 # Jalebee-Party页
 # ----------
@@ -213,3 +217,13 @@ JalebeeMessagePage_FeedTabCommon_IDS = package + FS(Source_JalebeeMessagePage_Fe
 Source_JalebeeMessagePage_MessageContent_ID_IDS = "item_message_content"
 JalebeeMessagePage_MessageContent_ID_IDS = package + FS(Source_JalebeeMessagePage_MessageContent_ID_IDS)
 
+# ----------
+# Jalebee-播放详情页
+# ----------
+# Jalebee-播放详情页-作者名
+Source_JalebeePlayDetailsPage_AuthorInfo_AuthorName_ID = "user_name_view_tv_name"
+JalebeePlayDetailsPage_AuthorInfo_AuthorName_ID = package + FS(Source_JalebeePlayDetailsPage_AuthorInfo_AuthorName_ID)
+
+# Jalebee-播放详情页-返回
+Source_JalebeePlayDetailsPage_Function_Back_ID = "imb_back"
+JalebeePlayDetailsPage_Function_Back_ID = package + FS(Source_JalebeePlayDetailsPage_Function_Back_ID)

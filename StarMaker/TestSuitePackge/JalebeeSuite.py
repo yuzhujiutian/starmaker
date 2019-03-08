@@ -10,7 +10,7 @@ class JalebeeSuite(unittest.TestCase):
         # 添加测试套模版
         from TestCase.JalebeeAutoTestCase import JalebeeAutoTestCase
         Suite.addTests(unittest.makeSuite(JalebeeAutoTestCase))
-        NameFile = "Jalebee1.3.2"
+        NameFile = "Jalebee1.3.4"
         T = NameFile + " <自动化回归>测试报告"
         Des = NameFile + " 冒烟回归"
         Tester = "崔尧椋"

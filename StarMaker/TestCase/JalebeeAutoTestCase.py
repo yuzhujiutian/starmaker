@@ -552,15 +552,24 @@ class JalebeeAutoTestCase(unittest.TestCase):
     def test_Case033_JalebeePostEditPage_PostShoot(self):
         # 点击发布按钮
         Jalebee().JalebeePostEditPage_Function_Post().click()
-        # 循环等待发布完成
-        count = 0
-        actValue = False
-        while count < 5:
-            if Jalebee().JalebeeFollowingPage_PublishBar():
+        time.sleep(2)
+        # 查找发布进度条
+        if Jalebee().JalebeeFollowingPage_PublishBar():
+            actValue = True
+        else:
+            # 获取测试账号用户名
+            StageName = ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "StageName")
+            # 点击Following页首个作品
+            Jalebee().JalebeeFollowingPage_FirstShoot().click()
+            time.sleep(2)
+            # 如果名字对上了
+            if Jalebee().JalebeePlayDetailsPage_AuthorInfo_AuthorName().text == StageName:
                 actValue = True
-                break
             else:
-                count += 1
+                actValue = False
+        # 返回至Following页
+        if Jalebee().JalebeePlayDetailsPage_Function_Back():
+            Jalebee().JalebeePlayDetailsPage_Function_Back().click()
         # 断言：
         msg = "发布拍摄作品，自动跳转到Following页，作品发布成功"
         self.assertTrue(actValue, E(msg))

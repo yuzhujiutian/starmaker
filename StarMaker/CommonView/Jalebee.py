@@ -91,6 +91,11 @@ class Jalebee(object):
         JalebeeFollowingPage_ShootLikeNum_ID_IDS = self.ID_IDS_Count(Jalebee_VD.JalebeeFollowingPage_ShootLikeNum_ID_IDS)
         return JalebeeFollowingPage_ShootLikeNum_ID_IDS
 
+    # JalebeeFollowing页-首个作品
+    def JalebeeFollowingPage_FirstShoot(self):
+        JalebeeFollowingPage_FirstShoot_ID_IDS = self.ID_IDS(Jalebee_VD.JalebeeFollowingPage_FirstShoot_ID_IDS)
+        return JalebeeFollowingPage_FirstShoot_ID_IDS
+
     # ----------
     # Jalebee-Party页
     # ----------
@@ -372,3 +377,16 @@ class Jalebee(object):
     def JalebeeMessagePage_MessageContent(self):
         JalebeeMessagePage_MessageContent_ID_IDS = self.ID_IDS(Jalebee_VD.JalebeeMessagePage_MessageContent_ID_IDS)
         return JalebeeMessagePage_MessageContent_ID_IDS
+
+    # ----------
+    # Jalebee-播放详情页
+    # ----------
+    # Jalebee-播放详情页-作者名
+    def JalebeePlayDetailsPage_AuthorInfo_AuthorName(self):
+        JalebeePlayDetailsPage_AuthorInfo_AuthorName_ID = self.findID(Jalebee_VD.JalebeePlayDetailsPage_AuthorInfo_AuthorName_ID)
+        return JalebeePlayDetailsPage_AuthorInfo_AuthorName_ID
+
+    # Jalebee-播放详情页-返回
+    def JalebeePlayDetailsPage_Function_Back(self):
+        JalebeePlayDetailsPage_Function_Back_ID = self.findID(Jalebee_VD.JalebeePlayDetailsPage_Function_Back_ID)
+        return JalebeePlayDetailsPage_Function_Back_ID
