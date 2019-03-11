@@ -15,11 +15,26 @@ class GetDevicesInfo(object):
         try:
             # 获取设备列表信息，并将比特流类型转为str类型：decode，并用‘\r\n’拆分,
             self.deviceInfo = subprocess.check_output("adb devices").decode("utf-8", "ignore").split("\r\n")
-            # 如果没有连接设备或设备读取失败，则第二个元素为空
-            if self.deviceInfo[1] is not None:
-                self.GetDevicesInfo = True
+            # 检查已连接设备数
+            global deviceCount
+            deviceCount = len(self.deviceInfo)-3
+            # 如果没有连接设备或设备读取失败
+            if deviceCount == 0:
+                self.GetDevicesInfo = 0
+            elif deviceCount == 1:
+                self.GetDevicesInfo = 1
             else:
-                self.GetDevicesInfo = False
+                self.GetDevicesInfo = deviceCount
+            # print("当前已连接设备数:" + str(deviceCount))
+            # 过滤deviceInfo
+            deviceList = []
+            for i in self.deviceInfo:
+                if i != "List of devices attached " and i:
+                    # rstrip() 为去掉字符串中的空格
+                    i = i[:-6].rstrip()
+                    deviceList.append(i)
+            # 设备序列号
+            self.serialNumbers = deviceList
         # 捕获异常
         except Exception as e:
             print("Device Connect Fail:", e)
@@ -27,47 +42,70 @@ class GetDevicesInfo(object):
     # 获取系统、设备信息
     def GetAndroidVersion(self):
         try:
-            if self.GetDevicesInfo:
+            if self.GetDevicesInfo == 1:
                 # 获取系统设备信息，并将比特流类型转为str类型：decode
-                # sysInfo = subprocess.check_output(str(os.system("adb shell cat /system/build.prop"))).decode()
                 sysInfo = subprocess.check_output("adb shell cat /system/build.prop").decode("utf-8", "ignore")
                 # 获取Android版本号
                 androidVersion = re.findall("version.release=(\\d\\.\\d)", sysInfo, re.S)[0]
                 return androidVersion
+            elif self.GetDevicesInfo > 1:
+                devicesCount = self.GetDevicesInfo
+                androidVersion = []
+                while devicesCount:
+                    devicesCount -= 1
+                    # 获取系统设备信息，并将比特流类型转为str类型：decode
+                    serialNumber = self.serialNumbers
+                    sysInfo = subprocess.check_output("adb -s %s shell cat /system/build.prop" % serialNumber[devicesCount]).decode("utf-8", "ignore")
+                    # 获取Android版本号
+                    androidVersion.insert(0, re.findall("version.release=(\\d\\.\\d)", sysInfo, re.S)[0])
+                    if not devicesCount:
+                        return androidVersion
             else:
                 return "Connect Fail,Please reconnect Device..."
         # 捕获异常
         except Exception as e:
             print("Get Android Version:", e)
 
+    # 获取设备型号
+    def GetDevice(self):
+        try:
+            if self.GetDevicesInfo == 1:
+                # 获取设备型号
+                deviceInfo = subprocess.check_output("adb devices -l").decode("utf-8", "ignore")
+                deviceModel = re.findall(r"model:(.*)\sdevice", deviceInfo, re.S)[0]
+                return deviceModel
+            elif self.GetDevicesInfo > 1:
+                # 获取设备型号
+                deviceInfo = subprocess.check_output("adb devices -l").decode("utf-8", "ignore")[27:]
+                deviceModels = [i[6:] for i in deviceInfo.split(" ") if "model:" in i]
+                return deviceModels
+            else:
+                return "Connect Fail,Please reconnect Device..."
+        # 捕获异常
+        except Exception as e:
+            print("Get Device:", e)
+
     # 获取设备名
     def GetDeviceName(self):
         try:
-            if self.GetDevicesInfo:
+            if self.GetDevicesInfo == 1:
                 # 获取设备名
-                # deviceInfo = subprocess.check_output(str(os.system("adb devices -l"))).decode("utf-8", "ignore")
                 deviceInfo = subprocess.check_output("adb devices -l").decode("utf-8", "ignore")
-                deviceName = re.findall(r"device product:(.*)\smodel", deviceInfo, re.S)[0]
+                deviceName = re.findall(r"device:(.*)", deviceInfo, re.S)[0]
+                return deviceName
+            elif self.GetDevicesInfo > 1:
+                # 获取设备名
+                deviceInfo = subprocess.check_output("adb devices -l").decode("utf-8", "ignore")[27:]
+                deviceName_list = [i[7:].strip(" ") for i in deviceInfo.split(" ") if "device:" in i]
+                deviceName = []
+                for i in deviceName_list:
+                    deviceName.append(re.findall(r"(.*)\r\n", i, re.S)[0].strip())
                 return deviceName
             else:
                 return "Connect Fail,Please reconnect Device..."
         # 捕获异常
         except Exception as e:
             print("Get Device Name:", e)
-
-    # 获取设备型号，用于报告中描述问题来源
-    def GetDevice(self):
-        try:
-            if self.GetDevicesInfo:
-                # 获取Android版本号
-                deviceInfo = subprocess.check_output("adb devices -l").decode("utf-8", "ignore")
-                deviceModel = re.findall(r"model:(.*)\sdevice", deviceInfo, re.S)[0]
-                return deviceModel
-            else:
-                return "Connect Fail,Please reconnect Device..."
-        # 捕获异常
-        except Exception as e:
-            print("Get Device:", e)
 
     # 获取当前设备已安装包名
     def GetPackages(self):
@@ -105,14 +143,16 @@ class DevicesInfo(object):
     @staticmethod
     def package():
         setUp_package = DevicesInfo().AppPackage()
-        element_package = "%s:%s" % (setUp_package, "id/")
+        element_package = "%s:id/" % setUp_package
         return element_package
 
-# if __name__ == '__main__':
-#     print(GetDevicesInfo().GetAndroidVersion())
-#     print(GetDevicesInfo().GetDeviceName())
-#     print(GetDevicesInfo().GetDevice())
-#     print(GetDevicesInfo().GetPackages()[0])
+if __name__ == '__main__':
+    print("将以下信息复制到Utils/Setting下")
+    print("DeviceCount = " + str(len(GetDevicesInfo().GetAndroidVersion())))
+    print("PlatformVersion = " + str(GetDevicesInfo().GetAndroidVersion()))
+    print("Device = " + str(GetDevicesInfo().GetDevice()))
+    print("DeviceName = " + str(GetDevicesInfo().GetDeviceName()))
+
 
 
 
