@@ -2,7 +2,6 @@
 from appium import webdriver
 from Utils import Setting
 from Utils.Common import singleton
-from Utils.GetDevicesInfo import GetDevicesInfo
 from Utils.GetDevicesInfo import DevicesInfo
 
 
@@ -33,8 +32,3 @@ class GetAppiumDeriver(object):
             desired_caps["device"] = Setting.Device[num]
             desired_caps["deviceName"] = Setting.DeviceName[num]
             self.driver = webdriver.Remote("http://127.0.0.1:" + IP + "/wd/hub", desired_caps)
-
-
-
-
-

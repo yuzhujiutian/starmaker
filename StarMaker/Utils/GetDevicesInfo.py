@@ -46,7 +46,7 @@ class GetDevicesInfo(object):
                 # 获取系统设备信息，并将比特流类型转为str类型：decode
                 sysInfo = subprocess.check_output("adb shell cat /system/build.prop").decode("utf-8", "ignore")
                 # 获取Android版本号
-                androidVersion = re.findall("version.release=(\\d\\.\\d)", sysInfo, re.S)[0]
+                androidVersion = re.findall("version.release=(\\d\\.\\d)", sysInfo, re.S)
                 return androidVersion
             elif self.GetDevicesInfo > 1:
                 devicesCount = self.GetDevicesInfo
@@ -72,7 +72,7 @@ class GetDevicesInfo(object):
             if self.GetDevicesInfo == 1:
                 # 获取设备型号
                 deviceInfo = subprocess.check_output("adb devices -l").decode("utf-8", "ignore")
-                deviceModel = re.findall(r"model:(.*)\sdevice", deviceInfo, re.S)[0]
+                deviceModel = re.findall(r"model:(.*)\sdevice", deviceInfo, re.S)
                 return deviceModel
             elif self.GetDevicesInfo > 1:
                 # 获取设备型号
@@ -91,7 +91,7 @@ class GetDevicesInfo(object):
             if self.GetDevicesInfo == 1:
                 # 获取设备名
                 deviceInfo = subprocess.check_output("adb devices -l").decode("utf-8", "ignore")
-                deviceName = re.findall(r"device:(.*)", deviceInfo, re.S)[0]
+                deviceName = re.findall(r"device:(.*)\r\n\r\n", deviceInfo, re.S)
                 return deviceName
             elif self.GetDevicesInfo > 1:
                 # 获取设备名

@@ -100,3 +100,18 @@ class StartUp(object):
     def ChooseLanguagePage_SelectLanguage_SelectEnglish(self):
         ChooseLanguagePage_SelectLanguage_SelectEnglish_ClaS = self.findClaS(StartUp_VD.ChooseLanguagePage_SelectLanguage_Common_ClaS,-1)
         return ChooseLanguagePage_SelectLanguage_SelectEnglish_ClaS
+
+    # 性别选择页-顶部Tips文案
+    def ChooseGenderPage_CheckTitle_Tips(self):
+        ChooseGenderPage_CheckTitle_Tips_ID = self.findID(StartUp_VD.ChooseGenderPage_CheckTitle_Tips_ID)
+        return ChooseGenderPage_CheckTitle_Tips_ID
+
+    # 性别选择页-性别选择-男性
+    def ChooseGenderPage_ChooseGender_Man(self):
+        ChooseGenderPage_ChooseGender_Man_ID = self.findID(StartUp_VD.ChooseGenderPage_ChooseGender_Man_ID)
+        return ChooseGenderPage_ChooseGender_Man_ID
+
+    # 性别选择页-性别选择-女性
+    def ChooseGenderPage_ChooseGender_Woman(self):
+        ChooseGenderPage_ChooseGender_Woman_ID = self.findID(StartUp_VD.ChooseGenderPage_ChooseGender_Woman_ID)
+        return ChooseGenderPage_ChooseGender_Woman_ID
