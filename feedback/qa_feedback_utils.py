@@ -47,8 +47,6 @@ def parse_feedback_csv(csv_file_path):
 
         if task_id == None:
             # 创建新task
-            # print 'create task', title
-            # print 'description:\n', description
             qf.create_task(title, description)
         else:
             # 更新task
@@ -108,9 +106,6 @@ def generate_description(feedbacks):
         result += "| %s | %s | %s | %s | %s | %s | %s | %s | %s |\n"%(index, feedback_desc, feedback_uid, feedback_version, feedback_platform, feedback_date, feedback_pic1, feedback_pic2, feedback_pic3)
 
     return result
-
-
-# parse_feedback_csv("./3.csv")
 
 
 

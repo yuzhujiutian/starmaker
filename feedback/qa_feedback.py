@@ -5,7 +5,7 @@ import requests
 from urllib import urlencode
 
 # 需要qa_bot的api_token
-api_token = "cli-7xar3bpapuvxcc3gnsm5jgqfhde5"
+api_token = None
 
 # 需要关联的主task
 feedback_root_task_phid = 'PHID-TASK-jzktotfibtw56bdlzc7k'
@@ -28,7 +28,7 @@ def exec_pha_post(api, params):
     try:
         response = requests.post(url, data = datas)
         res = json.loads(response.text)
-        print json.dumps(res, sort_keys=True, indent=4, separators=(',', ': '))
+        # print json.dumps(res, sort_keys=True, indent=4, separators=(',', ': '))
     except Exception as e:
         pass
 
@@ -52,8 +52,9 @@ def create_task(title, description):
     params["transactions[1][type]"] = "description"
     params["transactions[1][value]"] = description
 
-    # print "title:", title
-    # print "description:", description
+    print "\n---start create task---\n"
+    print "  title:", title
+    print "  description:", description
 
     # 设置task的父task
     params["transactions[2][type]"] = "parents.set"
@@ -80,7 +81,7 @@ def create_task(title, description):
 
         if not (error_code == None):
             # create_task失败
-            print "create_task: failed,", str(error_info)
+            print "  create_task: failed,", str(error_info)
             return
 
         # 创建成功
@@ -91,9 +92,9 @@ def create_task(title, description):
             pass
 
         if not (task_id == None):
-            print "create_task: succ, task url is https://phabricator.ushow.media/T%s"%task_id
+            print "  create_task: succ, task url is https://phabricator.ushow.media/T%s"%task_id
         else:
-            print "create_task: failed, the format of the response is invalid.. please check it..."
+            print "  create_task: failed, the format of the response is invalid.. please check it..."
 
         return task_id
 
@@ -107,7 +108,36 @@ def comment_task(task_id, comment):
     params["transactions[0][type]"] = "comment"
     params["transactions[0][value]"] = comment
 
-    exec_pha_post('maniphest.edit', params)
+    print "\n---start comment task(T%s)---\n"%task_id
+    print "comment:"
+    print comment
+
+    res = exec_pha_post('maniphest.edit', params)
+    if not (type(res) == type({})):
+        # 执行命令出错
+        print "comment_task: failed,", str(res)
+    else:
+        error_code = res.get('error_code', None)
+        error_info = res.get('error_info', None)
+
+        if not (error_code == None):
+            # create_task失败
+            print "  comment_task: failed,", str(error_info)
+            return
+
+        # 创建成功
+        task_id = None
+        try:
+            task_id = res['result']['object']['id']
+        except Exception as e:
+            pass
+
+        if not (task_id == None):
+            print "  comment_task: succ, task url is https://phabricator.ushow.media/T%s"%task_id
+        else:
+            print "  comment_task: failed, the format of the response is invalid.. please check it..."
+
+        return task_id
 
 # 输入一系列title, 根据title搜索是否存在对应的task是否已经创建
 def search_feedback_task(titles):
