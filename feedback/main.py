@@ -134,14 +134,27 @@ def _mark_csv_file_is_already_process(csv_file):
     daily_csv_file_md5 = md5(csv_file)
     csv_file_md5_file.write(daily_csv_file_md5+"\n")
 
+    _update_git(csv_file)
+
+def _update_git(csv_file):
+    # 更新git记录
+    cmd = []
+    cmd.append('git add .csv_file_md5')
+    cmd.append('git add "%s"'%csv_file)
+    cmd.append('git commit -m "处理用户反馈：%s"'%os.path.basename(csv_file))
+    cmd.append('git push')
+
+    for c in cmd:
+        os.popen(cmd)
+
 if __name__ == "__main__":
-    # r_logger = logger()
+    r_logger = logger()
 
     check_ini()
 
     parse_daily_feedback('./unittest/3.csv', force=True)
 
-    # r_logger.reset()
+    r_logger.reset()
     
 
 

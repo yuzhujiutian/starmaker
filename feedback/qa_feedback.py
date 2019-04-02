@@ -2,10 +2,11 @@
 import os
 import json
 import requests
+import base64
 from urllib import urlencode
 
 # 需要qa_bot的api_token
-api_token = None
+api_token = "cli-7xar3bpapuvxcc3gnsm5jgqfhde5"
 
 # 需要关联的主task
 feedback_root_task_phid = 'PHID-TASK-jzktotfibtw56bdlzc7k'
@@ -28,7 +29,7 @@ def exec_pha_post(api, params):
     try:
         response = requests.post(url, data = datas)
         res = json.loads(response.text)
-        # print json.dumps(res, sort_keys=True, indent=4, separators=(',', ': '))
+        print json.dumps(res, sort_keys=True, indent=4, separators=(',', ': '))
     except Exception as e:
         pass
 
@@ -166,6 +167,60 @@ def search_feedback_task(titles):
         raise e
 
     return result
+
+def upload_file(file_path, file_name):
+    print '\n--- upload_file start ---\n'
+    if not os.path.isfile(file_path):
+        print 'file %s is not exsit...'%file_path
+        return
+
+    if file_name == None:
+        file_name = os.path.basename(file_path)
+
+    params = {}
+
+    params['data_base64'] = base64.b64encode(open(file_path).read())
+    params['name'] = file_name
+
+    res = exec_pha_post('file.upload', params)
+
+    file_phid = None
+    if not (type(res) == type({})):
+        # 执行命令出错
+        print "upload_file: failed,", str(res)
+    else:
+        error_code = res.get('error_code', None)
+        error_info = res.get('error_info', None)
+
+        if not (error_code == None):
+            # create_task失败
+            print "  upload_file: failed,", str(error_info)
+            return
+
+        # 创建成功
+        file_phid = res.get('result', None)
+
+        if file_phid == None:
+            print "  upload_file: failed..."
+
+    if not (file_phid == None):
+        params = {}
+        params['phid'] = file_phid
+
+        res = exec_pha_post('file.info', params)
+
+        try:
+            file_phid = res.get('result', {}).get('objectName', None)
+        except Exception as e:
+            print '  get upload file info error:', str(res)
+        
+    print 'upload_file: succ, file id is %s'%file_phid
+    return file_phid
+
+
+
+# upload_file('./unittest/3.csv', 'test.3.csv')
+
 
 # create_task("test title", "test desc\ndfasdfasdf\n")
 # search_feedback_task(['test title 1'])
