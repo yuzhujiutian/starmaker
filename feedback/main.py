@@ -13,6 +13,8 @@ import qa_feedback_utils as qfu
 root_dir = os.path.realpath(os.path.realpath(__file__)+"/..")
 os.chdir(root_dir)
 
+dry_run = False
+
 # 重定向日志，将print日志输出到控制台和日志文件里面
 class logger:
 
@@ -23,7 +25,7 @@ class logger:
         if not os.path.isdir(log_dir):
             os.makedirs(log_dir)
 
-        self.file_logger = open(os.path.join(log_dir, "./qa-bot-feedback-logs-(%s)"%datetime.datetime.now().strftime('%b-%d-%y %H:%M:%S')), 'w')
+        self.file_logger = open(os.path.join(log_dir, "./qa-bot-feedback-logs-%s"%datetime.datetime.now().strftime('%Y%m%d%H%M%S')), 'w')
 
         sys.stdout = self
 
@@ -118,6 +120,9 @@ def parse_daily_feedback(csv_file='', force=False):
         return True
 
 def _check_file_is_already_process(csv_file):
+    if dry_run:
+        return
+
     cmds  = []
     cmds.append('git checkout master')
     cmds.append('git reset --hard')
@@ -137,6 +142,9 @@ def _check_file_is_already_process(csv_file):
         return False
 
 def _mark_csv_file_is_already_process(csv_file):
+    if dry_run:
+        return
+
     csv_file_md5_file = open(os.path.join(root_dir, '.csv_file_md5'), 'a')
     daily_csv_file_md5 = md5(csv_file)
     csv_file_md5_file.write(daily_csv_file_md5+"\n")
@@ -156,6 +164,9 @@ def _update_git(csv_file):
 
 if __name__ == "__main__":
     r_logger = logger()
+
+    dry_run = True
+    qf.dry_run = dry_run
 
     check_ini()
 

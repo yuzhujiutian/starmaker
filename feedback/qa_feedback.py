@@ -5,6 +5,8 @@ import requests
 import base64
 from urllib import urlencode
 
+dry_run = False
+
 # 需要qa_bot的api_token
 api_token = None
 
@@ -20,6 +22,9 @@ qa_group_phid = 'PHID-PROJ-5u34yvaklxeofcddj5j7'
 
 # 执行phabricator命令
 def exec_pha_post(api, params):
+    if dry_run:
+        return {}
+
     url = 'https://phabricator.ushow.media/api/%s'%api
 
     params["api.token"] = api_token
@@ -164,7 +169,7 @@ def search_feedback_task(titles):
                 result[title] = phid
 
     except Exception as e:
-        raise e
+        pass
 
     return result
 

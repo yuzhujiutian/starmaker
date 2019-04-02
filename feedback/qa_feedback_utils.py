@@ -5,12 +5,17 @@ import os
 import csv
 import sys
 import time
+import chardet
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
 def parse_feedback_csv(csv_file_path):
     f = open(csv_file_path, 'rb')
+
+    chardet_info = chardet.detect(open(csv_file_path, 'rb').read())
+    encoding = chardet_info.get('encoding', 'utf-8')
+
     feedbacks = csv.DictReader(f)
 
     feedback_category = None
@@ -22,8 +27,8 @@ def parse_feedback_csv(csv_file_path):
     for feedback in feedbacks:
         # python对于中文的支持问题，暂时这么处理
         for key in feedback.keys():
-            ukey = unicode(key, 'utf-8')
-            value = unicode(feedback[key], 'utf-8')
+            ukey = unicode(key, encoding)
+            value = unicode(feedback[key], encoding)
             if ukey == "问题分类":
                 feedback_category = value
             elif ukey == "问题名称":
@@ -43,7 +48,7 @@ def parse_feedback_csv(csv_file_path):
     for title in titles:
         task_id = feedbacks_status.get(title, None)
 
-        description = generate_description(feedbacks_info.get(title))
+        description = generate_description(feedbacks_info.get(title), encoding)
 
         if task_id == None:
             # 创建新task
@@ -54,7 +59,7 @@ def parse_feedback_csv(csv_file_path):
 
     # 更新主task
 
-def generate_description(feedbacks):
+def generate_description(feedbacks, encoding='utf-8'):
     index = 1
 
     result = ""
@@ -83,8 +88,8 @@ def generate_description(feedbacks):
         feedback_pic3 = ''
 
         for key in feedback.keys():
-            ukey = str(unicode(key, 'utf-8'))
-            value = str(unicode(feedback[key], 'utf-8'))
+            ukey = str(unicode(key, encoding))
+            value = str(unicode(feedback[key], encoding))
 
             if ukey == "问题描述":
                 feedback_desc = value
