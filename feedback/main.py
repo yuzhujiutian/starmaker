@@ -87,7 +87,7 @@ def parse_daily_feedback(csv_file='', force=False):
     if not os.path.isdir(csv_dir):
         os.makedirs(csv_dir)
 
-    daily_csv_file_path = os.path.join(csv_dir, "【用户反馈日报】-%s.csv"%datetime.datetime.now().strftime('%b-%d-%y'))
+    daily_csv_file_path = os.path.join(csv_dir, "【用户反馈日报】-%s.csv"%datetime.datetime.now().strftime('%Y%m%d'))
 
     if os.path.isfile(csv_file):
         os.popen('cp %s %s'%(csv_file, daily_csv_file_path))
@@ -118,6 +118,13 @@ def parse_daily_feedback(csv_file='', force=False):
         return True
 
 def _check_file_is_already_process(csv_file):
+    cmds  = []
+    cmds.append('git checkout master')
+    cmds.append('git reset --hard')
+    cmds.append('git pull')
+    for cmd in cmds:
+        os.popen(cmd)
+
     csv_file_md5_file = os.path.join(root_dir, '.csv_file_md5')
     all_csv_file_md5 = []
     if os.path.isfile(csv_file_md5_file):
@@ -145,14 +152,14 @@ def _update_git(csv_file):
     cmd.append('git push')
 
     for c in cmd:
-        os.popen(cmd)
+        os.popen(c)
 
 if __name__ == "__main__":
     r_logger = logger()
 
     check_ini()
 
-    parse_daily_feedback('./unittest/3.csv', force=True)
+    parse_daily_feedback()
 
     r_logger.reset()
     

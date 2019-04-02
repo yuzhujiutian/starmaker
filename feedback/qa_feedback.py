@@ -6,7 +6,7 @@ import base64
 from urllib import urlencode
 
 # 需要qa_bot的api_token
-api_token = "cli-7xar3bpapuvxcc3gnsm5jgqfhde5"
+api_token = None
 
 # 需要关联的主task
 feedback_root_task_phid = 'PHID-TASK-jzktotfibtw56bdlzc7k'
