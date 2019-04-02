@@ -63,7 +63,7 @@ def check_ini():
             error_info =  "not found api.token setting in qa_bot section, please check main.ini file..."
             break
 
-        if not api_token.startswith('cli-'):
+        if not api_token.startswith('api-') or (len(api_token) != 32):
             error_info = "please set the right api.token in qa_bot section..."
             break
 
