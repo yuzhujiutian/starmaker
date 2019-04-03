@@ -6,6 +6,7 @@ import csv
 import sys
 import time
 import chardet
+import platform
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -112,6 +113,13 @@ def generate_description(feedbacks, encoding='utf-8'):
 
     return result
 
+def copy_file(src_file_path, target_file_path):
+    if "window" in platform.system().lower():
+        cmd = "copy %s %s"%(src_file_path, target_file_path)
+    else:
+        cmd = "cp %s %s"%(src_file_path, target_file_path)
+
+    os.popen(cmd)
 
 
 

@@ -50,7 +50,8 @@ def check_ini():
     ini_template_config_file = os.path.join(root_dir, 'template.ini')
 
     if not os.path.isfile(ini_config_file):
-        os.popen('cp %s %s'%(ini_template_config_file, ini_config_file))
+        # os.popen('cp %s %s'%(ini_template_config_file, ini_config_file))
+        qfu.copy_file(ini_template_config_file, ini_config_file)
 
     conf = ConfigParser.ConfigParser()
  
@@ -92,7 +93,8 @@ def parse_daily_feedback(csv_file='', force=False):
     daily_csv_file_path = os.path.join(csv_dir, "【用户反馈日报】-%s.csv"%datetime.datetime.now().strftime('%Y%m%d'))
 
     if os.path.isfile(csv_file):
-        os.popen('cp %s %s'%(csv_file, daily_csv_file_path))
+        # os.popen('cp %s %s'%(csv_file, daily_csv_file_path))
+        qfu.copy_file(csv_file, daily_csv_file_path)
 
     error_info = ''
     while 1:
