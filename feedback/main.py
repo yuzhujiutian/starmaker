@@ -166,9 +166,6 @@ def _update_git(csv_file):
     for c in cmd:
         os.popen(c)
 
-_update_git('.')
-exit()
-
 if __name__ == "__main__":
     reload(sys)
     sys.setdefaultencoding('utf-8')
