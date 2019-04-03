@@ -93,7 +93,7 @@ def parse_daily_feedback(csv_file='', force=False):
     daily_csv_file_path = os.path.join(csv_dir, "feedback-daily-%s.csv"%(datetime.datetime.now()-datetime.timedelta(days=1)).strftime('%Y%m%d'))
 
     if os.path.isfile(csv_file):
-        # os.popen('cp %s %s'%(csv_file, daily_csv_file_path))
+        daily_csv_file_path = os.path.join(csv_dir, os.path.basename(csv_file))
         qfu.copy_file(csv_file, daily_csv_file_path)
 
     error_info = ''
@@ -165,9 +165,12 @@ def _update_git(csv_file):
         os.popen(c)
 
 if __name__ == "__main__":
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
+
     r_logger = logger()
 
-    dry_run = "--apply" in sys.argv
+    dry_run = not ("--apply" in sys.argv)
     qf.dry_run = dry_run
 
     check_ini()

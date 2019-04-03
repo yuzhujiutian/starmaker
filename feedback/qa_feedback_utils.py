@@ -8,9 +8,6 @@ import time
 import chardet
 import platform
 
-reload(sys)
-sys.setdefaultencoding('utf-8')
-
 def parse_feedback_csv(csv_file_path):
     f = open(csv_file_path, 'rb')
 

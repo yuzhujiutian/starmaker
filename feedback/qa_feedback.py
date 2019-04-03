@@ -33,10 +33,11 @@ def exec_pha_post(api, params):
     res = None
     try:
         response = requests.post(url, data = datas)
+
         res = json.loads(response.text)
         print json.dumps(res, sort_keys=True, indent=4, separators=(',', ': '))
     except Exception as e:
-        pass
+        print e
 
     return res
 
@@ -169,9 +170,11 @@ def search_feedback_task(titles):
                 result[title] = phid
 
     except Exception as e:
-        pass
+        print e
 
     return result
+
+# search_feedback_task(['ad'])
 
 def upload_file(file_path, file_name):
     print '\n--- upload_file start ---\n'
