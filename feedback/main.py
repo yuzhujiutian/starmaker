@@ -167,7 +167,7 @@ def _update_git(csv_file):
 if __name__ == "__main__":
     r_logger = logger()
 
-    dry_run = True
+    dry_run = "--apply" in sys.argv
     qf.dry_run = dry_run
 
     check_ini()
