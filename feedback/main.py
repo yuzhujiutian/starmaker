@@ -152,7 +152,7 @@ def _mark_csv_file_is_already_process(csv_file):
     csv_file_md5_file = open(os.path.join(root_dir, '.csv_file_md5'), 'a')
     daily_csv_file_md5 = md5(csv_file)
     csv_file_md5_file.write(daily_csv_file_md5+"\n")
-    close(csv_file_md5_file)
+    csv_file_md5_file.close()
 
     _update_git(csv_file)
 
