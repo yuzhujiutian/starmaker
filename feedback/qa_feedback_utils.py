@@ -57,7 +57,7 @@ def parse_feedback_csv(csv_file_path):
             qf.create_task(title, description)
         else:
             # 更新task
-            qf.comment_task(task_id, description)
+            qf.comment_task(task_id, description, title)
 
     # 更新主task
 

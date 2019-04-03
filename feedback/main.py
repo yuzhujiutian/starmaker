@@ -96,6 +96,8 @@ def parse_daily_feedback(csv_file='', force=False):
         daily_csv_file_path = os.path.join(csv_dir, os.path.basename(csv_file))
         qfu.copy_file(csv_file, daily_csv_file_path)
 
+    print 'process', daily_csv_file_path
+
     error_info = ''
     while 1:
         if not os.path.isfile(daily_csv_file_path):
@@ -178,9 +180,11 @@ if __name__ == "__main__":
         if arg.startswith('--file='):
             csv_file = arg.split('=')[1]
 
+    print "process csv file:", csv_file, os.path.isfile(csv_file)
+
     check_ini()
 
-    parse_daily_feedback()
+    parse_daily_feedback(csv_file=csv_file)
 
     r_logger.reset()
     

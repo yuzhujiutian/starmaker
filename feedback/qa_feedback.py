@@ -106,7 +106,7 @@ def create_task(title, description):
         return task_id
 
 # 评论某个task
-def comment_task(task_id, comment):
+def comment_task(task_id, comment, title):
     params = {}
 
     params["objectIdentifier"] = task_id
@@ -116,6 +116,7 @@ def comment_task(task_id, comment):
     params["transactions[0][value]"] = comment
 
     print "\n---start comment task(T%s)---\n"%task_id
+    print "title:", title
     print "comment:"
     print comment
 
