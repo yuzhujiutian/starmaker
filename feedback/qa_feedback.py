@@ -21,8 +21,8 @@ tags_qa_bot_feedback_phid = 'PHID-PROJ-45x3od66biwokyyiz7ez'
 qa_group_phid = 'PHID-PROJ-5u34yvaklxeofcddj5j7'
 
 # 执行phabricator命令
-def exec_pha_post(api, params):
-    if dry_run:
+def exec_pha_post(api, params, force=False):
+    if dry_run and (not force):
         return {}
 
     url = 'https://phabricator.ushow.media/api/%s'%api
@@ -148,12 +148,13 @@ def comment_task(task_id, comment):
 
 # 输入一系列title, 根据title搜索是否存在对应的task是否已经创建
 def search_feedback_task(titles):
+    print titles, type(titles[0])
     params = {}
 
     # 设置task标题
     params["queryKey"] = "e3A4QhTyPOOA"
 
-    res = exec_pha_post('maniphest.search', params)
+    res = exec_pha_post('maniphest.search', params, force=True)
 
     """
     The limit and order fields are describing the effective limit and order the query was executed with, and are usually not of much interest. The after and before fields give you cursors which you can pass when making another API call in order to get the next (or previous) page of results.
@@ -166,15 +167,18 @@ def search_feedback_task(titles):
             title = d['fields']['name']
             phid = d['id']
 
+            print title, phid
+
             if title in titles:
                 result[title] = phid
 
     except Exception as e:
         print e
 
+    print result
     return result
 
-# search_feedback_task(['ad'])
+search_feedback_task([u'\u3010\u7528\u6237\u53cd\u9988\u3011_KTV_KTV\u65e0\u6cd5\u8bc4\u8bba', u'\u3010\u7528\u6237\u53cd\u9988\u3011_\u6d88\u606f_\u6d88\u606f\u6570\u5b57\u4e0d\u80fd\u91cd\u7f6e', u'\u3010\u7528\u6237\u53cd\u9988\u3011_\u4f5c\u54c1/\u4e0a\u4f20_\u65e0\u6cd5\u4e0a\u4f20\u6b4c\u66f2', u'\u3010\u7528\u6237\u53cd\u9988\u3011_\u8be6\u60c5\u9875_\u65e0\u6cd5\u5173\u6ce8', u'\u3010\u7528\u6237\u53cd\u9988\u3011_\u62a2\u5531_\u65e0\u62a2\u9ea6\u6309\u94ae', u'\u3010\u7528\u6237\u53cd\u9988\u3011_\u4f5c\u54c1/\u4e0a\u4f20_\u4e0a\u4f20\u6b4c\u66f2\u6d88\u5931', u'\u3010\u7528\u6237\u53cd\u9988\u3011_\u6d88\u606f_inbox\u663e\u793a\u5f02\u5e38', u'\u3010\u7528\u6237\u53cd\u9988\u3011_H5_H5 KTV\u62a5\u9519'])
 
 def upload_file(file_path, file_name):
     print '\n--- upload_file start ---\n'
