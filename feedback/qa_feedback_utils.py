@@ -27,9 +27,13 @@ def parse_feedback_csv(csv_file_path):
 
     for feedback in feedbacks:
         # python对于中文的支持问题，暂时这么处理
+        feedback_category = ''
+        feedback_name = ''
+
         for key in feedback.keys():
             ukey = unicode(key, encoding)
             value = unicode(feedback[key], encoding)
+
             if ukey == "问题分类":
                 feedback_category = value
             elif ukey == "问题名称":
@@ -92,6 +96,8 @@ def generate_description(feedbacks, encoding='utf-8'):
             ukey = str(unicode(key, encoding))
             value = str(unicode(feedback[key], encoding))
 
+            # print ukey, value
+
             if ukey == "问题描述":
                 feedback_desc = value
             elif ukey == "UID":
@@ -111,6 +117,7 @@ def generate_description(feedbacks, encoding='utf-8'):
 
         result += "| %s | %s | %s | %s | %s | %s | %s | %s | %s |\n"%(index, feedback_desc, feedback_uid, feedback_version, feedback_platform, feedback_date, feedback_pic1, feedback_pic2, feedback_pic3)
 
+    # print result
     return result
 
 def copy_file(src_file_path, target_file_path):

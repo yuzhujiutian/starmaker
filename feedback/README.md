@@ -1,13 +1,13 @@
 #### 环境准备
-1.  安装git环境，保证自己的账号有qa repo的权限，repo地址`ssh://git@phabricator.ushow.media/source/starmaker-qa.git`
+1.  安装git环境，保证自己的账号有qa repo的权限，repo地址`ssh://git@phabricator.ushow.media/source/starmaker-qa.git`. 保证自己的账号的pull和push的权限，并且配置正确
 2.  安装python 2.7版本，如果是python 3.0版本以上环境，脚本需要修改
 3.  拉取最新代码，程序执行入口在`feedback/main.py`
 
 
 #### 执行命令
 0.  第一次执行会在目录下生成一个`main.ini`文件，将里面的`api.token`设置为有效的值
-1.  将当天的反馈文件放入到csv目录下，命名格式为 **【用户反馈日报】-%20190402.csv**
-2.  执行 `python main.py`
+1.  将昨天的反馈文件放入到csv目录下，如果当天是20190403, 则反馈日报文件的命名为 **feedback-daily-20190402.csv**
+2.  执行 `python main.py`, 会假装执行一次，可以先看看执行完成的日志，确认无误后，执行 `python main.py --apply`, 此次会真正执行
 3.  执行完成会在`.logs`下面生成此次执行的详细日志
 
 #### 目前可能得问题

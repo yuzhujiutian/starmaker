@@ -90,7 +90,7 @@ def parse_daily_feedback(csv_file='', force=False):
     if not os.path.isdir(csv_dir):
         os.makedirs(csv_dir)
 
-    daily_csv_file_path = os.path.join(csv_dir, "【用户反馈日报】-%s.csv"%datetime.datetime.now().strftime('%Y%m%d'))
+    daily_csv_file_path = os.path.join(csv_dir, "feedback-daily-%s.csv"%(datetime.datetime.now()-datetime.timedelta(days=1)).strftime('%Y%m%d'))
 
     if os.path.isfile(csv_file):
         # os.popen('cp %s %s'%(csv_file, daily_csv_file_path))
