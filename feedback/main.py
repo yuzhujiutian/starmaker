@@ -173,6 +173,11 @@ if __name__ == "__main__":
     dry_run = not ("--apply" in sys.argv)
     qf.dry_run = dry_run
 
+    csv_file = ""
+    for arg in sys.argv:
+        if arg.startswith('--file='):
+            csv_file = arg.split('=')[1]
+
     check_ini()
 
     parse_daily_feedback()
