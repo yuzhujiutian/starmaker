@@ -2,4 +2,5 @@
 *.pyc
 main.ini
 .logs
+.idea
 
