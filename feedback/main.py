@@ -161,7 +161,7 @@ def _update_git(csv_file):
     cmd = []
     cmd.append('git add .csv_file_md5')
     cmd.append('git add "%s"'%csv_file)
-    cmd.append('git commit -m "qa_bot process daily feedback：%s"'%os.path.basename(csv_file))
+    cmd.append('git commit -m "qa_bot process daily feedback: %s"'%os.path.basename(csv_file))
     cmd.append('git push')
 
     for c in cmd:
