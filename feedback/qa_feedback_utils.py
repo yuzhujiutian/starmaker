@@ -8,9 +8,6 @@ import time
 import chardet
 import platform
 
-reload(sys)
-sys.setdefaultencoding('utf-8')
-
 def parse_feedback_csv(csv_file_path):
     f = open(csv_file_path, 'rb')
 
@@ -60,7 +57,7 @@ def parse_feedback_csv(csv_file_path):
             qf.create_task(title, description)
         else:
             # 更新task
-            qf.comment_task(task_id, description)
+            qf.comment_task(task_id, description, title)
 
     # 更新主task
 

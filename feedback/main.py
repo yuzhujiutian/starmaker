@@ -93,8 +93,10 @@ def parse_daily_feedback(csv_file='', force=False):
     daily_csv_file_path = os.path.join(csv_dir, "feedback-daily-%s.csv"%(datetime.datetime.now()-datetime.timedelta(days=1)).strftime('%Y%m%d'))
 
     if os.path.isfile(csv_file):
-        # os.popen('cp %s %s'%(csv_file, daily_csv_file_path))
+        daily_csv_file_path = os.path.join(csv_dir, os.path.basename(csv_file))
         qfu.copy_file(csv_file, daily_csv_file_path)
+
+    print 'process', daily_csv_file_path
 
     error_info = ''
     while 1:
@@ -150,6 +152,7 @@ def _mark_csv_file_is_already_process(csv_file):
     csv_file_md5_file = open(os.path.join(root_dir, '.csv_file_md5'), 'a')
     daily_csv_file_md5 = md5(csv_file)
     csv_file_md5_file.write(daily_csv_file_md5+"\n")
+    csv_file_md5_file.close()
 
     _update_git(csv_file)
 
@@ -162,17 +165,29 @@ def _update_git(csv_file):
     cmd.append('git push')
 
     for c in cmd:
-        os.popen(c)
+        r = os.popen(c)
+        print 'exec:', c
+        print '  ', r.read()
 
 if __name__ == "__main__":
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
+
     r_logger = logger()
 
-    dry_run = "--apply" in sys.argv
+    dry_run = not ("--apply" in sys.argv)
     qf.dry_run = dry_run
+
+    csv_file = ""
+    for arg in sys.argv:
+        if arg.startswith('--file='):
+            csv_file = arg.split('=')[1]
+
+    print "process csv file:", csv_file, os.path.isfile(csv_file)
 
     check_ini()
 
-    parse_daily_feedback()
+    parse_daily_feedback(csv_file=csv_file)
 
     r_logger.reset()
     
