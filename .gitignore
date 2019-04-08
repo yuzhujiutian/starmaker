@@ -1,0 +1,6 @@
+.DS_Store
+*.pyc
+main.ini
+.logs
+.idea
+
