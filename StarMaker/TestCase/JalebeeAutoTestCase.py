@@ -54,6 +54,37 @@ class JalebeeAutoTestCase(unittest.TestCase):
         self.assertTrue(actValue, E(msg))
         print(P(msg))
 
+    # 语言选择页——选择语言进入性别选择页——校验顶部Title
+    def test_Case002_001_SelectLanguage_CheckChooseGanderPageTitle(self):
+        # 选择Hindi语进入性别选择页
+        StartUp().ChooseLanguagePage_SelectLanguage_SelectHindi().click()
+        time.sleep(2)
+        # 获取多语言文案
+        expValue = Internationalization().Internationalization("Select_Your_Gender", "IN")
+        # 获取顶部Title文案
+        actValue = StartUp().ChooseGenderPage_CheckTitle_Tips().text
+        time.sleep(2)
+        # 断言：
+        msg = "性别选择页Title展示"
+        self.assertEqual(expValue, actValue, E(msg))
+        print(P(msg))
+
+    # 语言选择页——选择语言进入性别选择页——校验顶部Title
+    def test_Case002_002_SelectLanguage_CheckChooseGanderPageTitle(self):
+        # 选择Hindi语进入性别选择页
+        StartUp().ChooseLanguagePage_SelectLanguage_SelectHindi().click()
+        time.sleep(2)
+        # 获取多语言文案
+        expValue = Internationalization().Internationalization("Select_Your_Gender", "IN")
+
+
+    # 性别选择页-性别选择-男性
+    def ChooseGenderPage_ChooseGender_Man(self):
+
+    # 性别选择页-性别选择-女性
+    def ChooseGenderPage_ChooseGender_Woman(self):
+
+
     # 语言选择页——选择语言进入首页——校验底部Tab
     def test_Case002_SelectLanguage_CheckHomeMainTab(self):
         # 选择Hindi语进入首页
