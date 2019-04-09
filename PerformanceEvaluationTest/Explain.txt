@@ -1,0 +1,4 @@
+1.连接设备，输入命令
+python -m uiautomator2 init
+2.无自定义场景：直接运行_main_.py 脚本文件
+3.自定义场景：编辑start_app.py 脚本文件
