@@ -13,7 +13,7 @@ C = 0
 TimeEnd_List = []
 Count_List = []
 print("测试开始")
-while (C < 3):
+while (C < 10):
     # setUp
     poco("com.netease.qa.emmagee:id/test").click()
     sleep(8)
@@ -60,7 +60,7 @@ print(Count_List)
 print("测试结束")
 
 
-# 21:24
+# 19:10
 
 
 
