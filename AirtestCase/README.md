@@ -1,4 +1,5 @@
-﻿#### 环境准备
+﻿
+#### 环境准备
 1.  安装git环境，拉取最新代码。
 2.  安装AirtestIDE，使用AirtestIDE打开待测脚本（后缀为".air"的文件夹）。例如验证首页浏览性能，则打开`AirtestCase/case/性能测试/首页浏览.air`
 
