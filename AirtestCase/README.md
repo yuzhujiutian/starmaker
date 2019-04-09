@@ -16,4 +16,5 @@ Help
 ====
 * 性能测试方法：参见`T37163`
 * 帮助文档：参见`AirtestCase/Help.air`
+* 测试结果：参见`AirtestCase/test_data/Jalebee1.4.0测试数据.zip`
 
