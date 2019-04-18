@@ -231,6 +231,37 @@ def upload_file(file_path, file_name):
     return file_phid
 
 
+def user_search(user_id):
+    params = {}
+    params['constraints[nameLike]'] = user_id
+
+
+    # params = 'params[queryKey]=&params[constraints]={"nameLike":"lin.jiang"}&params[attachments]=&params[order]=&params[before]=&params[after]=&params[limit]=&output=human'
+
+    # print urlencode(params)
+    # exit()
+
+    res = exec_pha_post('user.search', params)
+    phid = ''
+    try:
+        phid = res['result']['data'][0]['phid']
+    except Exception as e:
+        pass
+
+    return phid
+
+
+def qa_teams_phid():
+    qa_teams = ['wei.wang', 'jin.jiang', 'jie.li', 'jia.liu', 'yaoliang.cui', 'yangyang.yu', 'ou.ouyang', 'zhangdong', 'jia.guo', 'liuyue']
+    result = []
+    for i in qa_teams:
+        phid = user_search(i)
+        result.append("%s=%s"%(i, phid))
+
+    print '\n'.join(result)
+
+# qa_teams_phid()
+
 
 # upload_file('./unittest/3.csv', 'test.3.csv')
 
