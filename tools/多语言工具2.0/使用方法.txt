@@ -1,0 +1,10 @@
+检查缺失多语言方法：
+1.解压Localizable.zip文件，内部路径为/Localizable/锘縇ocalizable/
+2.将工具解压到/Localizable/下
+3.点击检查缺失多语言.bat，查看MissLanguage.txt即可
+
+检查新增变化：
+1.解压新版本多语言到同目录下，修改新版本文件名为/Localizable/锘縇ocalizable1/
+2.将工具解压到/Localizable/下
+3.点击检查新增变化.bat，查看NewlyAdded.txt即可
+4.【新增key值对应所有语言的value】需要在pycharm中运行查看
