@@ -5,6 +5,7 @@ import re
 path1 = os.path.abspath("ktv_solo.txt")
 path2 = os.path.abspath("ktv_multi.txt")
 path3 = os.path.abspath("live.txt")
+path4 = os.path.abspath("test.txt")
 if path1:
     f = open(path1, "r", encoding='gbk', errors='ignore')
     try:
@@ -73,6 +74,16 @@ if path3:
     #     num += 1
     # print(live_error_list)
 
+
+if path4:
+    f = open(path4, "r", encoding='gbk', errors='ignore')
+    try:
+        text = f.read()
+        user_id = re.findall(r'{"id":"(.+?)","name":"', text)
+    finally:
+        f.close()
+    print(len(user_id))
+    print(user_id)
 
 if __name__ == '__main__':
     pass
