@@ -29,13 +29,13 @@ class Popup(object):
         if state:
             self.driver.find_element_by_android_uiautomator(Popup_VD.Popup_NEXT).click()
 
-    # ③登陆后首页 Sing 引导（text=Sing is moved here. Tap to show your voice./NEXT）
+    # ③登录后首页 Sing 引导（text=Sing is moved here. Tap to show your voice./NEXT）
     def HomePopup_NewFeatureSing_NEXT_LiveClick(self):
         state = self.FindElement(AU=[Popup_VD.Popup_NewFeatureSing_AU, "Sing is moved here. Tap to show your voice."])
         if state:
             self.driver.find_element_by_android_uiautomator(Popup_VD.Popup_NEXT).click()
 
-    # ④登陆后首页 PostOther 引导（text=Post Photo,Gif and Video here/DONE）
+    # ④登录后首页 PostOther 引导（text=Post Photo,Gif and Video here/DONE）
     def HomePopup_NewFeaturePostOther_DONE_LiveClick(self):
         state = self.FindElement(AU=[Popup_VD.Popup_NewFeaturePostOther_AU, "Post Photo,Gif and Video here"])
         if state:
@@ -102,8 +102,8 @@ class Popup(object):
     # ----------
 
     # 权限申请(text=Ok, Let's do it.)
-    def SingPopup_Jurisdiction_LiveClick(self):
-        state = self.FindElement(ID=[Popup_VD.Popup_Jurisdiction_ID, "Ok, Let's do it."])
+    def SingPopup_Jurisdiction_LiveClick(self, text="Ok, Let's do it."):
+        state = self.FindElement(ID=[Popup_VD.Popup_Jurisdiction_ID, text])
         if state:
             self.driver.find_element_by_id(Popup_VD.Popup_Jurisdiction_ID).click()
             time.sleep(2)

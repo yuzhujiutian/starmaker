@@ -2,28 +2,27 @@
 from Utils import Tools
 from Utils.GetDevicesInfo import DevicesInfo
 package = DevicesInfo().package()
-FindSource = Tools.Tools().FindSource
-FS = package + FindSource
+FS = Tools.Tools().FindSource
 # ----------
 # 弹窗汇总
 # ----------
 
 # 通用——关闭弹窗
 Source_Popup_ImgClose_ID = "img_close"
-Popup_ImgClose_ID = FS(Source_Popup_ImgClose_ID)
+Popup_ImgClose_ID = package + FS(Source_Popup_ImgClose_ID)
 
 # ----------
 # 1>首页弹窗
 # ----------
 
-# ①登陆后首页 New Feature 引导（text=Only for your taste. Hope you love them./NEXT）
+# ①登录后首页 New Feature 引导（text=Only for your taste. Hope you love them./NEXT）
 Popup_NewFeature_AU = "new UiSelector().text(\"Only for your taste. Hope you love them.\")"
 Popup_NEXT = "new UiSelector().text(\"NEXT\")"
-# ②登陆后首页 New Feature Added 引导（text=New feature added. Tap to post your stories./NEXT）
+# ②登录后首页 New Feature Added 引导（text=New feature added. Tap to post your stories./NEXT）
 Popup_NewFeatureAdded_AU = "new UiSelector().text(\"New feature added. Tap to post your stories.\")"
-# ③登陆后首页 Sing 引导（text=Sing is moved here. Tap to show your voice./NEXT）
+# ③登录后首页 Sing 引导（text=Sing is moved here. Tap to show your voice./NEXT）
 Popup_NewFeatureSing_AU = "new UiSelector().text(\"Sing is moved here. Tap to show your voice.\")"
-# ④登陆后首页 PostOther 引导（text=Post Photo,Gif and Video here/DONE）
+# ④登录后首页 PostOther 引导（text=Post Photo,Gif and Video here/DONE）
 Popup_NewFeaturePostOther_AU = "new UiSelector().text(\"Post Photo,Gif and Video here\")"
 Popup_DONE = "new UiSelector().text(\"DONE\")"
 
@@ -31,17 +30,17 @@ Popup_DONE = "new UiSelector().text(\"DONE\")"
 Popup_PermissionMessage_ID = "com.android.packageinstaller:id/permission_message"
 Popup_PermissionMessage_Allow_ID = "com.android.packageinstaller:id/permission_allow_button"
 
-# ②③登陆后首页 Ranking/Parties 引导 文案（text="Ranking and Hashtag are moved here"/Parties are moved here）
+# ②③登录后首页 Ranking/Parties 引导 文案（text="Ranking and Hashtag are moved here"/Parties are moved here）
 Source_Popup_GuideText_ID = "content_tv"
-Popup_Guide_Text_ID = FS(Source_Popup_GuideText_ID)
+Popup_Guide_Text_ID = package + FS(Source_Popup_GuideText_ID)
 
-# ②③登陆后首页 Ranking/Parties 引导 NEXT按钮/DONE按钮
+# ②③登录后首页 Ranking/Parties 引导 NEXT按钮/DONE按钮
 Source_Popup_Guide_Next_ID = "next_tv"
-Popup_Guide_Next_ID = FS(Source_Popup_Guide_Next_ID)
+Popup_Guide_Next_ID = package + FS(Source_Popup_Guide_Next_ID)
 
 # 签到按钮，如果存在，需点击通用close按钮
 Source_Popup_CheckIn_ID = "btn_check_in"
-Popup_CheckIn_ID = FS(Source_Popup_CheckIn_ID)
+Popup_CheckIn_ID = package + FS(Source_Popup_CheckIn_ID)
 
 # ----------
 # 2>Profile页弹窗
@@ -49,7 +48,7 @@ Popup_CheckIn_ID = FS(Source_Popup_CheckIn_ID)
 
 # 验证邮箱弹窗，如果存在，需点击通用close按钮
 Source_Popup_VerifyEmail_Verify_ID = "tv_email_verify"
-Popup_VerifyEmail_Verify_ID = FS(Source_Popup_VerifyEmail_Verify_ID)
+Popup_VerifyEmail_Verify_ID = package + FS(Source_Popup_VerifyEmail_Verify_ID)
 
 # ----------
 # 3>点唱页页弹窗
@@ -57,7 +56,7 @@ Popup_VerifyEmail_Verify_ID = FS(Source_Popup_VerifyEmail_Verify_ID)
 
 # 发布图片引导(text=Click to post a photo)/发布图片+文字引导(text=Post texts with background photo.)
 Source_Popup_PostGuide_ID = "text"
-Popup_PostGuide_ID = FS(Source_Popup_PostGuide_ID)
+Popup_PostGuide_ID = package + FS(Source_Popup_PostGuide_ID)
 
 # ----------
 # 4>录制准备页
@@ -65,15 +64,15 @@ Popup_PostGuide_ID = FS(Source_Popup_PostGuide_ID)
 
 # 权限申请(text=Ok, Let's do it.)
 Source_Popup_Jurisdiction_ID = "permissionOkTv"
-Popup_Jurisdiction_ID = FS(Source_Popup_Jurisdiction_ID)
+Popup_Jurisdiction_ID = package + FS(Source_Popup_Jurisdiction_ID)
 
 # 总是允许
 Popup_PermissionAllow_ID = "com.android.packageinstaller:id/permission_allow_button"
 
 # 插入耳机引导(text=I KNOW)
 Source_Popup_HeadphonesRecommended_ID = "recording_headset_dialog_i_know_btn"
-Popup_HeadphonesRecommended_ID = FS(Source_Popup_HeadphonesRecommended_ID)
+Popup_HeadphonesRecommended_ID = package + FS(Source_Popup_HeadphonesRecommended_ID)
 
 # 音效引导(text=Change the song's pitch to match \n your voice!)
 Source_Popup_PitchGuide_ID = "tv_pitch_guide_tip"
-Popup_PitchGuide_ID = FS(Source_Popup_PitchGuide_ID)
+Popup_PitchGuide_ID = package + FS(Source_Popup_PitchGuide_ID)

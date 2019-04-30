@@ -3,9 +3,12 @@
 # 通用工具封装
 # ----------
 import re
+import os
 import time
 import datetime
 from Utils.GetAppiumDeriver import GetAppiumDeriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 # ----------
@@ -550,6 +553,59 @@ class PopupProcessing(object):
 
 
 # ----------
+# toast提示处理工具
+# ----------
+class ToastTips_Processing(object):
+    def __init__(self):
+        self.driver = GetAppiumDeriver().driver
+        time.sleep(5)
+
+    # toast提示-已知text-判断是否存在
+    def ToastTips_TextXpath_IsDisplayed(self,xpath):
+        toast_loc = ("xpath", ".//*[contains(@text,{xpath_})]".format(xpath_=xpath))
+        try:
+            # 循环等待，如果找到则返回可操作元素
+            t = WebDriverWait(self.driver, 10, 0.1).until(EC.presence_of_element_located(toast_loc),
+                                                          "Sorry,Toast Not Found")
+            if t:
+                toast_xpath_ele = self.driver.find_element("xpath",
+                                                           ".//*[contains(@text,'You will see fewer similar posts.')]")
+                return toast_xpath_ele
+            else:
+                # 截图并上报
+                print("As shown, the element is not found.")
+                Tools().get_element_error_images()
+                return False
+        except:
+            # 截图并上报
+            print("As shown, the element is not found.")
+            Tools().get_element_error_images()
+            return False
+
+    # toast提示-捕捉任意-返回元素text
+    def ToastTips_AnyXpath_Text(self):
+        toast_loc = ("xpath", ".//*[contains(@text,*)]")
+        try:
+            # 循环等待，如果找到则返回可操作元素
+            t = WebDriverWait(self.driver, 10, 0.1).until(EC.presence_of_element_located(toast_loc),
+                                                          "Sorry,Toast Not Found")
+            if t:
+                toast_xpath_ele = self.driver.find_element("xpath",
+                                                           ".//*[contains(@text,*)]")
+                return toast_xpath_ele.text
+            else:
+                # 截图并上报
+                print("As shown, the element is not found.")
+                Tools().get_element_error_images()
+                return False
+        except:
+            # 截图并上报
+            print("As shown, the element is not found.")
+            Tools().get_element_error_images()
+            return False
+
+
+# ----------
 # 页面元素校验
 # ----------
 # 提取该页面同一类型下的所有元素text
@@ -558,10 +614,10 @@ class Page_Element_Verification(object):
         self.driver = GetAppiumDeriver().driver
         time.sleep(5)
 
-    # 适用进入页面时校验页面元素加载正确，且这些元素具备同ID/Class或其他
-    def PEV_IDS(self, IDS, TextList):
+    # 适用进入页面时校验页面元素加载正确，且这些元素具备同IDS/ClaS或其他
+    def PEV_IDS(self, IDS, TextListS):
         Pe = self.driver.find_elements_by_id(IDS)
-        ExpectText = TextList
+        ExpectText = TextListS
         TextList = []
         for index in range(len(Pe)):
             TextList.append(Pe[index].text)
@@ -606,6 +662,74 @@ class Page_Element_Verification(object):
                 print("预期结果:", ExpectText)
                 print("实际结果:", TextList)
                 return False
+
+    # 遍历该IDS下所有text
+    def PEV_IDS_GetText(self, IDS):
+        Pe = self.driver.find_elements_by_id(IDS)
+        TextList = []
+        for index in range(len(Pe)):
+            TextList.append(Pe[index].text)
+            time.sleep(2)
+        print(TextList)
+        return TextList
+
+
+# ----------
+# 动态元素处理工具
+# ----------
+# 动态元素处理（当面对元素定位方法有时单数，有时复数时，动态处理）
+class Popular_Elements_Disposes(object):
+    def __init__(self):
+        self.driver = GetAppiumDeriver().driver
+        time.sleep(5)
+
+    # ID/IDS 判断
+    def ID_IDS(self,elements):
+        ele = elements
+        try:
+            if self.driver.find_element_by_id(ele):
+                element_id = self.driver.find_element_by_id(ele)
+                return element_id
+            elif self.driver.find_elements_by_id(ele)[0]:
+                elements_id = self.driver.find_elements_by_id(ele)[0]
+                return elements_id
+        except:
+            # 截图并上报
+            print("As shown, the element is not found.")
+            Tools().get_element_error_images()
+            return False
+
+    # ID/IDS 计数
+    def ID_IDS_Count(self, elements):
+        ele = elements
+        num = 1
+        try:
+            if self.driver.find_elements_by_id(ele)[0]:
+                count = len(self.driver.find_elements_by_id(ele))
+                return count
+            elif self.driver.find_element_by_id(ele):
+                return num
+        except:
+            # 截图并上报
+            print("As shown, the element is not found.")
+            Tools().get_element_error_images()
+            return False
+
+    # Cla/ClaS 判断
+    def Cla_ClaS(self,elements):
+        ele = elements
+        try:
+            if self.driver.find_element_by_class_name(ele):
+                element_cla = self.driver.find_element_by_class_name(ele)
+                return element_cla
+            elif self.driver.find_elements_by_class_name(ele)[0]:
+                elements_cla = self.driver.find_elements_by_class_name(ele)[0]
+                return elements_cla
+        except:
+            # 截图并上报
+            print("As shown, the element is not found.")
+            Tools().get_element_error_images()
+            return False
 
 
 # ----------
@@ -667,26 +791,29 @@ class Screen(object):
         self.driver.swipe(x, y1, x, y2)
 
     # 根据传值百分比，自定义滑动操作(传参：百分比)
-    def DIYSwipe_Percentage(self, x1P, y1P, x2P, y2P, t):
+    def DIYSwipe_Percentage(self, x1P, y1P, x2P, y2P, t=500):
         # 执行滑屏操作,接收参数(四个百分比+时间),运算后滑动
         x1 = self.width * x1P
         y1 = self.height * y1P
         x2 = self.width * x2P
         y2 = self.height * y2P
         time.sleep(2)
-        self.driver.swipe(x1, y1, x2, y2, t)
+        self.driver.swipe(x1, y1, x2, y2, t=500)
 
     # 根据屏幕百分比，自定义点击操作(传参：百分比)
-    def AccurateClicks_Percentage(self, x1P, y1P, t):
+    def AccurateClicks_Percentage(self, x1P, y1P, t=500):
         # 执行滑屏操作,接收参数(两个百分比+时间),运算后滑动
         # 时间:点击(500)/长按3s(3000)
         x1 = self.width * x1P
         y1 = self.height * y1P
         time.sleep(2)
+        print(x1,y1,t)
+        print("准备点击")
         self.driver.tap([(x1, y1)], t)
+        print("点击完成")
 
     # 多点触控(最多支持五点触控)
-    def Multi_Touch_Percentage(self, x1P, y1P, x2P, y2P, x3P, y3P, x4P, y4P, x5P, y5P, t):
+    def Multi_Touch_Percentage(self, x1P, y1P, x2P, y2P, x3P, y3P, x4P, y4P, x5P, y5P, t=500):
         # 执行滑屏操作,接收参数(最多十个百分比+时间),运算后滑动
         # 时间:点击(500)/长按3s(3000)
         # 第一个点
@@ -772,7 +899,57 @@ class RegionalClick(object):
         self.driver.tap([(x, y)], 500)
 
 
+# 断言报告处理
+class AssertReportManage(object):
+    def __init__(self):
+        self.P = "（验证通过）"
+        self.E = "（验证失败!!!）"
+
+    def Pass(self, msg):
+        P = str(msg) + self.P
+        return P
+
+    def Error(self, msg):
+        E = str(msg) + self.E
+        return E
+
+
+# 国际化
+class Internationalization:
+    @staticmethod
+    def Internationalization(Source_Key, language="en"):
+        global Key
+        Key = Source_Key
+        if language == "IN":
+            return Internationalization().IN()
+        else:
+            return Internationalization().en()
+
+    def en(self):
+        from CommonView.Internationalization_Data.en import en
+        return en[Key]
+
+    def IN(self):
+        from CommonView.Internationalization_Data.IN import IN
+        return IN[Key]
+
+
+# 测试数据处理
+class TestData_Processing(object):
+    # 处理测试图片
+    def TestPicture_Processing(self):
+        images_path = "../TestReport/images/"
+        images_list = os.listdir(images_path)
+        for i in images_list:
+            images = os.path.join(images_path, i)
+            Suffix = os.path.splitext(i)[1]
+            if Suffix == ".png":
+                os.remove(images)
+        print("测试图片已清理完毕")
+
 # if __name__ == '__main__':
     # Screen().CalculatedPercentage(1300, 2450)
     # A = Tools.FindSource("btn_post")
     # print(A)
+    # Popular_Elements_Disposes().ID_IDS()
+    # Internationalization().Internationalization("Personal_Info", "IN")

@@ -242,7 +242,7 @@ class ProfileCase(unittest.TestCase):
         expValue = "Store"
         # 获取 Store Title
         actValue = Profile().Store_Title().text
-        # 判断 Contribute 正常展示
+        # 判断 Store 正常展示
         time.sleep(2)
         self.assertEqual(expValue, actValue)
         time.sleep(2)

@@ -1,47 +1,27 @@
 # coding=utf-8
-#from Utils.GetDevicesInfo import GetPackages
 from Utils import Tools
 from Utils.GetDevicesInfo import DevicesInfo
 package = DevicesInfo().package()
-FindSource = Tools.Tools().FindSource
-FS = package + FindSource
+FS = Tools.Tools().FindSource
 # ----------
 # 启动模块
 # ----------
 
-# 开屏广告
-Source_OpenAdd_Link_ID = "fl_adcontainer_activity_splash"
-OpenAdd_Link_ID = FS(Source_OpenAdd_Link_ID)
+# 语言选择页-校验启动成功-顶部Tips文案([0]text=Choose Language)
+ChooseLanguagePage_CheckStartSuccess_Tips_ClaS = "android.widget.TextView"
 
-# 开屏广告倒计时
-Source_OpenAdd_Time_Btn = "launch_timing_count"
-OpenAdd_Time_Btn = FS(Source_OpenAdd_Time_Btn)
+# 语言选择页-选择语言-[通用]([1]text=हिन्दी/[2]text=বাংলা/[3]text=ಕನ್ನಡ/[4]text=தமிழ்/[5]text=ગુજરાતી/[6]text=ଓଡ଼ିଆ/[7]text=മലയാളം
+# /[8]text=मराठी/[9]text=తెలుగు/[10]text=ਪੰਜਾਬੀ/[11]text=অসমীয়া/[12]text=हरियाणवी/[13]text=राजस्थानी/[14]text=भोजपूरी/[15]text=English)
+ChooseLanguagePage_SelectLanguage_Common_ClaS = "android.widget.TextView"
 
-# Skip——跳过开屏
-Source_Skip_OpenAdd_Btn_ID = "launch_timing_text"
-Skip_OpenAdd_Btn_ID = FS(Source_Skip_OpenAdd_Btn_ID)
+# 性别选择页-顶部Tips文案
+Source_ChooseGenderPage_CheckTitle_Tips_ID = "tv_choose_gender_title"
+ChooseGenderPage_CheckTitle_Tips_ID = package + FS(Source_ChooseGenderPage_CheckTitle_Tips_ID)
 
-# 登录页——Tips（text="sing with 50,000,000+ music lovers"）
-Source_StartUpHome_Tips_ID = "tv_welcome"
-StartUpHome_Tips_ID = FS(Source_StartUpHome_Tips_ID)
+# 性别选择页-性别选择-男性
+Source_ChooseGenderPage_ChooseGender_Man_ID = "txt_choose_gender_male"
+ChooseGenderPage_ChooseGender_Man_ID = package + FS(Source_ChooseGenderPage_ChooseGender_Man_ID)
 
-# 登录页——说明（text=You agree to our Terms of Service & Privacy Policy）
-Source_StartUpHome_Explain_ID = "tv_policy"
-StartUpHome_Explain_ID = FS(Source_StartUpHome_Explain_ID)
-
-# 登录页——Email 登录按钮
-Source_Email_LogIn_Btn_ID = "img_login_left"
-Email_LogIn_Btn_ID = FS(Source_Email_LogIn_Btn_ID)
-Email_LogIn_Btn_R = [0.368, 0.86, 500]
-
-# 登录页——Phone 登录按钮
-Source_Phone_LogIn_Btn_ID = "img_login_middle"
-Phone_LogIn_Btn_ID = FS(Source_Phone_LogIn_Btn_ID)
-
-# 登录页——G+ 登录按钮
-Source_Google_LogIn_Btn_ID = "img_login_right"
-Google_LogIn_Btn_ID = FS(Source_Google_LogIn_Btn_ID)
-
-# 登录页——Facebook 登录按钮
-Source_FB_LogIn_Btn_ID = "rl_login_top"
-FB_LogIn_Btn_ID = FS(Source_FB_LogIn_Btn_ID)
+# 性别选择页-性别选择-女性
+Source_ChooseGenderPage_ChooseGender_Woman_ID = "txt_choose_gender_female"
+ChooseGenderPage_ChooseGender_Woman_ID = package + FS(Source_ChooseGenderPage_ChooseGender_Woman_ID)

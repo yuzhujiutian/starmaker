@@ -2,8 +2,7 @@
 from Utils import Tools
 from Utils.GetDevicesInfo import DevicesInfo
 package = DevicesInfo().package()
-FindSource = Tools.Tools().FindSource
-FS = package + FindSource
+FS = Tools.Tools().FindSource
 # ----------
 # Library页
 # ----------

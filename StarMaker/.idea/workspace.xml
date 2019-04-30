@@ -512,17 +512,17 @@
     </configuration>
     <list>
       <item itemvalue="Python.TestCase" />
-      <item itemvalue="Python.__init__" />
       <item itemvalue="Python.up" />
+      <item itemvalue="Python.__init__" />
       <item itemvalue="Python tests.Unittests for PostSoloCase.PostSoloCase" />
       <item itemvalue="Python tests.Unittests for PostSoloCase.PostSoloCase.test_Case005_RecordingCase" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests for PostSoloCase.PostSoloCase.test_Case005_RecordingCase" />
-        <item itemvalue="Python tests.Unittests for PostSoloCase.PostSoloCase" />
         <item itemvalue="Python.__init__" />
         <item itemvalue="Python.up" />
+        <item itemvalue="Python tests.Unittests for PostSoloCase.PostSoloCase.test_Case005_RecordingCase" />
+        <item itemvalue="Python tests.Unittests for PostSoloCase.PostSoloCase" />
         <item itemvalue="Python.TestCase" />
       </list>
     </recent_temporary>
