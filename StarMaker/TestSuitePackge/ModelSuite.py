@@ -1,8 +1,8 @@
 # coding=utf-8
 import unittest
-from Utils.CreateTestReport import CreatTestReporter
-# from Action.ModeTestCase1 import ModeTestClass1
-# from Action.ModeTestCase2 import ModeTestClass2
+from StarMaker.Utils.CreateTestReport import CreatTestReporter
+# from StarMaker.Action.ModeTestCase1 import ModeTestClass1
+# from StarMaker.Action.ModeTestCase2 import ModeTestClass2
 
 
 class ModelSuite(unittest.TestCase):

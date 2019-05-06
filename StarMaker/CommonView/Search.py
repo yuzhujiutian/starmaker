@@ -2,8 +2,8 @@
 # ----------
 # Search页
 # ----------
-from Utils.FindElement import find_element
-from CommonView.VData import Search_VD
+from StarMaker.Utils.FindElement import find_element
+from StarMaker.CommonView.VData import Search_VD
 
 
 # 个人页

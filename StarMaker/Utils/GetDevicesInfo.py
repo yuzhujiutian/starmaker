@@ -1,7 +1,7 @@
 # coding=utf-8
 import re
 import subprocess
-from Utils.Common import singleton
+from StarMaker.Utils.Common import singleton
 # ----------
 # 自动获取工具
 # ----------

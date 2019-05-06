@@ -2,9 +2,9 @@
 # ----------
 # Jalebee
 # ----------
-from Utils.FindElement import find_element
-from CommonView.VData import Jalebee_VD
-from Utils.Tools import Popular_Elements_Disposes
+from StarMaker.Utils.FindElement import find_element
+from StarMaker.CommonView.VData import Jalebee_VD
+from StarMaker.Utils.Tools import Popular_Elements_Disposes
 
 
 # Jalebee

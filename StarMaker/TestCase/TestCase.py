@@ -1,6 +1,6 @@
 # coding=utf-8
 from appium import webdriver
-from Utils.Common import singleton
+from StarMaker.Utils.Common import singleton
 
 
 @singleton

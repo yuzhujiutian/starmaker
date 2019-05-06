@@ -1,13 +1,13 @@
 # coding=utf-8
 import time
 import unittest
-from CommonView.StartUp import StartUp
-from CommonView.LogIn import LogIn
-from CommonView.Home import Home
-from Utils.Tools import Tools, Screen
-from Utils.GetAppiumDeriver import GetAppiumDeriver
-from Utils.ReadXMLData import ReadXMLData
-from CommonView.Profile import Profile
+from StarMaker.CommonView.StartUp import StartUp
+from StarMaker.CommonView.LogIn import LogIn
+from StarMaker.CommonView.Home import Home
+from StarMaker.Utils.Tools import Tools, Screen
+from StarMaker.Utils.GetAppiumDeriver import GetAppiumDeriver
+from StarMaker.Utils.ReadXMLData import ReadXMLData
+from StarMaker.CommonView.Profile import Profile
 
 
 # Google登录

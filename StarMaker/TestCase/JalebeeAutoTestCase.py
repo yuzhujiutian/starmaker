@@ -3,19 +3,19 @@ import re
 import time
 import unittest
 import warnings
-from CommonView.StartUp import StartUp
-from CommonView.LogIn import LogIn
-from CommonView.Popup import Popup
-from CommonView.Profile import Profile
-from CommonView.Jalebee import Jalebee
-from Utils.Tools import Tools
-from Utils.Tools import Screen
-from Utils.Tools import TestData_Processing
-from Utils.Tools import AssertReportManage
-from Utils.Tools import Internationalization
-from Utils.Tools import Page_Element_Verification
-from Utils.ReadXMLData import ReadXMLData
-from Utils.GetAppiumDeriver import GetAppiumDeriver
+from StarMaker.CommonView.StartUp import StartUp
+from StarMaker.CommonView.LogIn import LogIn
+from StarMaker.CommonView.Popup import Popup
+from StarMaker.CommonView.Profile import Profile
+from StarMaker.CommonView.Jalebee import Jalebee
+from StarMaker.Utils.Tools import Tools
+from StarMaker.Utils.Tools import Screen
+from StarMaker.Utils.Tools import TestData_Processing
+from StarMaker.Utils.Tools import AssertReportManage
+from StarMaker.Utils.Tools import Internationalization
+from StarMaker.Utils.Tools import Page_Element_Verification
+from StarMaker.Utils.ReadXMLData import ReadXMLData
+from StarMaker.Utils.GetAppiumDeriver import GetAppiumDeriver
 P = AssertReportManage().Pass
 E = AssertReportManage().Error
 
@@ -80,10 +80,11 @@ class JalebeeAutoTestCase(unittest.TestCase):
 
     # 性别选择页-性别选择-男性
     def ChooseGenderPage_ChooseGender_Man(self):
+        pass
 
     # 性别选择页-性别选择-女性
     def ChooseGenderPage_ChooseGender_Woman(self):
-
+        pass
 
     # 语言选择页——选择语言进入首页——校验底部Tab
     def test_Case002_SelectLanguage_CheckHomeMainTab(self):

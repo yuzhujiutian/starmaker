@@ -1,11 +1,11 @@
 # coding=utf-8
 import time
 import unittest
-from CommonView.StartUp import StartUp
-from CommonView.Home import Home
-from Utils.Tools import Tools
-from Utils.Tools import Screen
-from Utils.GetAppiumDeriver import GetAppiumDeriver
+from StarMaker.CommonView.StartUp import StartUp
+from StarMaker.CommonView.Home import Home
+from StarMaker.Utils.Tools import Tools
+from StarMaker.Utils.Tools import Screen
+from StarMaker.Utils.GetAppiumDeriver import GetAppiumDeriver
 
 
 # 选择语言方法

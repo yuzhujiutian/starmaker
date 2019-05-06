@@ -2,10 +2,10 @@
 import re
 import time
 import unittest
-from CommonView.StartUp import StartUp
-from CommonView.LogIn import LogIn
-from Utils.Tools import Tools
-from Utils.GetAppiumDeriver import GetAppiumDeriver
+from StarMaker.CommonView.StartUp import StartUp
+from StarMaker.CommonView.LogIn import LogIn
+from StarMaker.Utils.Tools import Tools
+from StarMaker.Utils.GetAppiumDeriver import GetAppiumDeriver
 
 
 # 手机号登录

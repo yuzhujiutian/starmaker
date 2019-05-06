@@ -6,7 +6,7 @@ import re
 import os
 import time
 import datetime
-from Utils.GetAppiumDeriver import GetAppiumDeriver
+from StarMaker.Utils.GetAppiumDeriver import GetAppiumDeriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -926,11 +926,11 @@ class Internationalization:
             return Internationalization().en()
 
     def en(self):
-        from CommonView.Internationalization_Data.en import en
+        from StarMaker.CommonView.Internationalization_Data.en import en
         return en[Key]
 
     def IN(self):
-        from CommonView.Internationalization_Data.IN import IN
+        from StarMaker.CommonView.Internationalization_Data.IN import IN
         return IN[Key]
 
 

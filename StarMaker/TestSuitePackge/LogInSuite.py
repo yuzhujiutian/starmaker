@@ -1,6 +1,6 @@
 # coding=utf-8
 import unittest
-from Utils.CreateTestReport import CreatTestReporter
+from StarMaker.Utils.CreateTestReport import CreatTestReporter
 Tester = "崔尧椋"
 
 
@@ -9,7 +9,7 @@ class LogInSuite(unittest.TestCase):
     # 启动app测试套
     @staticmethod
     def test_Suite_001_StarUpSuite():
-        from Action import StartUpModular
+        from StarMaker.Action import StartUpModular
         # 定义一个测试套
         StarUpSuiteTest = unittest.TestSuite()
         # 添加测试套模版
@@ -37,7 +37,7 @@ class LogInSuite(unittest.TestCase):
     # 邮箱登录测试套
     @staticmethod
     def test_Suite_003_EmailLoginSuite():
-        from Action import LogInModular
+        from StarMaker.Action import LogInModular
         EmailLogInSuiteTest = unittest.TestSuite()
         EmailLogInSuiteTest.addTest(unittest.makeSuite(
             LogInModular.EmailLogInCase)

@@ -2,8 +2,8 @@
 # ----------
 # 注册模块
 # ----------
-from CommonView.VData import SignUp_VD
-from Utils.FindElement import find_element
+from StarMaker.CommonView.VData import SignUp_VD
+from StarMaker.Utils.FindElement import find_element
 
 
 # 登录模块

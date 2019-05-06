@@ -2,9 +2,9 @@
 # ----------
 # Live模块
 # ----------
-from Utils.FindElement import find_element
-from CommonView.VData import Live_VD
-from Utils.Tools import Popular_Elements_Disposes
+from StarMaker.Utils.FindElement import find_element
+from StarMaker.CommonView.VData import Live_VD
+from StarMaker.Utils.Tools import Popular_Elements_Disposes
 
 
 # Live模块

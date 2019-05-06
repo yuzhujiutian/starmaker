@@ -1,11 +1,11 @@
 # coding=utf-8
 import time
 import unittest
-from CommonView.Parties import Parties
-from Utils.Tools import Tools
-from Utils.Tools import Page_Element_Verification
-from Utils.ReadXMLData import ReadXMLData
-from Utils.GetAppiumDeriver import GetAppiumDeriver
+from StarMaker.CommonView.Parties import Parties
+from StarMaker.Utils.Tools import Tools
+from StarMaker.Utils.Tools import Page_Element_Verification
+from StarMaker.Utils.ReadXMLData import ReadXMLData
+from StarMaker.Utils.GetAppiumDeriver import GetAppiumDeriver
 
 
 # 启动模块

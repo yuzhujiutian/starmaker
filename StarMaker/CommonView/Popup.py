@@ -3,9 +3,9 @@
 # 弹窗
 # ----------
 import time
-from Utils import Tools
-from CommonView.VData import Popup_VD
-from Utils.GetAppiumDeriver import GetAppiumDeriver
+from StarMaker.Utils import Tools
+from StarMaker.CommonView.VData import Popup_VD
+from StarMaker.Utils.GetAppiumDeriver import GetAppiumDeriver
 
 
 # 弹窗处理

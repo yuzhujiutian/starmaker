@@ -1,15 +1,15 @@
 # coding=utf-8
 import time
 import unittest
-from CommonView.Home import Home
-from CommonView.Search import Search
-from CommonView.HotTopics import HotTopics
-from CommonView.Profile import Profile
-from CommonView.PlaybackDetails import PlaybackDetails
-from Utils.Tools import Tools
-from Utils.Tools import Screen
-from Utils.Tools import ToastTips_Processing
-from Utils.GetAppiumDeriver import GetAppiumDeriver
+from StarMaker.CommonView.Home import Home
+from StarMaker.CommonView.Search import Search
+from StarMaker.CommonView.HotTopics import HotTopics
+from StarMaker.CommonView.Profile import Profile
+from StarMaker.CommonView.PlaybackDetails import PlaybackDetails
+from StarMaker.Utils.Tools import Tools
+from StarMaker.Utils.Tools import Screen
+from StarMaker.Utils.Tools import ToastTips_Processing
+from StarMaker.Utils.GetAppiumDeriver import GetAppiumDeriver
 
 
 # 默认首页

@@ -1,8 +1,8 @@
 # coding=utf-8
 from appium import webdriver
-from Utils import Setting
-from Utils.Common import singleton
-from Utils.GetDevicesInfo import DevicesInfo
+from StarMaker.Utils import Setting
+from StarMaker.Utils.Common import singleton
+from StarMaker.Utils.GetDevicesInfo import DevicesInfo
 
 
 @singleton

@@ -2,9 +2,9 @@
 # ----------
 # 个人页
 # ----------
-from Utils.FindElement import find_element
-from Utils.Tools import Popular_Elements_Disposes
-from CommonView.VData import Profile_VD
+from StarMaker.Utils.FindElement import find_element
+from StarMaker.Utils.Tools import Popular_Elements_Disposes
+from StarMaker.CommonView.VData import Profile_VD
 
 
 # 个人页

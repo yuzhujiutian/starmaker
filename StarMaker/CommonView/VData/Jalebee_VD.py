@@ -1,6 +1,6 @@
 # coding=utf-8
-from Utils import Tools
-from Utils.GetDevicesInfo import DevicesInfo
+from StarMaker.Utils import Tools
+from StarMaker.Utils.GetDevicesInfo import DevicesInfo
 package = DevicesInfo().package()
 FS = Tools.Tools().FindSource
 # ----------

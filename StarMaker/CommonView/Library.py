@@ -2,8 +2,8 @@
 # ----------
 # Library页
 # ----------
-from Utils.FindElement import find_element
-from CommonView.VData import Library_VD
+from StarMaker.Utils.FindElement import find_element
+from StarMaker.CommonView.VData import Library_VD
 
 
 # Library

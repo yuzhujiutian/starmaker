@@ -1,13 +1,13 @@
 # coding=utf-8
 import time
 import unittest
-from CommonView.LogIn import LogIn
-from CommonView.Home import Home
-from CommonView.Parties import Parties
-from CommonView.SignUp import SignUp
-from Utils.Tools import Tools
-from Utils.GetAppiumDeriver import GetAppiumDeriver
-from Utils.ReadXMLData import ReadXMLData
+from StarMaker.CommonView.LogIn import LogIn
+from StarMaker.CommonView.Home import Home
+from StarMaker.CommonView.Parties import Parties
+from StarMaker.CommonView.SignUp import SignUp
+from StarMaker.Utils.Tools import Tools
+from StarMaker.Utils.GetAppiumDeriver import GetAppiumDeriver
+from StarMaker.Utils.ReadXMLData import ReadXMLData
 
 
 # 登陆

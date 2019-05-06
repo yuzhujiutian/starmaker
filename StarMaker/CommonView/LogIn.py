@@ -2,9 +2,9 @@
 # ----------
 # 登录模块
 # ----------
-from Utils import Tools
-from Utils.FindElement import find_element
-from CommonView.VData import LogIn_VD
+from StarMaker.Utils import Tools
+from StarMaker.Utils.FindElement import find_element
+from StarMaker.CommonView.VData import LogIn_VD
 
 
 # 登录模块

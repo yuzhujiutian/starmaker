@@ -1,16 +1,16 @@
 # coding=utf-8
 import time
 import unittest
-from CommonView.Home import Home
-from CommonView.Library import Library
-from CommonView.Popup import Popup
-from CommonView.Post import Sing
-from Utils.Tools import Tools
-from Utils.Tools import Screen
-from Utils.GetAppiumDeriver import GetAppiumDeriver
-# from CommonView.Profile import Profile
-# from Utils.Tools import RegionalClick
-# from Utils.ReadXMLData import ReadXMLData
+from StarMaker.CommonView.Home import Home
+from StarMaker.CommonView.Library import Library
+from StarMaker.CommonView.Popup import Popup
+from StarMaker.CommonView.Post import Sing
+from StarMaker.Utils.Tools import Tools
+from StarMaker.Utils.Tools import Screen
+from StarMaker.Utils.GetAppiumDeriver import GetAppiumDeriver
+# from StarMaker.CommonView.Profile import Profile
+# from StarMaker.Utils.Tools import RegionalClick
+# from StarMaker.Utils.ReadXMLData import ReadXMLData
 
 
 # 录制发布

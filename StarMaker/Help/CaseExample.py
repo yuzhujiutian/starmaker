@@ -1,9 +1,9 @@
 #coding=utf-8
 import time
 import unittest
-from Utils.Tools import Tools
-from Utils.GetAppiumDeriver import GetAppiumDeriver
-from Utils.GetDevicesInfo import DevicesInfo
+from StarMaker.Utils.Tools import Tools
+from StarMaker.Utils.GetAppiumDeriver import GetAppiumDeriver
+from StarMaker.Utils.GetDevicesInfo import DevicesInfo
 package = DevicesInfo().package()
 
 

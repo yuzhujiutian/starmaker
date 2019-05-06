@@ -2,9 +2,9 @@
 # ----------
 # 首页
 # ----------
-from Utils.FindElement import find_element
-from CommonView.VData import Home_VD
-from Utils.Tools import Popular_Elements_Disposes
+from StarMaker.Utils.FindElement import find_element
+from StarMaker.CommonView.VData import Home_VD
+from StarMaker.Utils.Tools import Popular_Elements_Disposes
 
 
 # 首页

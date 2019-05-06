@@ -2,8 +2,8 @@
 # ----------
 # HotTopics页
 # ----------
-from Utils.FindElement import find_element
-from CommonView.VData import HotTopics_VD
+from StarMaker.Utils.FindElement import find_element
+from StarMaker.CommonView.VData import HotTopics_VD
 
 
 # HotTopics页

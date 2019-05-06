@@ -2,9 +2,9 @@
 # ----------
 # 点唱流程
 # ----------
-from Utils import Tools
-from Utils.FindElement import find_element
-from CommonView.VData import Post_VD
+from StarMaker.Utils import Tools
+from StarMaker.Utils.FindElement import find_element
+from StarMaker.CommonView.VData import Post_VD
 
 
 # 发布专辑
@@ -34,7 +34,7 @@ class Sing(object):
     # 插入耳机引导(text=I KNOW)
     # 插入耳机引导(text=I KNOW)
     def HeadphonesRecommended(self):
-        from CommonView.VData import Popup_VD
+        from StarMaker.CommonView.VData import Popup_VD
         Popup_HeadphonesRecommended_ID = self.findID(Popup_VD.Popup_HeadphonesRecommended_ID)
         return Popup_HeadphonesRecommended_ID
 

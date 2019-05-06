@@ -1,8 +1,8 @@
 # coding=utf-8
 import time
 import unittest
-from Utils.Tools import Tools
-from Utils.GetAppiumDeriver import GetAppiumDeriver
+from StarMaker.Utils.Tools import Tools
+from StarMaker.Utils.GetAppiumDeriver import GetAppiumDeriver
 
 
 # 通用操作，用于DIY拼接用例

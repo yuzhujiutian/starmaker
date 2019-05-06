@@ -2,9 +2,9 @@
 # ----------
 # 作品播放详情页模块
 # ----------
-from Utils.FindElement import find_element
-from CommonView.VData import PlaybackDetails_VD
-from Utils.Tools import Popular_Elements_Disposes
+from StarMaker.Utils.FindElement import find_element
+from StarMaker.CommonView.VData import PlaybackDetails_VD
+from StarMaker.Utils.Tools import Popular_Elements_Disposes
 
 
 # KTV模块

@@ -1,12 +1,12 @@
 #coding=utf-8
 import unittest
-from Utils.CreateTestReport import CreatTestReporter
+from StarMaker.Utils.CreateTestReport import CreatTestReporter
 
 
 class ModelSuite(unittest.TestCase):
     def testmore(self):
         #从某个 Package 导入 XXX 测试类
-        from Help import CaseExample
+        from StarMaker.Help import CaseExample
         #定义一个测试套
         XXXSuiteTest = unittest.TestSuite()
         #添加测试套模版
