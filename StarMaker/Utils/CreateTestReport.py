@@ -1,4 +1,4 @@
-#coding=utf-8
+# coding=utf-8
 # 导入生成测试报告模块
 import HTMLTestRunner
 

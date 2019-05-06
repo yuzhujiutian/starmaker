@@ -1,0 +1,18 @@
+一、运行环境：
+1>Python 3.x
+	一般都有
+2>PHP 7.X
+	1.解压"php-7.3.5-nts-Win32-VC15-x64.zip"到"C:\php"
+	2.添加环境变量"C:\php"到path
+	3.运行，输入php后能打开窗口即为配置成功
+
+二、使用方法
+1>数据来源
+	1.通过抓包过滤"track.starmakerstudios.com"接口
+	2.右键，点击"Save Request..."保存打点数据到本地
+2>使用方法
+	1.讲打点数据放到"analysis_chls_dot/"下
+	2.运行"点击处理当前目录下所有打点数据.bat"
+
+三、数据查看
+1>为了提高结果数据可读性，可以将"Result_log.txt"中的数据放到"http://www.bejson.com/"中查看
