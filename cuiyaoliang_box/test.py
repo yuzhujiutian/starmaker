@@ -28,20 +28,19 @@ def test():
     show_columns = "show columns from db"
     cur.execute(show_databases)
     row1 = cur.fetchall()
-    print "databases"
-    print row1
-    print len(row1)
+    print("databases")
+    print(row1)
+    print(len(row1))
     cur.execute(show_tables)
     row2 = cur.fetchall()
-    print "tables"
-    print row2
-    print len(row2)
+    print("tables")
+    print(row2)
+    print(len(row2))
     cur.execute(show_columns)
     row3 = cur.fetchall()
-    print "columns"
-    print row3
-    print len(row3)
-
+    print("columns")
+    print(row3)
+    print(len(row3))
 
     con.close()
 
