@@ -15,9 +15,11 @@ root_dir = os.path.realpath(os.path.realpath(__file__)+"/..")
 os.chdir(root_dir)
 
 _filter_params = {}
-_filter_params['type'] = ['show', 'visit']
-_filter_params['page'] = ['party_room', 'live_room']
-_filter_params['obj'] = ['page_open', 'watch_live', 'enter_live_room']
+_filter_params['type'] = ['load', 'show', 'visit', 'performance', 'page_open', 'request', 'page_close']
+_filter_params['page'] = ['party_room', 'live_room', 'Popular', 'Following', 'library', 'push', 'splash',
+                          'app_launch', 'main']
+_filter_params['obj'] = ['page_open', 'watch_live', 'enter_live_room', 'activity', 'splash', 'song_show', 'unread',
+                         'banner', 'fragment', 'card']
 # _filter_params['output'] = ['enter_mode', 'room_mode', 'socket_connect_cost_time', 'socket_streaminfo_cost_time',
 # 'socket_joinroom_cost_time', 'ui_total_cost_time', 'ui_sub_room_cost_time', 'media_play_cost_time']
 
@@ -100,7 +102,7 @@ def j_fileter(event):
 def handle_event(datas, filter=None):
     # Android需要这么处理
     content = datas.decode('utf-8').encode('ISO-8859-1')
-    data = gzip.GzipFile('', 'rb', 9, io.StringIO(content))
+    data = gzip.GzipFile('', 'r', 9, io.StringIO(str(content)))
 
     content = json.loads(data.read())
     _events = content['events']

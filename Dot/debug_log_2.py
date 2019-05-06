@@ -1,26 +1,38 @@
 # coding=utf-8
-from http.server import BaseHTTPRequestHandler
-import urllib.request, urllib.parse, urllib.error
+from BaseHTTPServer import BaseHTTPRequestHandler
+import cgi
+import urllib
 import json
 import gzip
-import io
+import StringIO
 import sys
 import os
 import datetime
 
 # 获取当前脚本目录，作为工作目录
-root_dir = os.path.realpath(os.path.realpath(__file__)+"/..")
+root_dir = os.path.realpath(os.path.realpath(__file__) + "/..")
 os.chdir(root_dir)
 
-# 定义校验字典
 _filter_params = {}
-_filter_params['type'] = ['show', 'visit']
-_filter_params['page'] = ['party_room', 'live_room']
-_filter_params['obj'] = ['page_open', 'watch_live', 'enter_live_room']
+_filter_params['type'] = ['load', 'show', 'visit', 'performance', 'page_open', 'request', 'page_close']
+_filter_params['page'] = ['party_room', 'live_room', 'Popular', 'Following', 'library', 'push', 'splash',
+                          'app_launch', 'main']
+_filter_params['obj'] = ['page_open', 'watch_live', 'enter_live_room', 'activity', 'splash', 'song_show', 'unread',
+                         'banner', 'fragment', 'card']
+
+# _filter_params['output'] = ['enter_mode', 'room_mode', 'socket_connect_cost_time', 'socket_streaminfo_cost_time',
+# 'socket_joinroom_cost_time', 'ui_total_cost_time', 'ui_sub_room_cost_time', 'media_play_cost_time']
+
+# 直播打点
+# _filter_params['type'] = ['show', 'visit']
+# _filter_params['page'] = ['live_room']
+# _filter_params['obj'] = ['watch_live', 'enter_live_room']
+# _filter_params['output'] = ['room_enter_time','load_library_time','ui_cost_time','delegate_cost_time',
+# 'create_viewer_time','all_cost_time','cost_time','stream_type']
 
 
 # 重定向日志，将print日志输出到控制台和日志文件里面
-class logger(object):
+class logger:
     def __init__(self):
         self.__console__ = sys.stdout
 
@@ -53,25 +65,25 @@ r_logger = logger()
 
 # 打印事件
 def print_e(e):
-    print('\n------------')
-    keys = list(e.keys())
+    print '\n------------'
+    keys = e.keys()
     keys.sort()
 
     _output_params = ['type', 'page', 'obj', 'timestamp']
 
     for i in _output_params:
-        print(('%30s: %s' % (i, e[i])))
+        print '%30s: %s' % (i, e[i])
 
     for k in keys:
         if k.startswith('t_params_'):
-            print(('%30s: %s' % (k[len('t_params_'):], e[k])))
+            print '%30s: %s' % (k[len('t_params_'):], e[k])
 
-    print('------------\n')
+    print '------------\n'
 
 
 # 过滤是否需要处理打点事件
 def j_fileter(event):
-    keys = list(_filter_params.keys())
+    keys = _filter_params.keys()
 
     result = True
     for key in keys:
@@ -89,17 +101,14 @@ def j_fileter(event):
 
 def handle_event(datas, filter=None):
     # Android需要这么处理
-    content = open(path, "r", encoding='ISO-8859-1').read()
-    data = gzip.GzipFile('', 'rb', 9, io.StringIO(datas))
-    # print(data)
-    # content = datas.decode('utf-8').encode('ISO-8859-1')
-    # data = gzip.GzipFile('', 'rb', 9, io.StringIO(content))
+    content = datas.decode('utf-8').encode('ISO-8859-1')
+    data = gzip.GzipFile('', 'rb', 9, StringIO.StringIO(content))
 
     content = json.loads(data.read())
     _events = content['events']
 
     base_params = {}
-    for k in list(content.keys()):
+    for k in content.keys():
         if k in ['events']:
             continue
         else:
@@ -108,13 +117,14 @@ def handle_event(datas, filter=None):
     for _e in _events:
         _params = _e.pop('params')
         e_params = {}
-        for k in list(_params.keys()):
+        for k in _params.keys():
             e_params['t_params_' + k] = _params[k]
-        e = dict(list(_e.items()) + list(base_params.items()) + list(e_params.items()))
-        if filter == None:
+        # 最终的event
+        e = dict(_e.items() + base_params.items() + e_params.items())
+        if filter is None:
             print_e(e)
         else:
-            if list(filter(e)):
+            if filter(e):
                 print_e(e)
         r_logger.detail(json.dumps(e, indent=2))
 
@@ -124,18 +134,18 @@ class PostHandler(BaseHTTPRequestHandler):
         # path = self.path
         # print 'path:', path
         # if len(path) > 1:
-        query = urllib.parse.splitquery(self.path)
+        query = urllib.splitquery(self.path)
         # print 'query:', query
         action = query[0][1:]
         # print 'action:', action
 
         if action == 'config':
             # 接收get参数
-            print((query[1]))
-            if query[1] != None:
+            print query[1]
+            if query[1] is not None:
                 for qp in query[1].split('&'):
                     kv = qp.split('=')
-                    _filter_params[kv[0]] = urllib.parse.unquote(kv[1]).decode("utf-8", 'ignore').split(',')
+                    _filter_params[kv[0]] = urllib.unquote(kv[1]).decode("utf-8", 'ignore').split(',')
 
         self.send_response(200)
         self.end_headers()
@@ -153,14 +163,14 @@ class PostHandler(BaseHTTPRequestHandler):
         try:
             handle_event(datas, j_fileter)
         except Exception as e:
-            print(e)
+            print e
 
         self.send_response(201)
         self.end_headers()
 
 
 def StartServer():
-    from http.server import HTTPServer
+    from BaseHTTPServer import HTTPServer
     import ssl
     sever = HTTPServer(("", 8982), PostHandler)
 
@@ -171,15 +181,5 @@ def StartServer():
     sever.serve_forever()
 
 
-StartServer()
-
-
-
-
-
-
-
 if __name__ == '__main__':
-    pass
-    # path = os.path.abspath("2")
-    # handle_event(path)
+    StartServer()
