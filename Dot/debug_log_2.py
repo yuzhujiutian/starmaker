@@ -192,6 +192,7 @@ class PostHandler(BaseHTTPRequestHandler):
         platform1 = re.findall("Android", user_agent)
         platform2 = re.findall("iOS", user_agent)
         datas = self.rfile.read(int(self.headers['content-length']))
+        print type(datas)
         if platform1:
             try:
                 android_handle_event(datas, j_fileter)
