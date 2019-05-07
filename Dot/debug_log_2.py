@@ -14,7 +14,7 @@ from BaseHTTPServer import BaseHTTPRequestHandler
 root_dir = os.path.realpath(os.path.realpath(__file__) + "/..")
 os.chdir(root_dir)
 
-# _filter_params = {}
+_filter_params = {}
 # _filter_params['type'] = ['load', 'show', 'visit', 'performance', 'page_open', 'request', 'page_close']
 # _filter_params['page'] = ['party_room', 'live_room', 'Popular', 'Following', 'library', 'push', 'splash',
 #                           'app_launch', 'main', 'popular']
