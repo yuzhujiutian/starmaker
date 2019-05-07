@@ -1,24 +1,25 @@
 # coding=utf-8
-from BaseHTTPServer import BaseHTTPRequestHandler
-import cgi
-import urllib
+import re
+import os
+import sys
 import json
 import gzip
-import StringIO
-import sys
-import os
+import urllib
 import datetime
+import StringIO
+from io import BytesIO
+from BaseHTTPServer import BaseHTTPRequestHandler
 
 # 获取当前脚本目录，作为工作目录
 root_dir = os.path.realpath(os.path.realpath(__file__) + "/..")
 os.chdir(root_dir)
 
-_filter_params = {}
-_filter_params['type'] = ['load', 'show', 'visit', 'performance', 'page_open', 'request', 'page_close']
-_filter_params['page'] = ['party_room', 'live_room', 'Popular', 'Following', 'library', 'push', 'splash',
-                          'app_launch', 'main']
-_filter_params['obj'] = ['page_open', 'watch_live', 'enter_live_room', 'activity', 'splash', 'song_show', 'unread',
-                         'banner', 'fragment', 'card']
+# _filter_params = {}
+# _filter_params['type'] = ['load', 'show', 'visit', 'performance', 'page_open', 'request', 'page_close']
+# _filter_params['page'] = ['party_room', 'live_room', 'Popular', 'Following', 'library', 'push', 'splash',
+#                           'app_launch', 'main', 'popular']
+# _filter_params['obj'] = ['page_open', 'watch_live', 'enter_live_room', 'activity', 'splash', 'song_show', 'unread',
+#                          'banner', 'fragment', 'card', 'recording']
 
 # _filter_params['output'] = ['enter_mode', 'room_mode', 'socket_connect_cost_time', 'socket_streaminfo_cost_time',
 # 'socket_joinroom_cost_time', 'ui_total_cost_time', 'ui_sub_room_cost_time', 'media_play_cost_time']
@@ -81,30 +82,59 @@ def print_e(e):
     print '------------\n'
 
 
-# 过滤是否需要处理打点事件
+# 过滤是否需要处理打点事件(如需过滤将此处注释打开)
 def j_fileter(event):
-    keys = _filter_params.keys()
+    # keys = _filter_params.keys()
 
     result = True
-    for key in keys:
-        if key == 'output':
-            continue
-
-        _value = event.get(key, '')
-
-        if not (_value in _filter_params[key]):
-            result = False
-            break
+    # for key in keys:
+    #     if key == 'output':
+    #         continue
+    #
+    #     _value = event.get(key, '')
+    #
+    #     if not (_value in _filter_params[key]):
+    #         result = False
+    #         break
 
     return result
 
 
-def handle_event(datas, filter=None):
+def android_handle_event(datas, filter=None):
     # Android需要这么处理
     content = datas.decode('utf-8').encode('ISO-8859-1')
     data = gzip.GzipFile('', 'rb', 9, StringIO.StringIO(content))
-
     content = json.loads(data.read())
+    _events = content['events']
+
+    base_params = {}
+    for k in content.keys():
+        if k in ['events']:
+            continue
+        else:
+            base_params[k] = content[k]
+
+    for _e in _events:
+        _params = _e.pop('params')
+        e_params = {}
+        for k in _params.keys():
+            e_params['t_params_' + k] = _params[k]
+        # 最终的event
+        e = dict(_e.items() + base_params.items() + e_params.items())
+        if filter is None:
+            print_e(e)
+        else:
+            if filter(e):
+                print_e(e)
+        r_logger.detail(json.dumps(e, indent=2))
+
+
+def ios_handle_event(datas, filter=None):
+    # IOS需要这么处理
+    buff = BytesIO(datas)
+    data = gzip.GzipFile(fileobj=buff)
+    aa = data.read().decode('utf-8').encode()
+    content = json.loads(aa)
     _events = content['events']
 
     base_params = {}
@@ -155,15 +185,26 @@ class PostHandler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         # path = self.path
-
         # 获取post提交的数据
         # print self.headers
+        str_headers = self.headers.__str__()
+        user_agent = re.findall("User-Agent: " + "(.*)", str_headers)[0]
+        platform1 = re.findall("Android", user_agent)
+        platform2 = re.findall("iOS", user_agent)
         datas = self.rfile.read(int(self.headers['content-length']))
-
-        try:
-            handle_event(datas, j_fileter)
-        except Exception as e:
-            print e
+        if platform1:
+            try:
+                android_handle_event(datas, j_fileter)
+            except Exception as e:
+                print e
+        elif platform2:
+            try:
+                ios_handle_event(datas, j_fileter)
+            except Exception as e:
+                print e
+        else:
+            self.send_response(404)
+            self.end_headers()
 
         self.send_response(201)
         self.end_headers()
@@ -171,12 +212,10 @@ class PostHandler(BaseHTTPRequestHandler):
 
 def StartServer():
     from BaseHTTPServer import HTTPServer
-    import ssl
     sever = HTTPServer(("", 8982), PostHandler)
-
+    # import ssl
     # context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
     # context.load_cert_chain(certfile="./cert.pem", keyfile="./key.pem")
-
     # sever.socket = context.wrap_socket (sever.socket, server_side=True)
     sever.serve_forever()
 

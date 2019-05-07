@@ -20,6 +20,7 @@ _filter_params['page'] = ['party_room', 'live_room', 'Popular', 'Following', 'li
                           'app_launch', 'main']
 _filter_params['obj'] = ['page_open', 'watch_live', 'enter_live_room', 'activity', 'splash', 'song_show', 'unread',
                          'banner', 'fragment', 'card']
+
 # _filter_params['output'] = ['enter_mode', 'room_mode', 'socket_connect_cost_time', 'socket_streaminfo_cost_time',
 # 'socket_joinroom_cost_time', 'ui_total_cost_time', 'ui_sub_room_cost_time', 'media_play_cost_time']
 
@@ -66,7 +67,7 @@ r_logger = logger()
 # 打印事件
 def print_e(e):
     print('\n------------')
-    keys = list(e.keys())
+    keys = e.keys()
     keys.sort()
 
     _output_params = ['type', 'page', 'obj', 'timestamp']
@@ -83,7 +84,7 @@ def print_e(e):
 
 # 过滤是否需要处理打点事件
 def j_fileter(event):
-    keys = list(_filter_params.keys())
+    keys = _filter_params.keys()
 
     result = True
     for key in keys:
@@ -102,13 +103,13 @@ def j_fileter(event):
 def handle_event(datas, filter=None):
     # Android需要这么处理
     content = datas.decode('utf-8').encode('ISO-8859-1')
-    data = gzip.GzipFile('', 'r', 9, io.StringIO(str(content)))
+    data = gzip.GzipFile('', 'w', 9, io.StringIO(content))
 
     content = json.loads(data.read())
     _events = content['events']
 
     base_params = {}
-    for k in list(content.keys()):
+    for k in content.keys():
         if k in ['events']:
             continue
         else:
@@ -117,13 +118,14 @@ def handle_event(datas, filter=None):
     for _e in _events:
         _params = _e.pop('params')
         e_params = {}
-        for k in list(_params.keys()):
+        for k in _params.keys():
             e_params['t_params_' + k] = _params[k]
-        e = dict(list(_e.items()) + list(base_params.items()) + list(e_params.items()))
+        # 最终的event
+        e = dict(_e.items() + base_params.items() + e_params.items())
         if filter is None:
             print_e(e)
         else:
-            if list(filter(e)):
+            if filter(e):
                 print_e(e)
         r_logger.detail(json.dumps(e, indent=2))
 
@@ -157,7 +159,6 @@ class PostHandler(BaseHTTPRequestHandler):
         # 获取post提交的数据
         # print self.headers
         datas = self.rfile.read(int(self.headers['content-length']))
-
         try:
             handle_event(datas, j_fileter)
         except Exception as e:
@@ -170,10 +171,9 @@ class PostHandler(BaseHTTPRequestHandler):
 def StartServer():
     from http.server import HTTPServer
     sever = HTTPServer(("", 8982), PostHandler)
-
+    # import ssl
     # context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
     # context.load_cert_chain(certfile="./cert.pem", keyfile="./key.pem")
-
     # sever.socket = context.wrap_socket (sever.socket, server_side=True)
     sever.serve_forever()
 
