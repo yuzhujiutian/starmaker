@@ -14,8 +14,7 @@ NoReset = True
 AppActivity = "com.ushowmedia.starmaker.activity.SplashActivity"
 
 # 设备信息(数据来源：GetDevicesInfo)
-DeviceCount = 2
-PlatformVersion = ['7.0', '5.0']
-Device = ['SM_G570F', 'SM_G530H']
-DeviceName = ['on5xelte', 'fortunave3g']
-
+DeviceCount = 1
+PlatformVersion = ['7.0']
+Device = ['Redmi_Note_4X']
+DeviceName = ['mido']

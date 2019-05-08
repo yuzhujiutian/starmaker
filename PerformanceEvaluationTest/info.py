@@ -3,7 +3,7 @@ import re
 import threading
 import time
 
-import utils
+from PerformanceEvaluationTest import utils
 
 
 class Info(object):

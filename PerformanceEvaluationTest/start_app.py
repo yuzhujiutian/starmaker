@@ -1,8 +1,9 @@
 # coding=utf-8
 import os
 import time
-import _main_
-from task import Task
+
+from PerformanceEvaluationTest._main_ import main
+from PerformanceEvaluationTest.task import Task
 
 
 class StartAppTask(Task):
@@ -10,7 +11,7 @@ class StartAppTask(Task):
         super().__init__(name)
 
     def execute(self):
-        self.d.app_start("com.ushow.android.jalebee")
+        self.d.app_start("com.starmakerinteractive.starmaker")
         time_start = time.time()
         a = 0
         while a < 10:
@@ -21,4 +22,4 @@ class StartAppTask(Task):
 
 
 if __name__ == '__main__':
-    _main_.main(StartAppTask("StartApp"))
+    main(StartAppTask("StartApp"))

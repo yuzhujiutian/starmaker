@@ -5,11 +5,13 @@ import sys
 
 import uiautomator2 as u2
 
-import utils
-from info import CPUInfo, MemInfo, FPSInfo, NetInfo
-from info_task import InfoTask
-from task import RandomTask
-from start_app import StartAppTask
+from PerformanceEvaluationTest import utils
+from PerformanceEvaluationTest.info import CPUInfo, MemInfo, FPSInfo, NetInfo
+from PerformanceEvaluationTest.info_task import InfoTask
+from PerformanceEvaluationTest.task import RandomTask
+
+
+# from PerformanceEvaluationTest.start_app import StartAppTask
 
 
 # 命令行配置参数
@@ -25,7 +27,7 @@ from start_app import StartAppTask
 
 def main(task):
     device = "421056b9ac0e944f"
-    applicationid = "com.ushow.android.jalebee"
+    applicationid = "com.starmakerinteractive.starmaker"
     interval = 1
     duration = 10
     info_names = ["cpu", "mem", "fps", "net"]

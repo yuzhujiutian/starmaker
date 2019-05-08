@@ -1,5 +1,6 @@
 # coding=utf-8
 from appium import webdriver
+
 from StarMaker.Utils import Setting
 from StarMaker.Utils.Common import singleton
 from StarMaker.Utils.GetDevicesInfo import DevicesInfo
@@ -31,4 +32,4 @@ class GetAppiumDeriver(object):
             desired_caps["platformVersion"] = Setting.PlatformVersion[num]
             desired_caps["device"] = Setting.Device[num]
             desired_caps["deviceName"] = Setting.DeviceName[num]
-            self.driver = webdriver.Remote("http://127.0.0.1:" + IP + "/wd/hub", desired_caps)
+            self.driver = webdriver.Remote("http://127.0.0.1:" + str(IP) + "/wd/hub", desired_caps)

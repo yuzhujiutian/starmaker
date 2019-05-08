@@ -1,7 +1,10 @@
 # coding=utf-8
 import re
 import subprocess
+
 from StarMaker.Utils.Common import singleton
+
+
 # ----------
 # 自动获取工具
 # ----------
@@ -136,7 +139,7 @@ class DevicesInfo(object):
     def AppPackage():
         # GetPackages = GetDevicesInfo().GetPackages()[0]
         # 调试使用
-        GetPackages = "com.ushow.android.jalebee"
+        GetPackages = "com.starmakerinteractive.starmaker"
         return GetPackages
 
     # package拼接 用于元素定位使用
