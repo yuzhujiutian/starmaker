@@ -6,6 +6,7 @@ import time
 
 
 def get_csv_writer(dirs, file_name, field_names):
+    print("进入get_csv_writer方法")
     if not os.path.exists(dirs):
         os.makedirs(dirs)
     file_path = dirs + file_name + "_" + format(time.time(), ".0f") + ".csv"
@@ -16,15 +17,18 @@ def get_csv_writer(dirs, file_name, field_names):
 
 
 def get_applicationid_by_pid(d, pid):
-    ps_info = re.findall("\S+", d.adb_shell("ps | grep " + pid))
+    print("进入get_applicationid_by_pid方法")
+    ps_info = re.findall("\\S+", d.adb_shell("ps | grep " + pid))
     return ps_info[len(ps_info) - 1]
 
 
 def get_pid_by_applicationid(d, applicationid):
-    ps_info = re.findall("\S+", d.adb_shell("ps | grep " + applicationid + "$"))
+    print("进入get_pid_by_applicationid方法")
+    ps_info = re.findall("\\S+", d.adb_shell("ps | grep " + applicationid + "$"))
     return ps_info[1]
 
 
 def get_version_name_by_applicationid(d, applicationid):
+    print("进入get_version_name_by_applicationid方法")
     version_info = d.adb_shell("dumpsys package " + applicationid + " | grep versionName")
-    return re.findall("\d+.+\d", version_info)[0]
+    return re.findall("\\d+.+\\d", version_info)[0]

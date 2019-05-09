@@ -26,6 +26,7 @@ from PerformanceEvaluationTest.task import RandomTask
 # -l url 需要安装app的url地址
 
 def main(task):
+    print("进入main方法")
     device = "421056b9ac0e944f"
     applicationid = "com.starmakerinteractive.starmaker"
     interval = 1
@@ -44,7 +45,7 @@ def main(task):
         elif opt == "-d":
             duration = float(value)
         elif opt == "-i":
-            info_names = re.split("\s?,\s?", value)
+            info_names = re.split("\\s?,\\s?", value)
         elif opt == "-o":
             if value is not None:
                 output = value

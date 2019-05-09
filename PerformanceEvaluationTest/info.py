@@ -7,17 +7,20 @@ from PerformanceEvaluationTest import utils
 
 
 class Info(object):
-
     def __init__(self):
+        print("进入Info类")
         self.task = None
 
     def get_start_info(self):
+        print("进入Info.get_start_info方法")
         pass
 
     def get_end_info(self):
+        print("进入Info.get_end_info方法")
         pass
 
     def get_index(self):
+        print("进入Info.get_index方法")
         if self.task.period == "" or self.task.period is None:
             return time.strftime("%H:%M:%S")
         else:
@@ -30,6 +33,7 @@ class CPUInfo(Info):
     JIFFIES = "时间片"
 
     def __init__(self):
+        print("进入CPUInfo类")
         super().__init__()
         self.count = 1
         self.is_running = True
@@ -44,7 +48,7 @@ class CPUInfo(Info):
     def get_cpu_action(self):
         cpu_path = "/proc/stat"
         info = self.task.d.adb_shell("cat " + cpu_path)
-        return re.split("\s+", info.split("\n")[0])
+        return re.split("\\s+", info.split("\n")[0])
 
     def get_process_cpu_usage(self):
         result = self.get_process_cpu_action()
@@ -54,7 +58,7 @@ class CPUInfo(Info):
     def get_process_cpu_action(self):
         cpu_path = "/proc/" + self.task.pid + "/stat"
         info = self.task.d.adb_shell("cat " + cpu_path)
-        result = re.split("\s+", info)
+        result = re.split("\\s+", info)
         return [result[1], result[13], result[14]]
 
     def get_start_info(self):
@@ -98,6 +102,7 @@ class MemInfo(Info):
     DALVIK_HEAP = "Dalvik Heap(MB)"
 
     def __init__(self):
+        print("进入MemInfo类")
         super().__init__()
         self.count = 1
         self.is_running = True
@@ -131,6 +136,7 @@ class FPSInfo(Info):
     FPS = "FPS"
 
     def __init__(self):
+        print("进入FPSInfo类")
         super().__init__()
         self.is_running = True
         self.is_first = True
@@ -155,10 +161,10 @@ class FPSInfo(Info):
             while self.is_running:
                 if self.is_first:
                     self.last_time = time.time_ns()
-                    self.last_fps = int(re.findall("\d+", self.task.d.adb_shell(command))[0])
+                    self.last_fps = int(re.findall("\\d+", self.task.d.adb_shell(command))[0])
                     self.is_first = False
                 current_time = time.time_ns()
-                current_fps = int(re.findall("\d+", self.task.d.adb_shell(command))[0])
+                current_fps = int(re.findall("\\d+", self.task.d.adb_shell(command))[0])
                 time_delta = (current_time - self.last_time) / 1000000000.0
                 fps_delta = current_fps - self.last_fps
                 fps = fps_delta / time_delta
@@ -181,6 +187,7 @@ class NetInfo(Info):
     TOTAL_UP_SPEED = "上传总流量(KB)"
 
     def __init__(self):
+        print("进入NetInfo类")
         super().__init__()
         self.count = 1
         self.is_running = True
@@ -216,7 +223,7 @@ class NetInfo(Info):
                 self.start_time = time.time_ns()
                 self.last_time = self.start_time
                 net_info = self.task.d.adb_shell(command)
-                net_array = re.split("\s+", net_info)
+                net_array = re.split("\\s+", net_info)
                 self.start_net_down = int(net_array[2])
                 self.last_net_down = self.start_net_down
                 self.start_net_up = int(net_array[10])
@@ -224,7 +231,7 @@ class NetInfo(Info):
                 self.is_first = False
             current_time = time.time_ns()
             current_info = self.task.d.adb_shell(command)
-            current_array = re.split("\s+", current_info)
+            current_array = re.split("\\s+", current_info)
             current_net_down = int(current_array[2])
             current_net_up = int(current_array[10])
             time_delta = (current_time - self.last_time) / 1000000000.0

@@ -149,6 +149,7 @@ class DevicesInfo(object):
         element_package = "%s:id/" % setUp_package
         return element_package
 
+
 if __name__ == '__main__':
     print("将以下信息复制到Utils/Setting下")
     print("DeviceCount = " + str(len(GetDevicesInfo().GetAndroidVersion())))

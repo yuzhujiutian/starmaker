@@ -7,7 +7,7 @@ import re
 def get_number(file_name, sample):
     path = os.path.abspath(file_name)
     f = open(path, "r", encoding='gbk', errors='ignore')
-    num = re.findall("\d+", sample)[0]
+    num = re.findall("\\d+", sample)[0]
     front = re.findall("(.*)" + num, sample)[0]
     after = re.findall(num + "(.*)", sample)[0]
     try:

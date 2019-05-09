@@ -16,5 +16,5 @@ AppActivity = "com.ushowmedia.starmaker.activity.SplashActivity"
 # 设备信息(数据来源：GetDevicesInfo)
 DeviceCount = 1
 PlatformVersion = ['7.0']
-Device = ['Redmi_Note_4X']
-DeviceName = ['mido']
+Device = ['SM_G570F']
+DeviceName = ['on5xelte']
