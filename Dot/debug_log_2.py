@@ -1,14 +1,14 @@
 # coding=utf-8
-import re
-import os
-import sys
-import json
-import gzip
-import urllib
-import datetime
 import StringIO
-from io import BytesIO
+import datetime
+import gzip
+import json
+import os
+import re
+import sys
+import urllib
 from BaseHTTPServer import BaseHTTPRequestHandler
+from io import BytesIO
 
 # 获取当前脚本目录，作为工作目录
 root_dir = os.path.realpath(os.path.realpath(__file__) + "/..")
@@ -192,7 +192,6 @@ class PostHandler(BaseHTTPRequestHandler):
         platform1 = re.findall("Android", user_agent)
         platform2 = re.findall("iOS", user_agent)
         datas = self.rfile.read(int(self.headers['content-length']))
-        print type(datas)
         if platform1:
             try:
                 android_handle_event(datas, j_fileter)
