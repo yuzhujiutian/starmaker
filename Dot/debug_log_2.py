@@ -136,7 +136,7 @@ def ios_handle_event(datas, filter=None):
     aa = data.read().decode('utf-8').encode()
     content = json.loads(aa)
     # print json.dumps(content, indent=2)
-    _events = content['events']
+    _events = content.get('events', False)
 
     base_params = {}
     for k in content.keys():
