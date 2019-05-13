@@ -73,11 +73,11 @@ def print_e(e):
     _output_params = ['type', 'page', 'obj', 'timestamp']
 
     for i in _output_params:
-        print '%30s: %s' % (i, e[i])
+        print '%30s: %s' % (i, e.get(i, ''))
 
     for k in keys:
         if k.startswith('t_params_'):
-            print '%30s: %s' % (k[len('t_params_'):], e[k])
+            print '%30s: %s' % (k[len('t_params_'):], e.get(k, ''))
 
     print '------------\n'
 
@@ -105,7 +105,7 @@ def android_handle_event(datas, filter=None):
     content = datas.decode('utf-8').encode('ISO-8859-1')
     data = gzip.GzipFile('', 'rb', 9, StringIO.StringIO(content))
     content = json.loads(data.read())
-    _events = content['events']
+    _events = content.get('events', False)
 
     base_params = {}
     for k in content.keys():
@@ -135,6 +135,7 @@ def ios_handle_event(datas, filter=None):
     data = gzip.GzipFile(fileobj=buff)
     aa = data.read().decode('utf-8').encode()
     content = json.loads(aa)
+    # print json.dumps(content, indent=2)
     _events = content['events']
 
     base_params = {}

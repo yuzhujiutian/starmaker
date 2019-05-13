@@ -1,6 +1,10 @@
 # coding=utf-8
-# class test(object):
-#     def __init__(self, type, page, obj, **list):
-#         pass
-#
-#     def
+import time
+
+A = time.time()
+print A
+print time.localtime( time.time() )
+
+
+if __name__ == '__main__':
+    pass
