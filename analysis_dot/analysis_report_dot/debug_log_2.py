@@ -10,11 +10,15 @@ import urllib
 from BaseHTTPServer import BaseHTTPRequestHandler
 from io import BytesIO
 
+from analysis_dot.analysis_report_dot.check_clear_log import TestLog_Processing
+
 # 获取当前脚本目录，作为工作目录
 root_dir = os.path.realpath(os.path.realpath(__file__) + "/..")
 os.chdir(root_dir)
 
 _filter_params = {}
+
+
 # _filter_params['type'] = ['load', 'show', 'visit', 'performance', 'page_open', 'request', 'page_close']
 # _filter_params['page'] = ['party_room', 'live_room', 'Popular', 'Following', 'library', 'push', 'splash',
 #                           'app_launch', 'main', 'popular']
@@ -212,6 +216,14 @@ class PostHandler(BaseHTTPRequestHandler):
 
 
 def StartServer():
+    # 开始前清理log日志
+    try:
+        TestLog_Processing()
+        if TestLog_Processing():
+            print "历史log日志已清理"
+    except:
+        pass
+
     from BaseHTTPServer import HTTPServer
     sever = HTTPServer(("", 8982), PostHandler)
     # import ssl
