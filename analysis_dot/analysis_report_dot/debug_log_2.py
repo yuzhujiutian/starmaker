@@ -217,13 +217,7 @@ class PostHandler(BaseHTTPRequestHandler):
 
 def StartServer():
     # 开始前清理log日志
-    try:
-        TestLog_Processing()
-        if TestLog_Processing():
-            print "历史log日志已清理"
-    except:
-        pass
-
+    TestLog_Processing()
     from BaseHTTPServer import HTTPServer
     sever = HTTPServer(("", 8982), PostHandler)
     # import ssl
