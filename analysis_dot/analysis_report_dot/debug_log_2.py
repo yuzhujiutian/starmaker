@@ -218,7 +218,10 @@ class PostHandler(BaseHTTPRequestHandler):
 
 def StartServer():
     # 开始前清理log日志
-    TestLog_Processing()
+    try:
+        TestLog_Processing()
+    except:
+        pass
     from BaseHTTPServer import HTTPServer
     sever = HTTPServer(("", 8982), PostHandler)
     # import ssl
