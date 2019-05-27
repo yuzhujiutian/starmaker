@@ -325,3 +325,37 @@ QuickLogin_Image_ID = package + FS(Source_QuickLogin_Image_ID)
 # 快速登录用户名
 Source_QuickLogin_StageName_ID = "tv_latest_name"
 QuickLogin_StageName_ID = package + FS(Source_QuickLogin_StageName_ID)
+
+#--------StartMaker-------------------------------------------------------------------------------------------
+
+
+# ----------
+# startmaker的登录模块
+# ----------
+# 选择语言文案
+Source_LogIn_Languagedisplay_CopywritingClaS = "android.widget.TextView"
+
+#底框Me
+Source_LogIn_MeClas = "android.support.v7.app.ActionBar$Tab"
+
+#登录方式更多
+Source_LogIn_MoreWayClaS = "android.widget.TextView"
+
+# 登录弹窗-选择登录方式-选择Email方式LogInPopup_SelectLoginMode_SelectEmail_ID
+
+#登录弹窗-更多-邮箱登录-logIn
+Source_LogInPopup_SelectLoginMode_LogIn_ID = "txt_login"
+LogInPopup_SelectLoginMode_LogIn_ID = package + FS(Source_LogInPopup_SelectLoginMode_LogIn_ID)
+
+#登录弹窗-更多-邮箱登录-logIn-输入邮箱
+Source_LogInPopup_SendEmail_ID = "et_input"
+LogInPopup_SendEmail_ID = package + FS(Source_LogInPopup_SendEmail_ID)
+
+#输入邮箱后点击登录
+Source_EmailWay_LogIn_ID = "btw_email_confirm"
+EmailWay_LogIn_ID = package + FS(Source_EmailWay_LogIn_ID)
+
+# Me页面的用户名称
+Source_EmailWay_MeUserName_ID = "user_name_view_tv_name"
+EmailWay_MeUserName_ID = package + FS(Source_EmailWay_MeUserName_ID)
+
