@@ -2,13 +2,15 @@
 # ----------
 # 通用工具封装
 # ----------
-import re
-import os
-import time
 import datetime
-from StarMaker.Utils.GetAppiumDeriver import GetAppiumDeriver
-from selenium.webdriver.support.ui import WebDriverWait
+import os
+import re
+import time
+
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+
+from StarMaker.Utils.GetAppiumDeriver import GetAppiumDeriver
 
 
 # ----------
@@ -886,7 +888,7 @@ class RegionalClick(object):
         bounds = self.driver.find_element_by_id(elements).get_attribute("bounds")
         time.sleep(2)
         # 提取bounds中坐标值
-        Bounds = re.findall(r"\[(.+?)\]", bounds)
+        Bounds = re.findall(r"\\[(.+?)\\]", bounds)
         self.x1 = re.findall(r".+"",", Bounds[0])[0].strip().strip(",")
         self.y1 = re.findall(r","".+", Bounds[0])[0].strip().strip(",")
         self.x2 = re.findall(r".+"",", Bounds[1])[0].strip().strip(",")

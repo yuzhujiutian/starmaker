@@ -6,11 +6,12 @@ import json
 import os
 import re
 import sys
-
 import urllib.error
 import urllib.parse
 import urllib.request
 from http.server import BaseHTTPRequestHandler
+
+from analysis_dot.analysis_report_dot.check_clear_log import TestLog_Processing
 
 # 获取当前脚本目录，作为工作目录
 root_dir = os.path.realpath(os.path.realpath(__file__)+"/..")
@@ -68,20 +69,22 @@ r_logger = logger()
 
 # 打印事件
 def print_e(e):
-    print('\n------------')
-    keys = e.keys()
-    keys.sort()
+    print('\n''------------')
+    # python2写法
+    # keys = e.keys()
+    # keys.sort()
+    keys = sorted(e)
 
     _output_params = ['type', 'page', 'obj', 'timestamp']
 
     for i in _output_params:
-        print(('%30s: %s' % (i, e[i])))
+        print(('%30s: %s' % (i, e.get(i, ""))))
 
     for k in keys:
         if k.startswith('t_params_'):
-            print(('%30s: %s' % (k[len('t_params_'):], e[k])))
+            print(('%30s: %s' % (k[len('t_params_'):], e.get(k, ""))))
 
-    print('------------\n')
+    print('------------''\n')
 
 
 # 过滤是否需要处理打点事件(如需过滤将此处注释打开)
@@ -105,7 +108,7 @@ def j_fileter(event):
 def android_handle_event(datas, filter=None):
     # Android需要这么处理
     content = datas.decode('utf-8').encode('ISO-8859-1')
-    data = gzip.GzipFile('', 'rb', 9, io.StringIO(content))
+    data = gzip.GzipFile('', 'rb', 9, io.BytesIO(content))
     content = json.loads(data.read())
     _events = content['events']
 
@@ -114,15 +117,20 @@ def android_handle_event(datas, filter=None):
         if k in ['events']:
             continue
         else:
-            base_params[k] = content[k]
+            base_params[k] = content.get(k, "")
 
     for _e in _events:
         _params = _e.pop('params')
         e_params = {}
         for k in _params.keys():
-            e_params['t_params_' + k] = _params[k]
+            e_params['t_params_' + k] = _params.get(k, "")
         # 最终的event
-        e = dict(_e.items() + base_params.items() + e_params.items())
+        # python2的写法
+        # e = dict{_e.items() + base_params.items() + e_params.items()
+        e = {}
+        e.update(_e.items())
+        e.update(base_params.items())
+        e.update(e_params.items())
         if filter is None:
             print_e(e)
         else:
@@ -144,15 +152,19 @@ def ios_handle_event(datas, filter=None):
         if k in ['events']:
             continue
         else:
-            base_params[k] = content[k]
+            base_params[k] = content.get(k, "")
 
     for _e in _events:
         _params = _e.pop('params')
         e_params = {}
         for k in _params.keys():
-            e_params['t_params_' + k] = _params[k]
+            e_params['t_params_' + k] = _params.get(k, "")
         # 最终的event
-        e = dict(_e.items() + base_params.items() + e_params.items())
+        # e = dict(_e.items() + base_params.items() + e_params.items())
+        e = {}
+        e.update(_e.items())
+        e.update(base_params.items())
+        e.update(e_params.items())
         if filter is None:
             print_e(e)
         else:
@@ -173,7 +185,7 @@ class PostHandler(BaseHTTPRequestHandler):
 
         if action == 'config':
             # 接收get参数
-            print((query[1]))
+            print(query[1])
             if query[1] is not None:
                 for qp in query[1].split('&'):
                     kv = qp.split('=')
@@ -194,7 +206,6 @@ class PostHandler(BaseHTTPRequestHandler):
         platform1 = re.findall("Android", user_agent)
         platform2 = re.findall("iOS", user_agent)
         datas = self.rfile.read(int(self.headers['content-length']))
-        print(type(datas))
         if platform1:
             try:
                 android_handle_event(datas, j_fileter)
@@ -214,6 +225,11 @@ class PostHandler(BaseHTTPRequestHandler):
 
 
 def StartServer():
+    # 开始前清理log日志
+    try:
+        TestLog_Processing()
+    except:
+        pass
     from http.server import HTTPServer
     sever = HTTPServer(("", 8982), PostHandler)
     # import ssl

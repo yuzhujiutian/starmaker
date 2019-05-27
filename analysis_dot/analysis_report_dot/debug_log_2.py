@@ -1,5 +1,4 @@
 # coding=utf-8
-import StringIO
 import datetime
 import gzip
 import json
@@ -7,8 +6,10 @@ import os
 import re
 import sys
 import urllib
-from BaseHTTPServer import BaseHTTPRequestHandler
 from io import BytesIO
+
+import StringIO
+from BaseHTTPServer import BaseHTTPRequestHandler
 
 from analysis_dot.analysis_report_dot.check_clear_log import TestLog_Processing
 
@@ -198,7 +199,7 @@ class PostHandler(BaseHTTPRequestHandler):
         platform2 = re.findall("iOS", user_agent)
         datas = self.rfile.read(int(self.headers['content-length']))
         if platform1:
-            try:
+            try:self.send_response(200)
                 android_handle_event(datas, j_fileter)
             except Exception as e:
                 print e
@@ -219,11 +220,8 @@ def StartServer():
     # 开始前清理log日志
     try:
         TestLog_Processing()
-        if TestLog_Processing():
-            print "历史log日志已清理"
     except:
         pass
-
     from BaseHTTPServer import HTTPServer
     sever = HTTPServer(("", 8982), PostHandler)
     # import ssl
