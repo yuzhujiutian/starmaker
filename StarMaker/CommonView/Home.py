@@ -2,8 +2,8 @@
 # ----------
 # 首页
 # ----------
-from StarMaker.Utils.FindElement import find_element
 from StarMaker.CommonView.VData import Home_VD
+from StarMaker.Utils.FindElement import find_element
 from StarMaker.Utils.Tools import Popular_Elements_Disposes
 
 
@@ -257,3 +257,275 @@ class Home(object):
     def HomePage_WhatsAppPop_Frame(self):
         HomePage_WhatsAppPop_Frame_ID = self.findID(Home_VD.HomePage_WhatsAppPop_Frame_ID)
         return HomePage_WhatsAppPop_Frame_ID
+
+    # ----------
+    # Sing页面
+    # ----------
+    # Sing页-切换内容SingTab-界面元素
+    # SIng页-sing
+    def SingPage_Function_CheckSingTitle(self):
+        SingPage_Function_CheckSingTitle_ID = self.findID(Home_VD.SingPage_Function_CheckSingTitle_ID)
+        return SingPage_Function_CheckSingTitle_ID
+
+    # Sing页面-搜索框
+    def SingPage_Common_Search(self):
+        SingPage_Common_Search_ID = self.findID(Home_VD.SingPage_Common_Search_ID)
+        return SingPage_Common_Search_ID
+
+    # Sing页面-播放器图标
+    def SingPage_Common_Player(self):
+        SingPage_Common_Player_ID = self.findID(Home_VD.SingPage_Common_Player_ID)
+        return SingPage_Common_Player_ID
+
+    # Sing页面-Banner
+    def SingPage_Common_Banner(self):
+        SingPage_Common_Banner_ClaS = self.findClaS(Home_VD.Source_SingPage_Common_Banner_ClaS, 0)
+        return SingPage_Common_Banner_ClaS
+
+    # Sing页面-中上方四个Tab([0]Free Style)
+    def SingPage_TabName_FreeStyle(self):
+        SingPage_TabName_FreeStyle_IDS = self.findIDS(Home_VD.SingPage_TabName_IDS, 0)
+        return SingPage_TabName_FreeStyle_IDS
+
+    # Sing页面-中上方四个Tab([1]Collab)
+    def SingPage_TabName_Collab(self):
+        SingPage_TabName_Collab_IDS = self.findIDS(Home_VD.SingPage_TabName_IDS, 1)
+        return SingPage_TabName_Collab_IDS
+
+    # Sing页面-中上方四个Tab([2]Daily Task)
+    def SingPage_TabName_DailyTask(self):
+        SingPage_TabName_DailyTask_IDS = self.findIDS(Home_VD.SingPage_TabName_IDS, 2)
+        return SingPage_TabName_DailyTask_IDS
+
+    # Sing页面-中上方四个Tab([3]My Songs)
+    def SingPage_TabName_MySongs(self):
+        SingPage_TabName_MySongs_IDS = self.findIDS(Home_VD.SingPage_TabName_IDS, 3)
+        return SingPage_TabName_MySongs_IDS
+
+     # Sing页面-Take the Mic
+    def SingPage_Function_TakeTheMic(self):
+        SingPage_Function_TakeTheMic_ID = self.findID(Home_VD.SingPage_TakeTheMic_ID)
+        return SingPage_Function_TakeTheMic_ID
+
+    # Sing页面-Vocal Talents
+    def SingPage_Function_VocalTalents(self):
+        SingPage_Function_VocalTalents_ID = self.findID(Home_VD.SingPage_VocalTalents_ID)
+        return SingPage_Function_VocalTalents_ID
+
+    # Sing页面-Sing Party
+    def SingPage_Function_SingParty(self):
+        SingPage_Function_SingParty_ID = self.findID(Home_VD.SingPage_SingParty_ID)
+        return SingPage_Function_SingParty_ID
+
+    # Sing页面-中下方四个Tab([0]Recommend)
+    def SingPage_SingHeat_Recommend(self):
+        SingPage_Function_SingHeat_IDS = self.findIDS(Home_VD.SingPage_SingHeat_IDS, 0)
+        return SingPage_Function_SingHeat_IDS
+
+    # Sing页面-中下方四个Tab([1]Hot)
+    def SingPage_SingHeat_Hot(self):
+        SingPage_SingHeat_Hot_IDS = self.findIDS(Home_VD.SingPage_SingHeat_IDS, 1)
+        return SingPage_SingHeat_Hot_IDS
+
+    # Sing页面-中下方四个Tab([2]Trending)
+    def SingPage_SingHeat_Trending(self):
+        SingPage_SingHeat_Trending_IDS = self.findIDS(Home_VD.SingPage_SingHeat_IDS, 2)
+        return SingPage_SingHeat_Trending_IDS
+
+    # Sing页面-中下方四个Tab([3]New)
+    def SingPage_SingHeat_New(self):
+        SingPage_SingHeat_New_IDS = self.findIDS(Home_VD.SingPage_SingHeat_IDS, 3)
+        return SingPage_SingHeat_New_IDS
+
+    # Sing页面-Recommend下的歌曲点击SING
+    def SingPage_SingRecommend_SelectSing(self):
+        SingPage_SingRecommend_SelectSing_IDS = self.findIDS(Home_VD.SingPage_SingRecommend_SelectSing_IDS, 0)
+        return SingPage_SingRecommend_SelectSing_IDS
+
+    # Sing页面-选择歌曲-歌曲类型Tab([0]Solo)
+    def SingPage_SingRecommend_SingType_Solo(self):
+        SingPage_SingRecommend_SingType_Solo_IDS = self.findIDS(Home_VD.SingPage_SingRecommend_SingType_IDS, 0)
+        return SingPage_SingRecommend_SingType_Solo_IDS
+
+    # Sing页面-选择歌曲-歌曲类型Tab([1]Join Collab)
+    def SingPage_SingRecommend_SingType_JoinCollab(self):
+        SingPage_SingRecommend_SingType_JoinCollab_IDS = self.findIDS(Home_VD.SingPage_SingRecommend_SingType_IDS, 1)
+        return SingPage_SingRecommend_SingType_JoinCollab_IDS
+
+    # Sing页面-选择歌曲-歌曲类型Tab([2]Start Collab)
+    def SingPage_SingRecommend_SingType_StartCollab(self):
+        SingPage_SingRecommend_SingType_StartCollab_IDS = self.findIDS(Home_VD.SingPage_SingRecommend_SingType_IDS, 2)
+        return SingPage_SingRecommend_SingType_StartCollab_IDS
+
+    # ----------
+    # 安全警告
+    # ----------
+    #允许访问  Allow
+    def SingSolo_SafetyWarning_Allow(self):
+        SingSolo_SafetyWarning_Allow_ClaS = self.findClaS(Home_VD.Source_SingSolo_SafetyWarning_ClaS, 0)
+        return SingSolo_SafetyWarning_Allow_ClaS
+    def SingSolo_SafetyWarning_TextAllow(self):
+        SingSolo_SafetyWarning_TextAllow_Text = self.findAU("new UiSelector().text(\"Change the song's pitch to match your voice!\")")
+        return SingSolo_SafetyWarning_TextAllow_Text
+
+
+    #拒绝访问 rejection
+    def SingSolo_SafetyWarning_Rejection(self):
+        SingSolo_SafetyWarning_Rejection_ClaS = self.findClaS(Home_VD.Source_SingSolo_SafetyWarning_ClaS, 1)
+        return SingSolo_SafetyWarning_Rejection_ClaS
+
+
+
+
+
+    # ----------
+    # Sing-Solo页面
+    # ----------
+    # Solo-引导信息
+    def SingSolo_TipsIcon_Check(self):
+        SingSolo_TipsIcon_Check_ID = self.findID(Home_VD.SingSolo_SingGuide_ID)
+        return SingSolo_TipsIcon_Check_ID
+
+    # Solo-引导信息“I KNOW” SingSolo_TipsInfo_ID
+    def SingSolo_TipsIcon_CheckInfo(self):
+        SingSolo_TipsIcon_CheckInfo_ID = self.findID(Home_VD.SingSolo_SingGuideConfirm_ID)
+        return SingSolo_TipsIcon_CheckInfo_ID
+    # Solo-工具引导信息
+    def SingSolo_Tool_CheckGuide(self):
+        SingSolo_Tool_CheckGuide_Text = self.findAU("new UiSelector().text(\"Change the song's pitch to match your voice!\")")
+        return SingSolo_Tool_CheckGuide_Text
+
+    # Sing页面-选择歌曲-Solo-歌曲Pitch
+    def SingSolo_Function_CheckPitch_ID(self):
+        SingSolo_CheckPitch_ID = self.findID(Home_VD.SingSolo_CheckPitch_ID)
+        return SingSolo_CheckPitch_ID
+
+    # Sing页面-选择歌曲-Solo-歌曲Volume
+    def SingSolo_Function_ChecVolume(self):
+        SingSolo_ChecVolume_ID = self.findID(Home_VD.SingSolo_ChecVolume_ID)
+        return SingSolo_ChecVolume_ID
+
+    # Sing页面-选择歌曲-Solo-歌曲Start
+    def SingSolo_Function_ChecStart(self):
+        SingSolo_Function_ChecStart_ID = self.findID(Home_VD.SingSolo_CheckStart_ID)
+        return SingSolo_Function_ChecStart_ID
+
+    # Sing页面-选择歌曲-Solo-歌曲Guide
+    def SingSolo_Function_ChecGuide(self):
+        SingSolo_Function_ChecGuide_ID = self.findID(Home_VD.SingSolo_CheckGuide_ID)
+        return SingSolo_Function_ChecGuide_ID
+
+    # Sing页面-选择歌曲-Solo-歌曲Effect
+    def SingSolo_Function_CheckEffect(self):
+        SingSolo_Function_CheckEffect_ID = self.findID(Home_VD.SingSolo_CheckEffect_ID)
+        return SingSolo_Function_CheckEffect_ID
+
+    # Sing页面-选择歌曲-Solo-歌曲名称
+    def SingSolo_Function_SingName(self):
+        SingSolo_Function_SingName_ID = self.findID(Home_VD.SingSolo_SingName_ID)
+        return SingSolo_Function_SingName_ID
+
+    # Sing页面-选择歌曲-Solo-音频和视频唱歌
+    def SingSolo_Function_AudioVideo(self):
+        SingSolo_Function_AudioVideo_ID = self.findID(Home_VD.SingSolo_AudioVideo_ID)
+        return SingSolo_Function_AudioVideo_ID
+
+    # Sing页面-选择歌曲-Solo-返回上一页
+    def SingSolo_Function_BackPage(self):
+        SingSolo_Function_BackPage_ID = self.findID(Home_VD.SingSolo_BackPage_ID)
+        return SingSolo_Function_BackPage_ID
+
+    # Sing页面-选择歌曲-Solo-播放歌曲-歌曲打分
+    def SingSolo_SingRecordScore_CheckElement(self):
+        SingSolo_SingRecordScore_CheckElement_ID = self.findID(Home_VD.SingSolo_SingRecordScore_ID)
+        return SingSolo_SingRecordScore_CheckElement_ID
+
+    # Sing页面-选择歌曲-Solo-播放歌曲-歌曲打分头像
+    def SingSolo_SingRecordScoreImage_CheckElement(self):
+        SingSolo_SingRecordScoreImage_CheckElement_ID = self.findID(Home_VD.SingSolo_SingRecordScoreImage_ID)
+        return SingSolo_SingRecordScoreImage_CheckElement_ID
+
+    # Sing页面-选择歌曲-Solo-播放歌曲-歌曲音准器（上面的抖动条）
+    def SingSolo_SongTone_CheckElement(self):
+        SingSolo_SongTone_CheckElement_ID = self.findID(Home_VD.SingSolo_SongTone_ID)
+        return SingSolo_SongTone_CheckElement_ID
+
+
+    # ----------
+    # Sing-Solo页面-Pitch
+    # ----------
+    # Pitch界面的-pitch
+
+    def SongTone_PitchPage_PitchTitle(self):
+        SongTone_PitchPage_PitchTitle_ID = self.findID(Home_VD.SongTone_PitchPage_PitchTitle_ID)
+        return SongTone_PitchPage_PitchTitle_ID
+
+    # Pitch界面的-Close
+    def SongTone_PitchPage_PitchClose(self):
+        SongTone_PitchPage_PitchClose_ID = self.findID(Home_VD.SongTone_PitchPage_PitchClose_ID)
+        return SongTone_PitchPage_PitchClose_ID
+
+    # Pitch界面的-"-"(低调节)
+    def SongTone_PitchPage_PitchLower(self):
+        SongTone_PitchPage_PitchLower_ID = self.findID(Home_VD.SongTone_PitchPage_PitchLower_ID)
+        return SongTone_PitchPage_PitchLower_ID
+
+    # Pitch界面的-“+”（高调节）
+    def SongTone_PitchPage_PitchRaise(self):
+        SongTone_PitchPage_PitchRaise_ID = self.findID(Home_VD.SongTone_PitchPage_PitchRaise_ID)
+        return SongTone_PitchPage_PitchRaise_ID
+
+    # Pitch界面的-“----”（调节条）
+    def SongTone_PitchPage_PitchProgressBar(self):
+        SongTone_PitchPage_PitchProgressBar_ID = self.findID(Home_VD.SongTone_PitchPage_PitchProgressBar_ID)
+        return SongTone_PitchPage_PitchProgressBar_ID
+
+    # Pitch界面的-分数（调节分数）
+    def SongTone_PitchPage_PitchContent(self):
+        SongTone_PitchPage_PitchContent_ID = self.findID(Home_VD.SongTone_PitchPage_PitchContent_ID)
+        return SongTone_PitchPage_PitchContent_ID
+
+    # Pitch界面的-具体分数
+    def SongTone_PitchPage_PitchSpecificContent(self):
+        SingSolo_Tool_CheckGuide_Text = self.findAU("new UiSelector().text(\"2\")")
+        return SingSolo_Tool_CheckGuide_Text
+
+    # ----------
+    # Sing-Solo页面-VOLUME
+    # ----------
+    # Pitch界面的-Voice
+    def SongTone_VolumePage_VolumeAdjust(self):
+        SongTone_VolumePage_VolumeAdjust_ID = self.findID(Home_VD.SongTone_VolumePage_VolumeAdjust_ID)
+        return SongTone_VolumePage_VolumeAdjust_ID
+
+    # Pitch界面的-Voice
+    def SongTone_VolumePage_MusicAdjust(self):
+        SongTone_VolumePage_MusicAdjust_ID = self.findID(Home_VD.SongTone_VolumePage_MusicAdjust_ID)
+        return SongTone_VolumePage_MusicAdjust_ID
+    # ----------
+    # Sing-Solo页面-Effect
+    # ----------
+    # Effect界面的-Effect的场景效果-NONE
+    def SongTone_EffectPage_NoneEffect(self):
+        SongTone_EffectPage_SceneEffect_IDS = self.findIDS(Home_VD.SongTone_EffectPage_SceneEffect_IDS, 0)
+        return SongTone_EffectPage_SceneEffect_IDS
+
+    # Effect界面的-Effect的场景效果-CUSTOM
+    def SongTone_EffectPage_CustomEffect(self):
+        SongTone_EffectPage_CustomEffect_IDS = self.findIDS(Home_VD.SongTone_EffectPage_SceneEffect_IDS, 1)
+        return SongTone_EffectPage_CustomEffect_IDS
+
+    # Effect界面的-Effect的场景效果-HALL
+    def SongTone_EffectPage_HallEffect(self):
+        SongTone_EffectPage_HallEffect_IDS = self.findIDS(Home_VD.SongTone_EffectPage_SceneEffect_IDS, 2)
+        return SongTone_EffectPage_HallEffect_IDS
+
+    # Effect界面的-Effect的场景效果-PARTY
+    def SongTone_EffectPage_PartyEffect(self):
+        SongTone_EffectPage_PartyEffect_IDS = self.findIDS(Home_VD.SongTone_EffectPage_SceneEffect_IDS, 3)
+        return SongTone_EffectPage_PartyEffect_IDS
+
+    # Effect界面的-Effect的场景效果-DISTANT
+    def SongTone_EffectPage_DistantEffect(self):
+        SongTone_EffectPage_DistantEffect_IDS = self.findIDS(Home_VD.SongTone_EffectPage_SceneEffect_IDS, 4)
+        return SongTone_EffectPage_DistantEffect_IDS

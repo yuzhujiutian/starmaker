@@ -638,6 +638,103 @@ class StartMakerAutoTestCase(unittest.TestCase):
         self.assertTrue(singrecirdscore and singrecordscoreimage and songtone, E(msg))
         print(P(msg))
 
+    def test_Case037_PublishSing_CheckSoloPitchPage(self):
+        '''判断Pitch的元素'''
+        # 点击Pitch
+        Home().SingSolo_Function_CheckPitch_ID().click()
+        # 打开Pitch界面-pitch
+        CheckPitch = Home().SingSolo_Function_CheckPitch_ID()
+        # Pitch界面的-Close
+        PitchClose = Home().SongTone_PitchPage_PitchClose()
+        # Pitch界面的-"-"(低调节)
+        PitchLower = Home().SongTone_PitchPage_PitchLower()
+        # Pitch界面的-“+”（高调节）
+        PitchRaise = Home().SongTone_PitchPage_PitchRaise()
+        # Pitch界面的-“----”（调节条）
+        PitchProgressBar = Home().SongTone_PitchPage_PitchProgressBar()
+        # Pitch界面的-分数（调节分数）
+        PitchContent = Home().SongTone_PitchPage_PitchContent()
+        # 断言
+        msg = "7种元素核查"
+        self.assertTrue(CheckPitch and PitchClose and PitchLower and
+                        PitchRaise and PitchProgressBar and PitchContent, E(msg))
+        print(P(msg))
+
+    def test_Case038_PublishSing_CheckSoloPitchPage(self):
+        '''判断Pitch调节数据是否正确'''
+        # Pitch界面的-“+”（高调节）
+        Home().SongTone_PitchPage_PitchRaise().click()
+        time.sleep(2)
+        Home().SongTone_PitchPage_PitchRaise().click()
+        time.sleep(2)
+        Home().SongTone_PitchPage_PitchRaise().click()
+        time.sleep(2)
+        # Pitch界面的-"-"(低调节)
+        Home().SongTone_PitchPage_PitchLower().click()
+        time.sleep(2)
+        # Pitch界面的-分数（调节分数）
+        PitchContent = Home().SongTone_PitchPage_PitchContent().text
+        time.sleep(2)
+        # 断言
+        self.assertTrue(PitchContent, ReadXMLData().returnXMLFile("StartMaker.xml", "StartMark", "singsolo_pitchcontent"))
+
+    def test_Case039_PublishSing_CheckSoloPitchPage(self):
+        '''判断Volume的元素'''
+        # Pitch界面的-Close
+        Home().SongTone_PitchPage_PitchClose().click()
+        time.sleep(2)
+        # 进入Volume界面
+        Home().SingSolo_Function_ChecVolume().click()
+        time.sleep(2)
+        # Volume界面的-Volume
+        volumetitle = Home().SongTone_PitchPage_PitchTitle().text
+        time.sleep(2)
+        # Volume界面的-Close
+        volumeclose = Home().SongTone_PitchPage_PitchClose()
+        # Volume界面的-Voice
+        volumeadjust = Home().SongTone_VolumePage_VolumeAdjust()
+        # Volume界面的-Voice
+        nusicadjust = Home().SongTone_VolumePage_MusicAdjust()
+        # 断言
+        self.assertTrue(volumetitle, ReadXMLData().returnXMLFile("StartMaker.xml", "StartMark", "singsolo_volumetitle"))
+        msg = "3种元素核查"
+        self.assertTrue(volumeclose and volumeadjust and nusicadjust, E(msg))
+        print(P(msg))
+
+    def test_Case040_PublishSing_CheckSoloPitchPage(self):
+        '''判断Effect的元素'''
+        # volume界面的-Close
+        Home().SongTone_PitchPage_PitchClose().click()
+        time.sleep(2)
+        # 进入Effect界面
+        Home().SingSolo_Function_CheckEffect().click()
+        time.sleep(2)
+        # Effect界面的-Volume
+        effecttitle = Home().SongTone_PitchPage_PitchTitle()
+        # Effect界面的-Close
+        effectclose = Home().SongTone_PitchPage_PitchClose()
+        # Effect界面的-Effect的场景效果-NONE
+        noneeffect = Home().SongTone_EffectPage_NoneEffect()
+        # Effect界面的-Effect的场景效果-CUSTOM
+        customeffect = Home().SongTone_EffectPage_CustomEffect()
+        # Effect界面的-Effect的场景效果-HALL
+        halleffect = Home().SongTone_EffectPage_HallEffect()
+        # Effect界面的-Effect的场景效果-PARTY
+        partyeffect = Home().SongTone_EffectPage_PartyEffect()
+        # 断言
+        msg = "6种元素核查"
+        self.assertTrue(effecttitle and effectclose and noneeffect and customeffect
+                        and halleffect and partyeffect, E(msg))
+        print(P(msg))
+
+    def test_Case041_PublishSing_CheckSoloPitchPage(self):
+        '''判断Effect的元素'''
+        # Effect界面的-Effect的场景效果-CUSTOM
+        Home().SongTone_EffectPage_CustomEffect().click()
+        # volume界面的-Close
+        Home().SongTone_PitchPage_PitchClose().click()
+        time.sleep(2)
+
 
 
 

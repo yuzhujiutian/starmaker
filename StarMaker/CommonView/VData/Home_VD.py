@@ -142,3 +142,175 @@ HomePage_MainTab_ClaS = "android.support.v7.app.ActionBar$Tab"
 
 # 首页-底部五个Tab名称([0]Moment/[1]Party/[2]Sing/[3]Message/[4]Me)
 HomePage_MainTab_TabName_IDS = "com.starmakerinteractive.starmaker:id/tab_name"
+
+# ------------
+# Sing页面
+# ------------
+# Sing页面-Sing标识
+Source_SingPage_Function_CheckSingTitle_ID = "sing_title"
+SingPage_Function_CheckSingTitle_ID = package + FS(Source_SingPage_Function_CheckSingTitle_ID)
+
+# Sing页面-搜索框
+Source_SingPage_Common_Search_ID = "txt_search"
+SingPage_Common_Search_ID = package + FS(Source_SingPage_Common_Search_ID)
+
+# Singy页面-播放器图标
+Source_SingPage_Common_Player_ID = "music_wave_bar"
+SingPage_Common_Player_ID = package + FS(Source_SingPage_Common_Player_ID)
+
+# Sing页面-Banner
+Source_SingPage_Common_Banner_ClaS = "android.widget.ImageView"
+
+# Sing页面-中上方四个Tab([0]Free Style/[1]Collab/[2]Daily Task/[3]My Songs)
+Source_SingPage_TabName_IDS = "rl_item_container"
+SingPage_TabName_IDS = package + FS(Source_SingPage_TabName_IDS)
+
+# Sing页面-Take the Mic
+Source_SingPage_TakeTheMic_ID = "iv_challenge_label"
+SingPage_TakeTheMic_ID = package + FS(Source_SingPage_TakeTheMic_ID)
+
+# Sing页面-Vocal Talents
+Source_SingPage_VocalTalents_ID = "iv_talent_label"
+SingPage_VocalTalents_ID = package + FS(Source_SingPage_VocalTalents_ID)
+
+# Sing页面-Sing Party
+Source_SingPage_SingParty_ID = "iv_party_label"
+SingPage_SingParty_ID = package + FS(Source_SingPage_SingParty_ID)
+
+# Sing页面-中下方四个Tab([0]Recommend/[1]Hot/[2]Trending/[3]New)
+Source_SingPage_SingHeat_IDS = "rl_item_container"
+SingPage_SingHeat_IDS = package + FS(Source_SingPage_SingHeat_IDS)
+
+# Sing页面-Recommend下的歌曲点击SING
+Source_SingPage_SingRecommend_SelectSing_IDS = "btn_sing"
+SingPage_SingRecommend_SelectSing_IDS = package + FS(Source_SingPage_SingRecommend_SelectSing_IDS)
+
+# Sing页面-选择歌曲-歌曲类型Tab([0]Solo/[1]Join Collab/[2]Start Collab)
+Source_SingPage_SingRecommend_SingType_IDS = "item_play_detail_dialog_text"
+SingPage_SingRecommend_SingType_IDS = package + FS(Source_SingPage_SingRecommend_SingType_IDS)
+
+
+# ----------
+# 歌曲Solo内
+# ----------
+# Sing页面-选择歌曲-Solo-引导信息
+Source_SingSolo_SingGuide_ID = "recording_headset_dialog_msg_tv"
+SingSolo_SingGuide_ID = package + FS(Source_SingSolo_SingGuide_ID)
+
+# Sing页面-选择歌曲-Solo-引导信息确认
+Source_SingSolo_SingGuideConfirm_ID = "recording_headset_dialog_i_know_btn"
+SingSolo_SingGuideConfirm_ID = package + FS(Source_SingSolo_SingGuideConfirm_ID)
+
+# Sing页面-选择歌曲-Solo-Pitch引导信息确认
+Source_SingSolo_PitchGuide_ID = "tv_pitch_guide_tip"
+SingSolo_PitchGuide_ID = package + FS(Source_SingSolo_PitchGuide_ID)
+
+# Sing页面-选择歌曲-Solo-歌曲Pitch
+Source_SingSolo_CheckPitch_ID = "record_pitch_btn"
+SingSolo_CheckPitch_ID = package + FS(Source_SingSolo_CheckPitch_ID)
+
+# Sing页面-选择歌曲-Solo-歌曲Volume
+Source_SingSolo_CheckVolume_ID = "volume_btn"
+SingSolo_ChecVolume_ID = package + FS(Source_SingSolo_CheckVolume_ID)
+
+# Sing页面-选择歌曲-Solo-歌曲Start
+Source_SingSolo_CheckStart_ID = "record_btn"
+SingSolo_CheckStart_ID = package + FS(Source_SingSolo_CheckStart_ID)
+
+# Sing页面-选择歌曲-Solo-歌曲Guide
+Source_SingSolo_CheckGuide_ID = "guide_btn"
+SingSolo_CheckGuide_ID = package + FS(Source_SingSolo_CheckGuide_ID)
+
+# Sing页面-选择歌曲-Solo-歌曲Effect
+Source_SingSolo_CheckEffect_ID = "audio_effect_btn"
+SingSolo_CheckEffect_ID = package + FS(Source_SingSolo_CheckEffect_ID)
+
+# Sing页面-选择歌曲-Solo-歌曲名称
+Source_SingSolo_SingName_ID = "song_name_tv"
+SingSolo_SingName_ID = package + FS(Source_SingSolo_SingName_ID)
+
+# Sing页面-选择歌曲-Solo-音频和视频唱歌
+Source_SingSolo_AudioVideo_ID = "song_name_tv"
+SingSolo_AudioVideo_ID = package + FS(Source_SingSolo_AudioVideo_ID)
+
+# Sing页面-选择歌曲-Solo-返回上一页
+Source_SingSolo_BackPage_ID = "back_img"
+SingSolo_BackPage_ID = package + FS(Source_SingSolo_AudioVideo_ID)
+
+# Sing页面-选择歌曲-Solo-温馨提示图标
+Source_SingSolo_TipsIcon_ID = "rl_title_fragment_record_tip"
+SingSolo_TipsIcon_ID = package + FS(Source_SingSolo_TipsIcon_ID)
+
+
+# Sing页面-选择歌曲-Solo-温馨提示信息
+Source_SingSolo_TipInfo_ID = "rl_title_fragment_record_tip"
+SingSolo_TipsInfo_ID = package + FS(Source_SingSolo_TipInfo_ID)
+
+# Sing页面-选择歌曲-Solo-播放歌曲-歌曲打分
+Source_SingSolo_SingRecordScore_ID = "pb_progress_view_record_score"
+SingSolo_SingRecordScore_ID = package + FS(Source_SingSolo_SingRecordScore_ID)
+
+# Sing页面-选择歌曲-Solo-播放歌曲-歌曲打分头像
+Source_SingSolo_SingRecordScoreImage_ID = "iv_avatar_view_record_score"
+SingSolo_SingRecordScoreImage_ID = package + FS(Source_SingSolo_SingRecordScoreImage_ID)
+
+# Sing页面-选择歌曲-Solo-播放歌曲-歌曲音准器（上面的抖动条）
+Source_SingSolo_SongTone_ID = "intonation_view"
+SingSolo_SongTone_ID = package + FS(Source_SingSolo_SongTone_ID)
+
+# ----------
+# 安全警告
+# ----------
+# 允许，拒绝
+Source_SingSolo_SafetyWarning_ClaS = "android.widget.Button"
+
+# ----------
+# Sing-Solo页面-Pitch
+# ----------
+# Pitch界面的-pitch
+Source_SongTone_PitchPage_PitchTitle_ID = "trayTitle"
+SongTone_PitchPage_PitchTitle_ID = package + FS(Source_SongTone_PitchPage_PitchTitle_ID)
+
+# Pitch界面的-Close
+Source_SongTone_PitchPage_PitchClose_ID = "done_tv"
+SongTone_PitchPage_PitchClose_ID = package + FS(Source_SongTone_PitchPage_PitchClose_ID)
+
+# Pitch界面的-"-"(低调节)
+Source_SongTone_PitchPage_PitchLower_ID = "img_lower_pitch"
+SongTone_PitchPage_PitchLower_ID = package + FS(Source_SongTone_PitchPage_PitchLower_ID)
+
+# Pitch界面的-“+”（高调节）
+Source_SongTone_PitchPage_PitchRaise_ID = "img_raise_pitch"
+SongTone_PitchPage_PitchRaise_ID = package + FS(Source_SongTone_PitchPage_PitchRaise_ID)
+
+# Pitch界面的-“----”（调节条）
+Source_SongTone_PitchPage_PitchProgressBar_ID = "pitchTrayProgressBar"
+SongTone_PitchPage_PitchProgressBar_ID = package + FS(Source_SongTone_PitchPage_PitchProgressBar_ID)
+
+# Pitch界面的-分数（调节分数）
+Source_SongTone_PitchPage_PitchContent_ID = "tv_pitch_content"
+SongTone_PitchPage_PitchContent_ID = package + FS(Source_SongTone_PitchPage_PitchContent_ID)
+
+# ----------
+# Sing-Solo页面-VOLUME
+# ----------
+# VOLUME界面的-Volume-voice
+Source_SongTone_VolumePage_VolumeAdjust_ID = "volumeTrayVoiceTv"
+SongTone_VolumePage_VolumeAdjust_ID = package + FS(Source_SongTone_VolumePage_VolumeAdjust_ID)
+
+# VOLUME界面的-Volume-Music
+Source_SongTone_VolumePage_MusicAdjust_ID = "volumeTrayMusicTv"
+SongTone_VolumePage_MusicAdjust_ID = package + FS(Source_SongTone_VolumePage_MusicAdjust_ID)
+
+# ----------
+# Sing-Solo页面-Effect
+# ----------
+# Effect界面的-Effect的场景效果
+Source_SongTone_EffectPage_SceneEffect_IDS = "tv_effect_item_effect_tray"
+SongTone_EffectPage_SceneEffect_IDS = package + FS(Source_SongTone_EffectPage_SceneEffect_IDS)
+
+
+
+
+
+

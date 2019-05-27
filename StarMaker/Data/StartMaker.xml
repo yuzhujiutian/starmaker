@@ -20,4 +20,6 @@
     <sing>Sing</sing>
     <singsolo_guideinfo>I KNOW</singsolo_guideinfo>
     <singsolo_toolguide>Change the song's pitch to match your voice!</singsolo_toolguide>
+    <singsolo_pitchcontent>2</singsolo_pitchcontent>
+    <singsolo_volumetitle>VOLUME</singsolo_volumetitle>
 </StartMark>
