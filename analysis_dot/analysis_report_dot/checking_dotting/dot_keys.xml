@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Sing>
+    <Click_LibraryRecommend_SingButton>"click", "library:Recommend", "sing_button"</Click_LibraryRecommend_SingButton>
+</Sing>

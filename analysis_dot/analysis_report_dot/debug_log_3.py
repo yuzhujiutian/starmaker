@@ -11,7 +11,7 @@ import urllib.parse
 import urllib.request
 from http.server import BaseHTTPRequestHandler
 
-from analysis_dot.analysis_report_dot.check_clear_log import TestLog_Processing
+from analysis_dot.analysis_report_dot.TestLog_Processing import TestLog_Processing
 
 # 获取当前脚本目录，作为工作目录
 root_dir = os.path.realpath(os.path.realpath(__file__)+"/..")
@@ -62,6 +62,9 @@ class logger:
 
     def reset(self):
         sys.stdout = self.__console__
+
+    def flush(self):
+        pass
 
 
 r_logger = logger()
@@ -131,11 +134,12 @@ def android_handle_event(datas, filter=None):
         e.update(_e.items())
         e.update(base_params.items())
         e.update(e_params.items())
-        if filter is None:
-            print_e(e)
-        else:
-            if filter(e):
-                print_e(e)
+        # if filter is None:
+        #     print_e(e)
+        # else:
+        #     if filter(e):
+        #         print_e(e)
+        print(e)
         r_logger.detail(json.dumps(e, indent=2))
 
 

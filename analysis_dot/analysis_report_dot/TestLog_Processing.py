@@ -23,19 +23,21 @@ def TestLog_Processing():
             # 第一步：如果日志超过3天则清理
             if log_date <= now_time-3:
                 os.remove(logs)
+                continue
             # 第二步：非当天的日志超过10MB则清理
-            elif log_date != now_time:
+            if log_date != now_time:
                 log_size_b = os.path.getsize(logs)
                 log_size_mb = round(log_size_b/float(1024*1024), 2)
                 if log_size_mb >= 10:
                     os.remove(logs)
+                    continue
             # 第三步：当天的日志超过100MB则清理
-            # elif log_date == now_time:
+            # if log_date == now_time:
             #     log_size_b = os.path.getsize(logs)
             #     log_size_mb = round(log_size_b/float(1024*1024), 2)
             #     if log_size_mb >= 100:
             #         os.remove(logs)
-            #         return True
+            #         continue
 
 
 if __name__ == '__main__':

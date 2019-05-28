@@ -11,7 +11,7 @@ from io import BytesIO
 import StringIO
 from BaseHTTPServer import BaseHTTPRequestHandler
 
-from analysis_dot.analysis_report_dot.check_clear_log import TestLog_Processing
+from analysis_dot.analysis_report_dot.TestLog_Processing import TestLog_Processing
 
 # 获取当前脚本目录，作为工作目录
 root_dir = os.path.realpath(os.path.realpath(__file__) + "/..")
