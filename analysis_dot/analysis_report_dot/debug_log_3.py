@@ -232,8 +232,8 @@ def StartServer():
     # 开始前清理log日志
     try:
         TestLog_Processing()
-    except:
-        pass
+    except Exception as e:
+        print(e)
     from http.server import HTTPServer
     sever = HTTPServer(("", 8982), PostHandler)
     # import ssl
