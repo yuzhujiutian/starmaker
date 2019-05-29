@@ -164,7 +164,5 @@ class checking_dotting(unittest.TestCase):
             self.skipTest("歌曲不支持Chorus")
 
 
-
-
 if __name__ == '__main__':
     pass

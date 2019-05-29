@@ -23,7 +23,7 @@ def check_log():
 
 # 校验打点
 def check_dotting():
-    with open('./dot_data.txt', 'r') as f2:
+    with open('../../analysis_dot/analysis_report_dot/dot_data.txt', 'r') as f2:
         log = re.findall("key=""(.*)", f2.read())
     for i1 in log:
         key = i1.split(",")
