@@ -1,0 +1,12 @@
+key=show,library:Recommend,song_show,1559122135939
+key=click,library:Recommend,song_detail,1559122151384
+key=click,library:Recommend,sing_button,1559122165346
+key=click,library:Recommend,solo,1559122181894
+key=click,library:Recommend,join_collab,1559122209537
+key=click,library:Recommend,start_collab,1559122238133
+key=show,library:Trending,song_show,1559122279708
+key=click,library:Trending,song_detail,1559122295101
+key=click,library:Trending,sing_button,1559122309084
+key=click,library:Trending,solo,1559122325456
+key=click,library:Trending,join_collab,1559122354745
+key=click,library:Trending,start_collab,1559122383686

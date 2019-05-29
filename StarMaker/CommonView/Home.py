@@ -302,7 +302,7 @@ class Home(object):
         SingPage_TabName_MySongs_IDS = self.findIDS(Home_VD.SingPage_TabName_IDS, 3)
         return SingPage_TabName_MySongs_IDS
 
-     # Sing页面-Take the Mic
+    # Sing页面-Take the Mic
     def SingPage_Function_TakeTheMic(self):
         SingPage_Function_TakeTheMic_ID = self.findID(Home_VD.SingPage_TakeTheMic_ID)
         return SingPage_Function_TakeTheMic_ID
@@ -337,6 +337,11 @@ class Home(object):
         SingPage_SingHeat_New_IDS = self.findIDS(Home_VD.SingPage_SingHeat_IDS, 3)
         return SingPage_SingHeat_New_IDS
 
+    # Sing页面-任一Tab下-第一首歌曲名
+    def SingPage_CommonTab_FirstSongName(self):
+        SingPage_CommonTab_FirstSongName_ID_IDS = self.ID_IDS(Home_VD.SingPage_CommonTab_FirstSongName)
+        return SingPage_CommonTab_FirstSongName_ID_IDS
+
     # Sing页面-Recommend下的歌曲点击SING
     def SingPage_SingRecommend_SelectSing(self):
         SingPage_SingRecommend_SelectSing_IDS = self.findIDS(Home_VD.SingPage_SingRecommend_SelectSing_IDS, 0)
@@ -356,6 +361,14 @@ class Home(object):
     def SingPage_SingRecommend_SingType_StartCollab(self):
         SingPage_SingRecommend_SingType_StartCollab_IDS = self.findIDS(Home_VD.SingPage_SingRecommend_SingType_IDS, 2)
         return SingPage_SingRecommend_SingType_StartCollab_IDS
+
+    # Sing页面-选择歌曲-歌曲类型Tab([3]Chorus)
+    def SingPage_SingRecommend_SingType_Chorus(self):
+        try:
+            if self.findIDS(Home_VD.SingPage_SingRecommend_SingType_IDS, 3):
+                return
+        except:
+            return False
 
     # ----------
     # 安全警告

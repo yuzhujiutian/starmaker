@@ -199,7 +199,8 @@ class PostHandler(BaseHTTPRequestHandler):
         platform2 = re.findall("iOS", user_agent)
         datas = self.rfile.read(int(self.headers['content-length']))
         if platform1:
-            try:self.send_response(200)
+            try:
+                self.send_response(200)
                 android_handle_event(datas, j_fileter)
             except Exception as e:
                 print e

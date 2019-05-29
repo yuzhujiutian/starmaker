@@ -178,14 +178,18 @@ Source_SingPage_SingParty_ID = "iv_party_label"
 SingPage_SingParty_ID = package + FS(Source_SingPage_SingParty_ID)
 
 # Sing页面-中下方四个Tab([0]Recommend/[1]Hot/[2]Trending/[3]New)
-Source_SingPage_SingHeat_IDS = "rl_item_container"
+Source_SingPage_SingHeat_IDS = "tv_tab_title"
 SingPage_SingHeat_IDS = package + FS(Source_SingPage_SingHeat_IDS)
+
+# Sing页面-任一Tab下-第一首歌曲名
+Source_SingPage_CommonTab_FirstSongName = "txt_title"
+SingPage_CommonTab_FirstSongName = package + FS(Source_SingPage_CommonTab_FirstSongName)
 
 # Sing页面-Recommend下的歌曲点击SING
 Source_SingPage_SingRecommend_SelectSing_IDS = "btn_sing"
 SingPage_SingRecommend_SelectSing_IDS = package + FS(Source_SingPage_SingRecommend_SelectSing_IDS)
 
-# Sing页面-选择歌曲-歌曲类型Tab([0]Solo/[1]Join Collab/[2]Start Collab)
+# Sing页面-选择歌曲-歌曲类型Tab([0]Solo/[1]Join Collab/[2]Start Collab/[3]Chorus)
 Source_SingPage_SingRecommend_SingType_IDS = "item_play_detail_dialog_text"
 SingPage_SingRecommend_SingType_IDS = package + FS(Source_SingPage_SingRecommend_SingType_IDS)
 
