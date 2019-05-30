@@ -10,7 +10,7 @@ gms = "com.google.android"
 # KTV大厅
 # ----------
 # KTV大厅-Tab-切换Tab
-# ([0]PARTIES/[1]LIVE/[2]DISCOVER/[3]HOT/[4]MULTI-GUEST/[5]COLLAB/[6]QUEUE/[7]FOLLOWING)
+# ([0]Solo/[1]LIVE/[2]Multi_Guest/[3]Ranking)
 Source_KtvPage_Tab_Common_IDS = "tv_tab_title"
 KtvPage_Tab_Common_IDS = package + FS(Source_KtvPage_Tab_Common_IDS)
 
@@ -27,7 +27,7 @@ KtvPage_FunctionEntry_Common_IDS = package + FS(Source_KtvPage_FunctionEntry_Com
 # KTV大厅-房间卡片
 # ----------
 # KTV大厅-房间卡片-封面图(ID/IDS)
-Source_KtvPage_RoomCard_Cover_ID_IDS = "img_cover"
+Source_KtvPage_RoomCard_Cover_ID_IDS = "room_cover"
 KtvPage_RoomCard_Cover_ID_IDS = package + FS(Source_KtvPage_RoomCard_Cover_ID_IDS)
 
 # KTV大厅-房间卡片-守护天使(ID/IDS)
@@ -56,4 +56,9 @@ KtvPage_RoomCard_RoomLevel_ID_IDS = package + FS(Source_KtvPage_RoomCard_RoomLev
 Source_KtvPage_RoomCard_RoomName_ID_IDS = "txt_title"
 KtvPage_RoomCard_RoomName_ID_IDS = package + FS(Source_KtvPage_RoomCard_RoomName_ID_IDS)
 
-
+# ----------
+# KTV大厅-房间卡片
+# ----------
+# KTV大厅-房间卡片-封面图(ID/IDS)
+Source_LivePage_RoomCard_Cover_ID_IDS = "iv_img_cover"
+LivePage_RoomCard_Cover_ID_IDS = package + FS(Source_LivePage_RoomCard_Cover_ID_IDS)

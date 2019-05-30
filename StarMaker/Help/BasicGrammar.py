@@ -3,9 +3,9 @@
 # 基础语法 Help
 # --------------
 
+import os
 # 导入时间模块
 import time
-import os
 
 
 # 定义一个类，并继承 object 类属性

@@ -23,7 +23,7 @@ def check_log():
 
 # 校验打点
 def check_dotting():
-    with open('../../analysis_dot/analysis_report_dot/dot_data.txt', 'r') as f2:
+    with open("../../analysis_dot/analysis_report_dot/checking_dotting/dot_data.txt", "r") as f2:
         log = re.findall("key=""(.*)", f2.read())
     for i1 in log:
         key = i1.split(",")
@@ -31,12 +31,11 @@ def check_dotting():
         page = key[1]
         obj = key[2]
         T = key[3]
-        log = check_log()
-        dotting_list = re.findall('{'"(.*)"'}', log)
+        dotting_list = re.findall("{" + "(.*)" + "}", str(check_log()))
         dotting_keyword = r"'type': '%s', 'page': '%s', 'obj': '%s'" % (type, page, obj)
         for i2 in dotting_list:
             if re.findall(dotting_keyword, i2):
-                if abs(int(re.findall(r"'timestamp': ""(\\d+)", i2)[0]) - int(T)) <= 10000:
+                if abs(int(re.findall(r"'timestamp': ""(\\d+)", i2)[0]) - int(T)) <= 60000:
                     return True
 
 

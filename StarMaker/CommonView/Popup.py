@@ -3,8 +3,9 @@
 # 弹窗
 # ----------
 import time
-from StarMaker.Utils import Tools
+
 from StarMaker.CommonView.VData import Popup_VD
+from StarMaker.Utils import Tools
 from StarMaker.Utils.GetAppiumDeriver import GetAppiumDeriver
 
 
@@ -125,3 +126,20 @@ class Popup(object):
         state = self.FindElement(ID=[Popup_VD.Popup_PitchGuide_ID, "Change the song's pitch to match \n your voice!"])
         if state:
             self.driver.find_element_by_id(Popup_VD.Popup_PitchGuide_ID).click()
+
+    # ----------
+    # 5>KTV/Live
+    # ----------
+    # KTV排麦引导(text=Select a song, queue up and sing to gain your popularity!)
+    def Popup_KTVPage_QueueUp_LiveClick(self):
+        state = self.FindElement(AU=[Popup_VD.Popup_KTVPage_QueueUp_AU, "Select a song, queue up and sing to gain your popularity!"])
+        if state:
+            self.driver.find_element_by_android_uiautomator(Popup_VD.Popup_KTVPage_QueueUp_AU).click()
+            # 处理衍生的另一个弹窗
+            self.driver.back()
+
+    # Live滑动引导(text=Scroll up or down to change the live room)
+    def Popup_LivePage_Slide_LiveClick(self):
+        state = self.FindElement(ID=[Popup_VD.Popup_LivePage_Slide_ID, "Scroll up or down to change the live room"])
+        if state:
+            self.driver.find_element_by_id(Popup_VD.Popup_LivePage_Slide_ID).click()

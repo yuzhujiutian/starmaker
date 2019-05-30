@@ -76,3 +76,13 @@ Popup_HeadphonesRecommended_ID = package + FS(Source_Popup_HeadphonesRecommended
 # 音效引导(text=Change the song's pitch to match \n your voice!)
 Source_Popup_PitchGuide_ID = "tv_pitch_guide_tip"
 Popup_PitchGuide_ID = package + FS(Source_Popup_PitchGuide_ID)
+
+# ----------
+# 5>KTV/Live
+# ----------
+# KTV排麦引导(text=Select a song, queue up and sing to gain your popularity!)
+Popup_KTVPage_QueueUp_AU = "new UiSelector().text(\"Select a song, queue up and sing to gain your popularity!\")"
+
+# Live滑动引导(text=Scroll up or down to change the live room)
+Source_Popup_LivePage_Slide_ID = "tv_tips"
+Popup_LivePage_Slide_ID = package + FS(Source_Popup_LivePage_Slide_ID)

@@ -52,7 +52,36 @@ PlaybackDetailsPage_Video_Preview_ID = package + FS(Source_PlaybackDetailsPage_V
 Source_PlaybackDetailsPage_Video_Repost_IDS = "tv_tab_title"
 PlaybackDetailsPage_Video_Repost_IDS = package + FS(Source_PlaybackDetailsPage_Video_Repost_IDS)
 
-# PlaybackDetails页-视屏详情页-Comment[1]
-Source_PlaybackDetailsPage_Video_Comment_IDS = "tv_tab_title"
-PlaybackDetailsPage_Video_Comment_IDS = package + FS(Source_PlaybackDetailsPage_Video_Comment_IDS)
+# PlaybackDetails页-视屏详情页-Like
+Source_PlaybackDetailsPage_Video_Like_ID = "lyt_like"
+PlaybackDetailsPage_Video_Like_ID = package + FS(Source_PlaybackDetailsPage_Video_Like_ID)
 
+# PlaybackDetails页-视屏详情页-Comment
+Source_PlaybackDetailsPage_Video_Comment_ID = "lyt_comment"
+PlaybackDetailsPage_Video_Comment_ID = package + FS(Source_PlaybackDetailsPage_Video_Comment_ID)
+
+# PlaybackDetails页-视屏详情页-Share
+Source_PlaybackDetailsPage_Video_Share_ID = "lyt_repost"
+PlaybackDetailsPage_Video_Share_ID = package + FS(Source_PlaybackDetailsPage_Video_Share_ID)
+
+# PlaybackDetails页-视屏详情页-Gift
+Source_PlaybackDetailsPage_Video_Gift_ID = "lyt_gift"
+PlaybackDetailsPage_Video_Gift_ID = package + FS(Source_PlaybackDetailsPage_Video_Gift_ID)
+
+# PlaybackDetails页-视屏详情页--Comment输入框
+Source_PlaybackDetailsPage_Video_CommentSendBox_ID = "edit_text"
+PlaybackDetailsPage_Video_CommentSendBox_ID = package + FS(Source_PlaybackDetailsPage_Video_CommentSendBox_ID)
+
+# PlaybackDetails页-视屏详情页--Comment发布按钮
+Source_PlaybackDetailsPage_Video_CommentSendBtn_ID = "iv_send"
+PlaybackDetailsPage_Video_CommentSendBtn_ID = package + FS(Source_PlaybackDetailsPage_Video_CommentSendBtn_ID)
+
+# PlaybackDetails页-视屏详情页--礼物面板Send按钮
+Source_PlaybackDetailsPage_Video_GiftDetailSendBtn_ID = "btn_send_gift"
+PlaybackDetailsPage_Video_GiftDetailSendBtn_ID = package + FS(Source_PlaybackDetailsPage_Video_GiftDetailSendBtn_ID)
+
+# 礼物-送礼-银币不足弹窗文案(text="Insufficient Silvers! Finish the Tasks to get more Silvers.")
+Gift_SendGift_InsufficientSilvers_ID = "android:id/message"
+
+# 礼物-送礼-银币不足弹窗-取消按钮
+Gift_SendGift_InsufficientSilvers_Cancel_ID = "android:id/button2"

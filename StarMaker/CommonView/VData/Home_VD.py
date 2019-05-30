@@ -48,6 +48,10 @@ HomePage_HotTopics_SeeAll_ID = package + FS(Source_HomePage_HotTopics_SeeAll_ID)
 # ----------
 # 首页-feed卡片
 # ----------
+# 首页-feed卡片-删除卡片(ID/IDS)
+Source_HomePage_FeedCard_Delete_ID_IDS = "close_for_you"
+HomePage_FeedCard_Delete_ID_IDS = package + FS(Source_HomePage_FeedCard_Delete_ID_IDS)
+
 # 首页-feed卡片_头像(ID/IDS)
 Source_HomePage_FeedCard_HeadView_ID_IDS = "civ_head_view"
 HomePage_FeedCard_HeadView_ID_IDS = package + FS(Source_HomePage_FeedCard_HeadView_ID_IDS)
@@ -69,7 +73,7 @@ Source_HomePage_FeedCard_Describe_ID_IDS = "tv_desc"
 HomePage_FeedCard_Describe_ID_IDS = package + FS(Source_HomePage_FeedCard_Describe_ID_IDS)
 
 # 首页-feed卡片_图片(ID/IDS)
-Source_HomePage_FeedCard_Img_ID_IDS = "img_cover"
+Source_HomePage_FeedCard_Img_ID_IDS = "img_recording_cover"
 HomePage_FeedCard_Img_ID_IDS = package + FS(Source_HomePage_FeedCard_Img_ID_IDS)
 
 # 首页-feed卡片_视屏(ID/IDS)

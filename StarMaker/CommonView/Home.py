@@ -142,6 +142,11 @@ class Home(object):
     # ----------
     # 首页-feed卡片
     # ----------
+    # 首页-feed卡片-删除卡片(ID/IDS)
+    def HomePage_FeedCard_Delete(self):
+        HomePage_FeedCard_Delete_ID_IDS = self.ID_IDS(Home_VD.HomePage_FeedCard_Delete_ID_IDS)
+        return HomePage_FeedCard_Delete_ID_IDS
+
     # 首页-feed卡片_头像(ID/IDS)
     def HomePage_FeedCard_HeadView(self):
         HomePage_FeedCard_HeadView_ID_IDS = self.ID_IDS(Home_VD.HomePage_FeedCard_HeadView_ID_IDS)
@@ -180,6 +185,11 @@ class Home(object):
     # 首页-feed卡片_图片(ID/IDS)
     def HomePage_FeedCard_Img(self):
         HomePage_FeedCard_Img_ID_IDS = self.ID_IDS(Home_VD.HomePage_FeedCard_Img_ID_IDS)
+        return HomePage_FeedCard_Img_ID_IDS
+
+    # 首页-feed卡片_图片(IDS)
+    def HomePage_FeedCard_DIY_Img(self, cnt):
+        HomePage_FeedCard_Img_ID_IDS = self.findIDS(Home_VD.HomePage_FeedCard_Img_ID_IDS, cnt)
         return HomePage_FeedCard_Img_ID_IDS
 
     # 首页-feed卡片_视屏(ID/IDS)

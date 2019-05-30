@@ -2,12 +2,12 @@
 # ----------
 # 作品播放详情页模块
 # ----------
-from StarMaker.Utils.FindElement import find_element
 from StarMaker.CommonView.VData import PlaybackDetails_VD
+from StarMaker.Utils.FindElement import find_element
 from StarMaker.Utils.Tools import Popular_Elements_Disposes
 
 
-# KTV模块
+# 作品播放详情页模块
 class PlaybackDetails(object):
     def __init__(self):
         self.findID = find_element().ID
@@ -75,7 +75,58 @@ class PlaybackDetails(object):
         PlaybackDetailsPage_Video_Repost_IDS = self.findIDS(PlaybackDetails_VD.PlaybackDetailsPage_Video_Repost_IDS, 0)
         return PlaybackDetailsPage_Video_Repost_IDS
 
-    # PlaybackDetails页-视屏详情页-Comment[1]
+    # PlaybackDetails页-视屏详情页-Like
+    def PlaybackDetailsPage_Video_Like(self):
+        PlaybackDetailsPage_Video_Like_ID = self.findID(PlaybackDetails_VD.PlaybackDetailsPage_Video_Like_ID)
+        return PlaybackDetailsPage_Video_Like_ID
+
+    # PlaybackDetails页-视屏详情页-Comment
     def PlaybackDetailsPage_Video_Comment(self):
-        PlaybackDetailsPage_Video_Comment_IDS = self.findIDS(PlaybackDetails_VD.PlaybackDetailsPage_Video_Comment_IDS)
-        return PlaybackDetailsPage_Video_Comment_IDS
+        PlaybackDetailsPage_Video_Comment_ID = self.findID(PlaybackDetails_VD.PlaybackDetailsPage_Video_Comment_ID)
+        return PlaybackDetailsPage_Video_Comment_ID
+
+    # PlaybackDetails页-视屏详情页-Share
+    def PlaybackDetailsPage_Video_Share(self):
+        PlaybackDetailsPage_Video_Share_ID = self.findID(PlaybackDetails_VD.PlaybackDetailsPage_Video_Share_ID)
+        return PlaybackDetailsPage_Video_Share_ID
+
+    # PlaybackDetails页-视屏详情页-Gift
+    def PlaybackDetailsPage_Video_Gift(self):
+        PlaybackDetailsPage_Video_Gift_ID = self.findID(PlaybackDetails_VD.PlaybackDetailsPage_Video_Gift_ID)
+        return PlaybackDetailsPage_Video_Gift_ID
+
+    # PlaybackDetails页-视屏详情页--Comment输入框
+    def PlaybackDetailsPage_Video_CommentSendBox(self):
+        PlaybackDetailsPage_Video_CommentSendBox_ID = self.findID(PlaybackDetails_VD.PlaybackDetailsPage_Video_CommentSendBox_ID)
+        return PlaybackDetailsPage_Video_CommentSendBox_ID
+
+    # PlaybackDetails页-视屏详情页--Comment发布按钮
+    def PlaybackDetailsPage_Video_CommentSendBtn(self):
+        PlaybackDetailsPage_Video_CommentSendBtn_ID = self.findID(PlaybackDetails_VD.PlaybackDetailsPage_Video_CommentSendBtn_ID)
+        return PlaybackDetailsPage_Video_CommentSendBtn_ID
+
+    # PlaybackDetails页-视屏详情页--礼物面板Send按钮
+    def PlaybackDetailsPage_Video_GiftDetailSendBtn(self):
+        PlaybackDetailsPage_Video_GiftDetailSendBtn_ID = self.findID(PlaybackDetails_VD.PlaybackDetailsPage_Video_GiftDetailSendBtn_ID)
+        return PlaybackDetailsPage_Video_GiftDetailSendBtn_ID
+
+    # ----------
+    # 送礼(通用，后续单独封装)
+    # ----------
+    # 礼物-送礼-银币不足弹窗文案(text="Insufficient Silvers! Finish the Tasks to get more Silvers.")
+    def Gift_SendGift_InsufficientSilvers(self):
+        Gift_SendGift_InsufficientSilvers_ID = self.findID(PlaybackDetails_VD.Gift_SendGift_InsufficientSilvers_ID)
+        return Gift_SendGift_InsufficientSilvers_ID
+
+    # 礼物-送礼-银币不足弹窗-取消按钮
+    def Gift_SendGift_InsufficientSilvers_Cancel(self):
+        Gift_SendGift_InsufficientSilvers_Cancel_ID = self.findID(PlaybackDetails_VD.Gift_SendGift_InsufficientSilvers_Cancel_ID)
+        return Gift_SendGift_InsufficientSilvers_Cancel_ID
+
+    # ----------
+    # 分享(通用，后续单独封装)
+    # ----------
+    # 分享-分享渠道-FB
+    def Share_ShareDetail_FB(self):
+        Share_ShareDetail_FB_AU = self.findAU("new UiSelector().text(\"Facebook\")")
+        return Share_ShareDetail_FB_AU

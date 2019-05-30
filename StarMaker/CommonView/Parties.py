@@ -2,8 +2,8 @@
 # ----------
 # KTV模块
 # ----------
-from StarMaker.Utils.FindElement import find_element
 from StarMaker.CommonView.VData import Parties_VD
+from StarMaker.Utils.FindElement import find_element
 from StarMaker.Utils.Tools import Popular_Elements_Disposes
 
 
@@ -37,8 +37,8 @@ class Parties(object):
         KtvPage_Tab_SwitchTab_IDS = self.findIDS(Parties_VD.KtvPage_Tab_Common_IDS, 1)
         return KtvPage_Tab_SwitchTab_IDS
 
-    # KTV大厅-Tab-DISCOVER
-    def KtvPage_Tab_DISCOVER(self):
+    # KTV大厅-Tab-MultiGuest
+    def KtvPage_Tab_MultiGuest(self):
         KtvPage_Tab_SwitchTab_IDS = self.findIDS(Parties_VD.KtvPage_Tab_Common_IDS, 2)
         return KtvPage_Tab_SwitchTab_IDS
 
@@ -107,7 +107,7 @@ class Parties(object):
 
     # KTV大厅-房间卡片-在线人数(ID/IDS)
     def KtvPage_RoomCard_LiveNumber(self):
-        KtvPage_RoomCard_LiveNumber_ID_IDS = self.ID_IDS(KtvPage_RoomCard_LiveNumber_ID_IDS)
+        KtvPage_RoomCard_LiveNumber_ID_IDS = self.ID_IDS(Parties_VD.KtvPage_RoomCard_LiveNumber_ID_IDS)
         return KtvPage_RoomCard_LiveNumber_ID_IDS
 
     # KTV大厅-房间卡片-排麦人数(ID/IDS)
@@ -124,3 +124,11 @@ class Parties(object):
     def KtvPage_RoomCard_RoomName(self):
         KtvPage_RoomCard_RoomName_ID_IDS = self.ID_IDS(Parties_VD.KtvPage_RoomCard_RoomName_ID_IDS)
         return KtvPage_RoomCard_RoomName_ID_IDS
+
+    # ----------
+    # Live大厅-房间卡片
+    # ----------
+    # KTV大厅-房间卡片-封面图(ID/IDS)
+    def LivePage_RoomCard_Cover(self):
+        LivePage_RoomCard_Cover_ID_IDS = self.ID_IDS(Parties_VD.LivePage_RoomCard_Cover_ID_IDS)
+        return LivePage_RoomCard_Cover_ID_IDS

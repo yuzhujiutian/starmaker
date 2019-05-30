@@ -2,8 +2,8 @@
 # ----------
 # Library页
 # ----------
-from StarMaker.Utils.FindElement import find_element
 from StarMaker.CommonView.VData import Library_VD
+from StarMaker.Utils.FindElement import find_element
 
 
 # Library
@@ -26,6 +26,11 @@ class Library(object):
     def SearchPage_InputBox(self):
         SearchPage_InputBox_ID = self.findID(Library_VD.SearchPage_InputBox_ID)
         return SearchPage_InputBox_ID
+
+    # 搜索页联想结果
+    def SearchPage_RelevantRelevant(self, cnt):
+        SearchPage_RelevantRelevant_IDS = self.findIDS(Library_VD.SearchPage_RelevantRelevant_IDS, cnt)
+        return SearchPage_RelevantRelevant_IDS
 
     # Library Tab——HOT
     def LibraryTab_HOT(self):
