@@ -33,10 +33,15 @@ def check_dotting():
         T = key[3]
         dotting_list = re.findall("{" + "(.*)" + "}", str(check_log()))
         dotting_keyword = r"'type': '%s', 'page': '%s', 'obj': '%s'" % (type, page, obj)
+        error_list = []
         for i2 in dotting_list:
             if re.findall(dotting_keyword, i2):
                 if abs(int(re.findall(r"'timestamp': ""(\\d+)", i2)[0]) - int(T)) <= 60000:
                     return True
+            else:
+                error_list.append(dotting_keyword)
+        if error_list:
+            return error_list
 
 
 # 获取时间

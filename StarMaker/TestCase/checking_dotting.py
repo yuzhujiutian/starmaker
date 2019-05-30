@@ -48,6 +48,9 @@ class checking_dotting(unittest.TestCase):
         time.sleep(10)
         if check_log.check_dotting():
             print("打点校验全部通过")
+        else:
+            print("错误打点如下")
+            print(check_log.check_dotting())
 
     # ----------
     # 工具-点唱台
@@ -272,6 +275,7 @@ class checking_dotting(unittest.TestCase):
     def test_Case2102_ClickPopularDelete(self):
         # 删除首个卡片
         Home().HomePage_FeedCard_Delete().click()
+        time.sleep(2)
         self.exp_dot = "click,popular,delete"
 
     # 点击-popular-卡片
@@ -301,6 +305,7 @@ class checking_dotting(unittest.TestCase):
     # 点击-详情页-follow
     def test_Case2204_ClickPlayDetailFollow(self):
         # 点击Follow
+        time.sleep(2)
         if Home().HomePage_FeedCard_Follow().text == "FOLLOW":
             Home().HomePage_FeedCard_Follow().click()
             self.exp_dot = "click,playdetail,follow"
