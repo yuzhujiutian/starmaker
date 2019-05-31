@@ -247,7 +247,7 @@ class LogIn(object):
     # Phone 选择任意国家区号（"text = "{Country_name} + " " + ({Area_code})""）
     def Phone_SwitchCountryCode_GB(self):
         # 滑动停止后，每页13个，by_id（0-12）
-        Phone_SwitchCountryCode_DIY = self.findIDS("com.starmakerinteractive.starmaker:id/a_q", 1)
+        Phone_SwitchCountryCode_DIY = self.findIDS("a_q", 1)
         return Phone_SwitchCountryCode_DIY
 
     # 查找切换国家区号页面

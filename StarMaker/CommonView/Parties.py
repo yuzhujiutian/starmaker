@@ -132,3 +132,7 @@ class Parties(object):
     def LivePage_RoomCard_Cover(self):
         LivePage_RoomCard_Cover_ID_IDS = self.ID_IDS(Parties_VD.LivePage_RoomCard_Cover_ID_IDS)
         return LivePage_RoomCard_Cover_ID_IDS
+
+    # ----------
+    # Live房间内
+    # ----------

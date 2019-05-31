@@ -141,11 +141,14 @@ HomePage_WhatsAppPop_Frame_ID = package + FS(Source_HomePage_WhatsAppPop_Frame_I
 # ----------
 # 首页-底部五个Tab
 # ----------
-# 首页-底部五个Tab([0]feed流/[1]互娱页/[2]点唱页/[3]消息页/[4]个人页)
-HomePage_MainTab_ClaS = "android.support.v7.app.ActionBar$Tab"
+# 首页-底部五个Tab([0]Moment/[1]Party/[2]Sing/[3]Message/[4]Me)
+# HomePage_MainTab_ClaS = "android.support.v7.app.ActionBar$Tab"
+Source_HomePage_MainTab_IDS = "tab_animation_view"
+HomePage_MainTab_IDS = package + FS(Source_HomePage_MainTab_IDS)
 
 # 首页-底部五个Tab名称([0]Moment/[1]Party/[2]Sing/[3]Message/[4]Me)
-HomePage_MainTab_TabName_IDS = "com.starmakerinteractive.starmaker:id/tab_name"
+Source_HomePage_MainTab_TabName_IDS = "tab_name"
+HomePage_MainTab_TabName_IDS = package + FS(Source_HomePage_MainTab_TabName_IDS)
 
 # ------------
 # Sing页面

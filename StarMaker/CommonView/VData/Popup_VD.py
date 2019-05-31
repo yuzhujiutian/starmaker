@@ -86,3 +86,6 @@ Popup_KTVPage_QueueUp_AU = "new UiSelector().text(\"Select a song, queue up and 
 # Live滑动引导(text=Scroll up or down to change the live room)
 Source_Popup_LivePage_Slide_ID = "tv_tips"
 Popup_LivePage_Slide_ID = package + FS(Source_Popup_LivePage_Slide_ID)
+
+# Live悬浮窗引导 拒绝按钮(text=REFUSE)
+Popup_LivePage_MinimizeOption_RefuseBtn_ID = "md_buttonDefaultNegative"

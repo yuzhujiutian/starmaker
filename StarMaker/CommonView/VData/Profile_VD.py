@@ -169,7 +169,7 @@ ProfilePage_MomentsTab_ShootInfo_More_Delete_Confirm_ID = package + FS(Source_Pr
 # PostsCount_ID = package + FS(Source_PostsCount_ID)
 #
 # # Posts 作品名称([1]第一个作品名/[2]第二个作品名)
-# Source_PostsName_IDS = "com.starmakerinteractive.starmaker:id/txt_title"
+# Source_PostsName_IDS = "txt_title"
 # PostsName_IDS = package + FS(Source_PostsName_IDS)
 #
 # # Posts Repost

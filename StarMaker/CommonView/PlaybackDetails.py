@@ -120,8 +120,8 @@ class PlaybackDetails(object):
 
     # 礼物-送礼-银币不足弹窗-取消按钮
     def Gift_SendGift_InsufficientSilvers_Cancel(self):
-        Gift_SendGift_InsufficientSilvers_Cancel_ID = self.findID(PlaybackDetails_VD.Gift_SendGift_InsufficientSilvers_Cancel_ID)
-        return Gift_SendGift_InsufficientSilvers_Cancel_ID
+        Gift_SendGift_InsufficientSilvers_Cancel_AU = self.findAU("new UiSelector().text(\"CANCEL\")")
+        return Gift_SendGift_InsufficientSilvers_Cancel_AU
 
     # ----------
     # 分享(通用，后续单独封装)

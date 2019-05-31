@@ -143,3 +143,9 @@ class Popup(object):
         state = self.FindElement(ID=[Popup_VD.Popup_LivePage_Slide_ID, "Scroll up or down to change the live room"])
         if state:
             self.driver.find_element_by_id(Popup_VD.Popup_LivePage_Slide_ID).click()
+
+    # Live悬浮窗引导 拒绝按钮(text=REFUSE)
+    def Popup_LivePage_MinimizeOption_RefuseBtn_LiveClick(self):
+        state = self.FindElement(ID=[Popup_VD.Popup_LivePage_MinimizeOption_RefuseBtn_ID, "REFUSE"])
+        if state:
+            self.driver.find_elements_by_id(Popup_VD.Popup_LivePage_MinimizeOption_RefuseBtn_ID).click()

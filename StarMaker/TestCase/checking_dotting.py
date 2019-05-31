@@ -30,7 +30,7 @@ class checking_dotting(unittest.TestCase):
         time.sleep(8)
 
     def setUp(self):
-        time.sleep(2)
+        time.sleep(5)
 
     def tearDown(self):
         # 记录测试数据
@@ -329,12 +329,12 @@ class checking_dotting(unittest.TestCase):
     def test_Case2206_ClickPlayDetailLike(self):
         # 点击Like
         PlaybackDetails().PlaybackDetailsPage_Video_Like().click()
-        # 不放心，再点一次
-        PlaybackDetails().PlaybackDetailsPage_Video_Like().click()
         self.exp_dot = "click,playdetail,like"
 
     # 点击-详情页-unLike
     def test_Case2207_ClickPlayDetailUNLike(self):
+        # 点击UNLike
+        PlaybackDetails().PlaybackDetailsPage_Video_Like().click()
         self.exp_dot = "click,playdetail,unlike"
 
     # send-详情页-gift
@@ -344,10 +344,11 @@ class checking_dotting(unittest.TestCase):
         time.sleep(7)
         # 点击Send按钮
         PlaybackDetails().PlaybackDetailsPage_Video_GiftDetailSendBtn().click()
+        time.sleep(2)
         # 处理余额不足弹窗
         if PlaybackDetails().Gift_SendGift_InsufficientSilvers().text == \
                 "Insufficient Silvers! Finish the Tasks to get more Silvers.":
-            PlaybackDetails().Gift_SendGift_InsufficientSilvers_Cancel().click()
+            self.driver.back()
         time.sleep(2)
         self.driver.back()
         self.exp_dot = "send,playdetail,gift"
