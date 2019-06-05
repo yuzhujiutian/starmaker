@@ -1,4 +1,4 @@
-#coding=utf-8
+# coding=utf-8
 
 
 # 单例模式函数

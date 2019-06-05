@@ -50,7 +50,16 @@ class Tools:
     def FindSource(Source_ID):
         global ReadMappingTable
         try:
-            ReadMappingTable = open("../bin/resource_mapping.txt", "r")
+            # num = Setting.DeviceCount
+            # # 判断当前系统版本
+            # while num:
+            #     num -= 1
+            #     platformVersion = Setting.PlatformVersion[num]
+            #     if platformVersion > 5:
+            #         ReadMappingTable = open("../bin/resource_mapping_21.txt", "r")
+            #     elif platformVersion <= 5:
+            #         ReadMappingTable = open("../bin/resource_mapping_17.txt", "r")
+            ReadMappingTable = open("../bin/resource_mapping_17.txt", "r")
             Result_ID = re.findall("R.id." + "(.*)""'", re.findall(
                 "R.id." + Source_ID + " -> " + "(.*)", ReadMappingTable.read()).__str__())[0]
             return Result_ID
