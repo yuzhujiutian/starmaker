@@ -80,6 +80,8 @@ class checking_dotting(unittest.TestCase):
         self.exp_dot = "click,library:Recommend,solo"
         time.sleep(2)
         self.driver.back()
+        time.sleep(1)
+        self.driver.back()
 
     # 点击-Recommend-点唱类型弹窗的JoinCollab
     def test_Case1105_ClickLibraryRecommendJoinCollab(self):
@@ -100,6 +102,8 @@ class checking_dotting(unittest.TestCase):
         self.exp_dot = "click,library:Recommend,start_collab"
         time.sleep(2)
         self.driver.back()
+        time.sleep(1)
+        self.driver.back()
 
     # 点击-Recommend-点唱类型弹窗的Chorus
     def test_Case1107_ClickLibraryRecommendChorus(self):
@@ -110,6 +114,8 @@ class checking_dotting(unittest.TestCase):
             Home().SingPage_SingRecommend_SingType_Chorus().click()
             self.exp_dot = "click,library:Recommend,hook"
             time.sleep(2)
+            self.driver.back()
+            time.sleep(1)
             self.driver.back()
         else:
             self.exp_dot = ""
@@ -144,6 +150,8 @@ class checking_dotting(unittest.TestCase):
         self.exp_dot = "click,library:Trending,solo"
         time.sleep(2)
         self.driver.back()
+        time.sleep(1)
+        self.driver.back()
 
     # 点击-Trending-点唱类型弹窗的JoinCollab
     def test_Case1112_ClickLibraryTrendingJoinCollab(self):
@@ -164,6 +172,8 @@ class checking_dotting(unittest.TestCase):
         self.exp_dot = "click,library:Trending,start_collab"
         time.sleep(2)
         self.driver.back()
+        time.sleep(1)
+        self.driver.back()
 
     # 点击-Trending-点唱类型弹窗的Chorus
     def test_Case1114_ClickLibraryTrendingChorus(self):
@@ -174,6 +184,8 @@ class checking_dotting(unittest.TestCase):
             Home().SingPage_SingRecommend_SingType_Chorus().click()
             self.exp_dot = "click,library:Trending,hook"
             time.sleep(2)
+            self.driver.back()
+            time.sleep(1)
             self.driver.back()
         else:
             self.exp_dot = ""
@@ -192,6 +204,7 @@ class checking_dotting(unittest.TestCase):
         time.sleep(2)
         # 搜索页输入框输入内容
         Library().SearchPage_InputBox().send_keys("love")
+        time.sleep(2)
         # 点击第一个联想结果
         Library().SearchPage_RelevantRelevant(1).click()
         time.sleep(2)
@@ -221,6 +234,8 @@ class checking_dotting(unittest.TestCase):
         self.exp_dot = "click,search_result,solo"
         time.sleep(2)
         self.driver.back()
+        time.sleep(1)
+        self.driver.back()
 
     # 点击-搜索结果-join_collab
     def test_Case1205_ClickSearchResultJoinCollab(self):
@@ -241,6 +256,8 @@ class checking_dotting(unittest.TestCase):
         self.exp_dot = "click,search_result,start_collab"
         time.sleep(2)
         self.driver.back()
+        time.sleep(1)
+        self.driver.back()
 
     # 点击-搜索结果-Chorus
     def test_Case1207_ClickSearchResultChorus(self):
@@ -253,6 +270,8 @@ class checking_dotting(unittest.TestCase):
             time.sleep(2)
             self.driver.back()
             time.sleep(2)
+            self.driver.back()
+            time.sleep(1)
             self.driver.back()
         else:
             self.exp_dot = ""
@@ -387,6 +406,21 @@ class checking_dotting(unittest.TestCase):
         self.driver.back()
         self.exp_dot = "click,solo,room"
 
+    # 展示-MultiGuest-房间
+    def test_Case3103_ShowMultiGuestRoom(self):
+        # 点击切换到MultiGuest
+        Parties().KtvPage_Tab_MultiGuest().click()
+        time.sleep(4)
+        self.exp_dot = "show,multiguest,room"
+
+    # 点击-MultiGuest-房间
+    def test_Case3104_ClickMultiGuestRoom(self):
+        # 点击MultiGuest首个房间
+        Parties().KtvPage_RoomCard_Cover().click()
+        time.sleep(4)
+        self.driver.back()
+        self.exp_dot = "click,multiguest,room"
+
     # ----------
     # Live
     # ----------
@@ -407,21 +441,6 @@ class checking_dotting(unittest.TestCase):
         time.sleep(2)
         self.driver.back()
         self.exp_dot = "click,live,room"
-
-    # 展示-MultiGuest-房间
-    def test_Case3203_ShowMultiGuestRoom(self):
-        # 点击切换到MultiGuest
-        Parties().KtvPage_Tab_MultiGuest().click()
-        time.sleep(4)
-        self.exp_dot = "show,multiguest,room"
-
-    # 点击-MultiGuest-房间
-    def test_Case3204_ClickMultiGuestRoom(self):
-        # 点击MultiGuest首个房间
-        Parties().KtvPage_RoomCard_Cover().click()
-        time.sleep(4)
-        self.driver.back()
-        self.exp_dot = "click,multiguest,room"
 
 
 if __name__ == '__main__':

@@ -6,8 +6,8 @@ desired_IP = 4721
 # 配置信息
 PlatformName = "Android"
 # uiautomator2 仅可以使用Android 5.0以上；5.0以下需要使用appium
-AutomationName = "appium"
-# AutomationName = "uiautomator2"
+# AutomationName = "appium"
+AutomationName = "uiautomator2"
 AutoGrantPermissions = True
 UnicodeKeyboard = True
 ResetKeyboard = True
