@@ -23,18 +23,16 @@ class GetAppiumDeriver(object):
         desired_caps["autoGrantPermissions"] = Setting.AutoGrantPermissions
         # noReset决定是否清除app数据
         desired_caps["noReset"] = Setting.NoReset
-        self.num = Setting.DeviceCount
+        num = Setting.DeviceCount
         IP = Setting.desired_IP
         # 启动服务
-        while self.num:
-            self.num -= 1
-            print(self.num)
+        while num:
+            num -= 1
             IP += 2
-            desired_caps["platformVersion"] = Setting.PlatformVersion[self.num]
-            desired_caps["device"] = Setting.Device[self.num]
-            desired_caps["deviceName"] = Setting.DeviceName[self.num]
+            desired_caps["platformVersion"] = Setting.PlatformVersion[num]
+            desired_caps["device"] = Setting.Device[num]
+            desired_caps["deviceName"] = Setting.DeviceName[num]
+            print("当前运行第 " + str(num + 1) + " 台设备")
+            print(str(IP), desired_caps["platformVersion"], desired_caps["device"], desired_caps["deviceName"])
             self.driver = webdriver.Remote("http://127.0.0.1:" + str(IP) + "/wd/hub", desired_caps)
 
-
-if __name__ == '__main__':
-    A = GetAppiumDeriver().driver

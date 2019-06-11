@@ -15,7 +15,7 @@ NoReset = True
 AppActivity = "com.ushowmedia.starmaker.activity.SplashActivity"
 
 # 设备信息(数据来源：GetDevicesInfo)
-DeviceCount = 2
-PlatformVersion = ['5.1', '4.3']
-Device = ['OPPO_A53m', 'SM_N9005']
-DeviceName = ['A53m', 'hlte']
+DeviceCount = 1
+PlatformVersion = ['7.0']
+Device = ['SM_G570F']
+DeviceName = ['on5xelte']
