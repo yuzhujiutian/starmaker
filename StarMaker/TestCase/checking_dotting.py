@@ -47,22 +47,24 @@ class checking_dotting(unittest.TestCase):
         print(path)
         time.sleep(10)
         if check_log.check_dotting():
-            print("打点校验全部通过")
-        else:
             print("错误打点如下")
             print(check_log.check_dotting())
+        else:
+            print("打点校验全部通过")
 
     # ----------
     # 工具-点唱台
     # ----------
     # 展示-Recommend-歌曲展示
     def test_Case1101_ShowLibraryRecommendSongShow(self):
+        # 处理Made For You弹窗
+        Popup().HomePopup_MadeForYou_Close_LiveClick()
         self.exp_dot = "show,library:Recommend,song_show"
 
     # 点击-Recommend-歌曲信息
     def test_Case1102_ClickLibraryRecommendSongDetail(self):
-        # 点击首页第一首歌曲的歌曲名
-        Home().SingPage_CommonTab_FirstSongName().click()
+        # 点击首页第一首歌曲的歌曲封面图
+        Home().SingPage_CommonTab_FirstSongImgCover().click()
         self.exp_dot = "click,library:Recommend,song_detail"
         time.sleep(2)
         self.driver.back()
@@ -79,8 +81,6 @@ class checking_dotting(unittest.TestCase):
         Home().SingPage_SingRecommend_SingType_Solo().click()
         self.exp_dot = "click,library:Recommend,solo"
         time.sleep(2)
-        self.driver.back()
-        time.sleep(1)
         self.driver.back()
 
     # 点击-Recommend-点唱类型弹窗的JoinCollab
@@ -102,8 +102,6 @@ class checking_dotting(unittest.TestCase):
         self.exp_dot = "click,library:Recommend,start_collab"
         time.sleep(2)
         self.driver.back()
-        time.sleep(1)
-        self.driver.back()
 
     # 点击-Recommend-点唱类型弹窗的Chorus
     def test_Case1107_ClickLibraryRecommendChorus(self):
@@ -114,8 +112,6 @@ class checking_dotting(unittest.TestCase):
             Home().SingPage_SingRecommend_SingType_Chorus().click()
             self.exp_dot = "click,library:Recommend,hook"
             time.sleep(2)
-            self.driver.back()
-            time.sleep(1)
             self.driver.back()
         else:
             self.exp_dot = ""
@@ -131,8 +127,8 @@ class checking_dotting(unittest.TestCase):
 
     # 点击-Trending-歌曲信息
     def test_Case1109_ClickLibraryTrendingSongDetail(self):
-        # 点击首页第一首歌曲的歌曲名
-        Home().SingPage_CommonTab_FirstSongName().click()
+        # 点击首页第一首歌曲的歌曲封面图
+        Home().SingPage_CommonTab_FirstSongImgCover().click()
         self.exp_dot = "click,library:Trending,song_detail"
         time.sleep(2)
         self.driver.back()
@@ -149,8 +145,6 @@ class checking_dotting(unittest.TestCase):
         Home().SingPage_SingRecommend_SingType_Solo().click()
         self.exp_dot = "click,library:Trending,solo"
         time.sleep(2)
-        self.driver.back()
-        time.sleep(1)
         self.driver.back()
 
     # 点击-Trending-点唱类型弹窗的JoinCollab
@@ -172,8 +166,6 @@ class checking_dotting(unittest.TestCase):
         self.exp_dot = "click,library:Trending,start_collab"
         time.sleep(2)
         self.driver.back()
-        time.sleep(1)
-        self.driver.back()
 
     # 点击-Trending-点唱类型弹窗的Chorus
     def test_Case1114_ClickLibraryTrendingChorus(self):
@@ -184,8 +176,6 @@ class checking_dotting(unittest.TestCase):
             Home().SingPage_SingRecommend_SingType_Chorus().click()
             self.exp_dot = "click,library:Trending,hook"
             time.sleep(2)
-            self.driver.back()
-            time.sleep(1)
             self.driver.back()
         else:
             self.exp_dot = ""
@@ -217,7 +207,7 @@ class checking_dotting(unittest.TestCase):
         time.sleep(2)
         # 点击第一首歌曲名
         Search().SearchPage_SongsSearchResult_FirstSongName().click()
-        self.exp_dot = "click,search_result,search_itm_song"
+        self.exp_dot = "click,search_result,search_item_song"
         time.sleep(2)
         self.driver.back()
 
@@ -225,7 +215,7 @@ class checking_dotting(unittest.TestCase):
     def test_Case1203_ClickSearchResultSearchItemSongSing(self):
         # 点击第一首歌曲点唱按钮
         Search().SearchPage_SongsSearchResult_FirstSongSingBtn().click()
-        self.exp_dot = "click,search_result,search_itm_song_sing"
+        self.exp_dot = "click,search_result,search_item_song_sing"
 
     # 点击-搜索结果-Solo
     def test_Case1204_ClickSearchResultSolo(self):
@@ -233,8 +223,6 @@ class checking_dotting(unittest.TestCase):
         Home().SingPage_SingRecommend_SingType_Solo().click()
         self.exp_dot = "click,search_result,solo"
         time.sleep(2)
-        self.driver.back()
-        time.sleep(1)
         self.driver.back()
 
     # 点击-搜索结果-join_collab
@@ -256,8 +244,6 @@ class checking_dotting(unittest.TestCase):
         self.exp_dot = "click,search_result,start_collab"
         time.sleep(2)
         self.driver.back()
-        time.sleep(1)
-        self.driver.back()
 
     # 点击-搜索结果-Chorus
     def test_Case1207_ClickSearchResultChorus(self):
@@ -270,8 +256,6 @@ class checking_dotting(unittest.TestCase):
             time.sleep(2)
             self.driver.back()
             time.sleep(2)
-            self.driver.back()
-            time.sleep(1)
             self.driver.back()
         else:
             self.exp_dot = ""
@@ -346,6 +330,7 @@ class checking_dotting(unittest.TestCase):
 
     # 点击-详情页-Like
     def test_Case2206_ClickPlayDetailLike(self):
+        time.sleep(2)
         # 点击Like
         PlaybackDetails().PlaybackDetailsPage_Video_Like().click()
         self.exp_dot = "click,playdetail,like"
@@ -404,6 +389,7 @@ class checking_dotting(unittest.TestCase):
         Popup().Popup_KTVPage_QueueUp_LiveClick()
         time.sleep(2)
         self.driver.back()
+        Popup().Popup_KTVPage_MinimizeOption_RefuseBtn_LiveClick()
         self.exp_dot = "click,solo,room"
 
     # 展示-MultiGuest-房间
@@ -419,6 +405,7 @@ class checking_dotting(unittest.TestCase):
         Parties().KtvPage_RoomCard_Cover().click()
         time.sleep(4)
         self.driver.back()
+        Popup().Popup_KTVPage_MinimizeOption_RefuseBtn_LiveClick()
         self.exp_dot = "click,multiguest,room"
 
     # ----------
@@ -429,7 +416,7 @@ class checking_dotting(unittest.TestCase):
         # 点击切换到live
         Parties().KtvPage_Tab_LIVE().click()
         time.sleep(4)
-        self.exp_dot = "show,live,room"
+        self.exp_dot = "show,live_hall_0,room"
 
     # 点击-Live-房间
     def test_Case3202_ClickLiveRoom(self):
@@ -440,7 +427,8 @@ class checking_dotting(unittest.TestCase):
         Popup().Popup_LivePage_Slide_LiveClick()
         time.sleep(2)
         self.driver.back()
-        self.exp_dot = "click,live,room"
+        Popup().Popup_LivePage_MinimizeOption_RefuseBtn_LiveClick()
+        self.exp_dot = "click,live_hall_0,room"
 
 
 if __name__ == '__main__':

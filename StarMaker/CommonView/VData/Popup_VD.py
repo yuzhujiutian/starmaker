@@ -11,9 +11,16 @@ FS = Tools.Tools().FindSource
 Source_Popup_ImgClose_ID = "img_close"
 Popup_ImgClose_ID = package + FS(Source_Popup_ImgClose_ID)
 
+# 通用——iv关闭弹窗
+Source_Popup_IvClose_ID = "iv_close"
+Popup_IvClose_ID = package + FS(Source_Popup_IvClose_ID)
+
 # ----------
 # 1>首页弹窗
 # ----------
+# JoinCollab引导，如果存在则点击关闭
+Source_Popup_MadeForYou_ID = "tv_guide_title"
+Popup_MadeForYou_ID = package + FS(Source_Popup_MadeForYou_ID)
 
 # ①登录后首页 New Feature 引导（text=Only for your taste. Hope you love them./NEXT）
 Popup_NewFeature_AU = "new UiSelector().text(\"Only for your taste. Hope you love them.\")"
@@ -88,4 +95,9 @@ Source_Popup_LivePage_Slide_ID = "tv_tips"
 Popup_LivePage_Slide_ID = package + FS(Source_Popup_LivePage_Slide_ID)
 
 # Live悬浮窗引导 拒绝按钮(text=REFUSE)
-Popup_LivePage_MinimizeOption_RefuseBtn_ID = "md_buttonDefaultNegative"
+Source_Popup_LivePage_MinimizeOption_RefuseBtn_ID = "md_buttonDefaultNegative"
+Popup_LivePage_MinimizeOption_RefuseBtn_ID = package + FS(Source_Popup_LivePage_MinimizeOption_RefuseBtn_ID)
+
+# KTV悬浮窗引导 拒绝按钮(text=REFUSE)
+Source_Popup_KTVPage_MinimizeOption_RefuseBtn_ID = "bt_left"
+Popup_KTVPage_MinimizeOption_RefuseBtn_ID = package + FS(Source_Popup_KTVPage_MinimizeOption_RefuseBtn_ID)
