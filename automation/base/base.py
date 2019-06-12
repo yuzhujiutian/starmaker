@@ -13,17 +13,22 @@ from appium.webdriver.common.touch_action import TouchAction
 from report.performance_mem import AndroidMemoryReport
 
 class BaseTestCase(unittest.TestCase):
-    def setUp(self):
-        self.appPackage = 'com.starmakerinteractive.starmaker'
+
+    # 某些test case的连接的属性值会有不同，提供给子类进行自定义
+    def capsSetup(self):
         desired_caps = {}
         desired_caps['platformName'] = 'Android'
         desired_caps['deviceName'] = 'fe5bb46e'
-        desired_caps['appPackage'] = self.appPackage
+        desired_caps['appPackage'] = 'com.starmakerinteractive.starmaker'
         desired_caps['appActivity'] = 'com.ushowmedia.starmaker.activity.SplashActivity'
         desired_caps['appWaitActivity'] = 'com.ushowmedia.starmaker.activity.MainActivity'
         # desired_caps['automationName'] = 'UiAutomator2'
         desired_caps['noReset'] = 'true'
+        return desired_caps
 
+    def setUp(self):
+        desired_caps = self.capsSetup()
+        self.appPackage = desired_caps.get('appPackage')
         self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
         self.wait15 = WebDriverWait(self.driver, 15, 1)
         self.wait5 = WebDriverWait(self.driver, 5, 1)
@@ -34,12 +39,30 @@ class BaseTestCase(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def findElementById(self, elementId):
+    # wait: 如果为true, 会一直等待知道元素出现
+    def findElementById(self, elementId, wait=False):
         element = None
-        try:
-            element = self.wait5.until(lambda driver: driver.find_element_by_id(elementId))
-        except Exception as e:
-            print e
+        while element == None:
+            try:
+                element = self.wait5.until(lambda driver: driver.find_element_by_id(elementId))
+            except Exception as e:
+                print e
+
+            if not wait:
+                break
+        
+        return element
+
+    def findElementByAId(self, elementId, wait=False):
+        element = None
+        while element == None:
+            try:
+                element = self.wait5.until(lambda driver: driver.find_element_by_accessibility_id(elementId))
+            except Exception as e:
+                print e
+
+            if not wait:
+                break
         
         return element
 
@@ -96,6 +119,11 @@ class BaseTestCase(unittest.TestCase):
         self.driver.swipe(width/2, height*3/4, width/2, height/2, duration)
         self.actionSleep(3)
 
+    def singleTap(self, element=None):
+        action = TouchActions(self.driver)
+        action.singleTap(element)
+        action.perform()
+
     # 等待activity启动
     def waitActivity(self, activity):
         return self.driver.wait_activity(activity, 15)
@@ -146,6 +174,10 @@ class BaseTestCase(unittest.TestCase):
             pass
         else:
             self.memoryProfile.toReport()
+
+    # 打印日志相关， TODO: 丰富功能
+    def log(self, info):
+        print info
 
 
 

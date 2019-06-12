@@ -20,13 +20,22 @@ class Home(object):
 
     # 切换tab
     def switch_tab(self, tab):
+        print 'switch to', tab
         if tab not in Home._tabs:
             print 'can\'t switch tab, tab parameter %s is wrong...'
             return
 
-        el = self.wait5.until(lambda driver: driver.find_element_by_accessibility_id(tab))
+        el = None
+        while el is None:
+            try:
+                el = self.wait5.until(lambda driver: driver.find_element_by_accessibility_id(tab))
+            except Exception as e:
+                print 'Exception:', e
 
-        el.click()
+            if el != None:
+                el.click()
+
+        print 'switch to', tab, 'succ...'
 
 
 if __name__ == '__main__':
