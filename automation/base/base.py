@@ -1,4 +1,6 @@
 #encoding=utf-8
+import sys; 
+sys.path.append('..') 
 
 import unittest
 import time
@@ -7,6 +9,8 @@ import random
 from appium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from appium.webdriver.common.touch_action import TouchAction
+
+from report.performance_mem import AndroidMemoryReport
 
 class BaseTestCase(unittest.TestCase):
     def setUp(self):
@@ -22,7 +26,10 @@ class BaseTestCase(unittest.TestCase):
 
         self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
         self.wait15 = WebDriverWait(self.driver, 15, 1)
-        self.wait5 = WebDriverWait(self.driver, 10, 1)
+        self.wait5 = WebDriverWait(self.driver, 5, 1)
+
+        # 内存统计
+        self.memoryProfile = None
 
     def tearDown(self):
         pass
@@ -91,7 +98,7 @@ class BaseTestCase(unittest.TestCase):
 
     # 等待activity启动
     def waitActivity(self, activity):
-        self.driver.wait_activity(activity, 15)
+        return self.driver.wait_activity(activity, 15)
 
     # 获取当前meminfo
     def getCurrentMem(self):
@@ -101,12 +108,44 @@ class BaseTestCase(unittest.TestCase):
     def actionSleep(self, duration=2):
         time.sleep(duration)
 
-    # 按钮back键操作
-    def actionBack(self):
+    # 按钮back键，回到上一个activity, waitActivity为上一个activity
+    # 如果不设置waitActivity, 那么只是执行back键
+    def actionBack(self, waitActivity=None):
         try:
             self.wait5.until(lambda driver: driver.back())
         except Exception as e:
             print e
+
+        if waitActivity != None:
+            returned = False
+            while not returned:
+                # 等待回到上一个页面
+                returned = self.waitActivity(waitActivity)
+
+                if not returned:
+                    try:
+                        self.wait5.until(lambda driver: driver.back())
+                    except Exception as e:
+                        print e
+
+    # 开始内存统计
+    def startMemoryProfile(self):
+        if self.memoryProfile == None:
+            self.memoryProfile = AndroidMemoryReport(self.appPackage, self.driver)
+            self.memoryProfile.profile()
+
+    # 统计当前内存占用
+    def profile(self):
+        if self.memoryProfile == None:
+            print 'error: please call startMemoryProfile first...'
+        else:
+            self.memoryProfile.profile()
+
+    def profileReport(self):
+        if self.memoryProfile == None:
+            pass
+        else:
+            self.memoryProfile.toReport()
 
 
 

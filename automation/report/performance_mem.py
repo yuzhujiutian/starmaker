@@ -9,7 +9,7 @@ import time
 '''
 class AndroidMemoryReport:
 
-    def __init__(self, appPackage,driver):
+    def __init__(self, appPackage, driver):
         self.memInfos = []
         self.appPackage = appPackage
         self.driver = driver

@@ -1,6 +1,4 @@
 #encoding=utf-8
-
-#encoding=utf-8
 import sys; 
 sys.path.append('..') 
 
@@ -14,7 +12,6 @@ import random
 
 from common.home import Home
 from base.base import BaseTestCase
-from report.performance_mem import AndroidMemoryReport
 
 class PerformanceMoment(BaseTestCase):
 
@@ -40,8 +37,7 @@ class PerformanceMoment(BaseTestCase):
         els = None
 
         # 开始统计memory
-        self.memoryProfile = AndroidMemoryReport(self.appPackage, self.driver)
-        self.memoryProfile.profile()
+        self.startMemoryProfile()
 
         while els is None:
             home.switch_tab(Home.Trend)
@@ -49,6 +45,7 @@ class PerformanceMoment(BaseTestCase):
             # 内容卡片是否已经加载出来
             els = self.findElementsByAID(PerformanceMoment.AID_Popular_Content_Item)
             if els != None:
+                print 'switch to trend tab...'
                 break
             else:
                 self.actionSleep(1)
@@ -56,9 +53,9 @@ class PerformanceMoment(BaseTestCase):
         count = 0
 
         # 执行次数
-        threshold = 5
+        threshold = 150
 
-        self.memoryProfile.profile()
+        self.profile()
 
         while  count < threshold:
             # 随机选取一个，进入播放详情页
@@ -73,34 +70,28 @@ class PerformanceMoment(BaseTestCase):
             self.actionSleep(5)
 
             # 记录内存使用情况
-            self.memoryProfile.profile()
+            self.profile()
 
             # 再播放5秒
             self.actionSleep(5)
 
             # 回到首页
-            self.actionBack()
-
-            # 等待回到首页
-            self.waitActivity(PerformanceMoment.Activity_Main)
+            self.actionBack(waitActivity=PerformanceMoment.Activity_Main)
 
             # 记录内存使用情况
-            self.memoryProfile.profile()
+            self.profile()
 
             self.actionSleep(1)
 
             # 向下浏览
             self.swipeUp()
 
-            # 等待滚动结束
-            self.actionSleep(3)
-
             # 查找新的内容卡片
             els = self.findElementsByAID(PerformanceMoment.AID_Popular_Content_Item)
 
             count += 1
 
-        self.memoryProfile.toReport()
+        self.profileReport()
 
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(PerformanceMoment)
