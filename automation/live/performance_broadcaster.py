@@ -15,19 +15,19 @@ from report.performance_mem import AndroidMemoryReport
 
 class PerformanceBoradcaster(BaseTestCase):
     # 右上角按钮id
-    ID_Live_Menu_Btn = 'com.starmakerinteractive.starmaker:id/entertainment_tab_drawer'
+    ID_Live_Menu_Btn = 'entertainment_tab_drawer'
 
     # 开始直播按钮
-    ID_Go_Live_Btn = 'com.starmakerinteractive.starmaker:id/go_live'
+    ID_Go_Live_Btn = 'go_live'
 
     # FB分享按钮
-    ID_FB_Share_Btn = 'com.starmakerinteractive.starmaker:id/img_facebook'
+    ID_FB_Share_Btn = 'img_facebook'
 
     # 开始直播按钮
-    ID_Start_Live_Btn = 'com.starmakerinteractive.starmaker:id/rlyt_start_live'
+    ID_Start_Live_Btn = 'rlyt_start_live'
 
     # 关闭直播弹窗确认按钮
-    IDE_Close_Live_Confirm_Btn = 'com.starmakerinteractive.starmaker:id/md_buttonDefaultPositive'
+    IDE_Close_Live_Confirm_Btn = 'md_buttonDefaultPositive'
 
     # 直播activity
     Activity_Live = 'com.ushowmedia.livelib.room.LiveRoomActivity'
@@ -79,6 +79,8 @@ class PerformanceBoradcaster(BaseTestCase):
         # 开始直播按钮
         goLive = self.findElementById(PerformanceBoradcaster.ID_Go_Live_Btn)
         goLive.click()
+
+        # TODO: 权限弹窗处理
 
         # 等待进入到直播activity
         self.waitActivity(PerformanceBoradcaster.Activity_Live)

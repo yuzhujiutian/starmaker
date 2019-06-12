@@ -11,6 +11,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from appium.webdriver.common.touch_action import TouchAction
 
 from report.performance_mem import AndroidMemoryReport
+from utils.android_proguard_mapping import AndroidProguardMapping 
 
 class BaseTestCase(unittest.TestCase):
 
@@ -36,11 +37,18 @@ class BaseTestCase(unittest.TestCase):
         # 内存统计
         self.memoryProfile = None
 
+        self.mappingFile = desired_caps.get('mappingFile', None)
+        self.mappingFile = '../example/mapping.txt'
+        self.mapping = AndroidProguardMapping(self.mappingFile)
+
     def tearDown(self):
         pass
 
     # wait: 如果为true, 会一直等待知道元素出现
     def findElementById(self, elementId, wait=False):
+        print elementId
+        elementId = self.mapping.getId(elementId)
+        print elementId
         element = None
         while element == None:
             try:
