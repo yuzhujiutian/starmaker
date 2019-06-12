@@ -9,12 +9,12 @@ class StarMakerSuite(unittest.TestCase):
     def test_Suite():
         Suite = unittest.TestSuite()
         # 添加测试套模版
-        from StarMaker.TestCase.LY import StartMakerTestCase
-        Suite.addTests(unittest.makeSuite(StartMakerTestCase))
+        from StarMaker.TestCase import StartMakerAutoTestCase
+        Suite.addTests(unittest.makeSuite(StartMakerAutoTestCase))
         NameFile = "StarMaker7.4.2"
         T = NameFile + " <自动化回归>测试报告"
         Des = NameFile + "登录回归"
-        Tester = "刘悦"
+        Tester = ""
         CreatTestReporter().HTMLReporter(NameFile, T, Des, Suite, Tester)
 
 

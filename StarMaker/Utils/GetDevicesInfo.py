@@ -139,7 +139,7 @@ class DevicesInfo(object):
     def AppPackage():
         # GetPackages = GetDevicesInfo().GetPackages()[0]
         # 调试使用
-        GetPackages = "com.starmakerinteractive.starmaker"
+        GetPackages = "com.starmakerinteractive.thevoice"
         return GetPackages
 
     # package拼接 用于元素定位使用
@@ -151,7 +151,7 @@ class DevicesInfo(object):
 
 
 if __name__ == '__main__':
-    print("将以下信息复制到Utils/Setting下")
+    print("将以下信息复制到Utils/Setting下,如果报错试着再运行一次")
     print("DeviceCount = " + str(len(GetDevicesInfo().GetAndroidVersion())))
     print("PlatformVersion = " + str(GetDevicesInfo().GetAndroidVersion()))
     print("Device = " + str(GetDevicesInfo().GetDevice()))
