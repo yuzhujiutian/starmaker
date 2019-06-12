@@ -804,7 +804,7 @@ class Screen(object):
         x2 = self.width * x2P
         y2 = self.height * y2P
         time.sleep(2)
-        self.driver.swipe(x1, y1, x2, y2, t=500)
+        self.driver.swipe(x1, y1, x2, y2, t)
 
     # 根据屏幕百分比，自定义点击操作(传参：百分比)
     def AccurateClicks_Percentage(self, x1P, y1P, t=500):

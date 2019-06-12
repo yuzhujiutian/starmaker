@@ -18,6 +18,12 @@ class Popup(object):
     # ----------
     # 1>首页弹窗
     # ----------
+    # JoinCollab引导，如果存在则点击关闭
+    def HomePopup_MadeForYou_Close_LiveClick(self):
+        state = self.FindElement(ID=[Popup_VD.Popup_MadeForYou_ID, "Made For You"])
+        if state:
+            self.driver.find_element_by_id(Popup_VD.Popup_IvClose_ID).click()
+
     # ①NewFeature引导，如果存在则点击NEXT
     def HomePopup_NewFeature_NEXT_LiveClick(self):
         state = self.FindElement(AU=[Popup_VD.Popup_NewFeature_AU, "Only for your taste. Hope you love them."])
@@ -149,3 +155,9 @@ class Popup(object):
         state = self.FindElement(ID=[Popup_VD.Popup_LivePage_MinimizeOption_RefuseBtn_ID, "REFUSE"])
         if state:
             self.driver.find_elements_by_id(Popup_VD.Popup_LivePage_MinimizeOption_RefuseBtn_ID).click()
+
+    # KTV悬浮窗引导 拒绝按钮(text=REFUSE)
+    def Popup_KTVPage_MinimizeOption_RefuseBtn_LiveClick(self):
+        state = self.FindElement(ID=[Popup_VD.Popup_KTVPage_MinimizeOption_RefuseBtn_ID, "REFUSE"])
+        if state:
+            self.driver.find_elements_by_id(Popup_VD.Popup_KTVPage_MinimizeOption_RefuseBtn_ID).click()

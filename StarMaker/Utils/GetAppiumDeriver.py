@@ -32,12 +32,12 @@ class GetAppiumDeriver(object):
             desired_caps["platformVersion"] = Setting.PlatformVersion[num]
             desired_caps["device"] = Setting.Device[num]
             desired_caps["deviceName"] = Setting.DeviceName[num]
-            print("---------------------")
+            print('\n''------------')
             print("当前运行第 " + str(num + 1) + " 台设备：")
             print("端口:" + str(IP))
             print("系统版本:" + desired_caps["platformVersion"])
             print("设备型号:" + desired_caps["device"])
             print("设备名称:" + desired_caps["deviceName"])
-            print("---------------------")
+            print('------------''\n')
             self.driver = webdriver.Remote("http://127.0.0.1:" + str(IP) + "/wd/hub", desired_caps)
 

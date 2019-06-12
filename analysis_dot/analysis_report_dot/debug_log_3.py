@@ -134,12 +134,12 @@ def android_handle_event(datas, filter=None):
         e.update(_e.items())
         e.update(base_params.items())
         e.update(e_params.items())
-        # if filter is None:
-        #     print_e(e)
-        # else:
-        #     if filter(e):
-        #         print_e(e)
-        print(e)
+        if filter is None:
+            print_e(e)
+        else:
+            if filter(e):
+                print_e(e)
+        # print(e)
         r_logger.detail(json.dumps(e, indent=2))
 
 
