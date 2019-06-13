@@ -1,4 +1,7 @@
 # coding=utf-8
+# 维护版本：
+# 维护日期：
+# 维护人员：
 # ----------
 # StartMaker的Moment模块
 # ----------
@@ -16,7 +19,7 @@ class Moment(object):
         self.findAID = find_element().AID
         self.findAU = find_element().AU
 
-# ----------
+    # ----------
     # 首页-Moment界面
     # ----------
     # Moment界面-Moment[0]

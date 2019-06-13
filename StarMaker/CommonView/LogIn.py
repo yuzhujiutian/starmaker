@@ -1,4 +1,7 @@
 # coding=utf-8
+# 维护版本：7.4.5 http://119.28.249.120:8080/job/Assemble/3/
+# 维护日期：2019.6.13
+# 维护人员：崔尧椋
 # ----------
 # 登录模块
 # ----------
@@ -21,17 +24,22 @@ class LogIn(object):
     # ----------
     # 登录弹窗
     # ----------
-    # 登录弹窗-更多登录方式
-    def LogInPopup_SelectLoginMode_MoreWays(self):
-        LogInPopup_SelectLoginMode_MoreWays_ID = self.findID(LogIn_VD.LogInPopup_SelectLoginMode_MoreWays_ID)
-        return LogInPopup_SelectLoginMode_MoreWays_ID
-
-    # 登录弹窗-选择登录方式-Tips(Profile_text=Please log in before checking your profile./Post_text=Please log in to make a post./
-    # Notification_text=Please log in before checking the latest news./ktv&live_text=Enjoy all features after log in./
-    # Share_text=Please log in to repost it./Like_text=Please log in to like it.)
+    # 登录弹窗-选择登录方式-Tips(
+    # ClickMeTab_text=Log in and check profile
+    # Post_text=Log in and post covers
+    # ClickMessage_text=Log in and check messages
+    # ktv&live_text=Log in and enjoy all features
+    # DetailsPage_like_text=Please log in to like it.
+    # DetailsPage_comment_text=Please log in to comment.
+    # DetailsPage_Share&Gift_text=Log in and enjoy all features
     def LogInPopup_SelectLoginMode_Tips(self):
         LogInPopup_SelectLoginMode_Tips_ID = self.findID(LogIn_VD.LogInPopup_SelectLoginMode_Tips_ID)
         return LogInPopup_SelectLoginMode_Tips_ID
+
+    # 登录弹窗-选择登录方式-选择Phone方式
+    def LogInPopup_SelectLoginMode_SelectPhone(self):
+        LogInPopup_SelectLoginMode_SelectPhone_ID = self.findID(LogIn_VD.LogInPopup_SelectLoginMode_SelectPhone_ID)
+        return LogInPopup_SelectLoginMode_SelectPhone_ID
 
     # 登录弹窗-选择登录方式-选择FB方式
     def LogInPopup_SelectLoginMode_SelectFacebook(self):
@@ -42,11 +50,6 @@ class LogIn(object):
     def LogInPopup_SelectLoginMode_SelectEmail(self):
         LogInPopup_SelectLoginMode_SelectEmail_ID = self.findID(LogIn_VD.LogInPopup_SelectLoginMode_SelectEmail_ID)
         return LogInPopup_SelectLoginMode_SelectEmail_ID
-
-    # 登录弹窗-选择登录方式-选择Phone方式
-    def LogInPopup_SelectLoginMode_SelectPhone(self):
-        LogInPopup_SelectLoginMode_SelectPhone_ID = self.findID(LogIn_VD.LogInPopup_SelectLoginMode_SelectPhone_ID)
-        return LogInPopup_SelectLoginMode_SelectPhone_ID
 
     # 登录弹窗-选择登录方式-选择G+方式
     def LogInPopup_SelectLoginMode_SelectGoogle(self):
@@ -78,16 +81,8 @@ class LogIn(object):
 
     # 登录弹窗-Email登录方式-选择关闭
     def LogInPopup_EmailLoginMode_SelectClose(self):
-        LogInPopup_EmailLoginMode_SelectClose_ID = self.findID(LogIn_VD.EmailWindow_Close_Btn_ID)
+        LogInPopup_EmailLoginMode_SelectClose_ID = self.findID(LogIn_VD.LogInPopup_EmailLoginMode_Close_ID)
         return LogInPopup_EmailLoginMode_SelectClose_ID
-
-    # ----------
-    # 登录弹窗-FB登录方式
-    # ----------
-    # 登录弹窗-FB登录方式-登录点击按钮
-    def LogInPopup_FBLoginMode_LogInClickBtn(self):
-        LogInPopup_FBLoginMode_LogInClickBtn_AID = self.findAID(LogIn_VD.LogInPopup_FBLoginMode_LogInClickBtn_AID)
-        return LogInPopup_FBLoginMode_LogInClickBtn_AID
 
     # ----------
     # Email登录页
@@ -99,8 +94,8 @@ class LogIn(object):
 
     # 邮箱登录页-输入框-邮箱输入框([0]Email_Input)
     def EmailLogInPage_InputBox_EmailInput(self):
-        EmailLogInPage_InputBox_EmailInput_ClaS = self.findClaS(LogIn_VD.EmailLogInPage_InputBox_CommonClaS, 0)
-        return EmailLogInPage_InputBox_EmailInput_ClaS
+        EmailLogInPage_InputBox_EmailInput_IDS = self.findClaS(LogIn_VD.EmailLogInPage_InputBox_Common_IDS, 0)
+        return EmailLogInPage_InputBox_EmailInput_IDS
 
     # 邮箱登录页-输入框-明文密码
     def EmailLogInPage_InputBox_InputVisibility(self):
@@ -109,126 +104,45 @@ class LogIn(object):
 
     # 邮箱登录页-输入框-密码输入框([1]Password_Input)
     def EmailLogInPage_InputBox_PasswordInput(self):
-        EmailLogInPage_InputBox_PasswordInput_ClaS = self.findClaS(LogIn_VD.EmailLogInPage_InputBox_CommonClaS, 1)
-        return EmailLogInPage_InputBox_PasswordInput_ClaS
+        EmailLogInPage_InputBox_PasswordInput_IDS = self.findClaS(LogIn_VD.EmailLogInPage_InputBox_Common_IDS, 1)
+        return EmailLogInPage_InputBox_PasswordInput_IDS
 
     # 邮箱登录页-登录-确认登录
     def EmailLogInPage_LogIn_Confirm(self):
         EmailLogInPage_LogIn_Confirm_ID = self.findID(LogIn_VD.EmailLogInPage_LogIn_Confirm_ID)
         return EmailLogInPage_LogIn_Confirm_ID
 
+    # 邮箱登录页-清空输入框-清空帐号输入框
+    def EmailLogInPage_ClearInputBox_ClearEmail(self):
+        EmailLogInPage_ClearInputBox_Common_IDS = self.findIDS(LogIn_VD.EmailLogInPage_ClearInputBox_Common_IDS, 0)
+        return EmailLogInPage_ClearInputBox_Common_IDS
 
+    # 邮箱登录页-清空输入框-清空密码输入框
+    def EmailLogInPage_ClearInputBox_ClearPWD(self):
+        EmailLogInPage_ClearInputBox_Common_IDS = self.findIDS(LogIn_VD.EmailLogInPage_ClearInputBox_Common_IDS, 1)
+        return EmailLogInPage_ClearInputBox_Common_IDS
 
+    # 邮箱登录页-错误提示-帐号错误
+    # 帐号错误：不能为空：Your email cannot be empty./邮箱未注册：This Email is not registered yet, please Sign Up now.
+    def EmailLogInPage_errorPrompt_UsernameError(self):
+        EmailLogInPage_errorPrompt_Common_IDS = self.findIDS(LogIn_VD.EmailLogInPage_errorPrompt_Common_IDS, 0)
+        return EmailLogInPage_errorPrompt_Common_IDS
 
+    # 邮箱登录页-错误提示-密码错误
+    # 密码错误：不能为空：Your password cannot be empty./密码错误：Username or password is incorrect
+    def EmailLogInPage_errorPrompt_PasswordError(self):
+        EmailLogInPage_errorPrompt_Common_IDS = self.findIDS(LogIn_VD.EmailLogInPage_errorPrompt_Common_IDS, 1)
+        return EmailLogInPage_errorPrompt_Common_IDS
 
-    # ----------------------------------------------------------------------------------------------------------------------
+    # 邮箱登录页-忘记密码-跳转链接
+    def EmailLogInPage_ForgotPassword_Link(self):
+        EmailLogInPage_ForgotPassword_Link_ID = self.findID(LogIn_VD.EmailLogInPage_ForgotPassword_Link_ID)
+        return EmailLogInPage_ForgotPassword_Link_ID
 
-
-
-
-
-
-
-
-    # ----------
-    # 1>Email 登录
-    # ----------
-    # 【登录注册】弹窗上点击Email方式
-    def LogInWindow_Email_Btn(self):
-        LogInWindow_Email_Btn_ID = self.findID(LogIn_VD.LogInWindow_Email_Btn_ID)
-        return LogInWindow_Email_Btn_ID
-
-    # 【登录注册】弹窗上点击Phone方式
-    def LogInWindow_Phone_Btn(self):
-        LogInWindow_Phone_Btn_ID = self.findID(LogIn_VD.LogInWindow_Phone_Btn_ID)
-        return LogInWindow_Phone_Btn_ID
-
-    # 【登录注册】弹窗上点击G+方式
-    def LogInWindow_Google_Btn(self):
-        LogInWindow_Google_Btn_ID = self.findID(LogIn_VD.LogInWindow_Google_Btn_ID)
-        return LogInWindow_Google_Btn_ID
-
-    # Email 弹窗 —— 登录
-    def EmailWindow_LogIn_Btn(self):
-        EmailWindow_LogIn_Btn_ID = self.findID(LogIn_VD.EmailWindow_LogIn_Btn_ID)
-        return EmailWindow_LogIn_Btn_ID
-
-    # Email 弹窗 —— 注册
-    def EmailWindow_SignUp_Btn(self):
-        EmailWindow_SignUp_Btn_ID = self.findID(LogIn_VD.EmailWindow_SignUp_Btn_ID)
-        return EmailWindow_SignUp_Btn_ID
-
-    # Email 账号输入框
-    def Email_Username_Box(self):
-        Email_Username_Box_Class = self.findClaS(LogIn_VD.Email_Username_Box_Class, 0)
-        return Email_Username_Box_Class
-
-    # Email 清空账号输入框
-    def Email_Clear_EmailBox_Btn(self):
-        Email_Clear_EmailBox_Btn_Xpath = self.findID(LogIn_VD.Email_Clear_EmailBox_Btn_ID)
-        return Email_Clear_EmailBox_Btn_Xpath
-
-    # Email 登录——清空
-    # 1.当输入账号、密码其中一项时，使用Email_Clear_UsernameBox_Btn/Email_Clear_PWDBox_Btn
-    # 2.当输入账号且输入密码时，使用Email_Clear_Class[]，清空账号[1]/清空密码[2]
-    def Email_Clear_Class_UsernameBox(self):
-        Email_Clear_Class = self.findClaS(LogIn_VD.Email_Clear_Class, 1)
-        return Email_Clear_Class
-
-    def Email_Clear_Class_Pwd(self):
-        Email_Clear_Class = self.findClaS(LogIn_VD.Email_Clear_Class, 2)
-        return Email_Clear_Class
-
-    # Email 账号错误
-    def Email_Username_Error(self):
-        Email_Username_Error_ID = self.findID(LogIn_VD.Email_Username_Error_ID)
-        return Email_Username_Error_ID
-
-    # Email 账号未注册——Sign Up（ACP）
-    @staticmethod
-    def Email_Username_SignUpNow_ACP():
-        x1 = LogIn_VD.Email_Username_SignUpNow_ACP[0]
-        y1 = LogIn_VD.Email_Username_SignUpNow_ACP[1]
-        t = LogIn_VD.Email_Username_SignUpNow_ACP[2]
-        if Tools.Screen().AccurateClicks_Percentage(x1, y1, t):
-            return True
-        else:
-            return False
-
-    # Email 密码输入框
-    def Email_Password_Box(self):
-        Email_Password_Box_Class = self.findClaS(LogIn_VD.Email_Password_Box_Class, 1)
-        return Email_Password_Box_Class
-
-    # Email 清空密码输入框
-    def Email_Clear_PWDBox_Btn(self):
-        Email_Clear_PWDBox_Btn_Xpath = self.findID(LogIn_VD.Email_Clear_PWDBox_Btn_ID)
-        return Email_Clear_PWDBox_Btn_Xpath
-
-    # Email 密码错误
-    def Email_Password_Error(self):
-        Email_Password_Error_ID = self.findID(LogIn_VD.Email_Password_Error_ID)
-        return Email_Password_Error_ID
-
-    # Email 显示密码
-    def Email_ShowPassword_Btn(self):
-        Email_ShowPassword_Btn_ID = self.findID(LogIn_VD.Email_ShowPassword_Btn_ID)
-        return Email_ShowPassword_Btn_ID
-
-    # Email 确认登录（提交账号密码验证）
-    def LogIn_Confirm_Btn(self):
-        LogIn_Confirm_Btn_ID = self.findID(LogIn_VD.LogIn_Confirm_Btn_ID)
-        return LogIn_Confirm_Btn_ID
-
-    # Email 忘记密码（link）
-    def Email_ForgotPassword_Link(self):
-        Email_ForgotPassword_Link_ID = self.findID(LogIn_VD.Email_ForgotPassword_Link_ID)
-        return Email_ForgotPassword_Link_ID
-
+# ------以下内容暂未维护------------------------------------------------------------------------------------------------
     # ----------
     # 2>Phone 登录
     # ----------
-
     # LogTips 提示：输入手机号
     def PhoneHome_Tips(self):
         PhoneHome_Tips_ID = self.findID(LogIn_VD.PhoneHome_Tips_ID)

@@ -1,10 +1,13 @@
 # coding=utf-8
+# 维护版本：
+# 维护日期：
+# 维护人员：
 # ----------
 # 个人页
 # ----------
+from StarMaker.CommonView.VData import Profile_VD
 from StarMaker.Utils.FindElement import find_element
 from StarMaker.Utils.Tools import Popular_Elements_Disposes
-from StarMaker.CommonView.VData import Profile_VD
 
 
 # 个人页

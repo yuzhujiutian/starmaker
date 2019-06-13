@@ -1,10 +1,13 @@
 # coding=utf-8
+# 维护版本：
+# 维护日期：
+# 维护人员：
 # ----------
 # 点唱流程
 # ----------
+from StarMaker.CommonView.VData import Post_VD
 from StarMaker.Utils import Tools
 from StarMaker.Utils.FindElement import find_element
-from StarMaker.CommonView.VData import Post_VD
 
 
 # 发布专辑

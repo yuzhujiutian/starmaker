@@ -1,9 +1,12 @@
 # coding=utf-8
+# 维护版本：
+# 维护日期：
+# 维护人员：
 # ----------
 # HotTopics页
 # ----------
-from StarMaker.Utils.FindElement import find_element
 from StarMaker.CommonView.VData import HotTopics_VD
+from StarMaker.Utils.FindElement import find_element
 
 
 # HotTopics页
