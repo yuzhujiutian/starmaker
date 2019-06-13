@@ -63,17 +63,16 @@ class PerformanceBoradcaster(BaseTestCase):
         home = Home(self.driver)
         el = None
 
-        # 开始统计memory
-        self.memoryProfile = AndroidMemoryReport(self.appPackage, self.driver)
+        self.startMemoryProfile()
 
         while el is None:
-            home.switch_tab(Home.Discovery)
+            # home.switch_tab(Home.Discovery)
 
             # 点击按钮
             el = self.findElementById(PerformanceBoradcaster.ID_Live_Menu_Btn)
             if el != None:
                 # 统计开始前的内存使用
-                self.memoryProfile.profile()
+                self.profile()
                 el.click()
 
         # 开始直播按钮
@@ -103,7 +102,7 @@ class PerformanceBoradcaster(BaseTestCase):
             self.actionSleep(1)
 
             if count%5 == 0:
-                self.memoryProfile.profile()
+                self.profile()
 
         closeLiveConfirmBtn = None
         retryCount = 0
@@ -119,6 +118,8 @@ class PerformanceBoradcaster(BaseTestCase):
                 print 'some error happen when exit live room...'
                 break
 
+            self.actionSleep(1)
+
         # 退出直播页面
         self.actionBack()
 
@@ -126,9 +127,9 @@ class PerformanceBoradcaster(BaseTestCase):
         self.actionSleep(1)
 
         print 'stop live, get the memory profile...'
-        self.memoryProfile.profile()
+        self.profile()
 
-        self.memoryProfile.toReport()
+        self.profileReport()
         
 
 if __name__ == '__main__':

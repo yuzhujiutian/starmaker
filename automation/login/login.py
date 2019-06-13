@@ -5,8 +5,50 @@ sys.path.append('..')
 import unittest
 
 from common.home import Home
+from home.launch import LaunchAction
 from base.base import BaseTestCase
+from base.base import BaseAction
 from common.activity import Activity
+
+'''
+封装的登录相关的操作
+'''
+class LoginAction(BaseAction):
+
+    # 检查是否已经登录，如果没有登录，触发登录操作
+    def checkToLogin(self, preActivity=None):
+        # 找到Google登录按钮
+        el = self.findElementById('img_login_google')
+        if el == None:
+            # 没有找到登录按钮，认为不需要登录
+            pass
+        else:
+            self.googleLogin(el, waitActivity=preActivity)
+
+
+    # googleLoginBtn是google登录按钮，通过点击登录按钮，触发登录逻辑
+    def googleLogin(self, googleLoginBtn, waitActivity=Activity.Main):
+        if googleLoginBtn != None:
+            googleLoginBtn.click()
+        else:
+            return
+
+        self.log('open google login dialog...')
+
+        # 找到google账号名, TODO: 需要丰满细节
+        el = self.findElementById('com.google.android.gms:id/account_display_name', wait=True)
+        self.actionSleep(1)
+        el.click()
+        print 'click to google login...'
+        index = 0
+        while not self.waitActivity(waitActivity):
+            self.actionSleep(1)
+            index += 1
+            if index > 10:
+                self.log('warning: google login status unknown...')
+                break
+
+        # 检查登录成功toast
 
 '''
 1.  可能先进入语言选择activity
@@ -25,63 +67,30 @@ class LoginTestCase(BaseTestCase):
         # desired_caps['automationName'] = 'UiAutomator2'
         return desired_caps
 
-    def _enter_main_activity(self):
-        # 如果是语言选择页面
-        if self.driver.current_activity == Activity.Nux_Language:
-            self.log('enter ' + Activity.Nux_Language)
-
-            # 默认选择英语
-            el = self.findElementByAId('nux_language_English')
-            el.click()
-            self.log('choose English language...')
-
-        # 等待进入主页
-        index = 0
-        while not self.waitActivity(Activity.Main):
-            # 如果还没有进入主页面，有可能语言选择页面，点击事件没发生
-            try:
-                el.click()
-            except Exception as e:
-                self.log(e)
-            
-            index += 1
-            if index > 5:
-                print 'error: can\'t enter main activity...'
-        self.log('enter ' + Activity.Main)
-
-        # 等待是否有弹窗，如果有弹窗，关闭弹窗
-        el = self.findElementById('com.starmakerinteractive.starmaker:id/open_promotion_iv_close', wait=False)
-        if el != None:
-            el.click()
-
     def test_google_login(self):
-        print dir(self.driver)
-        self._enter_main_activity()
+        launch = LaunchAction(self)
+
+        launch.launch()
 
         # 切换到me页面，会弹出登录框
-        home = Home(self.driver)
-        home.switch_tab(Home.Me)
+        launch.toTab(LaunchAction.Me)
 
         # 找到Google登录按钮
         el = None
+        index = 0
         while el is None:
-            el = self.findElementById('com.starmakerinteractive.starmaker:id/img_login_google')
+            el = self.findElementById('img_login_google')
 
             if el is None:
-                home.switch_tab(Home.Me)
+                launch.toTab(LaunchAction.Me)
 
-        el.click()
+            index += 1
+            if index > 5:
+                self.log('error: can not find google login botton...')
+                break
 
-        self.log('open google login dialog...')
-
-        # 找到google账号名
-        el = self.findElementById('com.google.android.gms:id/account_display_name', wait=True)
-        self.actionSleep(1)
-        el.click()
-        print 'click to google login...'
-        while not self.waitActivity(Activity.Main):
-            self.actionSleep(1)
-        
+        loginAction = LoginAction(self)
+        loginAction.googleLogin(el)
 
 
 if __name__ == '__main__':

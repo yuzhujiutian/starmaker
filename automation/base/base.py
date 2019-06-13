@@ -11,7 +11,46 @@ from selenium.webdriver.support.ui import WebDriverWait
 from appium.webdriver.common.touch_action import TouchAction
 
 from report.performance_mem import AndroidMemoryReport
-from utils.android_proguard_mapping import AndroidProguardMapping 
+from utils.android_proguard_mapping import AndroidProguardMapping
+from common.activity import Activity
+
+class BaseAction:
+    def __init__(self, baseTestCase):
+        self.tc = baseTestCase
+
+    # 对话框确认逻辑，
+    def dialogBtnClick(self, confirm=True):
+        # 检查dialog是否存在
+        if confirm:
+            yesBtn = self.findElementById('md_buttonDefaultPositive')
+            self.singleTap(yesBtn)
+        else:
+            noBtn = self.findElementById('md_buttonDefaultNegative')
+            self.singleTap(noBtn)
+
+    def findElementById(self, elementId, wait=False):
+        return self.tc.findElementById(elementId, wait)
+
+    def findElementsById(self, elementId, wait=False):
+        return self.tc.findElementsById(elementId, wait)
+
+    def findElementByAId(self, elementId, wait=False):
+        return self.tc.findElementByAId(elementId, wait)
+
+    def waitActivity(self, activity, timeout=9):
+        return self.tc.waitActivity(activity, timeout)
+
+    def log(self, info):
+        return self.tc.log(info)
+
+    def actionSleep(self, duration):
+        self.tc.actionSleep(duration)
+
+    def clearDialog(self):
+        self.tc.clearDialog()
+
+    def singleTap(self, element):
+        self.tc.singleTap(element)
 
 class BaseTestCase(unittest.TestCase):
 
@@ -22,9 +61,13 @@ class BaseTestCase(unittest.TestCase):
         desired_caps['deviceName'] = 'fe5bb46e'
         desired_caps['appPackage'] = 'com.starmakerinteractive.starmaker'
         desired_caps['appActivity'] = 'com.ushowmedia.starmaker.activity.SplashActivity'
-        desired_caps['appWaitActivity'] = 'com.ushowmedia.starmaker.activity.MainActivity'
-        # desired_caps['automationName'] = 'UiAutomator2'
-        desired_caps['noReset'] = 'true'
+        desired_caps['appWaitActivity'] = ','.join([Activity.Main, Activity.Nux_Language])
+        # desired_caps['automationName'] = 'uiautomator2'
+        # desired_caps['noReset'] = 'true'
+        desired_caps['autoGrantPermissions'] = True
+        # desired_caps['autoAcceptAlerts'] = True
+        # defaultCommandTimeout
+        desired_caps['newCommandTimeout'] = 500 # session默认超时时间
         return desired_caps
 
     def setUp(self):
@@ -38,7 +81,8 @@ class BaseTestCase(unittest.TestCase):
         self.memoryProfile = None
 
         self.mappingFile = desired_caps.get('mappingFile', None)
-        self.mappingFile = '../example/mapping.txt'
+        # print dir(self.driver)
+        # self.mappingFile = '../example/mapping.txt'
         self.mapping = AndroidProguardMapping(self.mappingFile)
 
     def tearDown(self):
@@ -46,13 +90,29 @@ class BaseTestCase(unittest.TestCase):
 
     # wait: 如果为true, 会一直等待知道元素出现
     def findElementById(self, elementId, wait=False):
-        print elementId
+        # print elementId
         elementId = self.mapping.getId(elementId)
-        print elementId
+        # print elementId
         element = None
         while element == None:
             try:
                 element = self.wait5.until(lambda driver: driver.find_element_by_id(elementId))
+            except Exception as e:
+                print e
+
+            if not wait:
+                break
+        
+        return element
+
+    def findElementsById(self, elementId, wait=False):
+        # print elementId
+        elementId = self.mapping.getId(elementId)
+        # print elementId
+        element = None
+        while element == None:
+            try:
+                element = self.wait5.until(lambda driver: driver.find_elements_by_id(elementId))
             except Exception as e:
                 print e
 
@@ -128,13 +188,15 @@ class BaseTestCase(unittest.TestCase):
         self.actionSleep(3)
 
     def singleTap(self, element=None):
-        action = TouchActions(self.driver)
-        action.singleTap(element)
+        if element == None:
+            return
+        action = TouchAction(self.driver)
+        action.tap(element)
         action.perform()
 
     # 等待activity启动
-    def waitActivity(self, activity):
-        return self.driver.wait_activity(activity, 15)
+    def waitActivity(self, activity, timeout=9):
+        return self.driver.wait_activity(activity, timeout)
 
     # 获取当前meminfo
     def getCurrentMem(self):
@@ -143,6 +205,16 @@ class BaseTestCase(unittest.TestCase):
     # 睡眠暂停duration秒
     def actionSleep(self, duration=2):
         time.sleep(duration)
+
+    # 清理弹窗
+    def clearDialog(self):
+        self.log('check to clear dialog...')
+        try:
+            el = self.findElementById('iv_close')
+            self.singleTap(el)
+        except Exception as e:
+            self.log(e)
+        
 
     # 按钮back键，回到上一个activity, waitActivity为上一个activity
     # 如果不设置waitActivity, 那么只是执行back键
