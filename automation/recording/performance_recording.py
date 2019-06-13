@@ -115,10 +115,13 @@ class PerformanceRecording(BaseTestCase):
             editInfoAction.send()
 
             # 进入分享页面
+            self.waitActivity(Activity.RecordingShare)
             share = RecordingShareAction(self)
             share.done()
 
             self.profile()
+
+        self.profileReport()
 
             
 

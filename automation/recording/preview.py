@@ -14,6 +14,8 @@ class RecordingPreviewAction(BaseAction):
         postBtn = self.findElementById('btn_post')
         self.singleTap(postBtn)
 
+        # todo: 需要校验postBtn点击已经生效
+
         loginAction = LoginAction(self)
         loginAction.checkToLogin(preActivity=Activity.RecordingPreview)
 
