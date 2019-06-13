@@ -1,4 +1,7 @@
 # coding=utf-8
+# 维护版本：
+# 维护日期：
+# 维护人员：
 # ----------
 # 首页
 # ----------
@@ -37,7 +40,7 @@ class Home(object):
     # 首页-切换内容Tab-Sing
     def HomePage_SwitchTab_SingTab(self):
         HomePage_Common_SwitchTab_ClaS = self.findClaS(Home_VD.HomePage_Common_SwitchTab_ClaS, 2)
-        return  HomePage_Common_SwitchTab_ClaS
+        return HomePage_Common_SwitchTab_ClaS
 
     # 首页-通用-搜索框
     def HomePage_Common_Search(self):
@@ -66,7 +69,8 @@ class Home(object):
     # [5]ଓଡ଼ିଆ(Odia)/[6]മലയാളം(Malayalam)/[7]मराठी(Marathi)/[8]తెలుగు(Telugu)/[9]ਪੰਜਾਬੀ(Punjabi)/[10]অসমীয়া(Assamese)/
     # [滑动翻页][-4]हरियाणवी(Haryanvi)/[-3]राजस्थानी(Rajasthani)/[-2]भोजपूरी(Bhojpuri)/[-1]English(English))
     def HomePage_ChooseLanguage_IndiaSwitchLanguage(self, num):
-        HomePage_ChooseLanguage_IndiaSwitchLanguage_IDS = self.findIDS(Home_VD.HomePage_ChooseLanguage_IndiaSwitchLanguage_IDS, num)
+        HomePage_ChooseLanguage_IndiaSwitchLanguage_IDS = self.findIDS(
+            Home_VD.HomePage_ChooseLanguage_IndiaSwitchLanguage_IDS, num)
         return HomePage_ChooseLanguage_IndiaSwitchLanguage_IDS
 
     def HomePage_ChooseLanguage_ByTextSwitchLanguage(self, text):

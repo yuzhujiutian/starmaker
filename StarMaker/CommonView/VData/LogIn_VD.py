@@ -9,30 +9,24 @@ gms = "com.google.android"
 # ----------
 # 登录弹窗-选择登录方式
 # ----------
-# 登录弹窗-更多登录方式
-Source_LogInPopup_SelectLoginMode_MoreWays_ID = "txt_more_ways"
-LogInPopup_SelectLoginMode_MoreWays_ID = package + FS(Source_LogInPopup_SelectLoginMode_MoreWays_ID)
-
-# 登录弹窗-选择登录方式-Tips(Profile_text=Please log in before checking your profile./Post_text=Please log in to make a post./
-#     # Notification_text=Please log in before checking the latest news./ktv&live_text=Enjoy all features after log in/
-#     # Share_text=Please log in to repost it./Like_text=Please log in to like it.)
+# 登录弹窗-选择登录方式-Tips
 Source_LogInPopup_SelectLoginMode_Tips_ID = "tv_welcome"
 LogInPopup_SelectLoginMode_Tips_ID = package + FS(Source_LogInPopup_SelectLoginMode_Tips_ID)
+
+# 登录弹窗-选择登录方式-选择Phone方式
+Source_LogInPopup_SelectLoginMode_SelectPhone_ID = "tv_login_top"
+LogInPopup_SelectLoginMode_SelectPhone_ID = package + FS(Source_LogInPopup_SelectLoginMode_SelectPhone_ID)
 
 # 登录弹窗-选择登录方式-选择FB方式
 Source_LogInPopup_SelectLoginMode_SelectFacebook_ID = "tv_login_top"
 LogInPopup_SelectLoginMode_SelectFacebook_ID = package + FS(Source_LogInPopup_SelectLoginMode_SelectFacebook_ID)
 
 # 登录弹窗-选择登录方式-选择Email方式
-Source_LogInPopup_SelectLoginMode_SelectEmail_ID = "img_login_left"
+Source_LogInPopup_SelectLoginMode_SelectEmail_ID = "img_login_email"
 LogInPopup_SelectLoginMode_SelectEmail_ID = package + FS(Source_LogInPopup_SelectLoginMode_SelectEmail_ID)
 
-# 登录弹窗-选择登录方式-选择Phone方式
-Source_LogInPopup_SelectLoginMode_SelectPhone_ID = "img_login_middle"
-LogInPopup_SelectLoginMode_SelectPhone_ID = package + FS(Source_LogInPopup_SelectLoginMode_SelectPhone_ID)
-
 # 登录弹窗-选择登录方式-选择G+方式
-Source_LogInPopup_SelectLoginMode_SelectGoogle_ID = "img_login_right"
+Source_LogInPopup_SelectLoginMode_SelectGoogle_ID = "img_login_google"
 LogInPopup_SelectLoginMode_SelectGoogle_ID = package + FS(Source_LogInPopup_SelectLoginMode_SelectGoogle_ID)
 
 # ----------
@@ -54,17 +48,16 @@ LogInPopup_EmailLoginMode_SelectSignUp_ID = package + FS(Source_LogInPopup_Email
 Source_LogInPopup_EmailLoginMode_SelectCancel_ID = "txt_login_cancel"
 LogInPopup_EmailLoginMode_SelectCancel_ID = package + FS(Source_LogInPopup_EmailLoginMode_SelectCancel_ID)
 
-# ----------
-# 登录弹窗-FB登录方式
-# ----------
-# 登录弹窗-FB登录方式-登录点击按钮
-LogInPopup_FBLoginMode_LogInClickBtn_AID = "登录点击"
+# 登录弹窗-Email登录方式-关闭
+Source_LogInPopup_EmailLoginMode_Close_ID = "txt_login_close"
+LogInPopup_EmailLoginMode_Close_ID = package + FS(Source_LogInPopup_EmailLoginMode_Close_ID)
 
 # ----------
 # Email登录页
 # ----------
-# 邮箱登录页-输入框-通用ClaS([0]Email_Input/[1]Password_Input)
-EmailLogInPage_InputBox_CommonClaS = "android.widget.EditText"
+# 邮箱登录页-输入框-通用IDS([0]Email_Input/[1]Password_Input)
+Source_EmailLogInPage_InputBox_Common_IDS = "et_input"
+EmailLogInPage_InputBox_Common_IDS = package + FS(Source_EmailLogInPage_InputBox_Common_IDS)
 
 # 邮箱登录页-输入框-明文密码
 Source_EmailLogInPage_InputBox_InputVisibility_ID = "img_input_visibility"
@@ -74,97 +67,21 @@ EmailLogInPage_InputBox_InputVisibility_ID = package + FS(Source_EmailLogInPage_
 Source_EmailLogInPage_LogIn_Confirm_ID = "btw_email_confirm"
 EmailLogInPage_LogIn_Confirm_ID = package + FS(Source_EmailLogInPage_LogIn_Confirm_ID)
 
+# 邮箱登录页-清空输入框-通用IDS
+Source_EmailLogInPage_ClearInputBox_Common_IDS = "img_input_delete"
+EmailLogInPage_ClearInputBox_Common_IDS = package + FS(Source_EmailLogInPage_ClearInputBox_Common_IDS)
 
+# 邮箱登录页-错误提示-IDS
+# 帐号错误：不能为空：Your email cannot be empty./邮箱未注册：This Email is not registered yet, please Sign Up now.
+# 密码错误：不能为空：Your password cannot be empty./密码错误：Username or password is incorrect
+Source_EmailLogInPage_errorPrompt_Common_IDS = "tv_warning"
+EmailLogInPage_errorPrompt_Common_IDS = package + FS(Source_EmailLogInPage_errorPrompt_Common_IDS)
 
+# 邮箱登录页-忘记密码-跳转链接
+Source_EmailLogInPage_ForgotPassword_Link_ID = "tv_email_forget_password"
+EmailLogInPage_ForgotPassword_Link_ID = package + FS(Source_EmailLogInPage_ForgotPassword_Link_ID)
 
-
-# ----------------------------------------------------------------------------------------------------------------------
-
-
-
-# 登录弹窗——关闭
-Source_LogInWindow_Close_Btn_ID = "close_view"
-LogInWindow_Close_Btn_ID = package + FS(Source_LogInWindow_Close_Btn_ID)
-
-# 登录弹窗——FB
-Source_LogInWindow_FB_Btn_ID = "rl_login_top"
-LogInWindow_FB_Btn_ID = package + FS(Source_LogInWindow_FB_Btn_ID)
-
-# 登录弹窗——邮箱
-Source_LogInWindow_Email_Btn_ID = "img_login_left"
-LogInWindow_Email_Btn_ID = package + FS(Source_LogInWindow_Email_Btn_ID)
-
-# 登录弹窗——手机
-Source_LogInWindow_Phone_Btn_ID = "img_login_middle"
-LogInWindow_Phone_Btn_ID = package + FS(Source_LogInWindow_Phone_Btn_ID)
-
-# 登录弹窗——G+
-Source_LogInWindow_Google_Btn_ID = "img_login_right"
-LogInWindow_Google_Btn_ID = package + FS(Source_LogInWindow_Google_Btn_ID)
-
-# ----------
-# 1>Email 登录
-# ----------
-
-# Email 登录弹窗——关闭
-Source_EmailWindow_Close_Btn_ID = "txt_login_close"
-EmailWindow_Close_Btn_ID = package + FS(Source_EmailWindow_Close_Btn_ID)
-
-# Email 登录弹窗——登录
-Source_EmailWindow_LogIn_Btn_ID = "txt_login"
-EmailWindow_LogIn_Btn_ID = package + FS(Source_EmailWindow_LogIn_Btn_ID)
-
-# Email 登录弹窗——注册
-Source_EmailWindow_SignUp_Btn_ID = "txt_sign_up"
-EmailWindow_SignUp_Btn_ID = package + FS(Source_EmailWindow_SignUp_Btn_ID)
-
-# Email 登录——账号输入框
-Email_Username_Box_Class = "android.widget.EditText"
-
-# Email 登录——清空账号
-Source_Email_Clear_EmailBox_Btn_ID = "img_input_delete"
-Email_Clear_EmailBox_Btn_ID = package + FS(Source_Email_Clear_EmailBox_Btn_ID)
-
-# Email 登录-清空密码
-Source_Email_Clear_PWDBox_Btn_ID = "img_input_delete"
-Email_Clear_PWDBox_Btn_ID = package + FS(Source_Email_Clear_PWDBox_Btn_ID)
-
-# Email 登录——清空
-# 1.当输入账号、密码其中一项时，使用Email_Clear_UsernameBox_Btn_ID/Email_Clear_PWDBox_Btn_ID
-# 2.当输入账号且输入密码时，使用Email_Clear_Class[]，清空账号[1]/清空密码[2]
-Email_Clear_Class = "android.widget.EditText"
-
-# Email 账号错误（不能为空：Your email cannot be empty./邮箱未注册：This Email is not registered yet, please Sign Up now.）
-Source_Email_Username_Error_ID = "tv_warning"
-Email_Username_Error_ID = package + FS(Source_Email_Username_Error_ID)
-
-# Email 密码错误（不能为空：Your password cannot be empty./密码错误：Username or password is incorrect）
-Source_Email_Password_Error_ID = "tv_warning"
-Email_Password_Error_ID = package + FS(Source_Email_Password_Error_ID)
-
-# Email 账号/密码错误
-# 1.当账号、密码其中一项报错时，使用Email_Username_Error_ID/Email_Password_Error_ID
-# 2.当账号报错且密码报错时，使用Email_Clear_Class[]，账号错误[1]/密码错误[2]
-Email_UPError_Class = "android.widget.TextView"
-
-# Email 账号未注册——Sign Up（ACP）
-Email_Username_SignUpNow_ACP = [0.715, 0.254, 500]
-
-# Email 登录——密码输入框
-Email_Password_Box_Class = "android.widget.EditText"
-
-# Email 登录——显示密码
-Source_Email_ShowPassword_Btn_ID = "img_input_visibility"
-Email_ShowPassword_Btn_ID = package + FS(Source_Email_ShowPassword_Btn_ID)
-
-# Email 确认登录——提交账号密码验证
-Source_LogIn_Confirm_Btn_ID = "btw_email_confirm"
-LogIn_Confirm_Btn_ID = package + FS(Source_LogIn_Confirm_Btn_ID)
-
-# Email 忘记密码
-Source_Email_ForgotPassword_Link_ID = "tv_email_forget_password"
-Email_ForgotPassword_Link_ID = package + FS(Source_Email_ForgotPassword_Link_ID)
-
+# ------以下内容暂未维护------------------------------------------------------------------------------------------------
 # ----------
 # 2>Phone 登录
 # ----------
@@ -325,37 +242,3 @@ QuickLogin_Image_ID = package + FS(Source_QuickLogin_Image_ID)
 # 快速登录用户名
 Source_QuickLogin_StageName_ID = "tv_latest_name"
 QuickLogin_StageName_ID = package + FS(Source_QuickLogin_StageName_ID)
-
-#--------StartMaker-------------------------------------------------------------------------------------------
-
-
-# ----------
-# startmaker的登录模块
-# ----------
-# 选择语言文案
-Source_LogIn_Languagedisplay_CopywritingClaS = "android.widget.TextView"
-
-#底框Me
-Source_LogIn_MeClas = "android.support.v7.app.ActionBar$Tab"
-
-#登录方式更多
-Source_LogIn_MoreWayClaS = "android.widget.TextView"
-
-# 登录弹窗-选择登录方式-选择Email方式LogInPopup_SelectLoginMode_SelectEmail_ID
-
-#登录弹窗-更多-邮箱登录-logIn
-Source_LogInPopup_SelectLoginMode_LogIn_ID = "txt_login"
-LogInPopup_SelectLoginMode_LogIn_ID = package + FS(Source_LogInPopup_SelectLoginMode_LogIn_ID)
-
-#登录弹窗-更多-邮箱登录-logIn-输入邮箱
-Source_LogInPopup_SendEmail_ID = "et_input"
-LogInPopup_SendEmail_ID = package + FS(Source_LogInPopup_SendEmail_ID)
-
-#输入邮箱后点击登录
-Source_EmailWay_LogIn_ID = "btw_email_confirm"
-EmailWay_LogIn_ID = package + FS(Source_EmailWay_LogIn_ID)
-
-# Me页面的用户名称
-Source_EmailWay_MeUserName_ID = "user_name_view_tv_name"
-EmailWay_MeUserName_ID = package + FS(Source_EmailWay_MeUserName_ID)
-

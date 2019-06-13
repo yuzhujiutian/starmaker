@@ -1,4 +1,7 @@
 # coding=utf-8
+# 维护版本：
+# 维护日期：
+# 维护人员：
 # ----------
 # 弹窗
 # ----------
@@ -138,7 +141,8 @@ class Popup(object):
     # ----------
     # KTV排麦引导(text=Select a song, queue up and sing to gain your popularity!)
     def Popup_KTVPage_QueueUp_LiveClick(self):
-        state = self.FindElement(AU=[Popup_VD.Popup_KTVPage_QueueUp_AU, "Select a song, queue up and sing to gain your popularity!"])
+        state = self.FindElement(AU=[Popup_VD.Popup_KTVPage_QueueUp_AU,
+                                     "Select a song, queue up and sing to gain your popularity!"])
         if state:
             self.driver.find_element_by_android_uiautomator(Popup_VD.Popup_KTVPage_QueueUp_AU).click()
             # 处理衍生的另一个弹窗
