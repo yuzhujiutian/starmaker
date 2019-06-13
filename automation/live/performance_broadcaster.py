@@ -15,19 +15,19 @@ from report.performance_mem import AndroidMemoryReport
 
 class PerformanceBoradcaster(BaseTestCase):
     # 右上角按钮id
-    ID_Live_Menu_Btn = 'com.starmakerinteractive.starmaker:id/entertainment_tab_drawer'
+    ID_Live_Menu_Btn = 'entertainment_tab_drawer'
 
     # 开始直播按钮
-    ID_Go_Live_Btn = 'com.starmakerinteractive.starmaker:id/go_live'
+    ID_Go_Live_Btn = 'go_live'
 
     # FB分享按钮
-    ID_FB_Share_Btn = 'com.starmakerinteractive.starmaker:id/img_facebook'
+    ID_FB_Share_Btn = 'img_facebook'
 
     # 开始直播按钮
-    ID_Start_Live_Btn = 'com.starmakerinteractive.starmaker:id/rlyt_start_live'
+    ID_Start_Live_Btn = 'rlyt_start_live'
 
     # 关闭直播弹窗确认按钮
-    IDE_Close_Live_Confirm_Btn = 'com.starmakerinteractive.starmaker:id/md_buttonDefaultPositive'
+    IDE_Close_Live_Confirm_Btn = 'md_buttonDefaultPositive'
 
     # 直播activity
     Activity_Live = 'com.ushowmedia.livelib.room.LiveRoomActivity'
@@ -63,22 +63,23 @@ class PerformanceBoradcaster(BaseTestCase):
         home = Home(self.driver)
         el = None
 
-        # 开始统计memory
-        self.memoryProfile = AndroidMemoryReport(self.appPackage, self.driver)
+        self.startMemoryProfile()
 
         while el is None:
-            home.switch_tab(Home.Discovery)
+            # home.switch_tab(Home.Discovery)
 
             # 点击按钮
             el = self.findElementById(PerformanceBoradcaster.ID_Live_Menu_Btn)
             if el != None:
                 # 统计开始前的内存使用
-                self.memoryProfile.profile()
+                self.profile()
                 el.click()
 
         # 开始直播按钮
         goLive = self.findElementById(PerformanceBoradcaster.ID_Go_Live_Btn)
         goLive.click()
+
+        # TODO: 权限弹窗处理
 
         # 等待进入到直播activity
         self.waitActivity(PerformanceBoradcaster.Activity_Live)
@@ -101,7 +102,7 @@ class PerformanceBoradcaster(BaseTestCase):
             self.actionSleep(1)
 
             if count%5 == 0:
-                self.memoryProfile.profile()
+                self.profile()
 
         closeLiveConfirmBtn = None
         retryCount = 0
@@ -117,6 +118,8 @@ class PerformanceBoradcaster(BaseTestCase):
                 print 'some error happen when exit live room...'
                 break
 
+            self.actionSleep(1)
+
         # 退出直播页面
         self.actionBack()
 
@@ -124,9 +127,9 @@ class PerformanceBoradcaster(BaseTestCase):
         self.actionSleep(1)
 
         print 'stop live, get the memory profile...'
-        self.memoryProfile.profile()
+        self.profile()
 
-        self.memoryProfile.toReport()
+        self.profileReport()
         
 
 if __name__ == '__main__':

@@ -11,19 +11,68 @@ from selenium.webdriver.support.ui import WebDriverWait
 from appium.webdriver.common.touch_action import TouchAction
 
 from report.performance_mem import AndroidMemoryReport
+from utils.android_proguard_mapping import AndroidProguardMapping
+from common.activity import Activity
+
+class BaseAction:
+    def __init__(self, baseTestCase):
+        self.tc = baseTestCase
+
+    # 对话框确认逻辑，
+    def dialogBtnClick(self, confirm=True):
+        # 检查dialog是否存在
+        if confirm:
+            yesBtn = self.findElementById('md_buttonDefaultPositive')
+            self.singleTap(yesBtn)
+        else:
+            noBtn = self.findElementById('md_buttonDefaultNegative')
+            self.singleTap(noBtn)
+
+    def findElementById(self, elementId, wait=False):
+        return self.tc.findElementById(elementId, wait)
+
+    def findElementsById(self, elementId, wait=False):
+        return self.tc.findElementsById(elementId, wait)
+
+    def findElementByAId(self, elementId, wait=False):
+        return self.tc.findElementByAId(elementId, wait)
+
+    def waitActivity(self, activity, timeout=9):
+        return self.tc.waitActivity(activity, timeout)
+
+    def log(self, info):
+        return self.tc.log(info)
+
+    def actionSleep(self, duration):
+        self.tc.actionSleep(duration)
+
+    def clearDialog(self):
+        self.tc.clearDialog()
+
+    def singleTap(self, element):
+        self.tc.singleTap(element)
 
 class BaseTestCase(unittest.TestCase):
-    def setUp(self):
-        self.appPackage = 'com.starmakerinteractive.starmaker'
+
+    # 某些test case的连接的属性值会有不同，提供给子类进行自定义
+    def capsSetup(self):
         desired_caps = {}
         desired_caps['platformName'] = 'Android'
         desired_caps['deviceName'] = 'fe5bb46e'
-        desired_caps['appPackage'] = self.appPackage
+        desired_caps['appPackage'] = 'com.starmakerinteractive.starmaker'
         desired_caps['appActivity'] = 'com.ushowmedia.starmaker.activity.SplashActivity'
-        desired_caps['appWaitActivity'] = 'com.ushowmedia.starmaker.activity.MainActivity'
-        # desired_caps['automationName'] = 'UiAutomator2'
-        desired_caps['noReset'] = 'true'
+        desired_caps['appWaitActivity'] = ','.join([Activity.Main, Activity.Nux_Language])
+        # desired_caps['automationName'] = 'uiautomator2'
+        # desired_caps['noReset'] = 'true'
+        desired_caps['autoGrantPermissions'] = True
+        # desired_caps['autoAcceptAlerts'] = True
+        # defaultCommandTimeout
+        desired_caps['newCommandTimeout'] = 500 # session默认超时时间
+        return desired_caps
 
+    def setUp(self):
+        desired_caps = self.capsSetup()
+        self.appPackage = desired_caps.get('appPackage')
         self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
         self.wait15 = WebDriverWait(self.driver, 15, 1)
         self.wait5 = WebDriverWait(self.driver, 5, 1)
@@ -31,15 +80,57 @@ class BaseTestCase(unittest.TestCase):
         # 内存统计
         self.memoryProfile = None
 
+        self.mappingFile = desired_caps.get('mappingFile', None)
+        # print dir(self.driver)
+        # self.mappingFile = '../example/mapping.txt'
+        self.mapping = AndroidProguardMapping(self.mappingFile)
+
     def tearDown(self):
         pass
 
-    def findElementById(self, elementId):
+    # wait: 如果为true, 会一直等待知道元素出现
+    def findElementById(self, elementId, wait=False):
+        # print elementId
+        elementId = self.mapping.getId(elementId)
+        # print elementId
         element = None
-        try:
-            element = self.wait5.until(lambda driver: driver.find_element_by_id(elementId))
-        except Exception as e:
-            print e
+        while element == None:
+            try:
+                element = self.wait5.until(lambda driver: driver.find_element_by_id(elementId))
+            except Exception as e:
+                print e
+
+            if not wait:
+                break
+        
+        return element
+
+    def findElementsById(self, elementId, wait=False):
+        # print elementId
+        elementId = self.mapping.getId(elementId)
+        # print elementId
+        element = None
+        while element == None:
+            try:
+                element = self.wait5.until(lambda driver: driver.find_elements_by_id(elementId))
+            except Exception as e:
+                print e
+
+            if not wait:
+                break
+        
+        return element
+
+    def findElementByAId(self, elementId, wait=False):
+        element = None
+        while element == None:
+            try:
+                element = self.wait5.until(lambda driver: driver.find_element_by_accessibility_id(elementId))
+            except Exception as e:
+                print e
+
+            if not wait:
+                break
         
         return element
 
@@ -96,9 +187,16 @@ class BaseTestCase(unittest.TestCase):
         self.driver.swipe(width/2, height*3/4, width/2, height/2, duration)
         self.actionSleep(3)
 
+    def singleTap(self, element=None):
+        if element == None:
+            return
+        action = TouchAction(self.driver)
+        action.tap(element)
+        action.perform()
+
     # 等待activity启动
-    def waitActivity(self, activity):
-        return self.driver.wait_activity(activity, 15)
+    def waitActivity(self, activity, timeout=9):
+        return self.driver.wait_activity(activity, timeout)
 
     # 获取当前meminfo
     def getCurrentMem(self):
@@ -107,6 +205,16 @@ class BaseTestCase(unittest.TestCase):
     # 睡眠暂停duration秒
     def actionSleep(self, duration=2):
         time.sleep(duration)
+
+    # 清理弹窗
+    def clearDialog(self):
+        self.log('check to clear dialog...')
+        try:
+            el = self.findElementById('iv_close')
+            self.singleTap(el)
+        except Exception as e:
+            self.log(e)
+        
 
     # 按钮back键，回到上一个activity, waitActivity为上一个activity
     # 如果不设置waitActivity, 那么只是执行back键
@@ -146,6 +254,10 @@ class BaseTestCase(unittest.TestCase):
             pass
         else:
             self.memoryProfile.toReport()
+
+    # 打印日志相关， TODO: 丰富功能
+    def log(self, info):
+        print info
 
 
 
