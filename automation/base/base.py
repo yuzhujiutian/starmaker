@@ -14,7 +14,11 @@ from report.performance_mem import AndroidMemoryReport
 from utils.android_proguard_mapping import AndroidProguardMapping
 from common.activity import Activity
 
+from log import QmClassMethodLog
+
 class BaseAction:
+    __metaclass__ = QmClassMethodLog
+
     def __init__(self, baseTestCase):
         self.tc = baseTestCase
 
@@ -257,7 +261,8 @@ class BaseTestCase(unittest.TestCase):
 
     # 打印日志相关， TODO: 丰富功能
     def log(self, info):
-        print info
+        # print info
+        pass
 
 
 
