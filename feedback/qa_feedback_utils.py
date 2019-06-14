@@ -1,12 +1,13 @@
 #encoding=utf-8
+import csv
+import os
+import platform
+import time
+
+import chardet
+
 import qa_feedback as qf
 
-import os
-import csv
-import sys
-import time
-import chardet
-import platform
 
 def parse_feedback_csv(csv_file_path):
     f = open(csv_file_path, 'rb')
@@ -52,7 +53,7 @@ def parse_feedback_csv(csv_file_path):
 
         description = generate_description(feedbacks_info.get(title), encoding)
 
-        if task_id == None:
+        if task_id is None:
             # 创建新task
             qf.create_task(title, description)
         else:
@@ -66,7 +67,7 @@ def generate_description(feedbacks, encoding='utf-8'):
 
     result = ""
 
-    if feedbacks == None or len(feedbacks) == 0:
+    if feedbacks is None or len(feedbacks) == 0:
         return result
 
     # 添加总共统计

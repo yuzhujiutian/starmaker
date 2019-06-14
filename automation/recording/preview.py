@@ -1,12 +1,10 @@
-#encoding=utf-8
+# encoding=utf-8
+from automation.base.base import BaseAction
+from automation.common.activity import Activity
+from automation.login.login import LoginAction
 
-from base.base import BaseAction
-from login.login import LoginAction
-from common.activity import Activity
 
-'''
-封装录制相关的操作
-'''
+# 封装录制相关的操作
 class RecordingPreviewAction(BaseAction):
 
     # 对话框确认逻辑，
@@ -20,16 +18,16 @@ class RecordingPreviewAction(BaseAction):
         loginAction.checkToLogin(preActivity=Activity.RecordingPreview)
 
     def restart(self):
-        clostBtn = self.findElementById('imb_close')
-        self.singleTap(clostBtn)
+        closeBtn = self.findElementById('imb_close')
+        self.singleTap(closeBtn)
 
         # todo: 找到restart按钮
         restartBtn = self.findElementsById('text1')[0]
         self.singleTap(restartBtn)
 
     def quit(self):
-        clostBtn = self.findElementById('imb_close')
-        self.singleTap(clostBtn)
+        closeBtn = self.findElementById('imb_close')
+        self.singleTap(closeBtn)
 
         # todo: 找到exit按钮
         quitBtn = self.findElementsById('text1')[1]
@@ -37,4 +35,3 @@ class RecordingPreviewAction(BaseAction):
 
         # 确认删除文件，退出录制
         self.dialogBtnClick(confirm=True)
-        

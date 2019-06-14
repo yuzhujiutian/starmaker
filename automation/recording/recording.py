@@ -1,10 +1,8 @@
-#encoding=utf-8
+# encoding=utf-8
+from automation.base.base import BaseAction
 
-from base.base import BaseAction
 
-'''
-封装录制相关的操作
-'''
+# 封装录制相关的操作
 class RecordingAction(BaseAction):
     ID_Record_Btn = 'record_btn'
 
@@ -19,7 +17,7 @@ class RecordingAction(BaseAction):
             # 确定finish按钮出现
             finishBtn = self.findElementById('finish_tv')
 
-            if finishBtn != None:
+            if finishBtn is not None:
                 finishBtn.click()
                 break
 
@@ -29,7 +27,6 @@ class RecordingAction(BaseAction):
                 el.click()
             except Exception as e:
                 print e
-
 
             self.actionSleep(1)
 
@@ -44,38 +41,38 @@ class RecordingAction(BaseAction):
     def clearGuide(self):
         # 耳机提示框
         el = self.findElementById('recording_headset_dialog_i_know_btn')
-        if el != None:
+        if el is not None:
             el.click()
 
         self.actionSleep(1)
 
         # 引导提示
         el = self.findElementById('tv_pitch_guide_tip')
-        if el != None:
+        if el is not None:
             el.click()
 
     # 检查权限弹窗
     def checkPermission(self):
         grantOkBtn = self.findElementById('permissionOkTv')
 
-        if grantOkBtn != None:
+        if grantOkBtn is not None:
             grantOkBtn.click()
 
             while 1:
                 permitBtn = self.findElementById('com.android.packageinstaller:id/permission_allow_button')
-                if permitBtn != None:
+                if permitBtn is not None:
                     permitBtn.click()
                 else:
                     break
 
                 permitBtn = self.findElementById('com.android.packageinstaller:id/permission_allow_button')
-                if permitBtn != None:
+                if permitBtn is not None:
                     permitBtn.click()
                 else:
                     break
 
                 permitBtn = self.findElementById('com.android.packageinstaller:id/permission_allow_button')
-                if permitBtn != None:
+                if permitBtn is not None:
                     permitBtn.click()
                 else:
                     break

@@ -1,20 +1,16 @@
-#encoding=utf-8
-
-from base.base import BaseAction
-from login.login import LoginAction
-from common.activity import Activity
-
+# encoding=utf-8
 import time
 
-'''
-封装录制相关的操作
-'''
+from automation.base.base import BaseAction
+
+
+# 封装录制相关的操作
 class RecordingEditInfoAction(BaseAction):
 
     # 设置作品描述
     def setDesc(self, desc=None):
         el = self.findElementById('writing_edit_view')
-        if desc == None:
+        if desc is None:
             el.set_text('this is recording description: ' + str(time.time()))
         else:
             el.set_text(desc)

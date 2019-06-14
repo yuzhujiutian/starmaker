@@ -1,10 +1,9 @@
-#encoding=utf-8
-
+# encoding=utf-8
 from appium import webdriver
 from appium.webdriver.common.touch_action import TouchAction
 
-class Caps:
 
+class Caps:
     def __init__(self):
         self.remoteAddress = 'http://localhost:4723/wd/hub'
         self.platformName = 'Android'
@@ -38,6 +37,7 @@ class Caps:
         actions.release()
 
         return self.driver
+
 
 caps = Caps()
 caps.connect()

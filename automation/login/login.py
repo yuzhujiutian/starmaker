@@ -1,34 +1,31 @@
-#encoding=utf-8
-import sys; 
-sys.path.append('..')
-
+# encoding=utf-8
+import sys
 import unittest
 
-from common.home import Home
-from home.launch import LaunchAction
-from base.base import BaseTestCase
-from base.base import BaseAction
-from common.activity import Activity
+from automation.base.base import BaseAction
+from automation.base.base import BaseTestCase
+from automation.common.activity import Activity
+from automation.home.launch import LaunchAction
 
-'''
-封装的登录相关的操作
-'''
+sys.path.append('..')
+
+
+# 封装的登录相关的操作
 class LoginAction(BaseAction):
 
     # 检查是否已经登录，如果没有登录，触发登录操作
     def checkToLogin(self, preActivity=None):
         # 找到Google登录按钮
         el = self.findElementById('img_login_google')
-        if el == None:
+        if el is None:
             # 没有找到登录按钮，认为不需要登录
             pass
         else:
             self.googleLogin(el, waitActivity=preActivity)
 
-
     # googleLoginBtn是google登录按钮，通过点击登录按钮，触发登录逻辑
     def googleLogin(self, googleLoginBtn, waitActivity=Activity.Main):
-        if googleLoginBtn != None:
+        if googleLoginBtn is not None:
             googleLoginBtn.click()
         else:
             return
@@ -50,10 +47,13 @@ class LoginAction(BaseAction):
 
         # 检查登录成功toast
 
+
 '''
 1.  可能先进入语言选择activity
 2.  进入main activity
 '''
+
+
 class LoginTestCase(BaseTestCase):
 
     def capsSetup(self):
@@ -96,8 +96,3 @@ class LoginTestCase(BaseTestCase):
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(LoginTestCase)
     unittest.TextTestRunner(verbosity=2).run(suite)
-
-
-
-
-

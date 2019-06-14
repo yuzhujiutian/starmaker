@@ -1,17 +1,12 @@
-#encoding=utf-8
-import sys; 
-sys.path.append('..') 
-
-from appium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-
-from appium.webdriver.common.touch_action import TouchAction
-
+# encoding=utf-8
+import sys
 import unittest
 
-from common.home import Home
-from base.base import BaseTestCase
-from report.performance_mem import AndroidMemoryReport
+from automation.base.base import BaseTestCase
+from automation.home.launch import LaunchAction
+
+sys.path.append('..')
+
 
 class PerformanceBoradcaster(BaseTestCase):
     # 右上角按钮id
@@ -60,7 +55,7 @@ class PerformanceBoradcaster(BaseTestCase):
     """
     def test_case001_performance(self):
         # 切换到discovery tab
-        home = Home(self.driver)
+        home = LaunchAction(self.driver).toTab(LaunchAction.Discovery)
         el = None
 
         self.startMemoryProfile()
@@ -70,7 +65,7 @@ class PerformanceBoradcaster(BaseTestCase):
 
             # 点击按钮
             el = self.findElementById(PerformanceBoradcaster.ID_Live_Menu_Btn)
-            if el != None:
+            if el is not None:
                 # 统计开始前的内存使用
                 self.profile()
                 el.click()
@@ -110,7 +105,7 @@ class PerformanceBoradcaster(BaseTestCase):
             # 准备关闭直播
             self.actionBack()
             closeLiveConfirmBtn = self.findElementById(PerformanceBoradcaster.IDE_Close_Live_Confirm_Btn)
-            if closeLiveConfirmBtn != None:
+            if closeLiveConfirmBtn is not None:
                 closeLiveConfirmBtn.click()
 
             retryCount += 1

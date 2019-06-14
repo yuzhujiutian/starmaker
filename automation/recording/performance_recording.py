@@ -1,23 +1,17 @@
-#encoding=utf-8
-import sys; 
-sys.path.append('..') 
-
-from appium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-
-from appium.webdriver.common.touch_action import TouchAction
-
+# encoding=utf-8
+import sys
 import unittest
 
-from home.launch import LaunchAction
-from base.base import BaseTestCase
-from report.performance_mem import AndroidMemoryReport
-
-from recording import RecordingAction
-from preview import RecordingPreviewAction
-from share import RecordingShareAction
+from automation.base.base import BaseTestCase
+from automation.common.activity import Activity
+from automation.home.launch import LaunchAction
 from edit_info import RecordingEditInfoAction
-from common.activity import Activity
+from preview import RecordingPreviewAction
+from recording import RecordingAction
+from share import RecordingShareAction
+
+sys.path.append('..')
+
 
 class PerformanceRecording(BaseTestCase):
 
@@ -38,7 +32,7 @@ class PerformanceRecording(BaseTestCase):
         while el is None:
             # sing按钮
             el = self.findElementsById('btn_sing')
-            if el != None:
+            if el is not None:
                 # 统计开始前的内存使用
                 self.profile()
                 el[0].click()
@@ -72,11 +66,11 @@ class PerformanceRecording(BaseTestCase):
         recordingAction.startRecording()
 
         # 录制时间
-        recoringDuration = 70
+        recordingDuration = 70
 
         # 不能睡眠太长时间，否则session会断掉
         cd = 0
-        while cd < recoringDuration:
+        while cd < recordingDuration:
             self.actionSleep(5)
             self.profile()
             cd += 5
@@ -95,7 +89,7 @@ class PerformanceRecording(BaseTestCase):
         # 发布作品
         previewAction.post()
 
-        if recoringDuration < 60:
+        if recordingDuration < 60:
             # 未超过60秒，弹出提示框，只有ok按钮
             previewAction.dialogBtnClick(confirm=True)
 
@@ -122,14 +116,6 @@ class PerformanceRecording(BaseTestCase):
             self.profile()
 
         self.profileReport()
-
-            
-
-            
-
-        
-
-
 
 
 if __name__ == '__main__':

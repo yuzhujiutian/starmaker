@@ -1,12 +1,13 @@
-#encoding=utf-8
-import time
-'''
+# encoding=utf-8
+"""
 用于生成内存使用报告
 
 开始前内存占用
 结束后内存占用
-| 平均内存占用 | 最大内存占用 |  
-'''
+| 平均内存占用 | 最大内存占用 |
+"""
+
+
 class AndroidMemoryReport:
 
     def __init__(self, appPackage, driver):

@@ -1,16 +1,14 @@
-#encoding=utf-8
-import sys; 
-sys.path.append('..')
-
+# encoding=utf-8
+import sys
 import unittest
 
-from common.activity import Activity
-from base.base import BaseAction
+from automation.base.base import BaseAction
+from automation.common.activity import Activity
 
-'''
-封装启动相关的操作
-'''
+sys.path.append('..')
 
+
+# 封装启动相关的操作
 class LaunchAction(BaseAction):
 
     Trend = 'main_tab_trend'
@@ -26,7 +24,7 @@ class LaunchAction(BaseAction):
         # 默认选择英语
         el = self.findElementByAId('nux_language_' + language)
         self.singleTap(el)
-        self.log('choose %s language...'%language)
+        self.log('choose %s language...' % language)
 
     # 启动到某个tab
     def toTab(self, tab):
@@ -37,7 +35,7 @@ class LaunchAction(BaseAction):
 
         try:
             el = self.findElementByAId(tab)
-            if el != None:
+            if el is not None:
                 self.singleTap(el)
         except Exception as e:
             print 'Exception:', e
@@ -88,7 +86,7 @@ class LaunchAction(BaseAction):
             except Exception as e:
                 print 'Exception:', e
 
-            if el == None:
+            if el is None:
                 result = False
 
         self.log('launch: ' + str(result))
@@ -96,9 +94,8 @@ class LaunchAction(BaseAction):
         return result
         
 
-
 if __name__ == '__main__':
-    from base.base import BaseTestCase
+    from automation.base.base import BaseTestCase
 
     class LaunchTestCase(BaseTestCase):
 

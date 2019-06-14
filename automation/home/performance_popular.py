@@ -1,17 +1,13 @@
-#encoding=utf-8
-import sys; 
-sys.path.append('..') 
-
-from appium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-
-from appium.webdriver.common.touch_action import TouchAction
-
-import unittest
+# encoding=utf-8
 import random
+import sys
+import unittest
 
-from common.home import Home
-from base.base import BaseTestCase
+from automation.base.base import BaseTestCase
+from automation.home.launch import LaunchAction
+
+sys.path.append('..')
+
 
 class PerformanceMoment(BaseTestCase):
 
@@ -33,18 +29,18 @@ class PerformanceMoment(BaseTestCase):
     '''
     def test_case001_performance(self):
         # 切换到trend tab
-        home = Home(self.driver)
+        home = LaunchAction(self.driver).toTab(LaunchAction.Trend)
         els = None
 
         # 开始统计memory
         self.startMemoryProfile()
 
         while els is None:
-            home.switch_tab(Home.Trend)
+            home.switch_tab(LaunchAction.Trend)
 
             # 内容卡片是否已经加载出来
             els = self.findElementsByAID(PerformanceMoment.AID_Popular_Content_Item)
-            if els != None:
+            if els is not None:
                 print 'switch to trend tab...'
                 break
             else:
@@ -57,9 +53,9 @@ class PerformanceMoment(BaseTestCase):
 
         self.profile()
 
-        while  count < threshold:
+        while count < threshold:
             # 随机选取一个，进入播放详情页
-            index = random.randint(0, 1000)%len(els)
+            index = random.randint(0, 1000) % len(els)
             el = els[index]
             el.click()
 
@@ -93,14 +89,9 @@ class PerformanceMoment(BaseTestCase):
 
         self.profileReport()
 
+
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(PerformanceMoment)
     unittest.TextTestRunner(verbosity=2).run(suite)
 
 
-
-
-
-
-
-            

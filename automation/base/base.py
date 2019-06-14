@@ -1,21 +1,22 @@
-#encoding=utf-8
-import sys; 
-sys.path.append('..') 
-
-import unittest
-import time
+# encoding=utf-8
 import random
+import sys
+import time
+import unittest
 
 from appium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
 from appium.webdriver.common.touch_action import TouchAction
+from selenium.webdriver.support.ui import WebDriverWait
 
-from report.performance_mem import AndroidMemoryReport
-from utils.android_proguard_mapping import AndroidProguardMapping
-from common.activity import Activity
-
+from automation.common.activity import Activity
+from automation.report.performance_mem import AndroidMemoryReport
+from automation.utils.android_proguard_mapping import AndroidProguardMapping
 from log import QmClassMethodLog
 
+sys.path.append('..')
+
+
+# 基础方法封装
 class BaseAction:
     __metaclass__ = QmClassMethodLog
 
@@ -56,8 +57,8 @@ class BaseAction:
     def singleTap(self, element):
         self.tc.singleTap(element)
 
-class BaseTestCase(unittest.TestCase):
 
+class BaseTestCase(unittest.TestCase):
     # 某些test case的连接的属性值会有不同，提供给子类进行自定义
     def capsSetup(self):
         desired_caps = {}
@@ -71,7 +72,7 @@ class BaseTestCase(unittest.TestCase):
         desired_caps['autoGrantPermissions'] = True
         # desired_caps['autoAcceptAlerts'] = True
         # defaultCommandTimeout
-        desired_caps['newCommandTimeout'] = 500 # session默认超时时间
+        desired_caps['newCommandTimeout'] = 500  # session默认超时时间
         return desired_caps
 
     def setUp(self):
@@ -98,7 +99,7 @@ class BaseTestCase(unittest.TestCase):
         elementId = self.mapping.getId(elementId)
         # print elementId
         element = None
-        while element == None:
+        while element is None:
             try:
                 element = self.wait5.until(lambda driver: driver.find_element_by_id(elementId))
             except Exception as e:
@@ -106,7 +107,7 @@ class BaseTestCase(unittest.TestCase):
 
             if not wait:
                 break
-        
+
         return element
 
     def findElementsById(self, elementId, wait=False):
@@ -114,7 +115,7 @@ class BaseTestCase(unittest.TestCase):
         elementId = self.mapping.getId(elementId)
         # print elementId
         element = None
-        while element == None:
+        while element is None:
             try:
                 element = self.wait5.until(lambda driver: driver.find_elements_by_id(elementId))
             except Exception as e:
@@ -122,12 +123,12 @@ class BaseTestCase(unittest.TestCase):
 
             if not wait:
                 break
-        
+
         return element
 
     def findElementByAId(self, elementId, wait=False):
         element = None
-        while element == None:
+        while element is None:
             try:
                 element = self.wait5.until(lambda driver: driver.find_element_by_accessibility_id(elementId))
             except Exception as e:
@@ -135,7 +136,7 @@ class BaseTestCase(unittest.TestCase):
 
             if not wait:
                 break
-        
+
         return element
 
     def findElementsByAID(self, elementId):
@@ -144,7 +145,7 @@ class BaseTestCase(unittest.TestCase):
             elements = self.wait15.until(lambda driver: driver.find_elements_by_accessibility_id(elementId))
         except Exception as e:
             print e
-        
+
         return elements
 
     # 获取一个随机时间
@@ -156,9 +157,9 @@ class BaseTestCase(unittest.TestCase):
         screenSize = self.driver.get_window_size()
         width = screenSize['width']
         height = screenSize['height']
-        if duration == None:
+        if duration is None:
             duration = self._random_time()
-        self.driver.swipe(width/2, height/2, width/2, height/4, duration)
+        self.driver.swipe(width / 2, height / 2, width / 2, height / 4, duration)
         self.actionSleep(3)
 
     # 手指向下滑动
@@ -166,9 +167,9 @@ class BaseTestCase(unittest.TestCase):
         screenSize = self.driver.get_window_size()
         width = screenSize['width']
         height = screenSize['height']
-        if duration == None:
+        if duration is None:
             duration = self._random_time()
-        self.driver.swipe(width/2, height/2, width/2, height*3/4, duration)
+        self.driver.swipe(width / 2, height / 2, width / 2, height * 3 / 4, duration)
         self.actionSleep(3)
 
     # 手指向左滑动
@@ -176,9 +177,9 @@ class BaseTestCase(unittest.TestCase):
         screenSize = self.driver.get_window_size()
         width = screenSize['width']
         height = screenSize['height']
-        if duration == None:
+        if duration is None:
             duration = self._random_time()
-        self.driver.swipe(width/2, height/4, width/2, height/2, duration)
+        self.driver.swipe(width / 2, height / 4, width / 2, height / 2, duration)
         self.actionSleep(3)
 
     # 手指向右滑动
@@ -186,13 +187,13 @@ class BaseTestCase(unittest.TestCase):
         screenSize = self.driver.get_window_size()
         width = screenSize['width']
         height = screenSize['height']
-        if duration == None:
+        if duration is None:
             duration = self._random_time()
-        self.driver.swipe(width/2, height*3/4, width/2, height/2, duration)
+        self.driver.swipe(width / 2, height * 3 / 4, width / 2, height / 2, duration)
         self.actionSleep(3)
 
     def singleTap(self, element=None):
-        if element == None:
+        if element is None:
             return
         action = TouchAction(self.driver)
         action.tap(element)
@@ -218,7 +219,6 @@ class BaseTestCase(unittest.TestCase):
             self.singleTap(el)
         except Exception as e:
             self.log(e)
-        
 
     # 按钮back键，回到上一个activity, waitActivity为上一个activity
     # 如果不设置waitActivity, 那么只是执行back键
@@ -228,7 +228,7 @@ class BaseTestCase(unittest.TestCase):
         except Exception as e:
             print e
 
-        if waitActivity != None:
+        if waitActivity is not None:
             returned = False
             while not returned:
                 # 等待回到上一个页面
@@ -242,19 +242,19 @@ class BaseTestCase(unittest.TestCase):
 
     # 开始内存统计
     def startMemoryProfile(self):
-        if self.memoryProfile == None:
+        if self.memoryProfile is None:
             self.memoryProfile = AndroidMemoryReport(self.appPackage, self.driver)
             self.memoryProfile.profile()
 
     # 统计当前内存占用
     def profile(self):
-        if self.memoryProfile == None:
+        if self.memoryProfile is None:
             print 'error: please call startMemoryProfile first...'
         else:
             self.memoryProfile.profile()
 
     def profileReport(self):
-        if self.memoryProfile == None:
+        if self.memoryProfile is None:
             pass
         else:
             self.memoryProfile.toReport()
@@ -263,9 +263,3 @@ class BaseTestCase(unittest.TestCase):
     def log(self, info):
         # print info
         pass
-
-
-
-
-
-

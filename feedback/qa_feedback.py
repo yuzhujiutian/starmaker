@@ -1,9 +1,10 @@
 #encoding=utf-8
-import os
-import json
-import requests
 import base64
+import json
+import os
 from urllib import urlencode
+
+import requests
 
 dry_run = False
 
@@ -42,7 +43,7 @@ def exec_pha_post(api, params, force=False):
     return res
 
 def create_task(title, description):
-    if title == None or len(title) == 0:
+    if title is None or len(title) == 0:
         print "create_task: param title type(%s) is error..."%type(title)
         return
 
@@ -86,7 +87,7 @@ def create_task(title, description):
         error_code = res.get('error_code', None)
         error_info = res.get('error_info', None)
 
-        if not (error_code == None):
+        if not (error_code is None):
             # create_task失败
             print "  create_task: failed,", str(error_info)
             return
@@ -98,7 +99,7 @@ def create_task(title, description):
         except Exception as e:
             pass
 
-        if not (task_id == None):
+        if not (task_id is None):
             print "  create_task: succ, task url is https://phabricator.ushow.media/T%s"%task_id
         else:
             print "  create_task: failed, the format of the response is invalid.. please check it..."
@@ -128,7 +129,7 @@ def comment_task(task_id, comment, title):
         error_code = res.get('error_code', None)
         error_info = res.get('error_info', None)
 
-        if not (error_code == None):
+        if not (error_code is None):
             # create_task失败
             print "  comment_task: failed,", str(error_info)
             return
@@ -140,7 +141,7 @@ def comment_task(task_id, comment, title):
         except Exception as e:
             pass
 
-        if not (task_id == None):
+        if not (task_id is None):
             print "  comment_task: succ, task url is https://phabricator.ushow.media/T%s"%task_id
         else:
             print "  comment_task: failed, the format of the response is invalid.. please check it..."
@@ -187,7 +188,7 @@ def upload_file(file_path, file_name):
         print 'file %s is not exsit...'%file_path
         return
 
-    if file_name == None:
+    if file_name is None:
         file_name = os.path.basename(file_path)
 
     params = {}
@@ -205,7 +206,7 @@ def upload_file(file_path, file_name):
         error_code = res.get('error_code', None)
         error_info = res.get('error_info', None)
 
-        if not (error_code == None):
+        if not (error_code is None):
             # create_task失败
             print "  upload_file: failed,", str(error_info)
             return
@@ -213,10 +214,10 @@ def upload_file(file_path, file_name):
         # 创建成功
         file_phid = res.get('result', None)
 
-        if file_phid == None:
+        if file_phid is None:
             print "  upload_file: failed..."
 
-    if not (file_phid == None):
+    if not (file_phid is None):
         params = {}
         params['phid'] = file_phid
 

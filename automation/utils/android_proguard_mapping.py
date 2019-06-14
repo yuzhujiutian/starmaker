@@ -1,20 +1,21 @@
-#encoding=utf-8
+# encoding=utf-8
 import os
 import re
 
-class AndroidProguardMapping:
 
-    def __init__(self, proguardFile=None):
+class AndroidProGuardMapping:
+
+    def __init__(self, ProGuardFile=None):
         self.mappingTable = None
 
-        if proguardFile != None and os.path.isfile(proguardFile):
-            self.mappingTable = open(proguardFile, 'r').read()
+        if ProGuardFile is not None and os.path.isfile(ProGuardFile):
+            self.mappingTable = open(ProGuardFile, 'r').read()
 
-    def getId(self, proguardResId):
-        realId = proguardResId
+    def getId(self, ProGuardFileResId):
+        realId = ProGuardFileResId
 
-        if self.mappingTable != None:
+        if self.mappingTable is not None:
             realId = re.findall("R.id." + "(.*)""'", re.findall(
-                "R.id." + proguardResId + " -> " + "(.*)", self.mappingTable).__str__())[0]
+                "R.id." + ProGuardFileResId + " -> " + "(.*)", self.mappingTable).__str__())[0]
 
         return realId
