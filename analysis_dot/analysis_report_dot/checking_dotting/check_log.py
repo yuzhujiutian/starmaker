@@ -19,7 +19,7 @@ def check_log():
         logs = os.path.join(log_path, i)
         Suffix = os.path.splitext(i)[0]
         if Suffix == "events-logs-" + t:
-            with open(logs, 'r') as f1:
+            with open(logs, 'r', encoding='utf-8') as f1:
                 return f1.readlines()
 
 
@@ -30,8 +30,8 @@ def check_dotting():
     act_list = []
     try:
         # 调试使用
-        # with open("./dot_data.txt", "r") as f2:
-        with open("../../analysis_dot/analysis_report_dot/checking_dotting/dot_data.txt", "r") as f2:
+        # with open("./dot_data.txt", "r", encoding='utf-8') as f2:
+        with open("../../analysis_dot/analysis_report_dot/checking_dotting/dot_data.txt", "r", encoding='utf-8') as f2:
             log = re.findall("key=""(.*)", f2.read())
         for i1 in log:
             key = i1.split(",")
@@ -84,8 +84,10 @@ def write(exp_dot, T):
     # page_name = label[0]
     # action_name = label[1]
     # exp_dot = ReadXMLData().returnXMLFile("dot_keys.xml", page_name, action_name, path=path)
-    with open(path + 'dot_data.txt', 'a+') as f:
+    with open(path + 'dot_data.txt', 'a+', encoding='utf-8') as f:
         f.write("key=" + str(exp_dot) + "," + str(T) + "\n")
         f.flush()
 
 
+if __name__ == '__main__':
+    print(check_dotting())

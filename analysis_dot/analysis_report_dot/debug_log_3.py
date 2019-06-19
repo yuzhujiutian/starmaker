@@ -45,9 +45,11 @@ class logger:
             os.makedirs(log_dir)
 
         self.file_logger = open(
-            os.path.join(log_dir, "./events-logs-%s.log" % datetime.datetime.now().strftime('%Y%m%d')), 'a+')
+            os.path.join(log_dir, "./events-logs-%s.log" % datetime.datetime.now().strftime('%Y%m%d')), 'a+',
+            encoding='utf-8')
         self.detail_file_logger = open(
-            os.path.join(log_dir, "./events-logs-details-%s.log" % datetime.datetime.now().strftime('%Y%m%d')), 'a+')
+            os.path.join(log_dir, "./events-logs-details-%s.log" % datetime.datetime.now().strftime('%Y%m%d')), 'a+',
+            encoding='utf-8')
 
         sys.stdout = self
 
@@ -134,12 +136,12 @@ def android_handle_event(datas, filter=None):
         e.update(_e.items())
         e.update(base_params.items())
         e.update(e_params.items())
-        if filter is None:
-            print_e(e)
-        else:
-            if filter(e):
-                print_e(e)
-        # print(e)
+        # if filter is None:
+        #     print_e(e)
+        # else:
+        #     if filter(e):
+        #         print_e(e)
+        print(e)
         r_logger.detail(json.dumps(e, indent=2))
 
 
@@ -232,8 +234,9 @@ def StartServer():
     # 开始前清理log日志
     try:
         TestLog_Processing()
-    except Exception as e:
-        print(e)
+    except:
+        pass
+
     from http.server import HTTPServer
     sever = HTTPServer(("", 8982), PostHandler)
     # import ssl

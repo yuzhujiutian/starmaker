@@ -303,7 +303,7 @@ class checking_dotting(unittest.TestCase):
     def test_Case2203_PlayPlayDetailFinish(self):
         # 点击第二个作品卡片
         Home().HomePage_FeedCard_DIY_Img(1).click()
-        self.exp_dot = "play,playdetail,finish"
+        self.exp_dot = "play,main,finish"
 
     # 点击-详情页-follow
     def test_Case2204_ClickPlayDetailFollow(self):

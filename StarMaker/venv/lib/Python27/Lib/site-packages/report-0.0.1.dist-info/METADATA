@@ -1,0 +1,45 @@
+Metadata-Version: 2.0
+Name: report
+Version: 0.0.1
+Summary: Json Reports to generate Markdown and HTML .
+Home-page: https://github.com/hoffmann/report
+Author: Peter Hoffmann
+Author-email: ph@peter-hoffmann.com
+License: BSD
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+
+report
+===============================
+
+author: Peter Hoffmann
+
+Overview
+--------
+
+Json Reports to generate Markdown and HTML .
+
+Installation / Usage
+--------------------
+
+To install use pip:
+
+    $ pip install report
+
+
+Or clone the repo:
+
+    $ git clone https://github.com/hoffmann/report.git
+    $ python setup.py install
+
+Contributing
+------------
+
+TBD
+
+Example
+-------
+
+TBD
+
+

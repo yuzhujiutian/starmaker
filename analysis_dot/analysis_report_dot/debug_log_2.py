@@ -47,9 +47,11 @@ class logger:
             os.makedirs(log_dir)
 
         self.file_logger = open(
-            os.path.join(log_dir, "./events-logs-%s.log" % datetime.datetime.now().strftime('%Y%m%d')), 'a+')
+            os.path.join(log_dir, "./events-logs-%s.log" % datetime.datetime.now().strftime('%Y%m%d')), 'a+',
+            encoding='utf-8')
         self.detail_file_logger = open(
-            os.path.join(log_dir, "./events-logs-details-%s.log" % datetime.datetime.now().strftime('%Y%m%d')), 'a+')
+            os.path.join(log_dir, "./events-logs-details-%s.log" % datetime.datetime.now().strftime('%Y%m%d')), 'a+',
+            encoding='utf-8')
 
         sys.stdout = self
 

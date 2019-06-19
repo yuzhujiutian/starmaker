@@ -341,14 +341,19 @@ class Home(object):
         SingPage_SingHeat_Hot_IDS = self.findIDS(Home_VD.SingPage_SingHeat_IDS, 1)
         return SingPage_SingHeat_Hot_IDS
 
-    # Sing页面-中下方四个Tab([2]Trending)
-    def SingPage_SingHeat_Trending(self):
+    # Sing页面-中下方四个Tab([2]Bollywood)
+    def SingPage_SingHeat_Bollywood(self):
         SingPage_SingHeat_Trending_IDS = self.findIDS(Home_VD.SingPage_SingHeat_IDS, 2)
         return SingPage_SingHeat_Trending_IDS
 
-    # Sing页面-中下方四个Tab([3]New)
+    # Sing页面-中下方四个Tab([3]Trending)
+    def SingPage_SingHeat_Trending(self):
+        SingPage_SingHeat_Trending_IDS = self.findIDS(Home_VD.SingPage_SingHeat_IDS, 3)
+        return SingPage_SingHeat_Trending_IDS
+
+    # Sing页面-中下方四个Tab([4]New)
     def SingPage_SingHeat_New(self):
-        SingPage_SingHeat_New_IDS = self.findIDS(Home_VD.SingPage_SingHeat_IDS, 3)
+        SingPage_SingHeat_New_IDS = self.findIDS(Home_VD.SingPage_SingHeat_IDS, 4)
         return SingPage_SingHeat_New_IDS
 
     # Sing页面-任一Tab下-第一首歌曲封面图
