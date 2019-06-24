@@ -1,6 +1,6 @@
 # encoding=utf-8
 
-from automation.base.base import BaseAction
+from automation_3.base.base import BaseAction
 
 
 class RecordingShareAction(BaseAction):

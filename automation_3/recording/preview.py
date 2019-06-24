@@ -1,7 +1,7 @@
 # encoding=utf-8
-from automation.base.base import BaseAction
-from automation.common.activity import Activity
-from automation.login.login import LoginAction
+from automation_3.base.base import BaseAction
+from automation_3.common.activity import Activity
+from automation_3.login.login import LoginAction
 
 
 # 封装录制相关的操作

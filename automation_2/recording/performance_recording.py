@@ -2,13 +2,14 @@
 import sys
 import unittest
 
-from automation.base.base import BaseTestCase
-from automation.common.activity import Activity
-from automation.home.launch import LaunchAction
 from edit_info import RecordingEditInfoAction
 from preview import RecordingPreviewAction
 from recording import RecordingAction
 from share import RecordingShareAction
+
+from automation_2.base.base import BaseTestCase
+from automation_2.common.activity import Activity
+from automation_2.home.launch import LaunchAction
 
 sys.path.append('..')
 

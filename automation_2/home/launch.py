@@ -2,8 +2,8 @@
 import sys
 import unittest
 
-from automation.base.base import BaseAction
-from automation.common.activity import Activity
+from automation_2.base.base import BaseAction
+from automation_2.common.activity import Activity
 
 sys.path.append('..')
 
@@ -95,7 +95,7 @@ class LaunchAction(BaseAction):
         
 
 if __name__ == '__main__':
-    from automation.base.base import BaseTestCase
+    from automation_2.base.base import BaseTestCase
 
     class LaunchTestCase(BaseTestCase):
 

@@ -1,7 +1,7 @@
 # encoding=utf-8
 import time
 
-from automation.base.base import BaseAction
+from automation_2.base.base import BaseAction
 
 
 # 封装录制相关的操作
