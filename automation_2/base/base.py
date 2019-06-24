@@ -8,10 +8,10 @@ from appium import webdriver
 from appium.webdriver.common.touch_action import TouchAction
 from selenium.webdriver.support.ui import WebDriverWait
 
-from automation.common.activity import Activity
-from automation.report.performance_mem import AndroidMemoryReport
-from automation.utils.android_proguard_mapping import AndroidProguardMapping
-from log import QmClassMethodLog
+from automation_2.base.log import QmClassMethodLog
+from automation_2.common.activity import Activity
+from automation_2.report.performance_mem import AndroidMemoryReport
+from automation_2.utils.android_proguard_mapping import AndroidProGuardMapping
 
 sys.path.append('..')
 
@@ -88,7 +88,7 @@ class BaseTestCase(unittest.TestCase):
         self.mappingFile = desired_caps.get('mappingFile', None)
         # print dir(self.driver)
         # self.mappingFile = '../example/mapping.txt'
-        self.mapping = AndroidProguardMapping(self.mappingFile)
+        self.mapping = AndroidProGuardMapping(self.mappingFile)
 
     def tearDown(self):
         pass

@@ -2,8 +2,8 @@
 import sys
 import unittest
 
-from automation.base.base import BaseTestCase
-from automation.home.launch import LaunchAction
+from automation_3.base.base import BaseTestCase
+from automation_3.home.launch import LaunchAction
 
 sys.path.append('..')
 
@@ -110,7 +110,7 @@ class PerformanceBoradcaster(BaseTestCase):
 
             retryCount += 1
             if retryCount >= 3:
-                print 'some error happen when exit live room...'
+                print('some error happen when exit live room...')
                 break
 
             self.actionSleep(1)
@@ -121,7 +121,7 @@ class PerformanceBoradcaster(BaseTestCase):
         # 等待5秒后，计算退出测试用例后的内存占用
         self.actionSleep(1)
 
-        print 'stop live, get the memory profile...'
+        print('stop live, get the memory profile...')
         self.profile()
 
         self.profileReport()

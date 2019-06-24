@@ -50,11 +50,7 @@ class Tools:
     def FindSource(Source_ID):
         global ReadMappingTable
         try:
-            #     if GetAppiumDeriver.num > 5:
-            #         resource = "21"
-            #     else:
-            #         resource = "17"
-            ReadMappingTable = open("../bin/resource_mapping.txt", "r")
+            ReadMappingTable = open("../bin/resource_mapping.txt_" + str(GetAppiumDeriver().Api), "r")
             Result_ID = re.findall("R.id." + "(.*)""'", re.findall(
                 "R.id." + Source_ID + " -> " + "(.*)", ReadMappingTable.read()).__str__())[0]
             return Result_ID

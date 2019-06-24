@@ -2,10 +2,10 @@
 import sys
 import unittest
 
-from automation.base.base import BaseAction
-from automation.base.base import BaseTestCase
-from automation.common.activity import Activity
-from automation.home.launch import LaunchAction
+from automation_2.base.base import BaseAction
+from automation_2.base.base import BaseTestCase
+from automation_2.common.activity import Activity
+from automation_2.home.launch import LaunchAction
 
 sys.path.append('..')
 

@@ -3,8 +3,8 @@ import random
 import sys
 import unittest
 
-from automation.base.base import BaseTestCase
-from automation.home.launch import LaunchAction
+from automation_2.base.base import BaseTestCase
+from automation_2.home.launch import LaunchAction
 
 sys.path.append('..')
 
