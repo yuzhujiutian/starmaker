@@ -45,14 +45,12 @@ class logger:
         log_dir = os.path.join(root_dir, '.logs')
         if not os.path.isdir(log_dir):
             os.makedirs(log_dir)
-
         self.file_logger = open(
-            os.path.join(log_dir, "./events-logs-%s.log" % datetime.datetime.now().strftime('%Y%m%d')), 'a+',
-            encoding='utf-8')
+            os.path.join(log_dir, "./events-logs-%s.log" % datetime.datetime.now()
+                         .strftime('%Y%m%d')).encode('utf-8'), 'a+')
         self.detail_file_logger = open(
-            os.path.join(log_dir, "./events-logs-details-%s.log" % datetime.datetime.now().strftime('%Y%m%d')), 'a+',
-            encoding='utf-8')
-
+            os.path.join(log_dir, "./events-logs-details-%s.log" % datetime.datetime.now()
+                         .strftime('%Y%m%d')).encode('utf-8'), 'a+')
         sys.stdout = self
 
     def write(self, output_stream):

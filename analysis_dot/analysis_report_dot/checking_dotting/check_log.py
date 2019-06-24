@@ -38,6 +38,7 @@ def check_dotting():
             type = key[0]
             page = key[1]
             obj = key[2]
+            # todo：增加T的校验
             T = key[3]
             dotting_keyword = [r"'type': '%s', 'page': '%s', 'obj': '%s'" % (type, page, obj)]
             exp_list.append(dotting_keyword)

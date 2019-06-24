@@ -48,9 +48,12 @@ class checking_dotting(unittest.TestCase):
         time.sleep(10)
         if check_log.check_dotting():
             print("错误打点如下")
-            print(check_log.check_dotting())
+            print('\n''------------')
+            for i in check_log.check_dotting():
+                print(i)
+            print('------------''\n')
         else:
-            print("打点校验全部通过")
+            print("T44069 打点校验全部通过")
 
     # ----------
     # 工具-点唱台
@@ -364,10 +367,12 @@ class checking_dotting(unittest.TestCase):
         time.sleep(2)
         # 点击分享至FB
         PlaybackDetails().Share_ShareDetail_FB().click()
-        time.sleep(5)
+        time.sleep(3)
+        # 返回至播放详情页
         self.driver.back()
         self.exp_dot = "click,function_panel,share"
-        time.sleep(2)
+        time.sleep(3)
+        # 返回到popular页
         self.driver.back()
 
     # ----------
