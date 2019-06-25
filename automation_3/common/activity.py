@@ -9,6 +9,9 @@ class Activity:
     # 主activity
     Main = 'com.ushowmedia.starmaker.activity.MainActivity'
 
+    # Play
+    Play = 'com.ushowmedia.starmaker.playdetail.PlayDetailActivity'
+
     # Recording
     Recording = 'com.ushowmedia.recorder.recorderlib.SMRecordActivity'
 
