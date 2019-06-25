@@ -19,15 +19,7 @@ class GetDevicesInfo(object):
             # 获取设备列表信息，并将比特流类型转为str类型：decode，并用‘\r\n’拆分,
             self.deviceInfo = subprocess.check_output("adb devices").decode("utf-8", "ignore").split("\r\n")
             # 检查已连接设备数
-            global deviceCount
-            deviceCount = len(self.deviceInfo)-3
-            # 如果没有连接设备或设备读取失败
-            if deviceCount == 0:
-                self.GetDevicesInfo = 0
-            elif deviceCount == 1:
-                self.GetDevicesInfo = 1
-            else:
-                self.GetDevicesInfo = deviceCount
+            self.GetDevicesInfo = len(self.deviceInfo)-3
             # print("当前已连接设备数:" + str(deviceCount))
             # 过滤deviceInfo
             deviceList = []
@@ -48,21 +40,33 @@ class GetDevicesInfo(object):
             if self.GetDevicesInfo == 1:
                 # 获取系统设备信息，并将比特流类型转为str类型：decode
                 sysInfo = subprocess.check_output("adb shell cat /system/build.prop").decode("utf-8", "ignore")
+                if sysInfo == "cat: /system/build.prop: Permission denied\r\n":
+                    androidVersion = subprocess.check_output("adb shell getprop ro.build.version.release")\
+                        .decode("utf-8", "ignore").strip().__str__()
+                    return [androidVersion]
                 # 获取Android版本号
                 androidVersion = re.findall("version.release=(\\d\\.\\d)", sysInfo, re.S)
                 return androidVersion
+
             elif self.GetDevicesInfo > 1:
                 devicesCount = self.GetDevicesInfo
-                androidVersion = []
+                androidVersion_list = []
                 while devicesCount:
                     devicesCount -= 1
                     # 获取系统设备信息，并将比特流类型转为str类型：decode
                     serialNumber = self.serialNumbers
-                    sysInfo = subprocess.check_output("adb -s %s shell cat /system/build.prop" % serialNumber[devicesCount]).decode("utf-8", "ignore")
-                    # 获取Android版本号
-                    androidVersion.insert(0, re.findall("version.release=(\\d\\.\\d)", sysInfo, re.S)[0])
+                    sysInfo = subprocess.check_output("adb -s %s shell cat /system/build.prop" %
+                                                      serialNumber[devicesCount]).decode("utf-8", "ignore")
+                    if sysInfo == "cat: /system/build.prop: Permission denied\r\n":
+                        androidVersion = subprocess.check_output("adb -s %s shell getprop ro.build.version.release" %
+                                                                 serialNumber[devicesCount]).decode("utf-8", "ignore")\
+                            .strip().__str__()
+                        androidVersion_list.insert(0, androidVersion)
+                    else:
+                        # 获取Android版本号
+                        androidVersion_list.insert(0, re.findall("version.release=(\\d\\.\\d)", sysInfo, re.S)[0])
                     if not devicesCount:
-                        return androidVersion
+                        return androidVersion_list
             else:
                 return "Connect Fail,Please reconnect Device..."
         # 捕获异常
@@ -139,7 +143,7 @@ class DevicesInfo(object):
     def AppPackage():
         # GetPackages = GetDevicesInfo().GetPackages()[0]
         # 调试使用
-        GetPackages = "com.horadrim.android.sargam"
+        GetPackages = "com.starmakerinteractive.starmaker"
         return GetPackages
 
     # package拼接 用于元素定位使用
@@ -152,7 +156,7 @@ class DevicesInfo(object):
 
 if __name__ == '__main__':
     print("将以下信息复制到Utils/Setting下,如果报错试着再运行一次")
-    print("DeviceCount = " + str(len(GetDevicesInfo().GetAndroidVersion())))
+    print("DeviceCount = " + str(len(GetDevicesInfo().GetDevice())))
     print("PlatformVersion = " + str(GetDevicesInfo().GetAndroidVersion()))
     print("Device = " + str(GetDevicesInfo().GetDevice()))
     print("DeviceName = " + str(GetDevicesInfo().GetDeviceName()))

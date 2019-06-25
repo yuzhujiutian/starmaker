@@ -19,7 +19,6 @@ class GetAppiumDeriver(object):
         # 其他
         desired_caps["unicodeKeyboard"] = Setting.UnicodeKeyboard
         desired_caps["resetKeyboard"] = Setting.ResetKeyboard
-        desired_caps["automationName"] = Setting.AutomationName
         desired_caps["autoGrantPermissions"] = Setting.AutoGrantPermissions
         # noReset决定是否清除app数据
         desired_caps["noReset"] = Setting.NoReset
@@ -39,9 +38,12 @@ class GetAppiumDeriver(object):
             print("设备型号:" + desired_caps["device"])
             print("设备名称:" + desired_caps["deviceName"])
             print('------------''\n')
-            if int(float(desired_caps["platformVersion"])) > 5:
+            if int(float(desired_caps["platformVersion"][:3])) > 5:
                 self.Api = "21"
+                desired_caps["automationName"] = Setting.AutomationName_21
+
             else:
                 self.Api = "17"
+                desired_caps["automationName"] = Setting.AutomationName_17
             self.driver = webdriver.Remote("http://127.0.0.1:" + str(IP) + "/wd/hub", desired_caps)
 

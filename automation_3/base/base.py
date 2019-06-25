@@ -61,14 +61,15 @@ class BaseTestCase(unittest.TestCase):
     def capsSetup(self):
         desired_caps = {}
         desired_caps['platformName'] = 'Android'
-        desired_caps['deviceName'] = 'fe5bb46e'
+        desired_caps['deviceName'] = '2014501'
         desired_caps['appPackage'] = 'com.starmakerinteractive.starmaker'
         desired_caps['appActivity'] = 'com.ushowmedia.starmaker.activity.SplashActivity'
         desired_caps['appWaitActivity'] = ','.join([Activity.Main, Activity.Nux_Language])
+        desired_caps['automationName'] = 'appium'
         # desired_caps['automationName'] = 'uiautomator2'
-        # desired_caps['noReset'] = 'true'
+        desired_caps['noReset'] = 'true'
         desired_caps['autoGrantPermissions'] = True
-        # desired_caps['autoAcceptAlerts'] = True
+        desired_caps['autoAcceptAlerts'] = True
         # defaultCommandTimeout
         desired_caps['newCommandTimeout'] = 500  # session默认超时时间
         return desired_caps
@@ -91,7 +92,7 @@ class BaseTestCase(unittest.TestCase):
     def tearDown(self):
         pass
 
-    # wait: 如果为true, 会一直等待知道元素出现
+    # wait: 如果为true, 会一直等待直到元素出现
     def findElementById(self, elementId, wait=False):
         # print elementId
         elementId = self.mapping.getId(elementId)
@@ -147,7 +148,8 @@ class BaseTestCase(unittest.TestCase):
         return elements
 
     # 获取一个随机时间
-    def _random_time(self, minTime=150, maxTime=300):
+    @staticmethod
+    def _random_time(minTime=150, maxTime=300):
         return random.randint(minTime, maxTime)
 
     # 手指向上滑动
@@ -190,6 +192,7 @@ class BaseTestCase(unittest.TestCase):
         self.driver.swipe(width / 2, height * 3 / 4, width / 2, height / 2, duration)
         self.actionSleep(3)
 
+    # 点击
     def singleTap(self, element=None):
         if element is None:
             return

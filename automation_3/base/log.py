@@ -26,20 +26,3 @@ class QmClassMethodLog(type):
                 class_attr[name] = qmMethodLog(value)
 
         return super(QmClassMethodLog, mcs).__new__(mcs, class_name, class_parents, class_attr)
-
-# class MyBase(object):
-#     __metaclass__ = QmClassMethodLog
-
-#     def base1(self):
-#         print 'base1'
-
-# class Trick(MyBase):
-    
-#     bar = 12
-#     money = 'unlimited'
-
-#     def b(self, ttt, t2=22, t3=33):
-#         print 'b..', ttt, t2, t3
-
-# t = Trick()
-# t.b('fasdfa', 2, 3)

@@ -30,7 +30,7 @@ class PopupProcessing:
 
 
 # PopupProcessing().Popup_GeneralMethod(ID=["com.android.packageinstaller:id/permission_message", "ABC"])
-PopupProcessing().Popup_GeneralMethod(ID="com.android.packageinstaller:id/permission_message")
+# PopupProcessing().Popup_GeneralMethod(ID="com.android.packageinstaller:id/permission_message")
 
 
 if __name__ == '__main__':
