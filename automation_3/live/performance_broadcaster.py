@@ -53,9 +53,21 @@ class PerformanceBoradcaster(BaseTestCase):
     3.  直播推流的内容有问题，花屏，卡顿
     4.  长连接的问题
     """
+
     def test_case001_performance(self):
         # 切换到discovery tab
-        home = LaunchAction(self.driver).toTab(LaunchAction.Discovery)
+        LaunchAction(self)._choose_language()
+
+        # 处理Made For You
+        if self.findElementById("tv_guide_title"):
+            self.findElementById("iv_close").click()
+
+        # 处理轮盘弹窗
+        if self.findElementById("open_promotion_iv_close"):
+            self.findElementById("open_promotion_iv_close").click()
+
+        # 切换到discovery tab
+        LaunchAction(self).toTab(LaunchAction.Discovery)
         el = None
 
         self.startMemoryProfile()
@@ -65,57 +77,69 @@ class PerformanceBoradcaster(BaseTestCase):
 
             # 点击按钮
             el = self.findElementById(PerformanceBoradcaster.ID_Live_Menu_Btn)
-            if el is not None:
+            if el:
                 # 统计开始前的内存使用
                 self.profile()
                 el.click()
 
         # 开始直播按钮
-        goLive = self.findElementById(PerformanceBoradcaster.ID_Go_Live_Btn)
-        goLive.click()
+        self.findElementById(PerformanceBoradcaster.ID_Go_Live_Btn).click()
 
-        # TODO: 权限弹窗处理
+        # 如果未登录
+        if self.findElementById("img_login_email"):
+            self.findElementById("img_login_email").click()
+            self.findElementById("txt_login").click()
+            self.actionSleep()
+            self.findElementsById("et_input", 0).send_keys("cyl@26.cn")
+            self.findElementsById("et_input", 1).send_keys("000000")
+            self.findElementById("btw_email_confirm").click()
+            self.actionSleep(5)
+            self.findElementById(PerformanceBoradcaster.ID_Live_Menu_Btn).click()
+            self.actionSleep()
+            self.findElementById(PerformanceBoradcaster.ID_Go_Live_Btn, True).click()
+
+        # 权限弹窗处理
+        if self.findElementById("permissionOkTv"):
+            self.findElementById("permissionOkTv").click()
+            while self.findElementById("com.android.packageinstaller:id/permission_allow_button"):
+                self.findElementById("com.android.packageinstaller:id/permission_allow_button").click()
+                self.actionSleep()
 
         # 等待进入到直播activity
         self.waitActivity(PerformanceBoradcaster.Activity_Live)
+        self.actionSleep()
 
-        # 取消分享到FB, 开始直播
-        fbShareBtn = self.findElementById(PerformanceBoradcaster.ID_FB_Share_Btn)
-        fbShareBtn.click()
+        # 处理美颜滤镜引导
+        if self.findElementByAU("Be more beautiful!"):
+            self.driver.back()
+            self.actionSleep()
 
         # 开启美颜，选择滤镜，做成参数设置
-        
-        # 开始直播
-        startLiveBtn = self.findElementById(PerformanceBoradcaster.ID_Start_Live_Btn)
-        startLiveBtn.click()
 
-        # 暂停15秒，其实就是直播15秒，目前只能sleep 1秒，多了就会报connect abort的错，原因待查
+        # 开始直播
+        self.findElementById(PerformanceBoradcaster.ID_Start_Live_Btn).click()
+
+        # 处理FB分享弹窗
+        self.actionSleep(5)
+        self.actionBack()
+
+        # 暂停x秒，其实就是直播x秒，目前只能sleep 1秒，多了就会报connect abort的错，原因待查
         count = 0
-        threshold = 1 * 60 / 5
+        threshold = run_time * 60
         while count < threshold:
             count += 1
             self.actionSleep(1)
 
-            if count%5 == 0:
+            if count % 5 == 0:
+                print("当前/剩余: %u/%u" % (count, threshold))
                 self.profile()
 
-        closeLiveConfirmBtn = None
-        retryCount = 0
-        while closeLiveConfirmBtn is None:
-            # 准备关闭直播
-            self.actionBack()
-            closeLiveConfirmBtn = self.findElementById(PerformanceBoradcaster.IDE_Close_Live_Confirm_Btn)
-            if closeLiveConfirmBtn is not None:
-                closeLiveConfirmBtn.click()
+        # 关闭直播
+        self.actionBack()
+        if self.findElementById(PerformanceBoradcaster.IDE_Close_Live_Confirm_Btn):
+            self.findElementById(PerformanceBoradcaster.IDE_Close_Live_Confirm_Btn).click()
 
-            retryCount += 1
-            if retryCount >= 3:
-                print('some error happen when exit live room...')
-                break
-
-            self.actionSleep(1)
-
-        # 退出直播页面
+        # 退出关播页面
         self.actionBack()
 
         # 等待5秒后，计算退出测试用例后的内存占用
@@ -125,11 +149,10 @@ class PerformanceBoradcaster(BaseTestCase):
         self.profile()
 
         self.profileReport()
-        
+
 
 if __name__ == '__main__':
+    # 设定运行时间(分钟)
+    run_time = 10
     suite = unittest.TestLoader().loadTestsFromTestCase(PerformanceBoradcaster)
     unittest.TextTestRunner(verbosity=2).run(suite)
-
-
-

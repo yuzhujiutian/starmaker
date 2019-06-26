@@ -194,7 +194,7 @@ class PostHandler(BaseHTTPRequestHandler):
         if action == 'config':
             # 接收get参数
             print(query[1])
-            if query[1] is not None:
+            if query[1]:
                 for qp in query[1].split('&'):
                     kv = qp.split('=')
                     _filter_params[kv[0]] = urllib.parse.unquote(kv[1]).decode("utf-8", 'ignore').split(',')

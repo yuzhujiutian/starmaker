@@ -17,7 +17,7 @@ class RecordingAction(BaseAction):
             # 确定finish按钮出现
             finishBtn = self.findElementById('finish_tv')
 
-            if finishBtn is not None:
+            if finishBtn:
                 finishBtn.click()
                 break
 
@@ -41,38 +41,38 @@ class RecordingAction(BaseAction):
     def clearGuide(self):
         # 耳机提示框
         el = self.findElementById('recording_headset_dialog_i_know_btn')
-        if el is not None:
+        if el:
             el.click()
 
         self.actionSleep(1)
 
         # 引导提示
         el = self.findElementById('tv_pitch_guide_tip')
-        if el is not None:
+        if el:
             el.click()
 
     # 检查权限弹窗
     def checkPermission(self):
         grantOkBtn = self.findElementById('permissionOkTv')
 
-        if grantOkBtn is not None:
+        if grantOkBtn:
             grantOkBtn.click()
 
             while 1:
                 permitBtn = self.findElementById('com.android.packageinstaller:id/permission_allow_button')
-                if permitBtn is not None:
+                if permitBtn:
                     permitBtn.click()
                 else:
                     break
 
                 permitBtn = self.findElementById('com.android.packageinstaller:id/permission_allow_button')
-                if permitBtn is not None:
+                if permitBtn:
                     permitBtn.click()
                 else:
                     break
 
                 permitBtn = self.findElementById('com.android.packageinstaller:id/permission_allow_button')
-                if permitBtn is not None:
+                if permitBtn:
                     permitBtn.click()
                 else:
                     break

@@ -47,7 +47,7 @@ def main(task):
         elif opt == "-i":
             info_names = re.split("\\s?,\\s?", value)
         elif opt == "-o":
-            if value is not None:
+            if value:
                 output = value
 
     d = u2.connect(device)

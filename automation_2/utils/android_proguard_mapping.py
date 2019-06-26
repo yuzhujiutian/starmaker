@@ -14,7 +14,7 @@ class AndroidProGuardMapping:
     def getId(self, ProGuardFileResId):
         realId = ProGuardFileResId
 
-        if self.mappingTable is not None:
+        if self.mappingTable:
             realId = re.findall("R.id." + "(.*)""'", re.findall(
                 "R.id." + ProGuardFileResId + " -> " + "(.*)", self.mappingTable).__str__())[0]
 

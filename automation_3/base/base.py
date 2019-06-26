@@ -61,12 +61,13 @@ class BaseTestCase(unittest.TestCase):
     def capsSetup(self):
         desired_caps = {}
         desired_caps['platformName'] = 'Android'
-        desired_caps['deviceName'] = '2014501'
+        desired_caps['device'] = 'SM_G9350'
+        desired_caps['deviceName'] = 'hero2qltechn'
         desired_caps['appPackage'] = 'com.starmakerinteractive.starmaker'
         desired_caps['appActivity'] = 'com.ushowmedia.starmaker.activity.SplashActivity'
         desired_caps['appWaitActivity'] = ','.join([Activity.Main, Activity.Nux_Language])
-        desired_caps['automationName'] = 'appium'
-        # desired_caps['automationName'] = 'uiautomator2'
+        # desired_caps['automationName'] = 'appium'
+        desired_caps['automationName'] = 'uiautomator2'
         desired_caps['noReset'] = 'true'
         desired_caps['autoGrantPermissions'] = True
         desired_caps['autoAcceptAlerts'] = True
@@ -84,9 +85,9 @@ class BaseTestCase(unittest.TestCase):
         # 内存统计
         self.memoryProfile = None
 
-        self.mappingFile = desired_caps.get('mappingFile', None)
+        # self.mappingFile = desired_caps.get('mappingFile', None)
         # print dir(self.driver)
-        # self.mappingFile = '../example/mapping.txt'
+        self.mappingFile = '../example/mapping.txt'
         self.mapping = AndroidProGuardMapping(self.mappingFile)
 
     def tearDown(self):
@@ -94,9 +95,7 @@ class BaseTestCase(unittest.TestCase):
 
     # wait: 如果为true, 会一直等待直到元素出现
     def findElementById(self, elementId, wait=False):
-        # print elementId
         elementId = self.mapping.getId(elementId)
-        # print elementId
         element = None
         while element is None:
             try:
@@ -109,14 +108,15 @@ class BaseTestCase(unittest.TestCase):
 
         return element
 
-    def findElementsById(self, elementId, wait=False):
+    def findElementsById(self, elementId, num, wait=False):
+        time.sleep(2)
         # print elementId
         elementId = self.mapping.getId(elementId)
         # print elementId
         element = None
         while element is None:
             try:
-                element = self.wait5.until(lambda driver: driver.find_elements_by_id(elementId))
+                element = self.wait5.until(lambda driver: driver.find_elements_by_id(elementId)[num])
             except Exception as e:
                 print(e)
 
@@ -138,10 +138,30 @@ class BaseTestCase(unittest.TestCase):
 
         return element
 
-    def findElementsByAID(self, elementId):
+    def findElementsByAID(self, elementId, num):
         elements = None
         try:
-            elements = self.wait15.until(lambda driver: driver.find_elements_by_accessibility_id(elementId))
+            elements = self.wait15.until(lambda driver: driver.find_elements_by_accessibility_id(elementId)[num])
+        except Exception as e:
+            print(e)
+
+        return elements
+
+    def findElementByAU(self, elementId):
+        elements = None
+        elementId = "new UiSelector().text(\"%s\")" % elementId
+        try:
+            elements = self.wait15.until(lambda driver: driver.find_element_by_android_uiautomator(elementId))
+        except Exception as e:
+            print(e)
+
+        return elements
+
+    def findElementsByAU(self, elementId, num):
+        elements = None
+        elementId = "new UiSelector().text(\"%s\")" % elementId
+        try:
+            elements = self.wait15.until(lambda driver: driver.find_element_by_android_uiautomator(elementId)[num])
         except Exception as e:
             print(e)
 
@@ -229,7 +249,7 @@ class BaseTestCase(unittest.TestCase):
         except Exception as e:
             print(e)
 
-        if waitActivity is not None:
+        if waitActivity:
             returned = False
             while not returned:
                 # 等待回到上一个页面

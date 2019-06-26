@@ -40,13 +40,13 @@ class AndroidMemoryReport:
 
         totalMemory = 0
         maxMemory = 0
-        for m in self.memInfos[1:-1]:
+        for m in self.memInfos[1:-2]:
             c = int(m[1][totalPssIndex])
             totalMemory += c
             if c > maxMemory:
                 maxMemory = c
 
-        averageMemory = totalMemory/(len(self.memInfos) - 2)
+        averageMemory = int(totalMemory/(len(self.memInfos) - 2))
 
         print('startMemory:', startMemory)
         print('endMemory:', endMemory)

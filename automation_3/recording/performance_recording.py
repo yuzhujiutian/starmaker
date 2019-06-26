@@ -31,8 +31,8 @@ class PerformanceRecording(BaseTestCase):
         index = 0
         while el is None:
             # sing按钮
-            el = self.findElementsById('btn_sing')
-            if el is not None:
+            el = self.findElementById('btn_sing')
+            if el:
                 # 统计开始前的内存使用
                 self.profile()
                 el[0].click()
