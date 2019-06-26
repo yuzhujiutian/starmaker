@@ -228,7 +228,7 @@ class BaseTestCase(unittest.TestCase):
         except Exception as e:
             print e
 
-        if waitActivity is not None:
+        if waitActivity:
             returned = False
             while not returned:
                 # 等待回到上一个页面

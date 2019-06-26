@@ -25,7 +25,7 @@ class LoginAction(BaseAction):
 
     # googleLoginBtn是google登录按钮，通过点击登录按钮，触发登录逻辑
     def googleLogin(self, googleLoginBtn, waitActivity=Activity.Main):
-        if googleLoginBtn is not None:
+        if googleLoginBtn:
             googleLoginBtn.click()
         else:
             return

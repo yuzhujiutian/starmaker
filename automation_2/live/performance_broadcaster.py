@@ -65,7 +65,7 @@ class PerformanceBoradcaster(BaseTestCase):
 
             # 点击按钮
             el = self.findElementById(PerformanceBoradcaster.ID_Live_Menu_Btn)
-            if el is not None:
+            if el:
                 # 统计开始前的内存使用
                 self.profile()
                 el.click()
@@ -105,7 +105,7 @@ class PerformanceBoradcaster(BaseTestCase):
             # 准备关闭直播
             self.actionBack()
             closeLiveConfirmBtn = self.findElementById(PerformanceBoradcaster.IDE_Close_Live_Confirm_Btn)
-            if closeLiveConfirmBtn is not None:
+            if closeLiveConfirmBtn:
                 closeLiveConfirmBtn.click()
 
             retryCount += 1

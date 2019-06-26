@@ -35,7 +35,7 @@ class LaunchAction(BaseAction):
 
         try:
             el = self.findElementByAId(tab)
-            if el is not None:
+            if el:
                 self.singleTap(el)
         except Exception as e:
             print('Exception:', e)

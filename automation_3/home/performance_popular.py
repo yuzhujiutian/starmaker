@@ -40,7 +40,7 @@ class PerformanceMoment(BaseTestCase):
 
             # 内容卡片是否已经加载出来
             els = self.findElementsByAID(PerformanceMoment.AID_Popular_Content_Item)
-            if els is not None:
+            if els:
                 print('switch to trend tab...')
                 break
             else:

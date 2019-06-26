@@ -7,15 +7,18 @@ class AndroidProGuardMapping:
 
     def __init__(self, ProGuardFile=None):
         self.mappingTable = None
-
-        if ProGuardFile is not None and os.path.isfile(ProGuardFile):
+        if ProGuardFile and os.path.isfile(ProGuardFile):
             self.mappingTable = open(ProGuardFile, 'r').read()
 
     def getId(self, ProGuardFileResId):
         realId = ProGuardFileResId
+        try:
+            if self.mappingTable:
+                r_realId = re.findall("R.id." + "(.*)""'", re.findall(
+                    "R.id." + realId + " -> " + "(.*)", self.mappingTable).__str__())[0]
 
-        if self.mappingTable is not None:
-            realId = re.findall("R.id." + "(.*)""'", re.findall(
-                "R.id." + ProGuardFileResId + " -> " + "(.*)", self.mappingTable).__str__())[0]
-
-        return realId
+                return r_realId
+            else:
+                return realId
+        except:
+            return realId

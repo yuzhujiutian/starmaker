@@ -138,12 +138,16 @@ class GetDevicesInfo(object):
 
 
 class DevicesInfo(object):
+    sm = "com.starmakerinteractive.starmaker"
+    tvp = "com.starmakerinteractive.thevoice"
+    sa = "com.horadrim.android.sargam"
+    su = "com.windforce.android.suaraku"
     # AppPackage 用于初始化
     @staticmethod
-    def AppPackage():
+    def AppPackage(package=sm):
         # GetPackages = GetDevicesInfo().GetPackages()[0]
         # 调试使用
-        GetPackages = "com.starmakerinteractive.starmaker"
+        GetPackages = package
         return GetPackages
 
     # package拼接 用于元素定位使用
