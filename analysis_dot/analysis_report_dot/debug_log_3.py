@@ -184,13 +184,8 @@ def ios_handle_event(datas, filter=None):
 
 class PostHandler(BaseHTTPRequestHandler):
     def do_GET(self):
-        # path = self.path
-        # print 'path:', path
-        # if len(path) > 1:
         query = urllib.parse.splitquery(self.path)
-        # print 'query:', query
         action = query[0][1:]
-        # print 'action:', action
 
         if action == 'config':
             # 接收get参数
@@ -207,9 +202,7 @@ class PostHandler(BaseHTTPRequestHandler):
         return
 
     def do_POST(self):
-        # path = self.path
         # 获取post提交的数据
-        # print self.headers
         str_headers = self.headers.__str__()
         user_agent = re.findall("User-Agent: " + "(.*)", str_headers)[0]
         platform1 = re.findall("Android", user_agent)

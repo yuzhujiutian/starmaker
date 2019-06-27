@@ -270,15 +270,15 @@ class BaseTestCase(unittest.TestCase):
     # 统计当前内存占用
     def profile(self):
         if self.memoryProfile is None:
-            print('error: please call startMemoryProfile first...')
+            self.log('error: please call startMemoryProfile first...')
         else:
             self.memoryProfile.profile()
 
-    def profileReport(self):
+    def profileReport(self, module_name="check_list"):
         if self.memoryProfile is None:
             pass
         else:
-            self.memoryProfile.toReport()
+            self.memoryProfile.toReport_memInfos(module_name)
 
     # 打印日志相关， TODO: 丰富功能
     def log(self, info):

@@ -8,7 +8,7 @@ from automation_2.home.launch import LaunchAction
 sys.path.append('..')
 
 
-class PerformanceBoradcaster(BaseTestCase):
+class PerformanceBroadcaster(BaseTestCase):
     # 右上角按钮id
     ID_Live_Menu_Btn = 'entertainment_tab_drawer'
 
@@ -64,29 +64,29 @@ class PerformanceBoradcaster(BaseTestCase):
             # home.switch_tab(Home.Discovery)
 
             # 点击按钮
-            el = self.findElementById(PerformanceBoradcaster.ID_Live_Menu_Btn)
+            el = self.findElementById(PerformanceBroadcaster.ID_Live_Menu_Btn)
             if el:
                 # 统计开始前的内存使用
                 self.profile()
                 el.click()
 
         # 开始直播按钮
-        goLive = self.findElementById(PerformanceBoradcaster.ID_Go_Live_Btn)
+        goLive = self.findElementById(PerformanceBroadcaster.ID_Go_Live_Btn)
         goLive.click()
 
         # TODO: 权限弹窗处理
 
         # 等待进入到直播activity
-        self.waitActivity(PerformanceBoradcaster.Activity_Live)
+        self.waitActivity(PerformanceBroadcaster.Activity_Live)
 
         # 取消分享到FB, 开始直播
-        fbShareBtn = self.findElementById(PerformanceBoradcaster.ID_FB_Share_Btn)
+        fbShareBtn = self.findElementById(PerformanceBroadcaster.ID_FB_Share_Btn)
         fbShareBtn.click()
 
         # 开启美颜，选择滤镜，做成参数设置
         
         # 开始直播
-        startLiveBtn = self.findElementById(PerformanceBoradcaster.ID_Start_Live_Btn)
+        startLiveBtn = self.findElementById(PerformanceBroadcaster.ID_Start_Live_Btn)
         startLiveBtn.click()
 
         # 暂停15秒，其实就是直播15秒，目前只能sleep 1秒，多了就会报connect abort的错，原因待查
@@ -104,7 +104,7 @@ class PerformanceBoradcaster(BaseTestCase):
         while closeLiveConfirmBtn is None:
             # 准备关闭直播
             self.actionBack()
-            closeLiveConfirmBtn = self.findElementById(PerformanceBoradcaster.IDE_Close_Live_Confirm_Btn)
+            closeLiveConfirmBtn = self.findElementById(PerformanceBroadcaster.IDE_Close_Live_Confirm_Btn)
             if closeLiveConfirmBtn:
                 closeLiveConfirmBtn.click()
 
@@ -128,7 +128,7 @@ class PerformanceBoradcaster(BaseTestCase):
         
 
 if __name__ == '__main__':
-    suite = unittest.TestLoader().loadTestsFromTestCase(PerformanceBoradcaster)
+    suite = unittest.TestLoader().loadTestsFromTestCase(PerformanceBroadcaster)
     unittest.TextTestRunner(verbosity=2).run(suite)
 
 

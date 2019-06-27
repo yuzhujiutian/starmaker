@@ -17,6 +17,7 @@ os.chdir(root_dir)
 
 
 # 重定向日志，将print日志输出到控制台和日志文件里面
+# TODO：重新封装日志写入；
 class logger:
     def __init__(self, data_type='events'):
         self.__console__ = sys.stdout
@@ -66,8 +67,8 @@ class AndroidMemoryReport:
             memInfo = self.driver.get_performance_data(self.appPackage, self.data_type, 5)
             self.memInfos.append(memInfo)
             self.saveRawToFile(memInfo)
-        except:
-            pass
+        except Exception as e:
+            print("get_memoryinfo_error:", e)
 
     def clear(self):
         self.memInfos = []
@@ -76,8 +77,12 @@ class AndroidMemoryReport:
     def saveRawToFile(self, Info):
         r_logger(self.data_type).detail(json.dumps(Info, indent=2))
 
+    # 保存测试数据到文件
+    def saveTestData(self, Info):
+        r_logger(self.data_type).write(json.dumps(Info, indent=2))
+
     # 生成内存报告
-    def toReport(self):
+    def toReport_memInfos(self, module_name):
         m = self.memInfos[0]
         totalPssIndex = m[0].index('totalPss')
 
@@ -93,7 +98,8 @@ class AndroidMemoryReport:
                 maxMemory = c
 
         averageMemory = int(float(totalMemory/(len(self.memInfos) - 2)))
-
+        module = module_name + " memInfos_Report"
+        print(module)
         print("\n""------------------------------")
         print('%20s: %s' % ('startMemory', startMemory.__str__()))
         print('%20s: %s' % ('endMemory', endMemory.__str__()))
@@ -101,7 +107,5 @@ class AndroidMemoryReport:
         print('%20s: %s' % ('maxMemory', maxMemory.__str__()))
         print("------------------------------""\n")
         time.sleep(2)
+
         self.clear()
-
-
-

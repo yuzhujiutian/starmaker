@@ -8,7 +8,7 @@ from automation_3.home.launch import LaunchAction
 sys.path.append('..')
 
 
-class PerformanceBoradcaster(BaseTestCase):
+class PerformanceBroadcaster(BaseTestCase):
     # 右上角按钮id
     ID_Live_Menu_Btn = 'entertainment_tab_drawer'
 
@@ -73,17 +73,15 @@ class PerformanceBoradcaster(BaseTestCase):
         self.startMemoryProfile()
 
         while el is None:
-            # home.switch_tab(Home.Discovery)
-
             # 点击按钮
-            el = self.findElementById(PerformanceBoradcaster.ID_Live_Menu_Btn)
+            el = self.findElementById(PerformanceBroadcaster.ID_Live_Menu_Btn)
             if el:
                 # 统计开始前的内存使用
                 self.profile()
                 el.click()
 
         # 开始直播按钮
-        self.findElementById(PerformanceBoradcaster.ID_Go_Live_Btn).click()
+        self.findElementById(PerformanceBroadcaster.ID_Go_Live_Btn).click()
 
         # 如果未登录
         if self.findElementById("img_login_email"):
@@ -94,9 +92,9 @@ class PerformanceBoradcaster(BaseTestCase):
             self.findElementsById("et_input", 1).send_keys("000000")
             self.findElementById("btw_email_confirm").click()
             self.actionSleep(5)
-            self.findElementById(PerformanceBoradcaster.ID_Live_Menu_Btn).click()
+            self.findElementById(PerformanceBroadcaster.ID_Live_Menu_Btn).click()
             self.actionSleep()
-            self.findElementById(PerformanceBoradcaster.ID_Go_Live_Btn, True).click()
+            self.findElementById(PerformanceBroadcaster.ID_Go_Live_Btn, True).click()
 
         # 权限弹窗处理
         if self.findElementById("permissionOkTv"):
@@ -106,7 +104,7 @@ class PerformanceBoradcaster(BaseTestCase):
                 self.actionSleep()
 
         # 等待进入到直播activity
-        self.waitActivity(PerformanceBoradcaster.Activity_Live)
+        self.waitActivity(PerformanceBroadcaster.Activity_Live)
         self.actionSleep()
 
         # 处理美颜滤镜引导
@@ -117,11 +115,11 @@ class PerformanceBoradcaster(BaseTestCase):
         # 开启美颜，选择滤镜，做成参数设置
 
         # 开始直播
-        self.findElementById(PerformanceBoradcaster.ID_Start_Live_Btn).click()
+        self.findElementById(PerformanceBroadcaster.ID_Start_Live_Btn).click()
 
         # 处理FB分享弹窗
         self.actionSleep(8)
-        self.actionBack()
+        self.driver.back()
 
         # 暂停x秒，其实就是直播x秒，目前只能sleep 1秒，多了就会报connect abort的错，原因待查
         count = 0
@@ -131,12 +129,12 @@ class PerformanceBoradcaster(BaseTestCase):
             self.actionSleep(1)
 
             if count % 5 == 0:
-                print("当前进度：%.2f%%" % (count/threshold * 100) + "(%u/%u)" % (count, threshold))
+                # print("当前进度：%.2f%%" % (count/threshold * 100) + "(%u/%u)" % (count, threshold))
                 self.profile()
 
         # 关闭直播
         self.findElementById("iv_room_quit").click()
-        confirm_btn = self.findElementById(PerformanceBoradcaster.IDE_Close_Live_Confirm_Btn, True)
+        confirm_btn = self.findElementById(PerformanceBroadcaster.IDE_Close_Live_Confirm_Btn, True)
         if confirm_btn:
             confirm_btn.click()
 
@@ -149,11 +147,11 @@ class PerformanceBoradcaster(BaseTestCase):
         print('stop live, get the memory profile...')
         self.profile()
 
-        self.profileReport()
+        self.profileReport(self.__class__.__name__)
 
 
 if __name__ == '__main__':
     # 设定运行时间(分钟)
     run_time = 1
-    suite = unittest.TestLoader().loadTestsFromTestCase(PerformanceBoradcaster)
+    suite = unittest.TestLoader().loadTestsFromTestCase(PerformanceBroadcaster)
     unittest.TextTestRunner(verbosity=2).run(suite)
