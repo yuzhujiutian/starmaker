@@ -120,7 +120,7 @@ class PerformanceBoradcaster(BaseTestCase):
         self.findElementById(PerformanceBoradcaster.ID_Start_Live_Btn).click()
 
         # 处理FB分享弹窗
-        self.actionSleep(5)
+        self.actionSleep(8)
         self.actionBack()
 
         # 暂停x秒，其实就是直播x秒，目前只能sleep 1秒，多了就会报connect abort的错，原因待查
@@ -131,19 +131,20 @@ class PerformanceBoradcaster(BaseTestCase):
             self.actionSleep(1)
 
             if count % 5 == 0:
-                print("当前/剩余: %u/%u" % (count, threshold))
+                print("当前进度：%.2f%%" % (count/threshold * 100) + "(%u/%u)" % (count, threshold))
                 self.profile()
 
         # 关闭直播
-        self.actionBack()
-        if self.findElementById(PerformanceBoradcaster.IDE_Close_Live_Confirm_Btn):
-            self.findElementById(PerformanceBoradcaster.IDE_Close_Live_Confirm_Btn).click()
+        self.findElementById("iv_room_quit").click()
+        confirm_btn = self.findElementById(PerformanceBoradcaster.IDE_Close_Live_Confirm_Btn, True)
+        if confirm_btn:
+            confirm_btn.click()
 
         # 退出关播页面
         self.actionBack()
 
         # 等待5秒后，计算退出测试用例后的内存占用
-        self.actionSleep(1)
+        self.actionSleep(5)
 
         print('stop live, get the memory profile...')
         self.profile()
@@ -153,6 +154,6 @@ class PerformanceBoradcaster(BaseTestCase):
 
 if __name__ == '__main__':
     # 设定运行时间(分钟)
-    run_time = 10
+    run_time = 1
     suite = unittest.TestLoader().loadTestsFromTestCase(PerformanceBoradcaster)
     unittest.TextTestRunner(verbosity=2).run(suite)

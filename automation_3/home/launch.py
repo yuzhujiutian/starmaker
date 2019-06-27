@@ -28,7 +28,7 @@ class LaunchAction(BaseAction):
 
     # 启动到某个tab
     def toTab(self, tab):
-        print('switch to', tab)
+        self.log('switch to' + tab)
         if tab not in LaunchAction._tabs:
             print('can\'t switch tab, tab parameter %s is wrong...')
             return

@@ -68,7 +68,7 @@ class BaseTestCase(unittest.TestCase):
         desired_caps['appWaitActivity'] = ','.join([Activity.Main, Activity.Nux_Language])
         # desired_caps['automationName'] = 'appium'
         desired_caps['automationName'] = 'uiautomator2'
-        desired_caps['noReset'] = 'true'
+        desired_caps['noReset'] = False
         desired_caps['autoGrantPermissions'] = True
         desired_caps['autoAcceptAlerts'] = True
         # defaultCommandTimeout
@@ -91,7 +91,7 @@ class BaseTestCase(unittest.TestCase):
         self.mapping = AndroidProGuardMapping(self.mappingFile)
 
     def tearDown(self):
-        pass
+        self.driver.quit()
 
     # wait: 如果为true, 会一直等待直到元素出现
     def findElementById(self, elementId, wait=False):
@@ -101,7 +101,7 @@ class BaseTestCase(unittest.TestCase):
             try:
                 element = self.wait5.until(lambda driver: driver.find_element_by_id(elementId))
             except Exception as e:
-                print(e)
+                self.log(e)
 
             if not wait:
                 break
@@ -118,7 +118,7 @@ class BaseTestCase(unittest.TestCase):
             try:
                 element = self.wait5.until(lambda driver: driver.find_elements_by_id(elementId)[num])
             except Exception as e:
-                print(e)
+                self.log(e)
 
             if not wait:
                 break
@@ -131,7 +131,7 @@ class BaseTestCase(unittest.TestCase):
             try:
                 element = self.wait5.until(lambda driver: driver.find_element_by_accessibility_id(elementId))
             except Exception as e:
-                print(e)
+                self.log(e)
 
             if not wait:
                 break
@@ -143,7 +143,7 @@ class BaseTestCase(unittest.TestCase):
         try:
             elements = self.wait15.until(lambda driver: driver.find_elements_by_accessibility_id(elementId)[num])
         except Exception as e:
-            print(e)
+            self.log(e)
 
         return elements
 
@@ -153,7 +153,7 @@ class BaseTestCase(unittest.TestCase):
         try:
             elements = self.wait15.until(lambda driver: driver.find_element_by_android_uiautomator(elementId))
         except Exception as e:
-            print(e)
+            self.log(e)
 
         return elements
 
@@ -163,7 +163,7 @@ class BaseTestCase(unittest.TestCase):
         try:
             elements = self.wait15.until(lambda driver: driver.find_element_by_android_uiautomator(elementId)[num])
         except Exception as e:
-            print(e)
+            self.log(e)
 
         return elements
 
@@ -247,7 +247,7 @@ class BaseTestCase(unittest.TestCase):
         try:
             self.wait5.until(lambda driver: driver.back())
         except Exception as e:
-            print(e)
+            self.log(e)
 
         if waitActivity:
             returned = False
@@ -259,7 +259,7 @@ class BaseTestCase(unittest.TestCase):
                     try:
                         self.wait5.until(lambda driver: driver.back())
                     except Exception as e:
-                        print(e)
+                        self.log(e)
 
     # 开始内存统计
     def startMemoryProfile(self):
@@ -282,5 +282,5 @@ class BaseTestCase(unittest.TestCase):
 
     # 打印日志相关， TODO: 丰富功能
     def log(self, info):
-        # print info
+        # print(info)
         pass
