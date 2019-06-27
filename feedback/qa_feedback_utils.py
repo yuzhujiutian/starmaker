@@ -74,7 +74,7 @@ def generate_description(feedbacks, encoding='utf-8'):
     result += "%s\n"%time.ctime()
     result += "当天共计反馈%d次\n\n"%len(feedbacks)
 
-    columns = ["index", "问题描述", "UID", "版本", "系统", "日期", "图片链接1", "图片链接2", "图片链接3"]
+    columns = ["index", "问题描述", "UID", "版本", "系统", "日期", "图片链接1", "图片链接2", "图片链接3", "app_name", "app_language", "device"]
 
     result += "| " + " | ".join(columns) + " |\n"
     result += "| --- " * len(columns) + "|\n"
@@ -89,6 +89,9 @@ def generate_description(feedbacks, encoding='utf-8'):
         feedback_pic1 = ''
         feedback_pic2 = ''
         feedback_pic3 = ''
+        feedback_app = ''
+        feedback_language = ''
+        feedback_device = ''
 
         for key in feedback.keys():
             ukey = str(unicode(key, encoding))
@@ -112,8 +115,14 @@ def generate_description(feedbacks, encoding='utf-8'):
                 feedback_pic2 = value
             elif ukey == "图片链接3":
                 feedback_pic3 = value
+            elif ukey == "app_name":
+                feedback_app = value
+            elif ukey == "app_language":
+                feedback_language = value
+            elif ukey == 'device':
+                feedback_device = value
 
-        result += "| %s | %s | %s | %s | %s | %s | %s | %s | %s |\n"%(index, feedback_desc, feedback_uid, feedback_version, feedback_platform, feedback_date, feedback_pic1, feedback_pic2, feedback_pic3)
+        result += "| %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s |\n"%(index, feedback_desc, feedback_uid, feedback_version, feedback_platform, feedback_date, feedback_pic1, feedback_pic2, feedback_pic3, feedback_app, feedback_language, feedback_device)
 
     # print result
     return result
