@@ -1,5 +1,6 @@
 # encoding=utf-8
 import sys
+import time
 import unittest
 
 from automation_3.base.base import BaseTestCase
@@ -55,7 +56,7 @@ class PerformanceBroadcaster(BaseTestCase):
     """
 
     def test_case001_performance(self):
-        # 切换到discovery tab
+        # 选择语言
         LaunchAction(self)._choose_language()
 
         # 处理Made For You
@@ -97,15 +98,16 @@ class PerformanceBroadcaster(BaseTestCase):
             self.findElementById(PerformanceBroadcaster.ID_Go_Live_Btn, True).click()
 
         # 权限弹窗处理
-        if self.findElementById("permissionOkTv"):
-            self.findElementById("permissionOkTv").click()
+        permissionOkTv = self.findElementById("permissionOkTv")
+        if permissionOkTv:
+            permissionOkTv.click()
             while self.findElementById("com.android.packageinstaller:id/permission_allow_button"):
                 self.findElementById("com.android.packageinstaller:id/permission_allow_button").click()
                 self.actionSleep()
 
         # 等待进入到直播activity
         self.waitActivity(PerformanceBroadcaster.Activity_Live)
-        self.actionSleep()
+        self.actionSleep(8)
 
         # 处理美颜滤镜引导
         if self.findElementByAU("Be more beautiful!"):
@@ -134,7 +136,7 @@ class PerformanceBroadcaster(BaseTestCase):
 
         # 关闭直播
         self.findElementById("iv_room_quit").click()
-        confirm_btn = self.findElementById(PerformanceBroadcaster.IDE_Close_Live_Confirm_Btn, True)
+        confirm_btn = self.findElementById(PerformanceBroadcaster.IDE_Close_Live_Confirm_Btn)
         if confirm_btn:
             confirm_btn.click()
 
@@ -147,11 +149,19 @@ class PerformanceBroadcaster(BaseTestCase):
         print('stop live, get the memory profile...')
         self.profile()
 
-        self.profileReport(self.__class__.__name__)
+        self.profileReport(self.__class__.__name__, str(threshold))
+
+        self.driver.quit()
 
 
 if __name__ == '__main__':
     # 设定运行时间(分钟)
-    run_time = 1
-    suite = unittest.TestLoader().loadTestsFromTestCase(PerformanceBroadcaster)
-    unittest.TextTestRunner(verbosity=2).run(suite)
+    run_time = 10
+
+    num = 0
+    while num < 3:
+        num += 1
+        print(num)
+        suite = unittest.TestLoader().loadTestsFromTestCase(PerformanceBroadcaster)
+        unittest.TextTestRunner(verbosity=2).run(suite)
+        time.sleep(60)

@@ -91,7 +91,7 @@ class BaseTestCase(unittest.TestCase):
         self.mapping = AndroidProGuardMapping(self.mappingFile)
 
     def tearDown(self):
-        self.driver.quit()
+        pass
 
     # wait: 如果为true, 会一直等待直到元素出现
     def findElementById(self, elementId, wait=False):
@@ -224,7 +224,7 @@ class BaseTestCase(unittest.TestCase):
     def waitActivity(self, activity, timeout=9):
         return self.driver.wait_activity(activity, timeout)
 
-    # 获取当前meminfo
+    # 获取当前memoryinfo
     def getCurrentMem(self):
         return self.driver.get_performance_data(self.appPackage, 'memoryinfo', 5)
 
@@ -274,11 +274,11 @@ class BaseTestCase(unittest.TestCase):
         else:
             self.memoryProfile.profile()
 
-    def profileReport(self, module_name="check_list"):
+    def profileReport(self, module_name="check_list", run_time="10 minutes"):
         if self.memoryProfile is None:
             pass
         else:
-            self.memoryProfile.toReport_memInfos(module_name)
+            self.memoryProfile.toReport_memInfos(module_name, run_time)
 
     # 打印日志相关， TODO: 丰富功能
     def log(self, info):

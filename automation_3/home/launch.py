@@ -25,6 +25,7 @@ class LaunchAction(BaseAction):
         el = self.findElementByAId('nux_language_' + language)
         self.singleTap(el)
         self.log('choose %s language...' % language)
+        self.actionSleep(5)
 
     # 启动到某个tab
     def toTab(self, tab):
@@ -37,6 +38,7 @@ class LaunchAction(BaseAction):
             el = self.findElementByAId(tab)
             if el:
                 self.singleTap(el)
+                self.actionSleep(5)
         except Exception as e:
             print('Exception:', e)
 

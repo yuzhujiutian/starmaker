@@ -26,11 +26,11 @@ class logger:
         if not os.path.isdir(log_dir):
             os.makedirs(log_dir)
         self.file_logger = open(
-            os.path.join(log_dir, "./%s-logs-%s.log" % (data_type, datetime.datetime.now().strftime('%Y%m%d')))
-            , 'a+', encoding='utf-8')
+            os.path.join(log_dir, "./%s-logs-%s.log" % (data_type, datetime.datetime.now().strftime('%Y%m%d'))),
+            'a+', encoding='utf-8')
         self.detail_file_logger = open(
-            os.path.join(log_dir, "./%s-logs-details-%s.log" % (data_type, datetime.datetime.now().strftime('%Y%m%d')))
-            , 'a+', encoding='utf-8')
+            os.path.join(log_dir, "./%s-logs-details-%s.log" % (data_type, datetime.datetime.now().strftime('%Y%m%d'))),
+            'a+', encoding='utf-8')
 
         sys.stdout = self
 
@@ -68,7 +68,7 @@ class AndroidMemoryReport:
             self.memInfos.append(memInfo)
             self.saveRawToFile(memInfo)
         except Exception as e:
-            print("get_memoryinfo_error:", e)
+            print("get_memoryinfo_error：%s" % e)
 
     def clear(self):
         self.memInfos = []
@@ -82,7 +82,7 @@ class AndroidMemoryReport:
         r_logger(self.data_type).write(json.dumps(Info, indent=2))
 
     # 生成内存报告
-    def toReport_memInfos(self, module_name):
+    def toReport_memInfos(self, module_name, run_time):
         m = self.memInfos[0]
         totalPssIndex = m[0].index('totalPss')
 
@@ -97,9 +97,12 @@ class AndroidMemoryReport:
             if c > maxMemory:
                 maxMemory = c
 
-        averageMemory = int(float(totalMemory/(len(self.memInfos) - 2)))
+        totalDataCount = len(self.memInfos)
+        averageMemory = int(float(totalMemory / (totalDataCount - 2)))
         module = module_name + " memInfos_Report"
         print(module)
+        print("run_time：%s" % run_time)
+        print("data_count：%s" % totalDataCount)
         print("\n""------------------------------")
         print('%20s: %s' % ('startMemory', startMemory.__str__()))
         print('%20s: %s' % ('endMemory', endMemory.__str__()))
