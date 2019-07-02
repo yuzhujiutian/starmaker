@@ -29,9 +29,8 @@ class LaunchAction(BaseAction):
 
     # 启动到某个tab
     def toTab(self, tab):
-        self.log('switch to' + tab)
         if tab not in LaunchAction._tabs:
-            print('can\'t switch tab, tab parameter %s is wrong...')
+            self.log('can\'t switch tab, tab parameter %s is wrong...')
             return
 
         try:
@@ -39,23 +38,33 @@ class LaunchAction(BaseAction):
             if el:
                 self.singleTap(el)
                 self.actionSleep(5)
+                selected_status = el.get_attribute("selected")
+                # 确定切换到某个tab
+                if selected_status:
+                    self.log('switch to' + tab)
         except Exception as e:
-            print('Exception:', e)
+            self.get_error_screenshot()
+            self.log('Exception：%s' % e)
 
-        # TODO: 确定切换到某个tab
-        
         # TODO: 清理弹窗
         
         # 完成切换
 
     # 启动
     def launch(self):
-        result = True
+        # 清理测试图片
+        self.TestPicture_Processing()
 
+        result = True
         # 如果是设置语言页面
         if self.waitActivity(Activity.Nux_Language, timeout=9):
             self.log('enter ' + Activity.Nux_Language)
             self._choose_language()
+
+        # 处理Made For You
+        if self.findElementById("tv_guide_title"):
+            self.findElementById("iv_close").click()
+            self.actionSleep()
 
         # 等待进入主页面
         index = 0
@@ -107,14 +116,5 @@ if __name__ == '__main__':
             launch.launch()
 
             launch.toTab(LaunchAction.Trend)
-        
-            
     suite = unittest.TestLoader().loadTestsFromTestCase(LaunchTestCase)
     unittest.TextTestRunner(verbosity=2).run(suite)
-
-
-
-
-
-
-

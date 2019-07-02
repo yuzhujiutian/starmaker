@@ -1,6 +1,6 @@
 # encoding=utf-8
-import random
 import sys
+import time
 import unittest
 
 from automation_3.base.base import BaseTestCase
@@ -14,7 +14,7 @@ class PerformanceMoment(BaseTestCase):
     # 内容卡片
     AID_Popular_Content_Item = 'popular_content_item'
 
-    # 直播activity
+    # Recording
     Activity_Recording = 'com.ushowmedia.starmaker.playdetail.PlayDetailActivity'
 
     # 主activity
@@ -28,39 +28,42 @@ class PerformanceMoment(BaseTestCase):
     4.  退回到首页，首页向下浏览，再重复动作3，反复执行n次
     '''
     def test_case001_performance(self):
+        # 启动
+        launch = LaunchAction(self)
+        launch.launch()
+
+        # 处理轮盘弹窗
+        if self.findElementById("open_promotion_iv_close"):
+            self.findElementById("open_promotion_iv_close").click()
+
         # 切换到trend tab
-        home = LaunchAction(self.driver).toTab(LaunchAction.Trend)
+        LaunchAction(self).toTab(LaunchAction.Trend)
         els = None
 
         # 开始统计memory
         self.startMemoryProfile()
 
         while els is None:
-            home.switch_tab(LaunchAction.Trend)
-
             # 内容卡片是否已经加载出来
-            els = self.findElementsByAID(PerformanceMoment.AID_Popular_Content_Item)
+            els = self.findElementsByAID(PerformanceMoment.AID_Popular_Content_Item, 0)
             if els:
                 print('switch to trend tab...')
                 break
             else:
                 self.actionSleep(1)
 
-        count = 0
+        # 等待播放详情页
+        # self.findElementsByAID(PerformanceMoment.AID_Popular_Content_Item, 0).click()
+        # self.waitActivity(PerformanceMoment.Activity_Recording)
 
-        # 执行次数
-        threshold = 150
-
-        self.profile()
-
-        while count < threshold:
-            # 随机选取一个，进入播放详情页
-            index = random.randint(0, 1000) % len(els)
-            el = els[index]
-            el.click()
-
-            # 等待播放详情页
-            self.waitActivity(PerformanceMoment.Activity_Recording)
+        start_time = time.time()
+        t = 0
+        threshold = run_time * 60
+        while t < threshold:
+            # 找到当前屏首个recording
+            self.findElementsByAID(PerformanceMoment.AID_Popular_Content_Item, 0).click()
+            # 进入播放详情页
+            self.profile()
 
             # 播放5秒
             self.actionSleep(5)
@@ -72,7 +75,7 @@ class PerformanceMoment(BaseTestCase):
             self.actionSleep(5)
 
             # 回到首页
-            self.actionBack(waitActivity=PerformanceMoment.Activity_Main)
+            self.actionBack()
 
             # 记录内存使用情况
             self.profile()
@@ -82,16 +85,22 @@ class PerformanceMoment(BaseTestCase):
             # 向下浏览
             self.swipeUp()
 
-            # 查找新的内容卡片
-            els = self.findElementsByAID(PerformanceMoment.AID_Popular_Content_Item)
+            end_time = time.time()
+            t = end_time - start_time
 
-            count += 1
+        self.profileReport(self.__class__.__name__, str(threshold))
 
-        self.profileReport()
+        self.driver.quit()
 
 
 if __name__ == '__main__':
-    suite = unittest.TestLoader().loadTestsFromTestCase(PerformanceMoment)
-    unittest.TextTestRunner(verbosity=2).run(suite)
+    # 设定运行时间(分钟)
+    run_time = 10
 
-
+    num = 0
+    while num < 4:
+        num += 1
+        print(num)
+        suite = unittest.TestLoader().loadTestsFromTestCase(PerformanceMoment)
+        unittest.TextTestRunner(verbosity=2).run(suite)
+        time.sleep(60)

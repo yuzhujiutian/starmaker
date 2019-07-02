@@ -59,10 +59,6 @@ class PerformanceBroadcaster(BaseTestCase):
         # 选择语言
         LaunchAction(self)._choose_language()
 
-        # 处理Made For You
-        if self.findElementById("tv_guide_title"):
-            self.findElementById("iv_close").click()
-
         # 处理轮盘弹窗
         if self.findElementById("open_promotion_iv_close"):
             self.findElementById("open_promotion_iv_close").click()

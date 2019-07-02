@@ -1,4 +1,6 @@
 # encoding=utf-8
+import datetime
+import os
 import random
 import sys
 import time
@@ -20,6 +22,8 @@ sys.path.append('..')
 class BaseAction(metaclass=QmClassMethodLog):
     def __init__(self, baseTestCase):
         self.tc = baseTestCase
+        # 定义测试图片存放路径
+        self.png_file = "../report/images/"
 
     # 对话框确认逻辑，
     def dialogBtnClick(self, confirm=True):
@@ -46,7 +50,7 @@ class BaseAction(metaclass=QmClassMethodLog):
     def log(self, info):
         return self.tc.log(info)
 
-    def actionSleep(self, duration):
+    def actionSleep(self, duration=2):
         self.tc.actionSleep(duration)
 
     def clearDialog(self):
@@ -55,20 +59,31 @@ class BaseAction(metaclass=QmClassMethodLog):
     def singleTap(self, element):
         self.tc.singleTap(element)
 
+    def TestPicture_Processing(self):
+        print("一层")
+        self.tc.TestPicture_Processing()
+
+    def get_error_screenshot(self):
+        self.tc.get_error_screenshot()
+
 
 class BaseTestCase(unittest.TestCase):
     # 某些test case的连接的属性值会有不同，提供给子类进行自定义
     def capsSetup(self):
+        self.png_file = "../report/images/"
         desired_caps = {}
         desired_caps['platformName'] = 'Android'
-        desired_caps['device'] = 'SM_G9350'
-        desired_caps['deviceName'] = 'hero2qltechn'
+        desired_caps['platformVersion'] = '8.1'
+        desired_caps['device'] = 'SM_G610F'
+        desired_caps['deviceName'] = 'on7xelte'
         desired_caps['appPackage'] = 'com.starmakerinteractive.starmaker'
         desired_caps['appActivity'] = 'com.ushowmedia.starmaker.activity.SplashActivity'
         desired_caps['appWaitActivity'] = ','.join([Activity.Main, Activity.Nux_Language])
         # desired_caps['automationName'] = 'appium'
         desired_caps['automationName'] = 'uiautomator2'
         desired_caps['noReset'] = False
+        desired_caps["unicodeKeyboard"] = True
+        desired_caps["resetKeyboard"] = True
         desired_caps['autoGrantPermissions'] = True
         desired_caps['autoAcceptAlerts'] = True
         # defaultCommandTimeout
@@ -86,12 +101,36 @@ class BaseTestCase(unittest.TestCase):
         self.memoryProfile = None
 
         # self.mappingFile = desired_caps.get('mappingFile', None)
-        # print dir(self.driver)
         self.mappingFile = '../example/mapping.txt'
         self.mapping = AndroidProGuardMapping(self.mappingFile)
 
     def tearDown(self):
         pass
+
+    # 截图
+    def get_screenshot(self):
+        # 获取当前时间作为图片名称
+        img_name = (datetime.datetime.now() + datetime.timedelta()).strftime('%Y%m%d_%H.%M.%S') + '.png'
+        # 截图
+        self.driver.get_screenshot_as_file('%s%s' % (self.png_file, img_name))
+
+    # 错误截图，day -1置于images上方便于查找
+    def get_error_screenshot(self):
+        # 获取当前时间作为图片名称
+        img_name = (datetime.datetime.now() + datetime.timedelta(days=-1)).strftime('%Y%m%d_%H.%M.%S') + '_error.png'
+        # 截图
+        self.driver.get_screenshot_as_file('%s%s' % (self.png_file, img_name))
+
+    # 测试数据处理，处理测试图片
+    def TestPicture_Processing(self):
+        print("二层")
+        images_list = os.listdir(self.png_file)
+        for i in images_list:
+            images = os.path.join(self.png_file, i)
+            Suffix = os.path.splitext(i)[1]
+            if Suffix == ".png":
+                os.remove(images)
+        self.log("测试图片已清理完毕")
 
     # wait: 如果为true, 会一直等待直到元素出现
     def findElementById(self, elementId, wait=False):
@@ -101,6 +140,7 @@ class BaseTestCase(unittest.TestCase):
             try:
                 element = self.wait5.until(lambda driver: driver.find_element_by_id(elementId))
             except Exception as e:
+                self.get_error_screenshot()
                 self.log(e)
 
             if not wait:
@@ -109,15 +149,13 @@ class BaseTestCase(unittest.TestCase):
         return element
 
     def findElementsById(self, elementId, num, wait=False):
-        time.sleep(2)
-        # print elementId
         elementId = self.mapping.getId(elementId)
-        # print elementId
         element = None
         while element is None:
             try:
                 element = self.wait5.until(lambda driver: driver.find_elements_by_id(elementId)[num])
             except Exception as e:
+                self.get_error_screenshot()
                 self.log(e)
 
             if not wait:
@@ -131,6 +169,7 @@ class BaseTestCase(unittest.TestCase):
             try:
                 element = self.wait5.until(lambda driver: driver.find_element_by_accessibility_id(elementId))
             except Exception as e:
+                self.get_error_screenshot()
                 self.log(e)
 
             if not wait:
@@ -138,32 +177,47 @@ class BaseTestCase(unittest.TestCase):
 
         return element
 
-    def findElementsByAID(self, elementId, num):
+    def findElementsByAID(self, elementId, num, wait=False):
         elements = None
-        try:
-            elements = self.wait15.until(lambda driver: driver.find_elements_by_accessibility_id(elementId)[num])
-        except Exception as e:
-            self.log(e)
+        while elements is None:
+            try:
+                elements = self.wait5.until(lambda driver: driver.find_elements_by_accessibility_id(elementId)[num])
+            except Exception as e:
+                self.get_error_screenshot()
+                self.log(e)
+
+            if not wait:
+                break
 
         return elements
 
-    def findElementByAU(self, elementId):
+    def findElementByAU(self, elementId, wait=False):
+        element = None
+        elementId = "new UiSelector().text(\"%s\")" % elementId
+        while element is None:
+            try:
+                element = self.wait5.until(lambda driver: driver.find_element_by_android_uiautomator(elementId))
+            except Exception as e:
+                self.get_error_screenshot()
+                self.log(e)
+
+            if not wait:
+                break
+
+        return element
+
+    def findElementsByAU(self, elementId, num, wait=False):
         elements = None
         elementId = "new UiSelector().text(\"%s\")" % elementId
-        try:
-            elements = self.wait15.until(lambda driver: driver.find_element_by_android_uiautomator(elementId))
-        except Exception as e:
-            self.log(e)
+        while elements is None:
+            try:
+                elements = self.wait5.until(lambda driver: driver.find_element_by_android_uiautomator(elementId)[num])
+            except Exception as e:
+                self.get_error_screenshot()
+                self.log(e)
 
-        return elements
-
-    def findElementsByAU(self, elementId, num):
-        elements = None
-        elementId = "new UiSelector().text(\"%s\")" % elementId
-        try:
-            elements = self.wait15.until(lambda driver: driver.find_element_by_android_uiautomator(elementId)[num])
-        except Exception as e:
-            self.log(e)
+            if not wait:
+                break
 
         return elements
 
@@ -173,13 +227,13 @@ class BaseTestCase(unittest.TestCase):
         return random.randint(minTime, maxTime)
 
     # 手指向上滑动
-    def swipeUp(self, duration=None):
+    def swipeUp(self, duration=500):
         screenSize = self.driver.get_window_size()
         width = screenSize['width']
         height = screenSize['height']
         if duration is None:
             duration = self._random_time()
-        self.driver.swipe(width / 2, height / 2, width / 2, height / 4, duration)
+        self.driver.swipe(width / 2, height * 3 / 4, width / 2, height / 4, duration)
         self.actionSleep(3)
 
     # 手指向下滑动
@@ -189,7 +243,7 @@ class BaseTestCase(unittest.TestCase):
         height = screenSize['height']
         if duration is None:
             duration = self._random_time()
-        self.driver.swipe(width / 2, height / 2, width / 2, height * 3 / 4, duration)
+        self.driver.swipe(width / 2, height / 4, width / 2, height * 3 / 4, duration)
         self.actionSleep(3)
 
     # 手指向左滑动
@@ -199,7 +253,7 @@ class BaseTestCase(unittest.TestCase):
         height = screenSize['height']
         if duration is None:
             duration = self._random_time()
-        self.driver.swipe(width / 2, height / 4, width / 2, height / 2, duration)
+        self.driver.swipe(width / 2, height / 4, width / 2, height * 3 / 4, duration)
         self.actionSleep(3)
 
     # 手指向右滑动
@@ -209,7 +263,7 @@ class BaseTestCase(unittest.TestCase):
         height = screenSize['height']
         if duration is None:
             duration = self._random_time()
-        self.driver.swipe(width / 2, height * 3 / 4, width / 2, height / 2, duration)
+        self.driver.swipe(width / 2, height * 3 / 4, width / 2, height / 4, duration)
         self.actionSleep(3)
 
     # 点击
