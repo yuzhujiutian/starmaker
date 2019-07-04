@@ -120,12 +120,21 @@ def android_handle_event(datas, filter=None):
             base_params[k] = content[k]
 
     for _e in _events:
-        _params = _e.pop('params')
         e_params = {}
-        for k in _params.keys():
-            e_params['t_params_' + k] = _params[k]
+        try:
+            if _e['params']:
+                _params = _e.pop('params')
+                for k in _params.keys():
+                    e_params['t_params_' + k] = _params.get(k, "")
+            else:
+                e_params = {}
+        except:
+            pass
         # 最终的event
-        e = dict(_e.items() + base_params.items() + e_params.items())
+        if e_params:
+            e = dict(_e.items() + base_params.items() + e_params.items())
+        else:
+            e = dict(_e.items() + base_params.items())
         if filter is None:
             print_e(e)
         else:
@@ -151,12 +160,21 @@ def ios_handle_event(datas, filter=None):
             base_params[k] = content[k]
 
     for _e in _events:
-        _params = _e.pop('params')
         e_params = {}
-        for k in _params.keys():
-            e_params['t_params_' + k] = _params[k]
+        try:
+            if _e['params']:
+                _params = _e.pop('params')
+                for k in _params.keys():
+                    e_params['t_params_' + k] = _params.get(k, "")
+            else:
+                e_params = {}
+        except:
+            pass
         # 最终的event
-        e = dict(_e.items() + base_params.items() + e_params.items())
+        if e_params:
+            e = dict(_e.items() + base_params.items() + e_params.items())
+        else:
+            e = dict(_e.items() + base_params.items())
         if filter is None:
             print_e(e)
         else:
