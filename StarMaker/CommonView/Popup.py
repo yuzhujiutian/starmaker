@@ -164,4 +164,4 @@ class Popup(object):
     def Popup_KTVPage_MinimizeOption_RefuseBtn_LiveClick(self):
         state = self.FindElement(ID=[Popup_VD.Popup_KTVPage_MinimizeOption_RefuseBtn_ID, "REFUSE"])
         if state:
-            self.driver.find_elements_by_id(Popup_VD.Popup_KTVPage_MinimizeOption_RefuseBtn_ID).click()
+            self.driver.find_element_by_id(Popup_VD.Popup_KTVPage_MinimizeOption_RefuseBtn_ID).click()

@@ -197,7 +197,7 @@ class checking_dotting(unittest.TestCase):
         time.sleep(2)
         # 搜索页输入框输入内容
         Library().SearchPage_InputBox().send_keys("love")
-        time.sleep(2)
+        time.sleep(5)
         # 点击第一个联想结果
         Library().SearchPage_RelevantRelevant(1).click()
         time.sleep(2)
@@ -350,13 +350,16 @@ class checking_dotting(unittest.TestCase):
         PlaybackDetails().PlaybackDetailsPage_Video_Gift().click()
         time.sleep(7)
         # 点击Send按钮
+        # todo：处理限定礼物、特殊礼物、免费礼物和send按钮不可点击
         PlaybackDetails().PlaybackDetailsPage_Video_GiftDetailSendBtn().click()
         time.sleep(2)
         # 处理余额不足弹窗
         if PlaybackDetails().Gift_SendGift_InsufficientSilvers().text == \
                 "Insufficient Silvers! Finish the Tasks to get more Silvers.":
             self.driver.back()
+        # todo：elif 余额充足送礼成功
         time.sleep(2)
+        # todo：提升稳定性——增加判断 礼物面板已隐藏
         self.driver.back()
         self.exp_dot = "send,playdetail,gift"
 

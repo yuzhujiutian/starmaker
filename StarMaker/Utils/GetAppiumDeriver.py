@@ -38,12 +38,9 @@ class GetAppiumDeriver(object):
             print("设备型号:" + desired_caps["device"])
             print("设备名称:" + desired_caps["deviceName"])
             print('------------''\n')
-            if int(float(desired_caps["platformVersion"][:3])) > 5:
-                self.Api = "21"
+            if int(float(desired_caps["platformVersion"][:3])) >= 5:
                 desired_caps["automationName"] = Setting.AutomationName_21
-
             else:
-                self.Api = "17"
                 desired_caps["automationName"] = Setting.AutomationName_17
             self.driver = webdriver.Remote("http://127.0.0.1:" + str(IP) + "/wd/hub", desired_caps)
 
