@@ -99,7 +99,7 @@ if __name__ == '__main__':
     num = 0
     while num < 4:
         num += 1
-        print(num)
+        print("\n当前运行第%s次" % num)
         suite = unittest.TestLoader().loadTestsFromTestCase(PerformanceMoment)
         unittest.TextTestRunner(verbosity=2).run(suite)
         time.sleep(60)

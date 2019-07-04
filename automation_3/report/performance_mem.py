@@ -9,7 +9,6 @@
 import datetime
 import json
 import os
-import sys
 import time
 
 root_dir = os.path.realpath(os.path.realpath(__file__) + "/../.." + "/report")
@@ -20,8 +19,6 @@ os.chdir(root_dir)
 # TODO：重新封装日志写入；
 class logger:
     def __init__(self, data_type='events'):
-        self.__console__ = sys.stdout
-
         log_dir = os.path.join(root_dir, '.logs')
         if not os.path.isdir(log_dir):
             os.makedirs(log_dir)
@@ -32,22 +29,13 @@ class logger:
             os.path.join(log_dir, "./%s-logs-details-%s.log" % (data_type, datetime.datetime.now().strftime('%Y%m%d'))),
             'a+', encoding='utf-8')
 
-        sys.stdout = self
-
-    def write(self, output_stream):
-        # self.__console__.write(output_stream)
-        self.file_logger.write(output_stream)
+    def write(self, info):
+        self.file_logger.write(info + '\n')
         self.file_logger.flush()
 
-    def detail(self, output_stream):
-        self.detail_file_logger.write(output_stream)
+    def detail(self, info):
+        self.detail_file_logger.write(info)
         self.detail_file_logger.flush()
-
-    def reset(self):
-        sys.stdout = self.__console__
-
-    def flush(self):
-        pass
 
 
 r_logger = logger
@@ -79,36 +67,52 @@ class AndroidMemoryReport:
 
     # 保存测试数据到文件
     def saveTestData(self, Info):
-        r_logger(self.data_type).write(json.dumps(Info, indent=2))
+        r_logger(self.data_type).write(Info)
 
     # 生成内存报告
     def toReport_memInfos(self, module_name, run_time):
         m = self.memInfos[0]
+        # 单次运行的性能数据，用于生成折线图查看波动曲线
+        memory_list = []
         totalPssIndex = m[0].index('totalPss')
 
-        startMemory = self.memInfos[0][1][totalPssIndex]
-        endMemory = self.memInfos[-1][1][totalPssIndex]
+        startMemory = int(self.memInfos[0][1][totalPssIndex])
+        memory_list.append(startMemory)
+        endMemory = int(self.memInfos[-1][1][totalPssIndex])
 
         totalMemory = 0
         maxMemory = 0
-        for m in self.memInfos[1:-2]:
+        for m in self.memInfos[1:-1]:
             c = int(m[1][totalPssIndex])
+            memory_list.append(c)
             totalMemory += c
             if c > maxMemory:
                 maxMemory = c
+        memory_list.append(endMemory)
+
+        # 最大波动
+        max_fluctuation = 0
+        around = []
+        for i in range(len(memory_list) - 1):
+            d_val = abs(memory_list[i] - memory_list[i + 1])
+            if d_val > max_fluctuation:
+                max_fluctuation = d_val
+                around = [memory_list[i], memory_list[i + 1]]
 
         totalDataCount = len(self.memInfos)
         averageMemory = int(float(totalMemory / (totalDataCount - 2)))
         module = module_name + " memInfos_Report"
-        print(module)
-        print("run_time：%s" % run_time)
-        print("data_count：%s" % totalDataCount)
-        print("\n""------------------------------")
-        print('%20s: %s' % ('startMemory', startMemory.__str__()))
-        print('%20s: %s' % ('endMemory', endMemory.__str__()))
-        print('%20s: %s' % ('averageMemory', averageMemory.__str__()))
-        print('%20s: %s' % ('maxMemory', maxMemory.__str__()))
-        print("------------------------------""\n")
+        self.saveTestData(module)
+        self.saveTestData("run_time：%s" % run_time)
+        self.saveTestData("data_count：%s" % totalDataCount)
+        self.saveTestData("memory_list：%s" % memory_list)
+        self.saveTestData("------------------------------")
+        self.saveTestData('%20s: %s' % ('startMemory', startMemory.__str__()))
+        self.saveTestData('%20s: %s' % ('endMemory', endMemory.__str__()))
+        self.saveTestData('%20s: %s' % ('averageMemory', averageMemory.__str__()))
+        self.saveTestData('%20s: %s' % ('maxMemory', maxMemory.__str__()))
+        self.saveTestData('%20s: %s%s' % ('maxFluctuation', max_fluctuation.__str__(), around.__str__()))
+        self.saveTestData("------------------------------")
         time.sleep(2)
 
         self.clear()

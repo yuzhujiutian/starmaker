@@ -1,7 +1,7 @@
 # encoding=utf-8
 from automation_3.base.base import BaseAction
 from automation_3.common.activity import Activity
-from automation_3.login.login import LoginAction
+from automation_3.home.launch import LaunchAction
 
 
 # 封装录制相关的操作
@@ -14,7 +14,7 @@ class RecordingPreviewAction(BaseAction):
 
         # todo: 需要校验postBtn点击已经生效
 
-        loginAction = LoginAction(self)
+        loginAction = LaunchAction(self).login()
         loginAction.checkToLogin(preActivity=Activity.RecordingPreview)
 
     def restart(self):

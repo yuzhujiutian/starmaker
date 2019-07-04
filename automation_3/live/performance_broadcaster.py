@@ -83,15 +83,11 @@ class PerformanceBroadcaster(BaseTestCase):
         # 如果未登录
         if self.findElementById("img_login_email"):
             self.findElementById("img_login_email").click()
-            self.findElementById("txt_login").click()
-            self.actionSleep()
-            self.findElementsById("et_input", 0).send_keys("cyl@26.cn")
-            self.findElementsById("et_input", 1).send_keys("000000")
-            self.findElementById("btw_email_confirm").click()
-            self.actionSleep(5)
-            self.findElementById(PerformanceBroadcaster.ID_Live_Menu_Btn).click()
-            self.actionSleep()
-            self.findElementById(PerformanceBroadcaster.ID_Go_Live_Btn, True).click()
+            LaunchAction(self).login()
+
+        self.findElementById(PerformanceBroadcaster.ID_Live_Menu_Btn).click()
+        self.actionSleep()
+        self.findElementById(PerformanceBroadcaster.ID_Go_Live_Btn).click()
 
         # 权限弹窗处理
         permissionOkTv = self.findElementById("permissionOkTv")
@@ -127,7 +123,7 @@ class PerformanceBroadcaster(BaseTestCase):
             self.actionSleep(1)
 
             if count % 5 == 0:
-                # print("当前进度：%.2f%%" % (count/threshold * 100) + "(%u/%u)" % (count, threshold))
+                print("当前进度：%.2f%%" % (count/threshold * 100) + "(%u/%u)" % (count, threshold))
                 self.profile()
 
         # 关闭直播
@@ -152,12 +148,12 @@ class PerformanceBroadcaster(BaseTestCase):
 
 if __name__ == '__main__':
     # 设定运行时间(分钟)
-    run_time = 10
+    run_time = 1
 
     num = 0
     while num < 3:
         num += 1
-        print(num)
+        print("\n当前运行第%s次" % num)
         suite = unittest.TestLoader().loadTestsFromTestCase(PerformanceBroadcaster)
         unittest.TextTestRunner(verbosity=2).run(suite)
         time.sleep(60)

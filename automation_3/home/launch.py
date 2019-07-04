@@ -50,6 +50,15 @@ class LaunchAction(BaseAction):
         
         # 完成切换
 
+    # 登录
+    def login(self):
+        self.findElementById("txt_login").click()
+        self.actionSleep()
+        self.findElementsById("et_input", 0).send_keys("cyl@26.cn")
+        self.findElementsById("et_input", 1).send_keys("000000")
+        self.findElementById("btw_email_confirm").click()
+        self.actionSleep(5)
+
     # 启动
     def launch(self):
         # 清理测试图片
