@@ -29,12 +29,11 @@ class PerformanceMoment(BaseTestCase):
     '''
     def test_case001_performance(self):
         # 启动
-        launch = LaunchAction(self)
-        launch.launch()
+        LaunchAction(self).launch()
 
-        # 处理轮盘弹窗
-        if self.findElementById("open_promotion_iv_close"):
-            self.findElementById("open_promotion_iv_close").click()
+        # # 处理轮盘弹窗
+        # if self.findElementById("open_promotion_iv_close"):
+        #     self.findElementById("open_promotion_iv_close").click()
 
         # 切换到trend tab
         LaunchAction(self).toTab(LaunchAction.Trend)
@@ -60,9 +59,9 @@ class PerformanceMoment(BaseTestCase):
         t = 0
         threshold = run_time * 60
         while t < threshold:
-            # 找到当前屏首个recording
+            # 找到当前屏首个recording，进入播放详情页
             self.findElementsByAID(PerformanceMoment.AID_Popular_Content_Item, 0).click()
-            # 进入播放详情页
+            # 记录内存使用情况
             self.profile()
 
             # 播放5秒

@@ -144,11 +144,11 @@ class DevicesInfo(object):
     su = "com.windforce.android.suaraku"
     # AppPackage 用于初始化
     @staticmethod
-    def AppPackage(package=sm):
-        # GetPackages = GetDevicesInfo().GetPackages()[0]
+    def AppPackage(package=sa):
+        # get_packages = GetDevicesInfo().GetPackages()[0]
         # 调试使用
-        GetPackages = package
-        return GetPackages
+        get_packages = package
+        return get_packages
 
     # package拼接 用于元素定位使用
     @staticmethod

@@ -16,6 +16,6 @@ AppActivity = "com.ushowmedia.starmaker.activity.SplashActivity"
 
 # 设备信息(数据来源：GetDevicesInfo)
 DeviceCount = 1
-PlatformVersion = ['8.0.0']
-Device = ['SM_G9350']
-DeviceName = ['hero2qltechn']
+PlatformVersion = ['8.1.0']
+Device = ['SM_G610F']
+DeviceName = ['on7xelte']

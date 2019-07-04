@@ -56,12 +56,12 @@ class PerformanceBroadcaster(BaseTestCase):
     """
 
     def test_case001_performance(self):
-        # 选择语言
-        LaunchAction(self)._choose_language()
+        # 启动
+        LaunchAction(self).launch()
 
-        # 处理轮盘弹窗
-        if self.findElementById("open_promotion_iv_close"):
-            self.findElementById("open_promotion_iv_close").click()
+        # # 处理轮盘弹窗
+        # if self.findElementById("open_promotion_iv_close"):
+        #     self.findElementById("open_promotion_iv_close").click()
 
         # 切换到discovery tab
         LaunchAction(self).toTab(LaunchAction.Discovery)

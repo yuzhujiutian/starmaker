@@ -60,7 +60,6 @@ class BaseAction(metaclass=QmClassMethodLog):
         self.tc.singleTap(element)
 
     def TestPicture_Processing(self):
-        print("一层")
         self.tc.TestPicture_Processing()
 
     def get_error_screenshot(self):
@@ -123,7 +122,6 @@ class BaseTestCase(unittest.TestCase):
 
     # 测试数据处理，处理测试图片
     def TestPicture_Processing(self):
-        print("二层")
         images_list = os.listdir(self.png_file)
         for i in images_list:
             images = os.path.join(self.png_file, i)
