@@ -122,7 +122,7 @@ class PerformanceBroadcaster(BaseTestCase):
             self.actionSleep(1)
 
             if count % 5 == 0:
-                print("当前进度：%.2f%%" % (count/threshold * 100) + "(%u/%u)" % (count, threshold))
+                print("当前直播进度：%.2f%%" % (count/threshold * 100) + "(%u/%u)" % (count, threshold))
                 self.profile()
 
         # 关闭直播
@@ -150,7 +150,7 @@ if __name__ == '__main__':
     run_time = 10
 
     num = 0
-    while num < 12:
+    while num < 5:
         num += 1
         print("\n当前运行第%s次" % num)
         suite = unittest.TestLoader().loadTestsFromTestCase(PerformanceBroadcaster)

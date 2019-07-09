@@ -60,7 +60,15 @@ class PerformanceMoment(BaseTestCase):
         threshold = run_time * 60
         while t < threshold:
             # 找到当前屏首个recording，进入播放详情页
-            self.findElementsByAID(PerformanceMoment.AID_Popular_Content_Item, 0).click()
+            card = self.findElementsByAID(PerformanceMoment.AID_Popular_Content_Item, 0)
+            try:
+                card.click()
+            except AttributeError:
+                self.driver.back()
+                card.click()
+            except Exception as e:
+                self.log(e)
+
             # 记录内存使用情况
             self.profile()
 
@@ -86,6 +94,7 @@ class PerformanceMoment(BaseTestCase):
 
             end_time = time.time()
             t = end_time - start_time
+            print("当前浏览进度：%.2f%%" % (t / threshold * 100) + "(%u/%u)" % (t, threshold))
 
         self.profileReport(self.__class__.__name__, str(threshold))
 
@@ -97,7 +106,7 @@ if __name__ == '__main__':
     run_time = 10
 
     num = 0
-    while num < 4:
+    while num < 5:
         num += 1
         print("\n当前运行第%s次" % num)
         suite = unittest.TestLoader().loadTestsFromTestCase(PerformanceMoment)

@@ -111,6 +111,7 @@ class BaseTestCase(unittest.TestCase):
     def get_screenshot(self):
         # 获取当前时间作为图片名称
         img_name = (datetime.datetime.now() + datetime.timedelta()).strftime('%Y%m%d_%H.%M.%S') + '.png'
+        print(img_name)
         # 截图
         self.driver.get_screenshot_as_file('%s%s' % (self.png_file, img_name))
 
@@ -334,7 +335,7 @@ class BaseTestCase(unittest.TestCase):
         else:
             self.memoryProfile.toReport_memInfos(module_name, run_time)
 
-    # 打印日志相关， TODO: 丰富功能
+    # 截图并打印日志
     def log(self, info):
-        # print(info)
-        pass
+        self.get_screenshot()
+        print(info)

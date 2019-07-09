@@ -70,7 +70,7 @@ class AndroidMemoryReport:
         r_logger(self.data_type).write(Info)
 
     # 生成内存报告
-    def toReport_memInfos(self, module_name, run_time):
+    def toReport_memInfos(self, module_name, duration):
         m = self.memInfos[0]
         # 单次运行的性能数据，用于生成折线图查看波动曲线
         memory_list = []
@@ -99,20 +99,21 @@ class AndroidMemoryReport:
                 max_fluctuation = d_val
                 around = [memory_list[i], memory_list[i + 1]]
 
-        totalDataCount = len(self.memInfos)
-        averageMemory = int(float(totalMemory / (totalDataCount - 2)))
+        frequency = len(self.memInfos)
+        averageMemory = int(float(totalMemory / (frequency - 2)))
         module = module_name + " memInfos_Report"
         self.saveTestData(module)
-        self.saveTestData("run_time：%s" % run_time)
-        self.saveTestData("data_count：%s" % totalDataCount)
+        self.saveTestData("duration：%s" % duration)
+        self.saveTestData("frequency：%s" % frequency)
         self.saveTestData("memory_list：%s" % memory_list)
+        self.saveTestData(">>>")
         self.saveTestData("------------------------------")
         self.saveTestData('%20s: %s' % ('startMemory', startMemory.__str__()))
         self.saveTestData('%20s: %s' % ('endMemory', endMemory.__str__()))
         self.saveTestData('%20s: %s' % ('averageMemory', averageMemory.__str__()))
         self.saveTestData('%20s: %s' % ('maxMemory', maxMemory.__str__()))
         self.saveTestData('%20s: %s%s' % ('maxFluctuation', max_fluctuation.__str__(), around.__str__()))
-        self.saveTestData("------------------------------""\n")
+        self.saveTestData("------------------------------\n\n")
         time.sleep(2)
 
         self.clear()

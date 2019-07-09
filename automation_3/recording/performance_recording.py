@@ -22,6 +22,7 @@ class PerformanceRecording(BaseTestCase):
         self.startMemoryProfile()
 
         runs = 2
+        song_time = 0
         while runs:
             runs -= 1
             # 切换到sing tab
@@ -82,6 +83,7 @@ class PerformanceRecording(BaseTestCase):
                 self.actionSleep(5)
                 self.profile()
                 t += 5
+                print("当前歌曲进度：%.2f%%" % (t / song_time * 100) + "(%u/%u)" % (t, song_time))
 
             # 进入到预览页面
             self.waitActivity(Activity.RecordingPreview)
@@ -110,8 +112,8 @@ class PerformanceRecording(BaseTestCase):
             self.actionSleep(10)
             self.profile()
 
-            # 收集报告
-            self.profileReport(self.__class__.__name__, str(song_time))
+        # 收集报告
+        self.profileReport(self.__class__.__name__, str(song_time))
 
         self.driver.quit()
 
@@ -119,7 +121,7 @@ class PerformanceRecording(BaseTestCase):
 if __name__ == '__main__':
     # 定义次数，每次录制发布一首歌曲，记录录制、发布过程中的性能数据
     num = 0
-    while num < 3:
+    while num < 5:
         num += 1
         print("\n当前运行第%s次" % num)
         suite = unittest.TestLoader().loadTestsFromTestCase(PerformanceRecording)
