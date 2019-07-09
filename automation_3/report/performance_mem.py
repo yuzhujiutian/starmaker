@@ -112,7 +112,7 @@ class AndroidMemoryReport:
         self.saveTestData('%20s: %s' % ('averageMemory', averageMemory.__str__()))
         self.saveTestData('%20s: %s' % ('maxMemory', maxMemory.__str__()))
         self.saveTestData('%20s: %s%s' % ('maxFluctuation', max_fluctuation.__str__(), around.__str__()))
-        self.saveTestData("------------------------------")
+        self.saveTestData("------------------------------""\n")
         time.sleep(2)
 
         self.clear()

@@ -4,7 +4,7 @@ import time
 import unittest
 
 from automation_3.base.base import BaseTestCase
-from automation_3.home.launch import LaunchAction
+from automation_3.base.launch import LaunchAction
 
 sys.path.append('..')
 

@@ -1,14 +1,11 @@
 # encoding=utf-8
 import sys
+import time
 import unittest
 
 from automation_3.base.base import BaseTestCase
+from automation_3.base.launch import LaunchAction
 from automation_3.common.activity import Activity
-from automation_3.home.launch import LaunchAction
-from automation_3.recording.edit_info import RecordingEditInfoAction
-from automation_3.recording.preview import RecordingPreviewAction
-from automation_3.recording.recording import RecordingAction
-from automation_3.recording.share import RecordingShareAction
 
 sys.path.append('..')
 
@@ -21,103 +18,110 @@ class PerformanceRecording(BaseTestCase):
         # 启动
         launch.launch()
 
-        # 切换到sing tab
-        launch.toTab(LaunchAction.Sing)
-
         # 开始统计内存占用
         self.startMemoryProfile()
 
-        el = None
-        index = 0
-        while el is None:
-            # sing按钮
-            el = self.findElementById('btn_sing')
+        runs = 2
+        while runs:
+            runs -= 1
+            # 切换到sing tab
+            launch.toTab(LaunchAction.Sing)
+
+            # 点击其中一首歌曲的sing按钮（共两首歌runs = 1 & 0）
+            el = self.findElementsById('btn_sing', runs)
+            # 统计开始前的内存占用
+            self.profile()
+            el.click()
+
+            # 找到弹窗按钮，选择第一个solo
+            el = self.findElementsById('item_play_detail_dialog_text', 0)
+            el.click()
+
+            # 等待录制页面出现
+            self.waitActivity(Activity.Recording)
+
+            # 权限弹窗
+            el = self.findElementById('com.android.packageinstaller:id/permission_allow_button')
+            while el:
+                el.click()
+                self.actionSleep()
+            # 耳机提示引导
+            el = self.findElementById('recording_headset_dialog_i_know_btn')
+            el.click()
+            self.actionSleep()
+            # 音效引导
+            el = self.findElementById('tv_pitch_guide_tip')
             if el:
-                # 统计开始前的内存使用
+                el.click()
+            self.actionSleep(8)
+
+            # 伴奏带下载
+            record_btn = self.findElementById('record_btn')
+            while record_btn.get_attribute("enabled") is False:
+                self.actionSleep()
+
+            # 切换摄像头
+            el = self.findElementById('media_type_chb')
+            el.click()
+            self.actionSleep()
+
+            # 开始录制
+            record_btn.click()
+            self.actionSleep(8)
+
+            # 获取当前歌曲总时长
+            song_time_text = self.findElementById("record_time_tv", True).text
+            print(('%s:%s' % ("歌曲时长", song_time_text)))
+            minute = song_time_text[0:2]
+            second = song_time_text[3:5]
+            song_time = int(int(minute) * 60 + int(second) + 3)
+
+            # 等待歌曲录制完成，每5秒取一次性能数据
+            t = 0
+            while t < song_time:
+                self.actionSleep(5)
                 self.profile()
-                el[0].click()
-                break
+                t += 5
 
-            index += 1
-            if index > 5:
-                break
-
-        if index > 5:
-            self.log('error: can not find sing button...')
-            return
-
-        # 找到弹窗按钮，选择第一个
-        el = self.findElementsById('item_play_detail_dialog_text')
-        el[0].click()
-
-        recordingAction = RecordingAction(self)
-        recordingAction.checkPermission()
-
-        # 等待录制页面出现
-        self.waitActivity(Activity.Recording)
-
-        # 清理各种引导
-        recordingAction.clearGuide()
-
-        # 切换摄像头
-        recordingAction.switchCamera()
-
-        # 开始录制
-        recordingAction.startRecording()
-
-        # 录制时间
-        recordingDuration = 70
-
-        # 不能睡眠太长时间，否则session会断掉
-        cd = 0
-        while cd < recordingDuration:
-            self.actionSleep(5)
-            self.profile()
-            cd += 5
-
-        # 停止录制
-        recordingAction.stopRecording()
-
-        # 小于60秒，确认退出
-        recordingAction.dialogBtnClick(confirm=True)
-
-        # 进入到预览页面
-        self.waitActivity(Activity.RecordingPreview)
-
-        previewAction = RecordingPreviewAction(self)
-
-        # 发布作品
-        previewAction.post()
-
-        if recordingDuration < 60:
-            # 未超过60秒，弹出提示框，只有ok按钮
-            previewAction.dialogBtnClick(confirm=True)
-
-            # 退出预览
-            previewAction.quit()
-        else:
-            # 可以发布的作品
-            # 超过60秒，弹出提示框，提示没有录制完成，确认进入下一步
-            previewAction.dialogBtnClick(confirm=True)
-
-            # 进入edit recording info页面
-            self.waitActivity(Activity.RecordingEditInfo)
-
-            # 编辑作品信息
-            editInfoAction = RecordingEditInfoAction(self)
-            editInfoAction.setDesc()
-            editInfoAction.send()
-
-            # 进入分享页面
-            self.waitActivity(Activity.RecordingShare)
-            share = RecordingShareAction(self)
-            share.done()
-
+            # 进入到预览页面
+            self.waitActivity(Activity.RecordingPreview)
             self.profile()
 
-        self.profileReport()
+            # 点击post发布按钮
+            post_btn = self.findElementById('btn_post')
+            post_btn.click()
+
+            # 登录
+            img_login_email = self.findElementById("img_login_email")
+            if img_login_email:
+                launch.login()
+                self.actionSleep(5)
+                self.profile()
+
+            # 等待send按钮出现
+            send_btn = self.findElementById('btn_next')
+            send_btn.click()
+            self.profile()
+            self.actionSleep()
+
+            # 点击Done按钮发布
+            done_btn = self.findElementById('tv_done')
+            done_btn.click()
+            self.actionSleep(10)
+            self.profile()
+
+            # 收集报告
+            self.profileReport(self.__class__.__name__, str(song_time))
+
+        self.driver.quit()
 
 
 if __name__ == '__main__':
-    suite = unittest.TestLoader().loadTestsFromTestCase(PerformanceRecording)
-    unittest.TextTestRunner(verbosity=2).run(suite)
+    # 定义次数，每次录制发布一首歌曲，记录录制、发布过程中的性能数据
+    num = 0
+    while num < 3:
+        num += 1
+        print("\n当前运行第%s次" % num)
+        suite = unittest.TestLoader().loadTestsFromTestCase(PerformanceRecording)
+        unittest.TextTestRunner(verbosity=2).run(suite)
+        time.sleep(60)

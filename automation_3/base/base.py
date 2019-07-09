@@ -75,7 +75,8 @@ class BaseTestCase(unittest.TestCase):
         desired_caps['platformVersion'] = '8.1'
         desired_caps['device'] = 'SM_G610F'
         desired_caps['deviceName'] = 'on7xelte'
-        desired_caps['appPackage'] = 'com.starmakerinteractive.starmaker'
+        # desired_caps['appPackage'] = 'com.starmakerinteractive.starmaker'
+        desired_caps['appPackage'] = 'com.horadrim.android.sargam'
         desired_caps['appActivity'] = 'com.ushowmedia.starmaker.activity.SplashActivity'
         desired_caps['appWaitActivity'] = ','.join([Activity.Main, Activity.Nux_Language])
         # desired_caps['automationName'] = 'appium'
@@ -86,7 +87,7 @@ class BaseTestCase(unittest.TestCase):
         desired_caps['autoGrantPermissions'] = True
         desired_caps['autoAcceptAlerts'] = True
         # defaultCommandTimeout
-        desired_caps['newCommandTimeout'] = 500  # session默认超时时间
+        # desired_caps['newCommandTimeout'] = 500  # session默认超时时间
         return desired_caps
 
     def setUp(self):
@@ -117,6 +118,7 @@ class BaseTestCase(unittest.TestCase):
     def get_error_screenshot(self):
         # 获取当前时间作为图片名称
         img_name = (datetime.datetime.now() + datetime.timedelta(days=-1)).strftime('%Y%m%d_%H.%M.%S') + '_error.png'
+        print(img_name)
         # 截图
         self.driver.get_screenshot_as_file('%s%s' % (self.png_file, img_name))
 

@@ -4,7 +4,7 @@ import time
 import unittest
 
 from automation_3.base.base import BaseTestCase
-from automation_3.home.launch import LaunchAction
+from automation_3.base.launch import LaunchAction
 
 sys.path.append('..')
 
@@ -82,7 +82,6 @@ class PerformanceBroadcaster(BaseTestCase):
 
         # 如果未登录
         if self.findElementById("img_login_email"):
-            self.findElementById("img_login_email").click()
             LaunchAction(self).login()
 
         self.findElementById(PerformanceBroadcaster.ID_Live_Menu_Btn).click()
@@ -148,10 +147,10 @@ class PerformanceBroadcaster(BaseTestCase):
 
 if __name__ == '__main__':
     # 设定运行时间(分钟)
-    run_time = 1
+    run_time = 10
 
     num = 0
-    while num < 3:
+    while num < 12:
         num += 1
         print("\n当前运行第%s次" % num)
         suite = unittest.TestLoader().loadTestsFromTestCase(PerformanceBroadcaster)

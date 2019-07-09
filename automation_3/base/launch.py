@@ -52,6 +52,8 @@ class LaunchAction(BaseAction):
 
     # 登录
     def login(self):
+        self.findElementById("img_login_email").click()
+        self.actionSleep()
         self.findElementById("txt_login").click()
         self.actionSleep()
         self.findElementsById("et_input", 0).send_keys("cyl@26.cn")
