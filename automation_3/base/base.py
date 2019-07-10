@@ -335,6 +335,12 @@ class BaseTestCase(unittest.TestCase):
         else:
             self.memoryProfile.toReport_memInfos(module_name, run_time)
 
+    # 测试套运行
+    def suiteRunner(self, task):
+        suite = unittest.TestLoader().loadTestsFromTestCase(task)
+        unittest.TextTestRunner(verbosity=2).run(suite)
+        self.actionSleep(180)
+
     # 截图并打印日志
     def log(self, info):
         self.get_screenshot()

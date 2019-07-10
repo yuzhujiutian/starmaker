@@ -1,6 +1,5 @@
 # encoding=utf-8
 import sys
-import unittest
 
 from automation_3.base.base import BaseAction
 from automation_3.common.activity import Activity
@@ -116,16 +115,16 @@ class LaunchAction(BaseAction):
         return result
         
 
-if __name__ == '__main__':
-    from automation_3.base.base import BaseTestCase
-
-    class LaunchTestCase(BaseTestCase):
-
-        def test_to_trend(self):
-            launch = LaunchAction(self)
-            # 首先启动
-            launch.launch()
-
-            launch.toTab(LaunchAction.Trend)
-    suite = unittest.TestLoader().loadTestsFromTestCase(LaunchTestCase)
-    unittest.TextTestRunner(verbosity=2).run(suite)
+# if __name__ == '__main__':
+#     from automation_3.base.base import BaseTestCase
+#
+#     class LaunchTestCase(BaseTestCase):
+#
+#         def test_to_trend(self):
+#             launch = LaunchAction(self)
+#             # 首先启动
+#             launch.launch()
+#
+#             launch.toTab(LaunchAction.Trend)
+#     suite = unittest.TestLoader().loadTestsFromTestCase(LaunchTestCase)
+#     unittest.TextTestRunner(verbosity=2).run(suite)

@@ -1,10 +1,10 @@
 # encoding=utf-8
 import sys
 import time
-import unittest
 
 from automation_3.base.base import BaseTestCase
 from automation_3.base.launch import LaunchAction
+from automation_3.main.main import testSuite
 
 sys.path.append('..')
 
@@ -57,7 +57,7 @@ class PerformanceMoment(BaseTestCase):
 
         start_time = time.time()
         t = 0
-        threshold = run_time * 60
+        threshold = int(testSuite().run_time) * 60
         while t < threshold:
             # 找到当前屏首个recording，进入播放详情页
             card = self.findElementsByAID(PerformanceMoment.AID_Popular_Content_Item, 0)
@@ -102,13 +102,8 @@ class PerformanceMoment(BaseTestCase):
 
 
 if __name__ == '__main__':
-    # 设定运行时间(分钟)
-    run_time = 10
-
     num = 0
-    while num < 5:
+    while num < testSuite().num:
         num += 1
         print("\n当前运行第%s次" % num)
-        suite = unittest.TestLoader().loadTestsFromTestCase(PerformanceMoment)
-        unittest.TextTestRunner(verbosity=2).run(suite)
-        time.sleep(60)
+        PerformanceMoment().suiteRunner(PerformanceMoment)

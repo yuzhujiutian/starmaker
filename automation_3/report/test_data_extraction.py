@@ -98,7 +98,7 @@ def get_data(version="99.99.99", test_modular="default"):
 
 if __name__ == '__main__':
     # 记录报告
-    version = "7.4.7"
-    test_modular = "live"
-    if get_data(version, test_modular):
+    ver = "7.4.7"
+    modular = "live"
+    if get_data(ver, modular):
         print("记录完成")

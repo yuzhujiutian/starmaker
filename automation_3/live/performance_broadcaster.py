@@ -1,10 +1,9 @@
 # encoding=utf-8
 import sys
-import time
-import unittest
 
 from automation_3.base.base import BaseTestCase
 from automation_3.base.launch import LaunchAction
+from automation_3.main.main import testSuite
 
 sys.path.append('..')
 
@@ -116,7 +115,7 @@ class PerformanceBroadcaster(BaseTestCase):
 
         # 暂停x秒，其实就是直播x秒，目前只能sleep 1秒，多了就会报connect abort的错，原因待查
         count = 0
-        threshold = run_time * 60
+        threshold = int(testSuite().run_time) * 60
         while count < threshold:
             count += 1
             self.actionSleep(1)
@@ -146,13 +145,8 @@ class PerformanceBroadcaster(BaseTestCase):
 
 
 if __name__ == '__main__':
-    # 设定运行时间(分钟)
-    run_time = 10
-
     num = 0
-    while num < 5:
+    while num < testSuite().num:
         num += 1
         print("\n当前运行第%s次" % num)
-        suite = unittest.TestLoader().loadTestsFromTestCase(PerformanceBroadcaster)
-        unittest.TextTestRunner(verbosity=2).run(suite)
-        time.sleep(60)
+        PerformanceBroadcaster().suiteRunner(PerformanceBroadcaster)

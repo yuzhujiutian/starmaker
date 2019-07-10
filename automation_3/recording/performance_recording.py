@@ -1,11 +1,10 @@
 # encoding=utf-8
 import sys
-import time
-import unittest
 
 from automation_3.base.base import BaseTestCase
 from automation_3.base.launch import LaunchAction
 from automation_3.common.activity import Activity
+from automation_3.main.main import testSuite
 
 sys.path.append('..')
 
@@ -21,7 +20,7 @@ class PerformanceRecording(BaseTestCase):
         # 开始统计内存占用
         self.startMemoryProfile()
 
-        runs = 2
+        runs = int(testSuite().song_num)
         song_time = 0
         while runs:
             runs -= 1
@@ -111,6 +110,8 @@ class PerformanceRecording(BaseTestCase):
             done_btn.click()
             self.actionSleep(10)
             self.profile()
+            self.actionSleep(10)
+            self.profile()
 
         # 收集报告
         self.profileReport(self.__class__.__name__, str(song_time))
@@ -121,9 +122,7 @@ class PerformanceRecording(BaseTestCase):
 if __name__ == '__main__':
     # 定义次数，每次录制发布一首歌曲，记录录制、发布过程中的性能数据
     num = 0
-    while num < 5:
+    while num < testSuite().num:
         num += 1
         print("\n当前运行第%s次" % num)
-        suite = unittest.TestLoader().loadTestsFromTestCase(PerformanceRecording)
-        unittest.TextTestRunner(verbosity=2).run(suite)
-        time.sleep(60)
+        PerformanceRecording().suiteRunner(PerformanceRecording)
