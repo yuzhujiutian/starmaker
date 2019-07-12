@@ -64,7 +64,7 @@ class PerformanceMoment(BaseTestCase):
             try:
                 card.click()
             except AttributeError:
-                self.driver.back()
+                self.actionBack()
                 card.click()
             except Exception as e:
                 self.log(e)

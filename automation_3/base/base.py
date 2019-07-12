@@ -72,9 +72,9 @@ class BaseTestCase(unittest.TestCase):
         self.png_file = "../report/images/"
         desired_caps = {}
         desired_caps['platformName'] = 'Android'
-        desired_caps['platformVersion'] = '8.1'
-        desired_caps['device'] = 'SM_G610F'
-        desired_caps['deviceName'] = 'on7xelte'
+        desired_caps['platformVersion'] = '6'
+        desired_caps['device'] = 'Redmi_4A'
+        desired_caps['deviceName'] = 'rolex'
         # desired_caps['appPackage'] = 'com.starmakerinteractive.starmaker'
         desired_caps['appPackage'] = 'com.horadrim.android.sargam'
         desired_caps['appActivity'] = 'com.ushowmedia.starmaker.activity.SplashActivity'
@@ -99,6 +99,9 @@ class BaseTestCase(unittest.TestCase):
 
         # 内存统计
         self.memoryProfile = None
+
+        # cpu统计
+        self.cpuProfile = None
 
         # self.mappingFile = desired_caps.get('mappingFile', None)
         self.mappingFile = '../example/mapping.txt'
@@ -283,6 +286,10 @@ class BaseTestCase(unittest.TestCase):
     def getCurrentMem(self):
         return self.driver.get_performance_data(self.appPackage, 'memoryinfo', 5)
 
+    # 获取当前cpuinfo
+    def getCurrentCPU(self):
+        return self.driver.get_performance_data(self.appPackage, 'cpuinfo', 5)
+
     # 睡眠暂停duration秒
     def actionSleep(self, duration=2):
         time.sleep(duration)
@@ -316,24 +323,38 @@ class BaseTestCase(unittest.TestCase):
                     except Exception as e:
                         self.log(e)
 
-    # 开始内存统计
+    # 开始内存/cpu统计
     def startMemoryProfile(self):
         if self.memoryProfile is None:
             self.memoryProfile = AndroidMemoryReport(self.appPackage, self.driver)
             self.memoryProfile.profile()
 
-    # 统计当前内存占用
+        if self.cpuProfile is None:
+            self.cpuProfile = AndroidMemoryReport(self.appPackage, self.driver)
+            self.cpuProfile.profile()
+
+    # 统计当前内存/cpu占用
     def profile(self):
         if self.memoryProfile is None:
             self.log('error: please call startMemoryProfile first...')
         else:
             self.memoryProfile.profile()
 
+        if self.cpuProfile is None:
+            self.log('error: please call startMemoryProfile first...')
+        else:
+            self.cpuProfile.profile()
+
     def profileReport(self, module_name="check_list", run_time="10 minutes"):
         if self.memoryProfile is None:
             pass
         else:
             self.memoryProfile.toReport_memInfos(module_name, run_time)
+
+        if self.cpuProfile is None:
+            pass
+        else:
+            self.cpuProfile.toReport_cpuInfos(module_name, run_time)
 
     # 测试套运行
     def suiteRunner(self, task):
