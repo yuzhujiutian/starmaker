@@ -1,10 +1,10 @@
 # encoding=utf-8
 """
-用于生成内存使用报告
+用于生成内存/CPU使用报告
 
-开始前内存占用
-结束后内存占用
-| 平均内存占用 | 最大内存占用 |
+开始前内存/CPU占用
+结束后内存/CPU占用
+| 平均内存/CPU占用 | 最大内存/CPU占用 |
 """
 import datetime
 import json
@@ -206,21 +206,21 @@ class AndroidMemoryReport:
             self.saveTestData(self.data_type_cpu, "user：%s" % user_cpu_list)
             self.saveTestData(self.data_type_cpu, "kernel：%s" % kernel_cpu_list)
             self.saveTestData(self.data_type_cpu, "duration：%s" % duration)
-            self.saveTestData(self.data_type_memory, "frequency(数据成功率)：%s(%s)" % (success_frequency, success_rate))
-            self.saveTestData(self.data_type_memory, "user_cpu_list：%s" % user_cpu_list)
-            self.saveTestData(self.data_type_memory, "kernel_cpu_list：%s" % kernel_cpu_list)
-            self.saveTestData(self.data_type_memory, ">>>")
-            self.saveTestData(self.data_type_memory, "------------------------------")
-            self.saveTestData(self.data_type_memory, '%20s: %s' % ('user_startCPU', user_startCPU.__str__()))
-            self.saveTestData(self.data_type_memory, '%20s: %s' % ('user_endCPU', user_endCPU.__str__()))
-            self.saveTestData(self.data_type_memory, '%20s: %s' % ('average_userCPU', average_userCPU.__str__()))
-            self.saveTestData(self.data_type_memory, '%20s: %s' % ('user_maxCPU', user_maxCPU.__str__()))
-            self.saveTestData(self.data_type_memory, "---------------")
-            self.saveTestData(self.data_type_memory, '%20s: %s' % ('kernel_startCPU', kernel_startCPU.__str__()))
-            self.saveTestData(self.data_type_memory, '%20s: %s' % ('kernel_endCPU', kernel_endCPU.__str__()))
-            self.saveTestData(self.data_type_memory, '%20s: %s' % ('average_kernelCPU', average_kernelCPU.__str__()))
-            self.saveTestData(self.data_type_memory, '%20s: %s' % ('kernel_maxCPU', kernel_maxCPU.__str__()))
-            self.saveTestData(self.data_type_memory, "------------------------------\n\n")
+            self.saveTestData(self.data_type_cpu, "frequency(数据成功率)：%s(%s)" % (success_frequency, success_rate))
+            self.saveTestData(self.data_type_cpu, "user_cpu_list：%s" % user_cpu_list)
+            self.saveTestData(self.data_type_cpu, "kernel_cpu_list：%s" % kernel_cpu_list)
+            self.saveTestData(self.data_type_cpu, ">>>")
+            self.saveTestData(self.data_type_cpu, "------------------------------")
+            self.saveTestData(self.data_type_cpu, '%20s: %s' % ('user_startCPU', user_startCPU.__str__()))
+            self.saveTestData(self.data_type_cpu, '%20s: %s' % ('user_endCPU', user_endCPU.__str__()))
+            self.saveTestData(self.data_type_cpu, '%20s: %s' % ('average_userCPU', average_userCPU.__str__()))
+            self.saveTestData(self.data_type_cpu, '%20s: %s' % ('user_maxCPU', user_maxCPU.__str__()))
+            self.saveTestData(self.data_type_cpu, "---------------")
+            self.saveTestData(self.data_type_cpu, '%20s: %s' % ('kernel_startCPU', kernel_startCPU.__str__()))
+            self.saveTestData(self.data_type_cpu, '%20s: %s' % ('kernel_endCPU', kernel_endCPU.__str__()))
+            self.saveTestData(self.data_type_cpu, '%20s: %s' % ('average_kernelCPU', average_kernelCPU.__str__()))
+            self.saveTestData(self.data_type_cpu, '%20s: %s' % ('kernel_maxCPU', kernel_maxCPU.__str__()))
+            self.saveTestData(self.data_type_cpu, "------------------------------\n\n")
             time.sleep(2)
 
             self.cpuClear()
