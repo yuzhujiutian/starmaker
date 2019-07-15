@@ -346,10 +346,10 @@ class BaseTestCase(unittest.TestCase):
             self.cpuProfile.profile()
 
     def profileReport(self, module_name="check_list", run_time="10 minutes"):
-        # if self.memoryProfile is None:
-        #     pass
-        # else:
-        #     self.memoryProfile.toReport_memInfos(module_name, run_time)
+        if self.memoryProfile is None:
+            pass
+        else:
+            self.memoryProfile.toReport_memInfos(module_name, run_time)
 
         if self.cpuProfile is None:
             pass
