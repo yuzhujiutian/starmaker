@@ -72,7 +72,7 @@ class BaseTestCase(unittest.TestCase):
         self.png_file = "../report/images/"
         desired_caps = {}
         desired_caps['platformName'] = 'Android'
-        desired_caps['platformVersion'] = '8.1'
+        desired_caps['platformVersion'] = '8'
         desired_caps['device'] = 'SM_G610F'
         desired_caps['deviceName'] = 'on7xelte'
         # desired_caps['appPackage'] = 'com.starmakerinteractive.starmaker'
@@ -327,23 +327,23 @@ class BaseTestCase(unittest.TestCase):
     def startMemoryProfile(self):
         if self.memoryProfile is None:
             self.memoryProfile = AndroidMemoryReport(self.appPackage, self.driver)
-            self.memoryProfile.profile()
+            self.memoryProfile.memory_profile()
 
         if self.cpuProfile is None:
             self.cpuProfile = AndroidMemoryReport(self.appPackage, self.driver)
-            self.cpuProfile.profile()
+            self.cpuProfile.cpu_profile()
 
     # 统计当前内存/cpu占用
     def profile(self):
         if self.memoryProfile is None:
             self.log('error: please call startMemoryProfile first...')
         else:
-            self.memoryProfile.profile()
+            self.memoryProfile.memory_profile()
 
         if self.cpuProfile is None:
             self.log('error: please call startMemoryProfile first...')
         else:
-            self.cpuProfile.profile()
+            self.cpuProfile.cpu_profile()
 
     def profileReport(self, module_name="check_list", run_time="10 minutes"):
         if self.memoryProfile is None:

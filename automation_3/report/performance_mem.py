@@ -49,8 +49,8 @@ class AndroidMemoryReport:
         self.appPackage = appPackage
         self.driver = driver
 
-    # 记录当前内存/cpu占用情况
-    def profile(self):
+    # 记录当前内存占用情况
+    def memory_profile(self):
         try:
             memInfo = self.driver.get_performance_data(self.appPackage, self.data_type_memory, 5)
             self.memInfos.append(memInfo)
@@ -58,6 +58,8 @@ class AndroidMemoryReport:
         except Exception as e:
             print("get_memoryinfo_error：%s" % e)
 
+    # 记录当前cpu占用情况
+    def cpu_profile(self):
         try:
             cpuInfo = self.driver.get_performance_data(self.appPackage, self.data_type_cpu, 5)
             self.cpuInfos.append(cpuInfo)

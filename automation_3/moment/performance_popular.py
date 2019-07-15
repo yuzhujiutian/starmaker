@@ -59,17 +59,17 @@ class PerformanceMoment(BaseTestCase):
         t = 0
         threshold = int(testSuite().run_time) * 60
         while t < threshold:
+            card = None
             # 找到当前屏首个recording，进入播放详情页
-            card = self.findElementsByAID(PerformanceMoment.AID_Popular_Content_Item, 0)
-            try:
-                card.click()
-            except AttributeError:
-                self.actionBack()
-                card.click()
-            except Exception as e:
-                self.actionBack()
-                card.click()
-                self.log(e)
+            while card is None:
+                card = self.findElementsByAID(PerformanceMoment.AID_Popular_Content_Item, 0)
+                if card:
+                    card.click()
+                    break
+                elif self.findElementById("lyt_like"):
+                    self.actionBack()
+                else:
+                    self.actionSleep(1)
 
             # 记录内存使用情况
             self.profile()
