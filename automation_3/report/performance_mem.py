@@ -16,7 +16,6 @@ os.chdir(root_dir)
 
 
 # 重定向日志，将print日志输出到控制台和日志文件里面
-# TODO：重新封装日志写入；
 class logger:
     def __init__(self, data_type='events'):
         log_dir = os.path.join(root_dir, '.logs')
@@ -133,7 +132,7 @@ class AndroidMemoryReport:
 
         self.memClear()
 
-    # 生成内存报告
+    # 生成cpu报告
     def toReport_cpuInfos(self, module_name, duration):
         c = self.cpuInfos[0]
         filter_list = []

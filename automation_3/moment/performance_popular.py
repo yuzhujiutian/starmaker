@@ -67,6 +67,8 @@ class PerformanceMoment(BaseTestCase):
                 self.actionBack()
                 card.click()
             except Exception as e:
+                self.actionBack()
+                card.click()
                 self.log(e)
 
             # 记录内存使用情况
