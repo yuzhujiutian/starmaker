@@ -111,13 +111,16 @@ class PerformanceBroadcaster(BaseTestCase):
 
         # 处理FB分享弹窗
         self.actionSleep(10)
-        self.actionBack()
+        self.driver.back()
         self.actionSleep()
         # 处理部分FB客户端会有保存草稿提示
         giveUp_btn = self.findElementByAU("放弃")
         if giveUp_btn:
             giveUp_btn.click()
             self.actionSleep()
+        # confirm_btn = self.findElementById(PerformanceBroadcaster.IDE_Close_Live_Confirm_Btn)
+        # if confirm_btn:
+        #     self.actionBack()
 
         # 暂停x秒，其实就是直播x秒，目前只能sleep 1秒，多了就会报connect abort的错，原因待查
         count = 0

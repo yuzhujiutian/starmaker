@@ -11,11 +11,14 @@ from appium.webdriver.common.touch_action import TouchAction
 from selenium.webdriver.support.ui import WebDriverWait
 
 from automation_3.common.activity import Activity
+from automation_3.main.main import testSuite
 from automation_3.report.performance_mem import AndroidMemoryReport
 from automation_3.utils.android_proguard_mapping import AndroidProGuardMapping
 from .log import QmClassMethodLog
 
 sys.path.append('..')
+package_list = {"Thevoice": "com.starmakerinteractive.thevoice", "Product": "com.starmakerinteractive.starmaker",
+                "Sargam": "com.horadrim.android.sargam", "Suaraku": "com.windforce.android.suaraku"}
 
 
 # 基础方法封装
@@ -72,11 +75,12 @@ class BaseTestCase(unittest.TestCase):
         self.png_file = "../report/images/"
         desired_caps = {}
         desired_caps['platformName'] = 'Android'
-        desired_caps['platformVersion'] = '8'
-        desired_caps['device'] = 'SM_G610F'
-        desired_caps['deviceName'] = 'on7xelte'
+        desired_caps['platformVersion'] = testSuite().platformVersion
+        desired_caps['device'] = testSuite().device
+        desired_caps['deviceName'] = testSuite().deviceName
         # desired_caps['appPackage'] = 'com.starmakerinteractive.starmaker'
-        desired_caps['appPackage'] = 'com.horadrim.android.sargam'
+        # desired_caps['appPackage'] = 'com.horadrim.android.sargam'
+        desired_caps['appPackage'] = package_list[testSuite().package]
         desired_caps['appActivity'] = 'com.ushowmedia.starmaker.activity.SplashActivity'
         desired_caps['appWaitActivity'] = ','.join([Activity.Main, Activity.Nux_Language])
         # desired_caps['automationName'] = 'appium'
@@ -358,8 +362,11 @@ class BaseTestCase(unittest.TestCase):
 
     # 测试套运行
     def suiteRunner(self, task):
-        suite = unittest.TestLoader().loadTestsFromTestCase(task)
-        unittest.TextTestRunner(verbosity=2).run(suite)
+        try:
+            suite = unittest.TestLoader().loadTestsFromTestCase(task)
+            unittest.TextTestRunner(verbosity=2).run(suite)
+        except:
+            return ValueError
         self.actionSleep(180)
 
     # 截图并打印日志

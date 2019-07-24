@@ -10,6 +10,7 @@ import datetime
 import json
 import os
 import time
+# import subprocess
 
 root_dir = os.path.realpath(os.path.realpath(__file__) + "/../.." + "/report")
 os.chdir(root_dir)
@@ -66,6 +67,14 @@ class AndroidMemoryReport:
             self.saveRawToFile(self.data_type_cpu, cpuInfo)
         except Exception as e:
             print("get_cpuinfo_error：%s" % e)
+
+    # # 记录当前cpu占用情况
+    # 这种方法会导致adb冲突
+    # def cpu_profile(self):
+    #     cpuInfo = subprocess.check_output("adb shell cat /proc/stat")
+    #     print("cpu-----")
+    #     print(cpuInfo)
+    #     print("-----cpu")
 
     def memClear(self):
         self.memInfos = []
@@ -207,7 +216,7 @@ class AndroidMemoryReport:
             self.saveTestData(self.data_type_cpu, "user：%s" % user_cpu_list)
             self.saveTestData(self.data_type_cpu, "kernel：%s" % kernel_cpu_list)
             self.saveTestData(self.data_type_cpu, "duration：%s" % duration)
-            self.saveTestData(self.data_type_cpu, "frequency(数据成功率)：%s(%s)" % (success_frequency, success_rate))
+            self.saveTestData(self.data_type_cpu, "frequency：%s(%s)" % (success_frequency, success_rate))
             self.saveTestData(self.data_type_cpu, "user_cpu_list：%s" % user_cpu_list)
             self.saveTestData(self.data_type_cpu, "kernel_cpu_list：%s" % kernel_cpu_list)
             self.saveTestData(self.data_type_cpu, ">>>")

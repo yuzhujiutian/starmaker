@@ -71,13 +71,13 @@ class PerformanceMoment(BaseTestCase):
                 else:
                     self.actionSleep(1)
 
-            # 记录内存使用情况
+            # 记录内存/cpu使用情况
             self.profile()
 
             # 播放5秒
             self.actionSleep(5)
 
-            # 记录内存使用情况
+            # 记录内存/cpu使用情况
             self.profile()
 
             # 再播放5秒
@@ -86,7 +86,7 @@ class PerformanceMoment(BaseTestCase):
             # 回到首页
             self.actionBack()
 
-            # 记录内存使用情况
+            # 记录内存/cpu使用情况
             self.profile()
 
             self.actionSleep(1)
