@@ -179,20 +179,9 @@ def statistic_bug_report_history(query_method, new_bug_query_method, closed_bug_
 
 # 统计Android 最近20周的bug变化数量
 statistic_bug_report_history(android_bug_report_history, android_new_bug_query, android_closed_bug_query, 'bug_report_android.csv', weeks=20)
-# _pdf = pd.read_csv('./bug_report_android.csv')
-# # data = _pdf.DataFrame()
-# print dir(_pdf)
-# print _pdf.columns
-# # exit()
-# # print _pdf
-# print len(_pdf[_pdf['start time'] == '2019-07-13'][_pdf['end time'] == '2019-07-20'])
-# insertRow = pd.DataFrame([['2019-07-14','2019-07-20',492,35,396,54,102,12,126]],columns = ['start time','end time','all open bug','open high bug','open normal bug','open low bug','the other open bug','本周新增bug','本周解决bug'])
-# _pdf = _pdf.append(insertRow, ignore_index=True)
-# print _pdf
-# _pdf.to_csv('./bug_report_android.csv', index=0)
-exit()
-     
-   
+
+# 统计iOS 最近20周的bug变化数量
+statistic_bug_report_history(ios_bug_report_history, ios_new_bug_query, ios_closed_bug_query, 'bug_report_ios.csv', weeks=20)   
 
 
 def user_search(user_id):
