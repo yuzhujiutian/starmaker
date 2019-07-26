@@ -10,7 +10,7 @@ warnings.filterwarnings("ignore")
 import phabricator_utils as pu
 
 # 获取当前所有的bug详情
-def bug_report_query(tag, statuses=['open'], created_before=None, created_after=None, closed_before=None, closed_after=None):
+def bug_report_query(tag, statuses=['open'], authors=[], created_before=None, created_after=None, closed_before=None, closed_after=None):
     result_data_len = 100
     cursor_after = ''
 
@@ -21,10 +21,14 @@ def bug_report_query(tag, statuses=['open'], created_before=None, created_after=
 
     # 防止无限循环
     cnt = 0
-    threshold = 20
+    threshold = 300
+
+    tags = []
+    if tag is not None:
+        tags = [tag]
 
     while (result_data_len == 100) and (cursor_after is not None):
-        result_data, cursor_before, cursor_after, cursor_limit = pu.bug_report_query_request(tags=[tag], statuses=statuses, limit=100, after=after, created_before=created_before, created_after=created_after, closed_before=closed_before, closed_after=closed_after)
+        result_data, cursor_before, cursor_after, cursor_limit = pu.bug_report_query_request(tags=tags, statuses=statuses, authors=authors, limit=100, after=after, created_before=created_before, created_after=created_after, closed_before=closed_before, closed_after=closed_after)
 
         # for data in result_data:
         #     bug_id = data['id']
@@ -107,7 +111,6 @@ def android_closed_bug_query(start_time, end_time):
 def ios_closed_bug_query(start_time, end_time):
     return closed_bug_query(TAG_iOS, start_time, end_time)
 
-# bug_report_history(end_time="2019-07-19 19:00:00")
 # 统计最近weeks周的bug报告
 def statistic_bug_report_history(query_method, new_bug_query_method, closed_bug_query_method, data_source, weeks=1):
     days = 0
@@ -186,6 +189,86 @@ statistic_bug_report_history(android_bug_report_history, android_new_bug_query, 
 statistic_bug_report_history(ios_bug_report_history, ios_new_bug_query, ios_closed_bug_query, 'bug_report_ios.csv', weeks=20)   
 
 
+# 统计start_time, end_time时间段，QA创建bug的数量
+
+# qa成员对应的phid
+qa_phid_mapping = {
+    'PHID-USER-5ucpy3dmgdqwt4mg35rq':'wei.wang',
+    'PHID-USER-awnsxd46n3grftcyv6tm':'jin.jiang',
+    'PHID-USER-zmc6oer33nkdjowmr4b5':'jie.li',
+    'PHID-USER-gmo6hwkrypj36vpjjlpg':'jia.liu',
+    'PHID-USER-mq5vhysit57lesbbbghb':'yaoliang.cui',
+    'PHID-USER-yqm7glxqn7ms2yw6rnzp':'yangyang.yu',
+    'PHID-USER-cuemnzevn2odyp7nxxy7':'zhangdong',
+    'PHID-USER-iirsw6b7dhjrcr6zbty5':'liuyue',
+}
+
+def bug_report_by_qa_member_query(start_time, end_time):
+    start_time = int(time.mktime(time.strptime(start_time,"%Y-%m-%d")))
+    end_time = int(time.mktime(time.strptime(end_time,"%Y-%m-%d")))
+    bugs = bug_report_query(None, statuses=[], created_after=start_time, created_before=end_time, authors=["members(PHID-PROJ-5u34yvaklxeofcddj5j7)"])
+
+    print 'total bugs:', len(bugs)
+    bugs_by_qa_member = {}
+    for bug in bugs:
+        author_phid = bug['fields']['authorPHID']
+        v = bugs_by_qa_member.get(author_phid, [])
+        v.append(bug)
+        bugs_by_qa_member[author_phid] = v
+
+    for author_phid in bugs_by_qa_member.keys():
+        print qa_phid_mapping.get(author_phid, author_phid), len(bugs_by_qa_member[author_phid])
+
+    return bugs_by_qa_member
+
+# 最近六个月，四个月，两个月，一个月和最近一周，每个QA同学发现的bug数量统计
+def bug_report_by_qa_member(detail=False):
+    end_time = datetime.datetime.fromtimestamp(time.time() - 0 * 60 * 60 * 24).strftime("%Y-%m-%d")
+    week_before_time = datetime.datetime.fromtimestamp(time.time() - 7 * 60 * 60 * 24).strftime("%Y-%m-%d")
+    month_before_time = datetime.datetime.fromtimestamp(time.time() - 30 * 60 * 60 * 24).strftime("%Y-%m-%d")
+    month2_before_time = datetime.datetime.fromtimestamp(time.time() - 60 * 60 * 60 * 24).strftime("%Y-%m-%d")
+    month4_before_time = datetime.datetime.fromtimestamp(time.time() - 120 * 60 * 60 * 24).strftime("%Y-%m-%d")
+    month6_before_time = datetime.datetime.fromtimestamp(time.time() - 180 * 60 * 60 * 24).strftime("%Y-%m-%d")
+
+    week_report = bug_report_by_qa_member_query(week_before_time, end_time)
+    
+    month_report = bug_report_by_qa_member_query(month_before_time, end_time)
+
+    month2_report = bug_report_by_qa_member_query(month2_before_time, end_time)
+
+    if detail:
+        month4_report = bug_report_by_qa_member_query(month4_before_time, end_time)
+
+        month6_report = bug_report_by_qa_member_query(month6_before_time, end_time)
+
+    result = []
+
+    columns = ['name', 'week', 'month', '2 month']
+    if detail:
+        columns.extend(['4 month', '6 month'])
+    result.append(columns)
+
+    for qa_phid in qa_phid_mapping.keys():
+        week_cnt = len(week_report.get(qa_phid, []))
+        month_cnt = len(month_report.get(qa_phid, []))
+        month2_cnt = len(month2_report.get(qa_phid, []))
+        v = [qa_phid_mapping[qa_phid], week_cnt, month_cnt, month2_cnt]
+
+        if detail:
+            month4_cnt = len(month4_report.get(qa_phid, []))
+            month6_cnt = len(month6_report.get(qa_phid, []))
+            v.extend([month4_cnt, month6_cnt])
+
+        result.append(map(str, v))
+
+    f = open('bug_report_by_qa.csv', 'w')
+    for r in result:
+        f.write(','.join(r)+'\n')
+    f.close()
+
+
+bug_report_by_qa_member(detail=True)
+
 def user_search(user_id):
     params = {}
     params['constraints[nameLike]'] = user_id
@@ -196,7 +279,7 @@ def user_search(user_id):
     # print urlencode(params)
     # exit()
 
-    res = exec_pha_post('user.search', params)
+    res = pu.exec_pha_post('user.search', params)
     phid = ''
     try:
         phid = res['result']['data'][0]['phid']
@@ -207,25 +290,13 @@ def user_search(user_id):
 
 
 def qa_teams_phid():
-    qa_teams = ['wei.wang', 'jin.jiang', 'jie.li', 'jia.liu', 'yaoliang.cui', 'yangyang.yu', 'ou.ouyang', 'zhangdong', 'jia.guo', 'liuyue']
+    qa_teams = ['wei.wang', 'jin.jiang', 'jie.li', 'jia.liu', 'yaoliang.cui', 'yangyang.yu', 'zhangdong', 'liuyue']
     result = []
     for i in qa_teams:
         phid = user_search(i)
-        result.append("%s=%s"%(i, phid))
+        result.append("'%s'='%s',"%(phid, i))
 
     print '\n'.join(result)
 
 # qa_teams_phid()
 
-
-# upload_file('./unittest/3.csv', 'test.3.csv')
-
-
-# create_task("test title", "test desc\ndfasdfasdf\n")
-# search_feedback_task(['test title 1'])
-# description = "| index | 问题描述 | UID | 版本 | 系统 | 日期 | 图片链接1 | 图片链接2 | 图片链接3 |\n\
-# | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n\
-# | 1 | Sir plzzzzz My song ranking | 5.34802E+15 | 7.3.2 | Android 8.1.0 | 3月29日 | https://improxy.starmakerstudios.com/tools/im/0/production/promotion/other/5182ae1c5c6ce63ca06ec1a13ae38682.jpg |  |  |"
-# comment_task('40744', description)
-
-# get_task_info("12061")

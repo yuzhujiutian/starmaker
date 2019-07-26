@@ -38,7 +38,7 @@ def exec_pha_post(api, params, force=False):
 
 # 查找所有符合条件的bug
 # 
-def bug_report_query_request(statuses=['open'], after=None, tags=[], limit=100, created_before=None, created_after=None, closed_before=None, closed_after=None):
+def bug_report_query_request(statuses=['open'], after=None, tags=[], limit=100, authors=[], created_before=None, created_after=None, closed_before=None, closed_after=None):
     params = collections.OrderedDict()
 
     # 查询符合某些状态的bug
@@ -47,10 +47,17 @@ def bug_report_query_request(statuses=['open'], after=None, tags=[], limit=100, 
         params["constraints[statuses][%d]"%index] = status
         index += 1
 
+    # 设置创建者
+    index = 0
+    for author in authors:
+        params["constraints[authorPHIDs][%d]"%index] = author
+        index += 1
 
     # 包含某些tag的bug
     # Bug Report的project id, PHID-PROJ-4l6jxvbrgltoegpydrzi
-    tags.append("PHID-PROJ-4l6jxvbrgltoegpydrzi")
+    if "PHID-PROJ-4l6jxvbrgltoegpydrzi" not in tags:
+        tags.append("PHID-PROJ-4l6jxvbrgltoegpydrzi")
+
     index = 0
     for tag in tags:
         params["constraints[projects][%d]"%index] = tag
