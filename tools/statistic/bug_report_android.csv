@@ -1,4 +1,4 @@
-start time,end time,all open bug,open high bug,open normal bug,open low bug,the other open bug,本周新增bug,本周解决bug
+start time,end time,all open bug,open high bug,open normal bug,open low bug,the other open bug,new bug,closed bug
 2019-07-13,2019-07-20,492,35,396,54,7,102,126
 2019-07-06,2019-07-13,516,52,400,57,7,47,20
 2019-06-29,2019-07-06,489,45,380,56,8,72,100

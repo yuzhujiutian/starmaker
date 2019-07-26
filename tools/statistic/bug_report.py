@@ -171,7 +171,7 @@ def statistic_bug_report_history(query_method, new_bug_query_method, closed_bug_
 
         row_value = [start_time, end_time, all_open_bugs_cnt, all_open_high_bugs_cnt, all_open_normal_bugs_cnt, all_open_low_bugs_cnt, all_open_other_bugs_cnt, new_bugs_cnt, closed_bugs_cnt]
         print row_value
-        insert_row = pd.DataFrame([row_value], columns = ['start time','end time','all open bug','open high bug','open normal bug','open low bug','the other open bug','本周新增bug','本周解决bug'])
+        insert_row = pd.DataFrame([row_value], columns = ['start time','end time','all open bug','open high bug','open normal bug','open low bug','the other open bug','new bug','closed bug'])
         _pdf = _pdf.append(insert_row, ignore_index=True)
 
     # 不保留序号
