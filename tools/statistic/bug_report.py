@@ -174,6 +174,8 @@ def statistic_bug_report_history(query_method, new_bug_query_method, closed_bug_
         insert_row = pd.DataFrame([row_value], columns = ['start time','end time','all open bug','open high bug','open normal bug','open low bug','the other open bug','new bug','closed bug'])
         _pdf = _pdf.append(insert_row, ignore_index=True)
 
+    # 按升序排列
+    _pdf = _pdf.sort_values(by = ["start time"], ascending = [True])
     # 不保留序号
     _pdf.to_csv(data_source, index=0)
 
