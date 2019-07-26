@@ -110,7 +110,7 @@ def ios_closed_bug_query(start_time, end_time):
 # bug_report_history(end_time="2019-07-19 19:00:00")
 # 统计最近weeks周的bug报告
 def statistic_bug_report_history(query_method, new_bug_query_method, closed_bug_query_method, data_source, weeks=1):
-    days = 1
+    days = 0
     fridays = []
     while 1:
         dt = datetime.datetime.fromtimestamp(time.time() - days * 60 * 60 * 24)
