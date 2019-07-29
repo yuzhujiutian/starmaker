@@ -2,12 +2,21 @@
 import os
 import time
 import datetime
+import collections
+import ConfigParser
+import sys
 
 import pandas as pd
 import warnings
 warnings.filterwarnings("ignore")
 
 import phabricator_utils as pu
+
+# Android标签id
+TAG_Android = "PHID-PROJ-iuyamxepp7kzthfbfzda"
+
+# iOS标签id
+TAG_iOS = "PHID-PROJ-6uye5ugnkf4dhtgaxnt6"
 
 # 获取当前所有的bug详情
 def bug_report_query(tag, statuses=['open'], authors=[], created_before=None, created_after=None, closed_before=None, closed_after=None):
@@ -48,9 +57,6 @@ def bug_report_query(tag, statuses=['open'], authors=[], created_before=None, cr
     # print bug_ids
     return bugs
 
-TAG_Android = "PHID-PROJ-iuyamxepp7kzthfbfzda"
-
-TAG_iOS = "PHID-PROJ-6uye5ugnkf4dhtgaxnt6"
 
 # 获取截止到end_time时，处于open的bug状态
 def bug_report_history(platform, end_time=None):
@@ -72,18 +78,16 @@ def bug_report_history(platform, end_time=None):
 
     return already_open_bugs
 
-# start_time到end_time这段时间新创建的bug
-def new_bug_report(platform, start_time, end_time):
-    new_bugs = bug_report_query(platform, created_after=start_time, created_before=end_time)
-    return new_bugs
-
+# 获取截止到end_time时，Android项目处于open的bug状态
 def android_bug_report_history(end_time=None):
     return bug_report_history(TAG_Android, end_time=end_time)
 
+# 获取截止到end_time时，iOS项目处于open的bug状态
 def ios_bug_report_history(end_time=None):
     return bug_report_history(TAG_iOS, end_time=end_time)
 
-# 在 start_time 到 end_time这段时间新创建的bug
+# 在 start_time 到 end_time这段时间新创建的bug, start
+# start_time和end_time是字符串格式，比如2019-07-22
 def new_bug_query(platform, start_time, end_time):
     start_time = int(time.mktime(time.strptime(start_time,"%Y-%m-%d")))
     end_time = int(time.mktime(time.strptime(end_time,"%Y-%m-%d")))
@@ -182,33 +186,47 @@ def statistic_bug_report_history(query_method, new_bug_query_method, closed_bug_
     # 不保留序号
     _pdf.to_csv(data_source, index=0)
 
-# 统计Android 最近20周的bug变化数量
-statistic_bug_report_history(android_bug_report_history, android_new_bug_query, android_closed_bug_query, 'bug_report_android.csv', weeks=20)
 
-# 统计iOS 最近20周的bug变化数量
-statistic_bug_report_history(ios_bug_report_history, ios_new_bug_query, ios_closed_bug_query, 'bug_report_ios.csv', weeks=20)   
+# 将query_method搜索出来的bug按照用户维度进行统计
+def bug_report_by_member(query_method, output=None):
+    if output == None:
+        output = query_method.func_name + '.csv'
 
+    all_open_bugs = query_method()
+    bugs_by_owner = {}
+    for bug in all_open_bugs:
+        owner_phid = bug['fields']['ownerPHID']
+        bugs_by_owner[owner_phid] = bugs_by_owner.get(owner_phid, 0) + 1
+
+    # 获取用户名
+    phid_mapping = pu.user_search_by_phids(bugs_by_owner.keys())
+
+    result = []
+    result.append(['name', 'cnt'])
+    for phid, cnt in sorted(bugs_by_owner.items(), key=lambda d: d[1], reverse=True):
+        result.append(map(str, [phid_mapping.get(phid, phid), cnt]))
+
+    f = open(output, 'w')
+    for r in result:
+        f.write('%s\n'%(','.join(r)))
+    f.close()
+
+# 统计目前Android bug分配在哪些同学身上
+def android_bug_report_by_member():
+    bug_report_by_member(android_bug_report_history, output=android_bug_report_by_member.func_name + '.csv')
+
+# 统计iOS的bug分布
+def ios_bug_report_by_member():
+    bug_report_by_member(ios_bug_report_history, output=ios_bug_report_by_member.func_name + '.csv')
 
 # 统计start_time, end_time时间段，QA创建bug的数量
-
-# qa成员对应的phid
-qa_phid_mapping = {
-    'PHID-USER-5ucpy3dmgdqwt4mg35rq':'wei.wang',
-    'PHID-USER-awnsxd46n3grftcyv6tm':'jin.jiang',
-    'PHID-USER-zmc6oer33nkdjowmr4b5':'jie.li',
-    'PHID-USER-gmo6hwkrypj36vpjjlpg':'jia.liu',
-    'PHID-USER-mq5vhysit57lesbbbghb':'yaoliang.cui',
-    'PHID-USER-yqm7glxqn7ms2yw6rnzp':'yangyang.yu',
-    'PHID-USER-cuemnzevn2odyp7nxxy7':'zhangdong',
-    'PHID-USER-iirsw6b7dhjrcr6zbty5':'liuyue',
-}
-
 def bug_report_by_qa_member_query(start_time, end_time):
     start_time = int(time.mktime(time.strptime(start_time,"%Y-%m-%d")))
     end_time = int(time.mktime(time.strptime(end_time,"%Y-%m-%d")))
+
+    # 查询QA project下面所有成员的bug
     bugs = bug_report_query(None, statuses=[], created_after=start_time, created_before=end_time, authors=["members(PHID-PROJ-5u34yvaklxeofcddj5j7)"])
 
-    print 'total bugs:', len(bugs)
     bugs_by_qa_member = {}
     for bug in bugs:
         author_phid = bug['fields']['authorPHID']
@@ -216,18 +234,15 @@ def bug_report_by_qa_member_query(start_time, end_time):
         v.append(bug)
         bugs_by_qa_member[author_phid] = v
 
-    for author_phid in bugs_by_qa_member.keys():
-        print qa_phid_mapping.get(author_phid, author_phid), len(bugs_by_qa_member[author_phid])
-
     return bugs_by_qa_member
 
 # 最近六个月，四个月，两个月，一个月和最近一周，每个QA同学发现的bug数量统计
-def bug_report_by_qa_member(detail=False):
+def bug_report_by_qa_member(detail=True):
     end_time = datetime.datetime.fromtimestamp(time.time() - 0 * 60 * 60 * 24).strftime("%Y-%m-%d")
     week_before_time = datetime.datetime.fromtimestamp(time.time() - 7 * 60 * 60 * 24).strftime("%Y-%m-%d")
     month_before_time = datetime.datetime.fromtimestamp(time.time() - 30 * 60 * 60 * 24).strftime("%Y-%m-%d")
     month2_before_time = datetime.datetime.fromtimestamp(time.time() - 60 * 60 * 60 * 24).strftime("%Y-%m-%d")
-    month4_before_time = datetime.datetime.fromtimestamp(time.time() - 120 * 60 * 60 * 24).strftime("%Y-%m-%d")
+    month3_before_time = datetime.datetime.fromtimestamp(time.time() - 90 * 60 * 60 * 24).strftime("%Y-%m-%d")
     month6_before_time = datetime.datetime.fromtimestamp(time.time() - 180 * 60 * 60 * 24).strftime("%Y-%m-%d")
 
     week_report = bug_report_by_qa_member_query(week_before_time, end_time)
@@ -237,7 +252,7 @@ def bug_report_by_qa_member(detail=False):
     month2_report = bug_report_by_qa_member_query(month2_before_time, end_time)
 
     if detail:
-        month4_report = bug_report_by_qa_member_query(month4_before_time, end_time)
+        month3_report = bug_report_by_qa_member_query(month3_before_time, end_time)
 
         month6_report = bug_report_by_qa_member_query(month6_before_time, end_time)
 
@@ -245,8 +260,10 @@ def bug_report_by_qa_member(detail=False):
 
     columns = ['name', 'week', 'month', '2 month']
     if detail:
-        columns.extend(['4 month', '6 month'])
+        columns.extend(['3 month', '6 month'])
     result.append(columns)
+
+    qa_phid_mapping = qa_members()
 
     for qa_phid in qa_phid_mapping.keys():
         week_cnt = len(week_report.get(qa_phid, []))
@@ -255,9 +272,9 @@ def bug_report_by_qa_member(detail=False):
         v = [qa_phid_mapping[qa_phid], week_cnt, month_cnt, month2_cnt]
 
         if detail:
-            month4_cnt = len(month4_report.get(qa_phid, []))
+            month3_cnt = len(month3_report.get(qa_phid, []))
             month6_cnt = len(month6_report.get(qa_phid, []))
-            v.extend([month4_cnt, month6_cnt])
+            v.extend([month3_cnt, month6_cnt])
 
         result.append(map(str, v))
 
@@ -266,37 +283,48 @@ def bug_report_by_qa_member(detail=False):
         f.write(','.join(r)+'\n')
     f.close()
 
+def qa_members():
+    conf = ConfigParser.ConfigParser()
 
-bug_report_by_qa_member(detail=True)
+    conf.read('setting.ini')
+ 
+    qas = conf.items('QA')
 
-def user_search(user_id):
-    params = {}
-    params['constraints[nameLike]'] = user_id
+    qa_phids = {}
+    for (username, phid) in qas:
+        qa_phids[phid] = username
+ 
+    return qa_phids
+ 
+if __name__ == "__main__":
+    argv = set(sys.argv)
+
+    if ('-qa', '-history').issubset(argv):
+        bug_report_by_qa_member()
+
+    if ('-android', '-history').issubset(argv):
+        # 统计Android 最近20周的bug变化数量
+        statistic_bug_report_history(android_bug_report_history, android_new_bug_query, android_closed_bug_query, 'bug_report_android.csv', weeks=20)
+
+    if ('-ios', '-history').issubset(argv):
+        # 统计iOS 最近20周的bug变化数量
+        statistic_bug_report_history(ios_bug_report_history, ios_new_bug_query, ios_closed_bug_query, 'bug_report_ios.csv', weeks=20)
+
+    if ('-android', '-member').issubset(argv):
+        # 统计目前Android bug分配在哪些同学身上
+        android_bug_report_by_member()
+
+    if ('-ios', '-member').issubset(argv):
+        # 统计目前Android bug分配在哪些同学身上
+        ios_bug_report_by_member()
 
 
-    # params = 'params[queryKey]=&params[constraints]={"nameLike":"lin.jiang"}&params[attachments]=&params[order]=&params[before]=&params[after]=&params[limit]=&output=human'
-
-    # print urlencode(params)
-    # exit()
-
-    res = pu.exec_pha_post('user.search', params)
-    phid = ''
-    try:
-        phid = res['result']['data'][0]['phid']
-    except Exception as e:
-        pass
-
-    return phid
 
 
-def qa_teams_phid():
-    qa_teams = ['wei.wang', 'jin.jiang', 'jie.li', 'jia.liu', 'yaoliang.cui', 'yangyang.yu', 'zhangdong', 'liuyue']
-    result = []
-    for i in qa_teams:
-        phid = user_search(i)
-        result.append("'%s'='%s',"%(phid, i))
 
-    print '\n'.join(result)
 
-# qa_teams_phid()
+
+
+
+
 

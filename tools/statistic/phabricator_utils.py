@@ -114,4 +114,39 @@ def bug_report_query_request(statuses=['open'], after=None, tags=[], limit=100, 
 
     return result_data, cursor_before, cursor_after, cursor_limit
 
+# 通过指定的phabricator id列表搜索相关用户名
+def user_search_by_phids(phids):
+    params = collections.OrderedDict()
+
+    index = 0
+    for phid in phids:
+        params['constraints[phids][%d]'%index] = phid
+        index += 1
+
+    res = exec_pha_post('user.search', params)
+    username_mapping = {}
+    try:
+        data = res['result']['data']
+        for d in data:
+            username_mapping[d['phid']] = d['fields']['username']
+    except Exception as e:
+        pass
+
+    # print username_mapping
+
+    return username_mapping
+
+def user_search(user_id):
+    params = {}
+    params['constraints[nameLike]'] = user_id
+
+    res = pu.exec_pha_post('user.search', params)
+    phid = ''
+    try:
+        phid = res['result']['data'][0]['phid']
+    except Exception as e:
+        pass
+
+    return phid
+
 
