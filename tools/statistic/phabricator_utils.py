@@ -89,7 +89,7 @@ def bug_report_query_request(statuses=['open'], after=None, tags=[], limit=100, 
     if after is not None:
         params["after"] = after
 
-    print params
+    # print params
 
     res = exec_pha_post('maniphest.search', params, force=True)
 
@@ -140,7 +140,7 @@ def user_search(user_id):
     params = {}
     params['constraints[nameLike]'] = user_id
 
-    res = pu.exec_pha_post('user.search', params)
+    res = exec_pha_post('user.search', params)
     phid = ''
     try:
         phid = res['result']['data'][0]['phid']
@@ -149,4 +149,63 @@ def user_search(user_id):
 
     return phid
 
+# 搜索指定task详情
+def task_search_by_phids(phids):
+    params = collections.OrderedDict()
 
+    index = 0
+    for phid in phids:
+        params['phids[%d]'%index] = phid
+        index += 1
+
+    res = exec_pha_post('maniphest.query', params)
+    data = res['result']
+
+    return data
+
+# 查询phid对应project name
+def project_search_by_phids(phids):
+    # PHID-PROJ-plzhpqzzgqrfkj3enkpw
+    params = collections.OrderedDict()
+
+    index = 0
+    for phid in phids:
+        params['constraints[phids][%d]'%index] = phid
+        index += 1
+
+    res = exec_pha_post('project.search', params)
+    data = res['result']['data']
+
+    phids_mapping = {}
+    for d in data:
+        phid = d['phid']
+        name = d['fields']['name']
+        # print phid, name
+        phids_mapping[phid] = name
+
+    return phids_mapping
+
+
+# project_search_by_phids(['PHID-PROJ-plzhpqzzgqrfkj3enkpw'])
+
+def project_search(project_name):
+    params = {}
+    params['constraints[name]'] = project_name
+
+    params['order'] = 'newest'
+
+    res = exec_pha_post('project.search', params)
+    phid = None
+    try:
+        phid = res['result']['data'][0]['phid']
+    except Exception as e:
+        pass
+
+    return phid
+
+def project_search_android_tag(version):
+    tag_name = 'StarMaker / The Voice Android %s'%version
+
+    return project_search(tag_name)
+
+# print project_search_android_tag('7.4.7')

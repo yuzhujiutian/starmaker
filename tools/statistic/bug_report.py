@@ -34,7 +34,10 @@ def bug_report_query(tag, statuses=['open'], authors=[], created_before=None, cr
 
     tags = []
     if tag is not None:
-        tags = [tag]
+        if type(tag) == type([]):
+            tags.extend(tag)
+        else:
+            tags = [tag]
 
     while (result_data_len == 100) and (cursor_after is not None):
         result_data, cursor_before, cursor_after, cursor_limit = pu.bug_report_query_request(tags=tags, statuses=statuses, authors=authors, limit=100, after=after, created_before=created_before, created_after=created_after, closed_before=closed_before, closed_after=closed_after)
@@ -295,26 +298,26 @@ def qa_members():
         qa_phids[phid] = username
  
     return qa_phids
- 
+
 if __name__ == "__main__":
     argv = set(sys.argv)
 
-    if ('-qa', '-history').issubset(argv):
+    if set(['-qa', '-history']).issubset(argv):
         bug_report_by_qa_member()
 
-    if ('-android', '-history').issubset(argv):
+    if set(['-android', '-history']).issubset(argv):
         # 统计Android 最近20周的bug变化数量
         statistic_bug_report_history(android_bug_report_history, android_new_bug_query, android_closed_bug_query, 'bug_report_android.csv', weeks=20)
 
-    if ('-ios', '-history').issubset(argv):
+    if set(['-ios', '-history']).issubset(argv):
         # 统计iOS 最近20周的bug变化数量
         statistic_bug_report_history(ios_bug_report_history, ios_new_bug_query, ios_closed_bug_query, 'bug_report_ios.csv', weeks=20)
 
-    if ('-android', '-member').issubset(argv):
+    if set(['-android', '-member']).issubset(argv):
         # 统计目前Android bug分配在哪些同学身上
         android_bug_report_by_member()
 
-    if ('-ios', '-member').issubset(argv):
+    if set(['-ios', '-member']).issubset(argv):
         # 统计目前Android bug分配在哪些同学身上
         ios_bug_report_by_member()
 
