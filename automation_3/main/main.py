@@ -3,7 +3,6 @@
 调整测试数据
 依次运行对应测试脚本
 """
-import argparse
 import time
 
 from automation_3.report.test_data_extraction import get_data
@@ -13,42 +12,26 @@ class testSuite:
     # 测试数据调整
     def __init__(self):
         try:
-            parser = argparse.ArgumentParser()
-            # 版本信息
-            parser.add_argument("version")
-            # 待测包名
-            parser.add_argument("package")
-            # 设备信息
-            parser.add_argument("platformVersion")
-            parser.add_argument("device")
-            parser.add_argument("deviceName")
-
-            args = parser.parse_args()
-
-            param = vars(args)
-
-            v = {}
-
-            for key, value in param.items():
-                v[key] = value
+            with open('../main/config.txt', 'r', encoding='utf-8') as f:
+                config = eval(f.read())
 
             # 测试版本
-            self.ver = v["version"]
+            self.ver = config["version"]
             # 包信息
-            self.package = v["package"]
+            self.package = config["package"]
             # 设备信息
-            self.platformVersion = v["platformVersion"]
-            self.device = v["device"]
-            self.deviceName = v["deviceName"]
+            self.platformVersion = config["platformVersion"]
+            self.device = config["device"]
+            self.deviceName = config["deviceName"]
         except:
             # 测试版本
             self.ver = "9.9.9"
             # 包信息
-            self.package = "Sargam"
+            self.package = "Product"
             # 设备信息
             self.platformVersion = "8.1.0"
-            self.device = "vivo_1716"
-            self.deviceName = "1716"
+            self.device = "SM_G610F"
+            self.deviceName = "on7xelte"
 
         # 取数据次数（最低5，因为结算时会减去最高和最低）
         self.num = 10

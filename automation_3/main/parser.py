@@ -21,7 +21,7 @@ v = {}
 for key, value in param.items():
     v[key] = value
 
-with open('../main/test.txt', 'a+', encoding='utf-8') as f:
+with open('../main/config.txt', 'w', encoding='utf-8') as f:
     f.write(str(v))
     f.flush()
 
