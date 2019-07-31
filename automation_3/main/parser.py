@@ -20,7 +20,8 @@ v = {}
 for key, value in param.items():
     v[key] = value
 
-with open('../main/config.txt', 'w') as f:
+# with open('../main/config.txt', 'w') as f:
+with open('config.txt', 'w') as f:
     f.write(str(v))
     f.flush()
 

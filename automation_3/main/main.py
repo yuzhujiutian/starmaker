@@ -12,7 +12,8 @@ class testSuite:
     # 测试数据调整
     def __init__(self):
         try:
-            with open('../main/config.txt', 'r', encoding='utf-8') as f:
+            # with open('../main/config.txt', 'r', encoding='utf-8') as f:
+            with open('/config.txt', 'r', encoding='utf-8') as f:
                 config = eval(f.read())
 
             # 测试版本
