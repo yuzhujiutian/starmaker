@@ -3,7 +3,6 @@
 调整测试数据
 依次运行对应测试脚本
 """
-import argparse
 import time
 
 from automation_3.report.test_data_extraction import get_data
@@ -13,25 +12,6 @@ class testSuite:
     # 测试数据调整
     def __init__(self):
         try:
-            parser = argparse.ArgumentParser()
-            # 版本信息
-            parser.add_argument("version")
-            # 待测包名
-            parser.add_argument("package")
-            # 设备信息
-            parser.add_argument("platformVersion")
-            parser.add_argument("device")
-            parser.add_argument("deviceName")
-
-            args = parser.parse_args()
-
-            param = vars(args)
-
-            v = {}
-
-            for key, value in param.items():
-                v[key] = value
-
             # 测试版本
             self.ver = v["version"]
             # 包信息
