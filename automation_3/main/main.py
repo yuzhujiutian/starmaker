@@ -5,9 +5,7 @@
 """
 import time
 import sys
-from automation_3.report.test_data_extraction import get_data
 
-print(sys.path)
 sys.path.append("/Users/mac/PycharmProjects/starmaker-qa/automation_3/main")
 sys.path.append("/Users/mac/PycharmProjects/starmaker-qa")
 sys.path.append("/Library/Frameworks/Python.framework/Versions/3.5/lib/python35.zip")
@@ -19,6 +17,8 @@ sys.path.append("/Users/mac/PycharmProjects/starmaker-qa/venv/lib/python3.5/site
 sys.path.append("/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages")
 sys.path.append("/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/Appium_Python_Client-0.24-py3.5.egg")
 sys.path.append("/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/selenium-3.9.0-py3.5.egg")
+
+from automation_3.report.test_data_extraction import get_data
 
 
 class testSuite:
