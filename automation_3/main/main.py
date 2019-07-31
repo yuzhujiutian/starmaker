@@ -34,11 +34,11 @@ class testSuite:
             self.deviceName = "on7xelte"
 
         # 取数据次数（最低5，因为结算时会减去最高和最低）
-        self.num = 10
+        self.num = 5
         # 单次数据运行时间
-        self.run_time = 10
+        self.run_time = 2
         # 录制歌曲数量
-        self.song_num = 2
+        self.song_num = 1
 
     # 测试数据处理
     def log_result(self, modular):
