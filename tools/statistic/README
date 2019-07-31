@@ -1,0 +1,20 @@
+##### 环境配置
+1.  安装python 2.7, 如果使用3.0以上，请看是否可以正常运行，网络请求可能会有问题
+2.  安装pandas, 请参考https://pandas.pydata.org/
+
+##### 统计数据定义
+bug: 带有**Bug Report**的标签的task
+android的bug: 带有**Android**标签的bug
+ios的bug: 带有**iOS**标签的bug
+
+##### 运行
+切换工作目录到**bug_report.py**目录，直接执行`python bug_report.py`, 会在当前目录生成**bug_report_android.csv**和**bug_report_ios.csv**两个文件，每一行包含9列，分别的意义如下
+
+start time,end time: 表示统计的时间段，只显示到日期，时分秒为00:00:00, 目前按照一周为一个时间段，从上周六凌晨开始到本周六凌晨
+all open bug: 截止到**end time**时，所有处于open状态的bug数量
+open high bug: 截止到**end time**时，所有处于open状态并且优先级为high的bug数量
+open normal bug: 截止到**end time**时，所有处于open状态并且优先级为normal的bug数量
+open low bug: 截止到**end time**时，所有处于open状态并且优先级为low的bug数量
+the other open bug: 截止到**end time**时，所有处于open状态并且优先级不为high, normal, low的bug数量
+new bug: 在**start time**到**end time**时间段内，新增的bug数量
+closed bug: 在**start time**到**end time**时间段内，关闭的bug数量
