@@ -1,5 +1,6 @@
 # coding=utf-8
 import argparse
+import os
 
 parser = argparse.ArgumentParser()
 # 版本信息
@@ -20,7 +21,10 @@ v = {}
 for key, value in param.items():
     v[key] = value
 
-with open('../main/config.txt', 'w') as f:
+# 当前脚本的父目录的绝对路径
+current_script_parent_dir = os.path.realpath(os.path.abspath(__file__ + '/..'))
+
+with open(os.path.join(current_script_parent_dir, 'config.txt'), 'w') as f:
 # with open('config.txt', 'w') as f:
     f.write(str(v))
     f.flush()
