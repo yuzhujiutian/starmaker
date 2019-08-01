@@ -13,7 +13,8 @@ class testSuite:
     def __init__(self):
         try:
             with open('../main/config.txt', 'r', encoding='utf-8') as f:
-            # with open('/config.txt', 'r', encoding='utf-8') as f:
+            # with open('/Users/Shared/Jenkins/Home/jobs/Performance-Test/workspace/automation_3/main/config.txt',
+            #           'r', encoding='utf-8') as f:
                 config = eval(f.read())
 
             # 测试版本
