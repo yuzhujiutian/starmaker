@@ -4,17 +4,23 @@
 依次运行对应测试脚本
 """
 import time
+import os
 
 from automation_3.report.test_data_extraction import get_data
 
+# 当前脚本的父目录的绝对路径
+current_script_parent_dir = os.path.realpath(os.path.abspath(__file__ + '/..'))
 
 class testSuite:
     # 测试数据调整
     def __init__(self):
         try:
-            with open('../main/config.txt', 'r', encoding='utf-8') as f:
+            with open(os.path.join(current_script_parent_dir, 'config.txt'), 'r', encoding='utf-8') as f:
+            # with open('/Users/Shared/Jenkins/Home/jobs/Performance-Test/workspace/automation_3/main/config.txt',
+            #           'r', encoding='utf-8') as f:
                 config = eval(f.read())
 
+            print config
             # 测试版本
             self.ver = config["version"]
             # 包信息
@@ -33,12 +39,14 @@ class testSuite:
             self.device = "SM_G610F"
             self.deviceName = "on7xelte"
 
+        exit()
+
         # 取数据次数（最低5，因为结算时会减去最高和最低）
-        self.num = 10
+        self.num = 5
         # 单次数据运行时间
-        self.run_time = 10
+        self.run_time = 2
         # 录制歌曲数量
-        self.song_num = 2
+        self.song_num = 1
 
     # 测试数据处理
     def log_result(self, modular):

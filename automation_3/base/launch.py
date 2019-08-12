@@ -63,7 +63,10 @@ class LaunchAction(BaseAction):
     # 启动
     def launch(self):
         # 清理测试图片
-        self.TestPicture_Processing()
+        try:
+            self.TestPicture_Processing()
+        except:
+            pass
 
         result = True
         # 如果是设置语言页面

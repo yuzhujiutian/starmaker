@@ -1,7 +1,8 @@
 # -*- encoding=utf8 -*-
 __author__ = "yaoliang.cui"
-from airtest.core.api import *
 from airtest.core.android.android import *
+from airtest.core.api import *
+
 auto_setup(__file__)
 dev = connect_device("android:///")
 devs = device()
