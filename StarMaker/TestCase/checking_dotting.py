@@ -349,18 +349,34 @@ class checking_dotting(unittest.TestCase):
         # 点击Gift弹出礼物面板
         PlaybackDetails().PlaybackDetailsPage_Video_Gift().click()
         time.sleep(7)
+        # 寻找一个金币价值较小的礼物
+        gift_num = 0
+        while gift_num < 7:
+            gift_value = PlaybackDetails().PlaybackDetailsPage_Video_GiftValue(gift_num).text
+            if int(gift_value) <= 10:
+                PlaybackDetails().PlaybackDetailsPage_Video_GiftValue(gift_num).click()
+                gift_num = 100
+                break
+            gift_num += 1
+        # 如果没找到，就选择第二排首个（一般这个位置已避开免费、限定、特殊礼物）
+        if gift_num != 100:
+            PlaybackDetails().PlaybackDetailsPage_Video_GiftValue(4).click()
+
         # 点击Send按钮
-        # todo：处理限定礼物、特殊礼物、免费礼物和send按钮不可点击
         PlaybackDetails().PlaybackDetailsPage_Video_GiftDetailSendBtn().click()
         time.sleep(2)
         # 处理余额不足弹窗
-        if PlaybackDetails().Gift_SendGift_InsufficientSilvers().text == \
-                "Insufficient Silvers! Finish the Tasks to get more Silvers.":
-            self.driver.back()
-        # todo：elif 余额充足送礼成功
+        try:
+            if PlaybackDetails().Gift_SendGift_InsufficientSilvers().text == \
+                    "Insufficient Silvers! Finish the Tasks to get more Silvers.":
+                self.driver.back()
+        except:
+            pass
         time.sleep(2)
-        # todo：提升稳定性——增加判断 礼物面板已隐藏
         self.driver.back()
+        time.sleep(2)
+        if PlaybackDetails().PlaybackDetailsPage_Video_GiftDetailSendBtn():
+            self.driver.back()
         self.exp_dot = "send,playdetail,gift"
 
     # 点击-分享面板-FB分享渠道

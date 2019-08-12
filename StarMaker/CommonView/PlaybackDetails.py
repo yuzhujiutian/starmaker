@@ -108,6 +108,16 @@ class PlaybackDetails(object):
         PlaybackDetailsPage_Video_CommentSendBtn_ID = self.findID(PlaybackDetails_VD.PlaybackDetailsPage_Video_CommentSendBtn_ID)
         return PlaybackDetailsPage_Video_CommentSendBtn_ID
 
+    # PlaybackDetails页-视屏详情页--礼物价值text
+    def PlaybackDetailsPage_Video_GiftValue(self, num):
+        PlaybackDetailsPage_Video_GiftValue_IDS = self.findIDS(PlaybackDetails_VD.PlaybackDetailsPage_Video_GiftValue_IDS, num)
+        return PlaybackDetailsPage_Video_GiftValue_IDS
+
+    # PlaybackDetails页-视屏详情页--Combo按钮
+    def PlaybackDetailsPage_Video_ComboBtn(self):
+        PlaybackDetailsPage_Video_ComboBtn_ID = self.findID(PlaybackDetails_VD.PlaybackDetailsPage_Video_ComboBtn_ID)
+        return PlaybackDetailsPage_Video_ComboBtn_ID
+
     # PlaybackDetails页-视屏详情页--礼物面板Send按钮
     def PlaybackDetailsPage_Video_GiftDetailSendBtn(self):
         PlaybackDetailsPage_Video_GiftDetailSendBtn_ID = self.findID(PlaybackDetails_VD.PlaybackDetailsPage_Video_GiftDetailSendBtn_ID)

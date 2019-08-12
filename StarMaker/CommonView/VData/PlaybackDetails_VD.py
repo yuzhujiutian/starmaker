@@ -76,6 +76,14 @@ PlaybackDetailsPage_Video_CommentSendBox_ID = package + FS(Source_PlaybackDetail
 Source_PlaybackDetailsPage_Video_CommentSendBtn_ID = "iv_send"
 PlaybackDetailsPage_Video_CommentSendBtn_ID = package + FS(Source_PlaybackDetailsPage_Video_CommentSendBtn_ID)
 
+# PlaybackDetails页-视屏详情页--礼物价值text
+Source_PlaybackDetailsPage_Video_GiftValue_IDS = "gift_balance"
+PlaybackDetailsPage_Video_GiftValue_IDS = package + FS(Source_PlaybackDetailsPage_Video_GiftValue_IDS)
+
+# PlaybackDetails页-视屏详情页--Combo按钮
+Source_PlaybackDetailsPage_Video_ComboBtn_ID = "icon_circle"
+PlaybackDetailsPage_Video_ComboBtn_ID = package + FS(Source_PlaybackDetailsPage_Video_ComboBtn_ID)
+
 # PlaybackDetails页-视屏详情页--礼物面板Send按钮
 Source_PlaybackDetailsPage_Video_GiftDetailSendBtn_ID = "btn_send_gift"
 PlaybackDetailsPage_Video_GiftDetailSendBtn_ID = package + FS(Source_PlaybackDetailsPage_Video_GiftDetailSendBtn_ID)
