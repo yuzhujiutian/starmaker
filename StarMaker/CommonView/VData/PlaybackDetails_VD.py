@@ -88,8 +88,8 @@ PlaybackDetailsPage_Video_ComboBtn_ID = package + FS(Source_PlaybackDetailsPage_
 Source_PlaybackDetailsPage_Video_GiftDetailSendBtn_ID = "btn_send_gift"
 PlaybackDetailsPage_Video_GiftDetailSendBtn_ID = package + FS(Source_PlaybackDetailsPage_Video_GiftDetailSendBtn_ID)
 
-# 礼物-送礼-银币不足弹窗文案(text="Insufficient Silvers! Finish the Tasks to get more Silvers.")
-Gift_SendGift_InsufficientSilvers_ID = "android:id/message"
+# 礼物-送礼-银币不足弹窗文案(银币="Insufficient Silvers! Finish the Tasks to get more Silvers./金币="Not enough storage")
+Gift_SendGift_InsufficientFunds_ID = "android:id/message"
 
 # 礼物-送礼-银币不足弹窗-取消按钮
 Gift_SendGift_InsufficientSilvers_Cancel_ID = "android:id/button2"

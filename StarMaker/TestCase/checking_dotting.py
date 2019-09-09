@@ -199,7 +199,7 @@ class checking_dotting(unittest.TestCase):
         Library().SearchPage_InputBox().send_keys("love")
         time.sleep(5)
         # 点击第一个联想结果
-        Library().SearchPage_RelevantRelevant(1).click()
+        Library().SearchPage_RelevantRelevant(2).click()
         time.sleep(2)
         self.exp_dot = "show,search_result,song_show"
 
@@ -306,7 +306,7 @@ class checking_dotting(unittest.TestCase):
     def test_Case2203_PlayPlayDetailFinish(self):
         # 点击第二个作品卡片
         Home().HomePage_FeedCard_DIY_Img(1).click()
-        self.exp_dot = "play,main,finish"
+        self.exp_dot = "play,playdetail,finish"
 
     # 点击-详情页-follow
     def test_Case2204_ClickPlayDetailFollow(self):
@@ -342,17 +342,25 @@ class checking_dotting(unittest.TestCase):
     def test_Case2207_ClickPlayDetailUNLike(self):
         # 点击UNLike
         PlaybackDetails().PlaybackDetailsPage_Video_Like().click()
+        # 点击Like
+        PlaybackDetails().PlaybackDetailsPage_Video_Like().click()
         self.exp_dot = "click,playdetail,unlike"
 
     # send-详情页-gift
     def test_Case2208_SendPlayDetailGift(self):
         # 点击Gift弹出礼物面板
         PlaybackDetails().PlaybackDetailsPage_Video_Gift().click()
+        # 等待礼物加载完成
         time.sleep(7)
         # 寻找一个金币价值较小的礼物
-        gift_num = 0
+        gift_num = 2
         while gift_num < 7:
             gift_value = PlaybackDetails().PlaybackDetailsPage_Video_GiftValue(gift_num).text
+            try:
+                gift_value = int(gift_value)
+            except:
+                gift_num += 1
+                continue
             if int(gift_value) <= 10:
                 PlaybackDetails().PlaybackDetailsPage_Video_GiftValue(gift_num).click()
                 gift_num = 100
@@ -361,20 +369,23 @@ class checking_dotting(unittest.TestCase):
         # 如果没找到，就选择第二排首个（一般这个位置已避开免费、限定、特殊礼物）
         if gift_num != 100:
             PlaybackDetails().PlaybackDetailsPage_Video_GiftValue(4).click()
-
         # 点击Send按钮
         PlaybackDetails().PlaybackDetailsPage_Video_GiftDetailSendBtn().click()
         time.sleep(2)
+
         # 处理余额不足弹窗
         try:
-            if PlaybackDetails().Gift_SendGift_InsufficientSilvers().text == \
-                    "Insufficient Silvers! Finish the Tasks to get more Silvers.":
+            insufficient_funds_text = PlaybackDetails().Gift_SendGift_InsufficientFunds().text
+            if insufficient_funds_text == "Insufficient Silvers! Finish the Tasks to get more Silvers.":
                 self.driver.back()
+            elif insufficient_funds_text == "Not enough storage":
+                self.driver.back()
+            time.sleep(2)
+        # 送礼成功无弹窗
         except:
-            pass
-        time.sleep(2)
-        self.driver.back()
-        time.sleep(2)
+            # 收起礼物弹窗
+            self.driver.back()
+            time.sleep(2)
         if PlaybackDetails().PlaybackDetailsPage_Video_GiftDetailSendBtn():
             self.driver.back()
         self.exp_dot = "send,playdetail,gift"
@@ -450,8 +461,9 @@ class checking_dotting(unittest.TestCase):
         # 处理滑动引导
         Popup().Popup_LivePage_Slide_LiveClick()
         time.sleep(2)
-        self.driver.back()
-        Popup().Popup_LivePage_MinimizeOption_RefuseBtn_LiveClick()
+        # self.driver.back()
+        # time.sleep(2)
+        # Popup().Popup_LivePage_MinimizeOption_RefuseBtn_LiveClick()
         self.exp_dot = "click,live_hall_0,room"
 
 

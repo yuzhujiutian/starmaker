@@ -126,10 +126,10 @@ class PlaybackDetails(object):
     # ----------
     # 送礼(通用，后续单独封装)
     # ----------
-    # 礼物-送礼-银币不足弹窗文案(text="Insufficient Silvers! Finish the Tasks to get more Silvers.")
-    def Gift_SendGift_InsufficientSilvers(self):
-        Gift_SendGift_InsufficientSilvers_ID = self.findID(PlaybackDetails_VD.Gift_SendGift_InsufficientSilvers_ID)
-        return Gift_SendGift_InsufficientSilvers_ID
+    # 礼物-送礼-银币不足弹窗文案(银币="Insufficient Silvers! Finish the Tasks to get more Silvers./金币="Not enough storage")
+    def Gift_SendGift_InsufficientFunds(self):
+        Gift_SendGift_InsufficientFunds_ID = self.findID(PlaybackDetails_VD.Gift_SendGift_InsufficientFunds_ID)
+        return Gift_SendGift_InsufficientFunds_ID
 
     # 礼物-送礼-银币不足弹窗-取消按钮
     def Gift_SendGift_InsufficientSilvers_Cancel(self):

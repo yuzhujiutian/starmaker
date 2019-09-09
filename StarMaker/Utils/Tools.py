@@ -24,12 +24,12 @@ class Tools:
         # 定义路径
         png_file = "../TestReport/images/"
         # 获取当前时间
-        nowtime = time.strftime('%Y%m%d_%H.%M.%S', time.localtime(time.time()))
+        present_time = time.strftime('%Y%m%d_%H.%M.%S', time.localtime(time.time()))
         # 定义图片名称
-        img_name = nowtime + '.png'
+        img_name = present_time + '.png'
         # 截图
         driver.get_screenshot_as_file('%s%s' % (png_file, img_name))
-        print('screenshot:', nowtime, '.png')
+        print('screenshot:', present_time, '.png')
 
     # 元素未找到截图,并保存在images文件夹
     @staticmethod
@@ -38,12 +38,12 @@ class Tools:
         # 定义路径
         png_file = "../TestReport/images/"
         # 获取当前时间，且days-1，以展示在报告截图最下方
-        nowtime = (datetime.datetime.now() + datetime.timedelta(days=-1)).strftime('%Y%m%d_%H.%M.%S')
+        present_time = (datetime.datetime.now() + datetime.timedelta(days=-1)).strftime('%Y%m%d_%H.%M.%S')
         # 定义图片名称
-        img_name = nowtime + '.png'
+        img_name = present_time + '.png'
         # 截图
         driver.get_screenshot_as_file('%s%s' % (png_file, img_name))
-        print('screenshot:', nowtime, '.png')
+        print('screenshot:', present_time, '.png')
 
     # 动态元素转换
     @staticmethod

@@ -253,6 +253,6 @@ def StartServer():
 
 # True = 一行一个打点
 # False = 格式化输出
-android_read_lines = False
+android_read_lines = True
 if __name__ == '__main__':
     StartServer()

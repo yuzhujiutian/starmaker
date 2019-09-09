@@ -3,8 +3,8 @@
 调整测试数据
 依次运行对应测试脚本
 """
-import time
 import os
+import time
 
 from automation_3.report.test_data_extraction import get_data
 
@@ -20,7 +20,7 @@ class testSuite:
             #           'r', encoding='utf-8') as f:
                 config = eval(f.read())
 
-            print config
+            print(config)
             # 测试版本
             self.ver = config["version"]
             # 包信息
