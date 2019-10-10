@@ -35,16 +35,16 @@ class testSuite:
             # 包信息
             self.package = "Product"
             # 设备信息
-            self.platformVersion = "8.1.0"
-            self.device = "SM_G610F"
-            self.deviceName = "on7xelte"
+            self.platformVersion = "7.1"
+            self.device = "Redmi_5A"
+            self.deviceName = "riva"
 
         exit()
 
         # 取数据次数（最低5，因为结算时会减去最高和最低）
         self.num = 5
         # 单次数据运行时间
-        self.run_time = 2
+        self.run_time = 10
         # 录制歌曲数量
         self.song_num = 1
 

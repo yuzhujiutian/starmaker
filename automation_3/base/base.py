@@ -78,8 +78,6 @@ class BaseTestCase(unittest.TestCase):
         desired_caps['platformVersion'] = testSuite().platformVersion
         desired_caps['device'] = testSuite().device
         desired_caps['deviceName'] = testSuite().deviceName
-        # desired_caps['appPackage'] = 'com.starmakerinteractive.starmaker'
-        # desired_caps['appPackage'] = 'com.horadrim.android.sargam'
         desired_caps['appPackage'] = package_list[testSuite().package]
         desired_caps['appActivity'] = 'com.ushowmedia.starmaker.activity.SplashActivity'
         desired_caps['appWaitActivity'] = ','.join([Activity.Main, Activity.Nux_Language])
