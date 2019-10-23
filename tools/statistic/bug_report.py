@@ -302,6 +302,8 @@ def qa_members():
 if __name__ == "__main__":
     argv = set(sys.argv)
 
+    argv = set(['-android', '-history', '-member'])
+
     if set(['-qa', '-history']).issubset(argv):
         bug_report_by_qa_member()
 
