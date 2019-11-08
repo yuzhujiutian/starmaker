@@ -47,12 +47,18 @@ class checking_dotting(unittest.TestCase):
         print(path)
         time.sleep(10)
         if check_log.check_dotting():
+            print("Error!!!")
+            print("Error!!!")
+            print("Error!!!")
             print("错误打点如下")
             print('\n''------------')
             for i in check_log.check_dotting():
                 print(i)
             print('------------''\n')
         else:
+            print("Successfully!!!")
+            print("Successfully!!!")
+            print("Successfully!!!")
             print("T44069 打点校验全部通过")
 
     # ----------
@@ -66,8 +72,8 @@ class checking_dotting(unittest.TestCase):
 
     # 点击-Recommend-歌曲信息
     def test_Case1102_ClickLibraryRecommendSongDetail(self):
-        # 点击首页第一首歌曲的歌曲封面图
-        Home().SingPage_CommonTab_FirstSongImgCover().click()
+        # 点击首页第一首歌曲的歌曲
+        Home().SingPage_CommonTab_FirstSong().click()
         self.exp_dot = "click,library:Recommend,song_detail"
         time.sleep(2)
         self.driver.back()
@@ -130,8 +136,8 @@ class checking_dotting(unittest.TestCase):
 
     # 点击-Trending-歌曲信息
     def test_Case1109_ClickLibraryTrendingSongDetail(self):
-        # 点击首页第一首歌曲的歌曲封面图
-        Home().SingPage_CommonTab_FirstSongImgCover().click()
+        # 点击首页第一首歌曲的歌曲
+        Home().SingPage_CommonTab_FirstSong().click()
         self.exp_dot = "click,library:Trending,song_detail"
         time.sleep(2)
         self.driver.back()
@@ -342,6 +348,7 @@ class checking_dotting(unittest.TestCase):
     def test_Case2207_ClickPlayDetailUNLike(self):
         # 点击UNLike
         PlaybackDetails().PlaybackDetailsPage_Video_Like().click()
+        time.sleep(5)
         # 点击Like
         PlaybackDetails().PlaybackDetailsPage_Video_Like().click()
         self.exp_dot = "click,playdetail,unlike"

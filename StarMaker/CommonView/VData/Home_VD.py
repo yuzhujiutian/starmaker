@@ -188,9 +188,9 @@ SingPage_SingParty_ID = package + FS(Source_SingPage_SingParty_ID)
 Source_SingPage_SingHeat_IDS = "tv_tab_title"
 SingPage_SingHeat_IDS = package + FS(Source_SingPage_SingHeat_IDS)
 
-# Sing页面-任一Tab下-第一个歌曲封面
-Source_SingPage_CommonTab_FirstSongImgCover = "img_cover"
-SingPage_CommonTab_FirstSongImgCover = package + FS(Source_SingPage_CommonTab_FirstSongImgCover)
+# Sing页面-任一Tab下-第一个歌曲
+Source_SingPage_CommonTab_FirstSong = "ll_content"
+SingPage_CommonTab_FirstSong = package + FS(Source_SingPage_CommonTab_FirstSong)
 
 # Sing页面-Recommend下的歌曲点击SING
 Source_SingPage_SingRecommend_SelectSing_IDS = "btn_sing"

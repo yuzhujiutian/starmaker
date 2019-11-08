@@ -356,10 +356,10 @@ class Home(object):
         SingPage_SingHeat_New_IDS = self.findIDS(Home_VD.SingPage_SingHeat_IDS, 4)
         return SingPage_SingHeat_New_IDS
 
-    # Sing页面-任一Tab下-第一首歌曲封面图
-    def SingPage_CommonTab_FirstSongImgCover(self):
-        SingPage_CommonTab_FirstSongImgCover_ID_IDS = self.ID_IDS(Home_VD.SingPage_CommonTab_FirstSongImgCover)
-        return SingPage_CommonTab_FirstSongImgCover_ID_IDS
+    # Sing页面-任一Tab下-第一首歌曲
+    def SingPage_CommonTab_FirstSong(self):
+        SingPage_CommonTab_FirstSong_ID_IDS = self.ID_IDS(Home_VD.SingPage_CommonTab_FirstSong)
+        return SingPage_CommonTab_FirstSong_ID_IDS
 
     # Sing页面-Recommend下的歌曲点击SING
     def SingPage_SingRecommend_SelectSing(self):
