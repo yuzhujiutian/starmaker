@@ -8,6 +8,10 @@ def bug_report_by_version(platform, version_tag):
     # 获取version phid
     phid = pu.project_search(version_tag)
 
+    if phid == None:
+        print 'Not found', version_tag
+        return
+
     if platform == TAG_Android:
         version_tag = version_tag.split()[-1]
     else:
@@ -97,11 +101,15 @@ def bug_report_by_version(platform, version_tag):
 
     print
 
-for v in ['7.4.3', '7.4.4', '7.4.5', '7.4.6', '7.4.7']:
-    bug_report_by_version(TAG_Android, 'StarMaker / The Voice Android %s'%v)
+# for v in ['7.4.3', '7.4.4', '7.4.5', '7.4.6', '7.4.8', '7.4.9', '7.5.0']:
+#     bug_report_by_version(TAG_Android, 'StarMaker / The Voice Android %s'%v)
 
 
-# bug_report_by_version(TAG_iOS, 'StarMaker iOS v7.5.0')
+# for v in ['7.5.0', '7.5.1', '7.5.3', '7.5.4', '7.5.5']:
+#     bug_report_by_version(TAG_iOS, 'StarMaker iOS v%s'%v)
+
+
+bug_report_by_version(TAG_iOS, 'StarMaker iOS v7.5.5')
 
 
 
