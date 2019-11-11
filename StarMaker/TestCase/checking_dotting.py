@@ -360,15 +360,18 @@ class checking_dotting(unittest.TestCase):
         # 等待礼物加载完成
         time.sleep(7)
         # 寻找一个金币价值较小的礼物
-        gift_num = 2
-        while gift_num < 7:
-            gift_value = PlaybackDetails().PlaybackDetailsPage_Video_GiftValue(gift_num).text
+        gift_num = 1
+        while gift_num < 8:
+            gift_value_text = PlaybackDetails().PlaybackDetailsPage_Video_GiftValue(gift_num).text
+            # 有限定礼物，text不是int类型
             try:
-                gift_value = int(gift_value)
+                gift_value = int(gift_value_text)
             except:
+                # 跳过限定礼物
                 gift_num += 1
                 continue
-            if int(gift_value) <= 10:
+            # 如果金币价值小于10金币，则选择该礼物并跳出循环
+            if gift_value <= 10:
                 PlaybackDetails().PlaybackDetailsPage_Video_GiftValue(gift_num).click()
                 gift_num = 100
                 break
@@ -376,6 +379,7 @@ class checking_dotting(unittest.TestCase):
         # 如果没找到，就选择第二排首个（一般这个位置已避开免费、限定、特殊礼物）
         if gift_num != 100:
             PlaybackDetails().PlaybackDetailsPage_Video_GiftValue(4).click()
+        time.sleep(5)
         # 点击Send按钮
         PlaybackDetails().PlaybackDetailsPage_Video_GiftDetailSendBtn().click()
         time.sleep(2)
@@ -383,6 +387,7 @@ class checking_dotting(unittest.TestCase):
         # 处理余额不足弹窗
         try:
             insufficient_funds_text = PlaybackDetails().Gift_SendGift_InsufficientFunds().text
+            time.sleep(2)
             if insufficient_funds_text == "Insufficient Silvers! Finish the Tasks to get more Silvers.":
                 self.driver.back()
             elif insufficient_funds_text == "Not enough storage":
