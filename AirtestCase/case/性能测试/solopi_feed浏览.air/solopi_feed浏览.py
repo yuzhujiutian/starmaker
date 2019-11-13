@@ -10,29 +10,43 @@ poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=Fa
 auto_setup(__file__)
 dev = connect_device("android:///")
 devs = device()
+
 # ----------------------------------------------------------------------------------
 # 1>脚本执行次数
-run_number = 10
+run_number = 3
 # 2>单次脚本执行时间
 single_run_time = 600
-
+# 3>测试package name
+package_name = "com.horadrim.android.sargam"
+clear_app(package_name)
 # ----------------------------------------------------------------------------------
 C = 0
 TimeEnd_List = []
 Count_List = []
+Data_Name_List = []
 print("测试开始")
-while (C < run_number):
-    # -----setUpClass-----
-    # 点击emmagee的开始测试按钮
-    poco("com.netease.qa.emmagee:id/test").click()
+while (C < run_number):    
+    # -----setUp-----
+    # 启动app
+    start_app(package_name)
     sleep(8)
-    # -----setUp（代码微调：仅需调整这里）-----
-    # 选择语言页——点击印地语
-    poco("com.ushow.android.jalebee:id/bh5").click()
-    sleep(2)
-    # 选择性别页——点击男性poco(zOrders="{'global': 0, 'local': 0}")poco(zOrders="{'global': 0, 'local': 0}")
-    poco("com.ushow.android.jalebee:id/bg9").click()
+    
+    # 选择语言页——选择英语
+    poco("com.horadrim.android.sargam:id/cot")[1].click()
+    sleep(3)
+    
+    # 处理TVC弹窗
+    poco("com.horadrim.android.sargam:id/agw").click()
+    sleep(3)
+    
+    # 点击Moment Tab
+    poco("com.horadrim.android.sargam:id/c1q").click()
     sleep(5)
+    
+    # 点击开始录制
+    touch((395,99))
+    
+
     # -----测试脚本-----
     A = 0
     Count = 0
@@ -40,7 +54,7 @@ while (C < run_number):
     time_start = time.time()
     while (A < single_run_time):
         try:
-            swipe((560,1050),(560,92))
+            swipe((360,1050),(360,90))
             sleep(2)
             Count += 1
         except:
@@ -52,12 +66,26 @@ while (C < run_number):
     print("脚本结束共滑动次数")
     print(Count)
     Count_List.append(Count)
-    # tearDown
-    clear_app("com.ushow.android.jalebee")
-    sleep(5)
-    if poco("com.netease.qa.emmagee:id/test").get_text() == "停止测试":
-        poco("com.netease.qa.emmagee:id/test").click()
+    
+    # -----tearDown-----
+    # 点击暂停录制
+    touch((395,99))
     sleep(2)
+    
+    # 记录数据结果文件名
+    data_name = poco("android:id/message").get_text()
+    sleep(2)
+    print(data_name)
+    Data_Name_List.append(data_name)
+    
+    # 点击数据结果弹窗的"确定"按钮
+    poco("android:id/button1").click()
+    sleep(2)
+    
+    # 清理app
+    clear_app(package_name)
+    sleep(5)
+
     C = C + 1
     T = time.strftime('%H.%M.%S',time.localtime(time.time()))
     print("执行次数")
@@ -69,17 +97,13 @@ print("批次结束时间列表")
 print(TimeEnd_List)
 print("滑动次数列表")
 print(Count_List)
+print("数据文件名列表")
+print(Data_Name_List)
 print("测试结束")
 
 
-# 19:10
 
 
 
-# Jalebee:com.ushow.android.jalebee/com.ushowmedia.starmaker.activity.SplashActivity
-# vmate:com.uc.vmate/.ui.MainActivity
-# vigo:com.ss.android.ugc.boom/com.ss.android.ugc.live.main.MainActivity
-##vigo lite:com.ss.android.ugc.boomlite/com.ss.android.ugc.live.main.MainActivity
-# kwai:com.kwai.video/com.yxcorp.gifshow.login.SplashLoginActivity
-# togetu:in.togetu.video/in.togetu.shortvideo.ui.activity.SplashActivity
-# tiktok:com.ss.android.ugc.trill/com.ss.android.ugc.aweme.splash.SplashActivity
+
+
