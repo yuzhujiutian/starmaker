@@ -184,7 +184,7 @@ SingPage_VocalTalents_ID = package + FS(Source_SingPage_VocalTalents_ID)
 Source_SingPage_SingParty_ID = "iv_party_label"
 SingPage_SingParty_ID = package + FS(Source_SingPage_SingParty_ID)
 
-# Sing页面-中下方四个Tab([0]Recommend/[1]Hot/[2]Bollywood/[3]Trending/[4]New)
+# Sing页面-中下方四个Tab([0]Recommend/[1]Hot/[2]New/[3]Bollywood/[4]Trending)
 Source_SingPage_SingHeat_IDS = "tv_tab_title"
 SingPage_SingHeat_IDS = package + FS(Source_SingPage_SingHeat_IDS)
 

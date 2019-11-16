@@ -291,6 +291,8 @@ class checking_dotting(unittest.TestCase):
         self.exp_dot = "click,popular,delete"
 
     # 点击-popular-卡片
+    # todo:目前popular会下发大量video数据，处理第一屏没有recording时滑动去找recording；
+    # todo:目前popular已登录用户会全部下发video，无recording数据，处理滑动寻找recording超过一定次数跳过recording相关case
     def test_Case2103_ClickPopularCard(self):
         # 点击首个作品卡片
         Home().HomePage_FeedCard_Img().click()

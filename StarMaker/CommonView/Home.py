@@ -346,9 +346,9 @@ class Home(object):
         SingPage_SingHeat_Trending_IDS = self.findIDS(Home_VD.SingPage_SingHeat_IDS, 2)
         return SingPage_SingHeat_Trending_IDS
 
-    # Sing页面-中下方四个Tab([3]Trending)
+    # Sing页面-中下方四个Tab([4]Trending)
     def SingPage_SingHeat_Trending(self):
-        SingPage_SingHeat_Trending_IDS = self.findIDS(Home_VD.SingPage_SingHeat_IDS, 3)
+        SingPage_SingHeat_Trending_IDS = self.findIDS(Home_VD.SingPage_SingHeat_IDS, 4)
         return SingPage_SingHeat_Trending_IDS
 
     # Sing页面-中下方四个Tab([4]New)
