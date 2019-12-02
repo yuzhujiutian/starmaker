@@ -13,12 +13,20 @@ devs = device()
 
 # ----------------------------------------------------------------------------------
 # 1>脚本执行次数
-run_number = 3
+run_number = 5
 # 2>单次脚本执行时间
 single_run_time = 600
 # 3>测试package name
 package_name = "com.horadrim.android.sargam"
 clear_app(package_name)
+sleep(5)
+# ----------------------------------------------------------------------------------
+# 逻辑混淆替换
+title = "c5a"  # 语言选择页title
+txt_language = "cqj"  # 语言选择页语言项
+iv_close = "ahr"
+tab_animation_view = "c2w"
+
 # ----------------------------------------------------------------------------------
 C = 0
 TimeEnd_List = []
@@ -29,18 +37,18 @@ while (C < run_number):
     # -----setUp-----
     # 启动app
     start_app(package_name)
-    sleep(8)
+    poco(package_name + ":id/" + title).wait_for_appearance()
     
     # 选择语言页——选择英语
-    poco("com.horadrim.android.sargam:id/cot")[1].click()
+    poco(package_name + ":id/" + txt_language)[1].click()
     sleep(3)
     
     # 处理TVC弹窗
-    poco("com.horadrim.android.sargam:id/agw").click()
+    poco(package_name + ":id/" + iv_close).click()
     sleep(3)
     
     # 点击Moment Tab
-    poco("com.horadrim.android.sargam:id/c1q").click()
+    poco(package_name + ":id/" + tab_animation_view).click()
     sleep(5)
     
     # 点击开始录制

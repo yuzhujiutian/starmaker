@@ -19,6 +19,16 @@ single_run_time = 600
 # 3>测试package name
 package_name = "com.horadrim.android.sargam"
 clear_app(package_name)
+sleep(5)
+# ----------------------------------------------------------------------------------
+# 逻辑混淆替换
+title = "c5a"  # 语言选择页title
+txt_language = "cqj"  # 语言选择页语言项
+iv_close = "ahr"  # TVC弹窗关闭按钮
+tab_animation_view = "c2w"  # Moment
+layout_music_parent = "arv" # popular作品
+iv_video = "aoq" # 作品cover左上角video标识
+open_promotion_iv_close = "bay" # 红包拉新弹窗
 # ----------------------------------------------------------------------------------
 C = 0
 TimeEnd_List = []
@@ -29,18 +39,19 @@ while (C < run_number):
     # -----setUp-----
     # 启动app
     start_app(package_name)
-    sleep(8)
+    poco(package_name + ":id/" + title).wait_for_appearance()
+    sleep(3)
     
     # 选择语言页——选择英语
-    poco("com.horadrim.android.sargam:id/cot")[1].click()
+    poco(package_name + ":id/" + txt_language)[1].click()
     sleep(3)
     
     # 处理TVC弹窗
-    poco("com.horadrim.android.sargam:id/agw").click()
+    poco(package_name + ":id/" + iv_close).click()
     sleep(3)
     
     # 点击Moment Tab
-    poco("com.horadrim.android.sargam:id/c1q").click()
+    poco(package_name + ":id/" + tab_animation_view).click()
     sleep(5)
     
     # 点击开始录制
@@ -55,14 +66,16 @@ while (C < run_number):
     while (A < single_run_time):
         try:
             swipe((360,1050),(360,90))
-            cover = poco("com.horadrim.android.sargam:id/aqy")
+            cover = poco(package_name + ":id/" + layout_music_parent)
             for i in range(2,6):
+# ----------------------------------------------------------------------------------
                 # 如果是recording则点击
-#                 if cover[i].child("com.horadrim.android.sargam:id/anv").exists() is False:
-                # 如果是video则点击
-                if cover[i].child("com.horadrim.android.sargam:id/anv").exists():
+                 if cover[i].child(package_name + ":id/" + iv_video).exists() is False:
                     print("recording")
-                    print(i)
+                # 如果是video则点击
+#                 if cover[i].child(package_name + ":id/" + iv_video).exists():
+#                     print("video")
+# ----------------------------------------------------------------------------------
                     cover[i].click()
                     # 播放5秒
                     sleep(5)
@@ -72,7 +85,9 @@ while (C < run_number):
                     Count += 1
                     break
         except:
-            pass
+            # 处理红包拉新弹窗
+            if poco(package_name + ":id/" + open_promotion_iv_close).exists():
+                poco(package_name + ":id/" + open_promotion_iv_close).click()
         finally:
             time_end = time.time()
             A = time_end - time_start
