@@ -9,8 +9,10 @@ from StarMaker.CommonView.Parties import Parties
 from StarMaker.CommonView.PlaybackDetails import PlaybackDetails
 from StarMaker.CommonView.Popup import Popup
 from StarMaker.CommonView.Search import Search
+from StarMaker.CommonView.VData import Home_VD
 from StarMaker.Utils.GetAppiumDeriver import GetAppiumDeriver
 from StarMaker.Utils.Tools import AssertReportManage
+from StarMaker.Utils.Tools import Page_Element_Verification
 from StarMaker.Utils.Tools import TestData_Processing
 from StarMaker.Utils.Tools import Tools
 from analysis_dot.analysis_report_dot.checking_dotting import check_log
@@ -130,8 +132,12 @@ class checking_dotting(unittest.TestCase):
 
     # 展示-Trending-歌曲展示
     def test_Case1108_ShowLibraryTrendingSongShow(self):
+        # 获取Trending的index(服务端动态控制，需要每次判断)
+        tab_list = Page_Element_Verification().PEV_IDS_GetText(Home_VD.SingPage_SingHeat_IDS)
+        time.sleep(10)
+        index = tab_list.index("Trending")
         # 点击Trending
-        Home().SingPage_SingHeat_Trending().click()
+        Home().SingPage_SingHeat_Trending(index).click()
         self.exp_dot = "show,library:Trending,song_show"
 
     # 点击-Trending-歌曲信息

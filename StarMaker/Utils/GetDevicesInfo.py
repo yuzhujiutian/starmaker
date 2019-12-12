@@ -142,6 +142,7 @@ class DevicesInfo(object):
     tvp = "com.starmakerinteractive.thevoice"
     sa = "com.horadrim.android.sargam"
     su = "com.windforce.android.suaraku"
+
     # AppPackage 用于初始化
     @staticmethod
     def AppPackage(package=sa):
