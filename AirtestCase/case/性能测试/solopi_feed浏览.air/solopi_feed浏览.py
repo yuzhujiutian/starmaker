@@ -19,14 +19,13 @@ single_run_time = 600
 # 3>测试package name
 package_name = "com.horadrim.android.sargam"
 clear_app(package_name)
-sleep(5)
+sleep(4)
 # ----------------------------------------------------------------------------------
 # 逻辑混淆替换
-title = "c5a"  # 语言选择页title
-txt_language = "cqj"  # 语言选择页语言项
-iv_close = "ahr"
-tab_animation_view = "c2w"
-
+title = "c82"  # 语言选择页title
+txt_language = "ctq"  # 语言选择页语言项
+iv_close = "ak0"  # TVC弹窗关闭按钮
+tab_animation_view = "c5n"  # Moment/Party/Sing/Message/Me
 # ----------------------------------------------------------------------------------
 C = 0
 TimeEnd_List = []
@@ -37,6 +36,7 @@ while (C < run_number):
     # -----setUp-----
     # 启动app
     start_app(package_name)
+    sleep(10)
     poco(package_name + ":id/" + title).wait_for_appearance()
     
     # 选择语言页——选择英语
@@ -48,7 +48,7 @@ while (C < run_number):
     sleep(3)
     
     # 点击Moment Tab
-    poco(package_name + ":id/" + tab_animation_view).click()
+    poco("main_tab_trend").click()
     sleep(5)
     
     # 点击开始录制
