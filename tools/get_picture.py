@@ -1,10 +1,10 @@
 # coding=utf-8
 import re
 import sys
-from io import BytesIO
-
 import requests
+from io import BytesIO
 from PIL import Image
+
 
 # 获取当前工作路径
 current_working_path = sys.path[0]
