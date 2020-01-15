@@ -53,18 +53,18 @@ def get_max(files):
 
 
 # 获取平均值
-def get_ave(files):
+def get_ave(num_list):
     # 找出最大、最小值
     max_num = 0
     min_num = 999999
-    for i in files:
+    for i in num_list:
         if i > max_num:
             max_num = i
         if i < min_num:
             min_num = i
     # 去除最大、最小后，计算平均值
     cnt_num = 0
-    for i in files:
+    for i in num_list:
         if i == max_num or i == min_num:
             continue
         else:
@@ -74,4 +74,4 @@ def get_ave(files):
 
 
 if __name__ == '__main__':
-    get_file_path("759")
+    get_file_path("760")

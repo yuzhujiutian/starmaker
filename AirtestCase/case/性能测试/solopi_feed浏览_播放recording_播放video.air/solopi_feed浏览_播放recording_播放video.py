@@ -19,23 +19,25 @@ single_run_time = 600
 # 3>测试package name
 package_name = "com.horadrim.android.sargam"
 # 4>测试类型
-video_marker = False  # True=video/False=recording
+video_marker = True  # False=recording/True=video
 
 clear_app(package_name)
 sleep(5)
 # ----------------------------------------------------------------------------------
 # 逻辑混淆替换
-title = "c82"  # 语言选择页title
-txt_language = "ctq"  # 语言选择页语言项
-iv_close = "ak0"  # TVC弹窗关闭按钮
-layout_music_parent = "au_"  # popular作品
-iv_video = "ar4"  # 作品cover左上角video标识
-open_promotion_iv_close = "bdk"  # 红包拉新弹窗
-tv_login_email  = "cgf"  # Email登录按钮
-et_email = "x8"  # Email帐号输入框
-btn_next = "j9"  # Next按钮
-et_input = "xb"  # 密码输入框
-btw_email_confirm = "k9"  # LOG IN按钮
+title = "c8x"  # 语言选择页title
+txt_language = "cv7"  # 语言选择页语言项
+iv_close = "akf"  # TVC弹窗关闭按钮
+
+tv_more_ways = "cif"  # More ways登录方式
+tv_login_email  = "chi"  # Email登录按钮
+et_email = "xg"  # Email帐号输入框
+btn_next = "jc"  # Next按钮
+et_input = "xk"  # 密码输入框
+btw_email_confirm = "ke"  # LOG IN按钮
+
+layout_music_parent = "auu"  # popular作品
+iv_video = "aro"  # 作品cover左上角video标识
 # ----------------------------------------------------------------------------------
 C = 0
 TimeEnd_List = []
@@ -57,29 +59,35 @@ while (C < run_number):
     poco(package_name + ":id/" + iv_close).click()
     sleep(3)
     
-    # 点击Me Tab
-    poco("main_tab_me").click()
-    sleep(5)
+    # 测试recording需要登录
+    if video_marker is False:
+        # 点击Me Tab
+        poco("main_tab_me").click()
+        sleep(5)
+        
+        # 点击More ways
+        poco(package_name + ":id/" + tv_more_ways).click()
+        sleep(3)
 
-    # 点击Email登录方式
-    poco(package_name + ":id/" + tv_login_email).click()
-    sleep(3)
-    
-    # 输入测试邮箱
-    poco(package_name + ":id/" + et_email).set_text("cyl@20.cn")
-    sleep(2)
-    
-    # 点击Next按钮
-    poco(package_name + ":id/" + btn_next).click()
-    sleep(3)
-    
-    # 输入密码
-    poco(package_name + ":id/" + et_input)[1].set_text("000000")
-    sleep(2)
-    
-    # 点击LOG IN按钮
-    poco(package_name + ":id/" + btw_email_confirm).click()
-    sleep(8)
+        # 点击Email登录方式
+        poco(package_name + ":id/" + tv_login_email).click()
+        sleep(3)
+
+        # 输入测试邮箱
+        poco(package_name + ":id/" + et_email)[0].set_text("cyl@20.cn")
+        sleep(2)
+
+        # 点击Next按钮
+        poco(package_name + ":id/" + btn_next).click()
+        sleep(3)
+
+        # 输入密码
+        poco(package_name + ":id/" + et_input)[1].set_text("000000")
+        sleep(2)
+
+        # 点击LOG IN按钮
+        poco(package_name + ":id/" + btw_email_confirm).click()
+        sleep(8)
     
     # 点击Moment Tab
     poco("main_tab_trend").click()
@@ -116,9 +124,7 @@ while (C < run_number):
                     break
 # ----------------------------------------------------------------------------------
         except:
-            # 处理红包拉新弹窗
-            if poco(package_name + ":id/" + open_promotion_iv_close).exists():
-                poco(package_name + ":id/" + open_promotion_iv_close).click()
+            pass
         finally:
             time_end = time.time()
             A = time_end - time_start

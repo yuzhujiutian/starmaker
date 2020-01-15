@@ -22,10 +22,9 @@ clear_app(package_name)
 sleep(4)
 # ----------------------------------------------------------------------------------
 # 逻辑混淆替换
-title = "c82"  # 语言选择页title
-txt_language = "ctq"  # 语言选择页语言项
-iv_close = "ak0"  # TVC弹窗关闭按钮
-tab_animation_view = "c5n"  # Moment/Party/Sing/Message/Me
+title = "c8x"  # 语言选择页title
+txt_language = "cv7"  # 语言选择页语言项
+iv_close = "akf"  # TVC弹窗关闭按钮
 # ----------------------------------------------------------------------------------
 C = 0
 TimeEnd_List = []
