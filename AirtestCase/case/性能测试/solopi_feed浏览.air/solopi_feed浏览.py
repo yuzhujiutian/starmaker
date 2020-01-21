@@ -22,9 +22,9 @@ clear_app(package_name)
 sleep(4)
 # ----------------------------------------------------------------------------------
 # 逻辑混淆替换
-title = "c8x"  # 语言选择页title
-txt_language = "cv7"  # 语言选择页语言项
-iv_close = "akf"  # TVC弹窗关闭按钮
+title = "ca6"  # 语言选择页title
+txt_language = "cy0"  # 语言选择页语言项
+iv_close = "ala"  # TVC弹窗关闭按钮
 # ----------------------------------------------------------------------------------
 C = 0
 TimeEnd_List = []
@@ -52,6 +52,9 @@ while (C < run_number):
     
     # 点击开始录制
     touch((395,99))
+    sleep(2)
+    touch((55,100))
+    sleep(2)
     
 
     # -----测试脚本-----
@@ -76,8 +79,10 @@ while (C < run_number):
     
     # -----tearDown-----
     # 点击暂停录制
-    touch((395,99))
+    touch((28,80))
     sleep(2)
+    touch((395,99))
+    sleep(5)
     
     # 记录数据结果文件名
     data_name = poco("android:id/message").get_text()

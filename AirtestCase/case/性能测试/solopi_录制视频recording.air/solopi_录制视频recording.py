@@ -22,29 +22,29 @@ clear_app(package_name)
 sleep(4)
 # ----------------------------------------------------------------------------------
 # 逻辑混淆替换
-title = "c8x"  # 语言选择页title
-txt_language = "cv7"  # 语言选择页语言项
-iv_close = "akf"  # TVC弹窗关闭按钮
+title = "ca6"  # 语言选择页title
+txt_language = "cy0"  # 语言选择页语言项
+iv_close = "ala"  # TVC弹窗关闭按钮
 
-tv_more_ways = "cif"  # More ways登录方式
-tv_login_email  = "chi"  # Email登录按钮
-et_email = "xg"  # Email帐号输入框
-btn_next = "jc"  # Next按钮
-et_input = "xk"  # 密码输入框
-btw_email_confirm = "ke"  # LOG IN按钮
+tv_more_ways = "cl0"  # More ways登录方式
+tv_login_email  = "ck2"  # Email登录按钮
+et_email = "xv"  # Email帐号输入框
+btn_next = "ji"  # Next按钮
+et_input = "xz"  # 密码输入框
+btw_email_confirm = "kl"  # LOG IN按钮
 
-iv_new_entrance_profile = "ao8"  # 个人页songs入口
-btn_action = "i9"  # songs页面Sing按钮
-item_play_detail_dialog_text = "ahu"  # 录制类型弹窗的选项Solo/Join Duet/Start Duet/Chorus
-permissionOkTv = "bha"  # 录制权限申请弹窗按钮
-recording_headset_dialog_i_know_btn = "bq_"  # 耳机引导弹窗
-tv_pitch_guide_tip = "ckc"  # Pitch引导
-media_type_chb = "b_z"  # 录制类型切换
-record_btn = "bpp"  # Start开始录制按钮
-record_time_tv = "bq7"  # 录制剩余时长
-btn_post = "ji"  # 预览页Post按钮
-btn_next  = "jc"  # 发布页Send按钮
-tv_done = "cdm"  # 结果页Done按钮
+iv_new_entrance_profile = "ap7"  # 个人页songs入口
+btn_action = "ic"  # songs页面Sing按钮
+item_play_detail_dialog_text = "ain"  # 录制类型弹窗的选项Solo/Join Duet/Start Duet/Chorus
+permissionOkTv = "bj5"  # 录制权限申请弹窗按钮
+recording_headset_dialog_i_know_btn = "bs_"  # 耳机引导弹窗
+tv_pitch_guide_tip = "cmy"  # Pitch引导
+media_type_chb = "bbq"  # 录制类型切换
+record_btn = "brp"  # Start开始录制按钮
+record_time_tv = "bs7"  # 录制剩余时长
+btn_post = "jo"  # 预览页Post按钮
+btn_next = "ji"  # 发布页Send按钮
+tv_done = "cg2"  # 结果页Done按钮
 # ----------------------------------------------------------------------------------
 C = 0
 TimeEnd_List = []

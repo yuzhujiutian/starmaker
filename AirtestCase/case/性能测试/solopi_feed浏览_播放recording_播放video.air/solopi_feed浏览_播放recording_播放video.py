@@ -25,19 +25,19 @@ clear_app(package_name)
 sleep(5)
 # ----------------------------------------------------------------------------------
 # 逻辑混淆替换
-title = "c8x"  # 语言选择页title
-txt_language = "cv7"  # 语言选择页语言项
-iv_close = "akf"  # TVC弹窗关闭按钮
+title = "ca6"  # 语言选择页title
+txt_language = "cy0"  # 语言选择页语言项
+iv_close = "ala"  # TVC弹窗关闭按钮
 
-tv_more_ways = "cif"  # More ways登录方式
-tv_login_email  = "chi"  # Email登录按钮
-et_email = "xg"  # Email帐号输入框
-btn_next = "jc"  # Next按钮
-et_input = "xk"  # 密码输入框
-btw_email_confirm = "ke"  # LOG IN按钮
+tv_more_ways = "cl0"  # More ways登录方式
+tv_login_email  = "ck2"  # Email登录按钮
+et_email = "xv"  # Email帐号输入框
+btn_next = "ji"  # Next按钮
+et_input = "xz"  # 密码输入框
+btw_email_confirm = "kl"  # LOG IN按钮
 
-layout_music_parent = "auu"  # popular作品
-iv_video = "aro"  # 作品cover左上角video标识
+layout_music_parent = "avw"  # popular作品
+iv_video = "asq"  # 作品cover左上角video标识
 # ----------------------------------------------------------------------------------
 C = 0
 TimeEnd_List = []
@@ -95,6 +95,9 @@ while (C < run_number):
     
     # 点击开始录制
     touch((395,99))
+    sleep(2)
+    touch((55,100))
+    sleep(2)
     
 
     # -----测试脚本-----
@@ -135,6 +138,8 @@ while (C < run_number):
     
     # -----tearDown-----
     # 点击暂停录制
+    touch((28,80))
+    sleep(2)
     touch((395,99))
     sleep(5)
     

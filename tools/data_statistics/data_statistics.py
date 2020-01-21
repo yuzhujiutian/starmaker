@@ -7,12 +7,13 @@ import re
 # 获取文件路径list
 def get_file_path(v):
     folder = "C:/Users/cucumber/Desktop/Android " + str(v) + "性能数据"
-    module_name = ["feed浏览", "feed播放_recording", "feed播放_video"]
+    module_name = ["feed浏览", "feed播放_recording", "feed播放_video", "录制视频recording"]
     print("Android" + v + "性能数据")
     for i in module_name:
         file_path = os.path.join(folder, i)
         print(">>>" + i)
-        print(get_file_list(file_path))
+        print('{} {}'.format("峰值：", get_file_list(file_path)[:2]))
+        print('{} {}'.format("均值：", get_file_list(file_path)[2:]))
         print("--------------------")
 
 
@@ -20,6 +21,8 @@ def get_file_path(v):
 def get_file_list(file_path):
     memory = []
     cpu = []
+    cpu_ave = []
+    memory_ave = []
     # 获取当前路径下文件list
     file_list = os.listdir(file_path)
     files = []
@@ -32,10 +35,13 @@ def get_file_list(file_path):
             if re.match("PSS内存", j):
                 memory_file = os.path.join(i, j)
                 memory.append(get_max(memory_file))
+                memory_ave.append(get_single_strip_ave(memory_file))
             if re.match("应用进程-main", j):
                 cpu_file = os.path.join(i, j)
                 cpu.append(get_max(cpu_file))
-    return get_ave(memory), get_ave(cpu)
+                cpu_ave.append(get_single_strip_ave(cpu_file))
+
+    return get_ave(cpu), get_ave(memory), get_ave(cpu_ave), get_ave(memory_ave)
 
 
 # 读取csv数据
@@ -50,6 +56,22 @@ def get_max(files):
         if float(i) > max_num:
             max_num = float(i)
     return max_num
+
+
+# 获取单次数据平均值
+def get_single_strip_ave(files):
+    # 打开csv文件
+    with open(files, 'r') as csv_file:
+        reader = csv.reader(csv_file)
+        column1 = [row[1] for row in reader]
+
+    total_num = 0
+    data_volume = 0
+    for idx, i in enumerate(column1[1:]):
+        total_num += float(i)
+        data_volume = idx + 1
+    single_strip_ave_num = total_num / data_volume
+    return single_strip_ave_num
 
 
 # 获取平均值
@@ -74,4 +96,4 @@ def get_ave(num_list):
 
 
 if __name__ == '__main__':
-    get_file_path("760")
+    get_file_path("761")
