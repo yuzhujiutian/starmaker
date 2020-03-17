@@ -38,6 +38,33 @@ class Profile(object):
         ProfilePage_Setting_ID = self.findID(Profile_VD.ProfilePage_Setting_ID)
         return ProfilePage_Setting_ID
 
+    # 个人页-Profile Tab
+    def ProfilePage_ProfileTab(self):
+        ProfilePage_ProfileTab_ID = self.findIDS(Profile_VD.ProfilePage_Tab_IDS, 0)
+        return ProfilePage_ProfileTab_ID
+
+    # 个人页-Moments Tab
+    def ProfilePage_MomentsTab(self):
+        ProfilePage_MomentsTab_ID = self.findIDS(Profile_VD.ProfilePage_Tab_IDS, 1)
+        return ProfilePage_MomentsTab_ID
+
+    # 个人页-Covers Tab
+    def ProfilePage_CoversTab(self):
+        ProfilePage_CoversTab_ID = self.findIDS(Profile_VD.ProfilePage_Tab_IDS, 2)
+        return ProfilePage_CoversTab_ID
+
+    # 个人页-Duets Tab
+    def ProfilePage_DuetsTab(self):
+        ProfilePage_DuetsTab_ID = self.findIDS(Profile_VD.ProfilePage_Tab_IDS, 3)
+        return ProfilePage_DuetsTab_ID
+
+    # 个人页-Vocals Tab
+    def ProfilePage_VocalsTab(self):
+        ProfilePage_VocalsTab_ID = self.findIDS(Profile_VD.ProfilePage_Tab_IDS, 4)
+        return ProfilePage_VocalsTab_ID
+
+
+
     # ----------
     # 个人页-个人信息
     # ----------
@@ -63,8 +90,8 @@ class Profile(object):
 
     # 用户VIP状态(text=Vip/Get Vip)
     def ProfilePag_UserInfo_VIPLevel(self):
-        ProfilePag_UserInfo_VIPLevel_ID = self.findID(Profile_VD.ProfilePag_UserInfo_VIPLevel_ID)
-        return ProfilePag_UserInfo_VIPLevel_ID
+        ProfilePage_UserInfo_VIPLevel_ID = self.findID(Profile_VD.ProfilePage_UserInfo_VIPLevel_ID)
+        return ProfilePage_UserInfo_VIPLevel_ID
 
     # 用户Followers数
     def ProfilePage_UserInfo_FollowersNumber(self):
@@ -230,10 +257,18 @@ class Profile(object):
         ProfilePage_MomentsTab_ShootInfo_More_Delete_Confirm_ID = self.findID(Profile_VD.ProfilePage_MomentsTab_ShootInfo_More_Delete_Confirm_ID)
         return ProfilePage_MomentsTab_ShootInfo_More_Delete_Confirm_ID
 
-    # # ----------
-    # # Tab——POST
-    # # ----------
-    #
+    # ----------
+    # Tab——Covers
+    # ----------
+
+    # ----------
+    # Tab——Covers
+    # ----------
+    # 作品封面
+    def ProfilePage_Covers_ImgCover(self, num):
+        ProfilePage_Covers_ImgCover_IDS = self.findIDS(Profile_VD.ProfilePage_Covers_ImgCover_IDS, num)
+        return ProfilePage_Covers_ImgCover_IDS
+
     # # Posts Count(text=12 Posts)
     # def PostsCount(self):
     #     PostsCount_ID = self.findID(Profile_VD.PostsCount_ID)

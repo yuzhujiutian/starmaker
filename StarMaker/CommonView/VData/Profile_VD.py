@@ -18,6 +18,10 @@ ProfilePage_FindFriends_ID = package + FS(Source_ProfilePage_FindFriends_ID)
 Source_ProfilePage_Setting_ID = "imb_settings"
 ProfilePage_Setting_ID = package + FS(Source_ProfilePage_Setting_ID)
 
+# 个人页-Tab list
+Source_ProfilePage_Tab_IDS = "tv_tab_title"
+ProfilePage_Tab_IDS = package + FS(Source_ProfilePage_Tab_IDS)
+
 # ----------
 # 个人页-个人信息
 # ----------
@@ -44,7 +48,7 @@ ProfilePage_UserInfo_UserLevel_ID = package + FS(Source_ProfilePage_UserInfo_Use
 
 # 用户VIP状态(text=Vip/Get Vip)
 Source_ProfilePage_UserInfo_VIPLevel_ID = "user_name_view_tv_vip_level"
-ProfilePag_UserInfo_VIPLevel_ID = package + FS(Source_ProfilePage_UserInfo_VIPLevel_ID)
+ProfilePage_UserInfo_VIPLevel_ID = package + FS(Source_ProfilePage_UserInfo_VIPLevel_ID)
 
 # 用户Followers数
 Source_ProfilePage_UserInfo_FollowersNumber_ID = "txt_followers"
@@ -161,9 +165,15 @@ ProfilePage_MomentsTab_More_FunctionCommon_IDS = package + FS(Source_ProfilePage
 Source_ProfilePage_MomentsTab_ShootInfo_More_Delete_Confirm_ID = "md_buttonDefaultPositive"
 ProfilePage_MomentsTab_ShootInfo_More_Delete_Confirm_ID = package + FS(Source_ProfilePage_MomentsTab_ShootInfo_More_Delete_Confirm_ID)
 
-# # ----------
-# # Tab——POST
-# # ----------
+# ----------
+# Tab——Covers
+# ----------
+# 作品封面
+Source_ProfilePage_Covers_ImgCover_IDS = "img_cover"
+ProfilePage_Covers_ImgCover_IDS = package + FS(Source_ProfilePage_Covers_ImgCover_IDS)
+
+
+
 # # Posts Count(text=12 Posts)
 # Source_PostsCount_ID = "count"
 # PostsCount_ID = package + FS(Source_PostsCount_ID)

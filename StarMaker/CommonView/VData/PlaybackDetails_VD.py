@@ -57,7 +57,7 @@ Source_PlaybackDetailsPage_Video_Like_ID = "lyt_like"
 PlaybackDetailsPage_Video_Like_ID = package + FS(Source_PlaybackDetailsPage_Video_Like_ID)
 
 # PlaybackDetails页-视屏详情页-Comment
-Source_PlaybackDetailsPage_Video_Comment_ID = "lyt_comment"
+Source_PlaybackDetailsPage_Video_Comment_ID = "tv_detail_bottom_detail_comment "
 PlaybackDetailsPage_Video_Comment_ID = package + FS(Source_PlaybackDetailsPage_Video_Comment_ID)
 
 # PlaybackDetails页-视屏详情页-Share

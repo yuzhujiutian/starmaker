@@ -9,12 +9,14 @@ from StarMaker.CommonView.Parties import Parties
 from StarMaker.CommonView.PlaybackDetails import PlaybackDetails
 from StarMaker.CommonView.Popup import Popup
 from StarMaker.CommonView.Search import Search
+from StarMaker.CommonView.Profile import Profile
 from StarMaker.CommonView.VData import Home_VD
 from StarMaker.Utils.GetAppiumDeriver import GetAppiumDeriver
 from StarMaker.Utils.Tools import AssertReportManage
 from StarMaker.Utils.Tools import Page_Element_Verification
 from StarMaker.Utils.Tools import TestData_Processing
 from StarMaker.Utils.Tools import Tools
+from StarMaker.Utils.Tools import Screen
 from analysis_dot.analysis_report_dot.checking_dotting import check_log
 
 P = AssertReportManage().Pass
@@ -85,50 +87,52 @@ class checking_dotting(unittest.TestCase):
         # 点击首页sing_button
         Home().SingPage_SingRecommend_SelectSing().click()
         self.exp_dot = "click,library:Recommend,sing_button"
-
-    # 点击-Recommend-点唱类型弹窗的Solo
-    def test_Case1104_ClickLibraryRecommendSolo(self):
-        # 点击点唱类型弹窗的Solo
-        Home().SingPage_SingRecommend_SingType_Solo().click()
-        self.exp_dot = "click,library:Recommend,solo"
         time.sleep(2)
         self.driver.back()
 
-    # 点击-Recommend-点唱类型弹窗的JoinCollab
-    def test_Case1105_ClickLibraryRecommendJoinCollab(self):
-        # 点击首页sing_button
-        Home().SingPage_SingRecommend_SelectSing().click()
-        # 点击点唱类型弹窗的JoinCollab
-        Home().SingPage_SingRecommend_SingType_JoinCollab().click()
-        self.exp_dot = "click,library:Recommend,join_collab"
-        time.sleep(2)
-        self.driver.back()
-
-    # 点击-Recommend-点唱类型弹窗的StartCollab
-    def test_Case1106_ClickLibraryRecommendStartCollab(self):
-        # 点击首页sing_button
-        Home().SingPage_SingRecommend_SelectSing().click()
-        # 点击点唱类型弹窗的StartCollab
-        Home().SingPage_SingRecommend_SingType_StartCollab().click()
-        self.exp_dot = "click,library:Recommend,start_collab"
-        time.sleep(2)
-        self.driver.back()
-
-    # 点击-Recommend-点唱类型弹窗的Chorus
-    def test_Case1107_ClickLibraryRecommendChorus(self):
-        # 点击首页sing_button
-        Home().SingPage_SingRecommend_SelectSing().click()
-        # 点击点唱类型弹窗的Chorus
-        if Home().SingPage_SingRecommend_SingType_Chorus():
-            Home().SingPage_SingRecommend_SingType_Chorus().click()
-            self.exp_dot = "click,library:Recommend,hook"
-            time.sleep(2)
-            self.driver.back()
-        else:
-            self.exp_dot = ""
-            time.sleep(2)
-            self.driver.back()
-            self.skipTest("歌曲不支持Chorus")
+    # # 点击-Recommend-点唱类型弹窗的Solo
+    # def test_Case1104_ClickLibraryRecommendSolo(self):
+    #     # 点击点唱类型弹窗的Solo
+    #     Home().SingPage_SingRecommend_SingType_Solo().click()
+    #     self.exp_dot = "click,library:Recommend,solo"
+    #     time.sleep(2)
+    #     self.driver.back()
+    #
+    # # 点击-Recommend-点唱类型弹窗的JoinCollab
+    # def test_Case1105_ClickLibraryRecommendJoinCollab(self):
+    #     # 点击首页sing_button
+    #     Home().SingPage_SingRecommend_SelectSing().click()
+    #     # 点击点唱类型弹窗的JoinCollab
+    #     Home().SingPage_SingRecommend_SingType_JoinCollab().click()
+    #     self.exp_dot = "click,library:Recommend,join_collab"
+    #     time.sleep(2)
+    #     self.driver.back()
+    #
+    # # 点击-Recommend-点唱类型弹窗的StartCollab
+    # def test_Case1106_ClickLibraryRecommendStartCollab(self):
+    #     # 点击首页sing_button
+    #     Home().SingPage_SingRecommend_SelectSing().click()
+    #     # 点击点唱类型弹窗的StartCollab
+    #     Home().SingPage_SingRecommend_SingType_StartCollab().click()
+    #     self.exp_dot = "click,library:Recommend,start_collab"
+    #     time.sleep(2)
+    #     self.driver.back()
+    #
+    # # 点击-Recommend-点唱类型弹窗的Chorus
+    # def test_Case1107_ClickLibraryRecommendChorus(self):
+    #     # 点击首页sing_button
+    #     Home().SingPage_SingRecommend_SelectSing().click()
+    #     # 点击点唱类型弹窗的Chorus
+    #     if Home().SingPage_SingRecommend_SingType_Chorus():
+    #         Home().SingPage_SingRecommend_SingType_Chorus().click()
+    #         self.exp_dot = "click,library:Recommend,hook"
+    #         time.sleep(2)
+    #         self.driver.back()
+    #     else:
+    #         self.exp_dot = ""
+    #         time.sleep(2)
+    #         self.driver.back()
+    #         self.skipTest("歌曲不支持Chorus")
 
     # 展示-Trending-歌曲展示
     def test_Case1108_ShowLibraryTrendingSongShow(self):
@@ -153,50 +157,52 @@ class checking_dotting(unittest.TestCase):
         # 点击首页sing_button
         Home().SingPage_SingRecommend_SelectSing().click()
         self.exp_dot = "click,library:Trending,sing_button"
-
-    # 点击-Trending-点唱类型弹窗的Solo
-    def test_Case1111_ClickLibraryTrendingSolo(self):
-        # 点击点唱类型弹窗的Solo
-        Home().SingPage_SingRecommend_SingType_Solo().click()
-        self.exp_dot = "click,library:Trending,solo"
         time.sleep(2)
         self.driver.back()
 
-    # 点击-Trending-点唱类型弹窗的JoinCollab
-    def test_Case1112_ClickLibraryTrendingJoinCollab(self):
-        # 点击首页sing_button
-        Home().SingPage_SingRecommend_SelectSing().click()
-        # 点击点唱类型弹窗的JoinCollab
-        Home().SingPage_SingRecommend_SingType_JoinCollab().click()
-        self.exp_dot = "click,library:Trending,join_collab"
-        time.sleep(2)
-        self.driver.back()
-
-    # 点击-Trending-点唱类型弹窗的StartCollab
-    def test_Case1113_ClickLibraryTrendingStartCollab(self):
-        # 点击首页sing_button
-        Home().SingPage_SingRecommend_SelectSing().click()
-        # 点击点唱类型弹窗的StartCollab
-        Home().SingPage_SingRecommend_SingType_StartCollab().click()
-        self.exp_dot = "click,library:Trending,start_collab"
-        time.sleep(2)
-        self.driver.back()
-
-    # 点击-Trending-点唱类型弹窗的Chorus
-    def test_Case1114_ClickLibraryTrendingChorus(self):
-        # 点击首页sing_button
-        Home().SingPage_SingRecommend_SelectSing().click()
-        # 点击点唱类型弹窗的Chorus
-        if Home().SingPage_SingRecommend_SingType_Chorus():
-            Home().SingPage_SingRecommend_SingType_Chorus().click()
-            self.exp_dot = "click,library:Trending,hook"
-            time.sleep(2)
-            self.driver.back()
-        else:
-            self.exp_dot = ""
-            time.sleep(2)
-            self.driver.back()
-            self.skipTest("歌曲不支持Chorus")
+    # # 点击-Trending-点唱类型弹窗的Solo
+    # def test_Case1111_ClickLibraryTrendingSolo(self):
+    #     # 点击点唱类型弹窗的Solo
+    #     Home().SingPage_SingRecommend_SingType_Solo().click()
+    #     self.exp_dot = "click,library:Trending,solo"
+    #     time.sleep(2)
+    #     self.driver.back()
+    #
+    # # 点击-Trending-点唱类型弹窗的JoinCollab
+    # def test_Case1112_ClickLibraryTrendingJoinCollab(self):
+    #     # 点击首页sing_button
+    #     Home().SingPage_SingRecommend_SelectSing().click()
+    #     # 点击点唱类型弹窗的JoinCollab
+    #     Home().SingPage_SingRecommend_SingType_JoinCollab().click()
+    #     self.exp_dot = "click,library:Trending,join_collab"
+    #     time.sleep(2)
+    #     self.driver.back()
+    #
+    # # 点击-Trending-点唱类型弹窗的StartCollab
+    # def test_Case1113_ClickLibraryTrendingStartCollab(self):
+    #     # 点击首页sing_button
+    #     Home().SingPage_SingRecommend_SelectSing().click()
+    #     # 点击点唱类型弹窗的StartCollab
+    #     Home().SingPage_SingRecommend_SingType_StartCollab().click()
+    #     self.exp_dot = "click,library:Trending,start_collab"
+    #     time.sleep(2)
+    #     self.driver.back()
+    #
+    # # 点击-Trending-点唱类型弹窗的Chorus
+    # def test_Case1114_ClickLibraryTrendingChorus(self):
+    #     # 点击首页sing_button
+    #     Home().SingPage_SingRecommend_SelectSing().click()
+    #     # 点击点唱类型弹窗的Chorus
+    #     if Home().SingPage_SingRecommend_SingType_Chorus():
+    #         Home().SingPage_SingRecommend_SingType_Chorus().click()
+    #         self.exp_dot = "click,library:Trending,hook"
+    #         time.sleep(2)
+    #         self.driver.back()
+    #     else:
+    #         self.exp_dot = ""
+    #         time.sleep(2)
+    #         self.driver.back()
+    #         self.skipTest("歌曲不支持Chorus")
 
     # ----------
     # 工具-搜索
@@ -231,54 +237,56 @@ class checking_dotting(unittest.TestCase):
         # 点击第一首歌曲点唱按钮
         Search().SearchPage_SongsSearchResult_FirstSongSingBtn().click()
         self.exp_dot = "click,search_result,search_item_song_sing"
-
-    # 点击-搜索结果-Solo
-    def test_Case1204_ClickSearchResultSolo(self):
-        # 点击点唱类型弹窗的Solo
-        Home().SingPage_SingRecommend_SingType_Solo().click()
-        self.exp_dot = "click,search_result,solo"
         time.sleep(2)
         self.driver.back()
 
-    # 点击-搜索结果-join_collab
-    def test_Case1205_ClickSearchResultJoinCollab(self):
-        # 点击第一首歌曲点唱按钮
-        Search().SearchPage_SongsSearchResult_FirstSongSingBtn().click()
-        # 点击点唱类型弹窗的join_collab
-        Home().SingPage_SingRecommend_SingType_JoinCollab().click()
-        self.exp_dot = "click,search_result,join_collab"
-        time.sleep(2)
-        self.driver.back()
-
-    # 点击-搜索结果-start_collab
-    def test_Case1206_ClickSearchResultStartCollab(self):
-        # 点击第一首歌曲点唱按钮
-        Search().SearchPage_SongsSearchResult_FirstSongSingBtn().click()
-        # 点击点唱类型弹窗的start_collab
-        Home().SingPage_SingRecommend_SingType_StartCollab().click()
-        self.exp_dot = "click,search_result,start_collab"
-        time.sleep(2)
-        self.driver.back()
-
-    # 点击-搜索结果-Chorus
-    def test_Case1207_ClickSearchResultChorus(self):
-        # 点击第一首歌曲点唱按钮
-        Search().SearchPage_SongsSearchResult_FirstSongSingBtn().click()
-        # 点击点唱类型弹窗的Chorus
-        if Home().SingPage_SingRecommend_SingType_Chorus():
-            Home().SingPage_SingRecommend_SingType_Chorus().click()
-            self.exp_dot = "click,search_result,hook"
-            time.sleep(2)
-            self.driver.back()
-            time.sleep(2)
-            self.driver.back()
-        else:
-            self.exp_dot = ""
-            time.sleep(2)
-            self.driver.back()
-            time.sleep(2)
-            self.driver.back()
-            self.skipTest("歌曲不支持Chorus")
+    # # 点击-搜索结果-Solo
+    # def test_Case1204_ClickSearchResultSolo(self):
+    #     # 点击点唱类型弹窗的Solo
+    #     Home().SingPage_SingRecommend_SingType_Solo().click()
+    #     self.exp_dot = "click,search_result,solo"
+    #     time.sleep(2)
+    #     self.driver.back()
+    #
+    # # 点击-搜索结果-join_collab
+    # def test_Case1205_ClickSearchResultJoinCollab(self):
+    #     # 点击第一首歌曲点唱按钮
+    #     Search().SearchPage_SongsSearchResult_FirstSongSingBtn().click()
+    #     # 点击点唱类型弹窗的join_collab
+    #     Home().SingPage_SingRecommend_SingType_JoinCollab().click()
+    #     self.exp_dot = "click,search_result,join_collab"
+    #     time.sleep(2)
+    #     self.driver.back()
+    #
+    # # 点击-搜索结果-start_collab
+    # def test_Case1206_ClickSearchResultStartCollab(self):
+    #     # 点击第一首歌曲点唱按钮
+    #     Search().SearchPage_SongsSearchResult_FirstSongSingBtn().click()
+    #     # 点击点唱类型弹窗的start_collab
+    #     Home().SingPage_SingRecommend_SingType_StartCollab().click()
+    #     self.exp_dot = "click,search_result,start_collab"
+    #     time.sleep(2)
+    #     self.driver.back()
+    #
+    # # 点击-搜索结果-Chorus
+    # def test_Case1207_ClickSearchResultChorus(self):
+    #     # 点击第一首歌曲点唱按钮
+    #     Search().SearchPage_SongsSearchResult_FirstSongSingBtn().click()
+    #     # 点击点唱类型弹窗的Chorus
+    #     if Home().SingPage_SingRecommend_SingType_Chorus():
+    #         Home().SingPage_SingRecommend_SingType_Chorus().click()
+    #         self.exp_dot = "click,search_result,hook"
+    #         time.sleep(2)
+    #         self.driver.back()
+    #         time.sleep(2)
+    #         self.driver.back()
+    #     else:
+    #         self.exp_dot = ""
+    #         time.sleep(2)
+    #         self.driver.back()
+    #         time.sleep(2)
+    #         self.driver.back()
+    #         self.skipTest("歌曲不支持Chorus")
 
     # ----------
     # 首页-Popular
@@ -297,18 +305,27 @@ class checking_dotting(unittest.TestCase):
         self.exp_dot = "click,popular,delete"
 
     # 点击-popular-卡片
-    # todo:目前popular会下发大量video数据，处理第一屏没有recording时滑动去找recording；
-    # todo:目前popular已登录用户会全部下发video，无recording数据，处理滑动寻找recording超过一定次数跳过recording相关case
     def test_Case2103_ClickPopularCard(self):
         # 点击首个作品卡片
         Home().HomePage_FeedCard_Img().click()
         self.exp_dot = "click,popular,card"
 
     # ----------
-    # 详情页
+    # recording详情页
     # ----------
     # 播放-详情页-start
     def test_Case2201_PlayPlayDetailStart(self):
+        # 点击Me Tab
+        Home().HomePage_MainTab_MeTab().click()
+        time.sleep(2)
+        # 向上滑动1/2屏幕
+        Screen().SWipeUp_Half()
+        # 点击Covers Tab
+        Profile().ProfilePage_CoversTab().click()
+        time.sleep(2)
+        # 点击第一首作品封面
+        Profile().ProfilePage_Covers_ImgCover(0).click()
+        time.sleep(2)
         self.exp_dot = "play,playdetail,start"
 
     # 播放-详情页-loadtime
@@ -319,19 +336,19 @@ class checking_dotting(unittest.TestCase):
     # 播放-详情页-finish
     def test_Case2203_PlayPlayDetailFinish(self):
         # 点击第二个作品卡片
-        Home().HomePage_FeedCard_DIY_Img(1).click()
-        self.exp_dot = "play,popular,finish"
+        Profile().ProfilePage_Covers_ImgCover(1).click()
+        self.exp_dot = "play,profile:null,finish"
 
-    # 点击-详情页-follow
-    def test_Case2204_ClickPlayDetailFollow(self):
-        # 点击Follow
-        time.sleep(2)
-        if Home().HomePage_FeedCard_Follow().text == "FOLLOW":
-            Home().HomePage_FeedCard_Follow().click()
-            self.exp_dot = "click,playdetail,follow"
-        else:
-            self.exp_dot = ""
-            self.skipTest("歌手已Follow")
+    # # 点击-详情页-follow
+    # def test_Case2204_ClickPlayDetailFollow(self):
+    #     # 点击Follow
+    #     time.sleep(2)
+    #     if Home().HomePage_FeedCard_Follow().text == "FOLLOW":
+    #         Home().HomePage_FeedCard_Follow().click()
+    #         self.exp_dot = "click,playdetail,follow"
+    #     else:
+    #         self.exp_dot = ""
+    #         self.skipTest("歌手已Follow")
 
     # 点击-详情页评论-post
     def test_Case2205_ClickPlayDetailCommentsPost(self):
@@ -343,7 +360,7 @@ class checking_dotting(unittest.TestCase):
         time.sleep(2)
         # 点击post发送
         PlaybackDetails().PlaybackDetailsPage_Video_CommentSendBtn().click()
-        self.exp_dot = "click,playdetail:comments,post"
+        self.exp_dot = "click,playdetail,post_comment"
 
     # 点击-详情页-Like
     def test_Case2206_ClickPlayDetailLike(self):
