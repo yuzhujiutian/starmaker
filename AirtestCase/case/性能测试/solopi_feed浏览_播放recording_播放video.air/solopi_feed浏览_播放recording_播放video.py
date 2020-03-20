@@ -25,19 +25,19 @@ clear_app(package_name)
 sleep(5)
 # ----------------------------------------------------------------------------------
 # 逻辑混淆替换
-title = "ca6"  # 语言选择页title
-txt_language = "cy0"  # 语言选择页语言项
-iv_close = "ala"  # TVC弹窗关闭按钮
+title = "cf8"  # 语言选择页title
+txt_language = "d48"  # 语言选择页语言项
+iv_close = "an8"  # TVC弹窗关闭按钮
 
-tv_more_ways = "cl0"  # More ways登录方式
-tv_login_email  = "ck2"  # Email登录按钮
-et_email = "xv"  # Email帐号输入框
-btn_next = "ji"  # Next按钮
-et_input = "xz"  # 密码输入框
-btw_email_confirm = "kl"  # LOG IN按钮
+tv_more_ways = "cqs"  # More ways登录方式
+tv_login_email  = "cpv"  # Email登录按钮
+et_email = "ys"  # Email帐号输入框
+btn_next = "jp"  # Next按钮
+et_input = "yw"  # 密码输入框
+btw_email_confirm = "kt"  # LOG IN按钮
 
-layout_music_parent = "avw"  # popular作品
-iv_video = "asq"  # 作品cover左上角video标识
+layout_music_parent = "ayq"  # popular作品
+iv_video = "avg"  # 作品cover左上角video标识
 # ----------------------------------------------------------------------------------
 C = 0
 TimeEnd_List = []
@@ -52,7 +52,7 @@ while (C < run_number):
     poco(package_name + ":id/" + title).wait_for_appearance()
     
     # 选择语言页——选择英语
-    poco(package_name + ":id/" + txt_language)[1].click()
+    poco(package_name + ":id/" + txt_language)[2].click()
     sleep(3)
     
     # 处理TVC弹窗

@@ -13,7 +13,7 @@ devs = device()
 
 # ----------------------------------------------------------------------------------
 # 1>脚本执行次数
-run_number = 5
+run_number = 1
 # 2>单次脚本执行时间
 single_run_time = 600
 # 3>测试package name
@@ -22,9 +22,9 @@ clear_app(package_name)
 sleep(4)
 # ----------------------------------------------------------------------------------
 # 逻辑混淆替换
-title = "ca6"  # 语言选择页title
-txt_language = "cy0"  # 语言选择页语言项
-iv_close = "ala"  # TVC弹窗关闭按钮
+title = "cf8"  # 语言选择页title
+txt_language = "d48"  # 语言选择页语言项
+iv_close = "an8"  # TVC弹窗关闭按钮
 # ----------------------------------------------------------------------------------
 C = 0
 TimeEnd_List = []
@@ -39,7 +39,7 @@ while (C < run_number):
     poco(package_name + ":id/" + title).wait_for_appearance()
     
     # 选择语言页——选择英语
-    poco(package_name + ":id/" + txt_language)[1].click()
+    poco(package_name + ":id/" + txt_language)[2].click()
     sleep(3)
     
     # 处理TVC弹窗

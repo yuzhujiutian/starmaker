@@ -22,29 +22,29 @@ clear_app(package_name)
 sleep(4)
 # ----------------------------------------------------------------------------------
 # 逻辑混淆替换
-title = "ca6"  # 语言选择页title
-txt_language = "cy0"  # 语言选择页语言项
-iv_close = "ala"  # TVC弹窗关闭按钮
+title = "cf8"  # 语言选择页title
+txt_language = "d48"  # 语言选择页语言项
+iv_close = "an8"  # TVC弹窗关闭按钮
 
-tv_more_ways = "cl0"  # More ways登录方式
-tv_login_email  = "ck2"  # Email登录按钮
-et_email = "xv"  # Email帐号输入框
-btn_next = "ji"  # Next按钮
-et_input = "xz"  # 密码输入框
-btw_email_confirm = "kl"  # LOG IN按钮
+tv_more_ways = "cqs"  # More ways登录方式
+tv_login_email  = "cpv"  # Email登录按钮
+et_email = "ys"  # Email帐号输入框
+btn_next = "jp"  # Next按钮
+et_input = "yw"  # 密码输入框
+btw_email_confirm = "kt"  # LOG IN按钮
 
-iv_new_entrance_profile = "ap7"  # 个人页songs入口
-btn_action = "ic"  # songs页面Sing按钮
-item_play_detail_dialog_text = "ain"  # 录制类型弹窗的选项Solo/Join Duet/Start Duet/Chorus
-permissionOkTv = "bj5"  # 录制权限申请弹窗按钮
-recording_headset_dialog_i_know_btn = "bs_"  # 耳机引导弹窗
-tv_pitch_guide_tip = "cmy"  # Pitch引导
-media_type_chb = "bbq"  # 录制类型切换
-record_btn = "brp"  # Start开始录制按钮
-record_time_tv = "bs7"  # 录制剩余时长
-btn_post = "jo"  # 预览页Post按钮
-btn_next = "ji"  # 发布页Send按钮
-tv_done = "cg2"  # 结果页Done按钮
+iv_new_entrance_profile = "aro"  # 个人页songs入口
+btn_action = "ii"  # songs页面Sing按钮
+item_play_detail_dialog_text = "aka"  # 录制类型弹窗的选项Solo/Join Duet/Start Duet/Chorus
+permissionOkTv = "bnc"  # 录制权限申请弹窗按钮
+recording_headset_dialog_i_know_btn = "bwl"  # 耳机引导弹窗
+tv_pitch_guide_tip = "cst"  # Pitch引导
+iv_camera_switchover_recorder_song_fragment_song_record = "amu"  # 录制类型切换
+rbtn_record_recorder_song_fragment_song_record = "bup"  # Start开始录制按钮
+record_time_tv = "bwi"  # 录制剩余时长
+tv_next_baserecord_fragment_edit = "crl"  # 预览页Post按钮
+btn_next = "jp"  # 发布页Send按钮
+tv_done = "clp"  # 结果页Done按钮
 # ----------------------------------------------------------------------------------
 C = 0
 TimeEnd_List = []
@@ -59,7 +59,7 @@ while (C < run_number):
     poco(package_name + ":id/" + title).wait_for_appearance()
 
     # 选择语言页——选择英语
-    poco(package_name + ":id/" + txt_language)[1].click()
+    poco(package_name + ":id/" + txt_language)[2].click()
     sleep(5)
 
     # 处理TVC弹窗
@@ -130,43 +130,44 @@ while (C < run_number):
 
         # 点击耳机引导弹窗
         poco(package_name + ":id/" + recording_headset_dialog_i_know_btn).click()
-        sleep(2)
+        sleep(10)
 
-        # 处理Pitch引导
-        if poco(package_name + ":id/" + tv_pitch_guide_tip):
-            poco(package_name + ":id/" + tv_pitch_guide_tip).click()
-            sleep(3)
+#         # 处理Pitch引导
+#         if poco(package_name + ":id/" + tv_pitch_guide_tip):
+#             poco(package_name + ":id/" + tv_pitch_guide_tip).click()
+#             sleep(3)
 
         # 点击切换视频录制
-        if Count == 0:
-            poco(package_name + ":id/" + media_type_chb).click()  
-            sleep(5)
+#         if Count == 0:
+        poco(package_name + ":id/" + iv_camera_switchover_recorder_song_fragment_song_record).click()  
+        sleep(200)
 
         # 点击Start录制按钮
-        poco(package_name + ":id/" + record_btn).click()
+        poco(package_name + ":id/" + rbtn_record_recorder_song_fragment_song_record).click()
         sleep(8)
 
-        # 获取剩余录制时间
-        song_duration = poco(package_name + ":id/" + record_time_tv).get_text()
-        seconds = int(song_duration[:2]) * 60 + int(song_duration[3:5]) + 10
-        print("本首歌曲剩余录制时长为")
-        print(seconds)
+#         # 获取剩余录制时间
+#         song_duration = poco(package_name + ":id/" + record_time_tv).get_text()
+#         seconds = int(song_duration[:2]) * 60 + int(song_duration[3:5]) + 10
+#         print("本首歌曲剩余录制时长为")
+#         print(seconds)
 
         # 等待歌曲录制完成
-        sleep(seconds)
+#         sleep(seconds)
+        sleep(230)
         sleep(8)
 
         try:
             # 点击预览页post按钮
-            poco(package_name + ":id/" + btn_post).click()
+            poco(package_name + ":id/" + tv_next_baserecord_fragment_edit).click()
             sleep(8)
         except:
             touch((578,1215))
             
 
-        # 点击发布页Send按钮
-        poco(package_name + ":id/" + btn_next).click()
-        sleep(8)
+#         # 点击发布页Send按钮
+#         poco(package_name + ":id/" + btn_next).click()
+#         sleep(8)
 
         # 点击结果页Done按钮
         poco(package_name + ":id/" + tv_done).click()
@@ -174,7 +175,7 @@ while (C < run_number):
 
         Count += 1
         
-        sleep(30)
+        sleep(120)
         
         if Count < songs_run_num:
             # 点击Me Tab
