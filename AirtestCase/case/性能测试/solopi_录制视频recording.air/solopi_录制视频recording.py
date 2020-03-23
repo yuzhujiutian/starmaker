@@ -22,23 +22,23 @@ clear_app(package_name)
 sleep(4)
 # ----------------------------------------------------------------------------------
 # 逻辑混淆替换
-title = "cf8"  # 语言选择页title
-txt_language = "d48"  # 语言选择页语言项
-iv_close = "an8"  # TVC弹窗关闭按钮
+title = "ccr"  # 语言选择页title
+txt_language_english = "d13"  # 语言选择页语言项
+iv_close = "amf"  # TVC弹窗关闭按钮
 
-tv_more_ways = "cqs"  # More ways登录方式
-tv_login_email  = "cpv"  # Email登录按钮
-et_email = "ys"  # Email帐号输入框
+tv_more_ways = "cnx"  # More ways登录方式
+tv_login_email = "cmz"  # Email登录按钮
+et_email = "yj"  # Email帐号输入框
 btn_next = "jp"  # Next按钮
-et_input = "yw"  # 密码输入框
+et_input = "yn"  # 密码输入框
 btw_email_confirm = "kt"  # LOG IN按钮
 
-iv_new_entrance_profile = "aro"  # 个人页songs入口
+iv_new_entrance_profile = "aqg"  # 个人页songs入口
 btn_action = "ii"  # songs页面Sing按钮
-item_play_detail_dialog_text = "aka"  # 录制类型弹窗的选项Solo/Join Duet/Start Duet/Chorus
-permissionOkTv = "bnc"  # 录制权限申请弹窗按钮
-recording_headset_dialog_i_know_btn = "bwl"  # 耳机引导弹窗
-tv_pitch_guide_tip = "cst"  # Pitch引导
+item_play_detail_dialog_text = "ajr"  # 录制类型弹窗的选项Solo/Join Duet/Start Duet/Chorus
+permissionOkTv = "blb"  # 录制权限申请弹窗按钮
+recording_headset_dialog_i_know_btn = "buj"  # 耳机引导弹窗
+tv_pitch_guide_tip = "cpx"  # Pitch引导
 iv_camera_switchover_recorder_song_fragment_song_record = "amu"  # 录制类型切换
 rbtn_record_recorder_song_fragment_song_record = "bup"  # Start开始录制按钮
 record_time_tv = "bwi"  # 录制剩余时长

@@ -17,13 +17,34 @@ run_number = 5
 # 2>单次脚本执行时间
 songs_run_num = 2
 # 3>测试package name
-package_name = "com.starmakerinteractive.starmaker"
+package_name = "com.horadrim.android.sargam"
 clear_app(package_name)
 sleep(4)
 # ----------------------------------------------------------------------------------
 # 逻辑混淆替换
+title = "ccr"  # 语言选择页title
+txt_language_english = "d14"  # 语言选择页语言项
+iv_close = "amf"  # TVC弹窗关闭按钮
 
+tv_more_ways = "cnx"  # More ways登录方式
+tv_login_email = "cmz"  # Email登录按钮
+et_email = "yj"  # Email帐号输入框
+btn_next = "jp"  # Next按钮
+et_input = "yn"  # 密码输入框
+btw_email_confirm = "kt"  # LOG IN按钮
 
+iv_new_entrance_profile = "aqg"  # 个人页songs入口
+btn_action = "ii"  # songs页面Sing按钮
+item_play_detail_dialog_text = "ajr"  # 录制类型弹窗的选项Solo/Join Duet/Start Duet/Chorus
+permissionOkTv = "blb"  # 录制权限申请弹窗按钮
+recording_headset_dialog_i_know_btn = "buj"  # 耳机引导弹窗
+tv_pitch_guide_tip = "cpx"  # Pitch引导
+media_type_chb = "bdq"  # 录制类型切换
+record_btn = "btz"  # Start开始录制按钮
+record_time_tv = "bug"  # 录制剩余时长
+btn_post = "jv"  # 预览页Post按钮
+btn_next = "jp"  # 发布页Send按钮
+tv_done = "ciw"  # 结果页Done按钮
 # ----------------------------------------------------------------------------------
 C = 0
 TimeEnd_List = []
@@ -32,17 +53,21 @@ Data_Name_List = []
 print("测试开始")
 while (C < run_number):    
     # -----setUp-----
+    # 隐藏性能浮窗
+    touch((55,100))
+    sleep(2)
+    
     # 启动app
     start_app(package_name)
     sleep(10)
-    poco("com.starmakerinteractive.starmaker:id/c0y").wait_for_appearance()
+    poco(package_name + ":id/" + title).wait_for_appearance()
 
     # 选择语言页——选择英语
-    poco("com.starmakerinteractive.starmaker:id/cki")[1].click()
+    poco(package_name + ":id/" + txt_language_english)[0].click()
     sleep(5)
 
     # 处理TVC弹窗
-    poco("com.starmakerinteractive.starmaker:id/afo").click()
+    poco(package_name + ":id/" + iv_close).click()
     sleep(3)
 
     # 点击Me Tab
@@ -50,31 +75,36 @@ while (C < run_number):
     sleep(3)
 
     # 点击More ways
-    poco("com.starmakerinteractive.starmaker:id/c_b").click()
+    poco(package_name + ":id/" + tv_more_ways).click()
     sleep(3)
 
     # 点击Email登录方式
-    poco("com.starmakerinteractive.starmaker:id/aim").click()
-    sleep(3)
-    
-    poco("com.starmakerinteractive.starmaker:id/ckp").click()
+    poco(package_name + ":id/" + tv_login_email).click()
     sleep(3)
 
-    # 输入测试邮箱/密码
-    poco("com.starmakerinteractive.starmaker:id/vc")[0].set_text("cyl@20.cn")
+    # 输入测试邮箱
+    poco(package_name + ":id/" + et_email)[0].set_text("cyl@20.cn")
     sleep(2)
-    poco("com.starmakerinteractive.starmaker:id/vc")[1].set_text("000000")
+
+    # 点击Next按钮
+    poco(package_name + ":id/" + btn_next).click()
+    sleep(3)
+
+    # 输入密码
+    poco(package_name + ":id/" + et_input)[1].set_text("000000")
     sleep(2)
 
     # 点击LOG IN按钮
-    poco("com.starmakerinteractive.starmaker:id/ja").click()
+    poco(package_name + ":id/" + btw_email_confirm).click()
     sleep(8)
         
     # 点击个人页歌曲入口
-    poco("com.starmakerinteractive.starmaker:id/aja")[1].click()
+    poco(package_name + ":id/" + iv_new_entrance_profile)[1].click()
     sleep(5)
     
     # 点击开始录制
+    touch((55,100))
+    sleep(2)
     touch((395,99))
     sleep(2)
     touch((55,100))
@@ -86,16 +116,16 @@ while (C < run_number):
     print("测试开始")
     while (Count < songs_run_num):
         # 点击第一首歌曲的SING按钮
-        poco(package_name + ":id/ha")[0].click()
+        poco(package_name + ":id/" + btn_action)[0].click()
         sleep(3)
 
         # 点击录制类型弹窗的Solo
-        poco(package_name + ":id/adg")[0].click()
+        poco(package_name + ":id/" + item_play_detail_dialog_text)[0].click()
         sleep(3)
 
         # 同意权限弹窗
-        if poco(package_name + ":id/baa"):
-            poco(package_name + ":id/baa").click()
+        if poco(package_name + ":id/" + permissionOkTv):
+            poco(package_name + ":id/" + permissionOkTv).click()
             sleep(2)
             poco("com.android.packageinstaller:id/permission_allow_button").click()
             sleep(2)
@@ -105,25 +135,25 @@ while (C < run_number):
             sleep(2)
 
         # 点击耳机引导弹窗
-        poco(package_name + ":id/bix").click()
+        poco(package_name + ":id/" + recording_headset_dialog_i_know_btn).click()
         sleep(2)
 
         # 处理Pitch引导
-        if poco(package_name + ":id/cb0"):
-            poco(package_name + ":id/cb0").click()
+        if poco(package_name + ":id/" + tv_pitch_guide_tip):
+            poco(package_name + ":id/" + tv_pitch_guide_tip).click()
             sleep(3)
 
         # 点击切换视频录制
         if Count == 0:
-            poco("com.starmakerinteractive.starmaker:id/b44").click()
-            sleep(8)
+            poco(package_name + ":id/" + media_type_chb).click()  
+            sleep(5)
 
         # 点击Start录制按钮
-        poco(package_name + ":id/bic").click()
+        poco(package_name + ":id/" + record_btn).click()
         sleep(8)
 
         # 获取剩余录制时间
-        song_duration = poco(package_name + ":id/biu").get_text()
+        song_duration = poco(package_name + ":id/" + record_time_tv).get_text()
         seconds = int(song_duration[:2]) * 60 + int(song_duration[3:5]) + 10
         print("本首歌曲剩余录制时长为")
         print(seconds)
@@ -132,16 +162,20 @@ while (C < run_number):
         sleep(seconds)
         sleep(8)
 
-        # 点击预览页post按钮
-        poco(package_name + ":id/ig").click()
-        sleep(8)
+        try:
+            # 点击预览页post按钮
+            poco(package_name + ":id/" + btn_post).click()
+            sleep(8)
+        except:
+            touch((578,1215))
+            
 
         # 点击发布页Send按钮
-        poco(package_name + ":id/ia").click()
+        poco(package_name + ":id/" + btn_next).click()
         sleep(8)
 
         # 点击结果页Done按钮
-        poco(package_name + ":id/c5u").click()
+        poco(package_name + ":id/" + tv_done).click()
         sleep(8)
 
         Count += 1
@@ -154,7 +188,7 @@ while (C < run_number):
             sleep(5)
 
             # 点击个人页歌曲入口
-            poco("com.starmakerinteractive.starmaker:id/aja")[1].click()
+            poco(package_name + ":id/" + iv_new_entrance_profile)[1].click()
             sleep(5)
         else:
             sleep(10)
