@@ -8,7 +8,6 @@
 import time
 
 from StarMaker.CommonView.VData import Popup_VD
-from StarMaker.Utils import Tools
 from StarMaker.Utils.GetAppiumDeriver import GetAppiumDeriver
 
 

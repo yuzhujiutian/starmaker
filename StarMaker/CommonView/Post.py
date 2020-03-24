@@ -6,7 +6,6 @@
 # 点唱流程
 # ----------
 from StarMaker.CommonView.VData import Post_VD
-from StarMaker.Utils import Tools
 from StarMaker.Utils.FindElement import find_element
 
 

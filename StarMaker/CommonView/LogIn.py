@@ -6,7 +6,6 @@
 # 登录模块
 # ----------
 from StarMaker.CommonView.VData import LogIn_VD
-from StarMaker.Utils import Tools
 from StarMaker.Utils.FindElement import find_element
 
 

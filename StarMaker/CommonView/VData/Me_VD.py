@@ -1,8 +1,9 @@
 # coding=utf-8
-from StarMaker.Utils import Tools
 from StarMaker.Utils.GetDevicesInfo import DevicesInfo
+from StarMaker.Utils.reSource import get_mapping_from_file
+
 package = DevicesInfo().package()
-FS = Tools.Tools().FindSource
+mapping_dict = get_mapping_from_file()
 gms = "com.google.android"
 
 # ----------

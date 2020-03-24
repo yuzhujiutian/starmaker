@@ -45,17 +45,17 @@ class Tools:
         driver.get_screenshot_as_file('%s%s' % (png_file, img_name))
         print('screenshot:', present_time, '.png')
 
-    # 动态元素转换
-    @staticmethod
-    def FindSource(Source_ID):
-        global ReadMappingTable
-        try:
-            with open("../bin/resource_mapping.txt", "r") as ReadMappingTable:
-                Result_ID = re.findall("R.id." + "(.*)""'", re.findall(
-                    "R.id." + Source_ID + " -> " + "(.*)", ReadMappingTable.read()).__str__())[0]
-                return Result_ID
-        except:
-            return Source_ID
+    # # 动态元素转换
+    # @staticmethod
+    # def FindSource(Source_ID):
+    #     global ReadMappingTable
+    #     try:
+    #         with open("../bin/resource_mapping.txt", "r") as ReadMappingTable:
+    #             Result_ID = re.findall("R.id." + "(.*)""'", re.findall(
+    #                 "R.id." + Source_ID + " -> " + "(.*)", ReadMappingTable.read()).__str__())[0]
+    #             return Result_ID
+    #     except:
+    #         return Source_ID
 
 
 # ----------

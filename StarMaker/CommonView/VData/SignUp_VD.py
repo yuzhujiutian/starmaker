@@ -1,8 +1,9 @@
 # coding=utf-8
-from StarMaker.Utils import Tools
 from StarMaker.Utils.GetDevicesInfo import DevicesInfo
+from StarMaker.Utils.reSource import get_mapping_from_file
+
 package = DevicesInfo().package()
-FS = Tools.Tools().FindSource
+mapping_dict = get_mapping_from_file()
 gms = "com.google.android"
 
 
@@ -12,9 +13,9 @@ gms = "com.google.android"
 # SignUp页面-预选帐号-Tips
 SignUpPage_Preselection_Tips_ID = gms + ".gms:id/credentials_hint_picker_title"
 
-# SignUp页面-Tips-text(text="Enter your email address")
+# SignUp页面-Tips-text(text="Enter your email address"]
 Source_SignUpPage_Tips_Text_ID = "com_accountkit_title"
-SignUpPage_Tips_Text_ID = package + FS(Source_SignUpPage_Tips_Text_ID)
+SignUpPage_Tips_Text_ID = package + mapping_dict[Source_SignUpPage_Tips_Text_ID]
 
 # ----------
 # EmailSignUp
