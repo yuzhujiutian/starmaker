@@ -140,7 +140,7 @@ while (C < run_number):
         # 点击切换视频录制
 #         if Count == 0:
         poco(package_name + ":id/" + iv_camera_switchover_recorder_song_fragment_song_record).click()  
-        sleep(200)
+        sleep(10)
 
         # 点击Start录制按钮
         poco(package_name + ":id/" + rbtn_record_recorder_song_fragment_song_record).click()
@@ -175,7 +175,7 @@ while (C < run_number):
 
         Count += 1
         
-        sleep(120)
+        sleep(30)
         
         if Count < songs_run_num:
             # 点击Me Tab

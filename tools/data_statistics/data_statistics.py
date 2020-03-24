@@ -6,8 +6,8 @@ import re
 
 # 获取文件路径list
 def get_file_path(v):
-    # folder = "C:/Users/cucumber/Desktop/Android " + str(v) + "性能数据"
-    folder = "C:/Users/10079/Desktop/Android " + str(v) + "性能数据"
+    folder = "C:/Users/cucumber/Desktop/Android " + str(v) + "性能数据"
+    # folder = "C:/Users/10079/Desktop/Android " + str(v) + "性能数据"
     module_name = ["feed浏览", "feed播放_recording", "feed播放_video", "录制视频recording"]
     print("Android" + v + "性能数据")
     for i in module_name:
@@ -97,4 +97,4 @@ def get_ave(num_list):
 
 
 if __name__ == '__main__':
-    get_file_path("764")
+    get_file_path("763")

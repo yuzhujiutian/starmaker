@@ -19,7 +19,7 @@ single_run_time = 600
 # 3>测试package name
 package_name = "com.horadrim.android.sargam"
 # 4>测试类型
-video_marker = True  # False=recording/True=video
+video_marker = False  # False=recording/True=video
 
 clear_app(package_name)
 sleep(5)
@@ -38,7 +38,7 @@ et_input = "yn"  # 密码输入框
 btw_email_confirm = "kt"  # LOG IN按钮
 
 layout_music_parent = "axa"  # popular作品
-iv_video = "avg"  # 作品cover左上角video标识
+iv_video = "au2"  # 作品cover左上角video标识
 # ----------------------------------------------------------------------------------
 C = 0
 language_index = 0  # 初始语言
@@ -64,7 +64,7 @@ while (C < run_number):
     sleep(3)
     
     # 选择语言页——选择语言
-    poco(package_name + ":id/" + txt_language)[language_index].click()
+    poco(package_name + ":id/" + txt_language_english)[language_index].click()
     sleep(3)
     
     # 处理TVC弹窗
@@ -167,10 +167,6 @@ while (C < run_number):
     poco("android:id/button1").click()
     sleep(2)
     
-        # 清理app
-    clear_app(package_name)
-    sleep(5)
-    
     # 如果数据量足够，则记录数据
     if poco(package_name + ":id/" + tv_content).exists() == False:
         C = C + 1
@@ -190,6 +186,10 @@ while (C < run_number):
         language_index += 1
         print("No More Data,Trying again")
         continue
+        
+    # 清理app
+    clear_app(package_name)
+    sleep(5)
 
 print("批次结束时间列表")
 print(TimeEnd_List)
