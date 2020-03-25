@@ -1,15 +1,21 @@
 # -*- encoding=utf8 -*-
 __author__ = "yaoliang.cui"
-import time
 
 from airtest.core.android.android import *
 from airtest.core.api import *
+from airtest.core.api import using
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
 
 poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=False)
-auto_setup(__file__)
+
+using("reSource.air")
+from reSource import get_mapping_from_file
+mapping_dict = get_mapping_from_file()
+
 dev = connect_device("android:///")
 devs = device()
+
+auto_setup(__file__)
 
 # ----------------------------------------------------------------------------------
 # 1>脚本执行次数
@@ -22,29 +28,30 @@ clear_app(package_name)
 sleep(4)
 # ----------------------------------------------------------------------------------
 # 逻辑混淆替换
-title = "ccr"  # 语言选择页title
-txt_language_english = "d13"  # 语言选择页语言项
-iv_close = "amf"  # TVC弹窗关闭按钮
+title = mapping_dict["title"]  # 语言选择页title
+txt_language_english = mapping_dict["txt_language_english"]  # 语言选择页语言项
+iv_close = mapping_dict["iv_close"]  # TVC弹窗关闭按钮
+tv_content = mapping_dict["tv_content"]  # feed流无内容缺省提示"No More Data"
 
-tv_more_ways = "cnx"  # More ways登录方式
-tv_login_email = "cmz"  # Email登录按钮
-et_email = "yj"  # Email帐号输入框
-btn_next = "jp"  # Next按钮
-et_input = "yn"  # 密码输入框
-btw_email_confirm = "kt"  # LOG IN按钮
+tv_more_ways = mapping_dict["tv_more_ways"]  # More ways登录方式
+tv_login_email = mapping_dict["tv_login_email"]  # Email登录按钮
+et_email = mapping_dict["et_email"]  # Email帐号输入框
+btn_next = mapping_dict["btn_next"]  # Next按钮
+et_input = mapping_dict["et_input"]  # 密码输入框
+btw_email_confirm = mapping_dict["btw_email_confirm"]  # LOG IN按钮
 
-iv_new_entrance_profile = "aqg"  # 个人页songs入口
-btn_action = "ii"  # songs页面Sing按钮
-item_play_detail_dialog_text = "ajr"  # 录制类型弹窗的选项Solo/Join Duet/Start Duet/Chorus
-permissionOkTv = "blb"  # 录制权限申请弹窗按钮
-recording_headset_dialog_i_know_btn = "buj"  # 耳机引导弹窗
-tv_pitch_guide_tip = "cpx"  # Pitch引导
-iv_camera_switchover_recorder_song_fragment_song_record = "amu"  # 录制类型切换
-rbtn_record_recorder_song_fragment_song_record = "bup"  # Start开始录制按钮
-record_time_tv = "bwi"  # 录制剩余时长
-tv_next_baserecord_fragment_edit = "crl"  # 预览页Post按钮
-btn_next = "jp"  # 发布页Send按钮
-tv_done = "clp"  # 结果页Done按钮
+iv_new_entrance_profile = mapping_dict["iv_new_entrance_profile"]  # 个人页songs入口
+btn_action = mapping_dict["btn_action"]  # songs页面Sing按钮
+item_play_detail_dialog_text = mapping_dict["item_play_detail_dialog_text"]  # 录制类型弹窗的选项Solo/Join Duet/Start Duet/Chorus
+permissionOkTv = mapping_dict["permissionOkTv"]  # 录制权限申请弹窗按钮
+recording_headset_dialog_i_know_btn = mapping_dict["recording_headset_dialog_i_know_btn"]  # 耳机引导弹窗
+tv_pitch_guide_tip = mapping_dict["tv_pitch_guide_tip"]  # Pitch引导
+iv_camera_switchover_recorder_song_fragment_song_record = mapping_dict["iv_camera_switchover_recorder_song_fragment_song_record"]  # 录制类型切换
+rbtn_record_recorder_song_fragment_song_record = mapping_dict["rbtn_record_recorder_song_fragment_song_record"]  # Start开始录制按钮
+record_time_tv = mapping_dict["record_time_tv"]  # 录制剩余时长
+tv_next_baserecord_fragment_edit = mapping_dict["tv_next_baserecord_fragment_edit"]  # 预览页Post按钮
+btn_next = mapping_dict["btn_next"]  # 发布页Send按钮
+tv_done = mapping_dict["tv_done"]  # 结果页Done按钮
 # ----------------------------------------------------------------------------------
 C = 0
 TimeEnd_List = []

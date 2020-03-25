@@ -1,15 +1,21 @@
 # -*- encoding=utf8 -*-
 __author__ = "yaoliang.cui"
-import time
 
 from airtest.core.android.android import *
 from airtest.core.api import *
+from airtest.core.api import using
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
 
 poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=False)
-auto_setup(__file__)
+
+using("reSource.air")
+from reSource import get_mapping_from_file
+mapping_dict = get_mapping_from_file()
+
 dev = connect_device("android:///")
 devs = device()
+
+auto_setup(__file__)
 
 # ----------------------------------------------------------------------------------
 # 1>脚本执行次数
@@ -25,20 +31,20 @@ clear_app(package_name)
 sleep(5)
 # ----------------------------------------------------------------------------------
 # 逻辑混淆替换
-title = "ccr"  # 语言选择页title
-txt_language_english = "d14"  # 语言选择页语言项
-iv_close = "amf"  # TVC弹窗关闭按钮
-tv_content = "ch2"  # feed流无内容缺省提示"No More Data"
+title = mapping_dict["title"]  # 语言选择页title
+txt_language_english = mapping_dict["txt_language_english"]  # 语言选择页语言项
+iv_close = mapping_dict["iv_close"]  # TVC弹窗关闭按钮
+tv_content = mapping_dict["tv_content"]  # feed流无内容缺省提示"No More Data"
 
-tv_more_ways = "cnx"  # More ways登录方式
-tv_login_email = "cmz"  # Email登录按钮
-et_email = "yj"  # Email帐号输入框
-btn_next = "jp"  # Next按钮
-et_input = "yn"  # 密码输入框
-btw_email_confirm = "kt"  # LOG IN按钮
+tv_more_ways = mapping_dict["tv_more_ways"]  # More ways登录方式
+tv_login_email = mapping_dict["tv_login_email"]  # Email登录按钮
+et_email = mapping_dict["et_email"]  # Email帐号输入框
+btn_next = mapping_dict["btn_next"]  # Next按钮
+et_input = mapping_dict["et_input"]  # 密码输入框
+btw_email_confirm = mapping_dict["btw_email_confirm"]  # LOG IN按钮
 
-layout_music_parent = "axa"  # popular作品
-iv_video = "au2"  # 作品cover左上角video标识
+layout_music_parent = mapping_dict["layout_music_parent"]  # popular作品
+iv_video = mapping_dict["iv_video"]  # 作品cover左上角video标识
 # ----------------------------------------------------------------------------------
 C = 0
 language_index = 0  # 初始语言
@@ -185,7 +191,6 @@ while (C < run_number):
         # 更换语言
         language_index += 1
         print("No More Data,Trying again")
-        continue
         
     # 清理app
     clear_app(package_name)

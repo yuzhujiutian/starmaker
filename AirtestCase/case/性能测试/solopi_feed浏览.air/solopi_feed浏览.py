@@ -1,15 +1,22 @@
 # -*- encoding=utf8 -*-
 __author__ = "yaoliang.cui"
 import time
-
-from airtest.core.android.android import *
 from airtest.core.api import *
+from airtest.core.api import using
+from airtest.core.android.android import *
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
-
 poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=False)
-auto_setup(__file__)
+
+using("reSource.air")
+from reSource import get_mapping_from_file
+from reSource import get_package_name
+mapping_dict = get_mapping_from_file()
+packages = get_package_name()
+
 dev = connect_device("android:///")
 devs = device()
+
+auto_setup(__file__)
 
 # ----------------------------------------------------------------------------------
 # 1>脚本执行次数
@@ -17,15 +24,15 @@ run_number = 5
 # 2>单次脚本执行时间
 single_run_time = 600
 # 3>测试package name
-package_name = "com.horadrim.android.sargam"
+package_name = packages["sa"]
 clear_app(package_name)
 sleep(4)
 # ----------------------------------------------------------------------------------
 # 逻辑混淆替换
-title = "ccr"  # 语言选择页title
-txt_language_english = "d14"  # 语言选择页语言项
-iv_close = "amf"  # TVC弹窗关闭按钮
-tv_content = "ch2"  # feed流无内容缺省提示"No More Data"
+title = mapping_dict["title"]  # 语言选择页title
+txt_language_english = mapping_dict["txt_language_english"]  # 语言选择页语言项
+iv_close = mapping_dict["iv_close"]  # TVC弹窗关闭按钮
+tv_content = mapping_dict["tv_content"]  # feed流无内容缺省提示"No More Data"
 # ----------------------------------------------------------------------------------
 C = 0
 language_index = 0  # 初始语言
@@ -87,9 +94,7 @@ while (C < run_number):
             time_end = time.time()
             A = time_end - time_start
             print(A)
-    print("脚本结束共滑动次数")
-    print(Count)
-    Count_List.append(Count)
+
     
     # -----tearDown-----
     # 点击暂停录制
@@ -108,20 +113,19 @@ while (C < run_number):
     poco("android:id/button1").click()
     sleep(2)
     
-    # 清理app
-    clear_app(package_name)
-    sleep(5)
-    
     # 如果数据量足够，则记录数据
     if poco(package_name + ":id/" + tv_content).exists() == False:
         C = C + 1
         T = time.strftime('%H.%M.%S',time.localtime(time.time()))
         print("执行次数")
         print(C)
+        print("脚本结束共滑动次数")
+        print(Count)
         print("结束时间")
         print(T)
         print("使用语言")
         print(language)
+        Count_List.append(Count)
         TimeEnd_List.append(T)
         language_list.append(language)
         
@@ -130,7 +134,10 @@ while (C < run_number):
         # 更换语言
         language_index += 1
         print("No More Data,Trying again")
-        continue
+        
+    # 清理app
+    clear_app(package_name)
+    sleep(5)
 
     
 print("批次结束时间列表")
