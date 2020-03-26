@@ -1,7 +1,6 @@
 # -*- encoding=utf8 -*-
 __author__ = "yaoliang.cui"
 
-from airtest.core.android.android import *
 from airtest.core.api import *
 from airtest.core.api import using
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
@@ -19,13 +18,13 @@ auto_setup(__file__)
 
 # ----------------------------------------------------------------------------------
 # 1>脚本执行次数
-run_number = 5
+run_number = 2
 # 2>单次脚本执行时间
 single_run_time = 600
 # 3>测试package name
 package_name = "com.horadrim.android.sargam"
 # 4>测试类型
-video_marker = False  # False=recording/True=video
+video_marker = True  # False=recording/True=video
 
 clear_app(package_name)
 sleep(5)

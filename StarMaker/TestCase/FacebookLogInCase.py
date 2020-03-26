@@ -1,12 +1,13 @@
 # coding=utf-8
 import time
 import unittest
-from StarMaker.CommonView.StartUp import StartUp
-from StarMaker.CommonView.LogIn import LogIn
+
 from StarMaker.CommonView.Home import Home
-from StarMaker.Utils.Tools import Tools
+from StarMaker.CommonView.LogIn import LogIn
+from StarMaker.CommonView.StartUp import StartUp
 from StarMaker.Utils.GetAppiumDeriver import GetAppiumDeriver
 from StarMaker.Utils.ReadXMLData import ReadXMLData
+from StarMaker.Utils.Tools import Tools
 
 
 # Facebook登录
@@ -59,7 +60,7 @@ class FacebookLogInCase(unittest.TestCase):
             time.sleep(2)
             # 输入Facebook密码
             LogIn().FBPopup_Password().send_keys(
-                ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "FBPasswprd"))
+                ReadXMLData().returnXMLFile("AccountNumber.xml", "AccountNumber", "FBPassword"))
             time.sleep(2)
             # 点击登录按钮
             LogIn().FBPopup_LogIn().click()

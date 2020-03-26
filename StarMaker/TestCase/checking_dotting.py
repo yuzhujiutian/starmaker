@@ -8,19 +8,21 @@ from StarMaker.CommonView.Library import Library
 from StarMaker.CommonView.Parties import Parties
 from StarMaker.CommonView.PlaybackDetails import PlaybackDetails
 from StarMaker.CommonView.Popup import Popup
-from StarMaker.CommonView.Search import Search
 from StarMaker.CommonView.Profile import Profile
+from StarMaker.CommonView.Search import Search
 from StarMaker.CommonView.VData import Home_VD
 from StarMaker.Utils.GetAppiumDeriver import GetAppiumDeriver
+from StarMaker.Utils.ReadXMLData import ReadXMLData
 from StarMaker.Utils.Tools import AssertReportManage
 from StarMaker.Utils.Tools import Page_Element_Verification
+from StarMaker.Utils.Tools import Screen
 from StarMaker.Utils.Tools import TestData_Processing
 from StarMaker.Utils.Tools import Tools
-from StarMaker.Utils.Tools import Screen
 from analysis_dot.analysis_report_dot.checking_dotting import check_log
 
 P = AssertReportManage().Pass
 E = AssertReportManage().Error
+xml = ReadXMLData().returnXMLFile
 
 
 # 自动化校验基础打点
@@ -72,13 +74,13 @@ class checking_dotting(unittest.TestCase):
     def test_Case1101_ShowLibraryRecommendSongShow(self):
         # 处理Made For You弹窗
         Popup().HomePopup_MadeForYou_Close_LiveClick()
-        self.exp_dot = "show,library:Recommend,song_show"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_1101")
 
     # 点击-Recommend-歌曲信息
     def test_Case1102_ClickLibraryRecommendSongDetail(self):
         # 点击首页第一首歌曲的歌曲
         Home().SingPage_CommonTab_FirstSong().click()
-        self.exp_dot = "click,library:Recommend,song_detail"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_1102")
         time.sleep(2)
         self.driver.back()
 
@@ -86,7 +88,7 @@ class checking_dotting(unittest.TestCase):
     def test_Case1103_ClickLibraryRecommendSingButton(self):
         # 点击首页sing_button
         Home().SingPage_SingRecommend_SelectSing().click()
-        self.exp_dot = "click,library:Recommend,sing_button"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_1103")
         time.sleep(2)
         self.driver.back()
 
@@ -142,13 +144,13 @@ class checking_dotting(unittest.TestCase):
         index = tab_list.index("Trending")
         # 点击Trending
         Home().SingPage_SingHeat_Trending(index).click()
-        self.exp_dot = "show,library:Trending,song_show"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_1108")
 
     # 点击-Trending-歌曲信息
     def test_Case1109_ClickLibraryTrendingSongDetail(self):
         # 点击首页第一首歌曲的歌曲
         Home().SingPage_CommonTab_FirstSong().click()
-        self.exp_dot = "click,library:Trending,song_detail"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_1109")
         time.sleep(2)
         self.driver.back()
 
@@ -156,7 +158,7 @@ class checking_dotting(unittest.TestCase):
     def test_Case1110_ClickLibraryTrendingSingButton(self):
         # 点击首页sing_button
         Home().SingPage_SingRecommend_SelectSing().click()
-        self.exp_dot = "click,library:Trending,sing_button"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_1110")
         time.sleep(2)
         self.driver.back()
 
@@ -219,7 +221,7 @@ class checking_dotting(unittest.TestCase):
         # 点击第一个联想结果
         Library().SearchPage_RelevantRelevant(2).click()
         time.sleep(2)
-        self.exp_dot = "show,search_result,song_show"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_1201")
 
     # 点击-搜索结果-歌曲信息
     def test_Case1202_ClickSearchResultSearchItemSong(self):
@@ -228,7 +230,7 @@ class checking_dotting(unittest.TestCase):
         time.sleep(2)
         # 点击第一首歌曲名
         Search().SearchPage_SongsSearchResult_FirstSongName().click()
-        self.exp_dot = "click,search_result,search_item_song"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_1202")
         time.sleep(2)
         self.driver.back()
 
@@ -236,7 +238,7 @@ class checking_dotting(unittest.TestCase):
     def test_Case1203_ClickSearchResultSearchItemSongSing(self):
         # 点击第一首歌曲点唱按钮
         Search().SearchPage_SongsSearchResult_FirstSongSingBtn().click()
-        self.exp_dot = "click,search_result,search_item_song_sing"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_1203")
         time.sleep(2)
         self.driver.back()
 
@@ -295,20 +297,20 @@ class checking_dotting(unittest.TestCase):
     def test_Case2101_ShowPopularCard(self):
         # 点击Moment
         Home().HomePage_MainTab_MomentTab().click()
-        self.exp_dot = "show,popular,card"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_2101")
 
     # 点击-popular-删除卡片
     def test_Case2102_ClickPopularDelete(self):
         # 删除首个卡片
         Home().HomePage_FeedCard_Delete().click()
         time.sleep(2)
-        self.exp_dot = "click,popular,delete"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_2102")
 
     # 点击-popular-卡片
     def test_Case2103_ClickPopularCard(self):
         # 点击首个作品卡片
         Home().HomePage_FeedCard_Img().click()
-        self.exp_dot = "click,popular,card"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_2103")
 
     # ----------
     # recording详情页
@@ -326,18 +328,18 @@ class checking_dotting(unittest.TestCase):
         # 点击第一首作品封面
         Profile().ProfilePage_Covers_ImgCover(0).click()
         time.sleep(2)
-        self.exp_dot = "play,playdetail,start"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_2201")
 
     # 播放-详情页-loadtime
     def test_Case2202_PlayPlayDetailLoadTime(self):
-        self.exp_dot = "play,playdetail,loadtime"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_2202")
         self.driver.back()
 
     # 播放-详情页-finish
     def test_Case2203_PlayPlayDetailFinish(self):
         # 点击第二个作品卡片
         Profile().ProfilePage_Covers_ImgCover(1).click()
-        self.exp_dot = "play,profile:null,finish"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_2203")
 
     # # 点击-详情页-follow
     # def test_Case2204_ClickPlayDetailFollow(self):
@@ -360,14 +362,14 @@ class checking_dotting(unittest.TestCase):
         time.sleep(2)
         # 点击post发送
         PlaybackDetails().PlaybackDetailsPage_Video_CommentSendBtn().click()
-        self.exp_dot = "click,playdetail,post_comment"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_2205")
 
     # 点击-详情页-Like
     def test_Case2206_ClickPlayDetailLike(self):
         time.sleep(2)
         # 点击Like
         PlaybackDetails().PlaybackDetailsPage_Video_Like().click()
-        self.exp_dot = "click,playdetail,like"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_2206")
 
     # 点击-详情页-unLike
     def test_Case2207_ClickPlayDetailUNLike(self):
@@ -376,7 +378,7 @@ class checking_dotting(unittest.TestCase):
         time.sleep(5)
         # 点击Like
         PlaybackDetails().PlaybackDetailsPage_Video_Like().click()
-        self.exp_dot = "click,playdetail,unlike"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_2207")
 
     # send-详情页-gift
     def test_Case2208_SendPlayDetailGift(self):
@@ -425,7 +427,7 @@ class checking_dotting(unittest.TestCase):
             time.sleep(2)
         if PlaybackDetails().PlaybackDetailsPage_Video_GiftDetailSendBtn():
             self.driver.back()
-        self.exp_dot = "send,playdetail,gift"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_2208")
 
     # 点击-分享面板-FB分享渠道
     def test_Case2209_ClickFunctionPanelShare(self):
@@ -437,7 +439,7 @@ class checking_dotting(unittest.TestCase):
         time.sleep(3)
         # 返回至播放详情页
         self.driver.back()
-        self.exp_dot = "click,function_panel,share"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_2209")
         time.sleep(3)
         # 返回到popular页
         self.driver.back()
@@ -450,7 +452,7 @@ class checking_dotting(unittest.TestCase):
         # 点击切换到Party页
         Home().HomePage_MainTab_PartyTab().click()
         time.sleep(4)
-        self.exp_dot = "show,solo,room"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_3101")
 
     # 点击-Solo-房间
     def test_Case3102_ClickSoloRoom(self):
@@ -462,14 +464,14 @@ class checking_dotting(unittest.TestCase):
         time.sleep(2)
         self.driver.back()
         Popup().Popup_KTVPage_MinimizeOption_RefuseBtn_LiveClick()
-        self.exp_dot = "click,solo,room"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_3102")
 
     # 展示-MultiGuest-房间
     def test_Case3103_ShowMultiGuestRoom(self):
         # 点击切换到MultiGuest
         Parties().KtvPage_Tab_MultiGuest().click()
         time.sleep(4)
-        self.exp_dot = "show,multiguest,room"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_3103")
 
     # 点击-MultiGuest-房间
     def test_Case3104_ClickMultiGuestRoom(self):
@@ -478,7 +480,7 @@ class checking_dotting(unittest.TestCase):
         time.sleep(4)
         self.driver.back()
         Popup().Popup_KTVPage_MinimizeOption_RefuseBtn_LiveClick()
-        self.exp_dot = "click,multiguest,room"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_3104")
 
     # ----------
     # Live
@@ -488,7 +490,7 @@ class checking_dotting(unittest.TestCase):
         # 点击切换到live
         Parties().KtvPage_Tab_LIVE().click()
         time.sleep(4)
-        self.exp_dot = "show,live_hall_0,room"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_3201")
 
     # 点击-Live-房间
     def test_Case3202_ClickLiveRoom(self):
@@ -501,7 +503,7 @@ class checking_dotting(unittest.TestCase):
         # self.driver.back()
         # time.sleep(2)
         # Popup().Popup_LivePage_MinimizeOption_RefuseBtn_LiveClick()
-        self.exp_dot = "click,live_hall_0,room"
+        self.exp_dot = xml("dot_keys.xml", "Dot", "ID_3202")
 
 
 if __name__ == '__main__':

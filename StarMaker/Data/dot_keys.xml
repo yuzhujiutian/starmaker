@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Dot>
+    <ID_1101>show,library:Recommend,song_show</ID_1101>
+    <ID_1102>click,library:Recommend,song_detail</ID_1102>
+    <ID_1103>click,library:Recommend,sing_button</ID_1103>
+    <ID_1108>show,library:Trending,song_show</ID_1108>
+    <ID_1109>click,library:Trending,song_detail</ID_1109>
+    <ID_1110>click,library:Trending,sing_button</ID_1110>
+    <ID_1201>show,search_result,song_show</ID_1201>
+    <ID_1202>click,search_result,search_item_song</ID_1202>
+    <ID_1203>click,search_result,search_item_song_sing</ID_1203>
+    <ID_2101>show,popular,card</ID_2101>
+    <ID_2102>click,popular,delete</ID_2102>
+    <ID_2103>click,popular,card</ID_2103>
+    <ID_2201>play,playdetail,start</ID_2201>
+    <ID_2202>play,playdetail,loadtime</ID_2202>
+    <ID_2203>play,profile:null,finish</ID_2203>
+    <ID_2205>click,playdetail,post_comment</ID_2205>
+    <ID_2206>click,playdetail,like</ID_2206>
+    <ID_2207>click,playdetail,unlike</ID_2207>
+    <ID_2208>send,playdetail,gift</ID_2208>
+    <ID_2209>click,function_panel,share</ID_2209>
+    <ID_3101>show,solo,room</ID_3101>
+    <ID_3102>click,solo,room</ID_3102>
+    <ID_3103>show,multiguest,room</ID_3103>
+    <ID_3104>click,multiguest,room</ID_3104>
+    <ID_3201>show,live_hall_0,room</ID_3201>
+    <ID_3202>click,live_hall_0,room</ID_3202>
+</Dot>

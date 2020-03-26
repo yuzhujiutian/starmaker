@@ -155,6 +155,13 @@ while (C < run_number):
         if Count == 0:
             poco(package_name + ":id/" + media_type_chb).click()  
             sleep(5)
+        
+        # 等待伴奏带下载完成
+        sleep(30)
+        if poco(package_name + ":id/" + record_btn).get_text() == "START":
+            pass
+        else:
+            sleep(30)
 
         # 点击Start录制按钮
         poco(package_name + ":id/" + record_btn).click()
