@@ -1,7 +1,8 @@
 # coding=utf-8
 import re
 # mapping表地址
-mapping_path = "C:/Package/starmaker-qa/StarMaker/bin/resource_mapping.txt"
+# mapping_path = "C:/Package/starmaker-qa/StarMaker/bin/resource_mapping.txt"
+mapping_path = "E:/Work/starmaker-qa/StarMaker/bin/resource_mapping.txt"
 mapping_table = {}
 
 

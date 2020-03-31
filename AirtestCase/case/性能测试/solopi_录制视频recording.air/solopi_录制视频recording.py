@@ -66,7 +66,7 @@ while (C < run_number):
     poco(package_name + ":id/" + title).wait_for_appearance()
 
     # 选择语言页——选择英语
-    poco(package_name + ":id/" + txt_language)[2].click()
+    poco(package_name + ":id/" + txt_language_english)[0].click()
     sleep(5)
 
     # 处理TVC弹窗
