@@ -1,0 +1,6 @@
+录制视频_数据列表(2020-04-01 16:41:55)
+['录制数据已经保存至"/storage/emulated/0/solopi_log/records/20200401155748_20200401160314"内', '录制数据已经保存至"/storage/emulated/0/solopi_log/records/20200401160442_20200401161055"内', '录制数据已经保存至"/storage/emulated/0/solopi_log/records/20200401161220_20200401161835"内']
+
+录制视频_数据列表(2020-04-01 16:42:00)
+['录制数据已经保存至"/storage/emulated/0/solopi_log/records/20200401155748_20200401160314"内', '录制数据已经保存至"/storage/emulated/0/solopi_log/records/20200401160442_20200401161055"内', '录制数据已经保存至"/storage/emulated/0/solopi_log/records/20200401161220_20200401161835"内']
+
