@@ -15,7 +15,7 @@ Source_LogInPopup_SelectLoginMode_Tips_ID = "tv_welcome"
 LogInPopup_SelectLoginMode_Tips_ID = package + mapping_dict[Source_LogInPopup_SelectLoginMode_Tips_ID]
 
 # 登录弹窗-选择登录方式-选择Phone方式
-Source_LogInPopup_SelectLoginMode_SelectPhone_ID = "tv_login_top"
+Source_LogInPopup_SelectLoginMode_SelectPhone_ID = "tv_login_phone"
 LogInPopup_SelectLoginMode_SelectPhone_ID = package + mapping_dict[Source_LogInPopup_SelectLoginMode_SelectPhone_ID]
 
 # 登录弹窗-选择登录方式-选择FB方式
@@ -23,8 +23,12 @@ Source_LogInPopup_SelectLoginMode_SelectFacebook_ID = "tv_login_top"
 LogInPopup_SelectLoginMode_SelectFacebook_ID = package + \
                                                mapping_dict[Source_LogInPopup_SelectLoginMode_SelectFacebook_ID]
 
+# 登录弹窗-选择登录方式-选择More ways
+Source_LogInPopup_SelectLoginMode_MoreWays_ID = "tv_more_ways"
+LogInPopup_SelectLoginMode_MoreWays_ID = package + mapping_dict[Source_LogInPopup_SelectLoginMode_MoreWays_ID]
+
 # 登录弹窗-选择登录方式-选择Email方式
-Source_LogInPopup_SelectLoginMode_SelectEmail_ID = "img_login_email"
+Source_LogInPopup_SelectLoginMode_SelectEmail_ID = "tv_login_email"
 LogInPopup_SelectLoginMode_SelectEmail_ID = package + mapping_dict[Source_LogInPopup_SelectLoginMode_SelectEmail_ID]
 
 # 登录弹窗-选择登录方式-选择G+方式
@@ -60,6 +64,16 @@ LogInPopup_EmailLoginMode_Close_ID = package + mapping_dict[Source_LogInPopup_Em
 # 邮箱登录页-输入框-通用IDS([0]Email_Input/[1]Password_Input]
 Source_EmailLogInPage_InputBox_Common_IDS = "et_input"
 EmailLogInPage_InputBox_Common_IDS = package + mapping_dict[Source_EmailLogInPage_InputBox_Common_IDS]
+
+# 邮箱登录页-输入框-邮箱输入框
+Source_EmailLogInPage_EmailInputBox_ID = "et_email"
+EmailLogInPage_EmailInputBox_ID = package + mapping_dict[Source_EmailLogInPage_EmailInputBox_ID]
+
+# 邮箱登录页-输入邮箱后下一步
+Source_EmailLogInPage_EmailInputNext_ID = "btn_next"
+EmailLogInPage_EmailInputNext_ID = package + mapping_dict[Source_EmailLogInPage_EmailInputNext_ID]
+
+
 
 # 邮箱登录页-输入框-明文密码
 Source_EmailLogInPage_InputBox_InputVisibility_ID = "img_input_visibility"

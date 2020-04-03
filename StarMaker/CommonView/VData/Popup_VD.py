@@ -19,6 +19,14 @@ Popup_IvClose_ID = package + mapping_dict[Source_Popup_IvClose_ID]
 # ----------
 # 1>首页弹窗
 # ----------
+# TVC弹窗，如果存在则点击关闭
+Source_HomePopup_TVC_ID = "iv_close"
+HomePopup_TVC_ID = package + mapping_dict[Source_HomePopup_TVC_ID]
+
+# 运营弹窗，如果存在则点击关闭
+Source_HomePopup_Operate_ID = "open_promotion_iv_close"
+HomePopup_Operate_ID = package + mapping_dict[Source_HomePopup_Operate_ID]
+
 # JoinCollab引导，如果存在则点击关闭
 Source_Popup_MadeForYou_ID = "tv_guide_title"
 Popup_MadeForYou_ID = package + mapping_dict[Source_Popup_MadeForYou_ID]

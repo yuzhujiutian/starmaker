@@ -7,6 +7,7 @@
 # ----------
 from StarMaker.CommonView.VData import LogIn_VD
 from StarMaker.Utils.FindElement import find_element
+from StarMaker.Utils.Tools import Tools
 
 
 # 登录模块
@@ -44,6 +45,11 @@ class LogIn(object):
     def LogInPopup_SelectLoginMode_SelectFacebook(self):
         LogInPopup_SelectLoginMode_SelectFacebook_ID = self.findID(LogIn_VD.LogInPopup_SelectLoginMode_SelectFacebook_ID)
         return LogInPopup_SelectLoginMode_SelectFacebook_ID
+
+    # 登录弹窗-选择登录方式-选择More ways
+    def LogInPopup_SelectLoginMode_MoreWays(self):
+        LogInPopup_SelectLoginMode_MoreWays_ID = self.findID(LogIn_VD.LogInPopup_SelectLoginMode_MoreWays_ID)
+        return LogInPopup_SelectLoginMode_MoreWays_ID
 
     # 登录弹窗-选择登录方式-选择Email方式
     def LogInPopup_SelectLoginMode_SelectEmail(self):
@@ -95,6 +101,16 @@ class LogIn(object):
     def EmailLogInPage_InputBox_EmailInput(self):
         EmailLogInPage_InputBox_EmailInput_IDS = self.findClaS(LogIn_VD.EmailLogInPage_InputBox_Common_IDS, 0)
         return EmailLogInPage_InputBox_EmailInput_IDS
+
+    # 邮箱登录页-输入框-邮箱输入框
+    def EmailLogInPage_EmailInputBox(self):
+        EmailLogInPage_EmailInputBox_ID = self.findID(LogIn_VD.EmailLogInPage_EmailInputBox_ID)
+        return EmailLogInPage_EmailInputBox_ID
+
+    # 邮箱登录页-输入邮箱后下一步
+    def EmailLogInPage_EmailInputNext(self):
+        EmailLogInPage_EmailInputNext_ID = self.findID(LogIn_VD.EmailLogInPage_EmailInputNext_ID)
+        return EmailLogInPage_EmailInputNext_ID
 
     # 邮箱登录页-输入框-明文密码
     def EmailLogInPage_InputBox_InputVisibility(self):

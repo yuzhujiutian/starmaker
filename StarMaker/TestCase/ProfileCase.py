@@ -1,16 +1,17 @@
 # coding=utf-8
 import time
 import unittest
+
+from StarMaker.CommonView import LogIn
+from StarMaker.CommonView.Home import Home
 from StarMaker.CommonView.Popup import Popup
 from StarMaker.CommonView.Profile import Profile
-from StarMaker.CommonView.Home import Home
-from CommonView import LogIn
-from StarMaker.Utils.Tools import Tools
-from StarMaker.Utils.Tools import Screen
-from StarMaker.Utils.Tools import RegionalSliding
-from StarMaker.Utils.Tools import Page_Element_Verification
 from StarMaker.Utils.GetAppiumDeriver import GetAppiumDeriver
 from StarMaker.Utils.ReadXMLData import ReadXMLData
+from StarMaker.Utils.Tools import Page_Element_Verification
+from StarMaker.Utils.Tools import RegionalSliding
+from StarMaker.Utils.Tools import Screen
+from StarMaker.Utils.Tools import Tools
 
 
 class ProfileCase(unittest.TestCase):

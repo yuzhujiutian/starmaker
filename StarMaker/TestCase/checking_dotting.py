@@ -11,6 +11,7 @@ from StarMaker.CommonView.Popup import Popup
 from StarMaker.CommonView.Profile import Profile
 from StarMaker.CommonView.Search import Search
 from StarMaker.CommonView.VData import Home_VD
+from StarMaker.TestCase import Login_mode
 from StarMaker.Utils.GetAppiumDeriver import GetAppiumDeriver
 from StarMaker.Utils.ReadXMLData import ReadXMLData
 from StarMaker.Utils.Tools import AssertReportManage
@@ -34,6 +35,10 @@ class checking_dotting(unittest.TestCase):
         # 处理上次运行留下的测试数据
         TestData_Processing().TestPicture_Processing()
         time.sleep(8)
+        # 登录
+        Login_mode.login_mode()
+        # 打开测试打点服务
+        Login_mode.start_dotTest_service()
 
     def setUp(self):
         time.sleep(5)
@@ -74,6 +79,8 @@ class checking_dotting(unittest.TestCase):
     def test_Case1101_ShowLibraryRecommendSongShow(self):
         # 处理Made For You弹窗
         Popup().HomePopup_MadeForYou_Close_LiveClick()
+        # 处理运营弹窗
+        Popup().HomePopup_Operate_Close_LiveClick()
         self.exp_dot = xml("dot_keys.xml", "Dot", "ID_1101")
 
     # 点击-Recommend-歌曲信息

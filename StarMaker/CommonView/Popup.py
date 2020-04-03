@@ -8,6 +8,7 @@
 import time
 
 from StarMaker.CommonView.VData import Popup_VD
+from StarMaker.Utils import Tools
 from StarMaker.Utils.GetAppiumDeriver import GetAppiumDeriver
 
 
@@ -20,6 +21,18 @@ class Popup(object):
     # ----------
     # 1>首页弹窗
     # ----------
+    # TVC弹窗，如果存在则点击关闭
+    def HomePopup_TVC_Close_LiveClick(self):
+        state = self.FindElement(ID=[Popup_VD.HomePopup_TVC_ID])
+        if state:
+            self.driver.find_element_by_id(Popup_VD.HomePopup_TVC_ID).click()
+
+    # 运营弹窗，如果存在则点击关闭
+    def HomePopup_Operate_Close_LiveClick(self):
+        state = self.FindElement(ID=[Popup_VD.HomePopup_Operate_ID])
+        if state:
+            self.driver.find_element_by_id(Popup_VD.HomePopup_Operate_ID).click()
+
     # JoinCollab引导，如果存在则点击关闭
     def HomePopup_MadeForYou_Close_LiveClick(self):
         state = self.FindElement(ID=[Popup_VD.Popup_MadeForYou_ID, "Made For You"])
