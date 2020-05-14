@@ -1,0 +1,3 @@
+1.om后台搜索recording后，将Response中的内容复制到"originals.txt"文本中；
+2.终端内输入命令：python + '空格' + 将'extract_sm_ids.py'文件拖入终端，然后回车
+python  C:\Users\cucumber\Desktop\extract_sm_ids\extract_sm_ids.py
