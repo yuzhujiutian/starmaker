@@ -11,7 +11,7 @@ AutomationName_21 = "uiautomator2"
 AutoGrantPermissions = True
 UnicodeKeyboard = True
 ResetKeyboard = True
-NoReset = True
+NoReset = False
 AppActivity = "com.ushowmedia.starmaker.activity.SplashActivity"
 
 # 设备信息(数据来源：GetDevicesInfo)

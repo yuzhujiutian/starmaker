@@ -111,9 +111,9 @@ class PopupProcessing(object):
         # 提取键值
         ID = element
         # 如果值是字符串
-        if isinstance(ID, str):
+        if len(ID) == 1:
             # 提取值
-            element_id = ID
+            element_id = ID[0]
             # 查找元素，存在返回True
             try:
                 self.driver.find_element_by_id(element_id)
@@ -123,7 +123,7 @@ class PopupProcessing(object):
                 print("弹窗未找到:", ID)
                 return False
         # 如果值是列表
-        elif isinstance(ID, list):
+        elif len(ID) == 2:
             # 提取值
             element_id = ID[0]
             element_id_text = ID[1]
@@ -143,7 +143,8 @@ class PopupProcessing(object):
                 return False
         # 否则返回值的属性
         else:
-            print(type(ID))
+            print("len(ID)=" + str(len(ID)))
+            print("type(ID)=" + type(ID))
             return False
 
     # 2.IDS = [IDS, index, **text]
@@ -200,9 +201,9 @@ class PopupProcessing(object):
         # 提取键值
         Cla = element
         # 如果值是字符串
-        if isinstance(Cla, str):
+        if len(Cla) == 1:
             # 提取值
-            element_cla = Cla
+            element_cla = Cla[0]
             # 查找元素，存在则返回True
             try:
                 self.driver.find_element_by_class_name(element_cla)
@@ -212,7 +213,7 @@ class PopupProcessing(object):
                 print("弹窗未找到:", Cla)
                 return False
         # 如果值是列表
-        elif isinstance(Cla, list):
+        elif len(Cla) == 2:
             # 提取值
             element_cla = Cla[0]
             element_cla_text = Cla[1]
@@ -288,9 +289,9 @@ class PopupProcessing(object):
         # 提取键值
         AID = element
         # 如果值是字符串
-        if isinstance(AID, str):
+        if len(AID) == 1:
             # 提取值
-            element_aid = AID
+            element_aid = AID[0]
             # 查找元素，存在返回True
             try:
                 self.driver.find_element_by_accessibility_id(element_aid)
@@ -300,7 +301,7 @@ class PopupProcessing(object):
                 print("弹窗未找到:", AID)
                 return False
         # 如果值是列表
-        elif isinstance(AID, list):
+        elif len(AID) == 2:
             # 提取值
             element_aid = AID[0]
             element_aid_text = AID[1]
@@ -377,9 +378,9 @@ class PopupProcessing(object):
         # 提取键值
         AU = element
         # 如果值是字符串
-        if isinstance(AU, str):
+        if len(AU) == 1:
             # 提取值
-            element_au = AU
+            element_au = AU[0]
             # 查找元素，存在返回True
             try:
                 self.driver.find_element_by_android_uiautomator(element_au)
@@ -389,7 +390,7 @@ class PopupProcessing(object):
                 print("弹窗未找到:", AU)
                 return False
         # 如果值是列表
-        elif isinstance(AU, list):
+        elif len(AU) == 2:
             # 提取值
             element_au = AU[0]
             element_au_text = AU[1]
@@ -466,9 +467,9 @@ class PopupProcessing(object):
         # 提取键值
         Xpa = element
         # 如果值是字符串
-        if isinstance(Xpa, str):
+        if len(Xpa) == 1:
             # 提取值
-            element_xpa = Xpa
+            element_xpa = Xpa[0]
             # 查找元素，存在返回True
             try:
                 self.driver.find_element_by_xpath(element_xpa)
@@ -478,7 +479,7 @@ class PopupProcessing(object):
                 print("弹窗未找到:", Xpa)
                 return False
         # 如果值是列表
-        elif isinstance(Xpa, list):
+        elif len(Xpa) == 2:
             # 提取值
             element_xpa = Xpa[0]
             element_xpa_text = Xpa[1]

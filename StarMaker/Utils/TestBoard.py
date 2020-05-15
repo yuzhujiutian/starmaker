@@ -21,10 +21,10 @@ class PopupProcessing:
         print("ID类型为")
         print(type(ID))
         # 如果值是字符串
-        if isinstance(ID, str):
+        if len(ID) == 1:
             print("str")
         # 如果值是列表
-        elif isinstance(ID, list):
+        elif len(ID) == 2:
             print("list")
         # 否则返回值的属性
 

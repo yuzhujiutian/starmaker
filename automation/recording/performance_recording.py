@@ -1,12 +1,11 @@
 # encoding=utf-8
-import sys
 
 from automation.base.base import BaseTestCase
 from automation.base.launch import LaunchAction
 from automation.common.activity import Activity
 from automation.main.main import testSuite
 
-sys.path.append('..')
+# sys.path.append('..')
 
 
 class PerformanceRecording(BaseTestCase):

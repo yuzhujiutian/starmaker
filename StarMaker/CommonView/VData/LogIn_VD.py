@@ -19,9 +19,9 @@ Source_LogInPopup_SelectLoginMode_SelectPhone_ID = "tv_login_phone"
 LogInPopup_SelectLoginMode_SelectPhone_ID = package + mapping_dict[Source_LogInPopup_SelectLoginMode_SelectPhone_ID]
 
 # 登录弹窗-选择登录方式-选择FB方式
-Source_LogInPopup_SelectLoginMode_SelectFacebook_ID = "tv_login_top"
-LogInPopup_SelectLoginMode_SelectFacebook_ID = package + \
-                                               mapping_dict[Source_LogInPopup_SelectLoginMode_SelectFacebook_ID]
+# Source_LogInPopup_SelectLoginMode_SelectFacebook_ID = "tv_login_top"
+# LogInPopup_SelectLoginMode_SelectFacebook_ID = package + \
+#                                                mapping_dict[Source_LogInPopup_SelectLoginMode_SelectFacebook_ID]
 
 # 登录弹窗-选择登录方式-选择More ways
 Source_LogInPopup_SelectLoginMode_MoreWays_ID = "tv_more_ways"
@@ -32,8 +32,8 @@ Source_LogInPopup_SelectLoginMode_SelectEmail_ID = "tv_login_email"
 LogInPopup_SelectLoginMode_SelectEmail_ID = package + mapping_dict[Source_LogInPopup_SelectLoginMode_SelectEmail_ID]
 
 # 登录弹窗-选择登录方式-选择G+方式
-Source_LogInPopup_SelectLoginMode_SelectGoogle_ID = "img_login_google"
-LogInPopup_SelectLoginMode_SelectGoogle_ID = package + mapping_dict[Source_LogInPopup_SelectLoginMode_SelectGoogle_ID]
+# Source_LogInPopup_SelectLoginMode_SelectGoogle_ID = "img_login_google"
+# LogInPopup_SelectLoginMode_SelectGoogle_ID = package + mapping_dict[Source_LogInPopup_SelectLoginMode_SelectGoogle_ID]
 
 # ----------
 # 登录弹窗-Email登录方式
@@ -111,43 +111,34 @@ PhonePhone_PreselectionFirstNumber_ID = gms + ".gms:id/credential_primary_label"
 PhonePhone_PreselectionCancel_ID = gms + ".gms:id/cancel"
 
 # PhoneHome Tips (text=输入手机号/请输入发送到{number}的验证码/]
-Source_PhoneHome_Tips_ID = "com_accountkit_title"
-PhoneHome_Tips_ID = package + mapping_dict[Source_PhoneHome_Tips_ID]
+PhoneHome_Tips_ID = "com_accountkit_title"
 
 # PhoneHome Describe（text=轻触下一步通过 Account Kit powered by Facebook 验证你的帐户。
 # 即使没有 Facebook 帐户，你也可以使用 Account Kit。你可通过手机短信接收手机号验证码。
 # 此过程可能产生短信和流量资费。详细了解 Facebook 如何使用你的信息。）
-Source_PhoneHome_Describe_ID = "com_accountkit_text"
-PhoneHome_Describe_ID = package + mapping_dict[Source_PhoneHome_Describe_ID]
+PhoneHome_Describe_ID = "com_accountkit_text"
 
 # Phone 当前选择国家国旗（点击可拉起切换弹窗，text="🇨🇳"）
-Source_Phone_NowCountryCode_ID = "country_code"
-Phone_NowCountryCode_ID = package + mapping_dict[Source_Phone_NowCountryCode_ID]
+Phone_NowCountryCode_ID = "country_code"
 
 # Phone 输入手机号
-Source_Phone_input_ID = "com_accountkit_phone_number"
-Phone_input_ID = package + mapping_dict[Source_Phone_input_ID]
+Phone_input_ID = "com_accountkit_phone_number"
 # Phone_input_Class = "android.widget.EditText"
 
 # Phone 下一步/继续
-Source_Phone_Next_ID = "com_accountkit_next_button"
-Phone_Next_ID = package + mapping_dict[Source_Phone_Next_ID]
+Phone_Next_ID = "com_accountkit_next_button"
 
 # 验证码输入框——首个（1-6对应6个输入框）
-Source_Code_FirstInputBox_ID = "com_accountkit_confirmation_code_1"
-Code_FirstInputBox_ID = package + mapping_dict[Source_Code_FirstInputBox_ID]
+Code_FirstInputBox_ID = "com_accountkit_confirmation_code_1"
 
 # 未收到验证码
-Source_Not_Received_Code_ID = "com_accountkit_retry_button"
-Not_Received_Code_ID = package + mapping_dict[Source_Not_Received_Code_ID]
+Not_Received_Code_ID = "com_accountkit_retry_button"
 
 # 验证你的手机号{AreaCode}{PhoneNumber}
-Source_Verify_Your_Number_ID = "com_accountkit_accountkit_verify_number"
-Verify_Your_Number_ID = package + mapping_dict[Source_Verify_Your_Number_ID]
+Verify_Your_Number_ID = "com_accountkit_accountkit_verify_number"
 
 # 重发短信
-Source_Recapture_Code_ID = "com_accountkit_resend_button"
-Recapture_Code_ID = package + mapping_dict[Source_Recapture_Code_ID]
+Recapture_Code_ID = "com_accountkit_resend_button"
 
 # ----------
 # 3>G+ 登录

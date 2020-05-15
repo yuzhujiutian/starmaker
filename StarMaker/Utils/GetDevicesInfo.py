@@ -145,7 +145,7 @@ class DevicesInfo(object):
 
     # AppPackage 用于初始化
     @staticmethod
-    def AppPackage(package=sa):
+    def AppPackage(package=sm):
         # get_packages = GetDevicesInfo().GetPackages()[0]
         # 调试使用
         get_packages = package

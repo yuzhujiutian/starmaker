@@ -1,10 +1,9 @@
 # encoding=utf-8
-import sys
 
 from automation.base.base import BaseAction
 from automation.common.activity import Activity
 
-sys.path.append('..')
+# sys.path.append('..')
 
 
 # 封装启动相关的操作

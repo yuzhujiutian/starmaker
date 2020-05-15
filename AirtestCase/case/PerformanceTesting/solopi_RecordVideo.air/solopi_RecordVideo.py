@@ -1,10 +1,11 @@
 # -*- encoding=utf8 -*-
 __author__ = "yaoliang.cui"
-import time
+
+from airtest.core.android.android import *
 from airtest.core.api import *
 from airtest.core.api import using
-from airtest.core.android.android import *
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
+
 poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=False)
 
 using("reSource.air")
@@ -12,7 +13,7 @@ from reSource import get_mapping_from_file
 from reSource import get_package_name
 mapping_dict = get_mapping_from_file()
 packages = get_package_name()
-package_name = packages["sa"]
+package_name = packages["sm"]
 dev = connect_device("android:///")
 devs = device()
 # ----------------------------------------------------------------------------------

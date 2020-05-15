@@ -15,11 +15,15 @@ driver = GetAppiumDeriver().driver
 
 # Email登录方法
 def login_mode(email="cyl@30.cn", pwd="000000"):
+    time.sleep(8)
     # 选择英语
     StartUp().ChooseLanguagePage_SelectLanguage(1).click()
     time.sleep(5)
     # 处理TVC弹窗
     Popup().HomePopup_TVC_Close_LiveClick()
+    time.sleep(2)
+    # 处理运营弹窗
+    Popup().HomePopup_Operate_Close_LiveClick()
     time.sleep(2)
     # 点击Me Tab
     Home().HomePage_MainTab_MeTab().click()
@@ -48,12 +52,14 @@ def login_mode(email="cyl@30.cn", pwd="000000"):
 def start_dotTest_service(IP=socket.gethostbyname(socket.gethostname())):
     # 点击Sing Tab
     Home().HomePage_MainTab_SingTab().click()
-    time.sleep(2)
+    time.sleep(10)
     # 点击搜索入口
     Home().SingPage_Common_Search().click()
     time.sleep(2)
     # 输入"development入口"
     Library().SearchPage_InputBox().send_keys("stmk://developPage")
+    time.sleep(2)
+    Library().SearchPage_InputBox().click()
     time.sleep(2)
     # 输入回车
     driver.keyevent(66)

@@ -42,9 +42,9 @@ class LogIn(object):
         return LogInPopup_SelectLoginMode_SelectPhone_ID
 
     # 登录弹窗-选择登录方式-选择FB方式
-    def LogInPopup_SelectLoginMode_SelectFacebook(self):
-        LogInPopup_SelectLoginMode_SelectFacebook_ID = self.findID(LogIn_VD.LogInPopup_SelectLoginMode_SelectFacebook_ID)
-        return LogInPopup_SelectLoginMode_SelectFacebook_ID
+    # def LogInPopup_SelectLoginMode_SelectFacebook(self):
+    #     LogInPopup_SelectLoginMode_SelectFacebook_ID = self.findID(LogIn_VD.LogInPopup_SelectLoginMode_SelectFacebook_ID)
+    #     return LogInPopup_SelectLoginMode_SelectFacebook_ID
 
     # 登录弹窗-选择登录方式-选择More ways
     def LogInPopup_SelectLoginMode_MoreWays(self):
@@ -57,9 +57,9 @@ class LogIn(object):
         return LogInPopup_SelectLoginMode_SelectEmail_ID
 
     # 登录弹窗-选择登录方式-选择G+方式
-    def LogInPopup_SelectLoginMode_SelectGoogle(self):
-        LogInPopup_SelectLoginMode_SelectGoogle_ID = self.findID(LogIn_VD.LogInPopup_SelectLoginMode_SelectGoogle_ID)
-        return LogInPopup_SelectLoginMode_SelectGoogle_ID
+    # def LogInPopup_SelectLoginMode_SelectGoogle(self):
+    #     LogInPopup_SelectLoginMode_SelectGoogle_ID = self.findID(LogIn_VD.LogInPopup_SelectLoginMode_SelectGoogle_ID)
+    #     return LogInPopup_SelectLoginMode_SelectGoogle_ID
 
     # ----------
     # 登录弹窗-Email登录方式
@@ -99,7 +99,7 @@ class LogIn(object):
 
     # 邮箱登录页-输入框-邮箱输入框([0]Email_Input)
     def EmailLogInPage_InputBox_EmailInput(self):
-        EmailLogInPage_InputBox_EmailInput_IDS = self.findClaS(LogIn_VD.EmailLogInPage_InputBox_Common_IDS, 0)
+        EmailLogInPage_InputBox_EmailInput_IDS = self.findIDS(LogIn_VD.EmailLogInPage_InputBox_Common_IDS, 0)
         return EmailLogInPage_InputBox_EmailInput_IDS
 
     # 邮箱登录页-输入框-邮箱输入框
@@ -119,7 +119,7 @@ class LogIn(object):
 
     # 邮箱登录页-输入框-密码输入框([1]Password_Input)
     def EmailLogInPage_InputBox_PasswordInput(self):
-        EmailLogInPage_InputBox_PasswordInput_IDS = self.findClaS(LogIn_VD.EmailLogInPage_InputBox_Common_IDS, 1)
+        EmailLogInPage_InputBox_PasswordInput_IDS = self.findIDS(LogIn_VD.EmailLogInPage_InputBox_Common_IDS, 1)
         return EmailLogInPage_InputBox_PasswordInput_IDS
 
     # 邮箱登录页-登录-确认登录

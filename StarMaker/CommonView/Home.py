@@ -52,10 +52,10 @@ class Home(object):
         HomePage_Common_Library_ID = self.findID(Home_VD.HomePage_Common_Library_ID)
         return HomePage_Common_Library_ID
 
-    # 首页-通用-切换内容语言
-    def HomePage_Common_ContentLanguage(self):
-        HomePage_Common_ContentLanguage_ID = self.findID(Home_VD.HomePage_Common_ContentLanguage_ID)
-        return HomePage_Common_ContentLanguage_ID
+    # # 首页-通用-切换内容语言
+    # def HomePage_Common_ContentLanguage(self):
+    #     HomePage_Common_ContentLanguage_ID = self.findID(Home_VD.HomePage_Common_ContentLanguage_ID)
+    #     return HomePage_Common_ContentLanguage_ID
 
     # ----------
     # 首页-语言选择弹窗

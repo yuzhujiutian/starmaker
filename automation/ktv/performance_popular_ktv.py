@@ -1,10 +1,9 @@
 # encoding=utf-8
-import sys
 
 from automation.base.base import BaseTestCase
 from automation.base.launch import LaunchAction
 
-sys.path.append('..')
+# sys.path.append('..')
 
 
 

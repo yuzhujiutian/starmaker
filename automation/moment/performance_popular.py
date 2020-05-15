@@ -1,12 +1,12 @@
 # encoding=utf-8
-import sys
 import time
 
 from automation.base.base import BaseTestCase
 from automation.base.launch import LaunchAction
 from automation.main.main import testSuite
 
-sys.path.append('..')
+
+# sys.path.append('..')
 
 
 class PerformanceMoment(BaseTestCase):

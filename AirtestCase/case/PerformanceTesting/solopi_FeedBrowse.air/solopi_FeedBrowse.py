@@ -1,10 +1,11 @@
 # -*- encoding=utf8 -*-
 __author__ = "yaoliang.cui"
-import time
+
+from airtest.core.android.android import *
 from airtest.core.api import *
 from airtest.core.api import using
-from airtest.core.android.android import *
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
+
 poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=False)
 
 using("reSource.air")
@@ -12,7 +13,7 @@ from reSource import get_mapping_from_file
 from reSource import get_package_name
 mapping_dict = get_mapping_from_file()
 packages = get_package_name()
-package_name = packages["sa"]
+package_name = packages["sm"]
 dev = connect_device("android:///")
 devs = device()
 # ----------------------------------------------------------------------------------
@@ -114,6 +115,7 @@ def feed_browse(run_number = 5, single_run_time = 600):
         elif poco(package_name + ":id/" + tv_content).exists() == True:
             # 更换语言
             language_index += 1
+            del Data_Name_List[-1]
             print("No More Data,Trying again")
 
         # 清理app

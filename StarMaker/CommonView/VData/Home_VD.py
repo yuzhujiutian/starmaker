@@ -19,8 +19,8 @@ Source_HomePage_Common_Library_ID = "imb_sing"
 HomePage_Common_Library_ID = package + mapping_dict[Source_HomePage_Common_Library_ID]
 
 # 首页-通用-语言
-Source_HomePage_Common_ContentLanguage_ID = "iv_content_language"
-HomePage_Common_ContentLanguage_ID = package + mapping_dict[Source_HomePage_Common_ContentLanguage_ID]
+# Source_HomePage_Common_ContentLanguage_ID = "iv_content_language"
+# HomePage_Common_ContentLanguage_ID = package + mapping_dict[Source_HomePage_Common_ContentLanguage_ID]
 
 # ----------
 # 首页-语言选择弹窗
@@ -91,8 +91,8 @@ Source_HomePage_FeedCard_ShareCount_ID_IDS = "tv_share_num"
 HomePage_FeedCard_ShareCount_ID_IDS = package + mapping_dict[Source_HomePage_FeedCard_ShareCount_ID_IDS]
 
 # 首页-feed卡片_评论按钮(ID/IDS]
-Source_HomePage_FeedCard_Comment_ID_IDS = "layout_comment"
-HomePage_FeedCard_Comment_ID_IDS = package + mapping_dict[Source_HomePage_FeedCard_Comment_ID_IDS]
+# Source_HomePage_FeedCard_Comment_ID_IDS = "layout_comment"
+# HomePage_FeedCard_Comment_ID_IDS = package + mapping_dict[Source_HomePage_FeedCard_Comment_ID_IDS]
 
 # 首页-feed卡片_评论数(ID/IDS]
 Source_HomePage_FeedCard_CommentCount_ID_IDS = "tv_comment_num"
@@ -107,8 +107,8 @@ Source_HomePage_FeedCard_LikeCount_ID_IDS = "tv_like_num"
 HomePage_FeedCard_LikeCount_ID_IDS = package + mapping_dict[Source_HomePage_FeedCard_LikeCount_ID_IDS]
 
 # 首页-feed卡片_下载按钮(ID/IDS]
-Source_HomePage_FeedCard_Download_ID_IDS = "layout_download"
-HomePage_FeedCard_Download_ID_IDS = package + mapping_dict[Source_HomePage_FeedCard_Download_ID_IDS]
+# Source_HomePage_FeedCard_Download_ID_IDS = "layout_download"
+# HomePage_FeedCard_Download_ID_IDS = package + mapping_dict[Source_HomePage_FeedCard_Download_ID_IDS]
 
 # 首页-feed卡片_WhatsApp按钮(ID/IDS]
 Source_HomePage_FeedCard_WhatsApp_ID_IDS = "img_share_whatsapp"
@@ -175,16 +175,16 @@ Source_SingPage_TabName_IDS = "rl_item_container"
 SingPage_TabName_IDS = package + mapping_dict[Source_SingPage_TabName_IDS]
 
 # Sing页面-Take the Mic
-Source_SingPage_TakeTheMic_ID = "iv_challenge_label"
-SingPage_TakeTheMic_ID = package + mapping_dict[Source_SingPage_TakeTheMic_ID]
+# Source_SingPage_TakeTheMic_ID = "iv_challenge_label"
+# SingPage_TakeTheMic_ID = package + mapping_dict[Source_SingPage_TakeTheMic_ID]
 
 # Sing页面-Vocal Talents
-Source_SingPage_VocalTalents_ID = "iv_talent_label"
-SingPage_VocalTalents_ID = package + mapping_dict[Source_SingPage_VocalTalents_ID]
+# Source_SingPage_VocalTalents_ID = "iv_talent_label"
+# SingPage_VocalTalents_ID = package + mapping_dict[Source_SingPage_VocalTalents_ID]
 
 # Sing页面-Sing Party
-Source_SingPage_SingParty_ID = "iv_party_label"
-SingPage_SingParty_ID = package + mapping_dict[Source_SingPage_SingParty_ID]
+# Source_SingPage_SingParty_ID = "iv_party_label"
+# SingPage_SingParty_ID = package + mapping_dict[Source_SingPage_SingParty_ID]
 
 # Sing页面-中下方五个Tab(服务端动态控制[0]Recommend/[1]Hot/[2]New/[3]Bollywood/[4]Trending]
 Source_SingPage_SingHeat_IDS = "tv_tab_title"

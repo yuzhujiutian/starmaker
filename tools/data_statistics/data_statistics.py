@@ -97,4 +97,4 @@ def get_ave(num_list):
 
 
 if __name__ == '__main__':
-    get_file_path("763")
+    get_file_path("768")

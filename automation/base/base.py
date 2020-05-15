@@ -2,7 +2,6 @@
 import datetime
 import os
 import random
-import sys
 import time
 import unittest
 
@@ -16,7 +15,7 @@ from automation.report.performance_mem import AndroidMemoryReport
 from automation.utils.android_proguard_mapping import AndroidProGuardMapping
 from .log import QmClassMethodLog
 
-sys.path.append('..')
+# sys.path.append('..')
 package_list = {"Thevoice": "com.starmakerinteractive.thevoice", "Product": "com.starmakerinteractive.starmaker",
                 "Sargam": "com.horadrim.android.sargam", "Suaraku": "com.windforce.android.suaraku"}
 
