@@ -1,7 +1,6 @@
 # -*- encoding=utf8 -*-
 __author__ = "yaoliang.cui"
 
-from airtest.core.android.android import *
 from airtest.core.api import *
 from airtest.core.api import using
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
@@ -70,6 +69,7 @@ def feed_browse_playRecording(run_number = 5, single_run_time = 600):
         sleep(3)
 
         # 测试recording需要登录
+        # recording白名单帐号：20-24
         if video_marker is False:
             # 点击Me Tab
             poco("main_tab_me").click()
@@ -171,16 +171,17 @@ def feed_browse_playRecording(run_number = 5, single_run_time = 600):
 def test_case(single_run_time):
         A = 0
         Count = 0
+        video_marker = False  # False=recording/True=video
 #         print("run test_case")
         time_start = time.time()
         while (A < single_run_time):
             try:
                 swipe((360,1050),(360,90))
-                cover = poco(package_name + ":id/" + layout_music_parent)
+                cover = package_name + ":id/" + layout_music_parent
                 for i in range(2,6):
     # ----------------------------------------------------------------------------------
                     # 如果是recording/video则点击
-                    if cover[i].child(package_name + ":id/" + iv_video).exists() == video_marker:
+                    if poco(cover)[i].child(package_name + ":id/" + iv_video).exists() == video_marker:
                         if video_marker:
                             print("video")
                         else:
