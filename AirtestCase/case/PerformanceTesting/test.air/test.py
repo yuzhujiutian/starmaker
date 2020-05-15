@@ -10,19 +10,20 @@ dev = connect_device("android:///")
 devs = device()
 
 
-video_marker = True  # False=recording/True=video
-cover = "com.starmakerinteractive.starmaker:id/ayc"
+# video_marker = True  # False=recording/True=video
+# cover = "com.starmakerinteractive.starmaker:id/ayc"
 package_name = "com.starmakerinteractive.starmaker"
-iv_video = "av2"
-for i in range(1,6):
-    print("-----")
-    print(i)
-    if poco(cover)[i].child(package_name + ":id/" + iv_video).exists() == video_marker:
-        if video_marker:
-            print("video")
-        else:
-            print("record")
-        poco(cover)[i].click()
+clear_app(package_name)
+# iv_video = "av2"
+# for i in range(1,6):
+#     print("-----")
+#     print(i)
+#     if poco(cover)[i].child(package_name + ":id/" + iv_video).exists() == video_marker:
+#         if video_marker:
+#             print("video")
+#         else:
+#             print("record")
+#         poco(cover)[i].click()
 
     
     
