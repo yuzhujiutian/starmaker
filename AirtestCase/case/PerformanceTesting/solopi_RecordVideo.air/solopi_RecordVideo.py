@@ -1,7 +1,6 @@
 # -*- encoding=utf8 -*-
 __author__ = "yaoliang.cui"
 
-from airtest.core.android.android import *
 from airtest.core.api import *
 from airtest.core.api import using
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
@@ -143,7 +142,7 @@ def record_video(run_number = 5, songs_run_num = 2):
 #     print(TimeEnd_List)
 #     print("数据文件名列表")
 #     print(Data_Name_List)
-#     print("录制视频recording 测试结束")
+    print("录制视频recording 测试结束")
     
     return Data_Name_List
 
@@ -208,6 +207,7 @@ def test_case(songs_run_num):
                 sleep(5)
             else:
                 sleep(10)
+
 
 
 

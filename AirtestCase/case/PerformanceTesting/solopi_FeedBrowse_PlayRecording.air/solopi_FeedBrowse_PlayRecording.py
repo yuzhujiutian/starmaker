@@ -31,7 +31,7 @@ layout_music_parent = mapping_dict["layout_music_parent"]  # popular作品
 iv_video = mapping_dict["iv_video"]  # 作品cover左上角video标识
 # ----------------------------------------------------------------------------------
 auto_setup(__file__)
-
+video_marker = False  # False=recording/True=video
 
 print("测试开始")
 def feed_browse_playRecording(run_number = 5, single_run_time = 600):
@@ -40,7 +40,7 @@ def feed_browse_playRecording(run_number = 5, single_run_time = 600):
     language_list = []
     TimeEnd_List = []
     Data_Name_List = []
-    video_marker = False  # False=recording/True=video
+#     video_marker = False  # False=recording/True=video
     clear_app(package_name)
     
     sleep(5)
@@ -201,5 +201,6 @@ def test_case(single_run_time):
                 time_end = time.time()
                 A = time_end - time_start
                 print(A)
+
 
 
