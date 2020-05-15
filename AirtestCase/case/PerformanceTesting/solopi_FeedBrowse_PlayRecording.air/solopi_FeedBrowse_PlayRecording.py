@@ -1,6 +1,7 @@
 # -*- encoding=utf8 -*-
 __author__ = "yaoliang.cui"
 
+from airtest.core.android.android import *
 from airtest.core.api import *
 from airtest.core.api import using
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
@@ -42,7 +43,6 @@ def feed_browse_playRecording(run_number = 5, single_run_time = 600):
     Data_Name_List = []
 #     video_marker = False  # False=recording/True=video
     clear_app(package_name)
-    
     sleep(5)
     while (C < run_number):    
         # -----setUp-----

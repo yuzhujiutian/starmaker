@@ -151,6 +151,7 @@ def feed_browse_playVideo(run_number = 5, single_run_time = 600):
         elif poco(package_name + ":id/" + tv_content).exists() == True:
             # 更换语言
             language_index += 1
+            del Data_Name_List[-1]
             print("No More Data,Trying again")
 
         # 清理app
