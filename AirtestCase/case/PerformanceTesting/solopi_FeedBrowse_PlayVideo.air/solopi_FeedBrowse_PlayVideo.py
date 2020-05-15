@@ -128,6 +128,7 @@ def feed_browse_playVideo(run_number = 5, single_run_time = 600):
         # 记录数据结果文件名
         data_name = poco("android:id/message").get_text()
         sleep(2)
+        print(C)
         print(data_name)
         Data_Name_List.append(data_name)
 
@@ -189,7 +190,7 @@ def test_case(single_run_time):
                             print("video")
                         else:
                             print("record")
-                        cover[i].click()
+                        poco(cover)[i].click()
                         # 播放5秒
                         sleep(5)
                         # 返回到feed流

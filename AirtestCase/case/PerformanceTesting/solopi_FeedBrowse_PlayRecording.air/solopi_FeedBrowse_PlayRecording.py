@@ -128,6 +128,7 @@ def feed_browse_playRecording(run_number = 5, single_run_time = 600):
         # 记录数据结果文件名
         data_name = poco("android:id/message").get_text()
         sleep(2)
+        print(C)
         print(data_name)
         Data_Name_List.append(data_name)
 
@@ -152,6 +153,7 @@ def feed_browse_playRecording(run_number = 5, single_run_time = 600):
         elif poco(package_name + ":id/" + tv_content).exists() == True:
             # 更换语言
             language_index += 1
+            del Data_Name_List[-1]
             print("No More Data,Trying again")
 
         # 清理app
@@ -186,7 +188,7 @@ def test_case(single_run_time):
                             print("video")
                         else:
                             print("record")
-                        cover[i].click()
+                        poco(cover)[i].click()
                         # 播放5秒
                         sleep(5)
                         # 返回到feed流

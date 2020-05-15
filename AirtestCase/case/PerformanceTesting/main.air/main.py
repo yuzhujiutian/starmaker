@@ -48,7 +48,7 @@ version = "768"
 #     print("b未保存,原因为" + str(e))
 
 # feed浏览Video
-c = feed_browse_playVideo(1, 600)
+c = feed_browse_playVideo(5, 600)
 print(c)
 try:
     save_data("feed浏览video", c)

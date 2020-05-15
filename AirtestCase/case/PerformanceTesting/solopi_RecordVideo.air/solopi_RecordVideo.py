@@ -121,6 +121,7 @@ def record_video(run_number = 5, songs_run_num = 2):
         # 记录数据结果文件名
         data_name = poco("android:id/message").get_text()
         sleep(2)
+        print(C)
         print(data_name)
         Data_Name_List.append(data_name)
 

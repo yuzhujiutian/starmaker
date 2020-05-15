@@ -90,6 +90,7 @@ def feed_browse(run_number = 5, single_run_time = 600):
         # 记录数据结果文件名
         data_name = poco("android:id/message").get_text()
         sleep(2)
+        print(C)
         print(data_name)
         Data_Name_List.append(data_name)
 
