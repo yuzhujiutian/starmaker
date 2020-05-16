@@ -28,10 +28,10 @@ def save_data(data_name, data, localtime = time.strftime("%Y-%m-%d %H:%M:%S", ti
         f.write("\n\n")
 
 
-version = "768"
+version = "770"
 
 
-# feed浏览
+# # feed浏览
 # a = feed_browse(5, 600)
 # print(a)
 # try:
@@ -39,7 +39,7 @@ version = "768"
 # except Exception as e:
 #     print("a未保存,原因为" + str(e))
 
-# feed浏览recording
+# # feed浏览recording
 # b = feed_browse_playRecording(5, 600)
 # print(b)
 # try:
@@ -47,21 +47,21 @@ version = "768"
 # except Exception as e:
 #     print("b未保存,原因为" + str(e))
 
-# feed浏览Video
-c = feed_browse_playVideo(5, 600)
-print(c)
-try:
-    save_data("feed浏览video", c)
-except Exception as e:
-    print("c未保存,原因为" + str(e))
+# # feed浏览Video
+# c = feed_browse_playVideo(5, 600)
+# print(c)
+# try:
+#     save_data("feed浏览video", c)
+# except Exception as e:
+#     print("c未保存,原因为" + str(e))
 
 # 录制视频recording
-# d = record_video(5, 2)
-# print(d)
-# try:
-#     save_data("录制视频recording", d)
-# except Exception as e:
-#     print("d未保存,原因为" + str(e))
+d = record_video(2, 2)
+print(d)
+try:
+    save_data("录制视频recording", d)
+except Exception as e:
+    print("d未保存,原因为" + str(e))
 
 
 

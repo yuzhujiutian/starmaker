@@ -22,6 +22,7 @@ title = mapping_dict["title"]  # 语言选择页title
 txt_language_english = mapping_dict["txt_language_english"]  # 语言选择页语言项
 iv_close = mapping_dict["iv_close"]  # TVC弹窗关闭按钮
 tv_content = mapping_dict["tv_content"]  # feed流无内容缺省提示"No More Data"
+tv_load_more = mapping_dict["tv_load_more"]  # feed流底部load more按钮
 # ----------------------------------------------------------------------------------
 auto_setup(__file__)
 
@@ -143,6 +144,8 @@ def test_case(single_run_time):
     time_start = time.time()
     while (A < single_run_time):
         try:
+            if poco(package_name + ":id/" + tv_load_more).exists():
+                poco(package_name + ":id/" + tv_load_more).click()
             swipe((360,1050),(360,90))
             sleep(2)
             Count += 1
@@ -153,6 +156,7 @@ def test_case(single_run_time):
             A = time_end - time_start
             print(A)
     
+
 
 
 

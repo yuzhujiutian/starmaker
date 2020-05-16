@@ -53,6 +53,10 @@ def record_video(run_number = 5, songs_run_num = 2):
     sleep(4)
     while (C < run_number):    
         # -----setUp-----
+         # 隐藏性能浮窗
+        touch((55,100))
+        sleep(2)
+        
         # 启动app
         start_app(package_name)
         sleep(10)
@@ -80,7 +84,7 @@ def record_video(run_number = 5, songs_run_num = 2):
 
         # 输入测试邮箱
         poco(package_name + ":id/" + et_email)[0].set_text("cyl@20.cn")
-        sleep(2)
+        sleep(5)
 
         # 点击Next按钮
         poco(package_name + ":id/" + btn_next).click()
@@ -88,7 +92,7 @@ def record_video(run_number = 5, songs_run_num = 2):
 
         # 输入密码
         poco(package_name + ":id/" + et_input)[1].set_text("000000")
-        sleep(2)
+        sleep(3)
 
         # 点击LOG IN按钮
         poco(package_name + ":id/" + btw_email_confirm).click()
@@ -99,10 +103,13 @@ def record_video(run_number = 5, songs_run_num = 2):
         sleep(5)
 
         # 点击开始录制
+        touch((55,100))
+        sleep(2)
         touch((395,99))
         sleep(2)
         touch((55,100))
         sleep(2)
+
 
 
         # -----测试脚本-----
@@ -117,7 +124,7 @@ def record_video(run_number = 5, songs_run_num = 2):
         sleep(2)
         touch((395,99))
         sleep(5)
-
+        
         # 记录数据结果文件名
         data_name = poco("android:id/message").get_text()
         sleep(2)
@@ -209,6 +216,9 @@ def test_case(songs_run_num):
                 sleep(5)
             else:
                 sleep(10)
+
+
+
 
 
 
